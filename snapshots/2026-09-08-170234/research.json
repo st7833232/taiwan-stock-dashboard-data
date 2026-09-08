@@ -1,0 +1,366 @@
+{
+  "researchDate": "2026-09-08",
+  "latestTradingDate": "2026-09-08",
+  "market": {
+    "title": "9/8 指數小跌但廣度偏弱；資金轉向記憶體與金融，維持低曝險條件式佈局",
+    "summary": "加權指數收 47,105.78 點，下跌 220.49 點、約 0.47%，成交金額約 8,766.62 億元；上市上漲 296 家、下跌 791 家。上市三大法人合計賣超約 99.87 億元，其中外資買超約 132.68 億元、投信賣超約 47.15 億元、自營商賣超約 185.40 億元；櫃買外資則賣超約 114.26 億元。資金集中在金融、記憶體與少數半導體，AI 代工、電子零組件與網通普遍轉弱，屬指數抗跌但個股風險升高的結構。",
+    "taiexClose": 47105.78,
+    "taiexChangePercent": -0.47,
+    "turnoverTwdBillion": 876.662,
+    "advanceCount": 296,
+    "declineCount": 791,
+    "foreignNetTwdBillion": 13.268,
+    "investmentTrustNetTwdBillion": -4.715,
+    "dealerNetTwdBillion": -18.54,
+    "institutionalNetTwdBillion": -9.987,
+    "regime": "中性偏多但廣度轉弱／只接受回測，不追輪動長紅",
+    "macro": "前一晚美股因 Labor Day 休市，台股缺乏新的美國現貨市場方向確認；利率、高估值、地緣政治與能源價格仍是尾部風險。9/8 盤後研究只使用當時已正式公開的台灣行情、法人與公司資訊。",
+    "risk": "外資在集中市場仍小幅買超，但櫃買轉賣、投信與自營商偏空，且 AI 舊主流遭大額調節；若資金輪動無法擴散，上檔追價容易承受快速回撤。"
+  },
+  "candidates": [
+    {
+      "code": "1513",
+      "name": "中興電",
+      "group": "priority",
+      "rank": "01",
+      "rating": "A-／外資續買、價格回測，但只分批",
+      "tone": "good",
+      "close": 165,
+      "closeDate": "2026-09-08",
+      "priceStatus": "final-close",
+      "thesis": "AI 資料中心用電、強韌電網與 GIS 長單仍是中期主軸。9/8 開盤 167.5 元使既有加碼單機械取消，但收盤回到 165 元且外資續買約 408 張，推薦條件仍成立；因市場廣度轉弱，只保留小額回測單，不提高總配置。",
+      "theme": "AI 資料中心用電、GIS、強韌電網、半導體建廠與海外電力基建。",
+      "fundamentalsValuation": "2026 Q2 EPS 2.56 元，長單與電網資本支出提供中期支撐；估值屬中性，仍須追蹤訂單認列、毛利與現金流品質。",
+      "technical": "9/8 開 167.5、高 167.5、低 164.5、收 165；收盤回到整理區中段且未跌破 160 元失效線，但市場風險提高，不宜擴張部位。",
+      "chips": "TWSE 9/8 外資買超約 408,056 股，連續第三個交易日買超；投信約持平，自營商偏賣，合計仍小幅偏多。",
+      "catalyst": "強韌電網、AI 資料中心電力需求、半導體建廠與海外 GIS 訂單。",
+      "entry": "9/9 官方開盤 163.5–165.5 元才允許加碼 50 股；高於上限不追、低於下限視為結構轉弱。",
+      "avoid": "不得把 9/8 盤中低點當作已成交，也不在 166 元以上追價。",
+      "invalid": "日線收破 160 元且量增，或外資重新轉為連續大幅賣超時降級。",
+      "risk": "專案認列時程、電網資本支出遞延、估值壓縮、籌碼反覆與大盤廣度弱化。",
+      "allocationMax": "研究上限 15%"
+    },
+    {
+      "code": "0050",
+      "name": "元大台灣50",
+      "group": "core",
+      "rank": "E1",
+      "rating": "核心／趨勢尚可但廣度弱，只等回測",
+      "tone": "core",
+      "close": 109.65,
+      "closeDate": "2026-09-08",
+      "priceStatus": "final-close",
+      "thesis": "大型權值仍支撐指數，0050 適合作核心 Beta；9/8 官方開盤 110 元，高於舊單 108.5 元上限，故未成交。收盤 109.65、指數小跌但市場廣度偏弱，核心資格保留，追價門檻不放寬。",
+      "theme": "台灣大型權值、AI 與半導體市場 Beta。",
+      "fundamentalsValuation": "追蹤臺灣 50 指數並分散單一公司風險，主要風險仍是大型權值與半導體高度集中。",
+      "technical": "9/8 開 110、高 110.75、低 109.55、收 109.65；高檔整理，下一筆只接受小幅回測。",
+      "chips": "0050 外資買超約 20,896 張，但避險型自營商賣超約 7,720 張；總體外資偏多、投信與自營商偏空，資金並未全面共振。",
+      "catalyst": "大型權值獲利成長、AI 供應鏈與外資回補。",
+      "entry": "9/9 官方開盤 108.5–109.5 元買 100 股；高於上限不追，低於下限取消以避免跌勢中接刀。",
+      "avoid": "不在市場廣度弱化時放寬追價條件。",
+      "invalid": "加權指數放量跌破中期趨勢，或海外科技估值快速壓縮。",
+      "risk": "權值集中、海外科技估值、利率、地緣政治與市場廣度背離。",
+      "allocationMax": "研究上限 15%"
+    },
+    {
+      "code": "2409",
+      "name": "友達",
+      "group": "watch",
+      "rank": "W1",
+      "rating": "B+／資金延續但兩日急漲，仍不追",
+      "tone": "watch",
+      "close": 29.6,
+      "closeDate": "2026-09-08",
+      "priceStatus": "final-close",
+      "thesis": "9/8 股價再漲約 3.14%，外資買超約 85,223 張，資金延續性比前日改善；但兩日爆量急漲、基本面仍需由面板報價、稼動率與獲利確認，風險報酬不足以升為 priority。",
+      "theme": "面板報價、車用／高階顯示與景氣循環。",
+      "fundamentalsValuation": "7 月營收仍年減約 2.64%；需看到後續營收、面板價格與毛利改善，才可把資金行情視為基本面趨勢。",
+      "technical": "連續兩日大量上漲，短線乖離擴大；等待 28–29 元量縮整理較合理。",
+      "chips": "TWSE 9/8 外資買超約 85,222,973 股，延續 9/7 大額流入；極端成交與高換手仍提高均值回歸風險。",
+      "catalyst": "面板報價改善、旺季需求、車用與高階產品組合。",
+      "entry": "等待 28–29 元量縮守穩，且基本面訊號同步改善後再評估；目前 0%。",
+      "avoid": "不追連續兩日爆量長紅。",
+      "invalid": "跌回 27 元下方且量增，或外資快速反向。",
+      "risk": "面板循環、供需、報價、高換手與獲利改善落後。",
+      "allocationMax": "目前 0%"
+    },
+    {
+      "code": "2344",
+      "name": "華邦電",
+      "group": "watch",
+      "rank": "W2",
+      "rating": "B+／新進觀察；營收與資金共振但股價接近 200 元",
+      "tone": "watch",
+      "close": 188,
+      "closeDate": "2026-09-08",
+      "priceStatus": "final-close",
+      "thesis": "全市場重篩新增觀察。8 月營收 273.09 億元、月增約 2%、年增約 289.43%，連續九個月創高；9/8 外資買超約 92,597 張、股價上漲約 4.44%。基本面與籌碼共振，但價格快速逼近 200 元優先上限，沒有合理追價點。",
+      "theme": "DRAM、NOR Flash、記憶體供需改善與 AI 基礎建設需求。",
+      "fundamentalsValuation": "營收創高反映價格與出貨改善，但記憶體屬高度循環產業，估值須以未來報價、毛利與資本支出可持續性驗證。",
+      "technical": "9/8 收 188 元、單日上漲約 4.44%，短線量價過熱；等待回測與量縮。",
+      "chips": "TWSE 9/8 外資買超約 92,597,119 股，為當日外資主要買超標的之一；單日極端流入不能直接等同低風險買點。",
+      "catalyst": "記憶體報價、供給吃緊、AI 與工控需求、8 月營收創高。",
+      "entry": "等待 178–183 元量縮守穩，且法人未快速反向，再評估是否升級；目前 0%。",
+      "avoid": "不在 188 元以上追逐消息與法人單日大量買超。",
+      "invalid": "跌破 172 元且量增，或記憶體報價／營收動能反轉。",
+      "risk": "記憶體循環、報價反轉、高波動、資本支出與庫存變化。",
+      "allocationMax": "目前 0%"
+    },
+    {
+      "code": "3706",
+      "name": "神達",
+      "group": "watch",
+      "rank": "W3",
+      "rating": "B-／連續外資賣壓，降級",
+      "tone": "watch",
+      "close": 91.6,
+      "closeDate": "2026-09-08",
+      "priceStatus": "final-close",
+      "thesis": "AI Server、CSP 與資料中心成長主軸仍在，價格也位於原偏好區；但 9/8 外資再賣超約 5,042 張，連同前日約 3,550 張形成連續賣壓，價格便宜不足以抵銷籌碼逆風。",
+      "theme": "AI Server、CSP、資料中心與 AI 基礎建設資本支出。",
+      "fundamentalsValuation": "7 月營收 128.34 億元、年增約 49.73%，基本面仍具吸引力；短線需等待資金賣壓收斂。",
+      "technical": "9/8 收 91.6 元，偏好區內仍未形成法人與價格共振。",
+      "chips": "TWSE 9/8 外資賣超約 5,041,718 股，較 9/7 賣超擴大；連續兩日外資賣超是本次由 B 降至 B- 的主因。",
+      "catalyst": "AI Server 出貨、CSP 資本支出與資料中心擴建。",
+      "entry": "至少等待外資連續賣壓顯著收斂並重新守穩 91–93 元；目前 0%。",
+      "avoid": "不因落在價格區間就忽略籌碼失效。",
+      "invalid": "跌破 87 元且量增，或外資賣壓持續擴大。",
+      "risk": "客戶集中、毛利率、營運資金與科技股估值波動。",
+      "allocationMax": "目前 0%"
+    },
+    {
+      "code": "3231",
+      "name": "緯創",
+      "group": "watch",
+      "rank": "W4",
+      "rating": "B-／急跌與外資大賣，條件明顯惡化",
+      "tone": "watch",
+      "close": 186.5,
+      "closeDate": "2026-09-08",
+      "priceStatus": "final-close",
+      "thesis": "AI Server 成長主軸未變，但 9/8 股價下跌約 5.33%，外資賣超約 46,059 張，延續前日大額賣超；價格雖回到 200 元以下，卻是伴隨籌碼惡化，不構成買點。",
+      "theme": "AI Server、Vera Rubin、新平台量產與 CSP 資本支出。",
+      "fundamentalsValuation": "基本面維持高成長，但高 Beta 與代工低毛利結構使籌碼反轉風險更重要。",
+      "technical": "9/8 收 186.5 元，跌回原觀察區但屬急跌，不是量縮支撐；178 元失效線尚未觸發。",
+      "chips": "TWSE 9/8 外資賣超約 46,059,330 股，投信買超約 2,068 張仍遠不足以抵銷，法人合計約賣超 43,345 張。",
+      "catalyst": "AI Server 出貨、新平台量產與 CSP 資本支出。",
+      "entry": "等待 183–190 元量縮止穩，且外資停止大幅賣超後重新評估；目前 0%。",
+      "avoid": "不把急跌進入價格區間誤判為低風險買點。",
+      "invalid": "跌破 178 元且法人持續賣超，或 AI Server 出貨預期下修。",
+      "risk": "高 Beta、外資快速反向、低毛利代工與估值壓縮。",
+      "allocationMax": "目前 0%"
+    },
+    {
+      "code": "2303",
+      "name": "聯電",
+      "group": "watch",
+      "rank": "W5",
+      "rating": "B-／漲停後失敗且外資大賣，降級",
+      "tone": "watch",
+      "close": 137,
+      "closeDate": "2026-09-08",
+      "priceStatus": "final-close",
+      "thesis": "8 月營收與成熟製程題材未消失，但 9/7 漲停後 9/8 下跌約 4.20%，外資賣超約 63,878 張，前一日資金共振快速反轉。價格雖回到原 134–138 元觀察區，結構仍需重新建立。",
+      "theme": "成熟製程、特殊製程、12 奈米合作與先進封裝。",
+      "fundamentalsValuation": "營收催化改善，但仍須驗證稼動率、ASP、折舊與毛利率，事件行情反轉提高估值風險。",
+      "technical": "9/8 收 137 元，前一日漲停後快速回吐，屬失敗突破警訊。",
+      "chips": "TWSE 9/8 外資賣超約 63,878,408 股，為主要賣超標的之一，與 9/7 大買形成劇烈反轉。",
+      "catalyst": "8 月營收、成熟製程需求與合作進度。",
+      "entry": "等待 134–138 元量縮至少數日、外資賣壓收斂後再評估；目前 0%。",
+      "avoid": "不在事件行情高換手反轉時接刀。",
+      "invalid": "放量跌破前波平台，或法人賣壓延續。",
+      "risk": "成熟製程循環、價格競爭、新廠折舊與事件行情回吐。",
+      "allocationMax": "目前 0%"
+    },
+    {
+      "code": "00981A",
+      "name": "主動統一台股增長",
+      "group": "watch",
+      "rank": "W6",
+      "rating": "B／申贖流量反轉，維持觀察",
+      "tone": "watch",
+      "close": 29.73,
+      "closeDate": "2026-09-08",
+      "priceStatus": "final-close",
+      "thesis": "主動選股可參與 AI 與成長股，但 9/8 外資賣超約 17,061 張，與前日大額流入方向反轉；主動 ETF 的成交與申贖不能直接視為基本面訊號，因此不列核心。",
+      "theme": "主動式台股成長選股、AI 與半導體。",
+      "fundamentalsValuation": "重點在持股組合、費用率、折溢價與經理人風格，不能用單一日法人流量替代淨值與持股檢驗。",
+      "technical": "9/8 收約 29.73 元，高成交與流量反轉增加短線不確定性。",
+      "chips": "TWSE 9/8 外資賣超約 17,061,152 股，較 9/7 大額買超快速反向。",
+      "catalyst": "主動選股調整、AI 與半導體行情、9/16 除息。",
+      "entry": "等待 29 元附近量縮、折溢價與流量穩定後再評估；目前 0%。",
+      "avoid": "不因配息年化率或單日成交量追價。",
+      "invalid": "淨值趨勢轉弱、折價擴大或核心持股同步跌破中期趨勢。",
+      "risk": "費用率、經理人風格、持股集中、高 Beta 與申贖流量反轉。",
+      "allocationMax": "目前 0%"
+    },
+    {
+      "code": "6770",
+      "name": "力積電",
+      "group": "watch",
+      "rank": "W7",
+      "rating": "B-／法人由大買轉賣，降級",
+      "tone": "watch",
+      "close": 72.4,
+      "closeDate": "2026-09-08",
+      "priceStatus": "final-close",
+      "thesis": "成熟製程與記憶體題材仍受關注，但 9/8 外資由前日大買轉為賣超約 7,824 張，投信與自營商亦偏賣；爆量長紅後未形成資金延續，不能升級。",
+      "theme": "成熟製程、記憶體／特殊製程、半導體景氣循環。",
+      "fundamentalsValuation": "產能利用率、產品報價與毛利改善仍是核心變數，單日題材輪動不足以證明獲利品質改善。",
+      "technical": "9/8 開 73.2、高 75.3、低 71.9、收 72.4；高檔震盪且未跌破 67 元失效線。",
+      "chips": "9/8 外資賣超約 7,824 張、投信約賣超 22 張、自營商約賣超 1,890 張，法人合計約賣超 9,736 張。",
+      "catalyst": "半導體景氣回升、成熟製程需求與記憶體報價改善。",
+      "entry": "等待 68–71 元量縮整理且法人流向重新轉正；目前 0%。",
+      "avoid": "不追輪動高點，也不因未跌破失效線就建立新倉。",
+      "invalid": "跌回 67 元下方且量增，或法人賣壓持續。",
+      "risk": "景氣循環、產能利用率、價格競爭與高波動。",
+      "allocationMax": "目前 0%"
+    },
+    {
+      "code": "2324",
+      "name": "仁寶",
+      "group": "excluded",
+      "rank": "X1",
+      "rating": "B-／連續外資大賣，維持排除",
+      "tone": "risk",
+      "close": 39.05,
+      "closeDate": "2026-09-08",
+      "priceStatus": "final-close",
+      "thesis": "AI Server 題材仍存在，但外資 9/7 賣超約 51,964 張後，9/8 再賣超約 28,275 張；收盤 39.05 元，即使價格反彈也沒有解除連續籌碼風險。",
+      "theme": "AI Server、NB 與企業運算。",
+      "fundamentalsValuation": "題材需由伺服器營收占比、毛利率與獲利改善驗證；目前籌碼風險優先於低價優勢。",
+      "technical": "9/8 收 39.05 元；反彈未伴隨外資回補，仍屬高換手與套牢風險。",
+      "chips": "9/8 外資賣超約 28,275 張，連續兩日合計賣超逾 8 萬張。",
+      "catalyst": "AI Server 出貨與產品組合改善。",
+      "entry": "暫不建立買點；至少等待外資賣壓顯著收斂並重新形成底部。",
+      "avoid": "不以低價或單日反彈搶進。",
+      "invalid": "本次仍視為推薦條件失效；需重新建立籌碼、基本面與價格結構後才可重新納入。",
+      "risk": "低毛利率、NB 需求、籌碼快速反轉與套牢賣壓。",
+      "allocationMax": "目前 0%"
+    }
+  ],
+  "allocation": [
+    {
+      "code": "0050",
+      "name": "元大台灣50",
+      "max": "15%",
+      "bucket": "core",
+      "condition": "9/9 開盤 108.5–109.5 元才執行，否則取消"
+    },
+    {
+      "code": "1513",
+      "name": "中興電",
+      "max": "15%",
+      "bucket": "candidate",
+      "condition": "9/9 開盤 163.5–165.5 元才加碼 50 股；收破 160 且量增失效"
+    },
+    {
+      "code": "CASH",
+      "name": "保留現金",
+      "max": "70%",
+      "bucket": "cash",
+      "condition": "廣度偏弱且法人分歧，條件未成立時維持高現金"
+    }
+  ],
+  "changes": [
+    {
+      "code": "1513",
+      "change": "保留 priority A-",
+      "reason": "外資續買約 408 張、收盤回測 165 元；主題仍成立，但市場廣度弱，不提高配置。"
+    },
+    {
+      "code": "0050",
+      "change": "保留 core",
+      "reason": "權值趨勢尚可，惟上漲家數不足且法人分歧，只接受小幅回測。"
+    },
+    {
+      "code": "2409",
+      "change": "保留 watch；B → B+",
+      "reason": "外資再買約 85,223 張且股價續強，但兩日爆量、基本面確認不足。"
+    },
+    {
+      "code": "2344",
+      "change": "新增 watch B+",
+      "reason": "8 月營收創高且外資買超約 92,597 張；股價急漲至 188 元，不追價。"
+    },
+    {
+      "code": "3706",
+      "change": "保留 watch；B → B-",
+      "reason": "外資連續兩日賣超，9/8 賣壓擴大至約 5,042 張。"
+    },
+    {
+      "code": "3231",
+      "change": "保留 watch；B → B-",
+      "reason": "股價急跌且外資賣超約 46,059 張，回到 200 元以下並不等於買點。"
+    },
+    {
+      "code": "2303",
+      "change": "保留 watch；B+ → B-",
+      "reason": "前日漲停後回跌 4.20%，外資反手賣超約 63,878 張。"
+    },
+    {
+      "code": "00981A",
+      "change": "保留 watch；B+ → B",
+      "reason": "外資由前日大買轉為賣超約 17,061 張，申贖流向不穩。"
+    },
+    {
+      "code": "6770",
+      "change": "保留 watch；B+ → B-",
+      "reason": "外資、投信、自營商同步轉賣，前日法人共振未延續。"
+    },
+    {
+      "code": "2324",
+      "change": "保留 excluded",
+      "reason": "外資連續兩日大賣，重新納入條件尚未成立。"
+    }
+  ],
+  "conclusion": "9/8 不是積極佈局日。有效推薦仍只有 1513 中興電 priority A- 與 0050 core，且都只建立 9/9 的回測條件單；其餘標的配置 0%。全市場重篩新增 2344 華邦電為 watch，但不追當日急漲。2409 資金延續而升級至 B+，3706、3231、2303、00981A、6770 則因籌碼或價格結構轉弱而降級。策略基準維持 70% 現金。",
+  "notes": [
+    "Universe screening covered TWSE/TPEX common stocks and ETFs; warrants, ETNs, convertible bonds and preferred shares were excluded.",
+    "Priority/core and selected were re-generated from 2026-09-08 public evidence, not copied from 2026-09-07.",
+    "Both 2026-09-08 paper orders were evaluated only from their pre-committed official-open rules and were cancelled; intraday lows were not used.",
+    "Portfolio data here is the isolated TWD 200,000 paper experiment and contains no real user holdings."
+  ],
+  "sources": [
+    {
+      "title": "TWSE 9/8 大盤與個股成交資訊",
+      "url": "https://www.twse.com.tw/zh/trading/historical/mi-index.html",
+      "asOf": "2026-09-08"
+    },
+    {
+      "title": "TWSE 9/8 三大法人買賣金額統計",
+      "url": "https://www.twse.com.tw/zh/trading/foreign/bfi82u.html",
+      "asOf": "2026-09-08"
+    },
+    {
+      "title": "TWSE 9/8 外資及陸資買賣超彙總",
+      "url": "https://www.twse.com.tw/zh/trading/foreign/twt38u.html",
+      "asOf": "2026-09-08"
+    },
+    {
+      "title": "TWSE 9/8 投信買賣超彙總",
+      "url": "https://www.twse.com.tw/zh/trading/foreign/twt44u.html",
+      "asOf": "2026-09-08"
+    },
+    {
+      "title": "TPEx 9/8 指數與三大法人交易資訊",
+      "url": "https://www.tpex.org.tw/zh-tw/mainboard/trading/major-institutional/summary/day.html",
+      "asOf": "2026-09-08"
+    },
+    {
+      "title": "9/8 台股收盤與產業表現",
+      "url": "https://udn.com/news/story/7251/9741419",
+      "asOf": "2026-09-08"
+    },
+    {
+      "title": "華邦電 8 月營收與記憶體供需",
+      "url": "https://udn.com/news/story/7252/9735201",
+      "asOf": "2026-09-08"
+    },
+    {
+      "title": "Yahoo 股市 1513 9/8 官方行情交叉核對",
+      "url": "https://tw.stock.yahoo.com/quote/1513.TW",
+      "asOf": "2026-09-08"
+    }
+  ]
+}
