@@ -1,0 +1,481 @@
+{
+  "researchDate": "2026-09-09",
+  "latestTradingDate": "2026-09-09",
+  "market": {
+    "title": "9/9 全市場重篩：指數小漲但盤中收斂，資金輪動、不追長紅",
+    "summary": "加權指數收47,183.36點、上漲0.16%，盤中一度上漲逾400點後收斂；上市成交金額約7,735.06億元。上市上漲731家、下跌510家，櫃買上漲409家、下跌475家。上市三大法人合計買超約220.81億元，其中外資買超約209.24億元、投信買超約30.40億元、自營商賣超約18.83億元。市場廣度較9/8改善但未全面擴散，策略維持低追價、條件式分批。",
+    "taiexClose": 47183.36,
+    "taiexChangePercent": 0.16,
+    "turnoverTwdBillion": 773.506,
+    "advanceCount": 731,
+    "declineCount": 510,
+    "foreignNetTwdBillion": 20.924,
+    "investmentTrustNetTwdBillion": 3.04,
+    "dealerNetTwdBillion": -1.883,
+    "institutionalNetTwdBillion": 22.081,
+    "regime": "中性偏多／指數高檔輪動，回測才買",
+    "macro": "9/8美股主要指數受油價、地緣政治與利率疑慮壓抑，標普、那斯達克與道瓊收黑，費半相對強；9/9台股開高後漲幅收斂，外部風險仍限制追價。",
+    "risk": "國際油價與地緣政治、利率上行、台股高檔估值、盤中急漲後收斂，以及題材股爆量追價的均值回歸。"
+  },
+  "candidates": [
+    {
+      "code": "1513",
+      "name": "中興電",
+      "group": "priority",
+      "rank": "01",
+      "rating": "A-／既有條件單成交、基本面主軸仍有效，部位已足夠",
+      "tone": "good",
+      "close": 166.5,
+      "closeDate": "2026-09-09",
+      "priceStatus": "final-close",
+      "thesis": "AI資料中心用電、強韌電網與GIS長單主軸未變。9/9官方開盤164.5元落在前一版163.5–165.5元條件區，既有50股加碼單依法成交；收盤166.5元，總持有150股後曝險約12.5%，今日不再為9/10建立加碼單。",
+      "theme": "AI資料中心用電、GIS、強韌電網、半導體建廠與海外電力基建。",
+      "fundamentalsValuation": "2026年8月營收約25.02億元、年增8.93%，前8月累計年增約4.21%；電網與資料中心需求提供中期支撐，但專案認列、毛利與現金流仍須追蹤。",
+      "technical": "9/9開164.5、高167.5、低164.5、收166.5；回測後收復，160元失效線未破。",
+      "chips": "先前外資連續買超提供支撐；9/9個股法人流向轉為小幅分歧，未達擴大追價配置的門檻。",
+      "catalyst": "強韌電網、AI資料中心電力需求、半導體建廠與海外GIS訂單。",
+      "entry": "既有150股續抱；9/10不加碼，等待162–164元量縮回測或新的法人共振再評估。",
+      "avoid": "成交後不因收盤上漲追加，也不在167元以上追價。",
+      "invalid": "日線收破160元且量增，或外資連續大幅賣超。",
+      "risk": "專案認列遞延、毛利率壓力、估值壓縮及市場高檔震盪。",
+      "allocationMax": "研究上限15%"
+    },
+    {
+      "code": "0050",
+      "name": "元大台灣50",
+      "group": "core",
+      "rank": "E1",
+      "rating": "核心／指數高檔輪動，只接受小幅回測",
+      "tone": "core",
+      "close": 109.85,
+      "closeDate": "2026-09-09",
+      "priceStatus": "final-close",
+      "thesis": "大型權值支撐指數，但盤中漲幅明顯收斂，外部油價、地緣政治與利率風險仍高。9/9官方開盤109.95元高於舊單109.5元上限而取消；核心資格仍成立，9/10僅以更窄回測條件承接。",
+      "theme": "台灣大型權值、AI與半導體市場Beta。",
+      "fundamentalsValuation": "追蹤臺灣50指數並分散單一公司風險；主要風險是大型權值與半導體集中。",
+      "technical": "9/9開109.95、高110.6、低109.5、收109.85；高檔震盪、追價報酬風險不佳。",
+      "chips": "上市外資與投信合計偏多，但盤面呈輪動且量能縮減，核心配置仍應分批。",
+      "catalyst": "大型權值獲利成長、AI供應鏈與外資回補。",
+      "entry": "9/10官方開盤109.00–109.75元才買100股；區間外取消。",
+      "avoid": "不因盤中創高放寬上限，不使用盤中低點補成交。",
+      "invalid": "加權指數放量跌破中期趨勢，或海外科技估值快速壓縮。",
+      "risk": "權值與半導體集中、能源價格、利率及地緣政治。",
+      "allocationMax": "研究上限15%"
+    },
+    {
+      "code": "4961",
+      "name": "天鈺",
+      "group": "watch",
+      "rank": "W1",
+      "rating": "B+／基本面與事件動能仍在，價格未回理想區",
+      "tone": "watch",
+      "close": 177,
+      "closeDate": "2026-09-09",
+      "priceStatus": "final-close",
+      "thesis": "全市場重篩補入。8月營收21.10億元、年增50.15%，1–8月累計年增10.63%；2026 Q2 EPS 3.21元、季增72.58%、年增22.52%。9/8外資買超約1,441張、投信約2張、自營商約68張，基本面與籌碼同步改善，但股價單日上漲7.25%且成交量由前日約283張放大至3,135張，不適合追價。",
+      "theme": "顯示器驅動IC、TDDI、面板終端需求復甦與產品組合改善。",
+      "fundamentalsValuation": "Q2獲利恢復，8月營收加速；仍需確認毛利率能否跟上營收成長及驅動IC景氣延續性。",
+      "technical": "9/9收177元，急漲後高檔整理，尚未回到168–172元偏好區。",
+      "chips": "9/8外資大買後，9/9未出現足以支持升級的連續性確認。",
+      "catalyst": "驅動IC出貨增加、面板需求改善、Q2獲利回升與8月營收加速。",
+      "entry": "168–172元量縮守穩且外資未反手，才重新評估升級。",
+      "avoid": "不追178元附近爆量長紅，也不因單日法人轉強直接升Priority。",
+      "invalid": "跌回165元下方且量增，或外資快速反向賣超、營收動能中斷。",
+      "risk": "面板循環、驅動IC價格競爭、毛利率與爆量突破後回吐。",
+      "allocationMax": "目前0%"
+    },
+    {
+      "code": "2344",
+      "name": "華邦電",
+      "group": "watch",
+      "rank": "W2",
+      "rating": "B+／回到觀察區但仍需量縮止穩",
+      "tone": "watch",
+      "close": 183,
+      "closeDate": "2026-09-09",
+      "priceStatus": "final-close",
+      "thesis": "8月營收273.09億元、年增約289.43%，9/8外資買超約92,597張，基本面與籌碼共振；但價格快速逼近200元優先上限。",
+      "theme": "DRAM、NOR Flash、記憶體供需改善與AI基礎建設需求。",
+      "fundamentalsValuation": "營收創高，但記憶體屬高度循環產業，需以後續報價、毛利與資本支出可持續性驗證。",
+      "technical": "9/9收183元、回落2.66%；雖進入178–183元觀察區，但仍是急漲後第一段拉回。",
+      "chips": "9/8外資買超約92,597張，三大法人合計買超約97,692張。",
+      "catalyst": "記憶體報價、供給吃緊、AI與工控需求。",
+      "entry": "178–183元量縮止穩至少一日、法人未快速反向，才評估升級。",
+      "avoid": "不把第一根急跌直接視為低接訊號。",
+      "invalid": "跌破172元且量增，或記憶體報價／營收動能反轉。",
+      "risk": "記憶體循環、報價反轉、高波動。",
+      "allocationMax": "目前0%"
+    },
+    {
+      "code": "2409",
+      "name": "友達",
+      "group": "watch",
+      "rank": "W3",
+      "rating": "B+／資金與價格續強但乖離擴大",
+      "tone": "watch",
+      "close": 30.5,
+      "closeDate": "2026-09-09",
+      "priceStatus": "final-close",
+      "thesis": "9/8股價再漲約3.14%，外資買超約85,223張；但連續兩日爆量急漲，基本面仍需由面板報價、稼動率與獲利確認。",
+      "theme": "面板報價、車用／高階顯示與景氣循環。",
+      "fundamentalsValuation": "7月營收仍年減約2.64%，需看到後續營收、面板價格與毛利改善。",
+      "technical": "9/9收30.5元、續漲約3.04%，連續強勢後已高於原28–29元偏好區。",
+      "chips": "9/8外資買超約85,223張，自營商亦買超約4,815張。",
+      "catalyst": "面板報價改善、旺季需求、車用與高階產品組合。",
+      "entry": "回測29–29.5元量縮守穩，且面板基本面與法人買盤延續才評估。",
+      "avoid": "不追連續第三日強勢。",
+      "invalid": "跌回27元下方且量增，或外資快速反向。",
+      "risk": "面板循環、供需、報價、高換手。",
+      "allocationMax": "目前0%"
+    },
+    {
+      "code": "3706",
+      "name": "神達",
+      "group": "watch",
+      "rank": "W4",
+      "rating": "B+／由B-升級；除權息還原後轉強且營收加速",
+      "tone": "watch",
+      "close": 81.8,
+      "closeDate": "2026-09-09",
+      "priceStatus": "final-close-adjusted",
+      "thesis": "9/9除權息參考價約80.27元，收81.8元相對參考價上漲約1.9%；8月營收約135.57億元、年增119.89%，前8月累計約992.09億元、年增52.57%。基本面與還原後價格改善，但公司行動後仍需確認籌碼延續，因此只升至watch B+。",
+      "theme": "AI Server、CSP、資料中心。",
+      "fundamentalsValuation": "AI伺服器與雲端需求推升營收，8月及累計營收顯著成長；仍須驗證高成長能否轉化為毛利與現金流。",
+      "technical": "除權息參考價約80.27元；9/9開81.6、高82.3、低81.1、收81.8，還原後結構偏強。",
+      "chips": "除權息使名目股數與價格重設，單日籌碼須避免與未還原歷史直接比較。",
+      "catalyst": "AI Server出貨、CSP資本支出。",
+      "entry": "79.5–81元量縮守穩，且除權息後法人流向轉正才評估升級priority。",
+      "avoid": "不因落在價格區間就忽略籌碼失效。",
+      "invalid": "還原後收破77元且量增，或外資再度連續大賣。",
+      "risk": "客戶集中、毛利率與科技股估值。",
+      "allocationMax": "目前0%"
+    },
+    {
+      "code": "3231",
+      "name": "緯創",
+      "group": "watch",
+      "rank": "W5",
+      "rating": "B／由B-升級；營收獲利強但籌碼尚未翻多",
+      "tone": "watch",
+      "close": 188.5,
+      "closeDate": "2026-09-09",
+      "priceStatus": "final-close",
+      "thesis": "8月營收約4,600.65億元、年增166.48%，前8月累計年增約98.87%；Q2 EPS 4.72元、上半年EPS 7.78元，基本面催化強。9/9收188.5元反彈，但前日外資大賣尚未被一日價格反彈充分修復。",
+      "theme": "AI Server、新平台量產與CSP資本支出。",
+      "fundamentalsValuation": "基本面維持高成長，但高Beta與低毛利代工結構放大籌碼反轉風險。",
+      "technical": "9/9開185.5、高191、低184、收188.5；跌深反彈但尚未確認新支撐。",
+      "chips": "9/8外資賣超約46,059張。",
+      "catalyst": "AI Server出貨、新平台量產。",
+      "entry": "184–188元量縮守穩，且外資停止大賣才升級。",
+      "avoid": "不把急跌進入價格區間誤判為買點。",
+      "invalid": "收破178元且法人續賣。",
+      "risk": "高Beta、外資反向與估值壓縮。",
+      "allocationMax": "目前0%"
+    },
+    {
+      "code": "2303",
+      "name": "聯電",
+      "group": "watch",
+      "rank": "W6",
+      "rating": "B／由B-升級；價格修復但高波動",
+      "tone": "watch",
+      "close": 141.5,
+      "closeDate": "2026-09-09",
+      "priceStatus": "final-close",
+      "thesis": "8月營收與成熟製程題材未消失，但9/7漲停後9/8下跌約4.20%，外資賣超約63,878張。",
+      "theme": "成熟製程、特殊製程、12奈米合作與先進封裝。",
+      "fundamentalsValuation": "需驗證稼動率、ASP、折舊與毛利率。",
+      "technical": "9/9開141、高144.5、低137、收141.5；自低檔回復但盤中震盪大。",
+      "chips": "前日外資賣壓後，仍需要連續流向確認，單日反彈不足以升priority。",
+      "catalyst": "8月營收、成熟製程需求。",
+      "entry": "137–140元量縮守穩且外資賣壓收斂才評估。",
+      "avoid": "不在事件行情高換手反轉時接刀。",
+      "invalid": "放量跌破前波平台。",
+      "risk": "成熟製程循環、價格競爭與事件行情回吐。",
+      "allocationMax": "目前0%"
+    },
+    {
+      "code": "2884",
+      "name": "玉山金",
+      "group": "watch",
+      "rank": "W7",
+      "rating": "B／由B+降級；進入觀察區但盤中沖高回落",
+      "tone": "watch",
+      "close": 44.25,
+      "closeDate": "2026-09-09",
+      "priceStatus": "final-close",
+      "thesis": "前8月獲利創同期高的基本面仍有效，但9/9開46元、最高46.05元後回落收44.25元，金融類股偏弱；買點雖進入43.5–44.5元區，仍缺乏止穩與法人延續確認。",
+      "theme": "銀行核心獲利、財富管理、證券與投信成長、金融股資金輪動。",
+      "fundamentalsValuation": "核心銀行、證券與投信獲利同步改善；仍需關注利差、信用成本與估值擴張。",
+      "technical": "9/9開46、高46.05、低43.8、收44.25，長上影與失敗延續降低短線評級。",
+      "chips": "投信連續買超且9/8約11,386張，外資亦買超約4,935張，法人共振。",
+      "catalyst": "前8月獲利創高、銀行手續費與證券業務成長。",
+      "entry": "43.5–44.5元量縮止穩，且法人重新共振才升級。",
+      "avoid": "不因金融輪動單日大漲追價。",
+      "invalid": "跌破42元且法人轉賣，或獲利成長顯著降速。",
+      "risk": "利率、信用成本、金融股估值與政策風險。",
+      "allocationMax": "目前0%"
+    },
+    {
+      "code": "1815",
+      "name": "富喬",
+      "group": "watch",
+      "rank": "W8",
+      "rating": "B-／由B+降級；除權息後法人明顯轉賣",
+      "tone": "watch",
+      "close": 126,
+      "closeDate": "2026-09-09",
+      "priceStatus": "final-close-adjusted",
+      "thesis": "9/9除權息參考價約128元，不能用前收135元直接解讀跌幅；相對參考價仍下跌約1.56%。外資賣超約29,929張、投信買超約10,982張、自營商賣超約697張，三大法人合計偏賣，原先法人續買條件失效。",
+      "theme": "電子級玻纖布、CCL上游、高階伺服器／AI PCB材料需求。",
+      "fundamentalsValuation": "Q2毛利與營業利益顯著改善，獲利由低基期翻升；需區分本業改善與金融評價利益。",
+      "technical": "除權息參考價約128元；9/9開134、高135、低125、收126，盤中填權後回落。",
+      "chips": "外資大幅轉賣抵銷投信買盤，籌碼由共振轉為明顯分歧。",
+      "catalyst": "AI伺服器高階材料需求、玻纖布供需與產品組合改善。",
+      "entry": "先等待還原後價格在122–126元量縮止穩，且外資賣壓顯著收斂。",
+      "avoid": "不在公司行動前後用未還原價格追價。",
+      "invalid": "還原後跌破主要支撐且法人續賣。",
+      "risk": "高波動、原料價格、玻纖循環、公司行動造成技術指標失真。",
+      "allocationMax": "目前0%"
+    },
+    {
+      "code": "00981A",
+      "name": "主動統一台股增長",
+      "group": "watch",
+      "rank": "W9",
+      "rating": "B／高檔整理，等待淨值與流量穩定",
+      "tone": "watch",
+      "close": 29.92,
+      "closeDate": "2026-09-09",
+      "priceStatus": "final-close",
+      "thesis": "主動選股可參與AI與成長股，但9/8法人合計流量明顯偏賣，不能列核心。",
+      "theme": "主動式台股成長選股、AI與半導體。",
+      "fundamentalsValuation": "重點在持股組合、費用率、折溢價與經理人風格。",
+      "technical": "9/9開29.94、高30.35、低29.82、收29.92；高檔震盪。",
+      "chips": "9/8 ETF三大法人合計賣超約52,335張。",
+      "catalyst": "主動選股調整、AI與半導體行情。",
+      "entry": "29–29.5元量縮，且折溢價與申贖流量穩定才評估。",
+      "avoid": "不因配息或單日成交量追價。",
+      "invalid": "淨值趨勢轉弱或折價擴大。",
+      "risk": "費用率、經理人風格、持股集中與申贖流量。",
+      "allocationMax": "目前0%"
+    },
+    {
+      "code": "6770",
+      "name": "力積電",
+      "group": "watch",
+      "rank": "W10",
+      "rating": "B-／量縮價平，法人延續仍不足",
+      "tone": "watch",
+      "close": 72.4,
+      "closeDate": "2026-09-09",
+      "priceStatus": "final-close",
+      "thesis": "成熟製程與記憶體題材仍受關注，但9/8外資由前日大買轉為賣超約7,824張，法人共振未延續。",
+      "theme": "成熟製程、記憶體／特殊製程。",
+      "fundamentalsValuation": "產能利用率、產品報價與毛利改善仍是核心變數。",
+      "technical": "9/9開72.8、高74.3、低71.4、收72.4，成交量較前日縮減但尚未形成有效突破。",
+      "chips": "9/8外資賣超約7,824張，自營商亦偏賣。",
+      "catalyst": "半導體景氣回升、成熟製程需求。",
+      "entry": "68–71元量縮整理、法人重新轉正才評估。",
+      "avoid": "不追輪動高點。",
+      "invalid": "跌回67元下方且量增。",
+      "risk": "景氣循環、產能利用率與高波動。",
+      "allocationMax": "目前0%"
+    },
+    {
+      "code": "3715",
+      "name": "定穎投控",
+      "group": "watch",
+      "rank": "W11",
+      "rating": "B+／全市場事件觸發新增；營收加速但長紅不追",
+      "tone": "watch",
+      "close": 135,
+      "closeDate": "2026-09-09",
+      "priceStatus": "final-close",
+      "thesis": "全市場事件觸發新增。8月營收約29.32億元、月增15.83%、年增83.96%，前8月累計年增約46.5%；9/9收135元、上漲6.72%，量價與營收題材同步，但短線乖離過大。",
+      "theme": "AI伺服器、高階PCB、車用與海外產能。",
+      "fundamentalsValuation": "營收加速明確，但仍須確認毛利率、產品組合與擴產效益能否同步落實；急漲後估值安全邊際下降。",
+      "technical": "9/9長紅收135元、上漲6.72%；事件突破日不追。",
+      "chips": "量價轉強，但需觀察法人是否連續買進，而非單日事件交易。",
+      "catalyst": "月營收加速、高階PCB需求與新產能。",
+      "entry": "124–129元量縮守穩且法人買盤延續，才評估升級。",
+      "avoid": "不在130元以上追價。",
+      "invalid": "收破119元且量增，或營收／毛利動能反轉。",
+      "risk": "高波動、擴產執行、原料、匯率與終端需求。",
+      "allocationMax": "目前0%"
+    },
+    {
+      "code": "2324",
+      "name": "仁寶",
+      "group": "excluded",
+      "rank": "X1",
+      "rating": "B-／籌碼條件未重建，維持排除",
+      "tone": "bad",
+      "close": 38.9,
+      "closeDate": "2026-09-09",
+      "priceStatus": "final-close",
+      "thesis": "AI Server題材仍存在，但外資連續兩日大賣，推薦條件失效。",
+      "theme": "AI Server、NB與企業運算。",
+      "fundamentalsValuation": "題材需由伺服器營收占比、毛利率與獲利改善驗證。",
+      "technical": "9/8收39.05元，反彈未伴隨外資回補。",
+      "chips": "9/8外資賣超約28,275張，連續兩日合計賣超逾8萬張。",
+      "catalyst": "AI Server出貨與產品組合改善。",
+      "entry": "須重新建立基本面、籌碼與價格三者共振才可重新納入。",
+      "avoid": "不以低價或單日反彈搶進。",
+      "invalid": "需重新建立籌碼、基本面與價格結構後才可重新納入。",
+      "risk": "低毛利率、NB需求、籌碼快速反轉。",
+      "allocationMax": "目前0%"
+    }
+  ],
+  "allocation": [
+    {
+      "code": "0050",
+      "name": "元大台灣50",
+      "max": "15%",
+      "bucket": "core",
+      "condition": "9/10官方開盤109.00–109.75元買100股；區間外取消"
+    },
+    {
+      "code": "1513",
+      "name": "中興電",
+      "max": "15%",
+      "bucket": "candidate",
+      "condition": "持有150股、目前不加碼；收破160元且量增則失效"
+    },
+    {
+      "code": "CASH",
+      "name": "保留現金",
+      "max": "70%",
+      "bucket": "cash",
+      "condition": "指數高檔輪動且事件股多已急漲，未達條件時維持高現金"
+    }
+  ],
+  "changes": [
+    {
+      "code": "1513",
+      "change": "保留 priority A-",
+      "reason": "9/9舊條件單成交50股；基本面與價格條件仍有效，總持有150股後不再加碼。"
+    },
+    {
+      "code": "0050",
+      "change": "保留 core",
+      "reason": "指數趨勢未失效，但盤中漲幅收斂，僅接受小幅回測。"
+    },
+    {
+      "code": "3715",
+      "change": "全市場事件觸發新增 watch B+",
+      "reason": "8月營收年增83.96%、前8月累計年增約46.5%，但9/9上漲6.72%，不追。"
+    },
+    {
+      "code": "3706",
+      "change": "watch B- 升級至 B+",
+      "reason": "除權息參考價約80.27元，收81.8元還原後轉強；8月營收年增119.89%，仍待法人延續。"
+    },
+    {
+      "code": "3231",
+      "change": "watch B- 升級至 B",
+      "reason": "營收與EPS催化強、價格反彈，但前日外資大賣尚未修復。"
+    },
+    {
+      "code": "2303",
+      "change": "watch B- 升級至 B",
+      "reason": "價格修復但高波動，籌碼需連續確認。"
+    },
+    {
+      "code": "2884",
+      "change": "watch B+ 降級至 B",
+      "reason": "進入觀察區但盤中沖高回落、金融類股偏弱。"
+    },
+    {
+      "code": "1815",
+      "change": "watch B+ 降級至 B-",
+      "reason": "除權息後外資大幅轉賣，原法人共振條件失效。"
+    },
+    {
+      "code": "4961",
+      "change": "保留 watch B+",
+      "reason": "基本面事件仍有效，但未回168–172元理想區。"
+    },
+    {
+      "code": "2344",
+      "change": "保留 watch B+",
+      "reason": "回到觀察區，但仍需量縮止穩。"
+    },
+    {
+      "code": "2409",
+      "change": "保留 watch B+",
+      "reason": "資金與價格續強但乖離擴大。"
+    },
+    {
+      "code": "00981A",
+      "change": "保留 watch B",
+      "reason": "高檔整理，等待淨值與申贖流量穩定。"
+    },
+    {
+      "code": "6770",
+      "change": "保留 watch B-",
+      "reason": "量縮價平，法人延續仍不足。"
+    },
+    {
+      "code": "2324",
+      "change": "保留 excluded",
+      "reason": "基本面、籌碼與價格共振仍未重建。"
+    }
+  ],
+  "conclusion": "9/9有效個股推薦仍只有1513中興電 priority A-，核心ETF仍為0050。1513前一版50股條件單於官方開盤164.5元成交，0050因開盤109.95元高於上限取消。新增3715定穎投控為watch B+；3706、3231、2303升級但均未達可執行門檻，2884與1815降級。9/10僅建立0050一筆回測條件單，策略基準維持約70%現金。",
+  "notes": [
+    "Universe screening covered TWSE/TPEX common stocks and ETFs; warrants, ETNs, convertible bonds and preferred shares were excluded.",
+    "Event-trigger review covered revenue acceleration, unusual volume-price action and institutional flow; 3715 was newly surfaced.",
+    "3706 and 1815 had corporate actions on 2026-09-09; ratings used reference/adjusted prices rather than misleading raw day-over-day changes.",
+    "Priority/core and selected were regenerated from 2026-09-09 public evidence; selected is 1513 only.",
+    "Paper fills were determined only from the 2026-09-08 snapshot nextOrders and official 2026-09-09 opening prices.",
+    "Portfolio data is an isolated TWD 200,000 paper experiment and contains no real user holdings."
+  ],
+  "sources": [
+    {
+      "title": "TWSE 9/9大盤與個股成交資訊",
+      "url": "https://www.twse.com.tw/zh/trading/historical/mi-index.html",
+      "asOf": "2026-09-09"
+    },
+    {
+      "title": "TWSE 9/9三大法人統計",
+      "url": "https://www.twse.com.tw/zh/trading/foreign/bfi82u.html",
+      "asOf": "2026-09-09"
+    },
+    {
+      "title": "TPEx 9/9三大法人交易資訊",
+      "url": "https://www.tpex.org.tw/zh-tw/mainboard/trading/major-institutional/summary/day.html",
+      "asOf": "2026-09-09"
+    },
+    {
+      "title": "0050 9/9官方行情對照",
+      "url": "https://www.twse.com.tw/zh/trading/historical/stock-day.html",
+      "asOf": "2026-09-09"
+    },
+    {
+      "title": "中興電8月營收與行情",
+      "url": "https://tw.stock.yahoo.com/quote/1513.TW",
+      "asOf": "2026-09-09"
+    },
+    {
+      "title": "神達8月營收與除權息資訊",
+      "url": "https://tw.stock.yahoo.com/quote/3706.TW",
+      "asOf": "2026-09-09"
+    },
+    {
+      "title": "富喬除權息與法人資訊",
+      "url": "https://tw.stock.yahoo.com/quote/1815.TWO",
+      "asOf": "2026-09-09"
+    },
+    {
+      "title": "緯創8月營收與獲利資訊",
+      "url": "https://tw.stock.yahoo.com/quote/3231.TW",
+      "asOf": "2026-09-09"
+    },
+    {
+      "title": "定穎投控8月營收與行情",
+      "url": "https://tw.stock.yahoo.com/quote/3715.TW",
+      "asOf": "2026-09-09"
+    }
+  ]
+}
