@@ -1,0 +1,562 @@
+{
+  "targetDate": "2026-09-16",
+  "generatedAt": "2026-09-15T17:41:35.182Z",
+  "codes": [
+    "1513",
+    "2303",
+    "0050",
+    "4961",
+    "6770",
+    "2884",
+    "00981A",
+    "3231",
+    "2409",
+    "1815"
+  ],
+  "sources": {
+    "twse-mi-index.raw.txt": {
+      "bytes": 64,
+      "topLevelDate": null,
+      "codeMatches": {},
+      "keywordMatches": [],
+      "targetDateMatches": []
+    },
+    "twse-fmtqik.raw.txt": {
+      "bytes": 1443,
+      "topLevelDate": "20260916",
+      "codeMatches": {},
+      "keywordMatches": [
+        {
+          "table": "root.data",
+          "row": {
+            "日期": "115/09/01",
+            "成交股數": "13,000,849,196",
+            "成交金額": "1,187,571,567,117",
+            "成交筆數": "5,301,801",
+            "發行量加權股價指數": "46,948.72",
+            "漲跌點數": "820.25"
+          }
+        },
+        {
+          "table": "root.data",
+          "row": {
+            "日期": "115/09/02",
+            "成交股數": "10,824,863,832",
+            "成交金額": "976,499,979,054",
+            "成交筆數": "5,093,402",
+            "發行量加權股價指數": "46,164.72",
+            "漲跌點數": "-784.00"
+          }
+        },
+        {
+          "table": "root.data",
+          "row": {
+            "日期": "115/09/03",
+            "成交股數": "11,201,667,577",
+            "成交金額": "993,261,606,190",
+            "成交筆數": "5,471,695",
+            "發行量加權股價指數": "45,857.66",
+            "漲跌點數": "-307.06"
+          }
+        },
+        {
+          "table": "root.data",
+          "row": {
+            "日期": "115/09/04",
+            "成交股數": "9,267,046,831",
+            "成交金額": "858,244,966,564",
+            "成交筆數": "4,020,260",
+            "發行量加權股價指數": "46,551.13",
+            "漲跌點數": "693.47"
+          }
+        },
+        {
+          "table": "root.data",
+          "row": {
+            "日期": "115/09/07",
+            "成交股數": "11,024,654,794",
+            "成交金額": "997,944,843,239",
+            "成交筆數": "5,043,482",
+            "發行量加權股價指數": "47,326.27",
+            "漲跌點數": "775.14"
+          }
+        },
+        {
+          "table": "root.data",
+          "row": {
+            "日期": "115/09/08",
+            "成交股數": "9,521,469,130",
+            "成交金額": "922,658,079,092",
+            "成交筆數": "4,777,144",
+            "發行量加權股價指數": "47,105.78",
+            "漲跌點數": "-220.49"
+          }
+        },
+        {
+          "table": "root.data",
+          "row": {
+            "日期": "115/09/09",
+            "成交股數": "9,258,080,220",
+            "成交金額": "815,976,678,108",
+            "成交筆數": "4,148,302",
+            "發行量加權股價指數": "47,183.36",
+            "漲跌點數": "77.58"
+          }
+        },
+        {
+          "table": "root.data",
+          "row": {
+            "日期": "115/09/10",
+            "成交股數": "8,675,764,818",
+            "成交金額": "750,742,811,639",
+            "成交筆數": "4,045,306",
+            "發行量加權股價指數": "46,940.49",
+            "漲跌點數": "-242.87"
+          }
+        },
+        {
+          "table": "root.data",
+          "row": {
+            "日期": "115/09/11",
+            "成交股數": "10,111,607,761",
+            "成交金額": "762,245,189,934",
+            "成交筆數": "4,824,572",
+            "發行量加權股價指數": "46,184.85",
+            "漲跌點數": "-755.64"
+          }
+        },
+        {
+          "table": "root.data",
+          "row": {
+            "日期": "115/09/14",
+            "成交股數": "8,822,022,033",
+            "成交金額": "665,316,266,033",
+            "成交筆數": "4,064,716",
+            "發行量加權股價指數": "45,862.52",
+            "漲跌點數": "-322.33"
+          }
+        },
+        {
+          "table": "root.data",
+          "row": {
+            "日期": "115/09/15",
+            "成交股數": "8,228,715,551",
+            "成交金額": "634,706,804,618",
+            "成交筆數": "3,947,260",
+            "發行量加權股價指數": "45,511.49",
+            "漲跌點數": "-351.03"
+          }
+        }
+      ],
+      "targetDateMatches": []
+    },
+    "twse-t86.raw.txt": {
+      "bytes": 61,
+      "topLevelDate": null,
+      "codeMatches": {},
+      "keywordMatches": [],
+      "targetDateMatches": []
+    },
+    "tpex-mainboard-daily-close-quotes.raw.txt": {
+      "bytes": 4434561,
+      "topLevelDate": null,
+      "codeMatches": {
+        "1815": [
+          {
+            "table": "root[152]",
+            "row": {
+              "Date": "1150915",
+              "SecuritiesCompanyCode": "1815",
+              "CompanyName": "富喬",
+              "Close": "114.50",
+              "Change": "-5.50 ",
+              "Open": "119.00",
+              "High": "121.50",
+              "Low": "114.50",
+              "Average": "117.25",
+              "TradingShares": "46008990",
+              "TransactionAmount": "5394510280",
+              "TransactionNumber": "27146",
+              "LatestBidPrice": "114.50",
+              "LatesAskPrice": "115.00",
+              "Capitals": "614703462",
+              "NextReferencePrice": "114.50",
+              "NextLimitUp": "125.50",
+              "NextLimitDown": "103.50"
+            }
+          }
+        ]
+      },
+      "keywordMatches": [],
+      "targetDateMatches": []
+    },
+    "tpex-mainboard-daily-close-quotes-legacy.raw.txt": {
+      "bytes": 665,
+      "topLevelDate": "20260916",
+      "codeMatches": {},
+      "keywordMatches": [
+        {
+          "table": "root.tables[0]",
+          "row": {
+            "title": "上櫃股票每日收盤行情(不含定價)",
+            "date": "115/09/16",
+            "category": "所有證券(不含權證、牛熊證)",
+            "totalCount": 0,
+            "fields": [
+              "代號",
+              "名稱",
+              "收盤 ",
+              "漲跌",
+              "開盤 ",
+              "最高 ",
+              "最低",
+              "成交股數  ",
+              " 成交金額(元)",
+              " 成交筆數 ",
+              "最後買價",
+              "最後買量<br>(張數)",
+              "最後賣價",
+              "最後賣量<br>(張數)",
+              "發行股數 ",
+              "次日漲停價 ",
+              "次日跌停價"
+            ],
+            "data": [],
+            "summary": [],
+            "notes": [
+              "ETF證券代號第六碼為K、C者，表示該ETF以外幣交易，其一交易單位(張)應為100受益權或其整倍數，請詳其公開說明書。"
+            ]
+          }
+        }
+      ],
+      "targetDateMatches": [
+        {
+          "table": "root.tables[0]",
+          "row": {
+            "title": "上櫃股票每日收盤行情(不含定價)",
+            "date": "115/09/16",
+            "category": "所有證券(不含權證、牛熊證)",
+            "totalCount": 0,
+            "fields": [
+              "代號",
+              "名稱",
+              "收盤 ",
+              "漲跌",
+              "開盤 ",
+              "最高 ",
+              "最低",
+              "成交股數  ",
+              " 成交金額(元)",
+              " 成交筆數 ",
+              "最後買價",
+              "最後買量<br>(張數)",
+              "最後賣價",
+              "最後賣量<br>(張數)",
+              "發行股數 ",
+              "次日漲停價 ",
+              "次日跌停價"
+            ],
+            "data": [],
+            "summary": [],
+            "notes": [
+              "ETF證券代號第六碼為K、C者，表示該ETF以外幣交易，其一交易單位(張)應為100受益權或其整倍數，請詳其公開說明書。"
+            ]
+          }
+        }
+      ]
+    },
+    "tpex-daily-trading-index.raw.txt": {
+      "bytes": 1599,
+      "topLevelDate": null,
+      "codeMatches": {},
+      "keywordMatches": [],
+      "targetDateMatches": []
+    },
+    "tpex-3insti-daily-trading.raw.txt": {
+      "bytes": 852933,
+      "topLevelDate": null,
+      "codeMatches": {
+        "1815": [
+          {
+            "table": "root[134]",
+            "row": {
+              "Date": "1150915",
+              "SecuritiesCompanyCode": "1815",
+              "CompanyName": "富喬",
+              "Foreign Investors include Mainland Area Investors (Foreign Dealers excluded)-Total Buy": "14635051",
+              " Foreign Investors include Mainland Area Investors (Foreign Dealers excluded)-Total Sell": "17568914",
+              "Foreign Investors include Mainland Area Investors (Foreign Dealers excluded)-Difference": "-2933863",
+              "Foreign Dealers-Total Buy": "0",
+              "Foreign Dealers-TotalSell": "0",
+              "ForeignDealers-Difference": "0",
+              "ForeignInvestorsIncludeMainlandAreaInvestors-TotalBuy": "14635051",
+              "ForeignInvestorsIncludeMainlandAreaInvestors-TotalSell": "17568914",
+              "ForeignInvestorsInclude MainlandAreaInvestors-Difference": "-2933863",
+              "SecuritiesInvestmentTrustCompanies-TotalBuy": "6843000",
+              "SecuritiesInvestmentTrustCompanies-TotalSell": "3232000",
+              "SecuritiesInvestmentTrustCompanies-Difference": "3611000",
+              "Dealers-TotalBuy": "360555",
+              "Dealers-TotalSell": "710006",
+              "Dealers-Difference": "-349451",
+              "Dealers -TotalSell": "669006",
+              "TotalDifference": "327686"
+            }
+          }
+        ]
+      },
+      "keywordMatches": [],
+      "targetDateMatches": []
+    },
+    "tpex-3insti-summary.raw.txt": {
+      "bytes": 1016,
+      "topLevelDate": null,
+      "codeMatches": {},
+      "keywordMatches": [
+        {
+          "table": "root[0]",
+          "row": {
+            "Date": "1150915",
+            "Investor": "外資及陸資合計",
+            "PurchaseAmount": "55831168847",
+            "SaleAmount": "58463668620",
+            "Net": "-2632499773"
+          }
+        },
+        {
+          "table": "root[4]",
+          "row": {
+            "Date": "1150915",
+            "Investor": "自營商合計",
+            "PurchaseAmount": "4123533274",
+            "SaleAmount": "4986462703",
+            "Net": "-862929429"
+          }
+        },
+        {
+          "table": "root[7]",
+          "row": {
+            "Date": "1150915",
+            "Investor": "三大法人合計*",
+            "PurchaseAmount": "63481595437",
+            "SaleAmount": "65756718014",
+            "Net": "-2275122577"
+          }
+        }
+      ],
+      "targetDateMatches": []
+    }
+  },
+  "gateMatrix": {
+    "targetDate": "2026-09-16",
+    "timezone": "Asia/Taipei",
+    "generatedAt": "2026-09-15T17:41:35.116Z",
+    "overallStatus": "VERIFY_FAILED",
+    "requiredGates": [
+      "twse-daily-close-quotes",
+      "twse-market-close-statistics",
+      "twse-market-turnover",
+      "twse-individual-institutional",
+      "tpex-daily-close-quotes",
+      "tpex-market-turnover-index",
+      "tpex-individual-institutional",
+      "tpex-institutional-summary"
+    ],
+    "gates": [
+      {
+        "gate": "twse-daily-close-quotes",
+        "status": "VERIFY_FAILED",
+        "sources": [
+          "twse-mi-index-daily-close"
+        ],
+        "note": "No official source produced affirmative target-date evidence in this run or a preserved prior PASS."
+      },
+      {
+        "gate": "twse-market-close-statistics",
+        "status": "VERIFY_FAILED",
+        "sources": [
+          "twse-mi-index"
+        ],
+        "note": "No official source produced affirmative target-date evidence in this run or a preserved prior PASS."
+      },
+      {
+        "gate": "twse-market-turnover",
+        "status": "PASS",
+        "source": "twse-fmtqik",
+        "officialDateEvidence": "20260916"
+      },
+      {
+        "gate": "twse-individual-institutional",
+        "status": "VERIFY_FAILED",
+        "sources": [
+          "twse-t86"
+        ],
+        "note": "No official source produced affirmative target-date evidence in this run or a preserved prior PASS."
+      },
+      {
+        "gate": "tpex-daily-close-quotes",
+        "status": "PASS",
+        "source": "tpex-mainboard-daily-close-quotes-legacy",
+        "officialDateEvidence": "20260916"
+      },
+      {
+        "gate": "tpex-market-turnover-index",
+        "status": "VERIFY_FAILED",
+        "sources": [
+          "tpex-daily-trading-index"
+        ],
+        "note": "No official source produced affirmative target-date evidence in this run or a preserved prior PASS."
+      },
+      {
+        "gate": "tpex-individual-institutional",
+        "status": "VERIFY_FAILED",
+        "sources": [
+          "tpex-3insti-daily-trading"
+        ],
+        "note": "No official source produced affirmative target-date evidence in this run or a preserved prior PASS."
+      },
+      {
+        "gate": "tpex-institutional-summary",
+        "status": "VERIFY_FAILED",
+        "sources": [
+          "tpex-3insti-summary"
+        ],
+        "note": "No official source produced affirmative target-date evidence in this run or a preserved prior PASS."
+      }
+    ],
+    "captures": [
+      {
+        "source": "twse-mi-index-daily-close",
+        "gate": "twse-daily-close-quotes",
+        "institution": "TWSE",
+        "kind": "daily-close-quotes",
+        "url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20260916&type=ALL&response=json",
+        "targetDate": "2026-09-16",
+        "capturedAt": "2026-09-15T17:41:21.829Z",
+        "status": "VERIFY_FAILED",
+        "httpStatus": 200,
+        "contentType": "application/json;charset=UTF-8",
+        "bytes": 64,
+        "officialDateEvidence": null,
+        "note": "Readable official payload obtained, but affirmative target-date evidence was not found; do not classify as missing."
+      },
+      {
+        "source": "twse-mi-index",
+        "gate": "twse-market-close-statistics",
+        "institution": "TWSE",
+        "kind": "market-close-statistics",
+        "url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20260916&type=ALL&response=json",
+        "targetDate": "2026-09-16",
+        "capturedAt": "2026-09-15T17:41:23.644Z",
+        "status": "VERIFY_FAILED",
+        "httpStatus": 200,
+        "contentType": "application/json;charset=UTF-8",
+        "bytes": 64,
+        "officialDateEvidence": null,
+        "note": "Readable official payload obtained, but affirmative target-date evidence was not found; do not classify as missing."
+      },
+      {
+        "source": "twse-fmtqik",
+        "gate": "twse-market-turnover",
+        "institution": "TWSE",
+        "kind": "market-turnover",
+        "url": "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?date=20260916&response=json",
+        "targetDate": "2026-09-16",
+        "capturedAt": "2026-09-15T17:41:23.844Z",
+        "status": "PASS",
+        "httpStatus": 200,
+        "contentType": "application/json;charset=UTF-8",
+        "bytes": 1443,
+        "officialDateEvidence": "20260916"
+      },
+      {
+        "source": "twse-t86",
+        "gate": "twse-individual-institutional",
+        "institution": "TWSE",
+        "kind": "individual-institutional",
+        "url": "https://www.twse.com.tw/rwd/zh/fund/T86?date=20260916&selectType=ALL&response=json",
+        "targetDate": "2026-09-16",
+        "capturedAt": "2026-09-15T17:41:24.302Z",
+        "status": "VERIFY_FAILED",
+        "httpStatus": 200,
+        "contentType": "application/json;charset=UTF-8",
+        "bytes": 61,
+        "officialDateEvidence": null,
+        "note": "Readable official payload obtained, but affirmative target-date evidence was not found; do not classify as missing."
+      },
+      {
+        "source": "tpex-mainboard-daily-close-quotes",
+        "gate": "tpex-daily-close-quotes",
+        "institution": "TPEx",
+        "kind": "daily-close-quotes",
+        "url": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes",
+        "targetDate": "2026-09-16",
+        "capturedAt": "2026-09-15T17:41:24.501Z",
+        "status": "VERIFY_FAILED",
+        "httpStatus": 200,
+        "contentType": "application/json",
+        "bytes": 4434561,
+        "officialDateEvidence": null,
+        "note": "Readable official payload obtained, but affirmative target-date evidence was not found; do not classify as missing."
+      },
+      {
+        "source": "tpex-mainboard-daily-close-quotes-legacy",
+        "gate": "tpex-daily-close-quotes",
+        "institution": "TPEx",
+        "kind": "daily-close-quotes",
+        "url": "https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&d=115/09/16&se=EW&o=json",
+        "targetDate": "2026-09-16",
+        "capturedAt": "2026-09-15T17:41:32.967Z",
+        "status": "PASS",
+        "httpStatus": 200,
+        "contentType": "application/json;charset=UTF-8",
+        "bytes": 665,
+        "officialDateEvidence": "20260916"
+      },
+      {
+        "source": "tpex-daily-trading-index",
+        "gate": "tpex-market-turnover-index",
+        "institution": "TPEx",
+        "kind": "market-turnover-index",
+        "url": "https://www.tpex.org.tw/openapi/v1/tpex_daily_trading_index",
+        "targetDate": "2026-09-16",
+        "capturedAt": "2026-09-15T17:41:33.193Z",
+        "status": "VERIFY_FAILED",
+        "httpStatus": 200,
+        "contentType": "application/json",
+        "bytes": 1599,
+        "officialDateEvidence": null,
+        "note": "Readable official payload obtained, but affirmative target-date evidence was not found; do not classify as missing."
+      },
+      {
+        "source": "tpex-3insti-daily-trading",
+        "gate": "tpex-individual-institutional",
+        "institution": "TPEx",
+        "kind": "individual-institutional",
+        "url": "https://www.tpex.org.tw/openapi/v1/tpex_3insti_daily_trading",
+        "targetDate": "2026-09-16",
+        "capturedAt": "2026-09-15T17:41:33.424Z",
+        "status": "VERIFY_FAILED",
+        "httpStatus": 200,
+        "contentType": "application/json",
+        "bytes": 852933,
+        "officialDateEvidence": null,
+        "note": "Readable official payload obtained, but affirmative target-date evidence was not found; do not classify as missing."
+      },
+      {
+        "source": "tpex-3insti-summary",
+        "gate": "tpex-institutional-summary",
+        "institution": "TPEx",
+        "kind": "institutional-summary",
+        "url": "https://www.tpex.org.tw/openapi/v1/tpex_3insti_summary",
+        "targetDate": "2026-09-16",
+        "capturedAt": "2026-09-15T17:41:34.887Z",
+        "status": "VERIFY_FAILED",
+        "httpStatus": 200,
+        "contentType": "application/json",
+        "bytes": 1016,
+        "officialDateEvidence": null,
+        "note": "Readable official payload obtained, but affirmative target-date evidence was not found; do not classify as missing."
+      }
+    ]
+  }
+}
