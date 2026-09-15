@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/capture-official-market-data.yml'
+      - '.github/market-data-trigger'
   workflow_dispatch:
     inputs:
       target_date:
@@ -12,7 +13,6 @@ on:
         required: false
         type: string
   schedule:
-    # GitHub Actions cron is UTC. 10:15/11:15/12:15/13:15/14:15 UTC = 18:15–22:15 Asia/Taipei.
     - cron: '15 10-14 * * 1-5'
 
 permissions:
@@ -31,17 +31,14 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-
       - name: Capture official sources
         env:
           TARGET_DATE: ${{ inputs.target_date }}
         run: node scripts/fetch-official-market-data.mjs
-
       - name: Commit raw evidence when changed
         shell: bash
         run: |
