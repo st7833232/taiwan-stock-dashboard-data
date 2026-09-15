@@ -39,6 +39,10 @@ jobs:
         env:
           TARGET_DATE: ${{ inputs.target_date }}
         run: node scripts/fetch-official-market-data.mjs
+      - name: Summarize captured evidence
+        env:
+          TARGET_DATE: ${{ inputs.target_date }}
+        run: node scripts/summarize-official-market-data.mjs
       - name: Commit raw evidence when changed
         shell: bash
         run: |
