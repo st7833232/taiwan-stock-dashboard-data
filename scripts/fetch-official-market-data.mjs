@@ -20,7 +20,7 @@ const twseMiIndexUrl = `https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?dat
 const sources = [
   { id: 'twse-mi-index-daily-close', gate: 'twse-daily-close-quotes', institution: 'TWSE', kind: 'daily-close-quotes', url: twseMiIndexUrl },
   { id: 'twse-mi-index', gate: 'twse-market-close-statistics', institution: 'TWSE', kind: 'market-close-statistics', url: twseMiIndexUrl },
-  { id: 'twse-fmtqik', gate: 'twse-market-turnover', institution: 'TWSE', kind: 'market-turnover', url: `https://www.twse.com.tw/rwd/zh/exchangeReport/FMTQIK?date=${compact}&response=json` },
+  { id: 'twse-fmtqik', gate: 'twse-market-turnover', institution: 'TWSE', kind: 'market-turnover', url: `https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?date=${compact}&response=json` },
   { id: 'twse-t86', gate: 'twse-individual-institutional', institution: 'TWSE', kind: 'individual-institutional', url: `https://www.twse.com.tw/rwd/zh/fund/T86?date=${compact}&selectType=ALL&response=json` },
   { id: 'tpex-mainboard-daily-close-quotes', gate: 'tpex-daily-close-quotes', institution: 'TPEx', kind: 'daily-close-quotes', url: 'https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes' },
   { id: 'tpex-mainboard-daily-close-quotes-legacy', gate: 'tpex-daily-close-quotes', institution: 'TPEx', kind: 'daily-close-quotes', url: `https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&d=${rocDate}&se=EW&o=json` },
