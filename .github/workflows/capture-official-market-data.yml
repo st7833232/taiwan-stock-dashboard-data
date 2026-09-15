@@ -1,0 +1,54 @@
+name: Capture official market data
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_date:
+        description: Optional target date (YYYY-MM-DD, Asia/Taipei)
+        required: false
+        type: string
+  schedule:
+    # GitHub Actions cron is UTC. 10:15/11:15/12:15/13:15/14:15 UTC = 18:15–22:15 Asia/Taipei.
+    - cron: '15 10-14 * * 1-5'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: official-market-data-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Capture official sources
+        env:
+          TARGET_DATE: ${{ inputs.target_date }}
+        run: node scripts/fetch-official-market-data.mjs
+
+      - name: Commit raw evidence when changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- raw/ && [ -z "$(git status --porcelain --untracked-files=all raw/)" ]; then
+            echo "No raw-data changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add raw/
+          git commit -m "data: capture official market evidence"
+          git pull --rebase origin main
+          git push origin HEAD:main
