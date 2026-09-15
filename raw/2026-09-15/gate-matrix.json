@@ -1,7 +1,7 @@
 {
   "targetDate": "2026-09-15",
   "timezone": "Asia/Taipei",
-  "generatedAt": "2026-09-15T12:24:31.602Z",
+  "generatedAt": "2026-09-15T12:44:49.907Z",
   "captures": [
     {
       "source": "twse-t86",
@@ -9,7 +9,7 @@
       "kind": "individual-institutional",
       "url": "https://www.twse.com.tw/rwd/zh/fund/T86?date=20260915&selectType=ALL&response=json",
       "targetDate": "2026-09-15",
-      "capturedAt": "2026-09-15T12:24:21.259Z",
+      "capturedAt": "2026-09-15T12:44:40.902Z",
       "status": "PASS",
       "httpStatus": 200,
       "contentType": "application/json;charset=UTF-8",
@@ -22,7 +22,7 @@
       "kind": "individual-institutional",
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_3insti_daily_trading",
       "targetDate": "2026-09-15",
-      "capturedAt": "2026-09-15T12:24:23.170Z",
+      "capturedAt": "2026-09-15T12:44:42.674Z",
       "status": "PASS",
       "httpStatus": 200,
       "contentType": "application/json",
@@ -35,7 +35,7 @@
       "kind": "institutional-summary",
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_3insti_summary",
       "targetDate": "2026-09-15",
-      "capturedAt": "2026-09-15T12:24:30.787Z",
+      "capturedAt": "2026-09-15T12:44:45.424Z",
       "status": "PASS",
       "httpStatus": 200,
       "contentType": "application/json",
