@@ -1,6 +1,19 @@
 # 每日推薦與 20 萬模擬帳戶更新協議
 
-本文件是 `st7833232/taiwan-stock-dashboard-data` 的日常資料發布規範。日常研究對話只授權更新本資料庫的公開 JSON；不得因此修改或部署 `st7833232/taiwan-stock-research-dashboard`，不得建立或恢復排程，也不得提交任何秘密資訊或真實庫存。
+本文件是 `st7833232/taiwan-stock-dashboard-data` 的日常資料發布規範。日常研究對話只授權更新本資料庫的公開 JSON；不得因此修改或部署 `st7833232/taiwan-stock-research-dashboard`，不得建立或恢復「研究、推薦、模擬交易或網站部署」排程，也不得提交任何秘密資訊或真實庫存。
+
+允許本資料庫建立純資料基礎設施排程，用於自動擷取、保存與驗證 TWSE、TPEx 等官方公開市場資料。此類排程不得自行產生研究結論、推薦、模擬交易、修改 `manifest.json` 或部署網站；其輸出只能作為後續資料完整性 Gate 與研究流程的官方原始證據。
+
+### 官方市場資料擷取器例外
+
+- 可使用 GitHub Actions 定時執行官方公開資料擷取器。
+- 優先直接讀取官方 API／OpenAPI；若官方 API 無法取得，才依序嘗試同機構官方 HTML／CSV／其他免費官方端點。
+- TPEx 上櫃個股三大法人明細主要來源為免費官方 OpenAPI `tpex_3insti_daily_trading`；TPEx 官方三大法人買賣明細 HTML／CSV 為 fallback 與交叉驗證。S35 付費資料商品不得作為主要 Gate。
+- 擷取器的網路錯誤、403、timeout、解析失敗或無法取得 payload 只能記錄為 `VERIFY_FAILED`，不得轉述為「官方資料缺失」。
+- 只有官方 payload／頁面實際顯示目標交易日，才能記為 `PASS`。一旦某來源對該交易日 PASS，後續其他擷取失敗不得將其降級。
+- `CONFIRMED_MISSING` 必須有可讀官方來源明確顯示目標日不存在／尚未發布，且至少另一個官方來源或端點交叉確認。
+- Search snippet、搜尋索引日期、第三方資料不得作為 freshness Gate 證據。
+- 原始擷取結果應保存於日期化路徑（例如 `raw/YYYY-MM-DD/`），並保留來源、擷取時間、HTTP／解析狀態與官方資料日期，供後續稽核。
 
 ## 1. 基準狀態與權限邊界
 
