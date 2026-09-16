@@ -43,7 +43,11 @@ jobs:
         env:
           TARGET_DATE: ${{ inputs.target_date }}
         run: node scripts/summarize-official-market-data.mjs
-      - name: Commit raw evidence when changed
+      - name: Check publication recovery state
+        env:
+          TARGET_DATE: ${{ inputs.target_date }}
+        run: node scripts/check-daily-publication.mjs
+      - name: Commit raw evidence and recovery state when changed
         shell: bash
         run: |
           set -euo pipefail
