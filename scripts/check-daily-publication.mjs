@@ -11,6 +11,7 @@ const statePath = path.join(rawDir, 'publication-state.json');
 
 const readJson = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
 const exists = (p) => fs.existsSync(p);
+const normalizeHistory = (value) => Array.isArray(value) ? value : Array.isArray(value?.history) ? value.history : Array.isArray(value?.items) ? value.items : [];
 
 let state = {
   targetDate,
@@ -35,17 +36,18 @@ if (!exists(gatePath)) {
       state.manifestRevision = manifest.revision || null;
       const paths = [manifest.researchPath, manifest.selectionHistoryPath, manifest.paperAccountPath];
       const pathsExist = paths.every((p) => typeof p === 'string' && exists(p));
+      const revisionDir = typeof manifest.revision === 'string' ? `snapshots/${manifest.revision}/` : null;
+      const sameRevision = Boolean(revisionDir) && paths.every((p) => typeof p === 'string' && p.startsWith(revisionDir));
       let datesMatch = false;
       let selectionUnique = false;
       if (pathsExist) {
         const research = readJson(manifest.researchPath);
-        const history = readJson(manifest.selectionHistoryPath);
+        const history = normalizeHistory(readJson(manifest.selectionHistoryPath));
         const paper = readJson(manifest.paperAccountPath);
         datesMatch = research.researchDate === targetDate && research.latestTradingDate === targetDate && paper.asOf === targetDate;
-        selectionUnique = Array.isArray(history) && history.filter((row) => row?.date === targetDate).length === 1;
+        selectionUnique = history.filter((row) => row?.date === targetDate).length === 1;
       }
-      const revisionMatches = typeof manifest.revision === 'string' && manifest.revision.startsWith(`${targetDate}-`);
-      state.publicationComplete = revisionMatches && pathsExist && datesMatch && selectionUnique;
+      state.publicationComplete = sameRevision && pathsExist && datesMatch && selectionUnique;
       if (state.publicationComplete) {
         state.stage = 'DATA_UPDATED';
         state.reason = 'Gate PASS and manifest plus all referenced snapshot files are complete for target date';
