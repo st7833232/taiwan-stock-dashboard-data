@@ -1,8 +1,8 @@
 {
   "targetDate": "2026-09-17",
   "timezone": "Asia/Taipei",
-  "generatedAt": "2026-09-16T17:23:07.607Z",
-  "overallStatus": "VERIFY_FAILED",
+  "generatedAt": "2026-09-17T15:00:24.951Z",
+  "overallStatus": "PASS",
   "requiredGates": [
     "twse-daily-close-quotes",
     "twse-market-close-statistics",
@@ -16,19 +16,15 @@
   "gates": [
     {
       "gate": "twse-daily-close-quotes",
-      "status": "VERIFY_FAILED",
-      "sources": [
-        "twse-mi-index-daily-close"
-      ],
-      "note": "No official source produced affirmative target-date evidence in this run or a preserved prior PASS."
+      "status": "PASS",
+      "source": "twse-mi-index-daily-close",
+      "officialDateEvidence": "20260917"
     },
     {
       "gate": "twse-market-close-statistics",
-      "status": "VERIFY_FAILED",
-      "sources": [
-        "twse-mi-index"
-      ],
-      "note": "No official source produced affirmative target-date evidence in this run or a preserved prior PASS."
+      "status": "PASS",
+      "source": "twse-mi-index",
+      "officialDateEvidence": "20260917"
     },
     {
       "gate": "twse-market-turnover",
@@ -38,41 +34,33 @@
     },
     {
       "gate": "twse-individual-institutional",
-      "status": "VERIFY_FAILED",
-      "sources": [
-        "twse-t86"
-      ],
-      "note": "No official source produced affirmative target-date evidence in this run or a preserved prior PASS."
+      "status": "PASS",
+      "source": "twse-t86",
+      "officialDateEvidence": "20260917"
     },
     {
       "gate": "tpex-daily-close-quotes",
       "status": "PASS",
-      "source": "tpex-mainboard-daily-close-quotes-legacy",
-      "officialDateEvidence": "20260917"
+      "source": "tpex-mainboard-daily-close-quotes",
+      "officialDateEvidence": "1150917"
     },
     {
       "gate": "tpex-market-turnover-index",
-      "status": "VERIFY_FAILED",
-      "sources": [
-        "tpex-daily-trading-index"
-      ],
-      "note": "No official source produced affirmative target-date evidence in this run or a preserved prior PASS."
+      "status": "PASS",
+      "source": "tpex-daily-trading-index",
+      "officialDateEvidence": "1150917"
     },
     {
       "gate": "tpex-individual-institutional",
-      "status": "VERIFY_FAILED",
-      "sources": [
-        "tpex-3insti-daily-trading"
-      ],
-      "note": "No official source produced affirmative target-date evidence in this run or a preserved prior PASS."
+      "status": "PASS",
+      "source": "tpex-3insti-daily-trading",
+      "officialDateEvidence": "1150917"
     },
     {
       "gate": "tpex-institutional-summary",
-      "status": "VERIFY_FAILED",
-      "sources": [
-        "tpex-3insti-summary"
-      ],
-      "note": "No official source produced affirmative target-date evidence in this run or a preserved prior PASS."
+      "status": "PASS",
+      "source": "tpex-3insti-summary",
+      "officialDateEvidence": "1150917"
     }
   ],
   "captures": [
@@ -83,13 +71,12 @@
       "kind": "daily-close-quotes",
       "url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20260917&type=ALL&response=json",
       "targetDate": "2026-09-17",
-      "capturedAt": "2026-09-16T17:22:54.740Z",
-      "status": "VERIFY_FAILED",
+      "capturedAt": "2026-09-17T15:00:13.362Z",
+      "status": "PASS",
       "httpStatus": 200,
       "contentType": "application/json;charset=UTF-8",
-      "bytes": 64,
-      "officialDateEvidence": null,
-      "note": "Readable official payload obtained, but affirmative target-date evidence was not found; do not classify as missing."
+      "bytes": 4898568,
+      "officialDateEvidence": "20260917"
     },
     {
       "source": "twse-mi-index",
@@ -98,13 +85,12 @@
       "kind": "market-close-statistics",
       "url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20260917&type=ALL&response=json",
       "targetDate": "2026-09-17",
-      "capturedAt": "2026-09-16T17:22:56.172Z",
-      "status": "VERIFY_FAILED",
+      "capturedAt": "2026-09-17T15:00:18.289Z",
+      "status": "PASS",
       "httpStatus": 200,
       "contentType": "application/json;charset=UTF-8",
-      "bytes": 64,
-      "officialDateEvidence": null,
-      "note": "Readable official payload obtained, but affirmative target-date evidence was not found; do not classify as missing."
+      "bytes": 4898568,
+      "officialDateEvidence": "20260917"
     },
     {
       "source": "twse-fmtqik",
@@ -113,11 +99,11 @@
       "kind": "market-turnover",
       "url": "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?date=20260917&response=json",
       "targetDate": "2026-09-17",
-      "capturedAt": "2026-09-16T17:22:56.338Z",
+      "capturedAt": "2026-09-17T15:00:18.999Z",
       "status": "PASS",
       "httpStatus": 200,
       "contentType": "application/json;charset=UTF-8",
-      "bytes": 1524,
+      "bytes": 1606,
       "officialDateEvidence": "20260917"
     },
     {
@@ -127,13 +113,12 @@
       "kind": "individual-institutional",
       "url": "https://www.twse.com.tw/rwd/zh/fund/T86?date=20260917&selectType=ALL&response=json",
       "targetDate": "2026-09-17",
-      "capturedAt": "2026-09-16T17:22:56.631Z",
-      "status": "VERIFY_FAILED",
+      "capturedAt": "2026-09-17T15:00:19.198Z",
+      "status": "PASS",
       "httpStatus": 200,
       "contentType": "application/json;charset=UTF-8",
-      "bytes": 61,
-      "officialDateEvidence": null,
-      "note": "Readable official payload obtained, but affirmative target-date evidence was not found; do not classify as missing."
+      "bytes": 2307276,
+      "officialDateEvidence": "20260917"
     },
     {
       "source": "tpex-mainboard-daily-close-quotes",
@@ -142,13 +127,12 @@
       "kind": "daily-close-quotes",
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes",
       "targetDate": "2026-09-17",
-      "capturedAt": "2026-09-16T17:22:56.797Z",
-      "status": "VERIFY_FAILED",
+      "capturedAt": "2026-09-17T15:00:19.500Z",
+      "status": "PASS",
       "httpStatus": 200,
       "contentType": "application/json",
-      "bytes": 4458814,
-      "officialDateEvidence": null,
-      "note": "Readable official payload obtained, but affirmative target-date evidence was not found; do not classify as missing."
+      "bytes": 4487643,
+      "officialDateEvidence": "1150917"
     },
     {
       "source": "tpex-mainboard-daily-close-quotes-legacy",
@@ -157,11 +141,11 @@
       "kind": "daily-close-quotes",
       "url": "https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&d=115/09/17&se=EW&o=json",
       "targetDate": "2026-09-17",
-      "capturedAt": "2026-09-16T17:23:05.320Z",
+      "capturedAt": "2026-09-17T15:00:21.672Z",
       "status": "PASS",
       "httpStatus": 200,
       "contentType": "application/json;charset=UTF-8",
-      "bytes": 665,
+      "bytes": 146161,
       "officialDateEvidence": "20260917"
     },
     {
@@ -171,13 +155,12 @@
       "kind": "market-turnover-index",
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_daily_trading_index",
       "targetDate": "2026-09-17",
-      "capturedAt": "2026-09-16T17:23:05.616Z",
-      "status": "VERIFY_FAILED",
+      "capturedAt": "2026-09-17T15:00:22.496Z",
+      "status": "PASS",
       "httpStatus": 200,
       "contentType": "application/json",
-      "bytes": 1744,
-      "officialDateEvidence": null,
-      "note": "Readable official payload obtained, but affirmative target-date evidence was not found; do not classify as missing."
+      "bytes": 1891,
+      "officialDateEvidence": "1150917"
     },
     {
       "source": "tpex-3insti-daily-trading",
@@ -186,13 +169,12 @@
       "kind": "individual-institutional",
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_3insti_daily_trading",
       "targetDate": "2026-09-17",
-      "capturedAt": "2026-09-16T17:23:05.865Z",
-      "status": "VERIFY_FAILED",
+      "capturedAt": "2026-09-17T15:00:22.753Z",
+      "status": "PASS",
       "httpStatus": 200,
       "contentType": "application/json",
-      "bytes": 838400,
-      "officialDateEvidence": null,
-      "note": "Readable official payload obtained, but affirmative target-date evidence was not found; do not classify as missing."
+      "bytes": 852434,
+      "officialDateEvidence": "1150917"
     },
     {
       "source": "tpex-3insti-summary",
@@ -201,13 +183,12 @@
       "kind": "institutional-summary",
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_3insti_summary",
       "targetDate": "2026-09-17",
-      "capturedAt": "2026-09-16T17:23:07.333Z",
-      "status": "VERIFY_FAILED",
+      "capturedAt": "2026-09-17T15:00:24.675Z",
+      "status": "PASS",
       "httpStatus": 200,
       "contentType": "application/json",
-      "bytes": 1013,
-      "officialDateEvidence": null,
-      "note": "Readable official payload obtained, but affirmative target-date evidence was not found; do not classify as missing."
+      "bytes": 1020,
+      "officialDateEvidence": "1150917"
     }
   ]
 }

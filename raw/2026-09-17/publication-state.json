@@ -1,10 +1,10 @@
 {
   "targetDate": "2026-09-17",
   "timezone": "Asia/Taipei",
-  "checkedAt": "2026-09-16T17:23:07.942Z",
-  "stage": "VERIFY_FAILED",
-  "gateStatus": "VERIFY_FAILED",
-  "manifestRevision": null,
+  "checkedAt": "2026-09-17T15:00:26.554Z",
+  "stage": "RESEARCH_REQUIRED",
+  "gateStatus": "PASS",
+  "manifestRevision": "2026-09-17-013100",
   "publicationComplete": false,
-  "reason": "Official Gate is not PASS"
+  "reason": "Official Gate PASS but manifest/snapshot publication is not complete for target date"
 }
