@@ -70,7 +70,7 @@ for (const c of research.candidates ?? []) {
   }
 
   assert(c.universeRank === null || (Number.isInteger(c.universeRank) && c.universeRank > 0), `candidate ${code} universeRank invalid`);
-  assert(c.universePercentile === null || (finite(c.universePercentile) && c.universePercentile >= 0 && c.universePercentile <= config.priority.percentileMax0), `candidate ${code} universePercentile invalid`);
+  assert(c.universePercentile === null || (finite(c.universePercentile) && c.universePercentile >= 0 && c.universePercentile <= 100), `candidate ${code} universePercentile invalid`);
   assert(c.liquidityMedianTurnover20d === null || (finite(c.liquidityMedianTurnover20d) && c.liquidityMedianTurnover20d >= 0), `candidate ${code} liquidityMedianTurnover20d invalid`);
   assert(c.volumeRatio20d === null || (finite(c.volumeRatio20d) && c.volumeRatio20d >= 0), `candidate ${code} volumeRatio20d invalid`);
   assert(c.riskReward === null || (finite(c.riskReward) && c.riskReward >= 0), `candidate ${code} riskReward invalid`);
@@ -92,11 +92,11 @@ for (const c of research.candidates ?? []) {
     assert(p?.marketRegime === 'BULL' || p?.marketRegime === 'NEUTRAL', `candidate ${code} BUY not allowed in ${p?.marketRegime}`);
     const threshold = config.buyScoreThreshold[p?.marketRegime];
     assert(finite(c.score) && c.score >= threshold, `candidate ${code} BUY score below regime threshold ${threshold}`);
-    assert(finite(c.liquidityMedianTurnover20d) && c.liquidityMedianTurnover20d >= config.liquidityMedianTurnover20dMin, `candidate ${code} BUY liquidity below 50M median turnover`);
-    assert(finite(c.riskReward) && c.riskReward >= config.minRiskReward, `candidate ${code} BUY riskReward below 2`);
-    if (c.strategy === 'BREAKOUT') assert(finite(c.volumeRatio20d) && c.volumeRatio20d >= config.breakout.minVolumeRatio20d, `candidate ${code} BREAKOUT volumeRatio20d below 1.5`);
-    if (c.universeRank !== null) assert(c.universeRank <= config.priority.rankMax, `candidate ${code} BUY universeRank > 50`);
-    if (c.universePercentile !== null) assert(c.universePercentile <= 10, `candidate ${code} BUY universePercentile > 10`);
+    assert(finite(c.liquidityMedianTurnover20d) && c.liquidityMedianTurnover20d >= config.liquidityMedianTurnover20dMin, `candidate ${code} BUY liquidity below configured median turnover`);
+    assert(finite(c.riskReward) && c.riskReward >= config.minRiskReward, `candidate ${code} BUY riskReward below configured minimum`);
+    if (c.strategy === 'BREAKOUT') assert(finite(c.volumeRatio20d) && c.volumeRatio20d >= config.breakout.minVolumeRatio20d, `candidate ${code} BREAKOUT volumeRatio20d below configured minimum`);
+    if (c.universeRank !== null) assert(c.universeRank <= config.priority.rankMax, `candidate ${code} BUY universeRank exceeds configured maximum`);
+    if (c.universePercentile !== null) assert(c.universePercentile <= config.priority.percentileMax, `candidate ${code} BUY universePercentile exceeds configured maximum`);
     assert(finite(c.maxChase), `candidate ${code} BUY missing maxChase`);
     assert(typeof c.invalidCondition === 'string' && c.invalidCondition.trim(), `candidate ${code} BUY missing invalidCondition`);
     assert(!(n?.sourceQuality === 'SOURCE_C' && n?.direction === 'POSITIVE'), `candidate ${code} BUY cannot rely on positive SOURCE_C news`);
