@@ -28,6 +28,11 @@ const sources = [
   { id: 'tpex-daily-trading-index', gate: 'tpex-market-turnover-index', institution: 'TPEx', kind: 'market-turnover-index', url: 'https://www.tpex.org.tw/openapi/v1/tpex_daily_trading_index' },
   { id: 'tpex-3insti-daily-trading', gate: 'tpex-individual-institutional', institution: 'TPEx', kind: 'individual-institutional', url: 'https://www.tpex.org.tw/openapi/v1/tpex_3insti_daily_trading' },
   { id: 'tpex-3insti-summary', gate: 'tpex-institutional-summary', institution: 'TPEx', kind: 'institutional-summary', url: 'https://www.tpex.org.tw/openapi/v1/tpex_3insti_summary' },
+  { id: 'twse-margin-trading', gate: null, institution: 'TWSE', kind: 'margin-short', url: `https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=${compact}&response=json&selectType=ALL`, requireTargetDate: true },
+  { id: 'tpex-margin-sbl', gate: null, institution: 'TPEx', kind: 'margin-short-lending', url: `https://www.tpex.org.tw/www/zh-tw/margin/sbl?date=${year}/${mm}/${dd}&id=&response=json`, requireTargetDate: true },
+  { id: 'twse-monthly-revenue', gate: null, institution: 'MOPS', kind: 'monthly-revenue', url: 'https://openapi.twse.com.tw/v1/opendata/t187ap05_L', latestOnly: true },
+  { id: 'tpex-monthly-revenue', gate: null, institution: 'MOPS', kind: 'monthly-revenue', url: 'https://openapi.twse.com.tw/v1/opendata/t187ap05_O', latestOnly: true },
+  { id: 'twse-material-information', gate: null, institution: 'MOPS', kind: 'material-information', url: 'https://openapi.twse.com.tw/v1/opendata/t187ap04_L', latestOnly: true },
   { id: 'tdcc-shareholding-distribution', gate: null, institution: 'TDCC', kind: 'shareholding-distribution', url: 'https://openapi.tdcc.com.tw/v1/opendata/1-5', latestOnly: true },
 ];
 
@@ -92,8 +97,17 @@ async function capture(source) {
     let parsed;
     try { parsed = JSON.parse(text); } catch { parsed = text; }
     if (!source.gate) {
+      if (source.requireTargetDate) {
+        const matchedDate = findOfficialDate(parsed, dateVariants(targetDate));
+        result.officialDateEvidence = matchedDate;
+        result.status = matchedDate ? 'CAPTURED' : 'VERIFY_FAILED';
+        result.note = matchedDate
+          ? 'Point-in-time auxiliary source captured with affirmative target-date evidence.'
+          : 'Auxiliary payload was readable but target-date evidence was not found; do not use it as point-in-time research evidence.';
+        return result;
+      }
       result.status = 'CAPTURED';
-      result.note = 'Auxiliary source captured; it is not part of the daily publication Gate.';
+      result.note = 'Auxiliary source captured at this run time; it is not part of the daily publication Gate.';
       return result;
     }
     const matchedDate = findOfficialDate(parsed, dateVariants(targetDate));

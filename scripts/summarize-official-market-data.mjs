@@ -39,8 +39,8 @@ function num(value) {
   if (!text || text==='--' || text==='---' || text==='N/A') return null;
   const n=Number(text.replace(/^\+/,'')); return Number.isFinite(n)?n:null;
 }
-function codeOf(row) { return String(row['證券代號'] ?? row.SecuritiesCompanyCode ?? row['代號'] ?? row['證券代碼'] ?? '').trim(); }
-function nameOf(row) { return String(row['證券名稱'] ?? row.CompanyName ?? row['名稱'] ?? '').trim(); }
+function codeOf(row) { return String(row['證券代號'] ?? row.SecuritiesCompanyCode ?? row['代號'] ?? row['證券代碼'] ?? row['股票代號'] ?? row['公司代號'] ?? '').trim(); }
+function nameOf(row) { return String(row['證券名稱'] ?? row.CompanyName ?? row['名稱'] ?? row['股票名稱'] ?? row['公司名稱'] ?? '').trim(); }
 function assetType(code) {
   if (/^00[0-9A-Z]{2,5}$/.test(code)) return 'ETF';
   if (/^\d{4}$/.test(code)) return 'STOCK';
@@ -61,6 +61,40 @@ function normalizeInstitution(row,market) {
   const code=codeOf(row); if (!code) return null;
   if (market==='TWSE') return {code,foreign:num(row['外陸資買賣超股數(不含外資自營商)']),investmentTrust:num(row['投信買賣超股數']),dealer:num(row['自營商買賣超股數']),total:num(row['三大法人買賣超股數'])};
   return {code,foreign:num(row['Foreign Investors include Mainland Area Investors (Foreign Dealers excluded)-Difference'] ?? row['ForeignInvestorsInclude MainlandAreaInvestors-Difference']),investmentTrust:num(row['SecuritiesInvestmentTrustCompanies-Difference']),dealer:num(row['Dealers-Difference']),total:num(row.TotalDifference)};
+}
+function firstFinite(row,keys) { for (const key of keys) { const value=num(row[key]); if (value!==null) return value; } return null; }
+function normalizeRevenue(row) {
+  const code=codeOf(row); if (!code) return null;
+  const dataMonth=String(row['資料年月'] ?? row['資料年/月'] ?? '').trim() || null;
+  const currentRevenue=firstFinite(row,['營業收入-當月營收','當月營收']);
+  const previousMonthRevenue=firstFinite(row,['營業收入-上月營收','上月營收']);
+  const previousYearRevenue=firstFinite(row,['營業收入-去年當月營收','去年當月營收']);
+  const yoyPct=firstFinite(row,['營業收入-去年同月增減(%)','去年同月增減(%)']);
+  const momPct=firstFinite(row,['營業收入-上月比較增減(%)','上月比較增減(%)']);
+  const cumulativeYoyPct=firstFinite(row,['累計營業收入-前期比較增減(%)','累計營業收入-去年同期增減(%)','累計較去年同期增減(%)']);
+  if (currentRevenue===null && yoyPct===null && momPct===null) return null;
+  return {code,name:nameOf(row),dataMonth,currentRevenue,previousMonthRevenue,previousYearRevenue,yoyPct,momPct,cumulativeYoyPct,sourceQuality:'SOURCE_A'};
+}
+function normalizeMargin(row,market) {
+  const code=codeOf(row); if (!code) return null;
+  const marginPrev=firstFinite(row,['融資前日餘額','融資前日餘額(張)','前日融資餘額']);
+  const marginBalance=firstFinite(row,['融資今日餘額','融資當日餘額','融資今日餘額(張)','融資餘額']);
+  const shortPrev=firstFinite(row,['融券前日餘額','融券前日餘額(張)','前日融券餘額']);
+  const shortBalance=firstFinite(row,['融券今日餘額','融券當日餘額','融券今日餘額(張)','融券餘額']);
+  const lendingPrev=firstFinite(row,['借券賣出前日餘額','借券賣出 前日餘額']);
+  const lendingBalance=firstFinite(row,['借券賣出當日餘額','借券賣出 當日餘額']);
+  const any=[marginPrev,marginBalance,shortPrev,shortBalance,lendingPrev,lendingBalance].some((x)=>x!==null);
+  if (!any) return null;
+  return {code,market,marginPrev,marginBalance,marginChange:marginPrev!==null&&marginBalance!==null?marginBalance-marginPrev:null,shortPrev,shortBalance,shortChange:shortPrev!==null&&shortBalance!==null?shortBalance-shortPrev:null,lendingPrev,lendingBalance,lendingChange:lendingPrev!==null&&lendingBalance!==null?lendingBalance-lendingPrev:null};
+}
+function normalizeMaterialEvent(row) {
+  const code=codeOf(row); if (!code) return null;
+  const publishDate=String(row['發言日期'] ?? row['出表日期'] ?? '').trim() || null;
+  const publishTime=String(row['發言時間'] ?? '').trim() || null;
+  const subject=String(row['主旨 '] ?? row['主旨'] ?? '').trim();
+  const factDate=String(row['事實發生日'] ?? '').trim() || null;
+  if (!subject) return null;
+  return {code,name:nameOf(row),subject,publishDate,publishTime,factDate,sourceQuality:'SOURCE_A'};
 }
 async function rowsFrom(rel) {
   try { const parsed=JSON.parse(await fs.readFile(rel,'utf8')); return uniqueRows([...tableRows(parsed),...objectRows(parsed)]); } catch { return []; }
@@ -151,6 +185,24 @@ const priorCodes=await previousResearchCodes();
 const deepDiveCodes=[...new Set([...preferredToday.slice(0,300).map((x)=>x.code),...priorCodes])];
 const currentByCode=new Map(universe.map((x)=>[x.code,x]));
 
+const [twseMarginRows,tpexMarginRows,twseRevenueRows,tpexRevenueRows,materialRows]=await Promise.all([
+  rowsFrom(path.join(dir,'twse-margin-trading.raw.txt')),
+  rowsFrom(path.join(dir,'tpex-margin-sbl.raw.txt')),
+  rowsFrom(path.join(dir,'twse-monthly-revenue.raw.txt')),
+  rowsFrom(path.join(dir,'tpex-monthly-revenue.raw.txt')),
+  rowsFrom(path.join(dir,'twse-material-information.raw.txt'))
+]);
+const marginByCode=new Map();
+for (const row of twseMarginRows) { const x=normalizeMargin(row,'TWSE'); if (x) marginByCode.set(x.code,x); }
+for (const row of tpexMarginRows) { const x=normalizeMargin(row,'TPEx'); if (x) marginByCode.set(x.code,x); }
+const revenueByCode=new Map();
+for (const row of [...twseRevenueRows,...tpexRevenueRows]) { const x=normalizeRevenue(row); if (x) revenueByCode.set(x.code,x); }
+const materialByCode=new Map();
+for (const row of materialRows) {
+  const x=normalizeMaterialEvent(row); if (!x) continue;
+  const arr=materialByCode.get(x.code)??[]; arr.push(x); materialByCode.set(x.code,arr);
+}
+
 const historyCache=await readJsonMaybe(path.join('history','market-history.json'));
 const cacheData=historyCache?.schemaVersion===1 ? historyCache.data ?? {} : {};
 const histories=new Map();
@@ -200,6 +252,14 @@ const deepDive=deepDiveCodes.map((code)=>{
       investment_trust_1d:inst.at(-1)?.investmentTrust??null,investment_trust_3d:instSum(inst,'investmentTrust',3),investment_trust_5d:instSum(inst,'investmentTrust',5),investment_trust_10d:instSum(inst,'investmentTrust',10),investment_trust_20d:instSum(inst,'investmentTrust',20),
       dealer_1d:inst.at(-1)?.dealer??null,dealer_5d:instSum(inst,'dealer',5)
     },
+    marginShortLending:marginByCode.get(code)??null,
+    fundamental:{monthlyRevenue:revenueByCode.get(code)??null},
+    sourceAEvents:(materialByCode.get(code)??[]).slice(-20),
+    evidenceReadiness:{
+      marginShortLending:marginByCode.has(code),
+      fundamental:revenueByCode.has(code),
+      sourceAEvent:materialByCode.has(code)
+    },
     history:h
   };
 });
@@ -225,7 +285,11 @@ const output={
     historicalCacheTradingDays:historyCache?.coverage?.verifiedTradingDays??0,
     buyHistoryReadyCount:deepDive.filter((x)=>x.liquidityGateReady&&x.ma120Ready).length,
     institutional20dReadyCount:deepDive.filter((x)=>x.institutionalHistoryCoverageDays>=20).length,
-    note:'BUY must fail closed until required historical, institutional, TDCC, news/event and ranking evidence is verifiably available.'
+    marginShortLendingReadyCount:deepDive.filter((x)=>x.evidenceReadiness.marginShortLending).length,
+    fundamentalReadyCount:deepDive.filter((x)=>x.evidenceReadiness.fundamental).length,
+    sourceAEventCoverageCount:deepDive.filter((x)=>x.evidenceReadiness.sourceAEvent).length,
+    tdccReadyCount:Object.keys(tdcc.codeMatches??{}).length,
+    note:'BUY remains fail-closed for any required evidence that is not point-in-time verifiable. Daily capture now preserves margin/short/lending, monthly revenue, SOURCE_A material information and TDCC evidence when available.'
   }
 };
 await fs.writeFile(path.join(dir,'research-input.json'),JSON.stringify(output,null,2)+'\n');
