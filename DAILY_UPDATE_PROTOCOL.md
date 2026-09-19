@@ -4,7 +4,7 @@
 
 允許本資料庫建立純資料基礎設施排程，用於自動擷取、保存與驗證 TWSE、TPEx 等官方公開市場資料。此類排程不得自行產生研究結論、推薦、模擬交易、修改 `manifest.json` 或部署網站；其輸出只能作為後續資料完整性 Gate 與研究流程的官方原始證據。
 
-目前研究進場策略版本：`entry-dual-track-v1`。
+目前研究進場策略版本：`entry-dual-track-v2`。
 
 ### 官方市場資料擷取器例外
 
@@ -50,7 +50,7 @@
 
 可自主新增、保留、升級、降級或排除候選。不得為每日輸出而硬推薦；沒有合理買點時必須標示觀望、配置 0% 與等待條件。總配置不得超過 100%，現金可為 100%。研究推薦不等於模擬或真實成交。
 
-新的 `research.json` 應寫入 `strategyVersion: "entry-dual-track-v1"`，讓同日重跑可以辨識方法論是否已實質改變。
+新的 `research.json` 應寫入 `strategyVersion: "entry-dual-track-v2"`，讓同日重跑可以辨識方法論是否已實質改變。
 
 ### 3.1 進場策略：Pullback + Breakout 雙軌制
 
@@ -81,6 +81,132 @@
 若某一路徑缺乏足夠證據，應標示 `unavailable`，不得主觀補足。
 
 突破型不是用來取代回測型；兩者的目的是降低「只等回測而錯失趨勢起漲」與「無限制追高」兩種相反風險。
+
+### 3.2 entry-dual-track-v2：全市場篩選、事件確認與決策 Gate
+
+本版本在保留 Pullback + Breakout 雙軌互斥的前提下，新增下列強制研究規則。這些規則屬於研究與候選委託生成層；真實券商送單、成交、部分成交、拒單、撤單等狀態仍必須由外部 deterministic Execution Engine／Broker API 回報，研究流程不得自行宣稱成交。
+
+#### A. 全市場母體與流動性
+
+- 普通股母體為上市、上櫃普通股；ETF 必須與普通股分開評估，不得完整套用普通股的 TDCC、投信認養、公司營收／EPS 權重。
+- 排除權證、ETN、可轉債、牛熊證、停止交易、交易狀態異常、Corporate Action 無法確認、資料品質無法確認的標的。
+- 研究仍優先股價 <= 200 元；> 200 元不是品質扣分，但原則僅列 WATCH／Secondary Candidate，除非策略另有授權。
+- 普通股 BUY 候選預設要求 20 日中位數日成交金額 >= NT$50,000,000；低於門檻可以 WATCH，不得自動 BUY。
+- Position value 相對 20 日中位數成交金額不得達到不合理比例；無法以縮小部位解決時 Fail Closed。
+
+#### B. Market Regime 與 BUY 門檻
+
+- BULL：正常評估新多單，最低 BUY Score 82。
+- NEUTRAL：提高最低 BUY Score 至 86，並降低單筆風險與總曝險。
+- BEAR：一般普通股不得建立新多單，只允許 HOLD／REDUCE／SELL／WATCH／NO_TRADE。
+- HIGH_RISK：禁止新建多單，只允許既有風險管理。
+- 高 Score 不得覆蓋 Market Regime Hard Gate。
+
+#### C. 允許策略與候選排序
+
+只允許：
+- BREAKOUT
+- TREND_PULLBACK
+- CHIP_ACCUMULATION_BREAKOUT
+
+禁止以猜底、單純 RSI 超賣、單日法人買超、單一券商買超或單一新聞標題作為 BUY 觸發。
+
+Hard Gate 通過後才做 Cross-Sectional Ranking。主要 Priority BUY Candidate 應同時：
+- 達到對應 Market Regime 的最低 Score；
+- 位於 Eligible Universe 前段，原則採前 10%，且排名不差於 Top 50；
+- 最多保留 3 個 Priority BUY Candidate；
+- 不得為湊滿 3 檔降低門檻。
+
+#### D. Score 100 與避免重複計分
+
+普通股評分：
+- Trend 18
+- Momentum 8
+- Volume + Liquidity 10
+- Market Regime 8
+- Institutional 15
+- TDCC / Large Holder 8
+- Margin / Short / Lending 6
+- Fundamental Quality 10
+- Industry / News / Catalyst 5
+- Risk / Reward + Execution Quality 12
+
+總分必須 = 100。
+
+相同底層資料不得重複完整計分：法人主要計 Institutional；TDCC 主要計 Large Holder；融資／借券主要計 Margin / Short / Lending；題材與新聞主要計 Industry / News / Catalyst。Score 只用於排序，不能覆蓋 Hard Gate。
+
+#### E. 技術與雙軌 Entry
+
+BREAKOUT：
+- EOD 模式必須正式收盤站上有效壓力或近 20 日高點。
+- Volume / VolumeMA20 >= 1.5 為標準有效門檻；1.2～1.49 原則 WATCH；<1.2 不得標準 BREAKOUT BUY。
+- 必須有合理 Stop 與 Risk / Reward >= 2。
+- Extreme Volume + Upper Shadow + Weak Close + Institutional Selling 視為 EXHAUSTION_RISK。
+
+TREND_PULLBACK：
+- 中期趨勢仍向上。
+- 回測 MA10／MA20／前波突破位／結構支撐。
+- 理想為回檔量縮，止跌後再度轉強。
+- 尚未止跌或結構支撐已失效不得提前猜底。
+
+Priority Candidate 可同時建立 Pullback Route 與 Breakout Route，但必須 MUTUALLY_EXCLUSIVE；任一路實際成交後另一條取消。Breakout 必須保留 maxChase／max entry；開盤或實際價格高於 max entry 時取消，不得追價。
+
+#### F. 籌碼與 TDCC
+
+- 外資、投信、自營商必須拆開評估，至少檢查 1D／3D／5D／10D／20D（資料可取得時）。
+- TDCC 為週頻；只要使用官方最近一期已公布資料即視為 VALID。
+- 400+、800+、1000+ 高度相關，不得各自重複完整加分。
+- 大戶增加、散戶下降、法人偏買、融資穩定／下降、借券未惡化屬高品質確認，但任何單一籌碼指標不得直接觸發 BUY。
+
+#### G. News / Event / Catalyst
+
+新聞與事件只可作為 Confirmation／Risk Filter／Catalyst Quality，不得單獨觸發 BUY。
+
+來源分級：
+- SOURCE_A：交易所、公開資訊觀測站、公司公告、法說、主管機關、政府正式公告與其他一手來源。
+- SOURCE_B：可信主流財經媒體、專業產業媒體，只能作 Confirmation，除非有 SOURCE_A 交叉確認。
+- SOURCE_C：社群、論壇、匿名消息、未確認轉載，不得正面加分或觸發 BUY。
+
+至少辨識事件類型：EARNINGS、REVENUE、GUIDANCE、INVESTOR_CONFERENCE、MAJOR_ORDER、CAPEX、PRODUCT、INDUSTRY_PRICE、POLICY、REGULATION、LITIGATION、GOVERNANCE、TRADING_HALT、DISPOSITION、CORPORATE_ACTION、SUPPLY_CHAIN、GEOPOLITICAL、OTHER。
+
+催化劑必須考慮：
+- source quality
+- event timestamp / age
+- event direction
+- price confirmation
+- volume confirmation
+- institutional confirmation
+
+Positive News + Price Weak + Institutional Selling 應標記為正面新聞背離並降低品質。
+
+未來 1 個交易日若存在重大二元事件（重大財報、重大法說、監管／司法結果、重大公司事件），而本策略不是 Event Strategy，禁止新建部位。
+
+#### H. Risk / Reward、帳戶與相關性
+
+- 所有 BUY 必須有 Entry、Max Entry、Stop、Candidate Position Size 與合理市場結構可支持的 Risk / Reward >= 2。
+- 不得任意縮 Stop 或任意提高 Target 製造 RR >= 2。
+- 單筆預設風險 0.5% Account Equity；Hard Cap 1.0%。
+- 單一股票最大曝險 10%；同一產業 20%；總持股曝險 50%。
+- 單日最大已實現 + 未實現虧損 1.5%；單週最大虧損 4%；連續 3 筆 realized loss 停止新增交易並重新檢查策略與市場環境。
+- 多檔同產業／同題材／高 Beta 高相關候選不得視為完全獨立風險。
+
+#### I. EOD 與 Execution 分離
+
+目前研究預設為 EOD：
+- 只能使用完整正式日 K 建立新 BUY Setup。
+- 盤後 BUY 只代表交易意圖與候選 nextOrder，不代表已送單或已成交。
+- 真實送單前必須重新取得 latest quote、bid、ask、cash、holdings、open orders、trading status，再由 deterministic code 重算 position size、RR、單股曝險、產業曝險、總曝險、spread、signal expiration。
+- 若實際價格高於 max entry、RR 降到 <2、spread 異常、訊號過期、資金或曝險超限，取消訊號。
+- LLM 與 deterministic risk calculation 衝突時，以 deterministic engine 為準。
+
+#### J. Dashboard 相容性
+
+新的 research snapshot 仍必須維持現有 Dashboard contract：
+- 頂層 conclusion 非空，若有 decision.summary 必須一致。
+- 所有 Dashboard candidate 必須有具體 avoid 與 invalid。
+- Priority candidate 必須保留 invalidCondition，且 invalid 與 invalidCondition 語意／內容一致。
+- 不得使用「資料不足」「資料失效」等 generic placeholder 作為 avoid／invalid。
+- 本次策略升級不得破壞既有 manifest、selection-history、paper-account 與 Dashboard 讀取介面。
 
 ## 4. Snapshot 與 selection history
 
@@ -188,7 +314,7 @@ Gate 通過後，以執行當下台北時間建立 `revision = YYYY-MM-DD-HHmmss
 
 必須驗證：JSON 可解析、manifest schemaVersion 維持現行版本、revision/path 一致、三個資料檔存在、日期格式正確、selection history 無重複日期、selected 符合 priority + A 級資格、代碼格式合理、現金與持倉可重算、無今日決策今日成交、無未來資料、無真實庫存與秘密資訊。
 
-使用 `entry-dual-track-v1` 的新研究還必須驗證：priority A 級候選有雙軌欄位；若存在突破型 `nextOrders`，其 trigger、gap-up、max-chase、成交價與取消條件足以機械重算。
+使用 `entry-dual-track-v2` 的新研究還必須驗證：priority A 級候選有雙軌欄位；若存在突破型 `nextOrders`，其 trigger、gap-up、max-chase、成交價與取消條件足以機械重算。
 
 任何關鍵驗證失敗都不得提交部分結果。
 
