@@ -1,12 +1,12 @@
 {
   "schemaVersion": 3,
   "targetDate": "2026-09-18",
-  "generatedAt": "2026-09-19T05:01:04.214Z",
+  "generatedAt": "2026-09-19T07:33:40.966Z",
   "strategyVersion": "entry-dual-track-v2",
   "gateMatrix": {
     "targetDate": "2026-09-18",
     "timezone": "Asia/Taipei",
-    "generatedAt": "2026-09-19T05:00:49.285Z",
+    "generatedAt": "2026-09-19T07:33:34.173Z",
     "overallStatus": "PASS",
     "requiredGates": [
       "twse-daily-close-quotes",
@@ -76,7 +76,7 @@
         "kind": "daily-close-quotes",
         "url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20260918&type=ALL&response=json",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T05:00:27.142Z",
+        "capturedAt": "2026-09-19T07:32:55.832Z",
         "status": "PASS",
         "httpStatus": 200,
         "contentType": "application/json;charset=UTF-8",
@@ -90,7 +90,7 @@
         "kind": "market-close-statistics",
         "url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20260918&type=ALL&response=json",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T05:00:29.874Z",
+        "capturedAt": "2026-09-19T07:32:58.315Z",
         "status": "PASS",
         "httpStatus": 200,
         "contentType": "application/json;charset=UTF-8",
@@ -104,7 +104,7 @@
         "kind": "market-turnover",
         "url": "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?date=20260918&response=json",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T05:00:30.463Z",
+        "capturedAt": "2026-09-19T07:32:58.913Z",
         "status": "PASS",
         "httpStatus": 200,
         "contentType": "application/json;charset=UTF-8",
@@ -118,7 +118,7 @@
         "kind": "individual-institutional",
         "url": "https://www.twse.com.tw/rwd/zh/fund/T86?date=20260918&selectType=ALL&response=json",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T05:00:30.647Z",
+        "capturedAt": "2026-09-19T07:32:59.102Z",
         "status": "PASS",
         "httpStatus": 200,
         "contentType": "application/json;charset=UTF-8",
@@ -132,7 +132,7 @@
         "kind": "daily-close-quotes",
         "url": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T05:00:30.928Z",
+        "capturedAt": "2026-09-19T07:33:00.583Z",
         "status": "PASS",
         "httpStatus": 200,
         "contentType": "application/json",
@@ -146,7 +146,7 @@
         "kind": "daily-close-quotes",
         "url": "https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&d=115/09/18&se=EW&o=json",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T05:00:46.254Z",
+        "capturedAt": "2026-09-19T07:33:27.432Z",
         "status": "PASS",
         "httpStatus": 200,
         "contentType": "application/json;charset=UTF-8",
@@ -160,7 +160,7 @@
         "kind": "market-turnover-index",
         "url": "https://www.tpex.org.tw/openapi/v1/tpex_daily_trading_index",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T05:00:46.752Z",
+        "capturedAt": "2026-09-19T07:33:27.928Z",
         "status": "PASS",
         "httpStatus": 200,
         "contentType": "application/json",
@@ -174,7 +174,7 @@
         "kind": "individual-institutional",
         "url": "https://www.tpex.org.tw/openapi/v1/tpex_3insti_daily_trading",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T05:00:46.983Z",
+        "capturedAt": "2026-09-19T07:33:28.155Z",
         "status": "PASS",
         "httpStatus": 200,
         "contentType": "application/json",
@@ -188,12 +188,75 @@
         "kind": "institutional-summary",
         "url": "https://www.tpex.org.tw/openapi/v1/tpex_3insti_summary",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T05:00:49.059Z",
+        "capturedAt": "2026-09-19T07:33:30.459Z",
         "status": "PASS",
         "httpStatus": 200,
         "contentType": "application/json",
         "bytes": 1020,
         "officialDateEvidence": "1150918"
+      },
+      {
+        "source": "twse-margin-trading",
+        "gate": null,
+        "institution": "TWSE",
+        "kind": "margin-short",
+        "url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260918&response=json&selectType=ALL",
+        "targetDate": "2026-09-18",
+        "capturedAt": "2026-09-19T07:33:30.712Z",
+        "status": "CAPTURED",
+        "httpStatus": 200,
+        "contentType": "application/json;charset=UTF-8",
+        "bytes": 128889,
+        "officialDateEvidence": "20260918",
+        "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+      },
+      {
+        "source": "tpex-margin-sbl",
+        "gate": null,
+        "institution": "TPEx",
+        "kind": "margin-short-lending",
+        "url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl?date=2026/09/18&id=&response=json",
+        "targetDate": "2026-09-18",
+        "capturedAt": "2026-09-19T07:33:32.717Z",
+        "status": "CAPTURED",
+        "httpStatus": 200,
+        "contentType": "application/json;charset=UTF-8",
+        "bytes": 99332,
+        "officialDateEvidence": "20260918",
+        "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+      },
+      {
+        "source": "twse-monthly-revenue",
+        "gate": null,
+        "institution": "MOPS",
+        "kind": "monthly-revenue",
+        "url": "https://openapi.twse.com.tw/v1/opendata/t187ap05_L",
+        "targetDate": "2026-09-18",
+        "capturedAt": "2026-09-19T07:33:34.172Z",
+        "status": "NOT_CAPTURED_RETROSPECTIVE",
+        "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
+      },
+      {
+        "source": "tpex-monthly-revenue",
+        "gate": null,
+        "institution": "MOPS",
+        "kind": "monthly-revenue",
+        "url": "https://openapi.twse.com.tw/v1/opendata/t187ap05_O",
+        "targetDate": "2026-09-18",
+        "capturedAt": "2026-09-19T07:33:34.172Z",
+        "status": "NOT_CAPTURED_RETROSPECTIVE",
+        "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
+      },
+      {
+        "source": "twse-material-information",
+        "gate": null,
+        "institution": "MOPS",
+        "kind": "material-information",
+        "url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
+        "targetDate": "2026-09-18",
+        "capturedAt": "2026-09-19T07:33:34.172Z",
+        "status": "NOT_CAPTURED_RETROSPECTIVE",
+        "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
       },
       {
         "source": "tdcc-shareholding-distribution",
@@ -202,7 +265,7 @@
         "kind": "shareholding-distribution",
         "url": "https://openapi.tdcc.com.tw/v1/opendata/1-5",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T05:00:49.285Z",
+        "capturedAt": "2026-09-19T07:33:34.172Z",
         "status": "NOT_CAPTURED_RETROSPECTIVE",
         "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
       }
@@ -43883,6 +43946,16 @@
         "dealer_1d": 3573793,
         "dealer_5d": 7952268
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -45250,6 +45323,16 @@
         "investment_trust_20d": -33149495,
         "dealer_1d": 3489976,
         "dealer_5d": 5103443
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -46619,6 +46702,16 @@
         "dealer_1d": 7791436,
         "dealer_5d": 9669394
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -47986,6 +48079,16 @@
         "investment_trust_20d": 53849000,
         "dealer_1d": 920274,
         "dealer_5d": -213589
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -49355,6 +49458,16 @@
         "dealer_1d": 3469798,
         "dealer_5d": -4474197
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -50722,6 +50835,16 @@
         "investment_trust_20d": 39217190,
         "dealer_1d": 633184,
         "dealer_5d": -862070
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -52091,6 +52214,16 @@
         "dealer_1d": 553765,
         "dealer_5d": 379005
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -53458,6 +53591,16 @@
         "investment_trust_20d": -166000,
         "dealer_1d": 1107008,
         "dealer_5d": 456679
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -54827,6 +54970,16 @@
         "dealer_1d": 239205,
         "dealer_5d": 656604
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -56194,6 +56347,16 @@
         "investment_trust_20d": -3607731,
         "dealer_1d": -2071247,
         "dealer_5d": 2912353
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -57563,6 +57726,16 @@
         "dealer_1d": -501554,
         "dealer_5d": 891568
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -58930,6 +59103,16 @@
         "investment_trust_20d": -9000,
         "dealer_1d": -901387,
         "dealer_5d": -69996
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -60299,6 +60482,16 @@
         "dealer_1d": -138774,
         "dealer_5d": 284413
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -61666,6 +61859,16 @@
         "investment_trust_20d": 1220809,
         "dealer_1d": 290422,
         "dealer_5d": 2951764
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -63035,6 +63238,16 @@
         "dealer_1d": 1395677,
         "dealer_5d": 2685799
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -64402,6 +64615,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 542538,
         "dealer_5d": 418286
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -65771,6 +65994,16 @@
         "dealer_1d": 1243552,
         "dealer_5d": 1796562
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -67138,6 +67371,16 @@
         "investment_trust_20d": 1026000,
         "dealer_1d": 251203,
         "dealer_5d": 101771
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -68507,6 +68750,16 @@
         "dealer_1d": 1198869,
         "dealer_5d": 1534977
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -69874,6 +70127,16 @@
         "investment_trust_20d": 83703231,
         "dealer_1d": 468684,
         "dealer_5d": 1253316
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -71243,6 +71506,16 @@
         "dealer_1d": 425000,
         "dealer_5d": 258816
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -72610,6 +72883,16 @@
         "investment_trust_20d": 364000,
         "dealer_1d": 2459480,
         "dealer_5d": 2259613
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -73979,6 +74262,16 @@
         "dealer_1d": 1449923,
         "dealer_5d": -293796
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -75336,6 +75629,16 @@
         "investment_trust_20d": -790081,
         "dealer_1d": -149105,
         "dealer_5d": 2352049
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -76705,6 +77008,16 @@
         "dealer_1d": 54898,
         "dealer_5d": 1900970
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -78072,6 +78385,16 @@
         "investment_trust_20d": -15579260,
         "dealer_1d": 782010,
         "dealer_5d": 1258318
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -79441,6 +79764,16 @@
         "dealer_1d": -8909,
         "dealer_5d": 116809
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -80808,6 +81141,16 @@
         "investment_trust_20d": 236100,
         "dealer_1d": 133733,
         "dealer_5d": 1986445
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -82177,6 +82520,16 @@
         "dealer_1d": 1007774,
         "dealer_5d": 2610625
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -83544,6 +83897,16 @@
         "investment_trust_20d": 542233,
         "dealer_1d": 490296,
         "dealer_5d": 1046491
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -84913,6 +85276,16 @@
         "dealer_1d": -158165,
         "dealer_5d": -31951
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -86280,6 +86653,16 @@
         "investment_trust_20d": 13450831,
         "dealer_1d": 1037526,
         "dealer_5d": 1829689
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -87649,6 +88032,16 @@
         "dealer_1d": 803171,
         "dealer_5d": 1844002
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -89016,6 +89409,16 @@
         "investment_trust_20d": 6578913,
         "dealer_1d": 54543,
         "dealer_5d": -690023
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -90385,6 +90788,16 @@
         "dealer_1d": -235862,
         "dealer_5d": -472328
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -91752,6 +92165,16 @@
         "investment_trust_20d": 39022924,
         "dealer_1d": 1192021,
         "dealer_5d": 2137115
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -93121,6 +93544,16 @@
         "dealer_1d": 279224,
         "dealer_5d": 22669
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -94488,6 +94921,16 @@
         "investment_trust_20d": 719152,
         "dealer_1d": 937609,
         "dealer_5d": -1869471
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -95857,6 +96300,16 @@
         "dealer_1d": 341689,
         "dealer_5d": 1438305
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -97224,6 +97677,16 @@
         "investment_trust_20d": -27800,
         "dealer_1d": 185879,
         "dealer_5d": -314132
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -98593,6 +99056,16 @@
         "dealer_1d": -159103,
         "dealer_5d": -466641
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -99960,6 +100433,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -70260,
         "dealer_5d": -61077
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -101329,6 +101812,16 @@
         "dealer_1d": -115208,
         "dealer_5d": 95196
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -102696,6 +103189,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 633536,
         "dealer_5d": 565688
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -104065,6 +104568,16 @@
         "dealer_1d": -222646,
         "dealer_5d": 43066
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -105432,6 +105945,16 @@
         "investment_trust_20d": 41000,
         "dealer_1d": 919898,
         "dealer_5d": 1207487
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -106801,6 +107324,16 @@
         "dealer_1d": -215705,
         "dealer_5d": -7608
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -108168,6 +108701,16 @@
         "investment_trust_20d": -26502850,
         "dealer_1d": 1149897,
         "dealer_5d": 1364322
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -109537,6 +110080,16 @@
         "dealer_1d": 38380,
         "dealer_5d": 110293
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -110904,6 +111457,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -24353,
         "dealer_5d": 29911
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -112273,6 +112836,16 @@
         "dealer_1d": -158568,
         "dealer_5d": -335290
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -113640,6 +114213,16 @@
         "investment_trust_20d": 645000,
         "dealer_1d": -129317,
         "dealer_5d": -138597
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -115009,6 +115592,16 @@
         "dealer_1d": 7235,
         "dealer_5d": -5593
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -116376,6 +116969,16 @@
         "investment_trust_20d": -15624163,
         "dealer_1d": 979242,
         "dealer_5d": 1976654
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -117745,6 +118348,16 @@
         "dealer_1d": 324133,
         "dealer_5d": 382205
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -119112,6 +119725,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 303,
         "dealer_5d": -526408
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -120481,6 +121104,16 @@
         "dealer_1d": 492749,
         "dealer_5d": 2775817
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -121838,6 +122471,16 @@
         "investment_trust_20d": 1626492,
         "dealer_1d": 226462,
         "dealer_5d": 1958498
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -123207,6 +123850,16 @@
         "dealer_1d": 231849,
         "dealer_5d": 256446
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -124574,6 +125227,16 @@
         "investment_trust_20d": -2329401,
         "dealer_1d": 236000,
         "dealer_5d": 520131
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -125943,6 +126606,16 @@
         "dealer_1d": 1283224,
         "dealer_5d": 1592257
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -127310,6 +127983,16 @@
         "investment_trust_20d": -5175227,
         "dealer_1d": 310189,
         "dealer_5d": 227272
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -128679,6 +129362,16 @@
         "dealer_1d": 441727,
         "dealer_5d": 649473
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -130046,6 +130739,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -11319,
         "dealer_5d": 161965
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -131415,6 +132118,16 @@
         "dealer_1d": -144087,
         "dealer_5d": 141010
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -132782,6 +133495,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -542191,
         "dealer_5d": -304495
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -134151,6 +134874,16 @@
         "dealer_1d": -322,
         "dealer_5d": -19707
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -135518,6 +136251,16 @@
         "investment_trust_20d": 895240,
         "dealer_1d": 242291,
         "dealer_5d": -354111
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -136887,6 +137630,16 @@
         "dealer_1d": -20666,
         "dealer_5d": 275340
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -138254,6 +139007,16 @@
         "investment_trust_20d": 2409900,
         "dealer_1d": -3287,
         "dealer_5d": 286025
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -139623,6 +140386,16 @@
         "dealer_1d": 5335,
         "dealer_5d": 13377
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -140990,6 +141763,16 @@
         "investment_trust_20d": -85000,
         "dealer_1d": 2320,
         "dealer_5d": -277695
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -142359,6 +143142,16 @@
         "dealer_1d": 67571,
         "dealer_5d": 67920
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -143726,6 +144519,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 108577,
         "dealer_5d": 105241
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -145095,6 +145898,16 @@
         "dealer_1d": 138625,
         "dealer_5d": 165739
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -146462,6 +147275,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 144814,
         "dealer_5d": 615589
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -147831,6 +148654,16 @@
         "dealer_1d": 15842,
         "dealer_5d": 16830
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -149198,6 +150031,16 @@
         "investment_trust_20d": -12000,
         "dealer_1d": 11847,
         "dealer_5d": 2325
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -150567,6 +151410,16 @@
         "dealer_1d": 1338729,
         "dealer_5d": 3049175
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -151934,6 +152787,16 @@
         "investment_trust_20d": -322089,
         "dealer_1d": 206397,
         "dealer_5d": 367325
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -153303,6 +154166,16 @@
         "dealer_1d": 75637,
         "dealer_5d": 64810
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -154670,6 +155543,16 @@
         "investment_trust_20d": 5414930,
         "dealer_1d": 464321,
         "dealer_5d": 1362961
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -156039,6 +156922,16 @@
         "dealer_1d": 191845,
         "dealer_5d": 184901
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -157406,6 +158299,16 @@
         "investment_trust_20d": 250000,
         "dealer_1d": 144153,
         "dealer_5d": 214621
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -158775,6 +159678,16 @@
         "dealer_1d": 368130,
         "dealer_5d": 4505767
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -160142,6 +161055,16 @@
         "investment_trust_20d": 2000,
         "dealer_1d": 193446,
         "dealer_5d": 166371
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -161511,6 +162434,16 @@
         "dealer_1d": 189268,
         "dealer_5d": 264730
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -162878,6 +163811,16 @@
         "investment_trust_20d": -8000,
         "dealer_1d": 50000,
         "dealer_5d": 98388
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -164247,6 +165190,16 @@
         "dealer_1d": 140,
         "dealer_5d": 296
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -165614,6 +166567,16 @@
         "investment_trust_20d": -5000,
         "dealer_1d": 15330,
         "dealer_5d": -75655
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -166983,6 +167946,16 @@
         "dealer_1d": -408889,
         "dealer_5d": 1235459
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -168350,6 +169323,16 @@
         "investment_trust_20d": 182000,
         "dealer_1d": -82622,
         "dealer_5d": 321572
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -169719,6 +170702,16 @@
         "dealer_1d": 59562,
         "dealer_5d": 82387
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -171086,6 +172079,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -57384,
         "dealer_5d": -14430
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -172455,6 +173458,16 @@
         "dealer_1d": 194124,
         "dealer_5d": 153318
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -173823,6 +174836,16 @@
         "dealer_1d": 1976,
         "dealer_5d": -55727
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -175180,6 +176203,16 @@
         "investment_trust_20d": 1773273,
         "dealer_1d": 136788,
         "dealer_5d": 591948
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -176549,6 +177582,16 @@
         "dealer_1d": -150135,
         "dealer_5d": 378589
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -177916,6 +178959,16 @@
         "investment_trust_20d": 39000,
         "dealer_1d": 128043,
         "dealer_5d": -108992
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -179285,6 +180338,16 @@
         "dealer_1d": 107097,
         "dealer_5d": 158574
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -180652,6 +181715,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 138308,
         "dealer_5d": 136749
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -182021,6 +183094,16 @@
         "dealer_1d": 1169950,
         "dealer_5d": 2060357
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -183388,6 +184471,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 92000,
         "dealer_5d": 39264
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -184757,6 +185850,16 @@
         "dealer_1d": 10822,
         "dealer_5d": -16099
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -186124,6 +187227,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -191,
         "dealer_5d": -3944
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -187493,6 +188606,16 @@
         "dealer_1d": 66922,
         "dealer_5d": 79164
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -188860,6 +189983,16 @@
         "investment_trust_20d": 7457606,
         "dealer_1d": 319430,
         "dealer_5d": 916125
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -190229,6 +191362,16 @@
         "dealer_1d": 319412,
         "dealer_5d": 496916
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -191596,6 +192739,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 164779,
         "dealer_5d": -1099
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -192965,6 +194118,16 @@
         "dealer_1d": 80922,
         "dealer_5d": 579672
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -194332,6 +195495,16 @@
         "investment_trust_20d": -8467539,
         "dealer_1d": 549000,
         "dealer_5d": 930476
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -195701,6 +196874,16 @@
         "dealer_1d": 46121,
         "dealer_5d": -104640
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -197068,6 +198251,16 @@
         "investment_trust_20d": 10048271,
         "dealer_1d": 365419,
         "dealer_5d": 586474
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -198437,6 +199630,16 @@
         "dealer_1d": 1526,
         "dealer_5d": -16026
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -199804,6 +201007,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 226,
         "dealer_5d": -9813
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -201173,6 +202386,16 @@
         "dealer_1d": 382238,
         "dealer_5d": -22740
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -202541,6 +203764,16 @@
         "dealer_1d": -53757,
         "dealer_5d": -482389
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -203838,6 +205071,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 557,
         "dealer_5d": -80955
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -205207,6 +206450,16 @@
         "dealer_1d": 763000,
         "dealer_5d": 1015038
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -206574,6 +207827,16 @@
         "investment_trust_20d": -103000,
         "dealer_1d": 66303,
         "dealer_5d": 18486
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -207943,6 +209206,16 @@
         "dealer_1d": 1009,
         "dealer_5d": 47959
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -209310,6 +210583,16 @@
         "investment_trust_20d": 11430605,
         "dealer_1d": 152586,
         "dealer_5d": 275936
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -210679,6 +211962,16 @@
         "dealer_1d": -35452,
         "dealer_5d": -857750
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -212046,6 +213339,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 29039,
         "dealer_5d": 29113
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -213415,6 +214718,16 @@
         "dealer_1d": 246802,
         "dealer_5d": 290253
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -214783,6 +216096,16 @@
         "dealer_1d": -10279,
         "dealer_5d": -31096
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -216080,6 +217403,16 @@
         "investment_trust_20d": 342666,
         "dealer_1d": 79393,
         "dealer_5d": 149407
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -217449,6 +218782,16 @@
         "dealer_1d": -29542,
         "dealer_5d": -114229
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -218816,6 +220159,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 27053,
         "dealer_5d": 28053
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -220185,6 +221538,16 @@
         "dealer_1d": 40119,
         "dealer_5d": 73495
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -221552,6 +222915,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 121792,
         "dealer_5d": 99715
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -222921,6 +224294,16 @@
         "dealer_1d": -22317,
         "dealer_5d": -7577
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -224288,6 +225671,16 @@
         "investment_trust_20d": -276888,
         "dealer_1d": -18773,
         "dealer_5d": 78183
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -225657,6 +227050,16 @@
         "dealer_1d": 180733,
         "dealer_5d": 507233
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -227024,6 +228427,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -294992,
         "dealer_5d": -611259
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -228393,6 +229806,16 @@
         "dealer_1d": -16536,
         "dealer_5d": -146936
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -229760,6 +231183,16 @@
         "investment_trust_20d": -374000,
         "dealer_1d": 77115,
         "dealer_5d": 243621
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -231129,6 +232562,16 @@
         "dealer_1d": 18434,
         "dealer_5d": -90071
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -232496,6 +233939,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 67537,
         "dealer_5d": 98044
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -233865,6 +235318,16 @@
         "dealer_1d": 108772,
         "dealer_5d": 148242
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -235232,6 +236695,16 @@
         "investment_trust_20d": -335675,
         "dealer_1d": 23909,
         "dealer_5d": -34622
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -236601,6 +238074,16 @@
         "dealer_1d": 50013,
         "dealer_5d": -412829
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -237968,6 +239451,16 @@
         "investment_trust_20d": 159198,
         "dealer_1d": 20000,
         "dealer_5d": -73326
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -239337,6 +240830,16 @@
         "dealer_1d": -13142,
         "dealer_5d": 18333
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -240704,6 +242207,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 10917,
         "dealer_5d": -74962
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -242073,6 +243586,16 @@
         "dealer_1d": 15053,
         "dealer_5d": 4031
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -243370,6 +244893,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -36563,
         "dealer_5d": -130751
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -244739,6 +246272,16 @@
         "dealer_1d": -247749,
         "dealer_5d": -555578
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -246106,6 +247649,16 @@
         "investment_trust_20d": 8980438,
         "dealer_1d": 174203,
         "dealer_5d": -77441
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -247475,6 +249028,16 @@
         "dealer_1d": 22517,
         "dealer_5d": 22612
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -248842,6 +250405,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 22727,
         "dealer_5d": -16982
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -250211,6 +251784,16 @@
         "dealer_1d": -36496,
         "dealer_5d": 1416889
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -251578,6 +253161,16 @@
         "investment_trust_20d": -178000,
         "dealer_1d": 788889,
         "dealer_5d": 2431358
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -252947,6 +254540,16 @@
         "dealer_1d": 20855,
         "dealer_5d": -7085
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -254314,6 +255917,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -133171,
         "dealer_5d": -951985
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -255683,6 +257296,16 @@
         "dealer_1d": 362539,
         "dealer_5d": 587014
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -257050,6 +258673,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -196,
         "dealer_5d": 14768
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -258419,6 +260052,16 @@
         "dealer_1d": -204,
         "dealer_5d": -11851
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -259786,6 +261429,16 @@
         "investment_trust_20d": 167892,
         "dealer_1d": 10212,
         "dealer_5d": 14980
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -261155,6 +262808,16 @@
         "dealer_1d": 7000,
         "dealer_5d": -24036
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -262522,6 +264185,16 @@
         "investment_trust_20d": -8515728,
         "dealer_1d": 0,
         "dealer_5d": 0
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -263891,6 +265564,16 @@
         "dealer_1d": 137640,
         "dealer_5d": 271589
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -265258,6 +266941,16 @@
         "investment_trust_20d": 1000,
         "dealer_1d": -553,
         "dealer_5d": 207992
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -266627,6 +268320,16 @@
         "dealer_1d": 292,
         "dealer_5d": -108
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -267994,6 +269697,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 16827,
         "dealer_5d": 14676
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -269363,6 +271076,16 @@
         "dealer_1d": -55280,
         "dealer_5d": 122627
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -270730,6 +272453,16 @@
         "investment_trust_20d": -1800000,
         "dealer_1d": -270815,
         "dealer_5d": -347815
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -272099,6 +273832,16 @@
         "dealer_1d": 82910,
         "dealer_5d": 375875
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -273466,6 +275209,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 28285,
         "dealer_5d": 25378
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -274835,6 +276588,16 @@
         "dealer_1d": -129271,
         "dealer_5d": 1584711
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -276202,6 +277965,16 @@
         "investment_trust_20d": -12000,
         "dealer_1d": 2523,
         "dealer_5d": 34104
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -277571,6 +279344,16 @@
         "dealer_1d": 14152,
         "dealer_5d": 10218
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -278938,6 +280721,16 @@
         "investment_trust_20d": -100000,
         "dealer_1d": 17926,
         "dealer_5d": 53207
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -280307,6 +282100,16 @@
         "dealer_1d": 7383,
         "dealer_5d": 30550
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -281674,6 +283477,16 @@
         "investment_trust_20d": -95000,
         "dealer_1d": 15946,
         "dealer_5d": -110237
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -283043,6 +284856,16 @@
         "dealer_1d": -19369,
         "dealer_5d": -18484
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -284410,6 +286233,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -5084,
         "dealer_5d": -324422
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -285779,6 +287612,16 @@
         "dealer_1d": 3498,
         "dealer_5d": 21498
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-05-08",
@@ -286786,6 +288629,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -1063,
         "dealer_5d": 8718
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -288155,6 +290008,16 @@
         "dealer_1d": 44000,
         "dealer_5d": 38351
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -289522,6 +291385,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -132875,
         "dealer_5d": -16642
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -290891,6 +292764,16 @@
         "dealer_1d": -9498,
         "dealer_5d": -29835
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -292258,6 +294141,16 @@
         "investment_trust_20d": -227000,
         "dealer_1d": 358263,
         "dealer_5d": 492823
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -293627,6 +295520,16 @@
         "dealer_1d": 15414,
         "dealer_5d": 13306
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -294994,6 +296897,16 @@
         "investment_trust_20d": 18737624,
         "dealer_1d": 0,
         "dealer_5d": 0
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -296363,6 +298276,16 @@
         "dealer_1d": -151578,
         "dealer_5d": -902412
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -297730,6 +299653,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -7193,
         "dealer_5d": -21431
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -299099,6 +301032,16 @@
         "dealer_1d": 46652,
         "dealer_5d": 80042
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -300467,6 +302410,16 @@
         "dealer_1d": 49220,
         "dealer_5d": 381815
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-09-03",
@@ -300654,6 +302607,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 15379,
         "dealer_5d": 92758
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -302023,6 +303986,16 @@
         "dealer_1d": 75719,
         "dealer_5d": -78606
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -303390,6 +305363,16 @@
         "investment_trust_20d": -7969180,
         "dealer_1d": 43973,
         "dealer_5d": -70599
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -304759,6 +306742,16 @@
         "dealer_1d": 88000,
         "dealer_5d": 75000
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -306126,6 +308119,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 3369,
         "dealer_5d": -78748
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -307495,6 +309498,16 @@
         "dealer_1d": -20000,
         "dealer_5d": 100599
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -308862,6 +310875,16 @@
         "investment_trust_20d": 142853,
         "dealer_1d": 17785,
         "dealer_5d": 28311
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -310231,6 +312254,16 @@
         "dealer_1d": -6702,
         "dealer_5d": 1248
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -311598,6 +313631,16 @@
         "investment_trust_20d": 2000,
         "dealer_1d": 35716,
         "dealer_5d": 20996
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -312967,6 +315010,16 @@
         "dealer_1d": 40278,
         "dealer_5d": -20743
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -314334,6 +316387,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 7200,
         "dealer_5d": 7200
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -315703,6 +317766,16 @@
         "dealer_1d": 9000,
         "dealer_5d": 54460
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -317070,6 +319143,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -70339,
         "dealer_5d": 770027
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -318439,6 +320522,16 @@
         "dealer_1d": 167,
         "dealer_5d": 353
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -319806,6 +321899,16 @@
         "investment_trust_20d": -6000,
         "dealer_1d": 149052,
         "dealer_5d": 138958
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -321175,6 +323278,16 @@
         "dealer_1d": -84173,
         "dealer_5d": -76859
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -322542,6 +324655,16 @@
         "investment_trust_20d": -368000,
         "dealer_1d": 113622,
         "dealer_5d": -42869
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -323911,6 +326034,16 @@
         "dealer_1d": 71411,
         "dealer_5d": 47167
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -325278,6 +327411,16 @@
         "investment_trust_20d": -329000,
         "dealer_1d": 8514,
         "dealer_5d": 52374
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -326647,6 +328790,16 @@
         "dealer_1d": 172681,
         "dealer_5d": 300770
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -328014,6 +330167,16 @@
         "investment_trust_20d": -1257416,
         "dealer_1d": 34202,
         "dealer_5d": 183965
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -329383,6 +331546,16 @@
         "dealer_1d": 8542,
         "dealer_5d": 41809
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -330750,6 +332923,16 @@
         "investment_trust_20d": 861440,
         "dealer_1d": 60002,
         "dealer_5d": 27376
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -332119,6 +334302,16 @@
         "dealer_1d": 107847,
         "dealer_5d": 41617
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -333486,6 +335679,16 @@
         "investment_trust_20d": 1251600,
         "dealer_1d": 36000,
         "dealer_5d": -165098
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -334855,6 +337058,16 @@
         "dealer_1d": 17758,
         "dealer_5d": 150740
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -336222,6 +338435,16 @@
         "investment_trust_20d": 2000,
         "dealer_1d": 23805,
         "dealer_5d": -104141
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -337591,6 +339814,16 @@
         "dealer_1d": 3317,
         "dealer_5d": 21667
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -338958,6 +341191,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 19144,
         "dealer_5d": 27328
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -340327,6 +342570,16 @@
         "dealer_1d": 151855,
         "dealer_5d": -128455
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -341694,6 +343947,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 70716,
         "dealer_5d": 81317
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -343063,6 +345326,16 @@
         "dealer_1d": 2607,
         "dealer_5d": -19012
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -344430,6 +346703,16 @@
         "investment_trust_20d": -13000,
         "dealer_1d": 3676,
         "dealer_5d": -1594
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -345799,6 +348082,16 @@
         "dealer_1d": -1709,
         "dealer_5d": -5328
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -347166,6 +349459,16 @@
         "investment_trust_20d": 237508,
         "dealer_1d": -6000,
         "dealer_5d": 1617
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -348535,6 +350838,16 @@
         "dealer_1d": -11104,
         "dealer_5d": 54691
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -349902,6 +352215,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -20125,
         "dealer_5d": 36343
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -351271,6 +353594,16 @@
         "dealer_1d": 379964,
         "dealer_5d": 458411
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -352638,6 +354971,16 @@
         "investment_trust_20d": -87000,
         "dealer_1d": 21995,
         "dealer_5d": 85734
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -354007,6 +356350,16 @@
         "dealer_1d": -267397,
         "dealer_5d": -418921
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -355374,6 +357727,16 @@
         "investment_trust_20d": 430000,
         "dealer_1d": 9000,
         "dealer_5d": 6022
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -356743,6 +359106,16 @@
         "dealer_1d": -94,
         "dealer_5d": -69
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -358110,6 +360483,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -9091,
         "dealer_5d": -6829
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -359479,6 +361862,16 @@
         "dealer_1d": 324481,
         "dealer_5d": 314004
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -360846,6 +363239,16 @@
         "investment_trust_20d": 787000,
         "dealer_1d": 19979,
         "dealer_5d": 78044
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -362215,6 +364618,16 @@
         "dealer_1d": -19970,
         "dealer_5d": -45400
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -363582,6 +365995,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 11794,
         "dealer_5d": 29485
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -364951,6 +367374,16 @@
         "dealer_1d": 129,
         "dealer_5d": -509
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -366318,6 +368751,16 @@
         "investment_trust_20d": -7000,
         "dealer_1d": 3000,
         "dealer_5d": 92485
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -367687,6 +370130,16 @@
         "dealer_1d": 0,
         "dealer_5d": 2000
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -369054,6 +371507,16 @@
         "investment_trust_20d": 671000,
         "dealer_1d": 34872,
         "dealer_5d": 43192
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -370423,6 +372886,16 @@
         "dealer_1d": 5895,
         "dealer_5d": 2579
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -371790,6 +374263,16 @@
         "investment_trust_20d": -8000,
         "dealer_1d": 1997,
         "dealer_5d": 6299
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -373159,6 +375642,16 @@
         "dealer_1d": -1000,
         "dealer_5d": 87000
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -374526,6 +377019,16 @@
         "investment_trust_20d": -51000,
         "dealer_1d": 39000,
         "dealer_5d": 65000
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -375895,6 +378398,16 @@
         "dealer_1d": -20785,
         "dealer_5d": 115383
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -377262,6 +379775,16 @@
         "investment_trust_20d": -461000,
         "dealer_1d": 120151,
         "dealer_5d": -287504
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -378631,6 +381154,16 @@
         "dealer_1d": -1267,
         "dealer_5d": 74702
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -379999,6 +382532,16 @@
         "dealer_1d": 0,
         "dealer_5d": 0
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-06-05",
@@ -380806,6 +383349,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -9000,
         "dealer_5d": 221000
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -382175,6 +384728,16 @@
         "dealer_1d": 154039,
         "dealer_5d": 122696
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -383542,6 +386105,16 @@
         "investment_trust_20d": 1000,
         "dealer_1d": -43643,
         "dealer_5d": 3463
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -384911,6 +387484,16 @@
         "dealer_1d": 59129,
         "dealer_5d": -42558
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -386278,6 +388861,16 @@
         "investment_trust_20d": -85000,
         "dealer_1d": -219360,
         "dealer_5d": 373872
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -387647,6 +390240,16 @@
         "dealer_1d": 1205000,
         "dealer_5d": 1242000
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -389014,6 +391617,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -13430,
         "dealer_5d": 25694
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -390383,6 +392996,16 @@
         "dealer_1d": 16216,
         "dealer_5d": -43552
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -391750,6 +394373,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 3113000,
         "dealer_5d": 3117000
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -393119,6 +395752,16 @@
         "dealer_1d": 0,
         "dealer_5d": 0
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -394486,6 +397129,16 @@
         "investment_trust_20d": -1294,
         "dealer_1d": 3553,
         "dealer_5d": 32573
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -395855,6 +398508,16 @@
         "dealer_1d": -3042,
         "dealer_5d": 50705
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -397222,6 +399885,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 2606,
         "dealer_5d": -9854
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -398591,6 +401264,16 @@
         "dealer_1d": 123,
         "dealer_5d": -29996
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -399958,6 +402641,16 @@
         "investment_trust_20d": 3262000,
         "dealer_1d": 58953,
         "dealer_5d": 302108
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -401327,6 +404020,16 @@
         "dealer_1d": 7435,
         "dealer_5d": -64019
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -402694,6 +405397,16 @@
         "investment_trust_20d": 548052,
         "dealer_1d": -24207,
         "dealer_5d": 75691
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -404063,6 +406776,16 @@
         "dealer_1d": 4095,
         "dealer_5d": 3095
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -405430,6 +408153,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 143659,
         "dealer_5d": 178096
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -406799,6 +409532,16 @@
         "dealer_1d": 27,
         "dealer_5d": 189
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -408167,6 +410910,16 @@
         "dealer_1d": 3229,
         "dealer_5d": -385981
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -409484,6 +412237,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 0,
         "dealer_5d": 0
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -410853,6 +413616,16 @@
         "dealer_1d": 29310,
         "dealer_5d": -130348
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -412220,6 +414993,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 56000,
         "dealer_5d": -173000
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -413589,6 +416372,16 @@
         "dealer_1d": 47127,
         "dealer_5d": -156830
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -414956,6 +417749,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 4311,
         "dealer_5d": 222157
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -416325,6 +419128,16 @@
         "dealer_1d": -21503,
         "dealer_5d": -235931
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -417692,6 +420505,16 @@
         "investment_trust_20d": 221000,
         "dealer_1d": -21092,
         "dealer_5d": -374411
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -419061,6 +421884,16 @@
         "dealer_1d": -20612,
         "dealer_5d": -132416
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -420428,6 +423261,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 60000,
         "dealer_5d": 68000
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -421797,6 +424640,16 @@
         "dealer_1d": 12000,
         "dealer_5d": 54692
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -423164,6 +426017,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 2000,
         "dealer_5d": 121000
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -424533,6 +427396,16 @@
         "dealer_1d": 42051,
         "dealer_5d": -42241
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -425900,6 +428773,16 @@
         "investment_trust_20d": 2302000,
         "dealer_1d": -37037,
         "dealer_5d": -181007
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -427269,6 +430152,16 @@
         "dealer_1d": -18379,
         "dealer_5d": -201182
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -428636,6 +431529,16 @@
         "investment_trust_20d": 96000,
         "dealer_1d": 6000,
         "dealer_5d": 7009
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -430005,6 +432908,16 @@
         "dealer_1d": 674,
         "dealer_5d": -17612
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -431372,6 +434285,16 @@
         "investment_trust_20d": 122000,
         "dealer_1d": 62000,
         "dealer_5d": 87000
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -432741,6 +435664,16 @@
         "dealer_1d": 5793,
         "dealer_5d": 17412
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -434108,6 +437041,16 @@
         "investment_trust_20d": -1136000,
         "dealer_1d": 9938,
         "dealer_5d": 131520
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -435477,6 +438420,16 @@
         "dealer_1d": -130249,
         "dealer_5d": -190871
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -436844,6 +439797,16 @@
         "investment_trust_20d": -19000,
         "dealer_1d": -46919,
         "dealer_5d": -12395
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -438213,6 +441176,16 @@
         "dealer_1d": -8193,
         "dealer_5d": -89939
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -439580,6 +442553,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 611,
         "dealer_5d": 2368
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -440949,6 +443932,16 @@
         "dealer_1d": 7151,
         "dealer_5d": 12566
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -442316,6 +445309,16 @@
         "investment_trust_20d": 2476346,
         "dealer_1d": 54041,
         "dealer_5d": 48809
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -443685,6 +446688,16 @@
         "dealer_1d": 70338,
         "dealer_5d": -48555
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -445052,6 +448065,16 @@
         "investment_trust_20d": 23884,
         "dealer_1d": 8000,
         "dealer_5d": 14830
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -446421,6 +449444,16 @@
         "dealer_1d": -4448,
         "dealer_5d": -46171
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -447788,6 +450821,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": -8261,
         "dealer_5d": -69457
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -449157,6 +452200,16 @@
         "dealer_1d": -382,
         "dealer_5d": -608
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -450524,6 +453577,16 @@
         "investment_trust_20d": 0,
         "dealer_1d": 808000,
         "dealer_5d": 814000
+      },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
       },
       "history": [
         [
@@ -451893,6 +454956,16 @@
         "dealer_1d": 26692603,
         "dealer_5d": 34480356
       },
+      "marginShortLending": null,
+      "fundamental": {
+        "monthlyRevenue": null
+      },
+      "sourceAEvents": [],
+      "evidenceReadiness": {
+        "marginShortLending": false,
+        "fundamental": false,
+        "sourceAEvent": false
+      },
       "history": [
         [
           "2026-03-16",
@@ -453216,6 +456289,10 @@
     "historicalCacheTradingDays": 130,
     "buyHistoryReadyCount": 298,
     "institutional20dReadyCount": 299,
-    "note": "BUY must fail closed until required historical, institutional, TDCC, news/event and ranking evidence is verifiably available."
+    "marginShortLendingReadyCount": 0,
+    "fundamentalReadyCount": 0,
+    "sourceAEventCoverageCount": 0,
+    "tdccReadyCount": 0,
+    "note": "BUY remains fail-closed for any required evidence that is not point-in-time verifiable. Daily capture now preserves margin/short/lending, monthly revenue, SOURCE_A material information and TDCC evidence when available."
   }
 }
