@@ -6,7 +6,9 @@ const now = new Date();
 const parts = new Intl.DateTimeFormat('en-CA', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(now);
 const value = (type) => parts.find((p) => p.type === type)?.value;
 const todayDate = `${value('year')}-${value('month')}-${value('day')}`;
-const targetDate = process.env.TARGET_DATE || todayDate;
+const simulatedTodayDate = process.env.SIMULATED_TODAY_DATE || null;
+const effectiveTodayDate = simulatedTodayDate || todayDate;
+const targetDate = process.env.TARGET_DATE || effectiveTodayDate;
 const compact = targetDate.replaceAll('-', '');
 const [year, month, day] = targetDate.split('-').map(Number);
 const mm = String(month).padStart(2, '0');
@@ -75,8 +77,8 @@ async function readPreviousMatrix() {
 
 async function capture(source) {
   const capturedAt = new Date().toISOString();
-  const result = { source: source.id, gate: source.gate, institution: source.institution, kind: source.kind, url: source.url, targetDate, capturedAt, status: 'VERIFY_FAILED' };
-  if (source.latestOnly && targetDate !== todayDate) {
+  const result = { source: source.id, gate: source.gate, institution: source.institution, kind: source.kind, url: source.url, targetDate, capturedAt, status: 'VERIFY_FAILED', simulatedTodayDate };
+  if (source.latestOnly && targetDate !== effectiveTodayDate) {
     return { ...result, status: 'NOT_CAPTURED_RETROSPECTIVE', note: 'Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage.' };
   }
   try {
@@ -142,6 +144,6 @@ const gates = requiredGates.map((gate) => {
     : { gate, status: 'VERIFY_FAILED', sources: evidence.map((c) => c.source), note: 'No official source produced affirmative target-date evidence in this run or a preserved prior PASS.' };
 });
 const overallStatus = gates.every((g) => g.status === 'PASS') ? 'PASS' : 'VERIFY_FAILED';
-const matrix = { targetDate, timezone: TZ, generatedAt: new Date().toISOString(), overallStatus, requiredGates, gates, captures };
+const matrix = { targetDate, timezone: TZ, generatedAt: new Date().toISOString(), simulatedTodayDate, effectiveTodayDate, overallStatus, requiredGates, gates, captures };
 await fs.writeFile(matrixPath, JSON.stringify(matrix, null, 2) + '\n');
 console.log(JSON.stringify(matrix, null, 2));

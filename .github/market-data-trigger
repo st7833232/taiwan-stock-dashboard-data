@@ -1,5 +1,6 @@
 2026-09-18
 target_date=2026-09-18
-backfill=1
-reason=production-recovery-v2-backfill-rerun-20260919-1257
+backfill=0
+simulate_today=1
+reason=simulate-2026-09-18-same-day-v2-full-evidence
 strategy=entry-dual-track-v2

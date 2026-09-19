@@ -69,6 +69,10 @@ jobs:
           if [[ -n "$target" ]]; then
             echo "TARGET_DATE=$target" >> "$GITHUB_ENV"
             echo "Resolved target date: $target"
+            if [[ -f .github/market-data-trigger ]] && grep -Fxq 'simulate_today=1' .github/market-data-trigger; then
+              echo "SIMULATED_TODAY_DATE=$target" >> "$GITHUB_ENV"
+              echo "Simulated same-day capture enabled for $target."
+            fi
           else
             echo "No explicit target date; scripts will use current Asia/Taipei date."
           fi

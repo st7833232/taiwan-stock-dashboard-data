@@ -63,6 +63,27 @@ function normalizeInstitution(row,market) {
   return {code,foreign:num(row['Foreign Investors include Mainland Area Investors (Foreign Dealers excluded)-Difference'] ?? row['ForeignInvestorsInclude MainlandAreaInvestors-Difference']),investmentTrust:num(row['SecuritiesInvestmentTrustCompanies-Difference']),dealer:num(row['Dealers-Difference']),total:num(row.TotalDifference)};
 }
 function firstFinite(row,keys) { for (const key of keys) { const value=num(row[key]); if (value!==null) return value; } return null; }
+function normalizeDateKey(value) {
+  const text=String(value??'').trim(); if (!text) return null;
+  const digits=text.replace(/\D/g,'');
+  if (/^\d{8}$/.test(digits)) return `${digits.slice(0,4)}-${digits.slice(4,6)}-${digits.slice(6,8)}`;
+  if (/^\d{7}$/.test(digits)) {
+    const y=1911+Number(digits.slice(0,3));
+    return `${y}-${digits.slice(3,5)}-${digits.slice(5,7)}`;
+  }
+  return null;
+}
+function normalizeMonthKey(value) {
+  const digits=String(value??'').replace(/\D/g,'');
+  if (/^\d{6}$/.test(digits)) return `${digits.slice(0,4)}-${digits.slice(4,6)}`;
+  if (/^\d{5}$/.test(digits)) return `${1911+Number(digits.slice(0,3))}-${digits.slice(3,5)}`;
+  return null;
+}
+function previousMonthKey(date) {
+  const [y,m]=date.split('-').map(Number);
+  const d=new Date(Date.UTC(y,m-2,1));
+  return `${d.getUTCFullYear()}-${String(d.getUTCMonth()+1).padStart(2,'0')}`;
+}
 function normalizeRevenue(row) {
   const code=codeOf(row); if (!code) return null;
   const dataMonth=String(row['資料年月'] ?? row['資料年/月'] ?? '').trim() || null;
@@ -73,7 +94,7 @@ function normalizeRevenue(row) {
   const momPct=firstFinite(row,['營業收入-上月比較增減(%)','上月比較增減(%)']);
   const cumulativeYoyPct=firstFinite(row,['累計營業收入-前期比較增減(%)','累計營業收入-去年同期增減(%)','累計較去年同期增減(%)']);
   if (currentRevenue===null && yoyPct===null && momPct===null) return null;
-  return {code,name:nameOf(row),dataMonth,currentRevenue,previousMonthRevenue,previousYearRevenue,yoyPct,momPct,cumulativeYoyPct,sourceQuality:'SOURCE_A'};
+  return {code,name:nameOf(row),dataMonth,dataMonthKey:normalizeMonthKey(dataMonth),currentRevenue,previousMonthRevenue,previousYearRevenue,yoyPct,momPct,cumulativeYoyPct,sourceQuality:'SOURCE_A'};
 }
 function normalizeMargin(row,market) {
   const code=codeOf(row); if (!code) return null;
@@ -94,7 +115,8 @@ function normalizeMaterialEvent(row) {
   const subject=String(row['主旨 '] ?? row['主旨'] ?? '').trim();
   const factDate=String(row['事實發生日'] ?? '').trim() || null;
   if (!subject) return null;
-  return {code,name:nameOf(row),subject,publishDate,publishTime,factDate,sourceQuality:'SOURCE_A'};
+  const eventDate=normalizeDateKey(publishDate) ?? normalizeDateKey(factDate);
+  return {code,name:nameOf(row),subject,publishDate,publishTime,factDate,eventDate,sourceQuality:'SOURCE_A'};
 }
 async function rowsFrom(rel) {
   try { const parsed=JSON.parse(await fs.readFile(rel,'utf8')); return uniqueRows([...tableRows(parsed),...objectRows(parsed)]); } catch { return []; }
@@ -221,10 +243,16 @@ const [twseMarginRows,tpexMarginRows,twseRevenueRows,tpexRevenueRows,materialRow
 ]);
 const marginByCode=new Map([...twseMarginRows,...tpexMarginRows].map((x)=>[x.code,x]));
 const revenueByCode=new Map();
-for (const row of [...twseRevenueRows,...tpexRevenueRows]) { const x=normalizeRevenue(row); if (x) revenueByCode.set(x.code,x); }
+const revenueCutoff=previousMonthKey(targetDate);
+for (const row of [...twseRevenueRows,...tpexRevenueRows]) {
+  const x=normalizeRevenue(row);
+  if (!x || !x.dataMonthKey || x.dataMonthKey>revenueCutoff) continue;
+  const prev=revenueByCode.get(x.code);
+  if (!prev || x.dataMonthKey>=prev.dataMonthKey) revenueByCode.set(x.code,x);
+}
 const materialByCode=new Map();
 for (const row of materialRows) {
-  const x=normalizeMaterialEvent(row); if (!x) continue;
+  const x=normalizeMaterialEvent(row); if (!x || !x.eventDate || x.eventDate>targetDate) continue;
   const arr=materialByCode.get(x.code)??[]; arr.push(x); materialByCode.set(x.code,arr);
 }
 
@@ -300,7 +328,7 @@ if (tdccRows.length>0) {
 let gateMatrix=null;
 try { gateMatrix=JSON.parse(await fs.readFile(path.join(dir,'gate-matrix.json'),'utf8')); } catch {}
 const output={
-  schemaVersion:3,targetDate,generatedAt:new Date().toISOString(),strategyVersion:config.version,gateMatrix,
+  schemaVersion:3,targetDate,generatedAt:new Date().toISOString(),strategyVersion:config.version,simulation:{simulatedTodayDate:process.env.SIMULATED_TODAY_DATE||null},gateMatrix,
   universeSummary:{total:universe.length,stocks:stocks.length,etfs:etfs.length,liquidTodayStocks:liquidToday.length,preferredPriceAndLiquidTodayStocks:preferredToday.length,deepDiveCount:deepDiveCodes.length},
   universe,codes:deepDiveCodes,deepDive,tdcc,
   historyCache:{asOf:historyCache?.asOf??null,verifiedTradingDays:historyCache?.coverage?.verifiedTradingDays??0,codesWith20Days:historyCache?.coverage?.codesWith20Days??0,codesWith120Days:historyCache?.coverage?.codesWith120Days??0,codesWith20InstitutionDays:historyCache?.coverage?.codesWith20InstitutionDays??0},
