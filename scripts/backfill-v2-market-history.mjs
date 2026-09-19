@@ -10,7 +10,7 @@ const historyDir = 'history';
 const historyPath = path.join(historyDir, 'market-history.json');
 const inputPath = targetDate ? path.join('raw', targetDate, 'research-input.json') : null;
 
-if (!targetDate || !/^\\d{4}-\\d{2}-\\d{2}$/.test(targetDate)) throw new Error('TARGET_DATE YYYY-MM-DD is required');
+if (!targetDate || !/^\d{4}-\d{2}-\d{2}$/.test(targetDate)) throw new Error('TARGET_DATE YYYY-MM-DD is required');
 await fs.mkdir(historyDir, { recursive: true });
 
 const compact = (date) => date.replaceAll('-', '');
@@ -43,7 +43,7 @@ function tableRows(value,out=[]) {
     return out;
   }
   for (const [key,fields] of Object.entries(value)) {
-    const match=key.match(/^fields(\\d*)$/);
+    const match=key.match(/^fields(\d*)$/);
     if (!match || !Array.isArray(fields)) continue;
     const data=value[`data${match[1]}`];
     if (!Array.isArray(data)) continue;
@@ -81,7 +81,7 @@ function num(value) {
   if (value===null || value===undefined) return null;
   const text=String(value).replaceAll(',','').trim();
   if (!text || text==='--' || text==='---' || text==='N/A') return null;
-  const n=Number(text.replace(/^\\+/,''));
+  const n=Number(text.replace(/^\+/,''));
   return Number.isFinite(n)?n:null;
 }
 function codeOf(row) {
@@ -89,7 +89,7 @@ function codeOf(row) {
 }
 function assetType(code) {
   if (/^00[0-9A-Z]{2,5}$/.test(code)) return 'ETF';
-  if (/^\\d{4}$/.test(code)) return 'STOCK';
+  if (/^\d{4}$/.test(code)) return 'STOCK';
   return 'OTHER';
 }
 function normalizeQuote(row,market) {

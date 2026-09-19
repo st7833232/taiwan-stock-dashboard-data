@@ -12,7 +12,7 @@ function tableRows(value,out=[]) {
   if (!value || typeof value!=='object') return out;
   if (Array.isArray(value)) { for (const item of value) tableRows(item,out); return out; }
   for (const [key,fields] of Object.entries(value)) {
-    const match=key.match(/^fields(\\d*)$/); if (!match || !Array.isArray(fields)) continue;
+    const match=key.match(/^fields(\d*)$/); if (!match || !Array.isArray(fields)) continue;
     const data=value[`data${match[1]}`]; if (!Array.isArray(data)) continue;
     for (const row of data) {
       if (!Array.isArray(row)) continue;
@@ -37,13 +37,13 @@ function num(value) {
   if (value===null || value===undefined) return null;
   const text=String(value).replaceAll(',','').trim();
   if (!text || text==='--' || text==='---' || text==='N/A') return null;
-  const n=Number(text.replace(/^\\+/,'')); return Number.isFinite(n)?n:null;
+  const n=Number(text.replace(/^\+/,'')); return Number.isFinite(n)?n:null;
 }
 function codeOf(row) { return String(row['證券代號'] ?? row.SecuritiesCompanyCode ?? row['代號'] ?? row['證券代碼'] ?? '').trim(); }
 function nameOf(row) { return String(row['證券名稱'] ?? row.CompanyName ?? row['名稱'] ?? '').trim(); }
 function assetType(code) {
   if (/^00[0-9A-Z]{2,5}$/.test(code)) return 'ETF';
-  if (/^\\d{4}$/.test(code)) return 'STOCK';
+  if (/^\d{4}$/.test(code)) return 'STOCK';
   return 'OTHER';
 }
 function normalizeQuote(row,market) {
@@ -157,7 +157,7 @@ const histories=new Map();
 for (const code of deepDiveCodes) histories.set(code,(cacheData[code]??[]).filter((r)=>r[0]<=targetDate).sort((a,b)=>a[0].localeCompare(b[0])));
 
 let rawDates=[];
-try { rawDates=(await fs.readdir('raw',{withFileTypes:true})).filter((x)=>x.isDirectory()&&/^\\d{4}-\\d{2}-\\d{2}$/.test(x.name)&&x.name<=targetDate).map((x)=>x.name).sort(); } catch {}
+try { rawDates=(await fs.readdir('raw',{withFileTypes:true})).filter((x)=>x.isDirectory()&&/^\d{4}-\d{2}-\d{2}$/.test(x.name)&&x.name<=targetDate).map((x)=>x.name).sort(); } catch {}
 const institutionalHistory=new Map(deepDiveCodes.map((code)=>[code,[]]));
 const wanted=new Set(deepDiveCodes);
 for (const date of rawDates) {
