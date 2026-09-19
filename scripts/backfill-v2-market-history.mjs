@@ -202,5 +202,5 @@ history.coverage={
   codesWith20Days:Object.values(history.data).filter((rows)=>rows.length>=20).length,
   codesWith120Days:Object.values(history.data).filter((rows)=>rows.length>=120).length
 };
-await fs.writeFile(historyPath,JSON.stringify(history)+'\\n');
+await fs.writeFile(historyPath,JSON.stringify(history)+'\n');
 console.log(JSON.stringify({output:historyPath,asOf:history.asOf,coverage:history.coverage}));

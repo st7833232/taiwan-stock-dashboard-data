@@ -215,5 +215,5 @@ const output={
     note:'BUY must fail closed until required historical, institutional, TDCC, news/event and ranking evidence is verifiably available.'
   }
 };
-await fs.writeFile(path.join(dir,'research-input.json'),JSON.stringify(output,null,2)+'\\n');
+await fs.writeFile(path.join(dir,'research-input.json'),JSON.stringify(output,null,2)+'\n');
 console.log(JSON.stringify({targetDate,output:path.join(dir,'research-input.json'),universeSummary:output.universeSummary,historyCache:output.historyCache,v2Readiness:output.v2Readiness}));
