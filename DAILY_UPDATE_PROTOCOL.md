@@ -272,6 +272,17 @@ validator 對舊的 `entry-dual-track-v1` snapshot 只做 migration skip；從�
 - V2 BUY 的 `universeRank` 與 `universePercentile` 必須有實際可驗證數值；不得以 null 繞過 Cross-Sectional Ranking Gate。
 - 歷史資料或 ranking 尚未 ready 時，研究可以輸出 WATCH / NO_TRADE，但不得以估計值補齊 BUY Hard Gate。
 
+### 3.5 Official rolling history cache
+
+- 根目錄 `history/market-history.json` 是由官方 TWSE / TPEx 每日收盤資料衍生的 compact rolling cache，不是第三方估計值。
+- 初始 backfill 只接受官方 payload 內能找到要求交易日日期證據的資料；無日期證據、HTTP 錯誤、解析失敗一律跳過，不得填值。
+- cache 預設保留至少 130 個已驗證交易日，供 MA120、20 日流動性、RSI、MACD、ATR 與 20/60 日高低計算。
+- `research-input.json` 必須從 rolling cache 計算 MA5/10/20/60/120、RSI14、MACD、ATR14、VolumeMA20、VolumeRatio20D、20/60 日高低與 20 日中位成交金額。
+- 當 cache 覆蓋不足所需週期時，對應指標必須為 null/Not Ready，不得使用當日值或估算替代。
+- Git history 保留 cache 更新軌跡；cache 只可由已驗證官方歷史資料或當日已通過 Gate 的正式市場資料延伸。
+- 法人 3D/5D/10D/20D 只有在相應官方日資料實際存在時才可計算；不足時保留 null，不得用 1D 外推。
+- TDCC 歷史資料不得以事後最新一期倒灌歷史 targetDate。
+
 ## 4. Snapshot 與 selection history
 
 Gate 通過後，以執行當下台北時間建立 `revision = YYYY-MM-DD-HHmmss`，並建立：
