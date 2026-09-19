@@ -6,6 +6,11 @@ on:
     paths:
       - '.github/workflows/capture-official-market-data.yml'
       - '.github/market-data-trigger'
+      - 'strategy-config.json'
+      - 'scripts/check-daily-publication.mjs'
+      - 'scripts/backfill-v2-market-history.mjs'
+      - 'scripts/summarize-official-market-data.mjs'
+      - 'scripts/fetch-official-market-data.mjs'
   workflow_dispatch:
     inputs:
       target_date:
