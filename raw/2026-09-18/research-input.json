@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "targetDate": "2026-09-18",
-  "generatedAt": "2026-09-19T07:41:56.149Z",
+  "generatedAt": "2026-09-19T07:45:33.449Z",
   "strategyVersion": "entry-dual-track-v2",
   "simulation": {
     "simulatedTodayDate": "2026-09-18"
@@ -9,7 +9,7 @@
   "gateMatrix": {
     "targetDate": "2026-09-18",
     "timezone": "Asia/Taipei",
-    "generatedAt": "2026-09-19T07:41:48.862Z",
+    "generatedAt": "2026-09-19T07:45:26.633Z",
     "simulatedTodayDate": "2026-09-18",
     "effectiveTodayDate": "2026-09-18",
     "overallStatus": "PASS",
@@ -81,7 +81,7 @@
         "kind": "daily-close-quotes",
         "url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20260918&type=ALL&response=json",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T07:41:19.795Z",
+        "capturedAt": "2026-09-19T07:44:54.005Z",
         "status": "PASS",
         "simulatedTodayDate": "2026-09-18",
         "httpStatus": 200,
@@ -96,7 +96,7 @@
         "kind": "market-close-statistics",
         "url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20260918&type=ALL&response=json",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T07:41:24.459Z",
+        "capturedAt": "2026-09-19T07:44:56.832Z",
         "status": "PASS",
         "simulatedTodayDate": "2026-09-18",
         "httpStatus": 200,
@@ -111,7 +111,7 @@
         "kind": "market-turnover",
         "url": "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?date=20260918&response=json",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T07:41:25.189Z",
+        "capturedAt": "2026-09-19T07:44:57.470Z",
         "status": "PASS",
         "simulatedTodayDate": "2026-09-18",
         "httpStatus": 200,
@@ -126,7 +126,7 @@
         "kind": "individual-institutional",
         "url": "https://www.twse.com.tw/rwd/zh/fund/T86?date=20260918&selectType=ALL&response=json",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T07:41:25.393Z",
+        "capturedAt": "2026-09-19T07:44:57.672Z",
         "status": "PASS",
         "simulatedTodayDate": "2026-09-18",
         "httpStatus": 200,
@@ -141,7 +141,7 @@
         "kind": "daily-close-quotes",
         "url": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T07:41:28.327Z",
+        "capturedAt": "2026-09-19T07:45:00.973Z",
         "status": "PASS",
         "simulatedTodayDate": "2026-09-18",
         "httpStatus": 200,
@@ -156,7 +156,7 @@
         "kind": "daily-close-quotes",
         "url": "https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&d=115/09/18&se=EW&o=json",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T07:41:37.142Z",
+        "capturedAt": "2026-09-19T07:45:15.042Z",
         "status": "PASS",
         "simulatedTodayDate": "2026-09-18",
         "httpStatus": 200,
@@ -171,7 +171,7 @@
         "kind": "market-turnover-index",
         "url": "https://www.tpex.org.tw/openapi/v1/tpex_daily_trading_index",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T07:41:37.655Z",
+        "capturedAt": "2026-09-19T07:45:15.995Z",
         "status": "PASS",
         "simulatedTodayDate": "2026-09-18",
         "httpStatus": 200,
@@ -186,7 +186,7 @@
         "kind": "individual-institutional",
         "url": "https://www.tpex.org.tw/openapi/v1/tpex_3insti_daily_trading",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T07:41:37.891Z",
+        "capturedAt": "2026-09-19T07:45:16.704Z",
         "status": "PASS",
         "simulatedTodayDate": "2026-09-18",
         "httpStatus": 200,
@@ -201,7 +201,7 @@
         "kind": "institutional-summary",
         "url": "https://www.tpex.org.tw/openapi/v1/tpex_3insti_summary",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T07:41:39.862Z",
+        "capturedAt": "2026-09-19T07:45:18.777Z",
         "status": "PASS",
         "simulatedTodayDate": "2026-09-18",
         "httpStatus": 200,
@@ -216,7 +216,7 @@
         "kind": "margin-short",
         "url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260918&response=json&selectType=ALL",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T07:41:40.106Z",
+        "capturedAt": "2026-09-19T07:45:19.001Z",
         "status": "CAPTURED",
         "simulatedTodayDate": "2026-09-18",
         "httpStatus": 200,
@@ -232,7 +232,7 @@
         "kind": "margin-short-lending",
         "url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl?date=2026/09/18&id=&response=json",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T07:41:41.181Z",
+        "capturedAt": "2026-09-19T07:45:20.975Z",
         "status": "CAPTURED",
         "simulatedTodayDate": "2026-09-18",
         "httpStatus": 200,
@@ -248,7 +248,7 @@
         "kind": "monthly-revenue",
         "url": "https://openapi.twse.com.tw/v1/opendata/t187ap05_L",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T07:41:41.481Z",
+        "capturedAt": "2026-09-19T07:45:21.256Z",
         "status": "CAPTURED",
         "simulatedTodayDate": "2026-09-18",
         "httpStatus": 200,
@@ -261,14 +261,14 @@
         "gate": null,
         "institution": "MOPS",
         "kind": "monthly-revenue",
-        "url": "https://openapi.twse.com.tw/v1/opendata/t187ap05_O",
+        "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap05_O",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T07:41:42.929Z",
+        "capturedAt": "2026-09-19T07:45:22.654Z",
         "status": "CAPTURED",
         "simulatedTodayDate": "2026-09-18",
         "httpStatus": 200,
-        "contentType": "text/html; charset=utf-8",
-        "bytes": 1006,
+        "contentType": "application/json",
+        "bytes": 496547,
         "note": "Auxiliary source captured at this run time; it is not part of the daily publication Gate."
       },
       {
@@ -278,12 +278,27 @@
         "kind": "material-information",
         "url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T07:41:43.921Z",
+        "capturedAt": "2026-09-19T07:45:23.515Z",
         "status": "CAPTURED",
         "simulatedTodayDate": "2026-09-18",
         "httpStatus": 200,
         "contentType": "application/json",
         "bytes": 224239,
+        "note": "Auxiliary source captured at this run time; it is not part of the daily publication Gate."
+      },
+      {
+        "source": "tpex-material-information",
+        "gate": null,
+        "institution": "MOPS",
+        "kind": "material-information",
+        "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
+        "targetDate": "2026-09-18",
+        "capturedAt": "2026-09-19T07:45:23.907Z",
+        "status": "CAPTURED",
+        "simulatedTodayDate": "2026-09-18",
+        "httpStatus": 200,
+        "contentType": "application/json",
+        "bytes": 103545,
         "note": "Auxiliary source captured at this run time; it is not part of the daily publication Gate."
       },
       {
@@ -293,7 +308,7 @@
         "kind": "shareholding-distribution",
         "url": "https://openapi.tdcc.com.tw/v1/opendata/1-5",
         "targetDate": "2026-09-18",
-        "capturedAt": "2026-09-19T07:41:44.311Z",
+        "capturedAt": "2026-09-19T07:45:24.169Z",
         "status": "CAPTURED",
         "simulatedTodayDate": "2026-09-18",
         "httpStatus": 200,
@@ -44010,7 +44025,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -45412,7 +45427,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -46814,7 +46829,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -48198,13 +48213,25 @@
         "lendingChange": 1417000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "1815",
+          "name": "富喬",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 912400,
+          "previousMonthRevenue": 854379,
+          "previousYearRevenue": 509132,
+          "yoyPct": 79.20696400933353,
+          "momPct": 6.791014292252034,
+          "cumulativeYoyPct": 51.19937149056726,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -49606,7 +49633,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -52421,7 +52448,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -53805,13 +53832,25 @@
         "lendingChange": -1408000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6182",
+          "name": "合晶",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 1004466,
+          "previousMonthRevenue": 994362,
+          "previousYearRevenue": 837265,
+          "yoyPct": 19.9699020023529,
+          "momPct": 1.0161289349351645,
+          "cumulativeYoyPct": 11.74607416207875,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -56626,7 +56665,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -58028,7 +58067,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -59430,7 +59469,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -62227,13 +62266,25 @@
         "lendingChange": 322000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "5347",
+          "name": "世界",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 5092599,
+          "previousMonthRevenue": 4705722,
+          "previousYearRevenue": 3625233,
+          "yoyPct": 40.47646040957919,
+          "momPct": 8.22141639476365,
+          "cumulativeYoyPct": 18.416073905771878,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -65058,7 +65109,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -66460,7 +66511,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -67862,7 +67913,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -69264,7 +69315,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -72099,7 +72150,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -73501,7 +73552,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -74885,13 +74936,36 @@
         "lendingChange": 1329000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "5314",
+          "name": "世紀*",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 465313,
+          "previousMonthRevenue": 552778,
+          "previousYearRevenue": 229759,
+          "yoyPct": 102.52220805278574,
+          "momPct": -15.822807709424037,
+          "cumulativeYoyPct": 151.4041502193621,
+          "sourceQuality": "SOURCE_A"
+        }
       },
-      "sourceAEvents": [],
+      "sourceAEvents": [
+        {
+          "code": "5314",
+          "name": "世紀*",
+          "subject": "本公司有價證券近期多次達公布注意交易資訊標準，\r\n故公告相關訊息，以利投資人區別暸解。",
+          "publishDate": "1150918",
+          "publishTime": "143402",
+          "factDate": "1150918",
+          "eventDate": "2026-09-18",
+          "sourceQuality": "SOURCE_A"
+        }
+      ],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -76283,7 +76357,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -77667,13 +77741,25 @@
         "lendingChange": -127000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "5483",
+          "name": "中美晶",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 6716682,
+          "previousMonthRevenue": 6997671,
+          "previousYearRevenue": 6014229,
+          "yoyPct": 11.679851232801411,
+          "momPct": -4.015464573856073,
+          "cumulativeYoyPct": 6.102027041942864,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -79075,7 +79161,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -80459,13 +80545,25 @@
         "lendingChange": 523000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "8064",
+          "name": "東捷",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 145707,
+          "previousMonthRevenue": 143680,
+          "previousYearRevenue": 257873,
+          "yoyPct": -43.496604917924714,
+          "momPct": 1.4107739420935412,
+          "cumulativeYoyPct": -0.9117754833703361,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -81867,7 +81965,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -83269,7 +83367,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -86084,7 +86182,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -87486,7 +87584,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -88888,7 +88986,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -90290,7 +90388,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -91674,13 +91772,25 @@
         "lendingChange": -107000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "3624",
+          "name": "光頡",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 367119,
+          "previousMonthRevenue": 351605,
+          "previousYearRevenue": 221475,
+          "yoyPct": 65.7609210971893,
+          "momPct": 4.412337708508127,
+          "cumulativeYoyPct": 30.703675195403314,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -93082,7 +93192,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -94484,7 +94594,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -97309,7 +97419,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -98711,7 +98821,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -100113,7 +100223,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -101515,7 +101625,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -102917,7 +103027,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -104301,13 +104411,25 @@
         "lendingChange": 17000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "8111",
+          "name": "立碁",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 67774,
+          "previousMonthRevenue": 60729,
+          "previousYearRevenue": 74316,
+          "yoyPct": -8.802949566715109,
+          "momPct": 11.600717943651304,
+          "cumulativeYoyPct": -6.101960033199259,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -105709,7 +105831,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -108524,7 +108646,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -109926,7 +110048,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -111328,7 +111450,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -112712,13 +112834,36 @@
         "lendingChange": 19000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "2221",
+          "name": "大甲",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 198738,
+          "previousMonthRevenue": 139767,
+          "previousYearRevenue": 109607,
+          "yoyPct": 81.31871139616996,
+          "momPct": 42.19236300414261,
+          "cumulativeYoyPct": 29.091341365027425,
+          "sourceQuality": "SOURCE_A"
+        }
       },
-      "sourceAEvents": [],
+      "sourceAEvents": [
+        {
+          "code": "2221",
+          "name": "大甲",
+          "subject": "本公司有價證券近期多次達公佈注意交易資訊標準，\r\n故公告相關訊息，以利投資人區別暸解",
+          "publishDate": "1150918",
+          "publishTime": "174414",
+          "factDate": "1150918",
+          "eventDate": "2026-09-18",
+          "sourceQuality": "SOURCE_A"
+        }
+      ],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -114120,7 +114265,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -115504,13 +115649,25 @@
         "lendingChange": 19000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6620",
+          "name": "漢達",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 66695,
+          "previousMonthRevenue": 69658,
+          "previousYearRevenue": 332141,
+          "yoyPct": -79.91967266913751,
+          "momPct": -4.25363920870539,
+          "cumulativeYoyPct": -58.24666285413487,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -116894,13 +117051,36 @@
         "lendingChange": 547000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "8069",
+          "name": "元太",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 3446142,
+          "previousMonthRevenue": 2876431,
+          "previousYearRevenue": 3336337,
+          "yoyPct": 3.2911843138148216,
+          "momPct": 19.80617647355351,
+          "cumulativeYoyPct": -2.8761701994668485,
+          "sourceQuality": "SOURCE_A"
+        }
       },
-      "sourceAEvents": [],
+      "sourceAEvents": [
+        {
+          "code": "8069",
+          "name": "元太",
+          "subject": "公告本公司資安長異動",
+          "publishDate": "1150918",
+          "publishTime": "171210",
+          "factDate": "1150918",
+          "eventDate": "2026-09-18",
+          "sourceQuality": "SOURCE_A"
+        }
+      ],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -118302,7 +118482,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -119704,7 +119884,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -121088,13 +121268,25 @@
         "lendingChange": 0
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "5475",
+          "name": "德宏",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 254708,
+          "previousMonthRevenue": 229336,
+          "previousYearRevenue": 68492,
+          "yoyPct": 271.8799275827834,
+          "momPct": 11.06324345065755,
+          "cumulativeYoyPct": 166.78962235136055,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -122496,7 +122688,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -123888,7 +124080,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -125290,7 +125482,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -126692,7 +126884,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -128094,7 +128286,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -132362,7 +132554,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -133764,7 +133956,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -135148,13 +135340,25 @@
         "lendingChange": 307000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6179",
+          "name": "亞通",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 808983,
+          "previousMonthRevenue": 1097072,
+          "previousYearRevenue": 250246,
+          "yoyPct": 223.27509730425263,
+          "momPct": -26.259807925095163,
+          "cumulativeYoyPct": 131.39675731028802,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -136538,13 +136742,25 @@
         "lendingChange": -542000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "5351",
+          "name": "鈺創",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 2260221,
+          "previousMonthRevenue": 2125060,
+          "previousYearRevenue": 361453,
+          "yoyPct": 525.3153245373534,
+          "momPct": 6.360338061042983,
+          "cumulativeYoyPct": 488.92138522250326,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -137946,7 +138162,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -139348,7 +139564,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -140750,7 +140966,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -142152,7 +142368,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -143554,7 +143770,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -144938,13 +145154,25 @@
         "lendingChange": 119000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6217",
+          "name": "中探針",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 419111,
+          "previousMonthRevenue": 421657,
+          "previousYearRevenue": 340751,
+          "yoyPct": 22.996264134221175,
+          "momPct": -0.603808308648973,
+          "cumulativeYoyPct": 34.124454053457846,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -146328,13 +146556,25 @@
         "lendingChange": 22000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6218",
+          "name": "豪勉",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 141060,
+          "previousMonthRevenue": 102950,
+          "previousYearRevenue": 92286,
+          "yoyPct": 52.85091996619205,
+          "momPct": 37.01796988829529,
+          "cumulativeYoyPct": 17.20610306836002,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -147736,7 +147976,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -149138,7 +149378,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -150540,7 +150780,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -151942,7 +152182,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -153344,7 +153584,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -154746,7 +154986,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -156148,7 +156388,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -157550,7 +157790,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -158952,7 +159192,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -160354,7 +160594,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -161756,7 +161996,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -163158,7 +163398,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -164560,7 +164800,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -165962,7 +166202,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -167346,13 +167586,25 @@
         "lendingChange": 131000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "8027",
+          "name": "鈦昇",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 152884,
+          "previousMonthRevenue": 189408,
+          "previousYearRevenue": 111357,
+          "yoyPct": 37.29177330567454,
+          "momPct": -19.283240412231795,
+          "cumulativeYoyPct": 47.354042548552556,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -168754,7 +169006,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -170138,13 +170390,25 @@
         "lendingChange": -137000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "5425",
+          "name": "台半",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 1714148,
+          "previousMonthRevenue": 1730537,
+          "previousYearRevenue": 1400066,
+          "yoyPct": 22.43337099822437,
+          "momPct": -0.947047072671662,
+          "cumulativeYoyPct": 7.494004466832429,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -171546,7 +171810,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -172948,7 +173212,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -174332,13 +174596,25 @@
         "lendingChange": -20000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6207",
+          "name": "雷科",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 137881,
+          "previousMonthRevenue": 112882,
+          "previousYearRevenue": 101526,
+          "yoyPct": 35.8085613537419,
+          "momPct": 22.146134901932992,
+          "cumulativeYoyPct": 8.313452428514355,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -175740,7 +176016,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -178545,7 +178821,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -179947,7 +180223,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -181349,7 +181625,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -184164,7 +184440,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -185566,7 +185842,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -186950,13 +187226,25 @@
         "lendingChange": 0
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "3441",
+          "name": "聯一光電",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 43916,
+          "previousMonthRevenue": 51374,
+          "previousYearRevenue": 43540,
+          "yoyPct": 0.8635737253100597,
+          "momPct": -14.517070891890839,
+          "cumulativeYoyPct": 28.239085976856746,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -188358,7 +188646,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -189760,7 +190048,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -191144,13 +191432,25 @@
         "lendingChange": 21000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6199",
+          "name": "天品",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 82949,
+          "previousMonthRevenue": 77561,
+          "previousYearRevenue": 30530,
+          "yoyPct": 171.69669177857844,
+          "momPct": 6.946790268304947,
+          "cumulativeYoyPct": 527.7881911902531,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -192552,7 +192852,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -193954,7 +194254,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -195356,7 +195656,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -196758,7 +197058,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -198160,7 +198460,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -199544,13 +199844,25 @@
         "lendingChange": -4000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "3498",
+          "name": "陽程",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 359366,
+          "previousMonthRevenue": 429406,
+          "previousYearRevenue": 84349,
+          "yoyPct": 326.0465447130375,
+          "momPct": -16.31090389980578,
+          "cumulativeYoyPct": 154.7955799441265,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -200952,7 +201264,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -202336,13 +202648,25 @@
         "lendingChange": 3000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "3362",
+          "name": "先進光",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 244259,
+          "previousMonthRevenue": 416111,
+          "previousYearRevenue": 364056,
+          "yoyPct": -32.9062012437647,
+          "momPct": -41.299557089334336,
+          "cumulativeYoyPct": -5.29682235945306,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -203726,13 +204050,25 @@
         "lendingChange": 0
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "3234",
+          "name": "光環",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 108640,
+          "previousMonthRevenue": 96043,
+          "previousYearRevenue": 51702,
+          "yoyPct": 110.12726780395343,
+          "momPct": 13.116000124944035,
+          "cumulativeYoyPct": 26.94082696105297,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -207910,7 +208246,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -210707,13 +211043,25 @@
         "lendingChange": 38000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "3265",
+          "name": "台星科",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 401868,
+          "previousMonthRevenue": 421419,
+          "previousYearRevenue": 388792,
+          "yoyPct": 3.3632379267063106,
+          "momPct": -4.639325706719441,
+          "cumulativeYoyPct": 16.451742201213527,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -212097,13 +212445,25 @@
         "lendingChange": 127000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "1785",
+          "name": "光洋科",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 4515809,
+          "previousMonthRevenue": 5261124,
+          "previousYearRevenue": 3454857,
+          "yoyPct": 30.70899895422589,
+          "momPct": -14.166459486604003,
+          "cumulativeYoyPct": 63.39603435324915,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -213505,7 +213865,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -214907,7 +215267,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -216291,13 +216651,25 @@
         "lendingChange": -7000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6588",
+          "name": "東典光電",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 31318,
+          "previousMonthRevenue": 30934,
+          "previousYearRevenue": 10836,
+          "yoyPct": 189.01808785529715,
+          "momPct": 1.24135255705696,
+          "cumulativeYoyPct": 135.2352266207688,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -217699,7 +218071,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -219083,13 +219455,36 @@
         "lendingChange": 2132000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "5904",
+          "name": "寶雅*",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 2465114,
+          "previousMonthRevenue": 2471748,
+          "previousYearRevenue": 2234511,
+          "yoyPct": 10.320065553492464,
+          "momPct": -0.2683930562500708,
+          "cumulativeYoyPct": 13.909654302564213,
+          "sourceQuality": "SOURCE_A"
+        }
       },
-      "sourceAEvents": [],
+      "sourceAEvents": [
+        {
+          "code": "5904",
+          "name": "寶雅*",
+          "subject": "公告本公司股票面額變更由「新台幣10元」變更為「新台幣1元」\r\n公告期間：115年7月2日至115年10月1日",
+          "publishDate": "1150918",
+          "publishTime": "70003",
+          "factDate": "1150624",
+          "eventDate": "2026-09-18",
+          "sourceQuality": "SOURCE_A"
+        }
+      ],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -220421,7 +220816,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -221823,7 +222218,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -223225,7 +223620,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -224627,7 +225022,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -226029,7 +226424,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -227431,7 +227826,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -228833,7 +229228,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -230235,7 +230630,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -231637,7 +232032,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -233021,13 +233416,25 @@
         "lendingChange": 294000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "4939",
+          "name": "亞電",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 173881,
+          "previousMonthRevenue": 168175,
+          "previousYearRevenue": 119581,
+          "yoyPct": 45.40855152574406,
+          "momPct": 3.3928943065259403,
+          "cumulativeYoyPct": 17.291835050128114,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -234429,7 +234836,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -235831,7 +236238,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -237233,7 +237640,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -238617,13 +239024,25 @@
         "lendingChange": -147000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6548",
+          "name": "長科*",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 1650483,
+          "previousMonthRevenue": 1555599,
+          "previousYearRevenue": 1148903,
+          "yoyPct": 43.657297439383484,
+          "momPct": 6.099515363535204,
+          "cumulativeYoyPct": 28.263778227337742,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -240025,7 +240444,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -241427,7 +241846,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -242829,7 +243248,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -244231,7 +244650,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -245633,7 +246052,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -247035,7 +247454,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -248349,13 +248768,36 @@
         "lendingChange": 43000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "3141",
+          "name": "晶宏",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 242126,
+          "previousMonthRevenue": 215671,
+          "previousYearRevenue": 134686,
+          "yoyPct": 79.77072598488336,
+          "momPct": 12.266368681927565,
+          "cumulativeYoyPct": 23.933582373286775,
+          "sourceQuality": "SOURCE_A"
+        }
       },
-      "sourceAEvents": [],
+      "sourceAEvents": [
+        {
+          "code": "3141",
+          "name": "晶宏",
+          "subject": "公告本公司國內第五次無擔保轉換公司債收足債款",
+          "publishDate": "1150918",
+          "publishTime": "125319",
+          "factDate": "1150918",
+          "eventDate": "2026-09-18",
+          "sourceQuality": "SOURCE_A"
+        }
+      ],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -249757,7 +250199,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -251159,7 +251601,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -252543,13 +252985,36 @@
         "lendingChange": 20000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6148",
+          "name": "驊宏資",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 59218,
+          "previousMonthRevenue": 41885,
+          "previousYearRevenue": 30306,
+          "yoyPct": 95.40025077542401,
+          "momPct": 41.38235645219052,
+          "cumulativeYoyPct": -34.765720711052694,
+          "sourceQuality": "SOURCE_A"
+        }
       },
-      "sourceAEvents": [],
+      "sourceAEvents": [
+        {
+          "code": "6148",
+          "name": "驊宏資",
+          "subject": "本公司有價證券近期多次達公佈注意交易資訊標準，\r\n故公告相關訊息，以利投資人區別暸解",
+          "publishDate": "1150918",
+          "publishTime": "151715",
+          "factDate": "1150918",
+          "eventDate": "2026-09-18",
+          "sourceQuality": "SOURCE_A"
+        }
+      ],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -253933,13 +254398,25 @@
         "lendingChange": 52000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6907",
+          "name": "雅特力-KY",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 366266,
+          "previousMonthRevenue": 402798,
+          "previousYearRevenue": 122613,
+          "yoyPct": 198.71710177550506,
+          "momPct": -9.069558438721145,
+          "cumulativeYoyPct": 115.31869105982413,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -255341,7 +255818,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -258176,7 +258653,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -259560,13 +260037,25 @@
         "lendingChange": 315000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "8932",
+          "name": "智通*",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 206275,
+          "previousMonthRevenue": 192123,
+          "previousYearRevenue": 182933,
+          "yoyPct": 12.75986290062482,
+          "momPct": 7.3661144162854,
+          "cumulativeYoyPct": 11.97179551416388,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -262381,7 +262870,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -263783,7 +264272,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -265185,7 +265674,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -266587,7 +267076,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -267989,7 +268478,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -269391,7 +269880,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -270793,7 +271282,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -272177,13 +272666,25 @@
         "lendingChange": -9000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6530",
+          "name": "創威",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 32210,
+          "previousMonthRevenue": 32296,
+          "previousYearRevenue": 29102,
+          "yoyPct": 10.679678372620439,
+          "momPct": -0.26628684666831803,
+          "cumulativeYoyPct": 16.326993592355272,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -273567,13 +274068,25 @@
         "lendingChange": 21000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "5340",
+          "name": "建榮",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 284845,
+          "previousMonthRevenue": 272928,
+          "previousYearRevenue": 192761,
+          "yoyPct": 47.7710740243099,
+          "momPct": 4.366353030835971,
+          "cumulativeYoyPct": 27.800100452034155,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -274957,13 +275470,25 @@
         "lendingChange": 7000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6227",
+          "name": "茂綸",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 3540073,
+          "previousMonthRevenue": 3339960,
+          "previousYearRevenue": 1316716,
+          "yoyPct": 168.85623019694452,
+          "momPct": 5.991478939867544,
+          "cumulativeYoyPct": 51.405757198601734,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -276365,7 +276890,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -277749,13 +278274,25 @@
         "lendingChange": 173000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6547",
+          "name": "高端疫苗",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 236386,
+          "previousMonthRevenue": 47371,
+          "previousYearRevenue": 45735,
+          "yoyPct": 416.8601727342298,
+          "momPct": 399.0099427920035,
+          "cumulativeYoyPct": 39.44562781972544,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -279139,13 +279676,25 @@
         "lendingChange": -204000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "1569",
+          "name": "濱川",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 208971,
+          "previousMonthRevenue": 207224,
+          "previousYearRevenue": 279673,
+          "yoyPct": -25.280237992226635,
+          "momPct": 0.8430490676755588,
+          "cumulativeYoyPct": -7.645398580921071,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -280547,7 +281096,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -281949,7 +282498,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -283333,13 +283882,25 @@
         "lendingChange": 77000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "3551",
+          "name": "世禾",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 299675,
+          "previousMonthRevenue": 299604,
+          "previousYearRevenue": 245689,
+          "yoyPct": 21.973307718294265,
+          "momPct": 0.02369794795797119,
+          "cumulativeYoyPct": 20.496669051914413,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -284723,13 +285284,25 @@
         "lendingChange": 51000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "8086",
+          "name": "宏捷科",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 421572,
+          "previousMonthRevenue": 418583,
+          "previousYearRevenue": 374538,
+          "yoyPct": 12.557871297438444,
+          "momPct": 0.7140758224772625,
+          "cumulativeYoyPct": 35.833774875388144,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -286131,7 +286704,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -287533,7 +288106,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -288935,7 +289508,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -290337,7 +290910,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -291721,13 +292294,25 @@
         "lendingChange": 8000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "7772",
+          "name": "耀穎",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 39167,
+          "previousMonthRevenue": 29001,
+          "previousYearRevenue": 25400,
+          "yoyPct": 54.2007874015748,
+          "momPct": 35.053963656425644,
+          "cumulativeYoyPct": -6.123072002791144,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -292769,7 +293354,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -294171,7 +294756,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -295555,13 +296140,25 @@
         "lendingChange": 122000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6603",
+          "name": "富強鑫",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 412012,
+          "previousMonthRevenue": 443027,
+          "previousYearRevenue": 466589,
+          "yoyPct": -11.69701814659154,
+          "momPct": -7.000701988817838,
+          "cumulativeYoyPct": 1.4447461197100524,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -296963,7 +297560,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -298365,7 +298962,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -299767,7 +300364,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -301169,7 +301766,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -302571,7 +303168,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -303955,13 +304552,25 @@
         "lendingChange": 5000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "3066",
+          "name": "李洲",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 18481,
+          "previousMonthRevenue": 21483,
+          "previousYearRevenue": 15544,
+          "yoyPct": 18.89475038600103,
+          "momPct": -13.973839780291394,
+          "cumulativeYoyPct": 3.5018919058583053,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -305363,7 +305972,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -306747,13 +307356,25 @@
         "lendingChange": 110000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "3718",
+          "name": "中光電投控",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 3428522,
+          "previousMonthRevenue": 0,
+          "previousYearRevenue": 0,
+          "yoyPct": null,
+          "momPct": null,
+          "cumulativeYoyPct": null,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -306957,13 +307578,25 @@
         "lendingChange": -150000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "3162",
+          "name": "精確",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 1137089,
+          "previousMonthRevenue": 1076152,
+          "previousYearRevenue": 565183,
+          "yoyPct": 101.18952622424949,
+          "momPct": 5.662490057166646,
+          "cumulativeYoyPct": 33.42354480729761,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -308365,7 +308998,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -309767,7 +310400,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -311169,7 +311802,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -312553,13 +313186,25 @@
         "lendingChange": 67000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6190",
+          "name": "萬泰科",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 1061923,
+          "previousMonthRevenue": 1063947,
+          "previousYearRevenue": 618036,
+          "yoyPct": 71.82219158754506,
+          "momPct": -0.19023503990330345,
+          "cumulativeYoyPct": 29.675733762148994,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -315384,7 +316029,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -316786,7 +317431,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -318188,7 +318833,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -319572,13 +320217,25 @@
         "lendingChange": 355000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "8096",
+          "name": "擎亞",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 7264099,
+          "previousMonthRevenue": 10407626,
+          "previousYearRevenue": 1965621,
+          "yoyPct": 269.5574579229668,
+          "momPct": -30.20407343615153,
+          "cumulativeYoyPct": 80.65756500129488,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -320980,7 +321637,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -322382,7 +323039,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -323784,7 +324441,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -325168,13 +325825,25 @@
         "lendingChange": 167000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "3490",
+          "name": "單井",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 24105,
+          "previousMonthRevenue": 30222,
+          "previousYearRevenue": 25458,
+          "yoyPct": -5.314635870846099,
+          "momPct": -20.240222354576137,
+          "cumulativeYoyPct": 6.431289717584078,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -326576,7 +327245,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -327978,7 +328647,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -329380,7 +330049,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -330782,7 +331451,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -332184,7 +332853,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -333586,7 +334255,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -334988,7 +335657,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -336390,7 +337059,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -337792,7 +338461,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -339194,7 +339863,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -340596,7 +341265,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -341980,13 +342649,25 @@
         "lendingChange": -13000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6693",
+          "name": "廣閎科",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 251209,
+          "previousMonthRevenue": 242458,
+          "previousYearRevenue": 117280,
+          "yoyPct": 114.19594133697134,
+          "momPct": 3.6092849070766895,
+          "cumulativeYoyPct": 91.03457478012612,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -344801,7 +345482,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -346185,13 +346866,25 @@
         "lendingChange": 25000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "8040",
+          "name": "九暘",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 86725,
+          "previousMonthRevenue": 83887,
+          "previousYearRevenue": 56271,
+          "yoyPct": 54.12023955501057,
+          "momPct": 3.383122533884869,
+          "cumulativeYoyPct": 34.811580522568505,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -347593,7 +348286,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -348977,13 +349670,25 @@
         "lendingChange": -38000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "8383",
+          "name": "千附",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 511579,
+          "previousMonthRevenue": 496334,
+          "previousYearRevenue": 294688,
+          "yoyPct": 73.60021446411119,
+          "momPct": 3.071520387481011,
+          "cumulativeYoyPct": 60.474595219159376,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -350385,7 +351090,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -351787,7 +352492,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -353171,13 +353876,25 @@
         "lendingChange": 61000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "5443",
+          "name": "均豪",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 620014,
+          "previousMonthRevenue": 837103,
+          "previousYearRevenue": 542052,
+          "yoyPct": 14.382752946211802,
+          "momPct": -25.933367817341473,
+          "cumulativeYoyPct": 20.93151658088718,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -354579,7 +355296,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -355981,7 +356698,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -357365,13 +358082,25 @@
         "lendingChange": 7000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "8042",
+          "name": "金山電",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 482033,
+          "previousMonthRevenue": 436935,
+          "previousYearRevenue": 347406,
+          "yoyPct": 38.75206530687438,
+          "momPct": 10.321443692997814,
+          "cumulativeYoyPct": 36.35482082339105,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -358773,7 +359502,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -360157,13 +360886,25 @@
         "lendingChange": 7000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "8415",
+          "name": "大國鋼",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 2601881,
+          "previousMonthRevenue": 2666400,
+          "previousYearRevenue": 1883875,
+          "yoyPct": 38.11325061376153,
+          "momPct": -2.4197044704470447,
+          "cumulativeYoyPct": 23.397658252584264,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -361565,7 +362306,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -362967,7 +363708,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -364351,13 +365092,25 @@
         "lendingChange": -6000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "3339",
+          "name": "泰谷",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 69214,
+          "previousMonthRevenue": 67334,
+          "previousYearRevenue": 75920,
+          "yoyPct": -8.832982086406744,
+          "momPct": 2.7920515638459027,
+          "cumulativeYoyPct": -0.9255398079599673,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -365741,13 +366494,25 @@
         "lendingChange": -485000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "3707",
+          "name": "漢磊",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 659489,
+          "previousMonthRevenue": 647766,
+          "previousYearRevenue": 509097,
+          "yoyPct": 29.540932278131674,
+          "momPct": 1.8097584621607186,
+          "cumulativeYoyPct": 26.433406614500072,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -367149,7 +367914,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -368551,7 +369316,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -369935,13 +370700,25 @@
         "lendingChange": 7000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6840",
+          "name": "東研信超",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 84499,
+          "previousMonthRevenue": 90739,
+          "previousYearRevenue": 76261,
+          "yoyPct": 10.8023760506681,
+          "momPct": -6.876866617441233,
+          "cumulativeYoyPct": 12.572661982640753,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -371343,7 +372120,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -372727,13 +373504,25 @@
         "lendingChange": 73000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "5508",
+          "name": "永信建",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 318829,
+          "previousMonthRevenue": 275059,
+          "previousYearRevenue": 43458,
+          "yoyPct": 633.6485802383911,
+          "momPct": 15.912949585361686,
+          "cumulativeYoyPct": 60.19059588257221,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -374135,7 +374924,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -375537,7 +376326,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -376939,7 +377728,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -378341,7 +379130,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -379743,7 +380532,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -381145,7 +381934,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -383960,7 +384749,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -385362,7 +386151,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -386764,7 +387553,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -388136,13 +388925,25 @@
       },
       "marginShortLending": null,
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6945",
+          "name": "圓祥生技",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 0,
+          "previousMonthRevenue": 0,
+          "previousYearRevenue": 0,
+          "yoyPct": null,
+          "momPct": null,
+          "cumulativeYoyPct": null,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": false,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -388984,7 +389785,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -390368,13 +391169,25 @@
         "lendingChange": 9000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "3552",
+          "name": "同致",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 640832,
+          "previousMonthRevenue": 636561,
+          "previousYearRevenue": 654878,
+          "yoyPct": -2.1448269754061062,
+          "momPct": 0.6709490528009099,
+          "cumulativeYoyPct": -3.2091747314732606,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -391776,7 +392589,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -393178,7 +393991,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -394580,7 +395393,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -395982,7 +396795,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -397366,13 +398179,25 @@
         "lendingChange": 77000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "8431",
+          "name": "匯鑽科",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 87357,
+          "previousMonthRevenue": 81846,
+          "previousYearRevenue": 100884,
+          "yoyPct": -13.40846913286547,
+          "momPct": 6.733377318378418,
+          "cumulativeYoyPct": -10.24308451587297,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -398774,7 +399599,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -400176,7 +401001,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -401560,13 +402385,25 @@
         "lendingChange": -54000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "5864",
+          "name": "致和證",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 599176,
+          "previousMonthRevenue": -974304,
+          "previousYearRevenue": 281413,
+          "yoyPct": 112.91695834947213,
+          "momPct": 161.49784872072783,
+          "cumulativeYoyPct": 1225.1636558364207,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -402968,7 +403805,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -404352,13 +405189,25 @@
         "lendingChange": 5000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6532",
+          "name": "瑞耘",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 76657,
+          "previousMonthRevenue": 87975,
+          "previousYearRevenue": 43998,
+          "yoyPct": 74.22837401700077,
+          "momPct": -12.865018471156578,
+          "cumulativeYoyPct": 14.983764464881121,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -405742,13 +406591,25 @@
         "lendingChange": 11000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "4541",
+          "name": "晟田",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 174838,
+          "previousMonthRevenue": 194527,
+          "previousYearRevenue": 141487,
+          "yoyPct": 23.571776912366506,
+          "momPct": -10.121474139836629,
+          "cumulativeYoyPct": 32.748033090782585,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -407132,13 +407993,25 @@
         "lendingChange": 0
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "4923",
+          "name": "力士",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 108061,
+          "previousMonthRevenue": 120061,
+          "previousYearRevenue": 83912,
+          "yoyPct": 28.77895890933359,
+          "momPct": -9.994919249381564,
+          "cumulativeYoyPct": 30.042060142857643,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -408540,7 +409413,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -409942,7 +410815,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -411344,7 +412217,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -412746,7 +413619,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -414148,7 +415021,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -415532,13 +416405,25 @@
         "lendingChange": -2000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6617",
+          "name": "共信-KY",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 4648,
+          "previousMonthRevenue": 4587,
+          "previousYearRevenue": 4310,
+          "yoyPct": 7.842227378190255,
+          "momPct": 1.329845214737301,
+          "cumulativeYoyPct": 32.095874664736684,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -416940,7 +417825,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -418274,13 +419159,25 @@
         "lendingChange": 183000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6016",
+          "name": "康和證",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 2727083,
+          "previousMonthRevenue": -2015901,
+          "previousYearRevenue": 864669,
+          "yoyPct": 215.39039794418443,
+          "momPct": 235.27861735273706,
+          "cumulativeYoyPct": 230.99167210518803,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -419682,7 +420579,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -421084,7 +421981,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -422486,7 +423383,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -423888,7 +424785,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -425290,7 +426187,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -426692,7 +427589,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -428094,7 +428991,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -429496,7 +430393,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -430898,7 +431795,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -432300,7 +433197,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -433702,7 +434599,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -435104,7 +436001,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -436506,7 +437403,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -437908,7 +438805,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -439310,7 +440207,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -440712,7 +441609,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -442096,13 +442993,25 @@
         "lendingChange": 41000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "5457",
+          "name": "宣德",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 1882890,
+          "previousMonthRevenue": 2015669,
+          "previousYearRevenue": 2323368,
+          "yoyPct": -18.958598035266046,
+          "momPct": -6.587341473227995,
+          "cumulativeYoyPct": -4.873796300405971,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -443486,13 +444395,25 @@
         "lendingChange": 195000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "3227",
+          "name": "原相",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 815750,
+          "previousMonthRevenue": 893048,
+          "previousYearRevenue": 740690,
+          "yoyPct": 10.133794164900296,
+          "momPct": -8.655525794806103,
+          "cumulativeYoyPct": 5.979442363438792,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -444876,13 +445797,25 @@
         "lendingChange": 24000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6425",
+          "name": "易發",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 159422,
+          "previousMonthRevenue": 178759,
+          "previousYearRevenue": 82193,
+          "yoyPct": 93.96055625174893,
+          "momPct": -10.817357447736898,
+          "cumulativeYoyPct": 56.13194851355093,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -446284,7 +447217,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -447686,7 +448619,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -449070,13 +450003,36 @@
         "lendingChange": 124000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "4147",
+          "name": "中裕",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 60472,
+          "previousMonthRevenue": 63691,
+          "previousYearRevenue": 50599,
+          "yoyPct": 19.512243324966896,
+          "momPct": -5.0540892747797965,
+          "cumulativeYoyPct": 10.90726463107489,
+          "sourceQuality": "SOURCE_A"
+        }
       },
-      "sourceAEvents": [],
+      "sourceAEvents": [
+        {
+          "code": "4147",
+          "name": "中裕",
+          "subject": "本公司行銷夥伴AcedrA BioPharmaceuticals向沙烏地\r\n阿拉伯食品藥品管理局(SFDA)申請愛滋病新藥Trogarzo生物\r\n製劑註冊審查進展說明及後續因應措施",
+          "publishDate": "1150918",
+          "publishTime": "164609",
+          "factDate": "1150918",
+          "eventDate": "2026-09-18",
+          "sourceQuality": "SOURCE_A"
+        }
+      ],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -450460,13 +451416,25 @@
         "lendingChange": -1000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "3580",
+          "name": "友威科",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 46361,
+          "previousMonthRevenue": 29720,
+          "previousYearRevenue": 36545,
+          "yoyPct": 26.860035572581747,
+          "momPct": 55.99259757738896,
+          "cumulativeYoyPct": -6.001458159321602,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -451868,7 +452836,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -453270,7 +454238,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -454672,7 +455640,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -456056,13 +457024,25 @@
         "lendingChange": 24000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "8043",
+          "name": "蜜望實",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 621856,
+          "previousMonthRevenue": 762588,
+          "previousYearRevenue": 402551,
+          "yoyPct": 54.47881138042136,
+          "momPct": -18.454525903895682,
+          "cumulativeYoyPct": 60.75033911888289,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -457446,13 +458426,25 @@
         "lendingChange": 15000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "5464",
+          "name": "霖宏",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 94350,
+          "previousMonthRevenue": 100839,
+          "previousYearRevenue": 78916,
+          "yoyPct": 19.557504181661514,
+          "momPct": -6.435010263885997,
+          "cumulativeYoyPct": 29.81609676527774,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -458836,13 +459828,25 @@
         "lendingChange": 11000
       },
       "fundamental": {
-        "monthlyRevenue": null
+        "monthlyRevenue": {
+          "code": "6485",
+          "name": "點序",
+          "dataMonth": "11508",
+          "dataMonthKey": "2026-08",
+          "currentRevenue": 124170,
+          "previousMonthRevenue": 114625,
+          "previousYearRevenue": 102481,
+          "yoyPct": 21.16392306866639,
+          "momPct": 8.327153762268265,
+          "cumulativeYoyPct": -6.752063757080053,
+          "sourceQuality": "SOURCE_A"
+        }
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
         "marginShortLending": true,
-        "fundamental": false,
-        "sourceAEvent": false
+        "fundamental": true,
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -460244,7 +461248,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": true,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -461634,7 +462638,7 @@
       "evidenceReadiness": {
         "marginShortLending": true,
         "fundamental": false,
-        "sourceAEvent": false
+        "sourceAEvent": true
       },
       "history": [
         [
@@ -504499,8 +505503,8 @@
     "buyHistoryReadyCount": 298,
     "institutional20dReadyCount": 299,
     "marginShortLendingReadyCount": 300,
-    "fundamentalReadyCount": 224,
-    "sourceAEventCoverageCount": 20,
+    "fundamentalReadyCount": 300,
+    "sourceAEventCoverageCount": 301,
     "tdccReadyCount": 301,
     "note": "BUY remains fail-closed for any required evidence that is not point-in-time verifiable. Daily capture now preserves margin/short/lending, monthly revenue, SOURCE_A material information and TDCC evidence when available."
   }
