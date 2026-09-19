@@ -208,6 +208,58 @@ Positive News + Price Weak + Institutional Selling 應標記為正面新聞背�
 - 不得使用「資料不足」「資料失效」等 generic placeholder 作為 avoid／invalid。
 - 本次策略升級不得破壞既有 manifest、selection-history、paper-account 與 Dashboard 讀取介面。
 
+### 3.3 v2 機器可驗證研究欄位
+
+為了讓 CI 可以驗證新版策略，而不是只依賴自然語言，`entry-dual-track-v2` 的新 research snapshot 必須額外提供向後相容欄位；Dashboard 可以忽略這些新欄位，但資料發布 validator 必須檢查。
+
+頂層 `strategyProfile` 至少包含：
+
+- `version = "entry-dual-track-v2"`
+- `signalMode = "EOD"`
+- `marketRegime = BULL | NEUTRAL | BEAR | HIGH_RISK`
+- `buyScoreThreshold`：BULL=82、NEUTRAL=86；BEAR/HIGH_RISK 可為 null
+- `liquidityMedianTurnover20dMin = 50000000`
+- `priorityMaxCandidates = 3`
+- `priorityPercentileMax = 10`
+- `priorityRankMax = 50`
+- `minRiskReward = 2`
+- `riskPerTradePct = 0.5`
+- `riskPerTradeHardCapPct = 1`
+- `singleStockExposureMaxPct = 10`
+- `sectorExposureMaxPct = 20`
+- `totalExposureMaxPct = 50`
+- `dailyLossLimitPct = 1.5`
+- `weeklyLossLimitPct = 4`
+- `scoreWeights` 必須為 Trend18 / Momentum8 / Volume10 / Market8 / Institutional15 / LargeHolder8 / MarginShortLending6 / Fundamental15 / RiskReward12，其中 Fundamental 15 內含 Fundamental Quality 10 + Industry/News/Catalyst 5。
+
+每個 `candidate` 至少額外提供：
+
+- `assetType = STOCK | ETF`
+- `decision = BUY | SELL | REDUCE | HOLD | WATCH | NO_TRADE`
+- `strategy = BREAKOUT | TREND_PULLBACK | CHIP_ACCUMULATION_BREAKOUT | EXIT | NONE`
+- `score`
+- `scores`，其子項加總必須等於 score 且不得超過各權重上限
+- `universeRank`、`universePercentile`（無法可靠取得時可為 null，但不得因此虛構）
+- `liquidityMedianTurnover20d`
+- `volumeRatio20d`
+- `riskReward`
+- `newsEvent`，至少包含 `sourceQuality`、`eventType`、`direction`、`eventTimestamp`、`catalystStatus`
+
+若 candidate.decision = BUY，則必須同時滿足：
+
+- assetType=STOCK；ETF 若沒有獨立 ETF Profile 不得 BUY。
+- marketRegime=BULL 時 score >=82；NEUTRAL 時 score >=86；BEAR/HIGH_RISK 不得 BUY。
+- liquidityMedianTurnover20d >= 50000000。
+- riskReward >=2。
+- strategy 必須是三個允許的進場策略之一。
+- BREAKOUT 的 volumeRatio20d >=1.5。
+- universeRank 若非 null 必須 <=50；universePercentile 若非 null 必須 <=10。
+- 必須存在可執行的 entry / maxChase / stop / invalidation 資訊；不得只輸出自然語言推薦。
+
+新聞欄位不得把 SOURCE_C 當成 BUY 的正面依據。若重大事件風險尚未確認，candidate 必須 WATCH/NO_TRADE，不得 BUY。
+
+validator 對舊的 `entry-dual-track-v1` snapshot 只做 migration skip；從第一份正式 `entry-dual-track-v2` snapshot 起，上述欄位全部強制。
+
 ## 4. Snapshot 與 selection history
 
 Gate 通過後，以執行當下台北時間建立 `revision = YYYY-MM-DD-HHmmss`，並建立：

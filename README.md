@@ -21,6 +21,8 @@
 
 ```bash
 node scripts/validate-data.mjs
+node scripts/validate-dashboard-contract.mjs
+node scripts/validate-strategy-v2.mjs
 ```
 
 目前驗證包含：
@@ -32,6 +34,8 @@ node scripts/validate-data.mjs
 - `nextOrders` 必須具備未來交易日、代碼、方向、股數、成交規則與取消條件。
 - 舊 snapshot 不得修改／刪除；新增 snapshot 與 manifest 必須同一 commit。
 - 基本秘密資訊格式掃描。
+- Dashboard `conclusion / avoid / invalid / invalidCondition` contract。
+- `entry-dual-track-v2` 策略 contract：Market Regime 門檻、100 分權重、BUY 流動性、RR、Breakout 量比、全市場排名、新聞來源分級與最多 3 個 BUY 候選。舊 v1 snapshot 在 migration 期間只會 skip 此 validator。
 
 ## 安全界線
 

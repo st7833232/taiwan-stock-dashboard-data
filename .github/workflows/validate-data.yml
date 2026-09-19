@@ -28,3 +28,6 @@ jobs:
 
       - name: Validate Dashboard research contract
         run: node scripts/validate-dashboard-contract.mjs
+
+      - name: Validate entry-dual-track-v2 strategy contract
+        run: node scripts/validate-strategy-v2.mjs
