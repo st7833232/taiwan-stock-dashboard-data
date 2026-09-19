@@ -8,10 +8,13 @@ const rawDir = path.join('raw', targetDate);
 const gatePath = path.join(rawDir, 'gate-matrix.json');
 const manifestPath = 'manifest.json';
 const statePath = path.join(rawDir, 'publication-state.json');
+const strategyConfigPath = 'strategy-config.json';
 
 const readJson = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
 const exists = (p) => fs.existsSync(p);
 const normalizeHistory = (value) => Array.isArray(value) ? value : Array.isArray(value?.history) ? value.history : Array.isArray(value?.items) ? value.items : [];
+const strategyConfig = exists(strategyConfigPath) ? readJson(strategyConfigPath) : null;
+const requiredStrategyVersion = strategyConfig?.version ?? null;
 
 let state = {
   targetDate,
@@ -20,6 +23,9 @@ let state = {
   stage: 'CAPTURE_PENDING',
   gateStatus: 'UNKNOWN',
   manifestRevision: null,
+  requiredStrategyVersion,
+  currentStrategyVersion: null,
+  strategyMatch: false,
   publicationComplete: false,
   reason: null,
 };
@@ -40,20 +46,26 @@ if (!exists(gatePath)) {
       const sameRevision = Boolean(revisionDir) && paths.every((p) => typeof p === 'string' && p.startsWith(revisionDir));
       let datesMatch = false;
       let selectionUnique = false;
+      let strategyMatch = false;
       if (pathsExist) {
         const research = readJson(manifest.researchPath);
         const history = normalizeHistory(readJson(manifest.selectionHistoryPath));
         const paper = readJson(manifest.paperAccountPath);
+        state.currentStrategyVersion = research.strategyVersion ?? null;
+        strategyMatch = Boolean(requiredStrategyVersion) && research.strategyVersion === requiredStrategyVersion;
+        state.strategyMatch = strategyMatch;
         datesMatch = research.researchDate === targetDate && research.latestTradingDate === targetDate && paper.asOf === targetDate;
         selectionUnique = history.filter((row) => row?.date === targetDate).length === 1;
       }
-      state.publicationComplete = sameRevision && pathsExist && datesMatch && selectionUnique;
+      state.publicationComplete = sameRevision && pathsExist && datesMatch && selectionUnique && strategyMatch;
       if (state.publicationComplete) {
         state.stage = 'DATA_UPDATED';
         state.reason = 'Gate PASS and manifest plus all referenced snapshot files are complete for target date';
       } else {
         state.stage = 'RESEARCH_REQUIRED';
-        state.reason = 'Official Gate PASS but manifest/snapshot publication is not complete for target date';
+        state.reason = !strategyMatch
+          ? `Official Gate PASS but current publication strategyVersion=${state.currentStrategyVersion ?? 'missing'} does not match required strategyVersion=${requiredStrategyVersion ?? 'missing'}`
+          : 'Official Gate PASS but manifest/snapshot publication is not complete for target date';
       }
     }
   } else if (state.gateStatus === 'CONFIRMED_MISSING') {

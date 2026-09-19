@@ -4,7 +4,7 @@
 
 ## 每日資料更新
 
-每日研究與 20 萬模擬帳戶更新必須遵守 [`DAILY_UPDATE_PROTOCOL.md`](./DAILY_UPDATE_PROTOCOL.md)。核心原則：
+每日研究與 20 萬模擬帳戶更新必須遵守 [`DAILY_UPDATE_PROTOCOL.md`](./DAILY_UPDATE_PROTOCOL.md)，策略版本、門檻與風控數值以根目錄 `strategy-config.json` 為機器可讀的單一設定來源。核心原則：
 
 1. 先確認台股交易日與盤後資料完整性；不完整即 Fail Closed，不更新。
 2. 只依前一交易日已存在的 `nextOrders` 判斷今日模擬成交，禁止用今日結果倒推交易。
@@ -35,6 +35,7 @@ node scripts/validate-strategy-v2.mjs
 - 舊 snapshot 不得修改／刪除；新增 snapshot 與 manifest 必須同一 commit。
 - 基本秘密資訊格式掃描。
 - Dashboard `conclusion / avoid / invalid / invalidCondition` contract。
+- publication recovery 會比較最新 research.strategyVersion 與 `strategy-config.json`；舊策略即使日期完整也會回到 `RESEARCH_REQUIRED`。
 - `entry-dual-track-v2` 策略 contract：Market Regime 門檻、100 分權重、BUY 流動性、RR、Breakout 量比、全市場排名、新聞來源分級與最多 3 個 BUY 候選。舊 v1 snapshot 在 migration 期間只會 skip 此 validator。
 
 ## 安全界線

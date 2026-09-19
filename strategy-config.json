@@ -1,0 +1,56 @@
+{
+  "version": "entry-dual-track-v2",
+  "signalMode": "EOD",
+  "liquidityMedianTurnover20dMin": 50000000,
+  "buyScoreThreshold": {
+    "BULL": 82,
+    "NEUTRAL": 86,
+    "BEAR": null,
+    "HIGH_RISK": null
+  },
+  "priority": {
+    "maxCandidates": 3,
+    "percentileMax": 10,
+    "rankMax": 50
+  },
+  "minRiskReward": 2,
+  "risk": {
+    "riskPerTradePct": 0.5,
+    "riskPerTradeHardCapPct": 1,
+    "singleStockExposureMaxPct": 10,
+    "sectorExposureMaxPct": 20,
+    "totalExposureMaxPct": 50,
+    "dailyLossLimitPct": 1.5,
+    "weeklyLossLimitPct": 4,
+    "consecutiveRealizedLossLimit": 3
+  },
+  "scoreWeights": {
+    "trend": 18,
+    "momentum": 8,
+    "volume": 10,
+    "marketRegime": 8,
+    "institutional": 15,
+    "largeHolder": 8,
+    "marginShortLending": 6,
+    "fundamental": 15,
+    "riskReward": 12
+  },
+  "breakout": {
+    "minVolumeRatio20d": 1.5,
+    "watchVolumeRatioMin": 1.2
+  },
+  "pricePreference": {
+    "preferredMaxTwd": 200
+  },
+  "news": {
+    "allowedPositiveBuySources": [
+      "SOURCE_A"
+    ],
+    "confirmationOnlySources": [
+      "SOURCE_B"
+    ],
+    "unverifiedSources": [
+      "SOURCE_C"
+    ]
+  }
+}

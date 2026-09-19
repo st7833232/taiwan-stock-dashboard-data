@@ -6,6 +6,8 @@
 
 目前研究進場策略版本：`entry-dual-track-v2`。
 
+機器可執行的門檻與權重以根目錄 `strategy-config.json` 為單一設定來源；DAILY_UPDATE_PROTOCOL.md、排程提示詞與 validator 不得各自維護互相衝突的數值。策略版本變更時，`check-daily-publication.mjs` 必須把舊策略 publication 視為 `RESEARCH_REQUIRED`。
+
 ### 官方市場資料擷取器例外
 
 - 可使用 GitHub Actions 定時執行官方公開資料擷取器。
