@@ -36,19 +36,22 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Resolve target date
+
+      - name: Resolve target date and backfill mode
         shell: bash
         env:
           INPUT_TARGET_DATE: ${{ inputs.target_date }}
-          EVENT_NAME: ${{ github.event_name }}
           INPUT_BACKFILL_HISTORY: ${{ inputs.backfill_history }}
+          EVENT_NAME: ${{ github.event_name }}
         run: |
           set -euo pipefail
           target=""
+
           if [[ -n "${INPUT_TARGET_DATE:-}" ]]; then
             target="$INPUT_TARGET_DATE"
           elif [[ "$EVENT_NAME" == "push" && -f .github/market-data-trigger ]]; then
@@ -57,58 +60,48 @@ jobs:
               target="$candidate"
             fi
           fi
+
           if [[ -n "$target" ]]; then
             echo "TARGET_DATE=$target" >> "$GITHUB_ENV"
             echo "Resolved target date: $target"
           else
             echo "No explicit target date; scripts will use current Asia/Taipei date."
           fi
-          if [[ "${INPUT_BACKFILL_HISTORY:-false}" == "true" ]] || { [[ -f .github/market-data-trigger ]] && grep -Eq '^backfill=1
+
+          if [[ "${INPUT_BACKFILL_HISTORY:-false}" == "true" ]]; then
+            echo "BACKFILL_V2_HISTORY=1" >> "$GITHUB_ENV"
+            echo "V2 history backfill enabled by workflow input."
+          elif [[ -f .github/market-data-trigger ]] && grep -Fxq 'backfill=1' .github/market-data-trigger; then
+            echo "BACKFILL_V2_HISTORY=1" >> "$GITHUB_ENV"
+            echo "V2 history backfill enabled by trigger file."
+          fi
+
       - name: Capture official sources
         run: node scripts/fetch-official-market-data.mjs
+
       - name: Build dynamic full-market research input
         run: node scripts/summarize-official-market-data.mjs
+
       - name: Backfill or extend official V2 market history
         run: node scripts/backfill-v2-market-history.mjs
+
       - name: Rebuild research input with technical history
         run: node scripts/summarize-official-market-data.mjs
+
       - name: Check publication recovery state
         run: node scripts/check-daily-publication.mjs
-      - name: Commit raw evidence and recovery state when changed
+
+      - name: Commit raw evidence, rolling history and recovery state when changed
         shell: bash
         run: |
           set -euo pipefail
           if git diff --quiet -- raw/ history/ && [ -z "$(git status --porcelain --untracked-files=all raw/ history/)" ]; then
-            echo "No raw-data changes."
+            echo "No data changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add raw/ history/
-          git commit -m "data: capture official market evidence"
-          git pull --rebase origin main
-          git push origin HEAD:main
- .github/market-data-trigger; }; then
-            echo "BACKFILL_V2_HISTORY=1" >> "$GITHUB_ENV"
-            echo "V2 history backfill enabled."
-          fi
-      - name: Capture official sources
-        run: node scripts/fetch-official-market-data.mjs
-      - name: Build dynamic full-market research input
-        run: node scripts/summarize-official-market-data.mjs
-      - name: Check publication recovery state
-        run: node scripts/check-daily-publication.mjs
-      - name: Commit raw evidence and recovery state when changed
-        shell: bash
-        run: |
-          set -euo pipefail
-          if git diff --quiet -- raw/ && [ -z "$(git status --porcelain --untracked-files=all raw/)" ]; then
-            echo "No raw-data changes."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add raw/
           git commit -m "data: capture official market evidence"
           git pull --rebase origin main
           git push origin HEAD:main
