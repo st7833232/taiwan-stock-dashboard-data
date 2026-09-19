@@ -95,8 +95,8 @@ for (const c of research.candidates ?? []) {
     assert(finite(c.liquidityMedianTurnover20d) && c.liquidityMedianTurnover20d >= config.liquidityMedianTurnover20dMin, `candidate ${code} BUY liquidity below configured median turnover`);
     assert(finite(c.riskReward) && c.riskReward >= config.minRiskReward, `candidate ${code} BUY riskReward below configured minimum`);
     if (c.strategy === 'BREAKOUT') assert(finite(c.volumeRatio20d) && c.volumeRatio20d >= config.breakout.minVolumeRatio20d, `candidate ${code} BREAKOUT volumeRatio20d below configured minimum`);
-    if (c.universeRank !== null) assert(c.universeRank <= config.priority.rankMax, `candidate ${code} BUY universeRank exceeds configured maximum`);
-    if (c.universePercentile !== null) assert(c.universePercentile <= config.priority.percentileMax, `candidate ${code} BUY universePercentile exceeds configured maximum`);
+    assert(Number.isInteger(c.universeRank) && c.universeRank > 0 && c.universeRank <= config.priority.rankMax, `candidate ${code} BUY requires verified universeRank <= configured maximum`);
+    assert(finite(c.universePercentile) && c.universePercentile >= 0 && c.universePercentile <= config.priority.percentileMax, `candidate ${code} BUY requires verified universePercentile <= configured maximum`);
     assert(finite(c.maxChase), `candidate ${code} BUY missing maxChase`);
     assert(typeof c.invalidCondition === 'string' && c.invalidCondition.trim(), `candidate ${code} BUY missing invalidCondition`);
     assert(!(n?.sourceQuality === 'SOURCE_C' && n?.direction === 'POSITIVE'), `candidate ${code} BUY cannot rely on positive SOURCE_C news`);

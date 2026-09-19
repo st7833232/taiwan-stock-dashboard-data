@@ -5,7 +5,8 @@ const TZ = 'Asia/Taipei';
 const now = new Date();
 const parts = new Intl.DateTimeFormat('en-CA', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(now);
 const value = (type) => parts.find((p) => p.type === type)?.value;
-const targetDate = process.env.TARGET_DATE || `${value('year')}-${value('month')}-${value('day')}`;
+const todayDate = `${value('year')}-${value('month')}-${value('day')}`;
+const targetDate = process.env.TARGET_DATE || todayDate;
 const compact = targetDate.replaceAll('-', '');
 const [year, month, day] = targetDate.split('-').map(Number);
 const mm = String(month).padStart(2, '0');
@@ -27,6 +28,7 @@ const sources = [
   { id: 'tpex-daily-trading-index', gate: 'tpex-market-turnover-index', institution: 'TPEx', kind: 'market-turnover-index', url: 'https://www.tpex.org.tw/openapi/v1/tpex_daily_trading_index' },
   { id: 'tpex-3insti-daily-trading', gate: 'tpex-individual-institutional', institution: 'TPEx', kind: 'individual-institutional', url: 'https://www.tpex.org.tw/openapi/v1/tpex_3insti_daily_trading' },
   { id: 'tpex-3insti-summary', gate: 'tpex-institutional-summary', institution: 'TPEx', kind: 'institutional-summary', url: 'https://www.tpex.org.tw/openapi/v1/tpex_3insti_summary' },
+  { id: 'tdcc-shareholding-distribution', gate: null, institution: 'TDCC', kind: 'shareholding-distribution', url: 'https://openapi.tdcc.com.tw/v1/opendata/1-5', latestOnly: true },
 ];
 
 const requiredGates = [
@@ -46,13 +48,8 @@ function dateVariants(date) {
   const d2 = String(d).padStart(2, '0');
   const roc = y - 1911;
   return new Set([
-    date,
-    `${y}/${m2}/${d2}`,
-    `${y}${m2}${d2}`,
-    `${y}年${m2}月${d2}日`,
-    `${roc}/${m2}/${d2}`,
-    `${roc}${m2}${d2}`,
-    `${roc}年${m2}月${d2}日`,
+    date, `${y}/${m2}/${d2}`, `${y}${m2}${d2}`, `${y}年${m2}月${d2}日`,
+    `${roc}/${m2}/${d2}`, `${roc}${m2}${d2}`, `${roc}年${m2}月${d2}日`,
   ]);
 }
 
@@ -74,6 +71,9 @@ async function readPreviousMatrix() {
 async function capture(source) {
   const capturedAt = new Date().toISOString();
   const result = { source: source.id, gate: source.gate, institution: source.institution, kind: source.kind, url: source.url, targetDate, capturedAt, status: 'VERIFY_FAILED' };
+  if (source.latestOnly && targetDate !== todayDate) {
+    return { ...result, status: 'NOT_CAPTURED_RETROSPECTIVE', note: 'Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage.' };
+  }
   try {
     const response = await fetch(source.url, {
       headers: { accept: 'application/json,text/plain,*/*', 'user-agent': 'taiwan-stock-dashboard-data/official-market-capture' },
@@ -91,6 +91,11 @@ async function capture(source) {
     }
     let parsed;
     try { parsed = JSON.parse(text); } catch { parsed = text; }
+    if (!source.gate) {
+      result.status = 'CAPTURED';
+      result.note = 'Auxiliary source captured; it is not part of the daily publication Gate.';
+      return result;
+    }
     const matchedDate = findOfficialDate(parsed, dateVariants(targetDate));
     result.officialDateEvidence = matchedDate;
     result.status = matchedDate ? 'PASS' : 'VERIFY_FAILED';
@@ -108,7 +113,7 @@ const captures = [];
 for (const source of sources) {
   const attempt = await capture(source);
   const prior = priorPassBySource.get(source.id);
-  if (attempt.status !== 'PASS' && prior) {
+  if (source.gate && attempt.status !== 'PASS' && prior) {
     captures.push({ ...prior, gate: source.gate, preservedPass: true, latestAttempt: attempt });
   } else {
     captures.push(attempt);

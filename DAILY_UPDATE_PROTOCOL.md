@@ -262,6 +262,16 @@ Positive News + Price Weak + Institutional Selling 應標記為正面新聞背�
 
 validator 對舊的 `entry-dual-track-v1` snapshot 只做 migration skip；從第一份正式 `entry-dual-track-v2` snapshot 起，上述欄位全部強制。
 
+### 3.4 V2 Research Input 資料層
+
+- `summarize-official-market-data.mjs` 不得再使用固定 10 檔代號；必須從 TWSE / TPEx 當日官方全市場收盤資料動態建立普通股與 ETF Universe。
+- 先以當日正式收盤資料建立全市場候選，再對股價偏好與流動性做 preliminary screen；當日成交金額不得冒充 20 日中位數成交金額。
+- `research-input.json` 必須保留每個 deep-dive candidate 的 `historyCoverageTradingDays`、`liquidityMedianTurnover20d`、`volumeMA20`、`volumeRatio20d`、`ma120Ready`。
+- 歷史覆蓋不足 20 個交易日時，不得宣稱通過 20 日流動性 Gate；不足 120 個交易日時，不得虛構 MA120 或依賴 MA120 的 BUY 判斷。
+- TDCC 使用官方 OpenAPI `/v1/opendata/1-5` 作為週頻輔助來源；對歷史 targetDate 重跑時不得抓取「現在最新」TDCC 再倒灌歷史研究，避免前視偏誤。
+- V2 BUY 的 `universeRank` 與 `universePercentile` 必須有實際可驗證數值；不得以 null 繞過 Cross-Sectional Ranking Gate。
+- 歷史資料或 ranking 尚未 ready 時，研究可以輸出 WATCH / NO_TRADE，但不得以估計值補齊 BUY Hard Gate。
+
 ## 4. Snapshot 與 selection history
 
 Gate 通過後，以執行當下台北時間建立 `revision = YYYY-MM-DD-HHmmss`，並建立：
