@@ -160,9 +160,22 @@ let rawDates=[];
 try { rawDates=(await fs.readdir('raw',{withFileTypes:true})).filter((x)=>x.isDirectory()&&/^\d{4}-\d{2}-\d{2}$/.test(x.name)&&x.name<=targetDate).map((x)=>x.name).sort(); } catch {}
 const institutionalHistory=new Map(deepDiveCodes.map((code)=>[code,[]]));
 const wanted=new Set(deepDiveCodes);
+for (const code of deepDiveCodes) {
+  const cached=(historyCache?.institutional?.[code]??[])
+    .filter((r)=>r[0]<=targetDate)
+    .map((r)=>({date:r[0],code,foreign:r[1],investmentTrust:r[2],dealer:r[3],total:r[4]}));
+  institutionalHistory.set(code,cached);
+}
 for (const date of rawDates) {
   const daily=await currentUniverseFor(date);
-  for (const row of daily) if (wanted.has(row.code)&&row.institutional1d) institutionalHistory.get(row.code).push({date,...row.institutional1d});
+  for (const row of daily) {
+    if (!wanted.has(row.code)||!row.institutional1d) continue;
+    const arr=institutionalHistory.get(row.code)??[];
+    const next={date,...row.institutional1d};
+    const ix=arr.findIndex((x)=>x.date===date);
+    if (ix>=0) arr[ix]=next; else arr.push(next);
+    institutionalHistory.set(row.code,arr);
+  }
 }
 function instSum(rows,key,n) { if (rows.length<n) return null; return rows.slice(-n).reduce((s,r)=>s+(Number.isFinite(r[key])?r[key]:0),0); }
 
@@ -205,7 +218,7 @@ const output={
   schemaVersion:3,targetDate,generatedAt:new Date().toISOString(),strategyVersion:config.version,gateMatrix,
   universeSummary:{total:universe.length,stocks:stocks.length,etfs:etfs.length,liquidTodayStocks:liquidToday.length,preferredPriceAndLiquidTodayStocks:preferredToday.length,deepDiveCount:deepDiveCodes.length},
   universe,codes:deepDiveCodes,deepDive,tdcc,
-  historyCache:{asOf:historyCache?.asOf??null,verifiedTradingDays:historyCache?.coverage?.verifiedTradingDays??0,codesWith20Days:historyCache?.coverage?.codesWith20Days??0,codesWith120Days:historyCache?.coverage?.codesWith120Days??0},
+  historyCache:{asOf:historyCache?.asOf??null,verifiedTradingDays:historyCache?.coverage?.verifiedTradingDays??0,codesWith20Days:historyCache?.coverage?.codesWith20Days??0,codesWith120Days:historyCache?.coverage?.codesWith120Days??0,codesWith20InstitutionDays:historyCache?.coverage?.codesWith20InstitutionDays??0},
   v2Readiness:{
     fullMarketCurrentSnapshot:universe.length>0,dynamicUniverse:true,fixedTenCodeListRemoved:true,
     historicalFoldersAvailable:rawDates.length,

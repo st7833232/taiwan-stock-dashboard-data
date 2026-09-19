@@ -140,6 +140,67 @@ async function fetchPriceDay(date) {
   for (const q of rows) if (!dedup.has(q.code)) dedup.set(q.code,q);
   return {date,rows:[...dedup.values()],provenance,verified:dedup.size>=100};
 }
+
+function normalizeInstitutionRow(row,market) {
+  const code=codeOf(row);
+  if (!code) return null;
+  if (market==='TWSE') {
+    const foreign=num(row['外陸資買賣超股數(不含外資自營商)']);
+    const investmentTrust=num(row['投信買賣超股數']);
+    const dealer=num(row['自營商買賣超股數']);
+    const total=num(row['三大法人買賣超股數']);
+    if ([foreign,investmentTrust,dealer,total].every((v)=>v===null)) return null;
+    return {code,market,foreign,investmentTrust,dealer,total};
+  }
+  return null;
+}
+async function fetchInstitutionDay(date) {
+  const twseUrl=`https://www.twse.com.tw/rwd/zh/fund/T86?date=${compact(date)}&selectType=ALL&response=json`;
+  const params=new URLSearchParams({type:'Daily',sect:'EW',date:rocSlash(date),id:'',response:'json'});
+  const tpexUrl=`https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?${params.toString()}`;
+  const [twseResult,tpexResult]=await Promise.allSettled([fetchJson(twseUrl),fetchJson(tpexUrl)]);
+  const rows=[], provenance={};
+  if (twseResult.status==='fulfilled' && hasDateEvidence(twseResult.value,date)) {
+    for (const row of uniqueRows([...tableRows(twseResult.value),...objectRows(twseResult.value)])) {
+      const x=normalizeInstitutionRow(row,'TWSE'); if (x) rows.push(x);
+    }
+    provenance.twse={status:'PASS',url:twseUrl};
+  } else provenance.twse={status:'VERIFY_FAILED',error:twseResult.status==='rejected'?String(twseResult.reason?.message||twseResult.reason):'date evidence missing'};
+  if (tpexResult.status==='fulfilled') {
+    const payload=tpexResult.value;
+    const tables=Array.isArray(payload?.tables)?payload.tables:[];
+    const respDate=String(tables[0]?.date ?? payload?.date ?? '').trim();
+    const dateOk=!respDate || dateVariants(date).includes(respDate) || hasDateEvidence({date:respDate},date);
+    const data=tables[0]?.data;
+    if (dateOk && Array.isArray(data)) {
+      for (const row of data) {
+        if (!Array.isArray(row) || row.length<24) continue;
+        const code=String(row[0]??'').trim().replaceAll('=','').replaceAll('"','');
+        if (!code) continue;
+        const foreign=num(row[10]), investmentTrust=num(row[13]), dealer=num(row[22]), total=num(row[23]);
+        rows.push({code,market:'TPEx',foreign,investmentTrust,dealer,total});
+      }
+      provenance.tpex={status:'PASS',url:tpexUrl};
+    } else provenance.tpex={status:'VERIFY_FAILED',error:'date evidence or data missing'};
+  } else provenance.tpex={status:'VERIFY_FAILED',error:String(tpexResult.reason?.message||tpexResult.reason)};
+  const dedup=new Map();
+  for (const x of rows) if (!dedup.has(x.code)) dedup.set(x.code,x);
+  return {date,rows:[...dedup.values()],provenance,verified:dedup.size>=50};
+}
+function upsertInstitution(date,rows,provenance) {
+  history.institutional ??={};
+  history.institutionalProvenance ??={};
+  for (const x of rows) {
+    const arr=history.institutional[x.code] ?? [];
+    const ix=arr.findIndex((r)=>r[0]===date);
+    const row=[date,x.foreign,x.investmentTrust,x.dealer,x.total,x.market];
+    if (ix>=0) arr[ix]=row; else arr.push(row);
+    arr.sort((a,b)=>a[0].localeCompare(b[0]));
+    history.institutional[x.code]=arr.slice(-30);
+  }
+  history.institutionalProvenance[date]=provenance;
+}
+
 async function readJsonMaybe(file) {
   try { return JSON.parse(await fs.readFile(file,'utf8')); } catch { return null; }
 }
@@ -186,21 +247,43 @@ if (doBackfill) {
   }
 }
 
-const usableDates=history.dates.filter((d)=>d<=targetDate).sort().slice(-targetDepth);
-const usableSet=new Set(usableDates);
+
+const institutionalDates=history.dates.filter((d)=>d<=targetDate).sort().slice(-20);
+const existingInstitutionDates=new Set(Object.values(history.institutional??{}).flatMap((rows)=>rows.map((r)=>r[0])));
+const missingInstitutionDates=institutionalDates.filter((d)=>!existingInstitutionDates.has(d));
+for (let i=0;i<missingInstitutionDates.length;i+=concurrency) {
+  const batch=missingInstitutionDates.slice(i,i+concurrency);
+  const results=await Promise.all(batch.map(async(date)=>{
+    try { return await fetchInstitutionDay(date); }
+    catch(error) { return {date,rows:[],provenance:{error:String(error?.message||error)},verified:false}; }
+  }));
+  for (const result of results) if (result.verified) upsertInstitution(result.date,result.rows,result.provenance);
+  console.log(JSON.stringify({phase:'institutional-backfill',processed:Math.min(i+concurrency,missingInstitutionDates.length),dates:missingInstitutionDates.length}));
+}
+
+const targetUsableDates=history.dates.filter((d)=>d<=targetDate).sort().slice(-targetDepth);
+const cacheAsOf=[history.asOf,targetDate].filter(Boolean).sort().at(-1);
+const retainedDates=history.dates.filter((d)=>d<=cacheAsOf).sort().slice(-(targetDepth+30));
+const retainedSet=new Set(retainedDates);
 for (const [code,rows] of Object.entries(history.data)) {
-  const filtered=rows.filter((r)=>usableSet.has(r[0])).sort((a,b)=>a[0].localeCompare(b[0]));
+  const filtered=rows.filter((r)=>retainedSet.has(r[0])).sort((a,b)=>a[0].localeCompare(b[0]));
   if (filtered.length) history.data[code]=filtered; else delete history.data[code];
 }
-history.dates=usableDates;
-history.asOf=targetDate;
+for (const [code,rows] of Object.entries(history.institutional??{})) {
+  const filtered=rows.filter((r)=>r[0]<=cacheAsOf).sort((a,b)=>a[0].localeCompare(b[0])).slice(-30);
+  if (filtered.length) history.institutional[code]=filtered; else delete history.institutional[code];
+}
+history.dates=retainedDates;
+history.asOf=cacheAsOf;
+const usableDates=targetUsableDates;
 history.generatedAt=new Date().toISOString();
 history.targetDepthTradingDays=targetDepth;
 history.coverage={
   verifiedTradingDays:usableDates.length,
   codes:Object.keys(history.data).length,
   codesWith20Days:Object.values(history.data).filter((rows)=>rows.length>=20).length,
-  codesWith120Days:Object.values(history.data).filter((rows)=>rows.length>=120).length
+  codesWith120Days:Object.values(history.data).filter((rows)=>rows.length>=120).length,
+  codesWith20InstitutionDays:Object.values(history.institutional??{}).filter((rows)=>rows.filter((r)=>r[0]<=targetDate).length>=20).length
 };
 await fs.writeFile(historyPath,JSON.stringify(history)+'\n');
 console.log(JSON.stringify({output:historyPath,asOf:history.asOf,coverage:history.coverage}));

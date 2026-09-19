@@ -280,7 +280,7 @@ validator 對舊的 `entry-dual-track-v1` snapshot 只做 migration skip；從�
 - `research-input.json` 必須從 rolling cache 計算 MA5/10/20/60/120、RSI14、MACD、ATR14、VolumeMA20、VolumeRatio20D、20/60 日高低與 20 日中位成交金額。
 - 當 cache 覆蓋不足所需週期時，對應指標必須為 null/Not Ready，不得使用當日值或估算替代。
 - Git history 保留 cache 更新軌跡；cache 只可由已驗證官方歷史資料或當日已通過 Gate 的正式市場資料延伸。
-- 法人 3D/5D/10D/20D 只有在相應官方日資料實際存在時才可計算；不足時保留 null，不得用 1D 外推。
+- 法人 3D/5D/10D/20D 只有在相應官方日資料實際存在時才可計算；不足時保留 null，不得用 1D 外推。\n- institutional rolling history 使用 TWSE T86 與 TPEx 新版官方 `/www/zh-tw/insti/dailyTrade` historical API 回填最近至少 20 個已驗證交易日；每一天都必須核對回應日期。
 - TDCC 歷史資料不得以事後最新一期倒灌歷史 targetDate。
 
 ## 4. Snapshot 與 selection history
