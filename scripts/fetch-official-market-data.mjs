@@ -33,8 +33,9 @@ const sources = [
   { id: 'twse-margin-trading', gate: null, institution: 'TWSE', kind: 'margin-short', url: `https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=${compact}&response=json&selectType=ALL`, requireTargetDate: true },
   { id: 'tpex-margin-sbl', gate: null, institution: 'TPEx', kind: 'margin-short-lending', url: `https://www.tpex.org.tw/www/zh-tw/margin/sbl?date=${year}/${mm}/${dd}&id=&response=json`, requireTargetDate: true },
   { id: 'twse-monthly-revenue', gate: null, institution: 'MOPS', kind: 'monthly-revenue', url: 'https://openapi.twse.com.tw/v1/opendata/t187ap05_L', latestOnly: true },
-  { id: 'tpex-monthly-revenue', gate: null, institution: 'MOPS', kind: 'monthly-revenue', url: 'https://openapi.twse.com.tw/v1/opendata/t187ap05_O', latestOnly: true },
+  { id: 'tpex-monthly-revenue', gate: null, institution: 'MOPS', kind: 'monthly-revenue', url: 'https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap05_O', latestOnly: true },
   { id: 'twse-material-information', gate: null, institution: 'MOPS', kind: 'material-information', url: 'https://openapi.twse.com.tw/v1/opendata/t187ap04_L', latestOnly: true },
+  { id: 'tpex-material-information', gate: null, institution: 'MOPS', kind: 'material-information', url: 'https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O', latestOnly: true },
   { id: 'tdcc-shareholding-distribution', gate: null, institution: 'TDCC', kind: 'shareholding-distribution', url: 'https://openapi.tdcc.com.tw/v1/opendata/1-5', latestOnly: true },
 ];
 

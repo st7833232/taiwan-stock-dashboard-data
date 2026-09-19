@@ -234,12 +234,13 @@ const priorCodes=await previousResearchCodes();
 const deepDiveCodes=[...new Set([...preferredToday.slice(0,300).map((x)=>x.code),...priorCodes])];
 const currentByCode=new Map(universe.map((x)=>[x.code,x]));
 
-const [twseMarginRows,tpexMarginRows,twseRevenueRows,tpexRevenueRows,materialRows]=await Promise.all([
+const [twseMarginRows,tpexMarginRows,twseRevenueRows,tpexRevenueRows,twseMaterialRows,tpexMaterialRows]=await Promise.all([
   creditRowsFrom(path.join(dir,'twse-margin-trading.raw.txt'),'TWSE'),
   creditRowsFrom(path.join(dir,'tpex-margin-sbl.raw.txt'),'TPEx'),
   rowsFrom(path.join(dir,'twse-monthly-revenue.raw.txt')),
   rowsFrom(path.join(dir,'tpex-monthly-revenue.raw.txt')),
-  rowsFrom(path.join(dir,'twse-material-information.raw.txt'))
+  rowsFrom(path.join(dir,'twse-material-information.raw.txt')),
+  rowsFrom(path.join(dir,'tpex-material-information.raw.txt'))
 ]);
 const marginByCode=new Map([...twseMarginRows,...tpexMarginRows].map((x)=>[x.code,x]));
 const revenueByCode=new Map();
@@ -251,10 +252,11 @@ for (const row of [...twseRevenueRows,...tpexRevenueRows]) {
   if (!prev || x.dataMonthKey>=prev.dataMonthKey) revenueByCode.set(x.code,x);
 }
 const materialByCode=new Map();
-for (const row of materialRows) {
+for (const row of [...twseMaterialRows,...tpexMaterialRows]) {
   const x=normalizeMaterialEvent(row); if (!x || !x.eventDate || x.eventDate>targetDate) continue;
   const arr=materialByCode.get(x.code)??[]; arr.push(x); materialByCode.set(x.code,arr);
 }
+const materialCoverage={TWSE:twseMaterialRows.length>0,TPEx:tpexMaterialRows.length>0};
 
 const historyCache=await readJsonMaybe(path.join('history','market-history.json'));
 const cacheData=historyCache?.schemaVersion===1 ? historyCache.data ?? {} : {};
@@ -311,7 +313,7 @@ const deepDive=deepDiveCodes.map((code)=>{
     evidenceReadiness:{
       marginShortLending:marginByCode.has(code),
       fundamental:revenueByCode.has(code),
-      sourceAEvent:materialByCode.has(code)
+      sourceAEvent:Boolean(current?.market && materialCoverage[current.market])
     },
     history:h
   };
