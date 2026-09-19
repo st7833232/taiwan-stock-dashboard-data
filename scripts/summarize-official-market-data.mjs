@@ -99,6 +99,33 @@ function normalizeMaterialEvent(row) {
 async function rowsFrom(rel) {
   try { const parsed=JSON.parse(await fs.readFile(rel,'utf8')); return uniqueRows([...tableRows(parsed),...objectRows(parsed)]); } catch { return []; }
 }
+async function creditRowsFrom(rel,market) {
+  try {
+    const parsed=JSON.parse(await fs.readFile(rel,'utf8'));
+    const tables=Array.isArray(parsed?.tables)?parsed.tables:[];
+    const out=[];
+    for (const table of tables) {
+      if (!Array.isArray(table?.data)) continue;
+      if (market==='TWSE' && String(table.title??'').includes('融資融券彙總')) {
+        for (const row of table.data) {
+          if (!Array.isArray(row)||row.length<13) continue;
+          const code=String(row[0]??'').trim(); if (!code) continue;
+          const marginPrev=num(row[5]), marginBalance=num(row[6]), shortPrev=num(row[11]), shortBalance=num(row[12]);
+          out.push({code,market,marginPrev,marginBalance,marginChange:marginPrev!==null&&marginBalance!==null?marginBalance-marginPrev:null,shortPrev,shortBalance,shortChange:shortPrev!==null&&shortBalance!==null?shortBalance-shortPrev:null,lendingPrev:null,lendingBalance:null,lendingChange:null});
+        }
+      }
+      if (market==='TPEx' && String(table.title??'').includes('信用額度總量管制餘額')) {
+        for (const row of table.data) {
+          if (!Array.isArray(row)||row.length<13) continue;
+          const code=String(row[0]??'').trim(); if (!code) continue;
+          const shortPrev=num(row[2]), shortBalance=num(row[6]), lendingPrev=num(row[8]), lendingBalance=num(row[12]);
+          out.push({code,market,marginPrev:null,marginBalance:null,marginChange:null,shortPrev,shortBalance,shortChange:shortPrev!==null&&shortBalance!==null?shortBalance-shortPrev:null,lendingPrev,lendingBalance,lendingChange:lendingPrev!==null&&lendingBalance!==null?lendingBalance-lendingPrev:null});
+        }
+      }
+    }
+    return out;
+  } catch { return []; }
+}
 async function currentUniverseFor(date) {
   const base=path.join('raw',date);
   const [twseRows,tpexRows,twseInstRows,tpexInstRows]=await Promise.all([
@@ -186,15 +213,13 @@ const deepDiveCodes=[...new Set([...preferredToday.slice(0,300).map((x)=>x.code)
 const currentByCode=new Map(universe.map((x)=>[x.code,x]));
 
 const [twseMarginRows,tpexMarginRows,twseRevenueRows,tpexRevenueRows,materialRows]=await Promise.all([
-  rowsFrom(path.join(dir,'twse-margin-trading.raw.txt')),
-  rowsFrom(path.join(dir,'tpex-margin-sbl.raw.txt')),
+  creditRowsFrom(path.join(dir,'twse-margin-trading.raw.txt'),'TWSE'),
+  creditRowsFrom(path.join(dir,'tpex-margin-sbl.raw.txt'),'TPEx'),
   rowsFrom(path.join(dir,'twse-monthly-revenue.raw.txt')),
   rowsFrom(path.join(dir,'tpex-monthly-revenue.raw.txt')),
   rowsFrom(path.join(dir,'twse-material-information.raw.txt'))
 ]);
-const marginByCode=new Map();
-for (const row of twseMarginRows) { const x=normalizeMargin(row,'TWSE'); if (x) marginByCode.set(x.code,x); }
-for (const row of tpexMarginRows) { const x=normalizeMargin(row,'TPEx'); if (x) marginByCode.set(x.code,x); }
+const marginByCode=new Map([...twseMarginRows,...tpexMarginRows].map((x)=>[x.code,x]));
 const revenueByCode=new Map();
 for (const row of [...twseRevenueRows,...tpexRevenueRows]) { const x=normalizeRevenue(row); if (x) revenueByCode.set(x.code,x); }
 const materialByCode=new Map();
