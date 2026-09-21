@@ -42,6 +42,15 @@
   "pricePreference": {
     "preferredMaxTwd": 200
   },
+  "researchUniverse": {
+    "deepDiveScope": "ALL_LIQUID_STOCKS",
+    "maxDeepDiveCandidates": null
+  },
+  "creditEvidence": {
+    "requireMarginBalance": true,
+    "requireShortBalance": true,
+    "requireSecuritiesLending": false
+  },
   "news": {
     "allowedPositiveBuySources": [
       "SOURCE_A"

@@ -126,9 +126,21 @@ async function creditRowsFrom(rel,market) {
     const parsed=JSON.parse(await fs.readFile(rel,'utf8'));
     const tables=Array.isArray(parsed?.tables)?parsed.tables:[];
     const out=[];
+    for (const row of tableRows(parsed)) {
+      const normalized=normalizeMargin(row,market);
+      if (normalized) out.push(normalized);
+    }
     for (const table of tables) {
       if (!Array.isArray(table?.data)) continue;
       if (market==='TWSE' && String(table.title??'').includes('融資融券彙總')) {
+        for (const row of table.data) {
+          if (!Array.isArray(row)||row.length<13) continue;
+          const code=String(row[0]??'').trim(); if (!code) continue;
+          const marginPrev=num(row[5]), marginBalance=num(row[6]), shortPrev=num(row[11]), shortBalance=num(row[12]);
+          out.push({code,market,marginPrev,marginBalance,marginChange:marginPrev!==null&&marginBalance!==null?marginBalance-marginPrev:null,shortPrev,shortBalance,shortChange:shortPrev!==null&&shortBalance!==null?shortBalance-shortPrev:null,lendingPrev:null,lendingBalance:null,lendingChange:null});
+        }
+      }
+      if (market==='TPEx' && String(table.title??'').includes('融資融券') && !String(table.title??'').includes('信用額度總量管制餘額')) {
         for (const row of table.data) {
           if (!Array.isArray(row)||row.length<13) continue;
           const code=String(row[0]??'').trim(); if (!code) continue;
@@ -145,8 +157,21 @@ async function creditRowsFrom(rel,market) {
         }
       }
     }
-    return out;
+    return uniqueRows(out);
   } catch { return []; }
+}
+function mergeCreditRows(rows) {
+  const merged=new Map();
+  for (const row of rows) {
+    if (!row?.code) continue;
+    const current=merged.get(row.code)??{code:row.code,market:row.market,marginPrev:null,marginBalance:null,marginChange:null,shortPrev:null,shortBalance:null,shortChange:null,lendingPrev:null,lendingBalance:null,lendingChange:null};
+    for (const key of ['marginPrev','marginBalance','shortPrev','shortBalance','lendingPrev','lendingBalance']) if (row[key]!==null&&row[key]!==undefined) current[key]=row[key];
+    current.marginChange=current.marginPrev!==null&&current.marginBalance!==null?current.marginBalance-current.marginPrev:null;
+    current.shortChange=current.shortPrev!==null&&current.shortBalance!==null?current.shortBalance-current.shortPrev:null;
+    current.lendingChange=current.lendingPrev!==null&&current.lendingBalance!==null?current.lendingBalance-current.lendingPrev:null;
+    merged.set(row.code,current);
+  }
+  return merged;
 }
 async function currentUniverseFor(date) {
   const base=path.join('raw',date);
@@ -231,18 +256,38 @@ const stocks=universe.filter((x)=>x.assetType==='STOCK'), etfs=universe.filter((
 const liquidToday=stocks.filter((x)=>x.turnover>=config.liquidityMedianTurnover20dMin).sort((a,b)=>b.turnover-a.turnover);
 const preferredToday=liquidToday.filter((x)=>x.close<=config.pricePreference.preferredMaxTwd);
 const priorCodes=await previousResearchCodes();
-const deepDiveCodes=[...new Set([...preferredToday.slice(0,300).map((x)=>x.code),...priorCodes])];
+const preferredSet=new Set(preferredToday.map((x)=>x.code));
+const configuredScope=config.researchUniverse?.deepDiveScope??'ALL_LIQUID_STOCKS';
+const configuredLimit=config.researchUniverse?.maxDeepDiveCandidates??null;
+const rankedResearchPool=configuredScope==='PREFERRED_PRICE_LIQUID_STOCKS'
+  ? preferredToday
+  : [...preferredToday,...liquidToday.filter((x)=>!preferredSet.has(x.code))];
+const selectedResearchPool=Number.isInteger(configuredLimit)&&configuredLimit>0
+  ? rankedResearchPool.slice(0,configuredLimit)
+  : rankedResearchPool;
+const deepDiveCodes=[...new Set([...selectedResearchPool.map((x)=>x.code),...priorCodes])];
 const currentByCode=new Map(universe.map((x)=>[x.code,x]));
 
-const [twseMarginRows,tpexMarginRows,twseRevenueRows,tpexRevenueRows,twseMaterialRows,tpexMaterialRows]=await Promise.all([
+const [twseMarginRows,twseMarginLegacyRows,tpexMarginRows,tpexMarginLegacyRows,tpexLendingRows,twseRevenueRows,tpexRevenueRows,twseMaterialRows,tpexMaterialRows]=await Promise.all([
   creditRowsFrom(path.join(dir,'twse-margin-trading.raw.txt'),'TWSE'),
+  creditRowsFrom(path.join(dir,'twse-margin-trading-legacy.raw.txt'),'TWSE'),
+  creditRowsFrom(path.join(dir,'tpex-margin-balance.raw.txt'),'TPEx'),
+  creditRowsFrom(path.join(dir,'tpex-margin-balance-legacy.raw.txt'),'TPEx'),
   creditRowsFrom(path.join(dir,'tpex-margin-sbl.raw.txt'),'TPEx'),
   rowsFrom(path.join(dir,'twse-monthly-revenue.raw.txt')),
   rowsFrom(path.join(dir,'tpex-monthly-revenue.raw.txt')),
   rowsFrom(path.join(dir,'twse-material-information.raw.txt')),
   rowsFrom(path.join(dir,'tpex-material-information.raw.txt'))
 ]);
-const marginByCode=new Map([...twseMarginRows,...tpexMarginRows].map((x)=>[x.code,x]));
+const marginByCode=mergeCreditRows([...twseMarginRows,...twseMarginLegacyRows,...tpexMarginRows,...tpexMarginLegacyRows,...tpexLendingRows]);
+function creditEvidenceReady(row) {
+  if (!row) return false;
+  const rules=config.creditEvidence??{};
+  if (rules.requireMarginBalance!==false && row.marginBalance===null) return false;
+  if (rules.requireShortBalance!==false && row.shortBalance===null) return false;
+  if (rules.requireSecuritiesLending===true && row.lendingBalance===null) return false;
+  return true;
+}
 const revenueByCode=new Map();
 const revenueCutoff=previousMonthKey(targetDate);
 for (const row of [...twseRevenueRows,...tpexRevenueRows]) {
@@ -311,7 +356,8 @@ const deepDive=deepDiveCodes.map((code)=>{
     fundamental:{monthlyRevenue:revenueByCode.get(code)??null},
     sourceAEvents:(materialByCode.get(code)??[]).slice(-20),
     evidenceReadiness:{
-      marginShortLending:marginByCode.has(code),
+      marginShortLending:creditEvidenceReady(marginByCode.get(code)),
+      securitiesLending:marginByCode.get(code)?.lendingBalance!==null&&marginByCode.get(code)?.lendingBalance!==undefined,
       fundamental:revenueByCode.has(code),
       sourceAEvent:Boolean(current?.market && materialCoverage[current.market])
     },
@@ -331,7 +377,7 @@ let gateMatrix=null;
 try { gateMatrix=JSON.parse(await fs.readFile(path.join(dir,'gate-matrix.json'),'utf8')); } catch {}
 const output={
   schemaVersion:3,targetDate,generatedAt:new Date().toISOString(),strategyVersion:config.version,simulation:{simulatedTodayDate:process.env.SIMULATED_TODAY_DATE||null},gateMatrix,
-  universeSummary:{total:universe.length,stocks:stocks.length,etfs:etfs.length,liquidTodayStocks:liquidToday.length,preferredPriceAndLiquidTodayStocks:preferredToday.length,deepDiveCount:deepDiveCodes.length},
+  universeSummary:{total:universe.length,stocks:stocks.length,etfs:etfs.length,liquidTodayStocks:liquidToday.length,preferredPriceAndLiquidTodayStocks:preferredToday.length,deepDiveScope:configuredScope,deepDiveConfiguredLimit:configuredLimit,deepDiveCount:deepDiveCodes.length},
   universe,codes:deepDiveCodes,deepDive,tdcc,
   historyCache:{asOf:historyCache?.asOf??null,verifiedTradingDays:historyCache?.coverage?.verifiedTradingDays??0,codesWith20Days:historyCache?.coverage?.codesWith20Days??0,codesWith120Days:historyCache?.coverage?.codesWith120Days??0,codesWith20InstitutionDays:historyCache?.coverage?.codesWith20InstitutionDays??0},
   v2Readiness:{
@@ -341,6 +387,7 @@ const output={
     buyHistoryReadyCount:deepDive.filter((x)=>x.liquidityGateReady&&x.ma120Ready).length,
     institutional20dReadyCount:deepDive.filter((x)=>x.institutionalHistoryCoverageDays>=20).length,
     marginShortLendingReadyCount:deepDive.filter((x)=>x.evidenceReadiness.marginShortLending).length,
+    securitiesLendingReadyCount:deepDive.filter((x)=>x.evidenceReadiness.securitiesLending).length,
     fundamentalReadyCount:deepDive.filter((x)=>x.evidenceReadiness.fundamental).length,
     sourceAEventCoverageCount:deepDive.filter((x)=>x.evidenceReadiness.sourceAEvent).length,
     tdccReadyCount:Object.keys(tdcc.codeMatches??{}).length,

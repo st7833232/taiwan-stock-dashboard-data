@@ -30,8 +30,11 @@ const sources = [
   { id: 'tpex-daily-trading-index', gate: 'tpex-market-turnover-index', institution: 'TPEx', kind: 'market-turnover-index', url: 'https://www.tpex.org.tw/openapi/v1/tpex_daily_trading_index' },
   { id: 'tpex-3insti-daily-trading', gate: 'tpex-individual-institutional', institution: 'TPEx', kind: 'individual-institutional', url: 'https://www.tpex.org.tw/openapi/v1/tpex_3insti_daily_trading' },
   { id: 'tpex-3insti-summary', gate: 'tpex-institutional-summary', institution: 'TPEx', kind: 'institutional-summary', url: 'https://www.tpex.org.tw/openapi/v1/tpex_3insti_summary' },
-  { id: 'twse-margin-trading', gate: null, institution: 'TWSE', kind: 'margin-short', url: `https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=${compact}&response=json&selectType=ALL`, requireTargetDate: true },
-  { id: 'tpex-margin-sbl', gate: null, institution: 'TPEx', kind: 'margin-short-lending', url: `https://www.tpex.org.tw/www/zh-tw/margin/sbl?date=${year}/${mm}/${dd}&id=&response=json`, requireTargetDate: true },
+  { id: 'twse-margin-trading', gate: null, institution: 'TWSE', kind: 'margin-short', url: `https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=${compact}&response=json&selectType=ALL`, requireTargetDate: true, requireRows: true },
+  { id: 'twse-margin-trading-legacy', gate: null, institution: 'TWSE', kind: 'margin-short', url: `https://www.twse.com.tw/exchangeReport/MI_MARGN?date=${compact}&response=json&selectType=ALL`, requireTargetDate: true, requireRows: true },
+  { id: 'tpex-margin-balance', gate: null, institution: 'TPEx', kind: 'margin-short', url: `https://www.tpex.org.tw/www/zh-tw/margin/balance?date=${year}/${mm}/${dd}&response=json`, requireTargetDate: true, requireRows: true },
+  { id: 'tpex-margin-balance-legacy', gate: null, institution: 'TPEx', kind: 'margin-short', url: `https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=${rocDate}`, requireTargetDate: true, requireRows: true },
+  { id: 'tpex-margin-sbl', gate: null, institution: 'TPEx', kind: 'securities-lending', url: `https://www.tpex.org.tw/www/zh-tw/margin/sbl?date=${year}/${mm}/${dd}&id=&response=json`, requireTargetDate: true, requireRows: true },
   { id: 'twse-monthly-revenue', gate: null, institution: 'MOPS', kind: 'monthly-revenue', url: 'https://openapi.twse.com.tw/v1/opendata/t187ap05_L', latestOnly: true },
   { id: 'tpex-monthly-revenue', gate: null, institution: 'MOPS', kind: 'monthly-revenue', url: 'https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap05_O', latestOnly: true },
   { id: 'twse-material-information', gate: null, institution: 'MOPS', kind: 'material-information', url: 'https://openapi.twse.com.tw/v1/opendata/t187ap04_L', latestOnly: true },
@@ -65,6 +68,22 @@ function findOfficialDate(value, variants) {
   const text = JSON.stringify(value);
   for (const v of variants) if (text.includes(v)) return v;
   return null;
+}
+
+function payloadRowCount(value) {
+  if (Array.isArray(value)) {
+    if (!value.length) return 0;
+    if (value.every((item) => Array.isArray(item) || (item && typeof item === 'object'))) return value.length;
+    return 0;
+  }
+  if (!value || typeof value !== 'object') return 0;
+  let best = 0;
+  for (const [key, child] of Object.entries(value)) {
+    if (/^(data\d*|aaData|records|rows)$/i.test(key)) best = Math.max(best, payloadRowCount(child));
+  }
+  if (best) return best;
+  for (const child of Object.values(value)) best = Math.max(best, payloadRowCount(child));
+  return best;
 }
 
 async function readPreviousMatrix() {
@@ -102,11 +121,16 @@ async function capture(source) {
     if (!source.gate) {
       if (source.requireTargetDate) {
         const matchedDate = findOfficialDate(parsed, dateVariants(targetDate));
+        const rowCount = payloadRowCount(parsed);
         result.officialDateEvidence = matchedDate;
-        result.status = matchedDate ? 'CAPTURED' : 'VERIFY_FAILED';
-        result.note = matchedDate
+        result.rowCount = rowCount;
+        const rowsValid = !source.requireRows || rowCount > 0;
+        result.status = matchedDate && rowsValid ? 'CAPTURED' : 'VERIFY_FAILED';
+        result.note = matchedDate && rowsValid
           ? 'Point-in-time auxiliary source captured with affirmative target-date evidence.'
-          : 'Auxiliary payload was readable but target-date evidence was not found; do not use it as point-in-time research evidence.';
+          : matchedDate
+            ? 'Auxiliary payload carried the target date but no usable data rows; do not treat an empty payload as successful evidence.'
+            : 'Auxiliary payload was readable but target-date evidence was not found; do not use it as point-in-time research evidence.';
         return result;
       }
       result.status = 'CAPTURED';
