@@ -115,7 +115,6 @@ async function capture(source) {
     result.contentType = response.headers.get('content-type');
     const text = await response.text();
     result.bytes = Buffer.byteLength(text);
-    await fs.writeFile(path.join(outDir, `${source.id}.raw.txt`), text);
     if (!response.ok) {
       result.error = `HTTP ${response.status}`;
       return result;
@@ -130,6 +129,7 @@ async function capture(source) {
         result.rowCount = rowCount;
         const rowsValid = !source.requireRows || rowCount > 0;
         result.status = matchedDate && rowsValid ? 'CAPTURED' : 'VERIFY_FAILED';
+        if (result.status === 'CAPTURED') await fs.writeFile(path.join(outDir, `${source.id}.raw.txt`), text);
         result.note = matchedDate && rowsValid
           ? 'Point-in-time auxiliary source captured with affirmative target-date evidence.'
           : matchedDate
@@ -138,12 +138,14 @@ async function capture(source) {
         return result;
       }
       result.status = 'CAPTURED';
+      await fs.writeFile(path.join(outDir, `${source.id}.raw.txt`), text);
       result.note = 'Auxiliary source captured at this run time; it is not part of the daily publication Gate.';
       return result;
     }
     const matchedDate = findOfficialDate(parsed, dateVariants(targetDate));
     result.officialDateEvidence = matchedDate;
     result.status = matchedDate ? 'PASS' : 'VERIFY_FAILED';
+    if (result.status === 'PASS') await fs.writeFile(path.join(outDir, `${source.id}.raw.txt`), text);
     if (!matchedDate) result.note = 'Readable official payload obtained, but affirmative target-date evidence was not found; do not classify as missing.';
     return result;
   } catch (error) {
