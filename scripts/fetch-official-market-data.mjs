@@ -73,7 +73,11 @@ function findOfficialDate(value, variants) {
 function payloadRowCount(value) {
   if (Array.isArray(value)) {
     if (!value.length) return 0;
-    if (value.every((item) => Array.isArray(item) || (item && typeof item === 'object'))) return value.length;
+    if (value.every((item) => Array.isArray(item))) return value.length;
+    if (value.every((item) => item && typeof item === 'object')) {
+      const nested = Math.max(0, ...value.map((item) => payloadRowCount(item)));
+      return nested || value.length;
+    }
     return 0;
   }
   if (!value || typeof value !== 'object') return 0;
