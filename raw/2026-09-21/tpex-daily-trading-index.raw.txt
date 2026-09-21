@@ -1,16 +1,90 @@
-[
-{"Date":"1150901","TradeVolume":"902905474","TradeAmount":"252387964702","NumberOfTransactions":"1095837","TPExIndex":"410.77","Change":"9.07"},
-{"Date":"1150902","TradeVolume":"820814304","TradeAmount":"221773156843","NumberOfTransactions":"1052783","TPExIndex":"406.96","Change":"-3.81"},
-{"Date":"1150903","TradeVolume":"984355552","TradeAmount":"241225808595","NumberOfTransactions":"1205370","TPExIndex":"395.25","Change":"-11.71"},
-{"Date":"1150904","TradeVolume":"769958855","TradeAmount":"195529166176","NumberOfTransactions":"882384","TPExIndex":"402.48","Change":"7.23"},
-{"Date":"1150907","TradeVolume":"795410582","TradeAmount":"203603900770","NumberOfTransactions":"964405","TPExIndex":"409.33","Change":"6.85"},
-{"Date":"1150908","TradeVolume":"871496084","TradeAmount":"214858284662","NumberOfTransactions":"1019221","TPExIndex":"407.19","Change":"-2.14"},
-{"Date":"1150909","TradeVolume":"832664141","TradeAmount":"216771977397","NumberOfTransactions":"926244","TPExIndex":"408.09","Change":"0.90"},
-{"Date":"1150910","TradeVolume":"804217133","TradeAmount":"173278012172","NumberOfTransactions":"974192","TPExIndex":"405.24","Change":"-2.85"},
-{"Date":"1150911","TradeVolume":"826150268","TradeAmount":"185181338982","NumberOfTransactions":"1055110","TPExIndex":"395.52","Change":"-9.72"},
-{"Date":"1150914","TradeVolume":"710545967","TradeAmount":"167847114406","NumberOfTransactions":"827112","TPExIndex":"394.67","Change":"-0.85"},
-{"Date":"1150915","TradeVolume":"737030104","TradeAmount":"175404583797","NumberOfTransactions":"902311","TPExIndex":"388.73","Change":"-5.94"},
-{"Date":"1150916","TradeVolume":"777380366","TradeAmount":"183676771560","NumberOfTransactions":"812128","TPExIndex":"399.21","Change":"10.48"},
-{"Date":"1150917","TradeVolume":"1018314978","TradeAmount":"263239309936","NumberOfTransactions":"1168816","TPExIndex":"398.17","Change":"-1.04"},
-{"Date":"1150918","TradeVolume":"1199745556","TradeAmount":"267470200600","NumberOfTransactions":"1113671","TPExIndex":"412.68","Change":"14.51"},
-{"Date":"1150921","TradeVolume":"1021927139","TradeAmount":"212474257357","NumberOfTransactions":"1091371","TPExIndex":"412.57","Change":"-0.11"}]
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<title>Attention Required! | Cloudflare</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" />
+<!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" /><![endif]-->
+<style>body{margin:0;padding:0}</style>
+
+
+<!--[if gte IE 10]><!-->
+<script>
+  if (!navigator.cookieEnabled) {
+    window.addEventListener('DOMContentLoaded', function () {
+      var cookieEl = document.getElementById('cookie-alert');
+      cookieEl.style.display = 'block';
+    })
+  }
+</script>
+<!--<![endif]-->
+
+</head>
+<body>
+  <div id="cf-wrapper">
+    <div class="cf-alert cf-alert-error cf-cookie-error" id="cookie-alert" data-translate="enable_cookies">Please enable cookies.</div>
+    <div id="cf-error-details" class="cf-error-details-wrapper">
+      <div class="cf-wrapper cf-header cf-error-overview">
+        <h1 data-translate="block_headline">Sorry, you have been blocked</h1>
+        <h2 class="cf-subheadline"><span data-translate="unable_to_access">You are unable to access</span> tpex.org.tw</h2>
+      </div><!-- /.header -->
+
+      <div class="cf-section cf-highlight">
+        <div class="cf-wrapper">
+          <div class="cf-screenshot-container cf-screenshot-full">
+            
+              <span class="cf-no-screenshot error"></span>
+            
+          </div>
+        </div>
+      </div><!-- /.captcha-container -->
+
+      <div class="cf-section cf-wrapper">
+        <div class="cf-columns two">
+          <div class="cf-column">
+            <h2 data-translate="blocked_why_headline">Why have I been blocked?</h2>
+
+            <p data-translate="blocked_why_detail">This website is using a security service to protect itself from online attacks. The action you just performed triggered the security solution. There are several actions that could trigger this block including submitting a certain word or phrase, a SQL command or malformed data.</p>
+          </div>
+
+          <div class="cf-column">
+            <h2 data-translate="blocked_resolve_headline">What can I do to resolve this?</h2>
+
+            <p data-translate="blocked_resolve_detail">You can email the site owner to let them know you were blocked. Please include what you were doing when this page came up and the Cloudflare Ray ID found at the bottom of this page.</p>
+          </div>
+        </div>
+      </div><!-- /.section -->
+
+      <div class="cf-error-footer cf-wrapper w-240 lg:w-full py-10 sm:py-4 sm:px-8 mx-auto text-center sm:text-left border-solid border-0 border-t border-gray-300">
+    <p class="text-13">
+      <span class="cf-footer-item sm:block sm:mb-1">Cloudflare Ray ID: <strong class="font-semibold">a3e9d0210ad43020</strong></span>
+      <span class="cf-footer-separator sm:hidden">&bull;</span>
+      <span id="cf-footer-item-ip" class="cf-footer-item hidden sm:block sm:mb-1">
+        Your IP:
+        <button type="button" id="cf-footer-ip-reveal" class="cf-footer-ip-reveal-btn">Click to reveal</button>
+        <span class="hidden" id="cf-footer-ip">52.179.88.115</span>
+        <span class="cf-footer-separator sm:hidden">&bull;</span>
+      </span>
+      <span class="cf-footer-item sm:block sm:mb-1"><span>Performance &amp; security by</span> <a rel="noopener noreferrer" href="https://www.cloudflare.com/5xx-error-landing" id="brand_link" target="_blank">Cloudflare</a></span>
+      
+    </p>
+    <script>(function(){function d(){var b=a.getElementById("cf-footer-item-ip"),c=a.getElementById("cf-footer-ip-reveal");b&&"classList"in b&&(b.classList.remove("hidden"),c.addEventListener("click",function(){c.classList.add("hidden");a.getElementById("cf-footer-ip").classList.remove("hidden")}))}var a=document;document.addEventListener&&a.addEventListener("DOMContentLoaded",d)})();</script>
+  </div><!-- /.error-footer -->
+
+    </div><!-- /#cf-error-details -->
+  </div><!-- /#cf-wrapper -->
+
+  <script>
+    window._cf_translation = {};
+    
+    
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a3e9d0210ad43020',t:'MTc5MDAwMTUwMA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
