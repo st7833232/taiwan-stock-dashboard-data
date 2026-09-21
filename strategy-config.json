@@ -1,5 +1,5 @@
 {
-  "version": "entry-dual-track-v2",
+  "version": "entry-dual-track-v2.1",
   "signalMode": "EOD",
   "liquidityMedianTurnover20dMin": 50000000,
   "buyScoreThreshold": {
@@ -34,6 +34,51 @@
     "marginShortLending": 6,
     "fundamental": 15,
     "riskReward": 12
+  },
+  "assetProfiles": {
+    "STOCK": {
+      "profileVersion": "stock-v2",
+      "enabled": true
+    },
+    "ETF": {
+      "profileVersion": "taiwan-equity-etf-v1",
+      "enabled": true,
+      "classificationSource": "OFFICIAL_EXCHANGE_SECURITY_NAME",
+      "eligibleCategories": [
+        "TAIWAN_BROAD_MARKET",
+        "TAIWAN_EQUITY"
+      ],
+      "coreCategories": [
+        "TAIWAN_BROAD_MARKET"
+      ],
+      "liquidityMedianTurnover20dMin": 100000000,
+      "historyTradingDaysMin": 120,
+      "buyScoreThreshold": {
+        "BULL": 78,
+        "NEUTRAL": 84,
+        "BEAR": null,
+        "HIGH_RISK": null
+      },
+      "maxAtrPct": 6,
+      "maxDrawdown20dPct": 15,
+      "maxDrawdown60dPct": 25,
+      "scoreWeights": {
+        "trend": 22,
+        "momentum": 10,
+        "volume_liquidity": 18,
+        "market_regime": 12,
+        "volatility_drawdown": 14,
+        "product_structure": 12,
+        "risk_reward": 12
+      },
+      "excludedCategories": [
+        "LEVERAGED_INVERSE",
+        "BOND",
+        "COMMODITY",
+        "OVERSEAS_EQUITY",
+        "UNKNOWN"
+      ]
+    }
   },
   "breakout": {
     "minVolumeRatio20d": 1.5,

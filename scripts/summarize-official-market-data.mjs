@@ -46,6 +46,19 @@ function assetType(code) {
   if (/^\d{4}$/.test(code)) return 'STOCK';
   return 'OTHER';
 }
+function classifyEtf(name) {
+  const text=String(name??'').replaceAll(' ','').toUpperCase();
+  if (!text) return {category:'UNKNOWN',leveragedOrInverse:false,reason:'Official exchange security name is empty.'};
+  if (/(正2|反1|反向|槓桿|2X|-1X|二倍|2倍)/i.test(text)) return {category:'LEVERAGED_INVERSE',leveragedOrInverse:true,reason:'Official exchange security name identifies a leveraged or inverse product.'};
+  if (/(債|債券|公債|公司債|金融債|投等|非投等)/i.test(text)) return {category:'BOND',leveragedOrInverse:false,reason:'Official exchange security name identifies a bond product.'};
+  if (/(原油|黃金|白銀|銅|期貨|商品)/i.test(text)) return {category:'COMMODITY',leveragedOrInverse:false,reason:'Official exchange security name identifies a commodity or futures product.'};
+  const taiwan=/(台灣|臺灣|台股|臺股|台50|臺50|加權|公司治理|高股息|優息|半導體|科技|電子|金融|ESG|永續|動能|精選|龍頭)/i.test(text);
+  const overseas=/(美國|標普|NASDAQ|那斯達克|道瓊|日本|日經|中國|中證|滬深|香港|恒生|越南|印度|全球|歐洲|韓國|東協|S&P)/i.test(text);
+  if (overseas&&!taiwan) return {category:'OVERSEAS_EQUITY',leveragedOrInverse:false,reason:'Official exchange security name identifies non-Taiwan equity exposure.'};
+  if (/(台灣50|臺灣50|台50|臺50|臺灣加權|台灣加權|市值型|大型權值|公司治理)/i.test(text)) return {category:'TAIWAN_BROAD_MARKET',leveragedOrInverse:false,reason:'Official exchange security name identifies a broad Taiwan equity index product.'};
+  if (taiwan) return {category:'TAIWAN_EQUITY',leveragedOrInverse:false,reason:'Official exchange security name identifies Taiwan equity exposure.'};
+  return {category:'UNKNOWN',leveragedOrInverse:false,reason:'Official exchange security name is insufficient for a conservative product classification.'};
+}
 function normalizeQuote(row,market) {
   const code=codeOf(row), type=assetType(code); if (type==='OTHER') return null;
   const close=num(row['收盤價'] ?? row.Close ?? row['收盤 ']);
@@ -217,6 +230,31 @@ function atr14(rows) {
   }
   return avg(trs);
 }
+function returnPct(closes,n) {
+  if (closes.length<=n || !Number.isFinite(closes.at(-1)) || !Number.isFinite(closes.at(-(n+1))) || closes.at(-(n+1))===0) return null;
+  return (closes.at(-1)/closes.at(-(n+1))-1)*100;
+}
+function annualizedVolatilityPct(closes,n=20) {
+  if (closes.length<n+1) return null;
+  const values=closes.slice(-(n+1));
+  const returns=[];
+  for (let i=1;i<values.length;i++) {
+    if (!Number.isFinite(values[i])||!Number.isFinite(values[i-1])||values[i-1]===0) return null;
+    returns.push(values[i]/values[i-1]-1);
+  }
+  const mean=avg(returns); const variance=avg(returns.map((x)=>(x-mean)**2));
+  return Math.sqrt(variance)*Math.sqrt(252)*100;
+}
+function maxDrawdownPct(closes,n) {
+  if (closes.length<n) return null;
+  let peak=-Infinity, worst=0;
+  for (const close of closes.slice(-n)) {
+    if (!Number.isFinite(close)) return null;
+    peak=Math.max(peak,close);
+    if (peak>0) worst=Math.min(worst,(close/peak-1)*100);
+  }
+  return Math.abs(worst);
+}
 function tech(rows,current) {
   const closes=rows.map((r)=>r[4]).filter(Number.isFinite);
   const volumes=rows.map((r)=>r[5]).filter(Number.isFinite);
@@ -243,7 +281,13 @@ function tech(rows,current) {
     high20:rows.length>=20?Math.max(...last20.map((r)=>r[2]).filter(Number.isFinite)):null,
     low20:rows.length>=20?Math.min(...last20.map((r)=>r[3]).filter(Number.isFinite)):null,
     high60:rows.length>=60?Math.max(...last60.map((r)=>r[2]).filter(Number.isFinite)):null,
-    low60:rows.length>=60?Math.min(...last60.map((r)=>r[3]).filter(Number.isFinite)):null
+    low60:rows.length>=60?Math.min(...last60.map((r)=>r[3]).filter(Number.isFinite)):null,
+    return20dPct:returnPct(closes,20),
+    return60dPct:returnPct(closes,60),
+    annualizedVolatility20dPct:annualizedVolatilityPct(closes,20),
+    maxDrawdown20dPct:maxDrawdownPct(closes,20),
+    maxDrawdown60dPct:maxDrawdownPct(closes,60),
+    atrPct:current?.close&&atr14(rows)!==null?atr14(rows)/current.close*100:null
   };
 }
 async function previousResearchCodes() {
@@ -254,6 +298,9 @@ async function readJsonMaybe(file) { try { return JSON.parse(await fs.readFile(f
 const universe=await currentUniverseFor(targetDate);
 const stocks=universe.filter((x)=>x.assetType==='STOCK'), etfs=universe.filter((x)=>x.assetType==='ETF');
 const liquidToday=stocks.filter((x)=>x.turnover>=config.liquidityMedianTurnover20dMin).sort((a,b)=>b.turnover-a.turnover);
+const etfConfig=config.assetProfiles?.ETF??{};
+const etfTodayMin=etfConfig.liquidityMedianTurnover20dMin??config.liquidityMedianTurnover20dMin;
+const liquidTodayEtfs=etfs.filter((x)=>x.turnover>=etfTodayMin).sort((a,b)=>b.turnover-a.turnover);
 const preferredToday=liquidToday.filter((x)=>x.close<=config.pricePreference.preferredMaxTwd);
 const priorCodes=await previousResearchCodes();
 const preferredSet=new Set(preferredToday.map((x)=>x.code));
@@ -265,7 +312,7 @@ const rankedResearchPool=configuredScope==='PREFERRED_PRICE_LIQUID_STOCKS'
 const selectedResearchPool=Number.isInteger(configuredLimit)&&configuredLimit>0
   ? rankedResearchPool.slice(0,configuredLimit)
   : rankedResearchPool;
-const deepDiveCodes=[...new Set([...selectedResearchPool.map((x)=>x.code),...priorCodes])];
+const deepDiveCodes=[...new Set([...selectedResearchPool.map((x)=>x.code),...liquidTodayEtfs.map((x)=>x.code),...priorCodes])];
 const currentByCode=new Map(universe.map((x)=>[x.code,x]));
 
 const [twseMarginRows,twseMarginLegacyRows,tpexMarginRows,tpexMarginLegacyRows,tpexLendingRows,twseRevenueRows,tpexRevenueRows,twseMaterialRows,tpexMaterialRows]=await Promise.all([
@@ -336,15 +383,46 @@ const deepDive=deepDiveCodes.map((code)=>{
   const h=histories.get(code)??[];
   const t=tech(h,current);
   const inst=(institutionalHistory.get(code)??[]).sort((a,b)=>a.date.localeCompare(b.date));
+  const type=current?.assetType??assetType(code);
+  const classification=type==='ETF'?classifyEtf(current?.name):null;
+  const etfLiquidityMin=etfConfig.liquidityMedianTurnover20dMin??config.liquidityMedianTurnover20dMin;
+  const etfHistoryMin=etfConfig.historyTradingDaysMin??120;
+  const etfEligible=type==='ETF'&&(etfConfig.eligibleCategories??[]).includes(classification.category);
+  const etfRiskReady=type==='ETF'&&h.length>=etfHistoryMin&&[t.annualizedVolatility20dPct,t.maxDrawdown20dPct,t.maxDrawdown60dPct,t.atrPct].every(Number.isFinite);
+  const etfProfile=type==='ETF'?{
+    profileVersion:etfConfig.profileVersion??null,
+    category:classification.category,
+    classificationStatus:classification.category==='UNKNOWN'?'UNVERIFIED':'VERIFIED_DERIVED_FROM_OFFICIAL_NAME',
+    classificationSource:etfConfig.classificationSource??'OFFICIAL_EXCHANGE_SECURITY_NAME',
+    classificationBasis:{code,name:current?.name??null,market:current?.market??null,reason:classification.reason},
+    leveragedOrInverse:classification.leveragedOrInverse,
+    eligibleForIndependentResearch:etfEligible,
+    eligibleForCore:(etfConfig.coreCategories??[]).includes(classification.category),
+    eligibleForBuy:etfEligible&&!classification.leveragedOrInverse,
+    historyReady:h.length>=etfHistoryMin,
+    historicalRiskReady:etfRiskReady,
+    liquidityGateReady:t.medianTurnover20d!==null,
+    liquidityGatePass:t.medianTurnover20d!==null?t.medianTurnover20d>=etfLiquidityMin:false,
+    riskLimitsPass:etfRiskReady&&t.atrPct<=etfConfig.maxAtrPct&&t.maxDrawdown20dPct<=etfConfig.maxDrawdown20dPct&&t.maxDrawdown60dPct<=etfConfig.maxDrawdown60dPct,
+    exclusionReason:etfEligible?null:classification.reason,
+    metrics:{
+      medianTurnover20d:t.medianTurnover20d,volumeRatio20d:t.volumeRatio20d,
+      return20dPct:t.return20dPct,return60dPct:t.return60dPct,
+      annualizedVolatility20dPct:t.annualizedVolatility20dPct,
+      maxDrawdown20dPct:t.maxDrawdown20dPct,maxDrawdown60dPct:t.maxDrawdown60dPct,atrPct:t.atrPct
+    }
+  }:null;
   return {
     code,current,
+    assetType:type,
+    etfProfile,
     historyCoverageTradingDays:h.length,
     institutionalHistoryCoverageDays:inst.length,
     liquidityMedianTurnover20d:t.medianTurnover20d,
     volumeMA20:t.volumeMA20,
     volumeRatio20d:t.volumeRatio20d,
     liquidityGateReady:t.medianTurnover20d!==null,
-    liquidityGatePass:t.medianTurnover20d!==null?t.medianTurnover20d>=config.liquidityMedianTurnover20dMin:false,
+    liquidityGatePass:t.medianTurnover20d!==null?t.medianTurnover20d>=(type==='ETF'?etfLiquidityMin:config.liquidityMedianTurnover20dMin):false,
     ma120Ready:h.length>=120,
     indicators:t,
     institutionalTrend:{
@@ -377,7 +455,7 @@ let gateMatrix=null;
 try { gateMatrix=JSON.parse(await fs.readFile(path.join(dir,'gate-matrix.json'),'utf8')); } catch {}
 const output={
   schemaVersion:3,targetDate,generatedAt:new Date().toISOString(),strategyVersion:config.version,simulation:{simulatedTodayDate:process.env.SIMULATED_TODAY_DATE||null},gateMatrix,
-  universeSummary:{total:universe.length,stocks:stocks.length,etfs:etfs.length,liquidTodayStocks:liquidToday.length,preferredPriceAndLiquidTodayStocks:preferredToday.length,deepDiveScope:configuredScope,deepDiveConfiguredLimit:configuredLimit,deepDiveCount:deepDiveCodes.length},
+  universeSummary:{total:universe.length,stocks:stocks.length,etfs:etfs.length,liquidTodayStocks:liquidToday.length,liquidTodayEtfs:liquidTodayEtfs.length,preferredPriceAndLiquidTodayStocks:preferredToday.length,deepDiveScope:configuredScope,deepDiveConfiguredLimit:configuredLimit,deepDiveCount:deepDiveCodes.length,deepDiveStocks:deepDive.filter((x)=>x.assetType==='STOCK').length,deepDiveEtfs:deepDive.filter((x)=>x.assetType==='ETF').length},
   universe,codes:deepDiveCodes,deepDive,tdcc,
   historyCache:{asOf:historyCache?.asOf??null,verifiedTradingDays:historyCache?.coverage?.verifiedTradingDays??0,codesWith20Days:historyCache?.coverage?.codesWith20Days??0,codesWith120Days:historyCache?.coverage?.codesWith120Days??0,codesWith20InstitutionDays:historyCache?.coverage?.codesWith20InstitutionDays??0},
   v2Readiness:{
@@ -391,7 +469,9 @@ const output={
     fundamentalReadyCount:deepDive.filter((x)=>x.evidenceReadiness.fundamental).length,
     sourceAEventCoverageCount:deepDive.filter((x)=>x.evidenceReadiness.sourceAEvent).length,
     tdccReadyCount:Object.keys(tdcc.codeMatches??{}).length,
-    note:'BUY remains fail-closed for any required evidence that is not point-in-time verifiable. Daily capture now preserves margin/short/lending, monthly revenue, SOURCE_A material information and TDCC evidence when available.'
+    etfProfileReadyCount:deepDive.filter((x)=>x.assetType==='ETF'&&x.etfProfile?.eligibleForIndependentResearch&&x.etfProfile?.historyReady&&x.etfProfile?.liquidityGatePass&&x.etfProfile?.historicalRiskReady).length,
+    etfCoreEligibleCount:deepDive.filter((x)=>x.assetType==='ETF'&&x.etfProfile?.eligibleForCore&&x.etfProfile?.historyReady&&x.etfProfile?.liquidityGatePass&&x.etfProfile?.historicalRiskReady).length,
+    note:'BUY remains fail-closed for any required evidence that is not point-in-time verifiable. Stocks and ETFs use separate machine-readable profiles; ETF readiness is derived only from official exchange security identity and official rolling OHLCV history.'
   }
 };
 await fs.writeFile(path.join(dir,'research-input.json'),JSON.stringify(output,null,2)+'\n');

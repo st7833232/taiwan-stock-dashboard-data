@@ -4,7 +4,7 @@
 
 允許本資料庫建立純資料基礎設施排程，用於自動擷取、保存與驗證 TWSE、TPEx 等官方公開市場資料。此類排程不得自行產生研究結論、推薦、模擬交易、修改 `manifest.json` 或部署網站；其輸出只能作為後續資料完整性 Gate 與研究流程的官方原始證據。
 
-目前研究進場策略版本：`entry-dual-track-v2`。
+目前研究進場策略版本：`entry-dual-track-v2.1`。
 
 機器可執行的門檻與權重以根目錄 `strategy-config.json` 為單一設定來源；DAILY_UPDATE_PROTOCOL.md、排程提示詞與 validator 不得各自維護互相衝突的數值。策略版本變更時，`check-daily-publication.mjs` 必須把舊策略 publication 視為 `RESEARCH_REQUIRED`。
 
@@ -52,7 +52,7 @@
 
 可自主新增、保留、升級、降級或排除候選。不得為每日輸出而硬推薦；沒有合理買點時必須標示觀望、配置 0% 與等待條件。總配置不得超過 100%，現金可為 100%。研究推薦不等於模擬或真實成交。
 
-新的 `research.json` 應寫入 `strategyVersion: "entry-dual-track-v2"`，讓同日重跑可以辨識方法論是否已實質改變。
+新的 `research.json` 應寫入與 `strategy-config.json.version` 完全一致的 `strategyVersion`，讓同日重跑可以辨識方法論是否已實質改變。
 
 ### 3.1 進場策略：Pullback + Breakout 雙軌制
 
@@ -84,7 +84,7 @@
 
 突破型不是用來取代回測型；兩者的目的是降低「只等回測而錯失趨勢起漲」與「無限制追高」兩種相反風險。
 
-### 3.2 entry-dual-track-v2：全市場篩選、事件確認與決策 Gate
+### 3.2 entry-dual-track-v2.1：全市場篩選、事件確認與決策 Gate
 
 本版本在保留 Pullback + Breakout 雙軌互斥的前提下，新增下列強制研究規則。這些規則屬於研究與候選委託生成層；真實券商送單、成交、部分成交、拒單、撤單等狀態仍必須由外部 deterministic Execution Engine／Broker API 回報，研究流程不得自行宣稱成交。
 
@@ -212,11 +212,11 @@ Positive News + Price Weak + Institutional Selling 應標記為正面新聞背�
 
 ### 3.3 v2 機器可驗證研究欄位
 
-為了讓 CI 可以驗證新版策略，而不是只依賴自然語言，`entry-dual-track-v2` 的新 research snapshot 必須額外提供向後相容欄位；Dashboard 可以忽略這些新欄位，但資料發布 validator 必須檢查。
+為了讓 CI 可以驗證新版策略，而不是只依賴自然語言，`entry-dual-track-v2.1` 的新 research snapshot 必須額外提供向後相容欄位；Dashboard 可以忽略這些新欄位，但資料發布 validator 必須檢查。
 
 頂層 `strategyProfile` 至少包含：
 
-- `version = "entry-dual-track-v2"`
+- `version` 必須等於 `strategy-config.json.version`。
 - `signalMode = "EOD"`
 - `marketRegime = BULL | NEUTRAL | BEAR | HIGH_RISK`
 - `buyScoreThreshold`：BULL=82、NEUTRAL=86；BEAR/HIGH_RISK 可為 null
@@ -232,7 +232,8 @@ Positive News + Price Weak + Institutional Selling 應標記為正面新聞背�
 - `totalExposureMaxPct = 50`
 - `dailyLossLimitPct = 1.5`
 - `weeklyLossLimitPct = 4`
-- `scoreWeights` 必須為 Trend18 / Momentum8 / Volume10 / Market8 / Institutional15 / LargeHolder8 / MarginShortLending6 / Fundamental15 / RiskReward12，其中 Fundamental 15 內含 Fundamental Quality 10 + Industry/News/Catalyst 5。
+- `scoreWeights` 必須等於 `strategy-config.json.scoreWeights`；普通股目前為 Trend18 / Momentum8 / Volume10 / Market8 / Institutional15 / LargeHolder8 / MarginShortLending6 / Fundamental15 / RiskReward12，其中 Fundamental 15 內含 Fundamental Quality 10 + Industry/News/Catalyst 5。
+- `assetProfiles.ETF` 必須等於 `strategy-config.json.assetProfiles.ETF` 的 profileVersion、classificationSource、歷史／流動性門檻與 ETF 專用 scoreWeights。
 
 每個 `candidate` 至少額外提供：
 
@@ -249,7 +250,7 @@ Positive News + Price Weak + Institutional Selling 應標記為正面新聞背�
 
 若 candidate.decision = BUY，則必須同時滿足：
 
-- assetType=STOCK；ETF 若沒有獨立 ETF Profile 不得 BUY。
+- STOCK 使用普通股 Profile；ETF 只有在獨立 ETF Profile 的分類、歷史、流動性與風險 Hard Gate 全部通過時才可 BUY。
 - marketRegime=BULL 時 score >=82；NEUTRAL 時 score >=86；BEAR/HIGH_RISK 不得 BUY。
 - liquidityMedianTurnover20d >= 50000000。
 - riskReward >=2。
@@ -260,7 +261,20 @@ Positive News + Price Weak + Institutional Selling 應標記為正面新聞背�
 
 新聞欄位不得把 SOURCE_C 當成 BUY 的正面依據。若重大事件風險尚未確認，candidate 必須 WATCH/NO_TRADE，不得 BUY。
 
-validator 對舊的 `entry-dual-track-v1` snapshot 只做 migration skip；從第一份正式 `entry-dual-track-v2` snapshot 起，上述欄位全部強制。
+validator 對 `research.strategyVersion != strategy-config.version` 的歷史 snapshot 做 migration skip；對現行版本上述欄位全部強制。
+
+### 3.3.1 獨立 ETF Profile
+
+ETF 不得套用普通股的法人、TDCC、融資融券、月營收或 EPS 權重。ETF Profile 的機器設定唯一來源為 `strategy-config.json.assetProfiles.ETF`。
+
+- 商品分類只可由 TWSE／TPEx 正式行情內的證券代碼與證券名稱保守衍生，分類結果與依據必須寫入 `etfProfile.classificationBasis`。
+- 分類至少包含 `TAIWAN_BROAD_MARKET`、`TAIWAN_EQUITY`、`LEVERAGED_INVERSE`、`BOND`、`COMMODITY`、`OVERSEAS_EQUITY`、`UNKNOWN`。
+- 槓桿／反向、債券、商品、海外股票與 UNKNOWN 不得自動 BUY；UNKNOWN 不得用猜測補分類。
+- Core 只允許設定中的 `coreCategories`；目前僅一般台灣大型／廣泛市場 ETF 可列 Core。
+- ETF 深度研究必須計算 20 日中位成交金額、VolumeRatio20D、ATR%、20 日年化波動與 20／60 日最大回撤；歷史覆蓋與風險欄位不足時只能 WATCH／NO_TRADE。
+- ETF 評分使用獨立 100 分：Trend22、Momentum10、Volume/Liquidity18、Market Regime12、Volatility/Drawdown14、Product Structure12、Risk/Reward12。總分仍不得覆蓋任何 Hard Gate。
+- ETF BUY 仍只允許 BREAKOUT、TREND_PULLBACK、CHIP_ACCUMULATION_BREAKOUT，並遵守 RR、排名、max entry、帳戶／產業／總曝險與 EOD/Execution 分離規則。
+- `research-input.json` 的 ETF deep-dive 不得只保留前日追蹤代號；所有達 ETF 當日 preliminary turnover 門檻的 ETF 都應進入歷史與風險欄位計算。
 
 ### 3.4 V2 Research Input 資料層
 
@@ -389,7 +403,7 @@ Gate 通過後，以執行當下台北時間建立 `revision = YYYY-MM-DD-HHmmss
 
 必須驗證：JSON 可解析、manifest schemaVersion 維持現行版本、revision/path 一致、三個資料檔存在、日期格式正確、selection history 無重複日期、selected 符合 priority + A 級資格、代碼格式合理、現金與持倉可重算、無今日決策今日成交、無未來資料、無真實庫存與秘密資訊。
 
-使用 `entry-dual-track-v2` 的新研究還必須驗證：priority A 級候選有雙軌欄位；若存在突破型 `nextOrders`，其 trigger、gap-up、max-chase、成交價與取消條件足以機械重算。
+使用現行策略版本的新研究還必須驗證：priority A 級候選有雙軌欄位；若存在突破型 `nextOrders`，其 trigger、gap-up、max-chase、成交價與取消條件足以機械重算；ETF candidate 必須通過獨立 ETF Profile contract。
 
 任何關鍵驗證失敗都不得提交部分結果。
 

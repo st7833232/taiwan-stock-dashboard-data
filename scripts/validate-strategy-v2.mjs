@@ -24,7 +24,7 @@ if (research.strategyVersion !== config.version) {
 const p = research.strategyProfile;
 assert(p && typeof p === 'object' && !Array.isArray(p), 'v2 research.strategyProfile is required');
 if (p) {
-  assert(p.version === config.version, 'strategyProfile.version must be entry-dual-track-v2');
+  assert(p.version === config.version, `strategyProfile.version must be ${config.version}`);
   assert(p.signalMode === 'EOD', 'strategyProfile.signalMode must be EOD');
   assert(allowedRegime.has(p.marketRegime), 'strategyProfile.marketRegime invalid');
   const expectedThreshold = config.buyScoreThreshold[p.marketRegime];
@@ -46,6 +46,18 @@ if (p) {
   const expected = config.scoreWeights;
   assert(w && typeof w === 'object', 'strategyProfile.scoreWeights is required');
   if (w) for (const [key,val] of Object.entries(expected)) assert(w[key] === val, `scoreWeights.${key} must be ${val}`);
+
+  const expectedEtf = config.assetProfiles?.ETF;
+  const actualEtf = p.assetProfiles?.ETF;
+  assert(expectedEtf && expectedEtf.enabled === true, 'strategy-config assetProfiles.ETF must be enabled');
+  assert(actualEtf && typeof actualEtf === 'object', 'strategyProfile.assetProfiles.ETF is required');
+  if (expectedEtf && actualEtf) {
+    assert(actualEtf.profileVersion === expectedEtf.profileVersion, `ETF profileVersion must be ${expectedEtf.profileVersion}`);
+    assert(actualEtf.classificationSource === expectedEtf.classificationSource, 'ETF classificationSource mismatch');
+    assert(actualEtf.liquidityMedianTurnover20dMin === expectedEtf.liquidityMedianTurnover20dMin, 'ETF liquidity threshold mismatch');
+    assert(actualEtf.historyTradingDaysMin === expectedEtf.historyTradingDaysMin, 'ETF history threshold mismatch');
+    assert(JSON.stringify(actualEtf.scoreWeights) === JSON.stringify(expectedEtf.scoreWeights), 'ETF scoreWeights mismatch');
+  }
 }
 
 assert(Array.isArray(research.candidates), 'research.candidates must be an array');
@@ -58,7 +70,9 @@ for (const c of research.candidates ?? []) {
   assert(finite(c.score) && c.score >= 0 && c.score <= 100, `candidate ${code} score invalid`);
 
   const s = c.scores;
-  const caps = {trend:config.scoreWeights.trend,momentum:config.scoreWeights.momentum,volume:config.scoreWeights.volume,market_regime:config.scoreWeights.marketRegime,institutional:config.scoreWeights.institutional,large_holder:config.scoreWeights.largeHolder,margin_short_lending:config.scoreWeights.marginShortLending,fundamental:config.scoreWeights.fundamental,risk_reward:config.scoreWeights.riskReward};
+  const caps = c.assetType === 'ETF'
+    ? config.assetProfiles.ETF.scoreWeights
+    : {trend:config.scoreWeights.trend,momentum:config.scoreWeights.momentum,volume:config.scoreWeights.volume,market_regime:config.scoreWeights.marketRegime,institutional:config.scoreWeights.institutional,large_holder:config.scoreWeights.largeHolder,margin_short_lending:config.scoreWeights.marginShortLending,fundamental:config.scoreWeights.fundamental,risk_reward:config.scoreWeights.riskReward};
   assert(s && typeof s === 'object', `candidate ${code} scores missing`);
   if (s) {
     let total = 0;
@@ -85,14 +99,31 @@ for (const c of research.candidates ?? []) {
     assert(allowedCatalyst.has(n.catalystStatus), `candidate ${code} newsEvent.catalystStatus invalid`);
   }
 
+  if (c.assetType === 'ETF') {
+    const ep=c.etfProfile;
+    const ec=config.assetProfiles.ETF;
+    assert(ep && typeof ep === 'object' && !Array.isArray(ep), `candidate ${code} etfProfile missing`);
+    if (ep) {
+      assert(ep.profileVersion === ec.profileVersion, `candidate ${code} ETF profileVersion mismatch`);
+      assert(typeof ep.category === 'string' && ep.category.length>0, `candidate ${code} ETF category missing`);
+      assert(ep.classificationSource === ec.classificationSource, `candidate ${code} ETF classificationSource mismatch`);
+      assert(typeof ep.historyReady === 'boolean', `candidate ${code} ETF historyReady invalid`);
+      assert(typeof ep.historicalRiskReady === 'boolean', `candidate ${code} ETF historicalRiskReady invalid`);
+      assert(typeof ep.liquidityGatePass === 'boolean', `candidate ${code} ETF liquidityGatePass invalid`);
+      assert(typeof ep.riskLimitsPass === 'boolean', `candidate ${code} ETF riskLimitsPass invalid`);
+      assert(typeof ep.eligibleForBuy === 'boolean', `candidate ${code} ETF eligibleForBuy invalid`);
+      if (c.group === 'core') assert(ec.coreCategories.includes(ep.category), `candidate ${code} core ETF category is not core-eligible`);
+    }
+  }
+
   if (c.decision === 'BUY') {
     buyCount += 1;
-    assert(c.assetType === 'STOCK', `candidate ${code} ETF BUY requires independent ETF profile and is not allowed by STOCK v2 validator`);
     assert(allowedEntryStrategy.has(c.strategy), `candidate ${code} BUY strategy is not an allowed entry strategy`);
     assert(p?.marketRegime === 'BULL' || p?.marketRegime === 'NEUTRAL', `candidate ${code} BUY not allowed in ${p?.marketRegime}`);
-    const threshold = config.buyScoreThreshold[p?.marketRegime];
+    const threshold = c.assetType === 'ETF' ? config.assetProfiles.ETF.buyScoreThreshold[p?.marketRegime] : config.buyScoreThreshold[p?.marketRegime];
     assert(finite(c.score) && c.score >= threshold, `candidate ${code} BUY score below regime threshold ${threshold}`);
-    assert(finite(c.liquidityMedianTurnover20d) && c.liquidityMedianTurnover20d >= config.liquidityMedianTurnover20dMin, `candidate ${code} BUY liquidity below configured median turnover`);
+    const liquidityMin=c.assetType === 'ETF' ? config.assetProfiles.ETF.liquidityMedianTurnover20dMin : config.liquidityMedianTurnover20dMin;
+    assert(finite(c.liquidityMedianTurnover20d) && c.liquidityMedianTurnover20d >= liquidityMin, `candidate ${code} BUY liquidity below configured median turnover`);
     assert(finite(c.riskReward) && c.riskReward >= config.minRiskReward, `candidate ${code} BUY riskReward below configured minimum`);
     if (c.strategy === 'BREAKOUT') assert(finite(c.volumeRatio20d) && c.volumeRatio20d >= config.breakout.minVolumeRatio20d, `candidate ${code} BREAKOUT volumeRatio20d below configured minimum`);
     assert(Number.isInteger(c.universeRank) && c.universeRank > 0 && c.universeRank <= config.priority.rankMax, `candidate ${code} BUY requires verified universeRank <= configured maximum`);
@@ -100,6 +131,14 @@ for (const c of research.candidates ?? []) {
     assert(finite(c.maxChase), `candidate ${code} BUY missing maxChase`);
     assert(typeof c.invalidCondition === 'string' && c.invalidCondition.trim(), `candidate ${code} BUY missing invalidCondition`);
     assert(!(n?.sourceQuality === 'SOURCE_C' && n?.direction === 'POSITIVE'), `candidate ${code} BUY cannot rely on positive SOURCE_C news`);
+    if (c.assetType === 'ETF') {
+      const ep=c.etfProfile;
+      const ec=config.assetProfiles.ETF;
+      assert(ep?.eligibleForBuy === true, `candidate ${code} ETF BUY is not eligible under independent ETF profile`);
+      assert(ec.eligibleCategories.includes(ep?.category), `candidate ${code} ETF BUY category is excluded`);
+      assert(ep?.historyReady === true && ep?.historicalRiskReady === true, `candidate ${code} ETF BUY requires verified historical risk coverage`);
+      assert(ep?.liquidityGatePass === true && ep?.riskLimitsPass === true, `candidate ${code} ETF BUY failed ETF liquidity/risk limits`);
+    }
   }
 }
 
