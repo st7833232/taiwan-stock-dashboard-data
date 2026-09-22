@@ -6,6 +6,7 @@ const dateFmt = new Intl.DateTimeFormat('en-CA', { timeZone: TZ, year: 'numeric'
 const targetDate = process.env.TARGET_DATE || dateFmt.format(new Date());
 const rawDir = path.join('raw', targetDate);
 const gatePath = path.join(rawDir, 'gate-matrix.json');
+const researchInputPath = path.join(rawDir, 'research-input.json');
 const manifestPath = 'manifest.json';
 const statePath = path.join(rawDir, 'publication-state.json');
 const strategyConfigPath = 'strategy-config.json';
@@ -26,6 +27,8 @@ let state = {
   requiredStrategyVersion,
   currentStrategyVersion: null,
   strategyMatch: false,
+  creditEvidenceReady: false,
+  publicationUsesLatestResearchInput: false,
   publicationComplete: false,
   reason: null,
 };
@@ -39,6 +42,20 @@ if (!exists(gatePath)) {
     state.stage = 'GATE_PASS';
     if (exists(manifestPath)) {
       const manifest = readJson(manifestPath);
+      const researchInput = exists(researchInputPath) ? readJson(researchInputPath) : null;
+      const stockCount = researchInput?.universeSummary?.deepDiveStocks ?? null;
+      const marginReady = researchInput?.v2Readiness?.marginShortLendingReadyCount ?? null;
+      const lendingReady = researchInput?.v2Readiness?.securitiesLendingReadyCount ?? null;
+      const requireMargin = strategyConfig?.creditEvidence?.requireMarginBalance === true || strategyConfig?.creditEvidence?.requireShortBalance === true;
+      const requireLending = strategyConfig?.creditEvidence?.requireSecuritiesLending === true;
+      const coverageReady = Number.isInteger(stockCount) && stockCount >= 0
+        && (!requireMargin || (Number.isInteger(marginReady) && marginReady >= stockCount))
+        && (!requireLending || (Number.isInteger(lendingReady) && lendingReady >= stockCount));
+      const inputGeneratedAt = Date.parse(researchInput?.generatedAt ?? '');
+      const publicationUpdatedAt = Date.parse(manifest.updatedAt ?? '');
+      state.creditEvidence = { stockCount, marginShortReadyCount: marginReady, securitiesLendingReadyCount: lendingReady, requireMargin, requireLending };
+      state.creditEvidenceReady = coverageReady;
+      state.publicationUsesLatestResearchInput = Number.isFinite(inputGeneratedAt) && Number.isFinite(publicationUpdatedAt) && publicationUpdatedAt >= inputGeneratedAt;
       state.manifestRevision = manifest.revision || null;
       const paths = [manifest.researchPath, manifest.selectionHistoryPath, manifest.paperAccountPath];
       const pathsExist = paths.every((p) => typeof p === 'string' && exists(p));
@@ -47,6 +64,7 @@ if (!exists(gatePath)) {
       let datesMatch = false;
       let selectionUnique = false;
       let strategyMatch = false;
+      let publishedCreditFieldsReady = false;
       if (pathsExist) {
         const research = readJson(manifest.researchPath);
         const history = normalizeHistory(readJson(manifest.selectionHistoryPath));
@@ -56,14 +74,25 @@ if (!exists(gatePath)) {
         state.strategyMatch = strategyMatch;
         datesMatch = research.researchDate === targetDate && research.latestTradingDate === targetDate && paper.asOf === targetDate;
         selectionUnique = history.filter((row) => row?.date === targetDate).length === 1;
+        const stocks = (research.candidates ?? []).filter((row) => row?.assetType === 'STOCK');
+        publishedCreditFieldsReady = stocks.every((row) => !requireMargin || row?.dataQuality?.margin === 'VALID')
+          && stocks.every((row) => !requireLending || row?.dataQuality?.securitiesLending === 'VALID');
       }
-      state.publicationComplete = sameRevision && pathsExist && datesMatch && selectionUnique && strategyMatch;
+      state.publishedCreditFieldsReady = publishedCreditFieldsReady;
+      state.publicationComplete = sameRevision && pathsExist && datesMatch && selectionUnique && strategyMatch
+        && coverageReady && state.publicationUsesLatestResearchInput && publishedCreditFieldsReady;
       if (state.publicationComplete) {
         state.stage = 'DATA_UPDATED';
-        state.reason = 'Gate PASS and manifest plus all referenced snapshot files are complete for target date';
+        state.reason = 'Gate PASS, required credit evidence is complete, and manifest references research built from the latest research input';
       } else {
         state.stage = 'RESEARCH_REQUIRED';
-        state.reason = !strategyMatch
+        state.reason = !coverageReady
+          ? 'Official Gate PASS but required margin/short/lending coverage is incomplete'
+          : !state.publicationUsesLatestResearchInput
+            ? 'Official Gate PASS and credit evidence is ready, but the published snapshot predates the latest research input'
+            : !publishedCreditFieldsReady
+              ? 'Published stock candidates do not contain VALID required credit evidence'
+              : !strategyMatch
           ? `Official Gate PASS but current publication strategyVersion=${state.currentStrategyVersion ?? 'missing'} does not match required strategyVersion=${requiredStrategyVersion ?? 'missing'}`
           : 'Official Gate PASS but manifest/snapshot publication is not complete for target date';
       }
