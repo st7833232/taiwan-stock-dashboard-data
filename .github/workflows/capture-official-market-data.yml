@@ -66,15 +66,18 @@ jobs:
             fi
           fi
 
-          if [[ -n "$target" ]]; then
-            echo "TARGET_DATE=$target" >> "$GITHUB_ENV"
-            echo "Resolved target date: $target"
-            if [[ -f .github/market-data-trigger ]] && grep -Fxq 'simulate_today=1' .github/market-data-trigger; then
-              echo "SIMULATED_TODAY_DATE=$target" >> "$GITHUB_ENV"
-              echo "Simulated same-day capture enabled for $target."
-            fi
+          if [[ -z "$target" ]]; then
+            target="$(TZ=Asia/Taipei date +%F)"
+            echo "No explicit target date; resolved current Asia/Taipei date: $target"
           else
-            echo "No explicit target date; scripts will use current Asia/Taipei date."
+            echo "Resolved target date: $target"
+          fi
+
+          echo "TARGET_DATE=$target" >> "$GITHUB_ENV"
+
+          if [[ -f .github/market-data-trigger ]] && grep -Fxq 'simulate_today=1' .github/market-data-trigger; then
+            echo "SIMULATED_TODAY_DATE=$target" >> "$GITHUB_ENV"
+            echo "Simulated same-day capture enabled for $target."
           fi
 
           if [[ "${INPUT_BACKFILL_HISTORY:-false}" == "true" ]]; then
