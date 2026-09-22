@@ -1,13 +1,13 @@
 {
   "targetDate": "2026-09-21",
   "timezone": "Asia/Taipei",
-  "checkedAt": "2026-09-21T14:43:08.918Z",
-  "stage": "RESEARCH_REQUIRED",
+  "checkedAt": "2026-09-22T10:08:12.119Z",
+  "stage": "DATA_UPDATED",
   "gateStatus": "PASS",
-  "manifestRevision": "2026-09-21-221924",
+  "manifestRevision": "2026-09-21-225100",
   "requiredStrategyVersion": "entry-dual-track-v2.1",
-  "currentStrategyVersion": "entry-dual-track-v2",
-  "strategyMatch": false,
-  "publicationComplete": false,
-  "reason": "Official Gate PASS but current publication strategyVersion=entry-dual-track-v2 does not match required strategyVersion=entry-dual-track-v2.1"
+  "currentStrategyVersion": "entry-dual-track-v2.1",
+  "strategyMatch": true,
+  "publicationComplete": true,
+  "reason": "Gate PASS and manifest plus all referenced snapshot files are complete for target date"
 }
