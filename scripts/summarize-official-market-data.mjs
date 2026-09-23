@@ -297,23 +297,39 @@ async function readJsonMaybe(file) { try { return JSON.parse(await fs.readFile(f
 
 const universe=await currentUniverseFor(targetDate);
 const stocks=universe.filter((x)=>x.assetType==='STOCK'), etfs=universe.filter((x)=>x.assetType==='ETF');
-const liquidToday=stocks.filter((x)=>x.turnover>=config.liquidityMedianTurnover20dMin).sort((a,b)=>b.turnover-a.turnover);
 const etfConfig=config.assetProfiles?.ETF??{};
-const etfTodayMin=etfConfig.liquidityMedianTurnover20dMin??config.liquidityMedianTurnover20dMin;
-const liquidTodayEtfs=etfs.filter((x)=>x.turnover>=etfTodayMin).sort((a,b)=>b.turnover-a.turnover);
-const preferredToday=liquidToday.filter((x)=>x.close<=config.pricePreference.preferredMaxTwd);
+const etfLiquidityMin=etfConfig.liquidityMedianTurnover20dMin??config.liquidityMedianTurnover20dMin;
+const historyCache=await readJsonMaybe(path.join('history','market-history.json'));
+const cacheData=historyCache?.schemaVersion===1 ? historyCache.data ?? {} : {};
+const historyFor=(code)=>(cacheData[code]??[]).filter((r)=>r[0]<=targetDate).sort((a,b)=>a[0].localeCompare(b[0]));
+const liquiditySnapshot=new Map(universe.map((row)=>{
+  const history=historyFor(row.code);
+  const turnovers=history.map((r)=>r[6]).filter(Number.isFinite);
+  const medianTurnover20d=history.length>=20?median(turnovers.slice(-20)):null;
+  return [row.code,{historyCoverageTradingDays:history.length,medianTurnover20d}];
+}));
+const withLiquidity=(rows)=>rows.map((row)=>({...row,...liquiditySnapshot.get(row.code)}));
+const stockLiquidityPool=withLiquidity(stocks)
+  .filter((x)=>Number.isFinite(x.medianTurnover20d)&&x.medianTurnover20d>=config.liquidityMedianTurnover20dMin)
+  .sort((a,b)=>b.medianTurnover20d-a.medianTurnover20d);
+const etfLiquidityPool=withLiquidity(etfs)
+  .filter((x)=>Number.isFinite(x.medianTurnover20d)&&x.medianTurnover20d>=etfLiquidityMin)
+  .sort((a,b)=>b.medianTurnover20d-a.medianTurnover20d);
+const preferredLiquidityStocks=stockLiquidityPool.filter((x)=>x.close<=config.pricePreference.preferredMaxTwd);
 const priorCodes=await previousResearchCodes();
-const preferredSet=new Set(preferredToday.map((x)=>x.code));
+const preferredSet=new Set(preferredLiquidityStocks.map((x)=>x.code));
 const configuredScope=config.researchUniverse?.deepDiveScope??'ALL_LIQUID_STOCKS';
 const configuredLimit=config.researchUniverse?.maxDeepDiveCandidates??null;
 const rankedResearchPool=configuredScope==='PREFERRED_PRICE_LIQUID_STOCKS'
-  ? preferredToday
-  : [...preferredToday,...liquidToday.filter((x)=>!preferredSet.has(x.code))];
+  ? preferredLiquidityStocks
+  : [...preferredLiquidityStocks,...stockLiquidityPool.filter((x)=>!preferredSet.has(x.code))];
 const selectedResearchPool=Number.isInteger(configuredLimit)&&configuredLimit>0
   ? rankedResearchPool.slice(0,configuredLimit)
   : rankedResearchPool;
-const deepDiveCodes=[...new Set([...selectedResearchPool.map((x)=>x.code),...liquidTodayEtfs.map((x)=>x.code),...priorCodes])];
+const deepDiveCodes=[...new Set([...selectedResearchPool.map((x)=>x.code),...etfLiquidityPool.map((x)=>x.code),...priorCodes])];
 const currentByCode=new Map(universe.map((x)=>[x.code,x]));
+const currentDayTurnoverAboveThresholdStocks=stocks.filter((x)=>x.turnover>=config.liquidityMedianTurnover20dMin).length;
+const currentDayTurnoverAboveThresholdEtfs=etfs.filter((x)=>x.turnover>=etfLiquidityMin).length;
 
 const [twseMarginRows,twseMarginLegacyRows,tpexMarginRows,tpexMarginLegacyRows,tpexLendingRows,twseRevenueRows,tpexRevenueRows,twseMaterialRows,tpexMaterialRows]=await Promise.all([
   creditRowsFrom(path.join(dir,'twse-margin-trading.raw.txt'),'TWSE'),
@@ -350,10 +366,8 @@ for (const row of [...twseMaterialRows,...tpexMaterialRows]) {
 }
 const materialCoverage={TWSE:twseMaterialRows.length>0,TPEx:tpexMaterialRows.length>0};
 
-const historyCache=await readJsonMaybe(path.join('history','market-history.json'));
-const cacheData=historyCache?.schemaVersion===1 ? historyCache.data ?? {} : {};
 const histories=new Map();
-for (const code of deepDiveCodes) histories.set(code,(cacheData[code]??[]).filter((r)=>r[0]<=targetDate).sort((a,b)=>a[0].localeCompare(b[0])));
+for (const code of deepDiveCodes) histories.set(code,historyFor(code));
 
 let rawDates=[];
 try { rawDates=(await fs.readdir('raw',{withFileTypes:true})).filter((x)=>x.isDirectory()&&/^\d{4}-\d{2}-\d{2}$/.test(x.name)&&x.name<=targetDate).map((x)=>x.name).sort(); } catch {}
@@ -455,7 +469,23 @@ let gateMatrix=null;
 try { gateMatrix=JSON.parse(await fs.readFile(path.join(dir,'gate-matrix.json'),'utf8')); } catch {}
 const output={
   schemaVersion:3,targetDate,generatedAt:new Date().toISOString(),strategyVersion:config.version,simulation:{simulatedTodayDate:process.env.SIMULATED_TODAY_DATE||null},gateMatrix,
-  universeSummary:{total:universe.length,stocks:stocks.length,etfs:etfs.length,liquidTodayStocks:liquidToday.length,liquidTodayEtfs:liquidTodayEtfs.length,preferredPriceAndLiquidTodayStocks:preferredToday.length,deepDiveScope:configuredScope,deepDiveConfiguredLimit:configuredLimit,deepDiveCount:deepDiveCodes.length,deepDiveStocks:deepDive.filter((x)=>x.assetType==='STOCK').length,deepDiveEtfs:deepDive.filter((x)=>x.assetType==='ETF').length},
+  universeSummary:{
+    total:universe.length,stocks:stocks.length,etfs:etfs.length,
+    liquiditySelectionBasis:'MEDIAN_TURNOVER_20D',
+    liquidityHistoryRequiredDays:20,
+    liquidityEvaluatedStocks:stocks.filter((x)=>Number.isFinite(liquiditySnapshot.get(x.code)?.medianTurnover20d)).length,
+    liquidityEvaluatedEtfs:etfs.filter((x)=>Number.isFinite(liquiditySnapshot.get(x.code)?.medianTurnover20d)).length,
+    liquidMedian20dStocks:stockLiquidityPool.length,
+    liquidMedian20dEtfs:etfLiquidityPool.length,
+    preferredPriceAndLiquidMedian20dStocks:preferredLiquidityStocks.length,
+    currentDayTurnoverAboveThresholdStocks,
+    currentDayTurnoverAboveThresholdEtfs,
+    deepDiveScope:configuredScope,deepDiveConfiguredLimit:configuredLimit,
+    deepDiveCount:deepDiveCodes.length,
+    deepDiveStocks:deepDive.filter((x)=>x.assetType==='STOCK').length,
+    deepDiveEtfs:deepDive.filter((x)=>x.assetType==='ETF').length,
+    trackedPriorCodes:priorCodes.length
+  },
   universe,codes:deepDiveCodes,deepDive,tdcc,
   historyCache:{asOf:historyCache?.asOf??null,verifiedTradingDays:historyCache?.coverage?.verifiedTradingDays??0,codesWith20Days:historyCache?.coverage?.codesWith20Days??0,codesWith120Days:historyCache?.coverage?.codesWith120Days??0,codesWith20InstitutionDays:historyCache?.coverage?.codesWith20InstitutionDays??0},
   v2Readiness:{

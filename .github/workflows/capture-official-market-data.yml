@@ -87,6 +87,33 @@ jobs:
       - name: Rebuild research input with technical history
         run: node scripts/summarize-official-market-data.mjs
 
+      - name: Validate research input artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const target = process.env.TARGET_DATE;
+          const file = `raw/${target}/research-input.json`;
+          const stat = fs.statSync(file);
+          if (stat.size < 1024) throw new Error(`research input unexpectedly small: ${stat.size} bytes`);
+          const input = JSON.parse(fs.readFileSync(file, 'utf8'));
+          if (input.targetDate !== target) throw new Error(`research input target mismatch: ${input.targetDate}`);
+          if (!Array.isArray(input.universe) || input.universe.length === 0) throw new Error('research input universe is empty');
+          if (!Array.isArray(input.deepDive)) throw new Error('research input deepDive is missing');
+          if (input.universeSummary?.liquiditySelectionBasis !== 'MEDIAN_TURNOVER_20D') {
+            throw new Error(`unexpected liquidity selection basis: ${input.universeSummary?.liquiditySelectionBasis}`);
+          }
+          console.log(JSON.stringify({
+            file,
+            bytes: stat.size,
+            universe: input.universe.length,
+            deepDive: input.deepDive.length,
+            liquidMedian20dStocks: input.universeSummary?.liquidMedian20dStocks,
+            liquidMedian20dEtfs: input.universeSummary?.liquidMedian20dEtfs
+          }));
+          NODE
+
       - name: Check publication recovery state
         run: node scripts/check-daily-publication.mjs
 
