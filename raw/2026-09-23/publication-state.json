@@ -1,10 +1,10 @@
 {
   "targetDate": "2026-09-23",
   "timezone": "Asia/Taipei",
-  "checkedAt": "2026-09-23T14:10:08.886Z",
+  "checkedAt": "2026-09-23T14:11:57.378Z",
   "stage": "RESEARCH_REQUIRED",
   "gateStatus": "PASS",
-  "manifestRevision": "2026-09-22-230500",
+  "manifestRevision": "2026-09-23-220400",
   "requiredStrategyVersion": "entry-dual-track-v2.1",
   "currentStrategyVersion": "entry-dual-track-v2.1",
   "strategyMatch": true,
@@ -13,9 +13,9 @@
   "publicationComplete": false,
   "reason": "Official Gate PASS and credit evidence is ready, but the published snapshot predates the latest research input",
   "creditEvidence": {
-    "stockCount": 570,
-    "marginShortReadyCount": 632,
-    "securitiesLendingReadyCount": 179,
+    "stockCount": 542,
+    "marginShortReadyCount": 611,
+    "securitiesLendingReadyCount": 166,
     "requireMargin": true,
     "requireLending": false
   },
