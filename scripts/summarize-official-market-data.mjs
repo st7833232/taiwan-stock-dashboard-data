@@ -474,5 +474,19 @@ const output={
     note:'BUY remains fail-closed for any required evidence that is not point-in-time verifiable. Stocks and ETFs use separate machine-readable profiles; ETF readiness is derived only from official exchange security identity and official rolling OHLCV history.'
   }
 };
-await fs.writeFile(path.join(dir,'research-input.json'),JSON.stringify(output,null,2)+'\n');
-console.log(JSON.stringify({targetDate,output:path.join(dir,'research-input.json'),universeSummary:output.universeSummary,historyCache:output.historyCache,v2Readiness:output.v2Readiness}));
+const researchInputText=JSON.stringify(output,null,2)+'\n';
+const researchInputPath=path.join(dir,'research-input.json');
+await fs.writeFile(researchInputPath,researchInputText);
+const summary={
+  schemaVersion:1,
+  targetDate,
+  generatedAt:output.generatedAt,
+  strategyVersion:output.strategyVersion,
+  researchInputPath,
+  researchInputBytes:Buffer.byteLength(researchInputText),
+  universeSummary:output.universeSummary,
+  historyCache:output.historyCache,
+  v2Readiness:output.v2Readiness
+};
+await fs.writeFile(path.join(dir,'research-input-summary.json'),JSON.stringify(summary,null,2)+'\n');
+console.log(JSON.stringify(summary));
