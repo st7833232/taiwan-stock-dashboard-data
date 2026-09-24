@@ -1,0 +1,180 @@
+{
+  "asOf": "2026-09-24",
+  "experimentTitle": "20 萬虛擬操作實驗",
+  "statusLabel": "9/24全市場重算完成 · 20D流動性443檔 · 無9/25新買單",
+  "description": "與真實庫存完全分開。只以決策當下可取得的資料形成紀錄，並以事先寫明的成交規則進行模擬。",
+  "initialCash": 200000,
+  "cash": 165936.528625,
+  "currency": "TWD",
+  "rule": "現股／ETF、無槓桿；單一標的不超過20%，至少保留15%現金。個股賣出稅0.3%、ETF 0.1%，買賣手續費均以0.1425%計入。",
+  "positions": [
+    {
+      "code": "1513",
+      "name": "中興電",
+      "shares": 150,
+      "averageCost": 166.06964583333334,
+      "lastPrice": 166
+    },
+    {
+      "code": "4961",
+      "name": "天鈺",
+      "shares": 50,
+      "averageCost": 183.06049,
+      "lastPrice": 180.5
+    }
+  ],
+  "ledger": [
+    {
+      "date": "2026-09-02",
+      "status": "買進成交",
+      "code": "1513",
+      "name": "中興電",
+      "side": "buy",
+      "shares": 100,
+      "price": 166.5,
+      "fee": 23.72625,
+      "tax": 0,
+      "rationale": "9/1既有委託依官方開盤價成交。"
+    },
+    {
+      "date": "2026-09-09",
+      "status": "買進成交",
+      "code": "1513",
+      "name": "中興電",
+      "side": "buy",
+      "shares": 50,
+      "price": 164.5,
+      "fee": 11.720625,
+      "tax": 0,
+      "rationale": "9/8既有委託依官方開盤價成交。"
+    },
+    {
+      "date": "2026-09-16",
+      "status": "買進成交",
+      "code": "4961",
+      "name": "天鈺",
+      "side": "buy",
+      "shares": 30,
+      "route": "breakout",
+      "price": 181,
+      "fee": 7.73775,
+      "tax": 0,
+      "rationale": "9/15既有breakout stop-entry條件成立。"
+    },
+    {
+      "date": "2026-09-17",
+      "status": "買進成交",
+      "code": "4961",
+      "name": "天鈺",
+      "side": "buy",
+      "shares": 20,
+      "route": "breakout",
+      "price": 185.5,
+      "fee": 5.28675,
+      "tax": 0,
+      "rationale": "9/16既有breakout stop-entry條件成立。"
+    },
+    {
+      "date": "2026-09-18",
+      "status": "條件未成立／取消",
+      "code": "2303",
+      "name": "聯電",
+      "side": "buy",
+      "shares": 30,
+      "route": "pullback",
+      "fee": 0,
+      "tax": 0,
+      "rationale": "9/17既有pullback要求官方開盤144–146元；9/18官方開盤155元，高於上限146元，因此取消。"
+    },
+    {
+      "date": "2026-09-18",
+      "status": "條件未成立／取消",
+      "code": "2303",
+      "name": "聯電",
+      "side": "buy",
+      "shares": 20,
+      "route": "breakout",
+      "fee": 0,
+      "tax": 0,
+      "rationale": "9/17既有breakout的maxChase為153元；9/18官方開盤155元高於maxChase，依規則取消且不得追價。"
+    },
+    {
+      "date": "2026-09-18",
+      "status": "條件未成立／取消",
+      "code": "4961",
+      "name": "天鈺",
+      "side": "buy",
+      "shares": 30,
+      "route": "pullback",
+      "fee": 0,
+      "tax": 0,
+      "rationale": "9/17既有pullback要求官方開盤179–181元；9/18官方開盤184元，高於181元，因此取消。"
+    },
+    {
+      "date": "2026-09-18",
+      "status": "條件未觸發／取消",
+      "code": "4961",
+      "name": "天鈺",
+      "side": "buy",
+      "shares": 20,
+      "route": "breakout",
+      "fee": 0,
+      "tax": 0,
+      "rationale": "pullback未成交；9/18官方開盤184元低於186.5元trigger，最高184元亦未達186.5元，因此breakout未觸發。"
+    },
+    {
+      "date": "2026-09-21",
+      "status": "條件未成立／取消",
+      "code": "2441",
+      "name": "超豐",
+      "side": "buy",
+      "shares": 160,
+      "route": "breakout",
+      "fee": 0,
+      "tax": 0,
+      "rationale": "9/18既有BREAKOUT委託maxChase為124.4214285714元；9/21官方開盤125元高於maxChase，依規則整筆取消且不得追價。"
+    }
+  ],
+  "rationale": [
+    {
+      "title": "9/24官方資料Gate全數通過",
+      "detail": "TWSE/TPEx 8項Required Data均PASS；研究使用9/24正式收盤、法人、信用與官方rolling history。"
+    },
+    {
+      "title": "流動性母體維持20日中位成交額",
+      "detail": "普通股383檔、ETF59檔通過各自20日中位成交額Gate；含既有追蹤持倉共443檔deep-dive，未以單日成交額取代Gate。"
+    },
+    {
+      "title": "Priority BUY為空",
+      "detail": "沒有標的同時通過可驗證RR>=2、完整Entry/Stop與全部BUY Hard Gate，因此不建立9/25新買單。"
+    },
+    {
+      "title": "既有模擬持倉續管",
+      "detail": "9/23 nextOrders為空，因此9/24沒有可執行的新委託；1513與4961的ledger、cash、股數與平均成本保持不變，只更新9/24正式收盤價。"
+    }
+  ],
+  "nextOrders": [],
+  "benchmark": {
+    "date": "2026-09-24",
+    "accountReturn": 0.0876,
+    "taiexReturn": -0.28,
+    "etfCode": "0050",
+    "etfReturn": -0.0445,
+    "cumulativeAccountReturn": -0.0692
+  },
+  "monitorCodes": [
+    "3016",
+    "9945",
+    "1609",
+    "1727",
+    "2030",
+    "3045",
+    "1513",
+    "4961",
+    "0050",
+    "006208",
+    "00981A"
+  ],
+  "sourceNote": "9/24使用已PASS官方Gate與MEDIAN_TURNOVER_20D research-input重跑；9/23 nextOrders為空，因此沒有9/24模擬成交，9/24研究僅影響下一交易日決策。",
+  "note": "本區用於檢驗研究流程，不代表保證報酬或真實下單。任何新交易都必須先存在於上一版nextOrders。"
+}
