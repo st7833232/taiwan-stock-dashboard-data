@@ -11,6 +11,8 @@ on:
       - 'scripts/backfill-v2-market-history.mjs'
       - 'scripts/summarize-official-market-data.mjs'
       - 'scripts/fetch-official-market-data.mjs'
+      - 'scripts/resolve-capture-target-date.mjs'
+      - 'scripts/resolve-capture-target-date.test.mjs'
   workflow_dispatch:
     inputs:
       target_date:
@@ -52,20 +54,20 @@ jobs:
         env:
           INPUT_TARGET_DATE: ${{ inputs.target_date }}
           INPUT_BACKFILL_HISTORY: ${{ inputs.backfill_history }}
-          EVENT_NAME: ${{ github.event_name }}
         run: |
           set -euo pipefail
-          target=""
+          node --test scripts/resolve-capture-target-date.test.mjs
 
           if [[ -n "${INPUT_TARGET_DATE:-}" ]]; then
+            if [[ ! "$INPUT_TARGET_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+              echo "Invalid target_date: $INPUT_TARGET_DATE" >&2
+              exit 1
+            fi
             target="$INPUT_TARGET_DATE"
-          fi
-
-          if [[ -z "$target" ]]; then
-            target="$(TZ=Asia/Taipei date +%F)"
-            echo "No explicit target date; resolved current Asia/Taipei date: $target"
+            echo "Resolved explicit target date: $target"
           else
-            echo "Resolved target date: $target"
+            target="$(node scripts/resolve-capture-target-date.mjs)"
+            echo "No explicit target date; resolved latest after-close Taipei weekday: $target"
           fi
 
           echo "TARGET_DATE=$target" >> "$GITHUB_ENV"
@@ -78,16 +80,34 @@ jobs:
       - name: Capture official sources
         run: node scripts/fetch-official-market-data.mjs
 
+      - name: Classify official Gate readiness
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const target = process.env.TARGET_DATE;
+          const matrix = JSON.parse(fs.readFileSync(`raw/${target}/gate-matrix.json`, 'utf8'));
+          const ready = matrix.targetDate === target && matrix.overallStatus === 'PASS';
+          fs.appendFileSync(process.env.GITHUB_ENV, `GATE_READY=${ready ? 'true' : 'false'}\n`);
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `## Official data Gate\n\n- Target: ${target}\n- Status: ${matrix.overallStatus}\n`);
+          if (!ready) console.log(`Official Gate is ${matrix.overallStatus}; downstream research-input steps will wait for a later retry.`);
+          NODE
+
       - name: Build dynamic full-market research input
+        if: env.GATE_READY == 'true'
         run: node scripts/summarize-official-market-data.mjs
 
       - name: Backfill or extend official V2 market history
+        if: env.GATE_READY == 'true'
         run: node scripts/backfill-v2-market-history.mjs
 
       - name: Rebuild research input with technical history
+        if: env.GATE_READY == 'true'
         run: node scripts/summarize-official-market-data.mjs
 
       - name: Validate research input artifact
+        if: env.GATE_READY == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -99,7 +119,7 @@ jobs:
           if (stat.size < 1024) throw new Error(`research input unexpectedly small: ${stat.size} bytes`);
           const input = JSON.parse(fs.readFileSync(file, 'utf8'));
           if (input.targetDate !== target) throw new Error(`research input target mismatch: ${input.targetDate}`);
-          if (!Array.isArray(input.universe) || input.universe.length === 0) throw new Error('research input universe is empty');
+          if (!Array.isArray(input.universe) || input.universe.length === 0) throw new Error('research input universe is empty after a PASS Gate');
           if (!Array.isArray(input.deepDive)) throw new Error('research input deepDive is missing');
           if (input.universeSummary?.liquiditySelectionBasis !== 'MEDIAN_TURNOVER_20D') {
             throw new Error(`unexpected liquidity selection basis: ${input.universeSummary?.liquiditySelectionBasis}`);
@@ -115,6 +135,7 @@ jobs:
           NODE
 
       - name: Check publication recovery state
+        if: env.GATE_READY == 'true'
         run: node scripts/check-daily-publication.mjs
 
       - name: Commit raw evidence, rolling history and recovery state when changed
