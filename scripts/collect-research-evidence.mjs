@@ -12,6 +12,34 @@ export function discoverEvidenceSources(spec, market, apiRoot) {
     return [{id:`${market.toLowerCase()}-${kind}-${path.split('_').at(-1)}`,market,kind,url:apiRoot+path,summary}];
   });
 }
+function shiftDate(date,days){const d=new Date(date+'T00:00:00Z');d.setUTCDate(d.getUTCDate()+days);return d.toISOString().slice(0,10);}
+function compactDate(date){return date.replaceAll('-','');}
+function coverageSources(target){
+  const start=shiftDate(target,-180),end=shiftDate(target,35),startCompact=compactDate(start),targetCompact=compactDate(target),endCompact=compactDate(end);
+  const tpexStart=start.replaceAll('-','/'),tpexEnd=end.replaceAll('-','/');
+  return [
+    {id:'twse-ca-exrights-preview',market:'TWSE',kind:'coverage',coverageTags:['exRightsDividends'],coverageOnly:true,url:'https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL',summary:'上市股票除權除息預告表'},
+    {id:'twse-ca-trading-halts',market:'TWSE',kind:'coverage',coverageTags:['tradingHalts'],coverageOnly:true,allowEmpty:true,url:'https://openapi.twse.com.tw/v1/exchangeReport/TWTAWU',summary:'集中市場暫停交易證券'},
+    {id:'twse-ca-exrights-history',market:'TWSE',kind:'coverage',coverageTags:['historicalPriceAdjustment:exRights'],coverageOnly:true,allowEmpty:true,url:`https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=${startCompact}&endDate=${targetCompact}`,summary:'上市股票除權除息計算結果表'},
+    {id:'twse-ca-reduction-reference',market:'TWSE',kind:'coverage',coverageTags:['splitReductionConversion:reduction','historicalPriceAdjustment:reduction'],coverageOnly:true,allowEmpty:true,url:`https://www.twse.com.tw/exchangeReport/TWTAUU?response=json&startDate=${startCompact}&endDate=${endCompact}`,summary:'股票減資恢復買賣參考價格'},
+    {id:'twse-ca-parvalue-preview',market:'TWSE',kind:'coverage',coverageTags:['splitReductionConversion:parValueChange'],coverageOnly:true,allowEmpty:true,url:'https://www.twse.com.tw/exchangeReport/TWTB7U?response=json',summary:'變更股票面額預告表'},
+    {id:'twse-ca-parvalue-history',market:'TWSE',kind:'coverage',coverageTags:['historicalPriceAdjustment:parValueChange'],coverageOnly:true,allowEmpty:true,url:`https://www.twse.com.tw/exchangeReport/TWTB8U?response=json&startDate=${startCompact}&endDate=${targetCompact}`,summary:'變更股票面額恢復買賣參考價格'},
+    {id:'tpex-ca-exrights-preview',market:'TPEx',kind:'coverage',coverageTags:['exRightsDividends'],coverageOnly:true,url:'https://www.tpex.org.tw/www/zh-tw/announce/market/ex/announce?response=json',summary:'上櫃除權除息預告表'},
+    {id:'tpex-ca-trading-halts',market:'TPEx',kind:'coverage',coverageTags:['tradingHalts'],coverageOnly:true,allowEmpty:true,url:'https://www.tpex.org.tw/www/zh-tw/announce/market/halt?response=json',summary:'公布暫停/恢復交易有價證券'},
+    {id:'tpex-ca-exrights-history',market:'TPEx',kind:'coverage',coverageTags:['historicalPriceAdjustment:exRights'],coverageOnly:true,allowEmpty:true,url:`https://www.tpex.org.tw/www/zh-tw/announce/market/ex/cal?startDate=${tpexStart}&endDate=${target.replaceAll('-','/')}&response=json`,summary:'上櫃除權除息計算結果表'},
+    {id:'tpex-ca-reduction-reference',market:'TPEx',kind:'coverage',coverageTags:['splitReductionConversion:reduction','historicalPriceAdjustment:reduction'],coverageOnly:true,allowEmpty:true,url:`https://www.tpex.org.tw/www/zh-tw/announce/market/reduction/reference?startDate=${tpexStart}&endDate=${tpexEnd}&response=json`,summary:'上櫃減資恢復交易參考價'},
+    {id:'tpex-ca-parvalue-reference',market:'TPEx',kind:'coverage',coverageTags:['splitReductionConversion:parValueChange','historicalPriceAdjustment:parValueChange'],coverageOnly:true,allowEmpty:true,url:`https://www.tpex.org.tw/www/zh-tw/announce/market/change/reference?startDate=${tpexStart}&endDate=${tpexEnd}&response=json`,summary:'上櫃變更股票面額恢復買賣參考價'}
+  ];
+}
+function structuredEvidence(payload,allowEmpty=false){
+  if(payload===null || typeof payload!=='object')return false;
+  if(Array.isArray(payload))return allowEmpty || payload.length>0;
+  const arrays=[];
+  const walk=value=>{if(Array.isArray(value))arrays.push(value);else if(value&&typeof value==='object')for(const child of Object.values(value))walk(child);};
+  walk(payload);
+  return allowEmpty ? true : arrays.some(a=>a.length>0);
+}
+
 export function archiveUsable(meta,target) {
   return meta?.status==='CAPTURED' && Number.isFinite(Date.parse(meta.capturedAt))
     && Date.parse(meta.capturedAt)<=Date.parse(`${target}T23:59:59+08:00`);
@@ -35,6 +63,7 @@ export async function collect(target,{now=new Date()}={}) {
   ]) {
     let sources=(read('history/financial-source-catalog.json')?.sources??[]).filter(s=>s.market===market);
     if(!sources.some(s=>s.kind==='events'))try{sources=discoverEvidenceSources(await requests(swagger),market,apiRoot);}catch(error){captures.push({market,kind:'discovery',url:swagger,status:'VERIFY_FAILED',error:String(error.message)});}
+    sources=[...sources,...coverageSources(target).filter(s=>s.market===market)];
     for(let i=0;i<sources.length;i+=2) {
       await Promise.all(sources.slice(i,i+2).map(async source=>{
         const file=`${root}/${source.id}.raw.txt`,prior=old?.captures?.find(c=>c.id===source.id);
@@ -47,13 +76,19 @@ export async function collect(target,{now=new Date()}={}) {
         }
         try {
           const rows=await requests(source.url);
-          if(!Array.isArray(rows)||(financial&&!rows.length)||!rows.every(r=>r&&typeof r==='object'&&!Array.isArray(r)))throw Error('No usable official evidence rows');
-          fs.writeFileSync(file,JSON.stringify(rows)+'\n');captures.push({...source,status:'CAPTURED',capturedAt:new Date().toISOString(),rows:rows.length});
+          if(source.coverageOnly){
+            if(!structuredEvidence(rows,source.allowEmpty===true))throw Error('No usable official coverage payload');
+            fs.writeFileSync(file,JSON.stringify(rows)+'\n');captures.push({...source,status:'CAPTURED',capturedAt:new Date().toISOString(),rows:Array.isArray(rows)?rows.length:null});
+          }else{
+            if(!Array.isArray(rows)||(financial&&!rows.length)||!rows.every(r=>r&&typeof r==='object'&&!Array.isArray(r)))throw Error('No usable official evidence rows');
+            fs.writeFileSync(file,JSON.stringify(rows)+'\n');captures.push({...source,status:'CAPTURED',capturedAt:new Date().toISOString(),rows:rows.length});
+          }
         }catch(error){if(archiveUsable(prior,target)&&fs.existsSync(file))captures.push({...prior,refreshStatus:'VERIFY_FAILED',refreshError:String(error.message)});else captures.push({...source,status:'VERIFY_FAILED',error:String(error.message)});}
       }));
     }
     const catalog=read('history/financial-source-catalog.json')??{sources:[]};
-    if(sources.length)write('history/financial-source-catalog.json',{sources:[...catalog.sources.filter(s=>s.market!==market),...sources]});
+    const discovered=sources.filter(s=>!s.coverageOnly);
+    if(discovered.length)write('history/financial-source-catalog.json',{sources:[...catalog.sources.filter(s=>s.market!==market),...discovered]});
   }
   write(`${root}/financial-evidence-captures.json`,{targetDate:target,captures});
   console.log(JSON.stringify({stage:'FINANCIAL_EVIDENCE_CAPTURE',targetDate:target,captured:captures.filter(c=>c.status==='CAPTURED').length,unverified:captures.filter(c=>c.status!=='CAPTURED').length}));
