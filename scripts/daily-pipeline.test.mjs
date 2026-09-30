@@ -36,6 +36,8 @@ test('TDCC counts 400+ once, includes the 40-50 retail bucket, and rejects futur
   const result=tdccWeeks([...rows,...rows.map(r=>({...r,'資料日期':'1151002'}))],'2026-09-29');
   assert.equal(result.length,1);assert.equal(result[0].large400,4);assert.equal(result[0].retail50,8);
   assert.equal(tdccWeeks(rows.map(r=>({...r,'資料日期':undefined,'\uFEFF資料日期':'20260925'})),'2026-09-29').length,1);
+  const padded=tdccWeeks(rows.map(r=>({...r,'證券代號':Number(r['持股分級'])%2?'3005  ':'3005','資料日期':undefined,'\uFEFF資料日期':'20260925'})),'2026-09-29');
+  assert.deepEqual(padded,result); // Official codes are space-padded; all holding buckets must join one normalized symbol.
   assert.equal(officialDate('20260230'),null);
 });
 test('no valid BUY setup can still be a completed study; missing credit cannot',()=>{

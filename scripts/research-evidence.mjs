@@ -13,7 +13,7 @@ export function officialDate(x) {
 export function tdccWeeks(rows,target) {
   const groups=new Map();
   for(const r of rows) {
-    const code=String(r['證券代號']??r.SecurityCode??''),date=officialDate(r['資料日期']??r['\uFEFF資料日期']??r.DataDate),level=num(r['持股分級']??r.HoldingLevel),ratio=num(r['占集保庫存數比例%']??r['占集保庫存數比例(%)']??r['占集保庫存數比例']??r.HoldingRatio);
+    const code=String(r['證券代號']??r.SecurityCode??'').trim(),date=officialDate(r['資料日期']??r['\uFEFF資料日期']??r.DataDate),level=num(r['持股分級']??r.HoldingLevel),ratio=num(r['占集保庫存數比例%']??r['占集保庫存數比例(%)']??r['占集保庫存數比例']??r.HoldingRatio);
     if(!code||!date||date>target||!Number.isInteger(level)||!Number.isFinite(ratio)||ratio<0||ratio>100)continue;
     const key=`${code}|${date}`;if(!groups.has(key))groups.set(key,{code,date,levels:new Map()});groups.get(key).levels.set(level,ratio);
   }
