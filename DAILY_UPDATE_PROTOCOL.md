@@ -436,3 +436,12 @@ checkpoint 必須明確區分 `screeningComplete`、`creditEvidenceComplete`、`
 - 官方財報端點由交易所 OpenAPI 規格發現，保存 income / balance 與擷取時間；原始財報存在不等於品質、公司治理或催化劑已完成判斷。TDCC 1/2/4週僅使用 target 之前已擷取、資料日期可驗證的期別，不以新資料倒灌歷史。缺四週歷史只能等待／補官方歷史，不得捏造差分。
 - 原子 snapshot commit 仍必須包含三份snapshot與manifest；其後允許僅修改raw報告的 validation receipt commit，記錄已驗證 revision、commit、run URL。不得改寫任何immutable snapshot。
 - 舊ChatGPT/Work主排程與補跑保持停用，避免同日重複耗用工作任務；一般對話僅查閱 compact report。
+
+## 11. 固定期間模擬操作與驗收
+
+- 期間、檢查間隔與流程停滯門檻以 `strategy-config.json.paperExperiment` 為唯一設定來源。本輪為下一交易日起20個正式交易日，每5個交易日檢查。起始20萬元不重設，沿用既有cash、positions、ledger；期間報酬另以開始前的正式帳戶權益為基準。
+- 依官方開休市表規劃日期；完成天數只由已驗證官方交易資料計算。遇臨時休市，驗收日順延，不把休市或不存在的行情算成交易日。
+- 每日分開記錄研究未完成、資料完整但無新委託、既有委託成交與取消。研究未完成不得歸類為市場沒有買點。連續／累計研究缺項達設定門檻時，標示流程需要檢討，不降低BUY Hard Gate湊成交。
+- 每5日保留交易數、必要證據未完成天數與報酬；第20日收盤停止產生新的買單並驗收。既有持倉不因期限而虛構清倉，出場仍遵守已存在的機械規則。
+- 基準權益、每日評價、期間報酬與最大回撤必須可重算。缺任何期間評價時報酬／完整最大回撤保留null並列缺日，不以零或估計值補足。
+- 只限模擬帳戶，不送真實券商委託，不建立新的ChatGPT/Work排程；由既有GitHub資料流程接續。

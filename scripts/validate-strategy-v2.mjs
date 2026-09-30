@@ -16,6 +16,22 @@ const allowedAsset = new Set(['STOCK','ETF']);
 const allowedSource = new Set(['SOURCE_A','SOURCE_B','SOURCE_C','NONE']);
 const allowedCatalyst = new Set(['CONFIRMED','DIVERGENCE','STALE','UNVERIFIED','NONE']);
 
+if(config.paperExperiment?.enabled){
+  const rule=config.paperExperiment,paper=JSON.parse(fs.readFileSync(manifest.paperAccountPath,'utf8')),experiment=paper.experiment;
+  const calendar=JSON.parse(fs.readFileSync(rule.calendarEvidencePath,'utf8'));
+  assert(calendar.source===rule.calendarSource&&calendar.payload.stat==='ok'&&calendar.payload.queryYear===Number(rule.startDate.slice(0,4)),'paper experiment calendar must have official year evidence');
+  const closed=new Set(calendar.payload.data.filter(row=>!/開始交易|最後交易/.test(row[1])).map(row=>row[0]));
+  assert(Array.isArray(rule.plannedTradingDates)&&rule.plannedTradingDates.length===rule.durationTradingDays&&new Set(rule.plannedTradingDates).size===rule.durationTradingDays,'planned experiment calendar count invalid');
+  assert(rule.plannedTradingDates[0]===rule.startDate&&rule.plannedTradingDates.at(-1)===rule.plannedEndDate,'experiment calendar boundaries invalid');
+  for(const date of rule.plannedTradingDates)assert(!closed.has(date)&&![0,6].includes(new Date(date+'T00:00:00Z').getUTCDay()),`experiment calendar includes closed date ${date}`);
+  assert(experiment?.id===rule.id,'paper experiment id must match strategy-config');
+  assert(experiment?.durationTradingDays===rule.durationTradingDays,'paper experiment duration must match strategy-config');
+  assert(experiment?.startDate===rule.startDate&&experiment?.reviewEveryTradingDays===rule.reviewEveryTradingDays,'paper experiment schedule must match strategy-config');
+  assert(Number.isInteger(experiment?.completedTradingDays)&&experiment.completedTradingDays>=0&&experiment.completedTradingDays<=rule.durationTradingDays,'paper experiment trading-day count invalid');
+  assert(Array.isArray(experiment?.tradingDates)&&new Set(experiment.tradingDates).size===experiment.tradingDates.length&&experiment.tradingDates.length===experiment.completedTradingDays,'paper experiment trading dates must be unique');
+  for(const order of paper.nextOrders??[])if(order.side==='buy')assert(order.tradingDate>=rule.startDate&&experiment?.status!=='REVIEW_DUE','new buy outside experiment window');
+}
+
 if (research.strategyVersion !== config.version) {
   console.log(`STRATEGY V2 VALIDATION SKIPPED: current strategyVersion=${research.strategyVersion ?? 'missing'}`);
   process.exit(0);

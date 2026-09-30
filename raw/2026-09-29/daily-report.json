@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-29",
-  "revision": "2026-09-30-111014",
+  "revision": "2026-09-30-113248",
   "strategyVersion": "entry-dual-track-v2.1",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
@@ -90,7 +90,32 @@
       "accountBaseDate": "2026-09-24",
       "accountBaseEquity": 199861.528625
     },
-    "nextOrders": []
+    "nextOrders": [],
+    "experiment": {
+      "id": "paper-20td-2026-10-01",
+      "status": "PLANNED",
+      "startDate": "2026-10-01",
+      "plannedEndDate": "2026-10-30",
+      "durationTradingDays": 20,
+      "reviewEveryTradingDays": 5,
+      "completedTradingDays": 0,
+      "tradingDates": [],
+      "baselineDate": null,
+      "baselineEquity": null,
+      "dailyMarks": [],
+      "reviews": [],
+      "metrics": {
+        "filledTrades": 0,
+        "evidenceBlockedDays": 0,
+        "noNewOrderDays": 0,
+        "returnPct": null,
+        "maxDrawdownPct": null,
+        "valuationCoverageComplete": false,
+        "missingValuationDates": []
+      },
+      "processReviewRequired": false,
+      "summary": "20個交易日試驗：2026-10-01開始，預計2026-10-30收盤驗收；每5個交易日檢查一次。"
+    }
   },
   "gate": [
     {
@@ -142,17 +167,6 @@
       "officialDateEvidence": "1150929"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-09-30-111014",
-    "runId": "36663378229",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/36663378229",
-    "validatedCommit": "31bac7c4aa7e7b79ee9df10ffafc33731135f49f"
-  },
+  "validation": "AWAITING_CI",
   "inputFingerprint": "78a758cd66eaf9b9cb05e25e9c2a4176d022e005ddfbcbb5eaca09fbe5c47d3c"
 }

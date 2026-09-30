@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import crypto from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 import {evidenceSummary} from './research-evidence.mjs';
+import {updatePaperExperiment,experimentAllowsOrder} from './paper-experiment.mjs';
 
 export const finite = x => typeof x === 'number' && Number.isFinite(x);
 export const hash = x => crypto.createHash('sha256').update(JSON.stringify(x)).digest('hex');
@@ -40,6 +41,7 @@ const reasonLabels = {
   CONSECUTIVE_LOSS_LIMIT:'連續虧損已達上限，暫停新增部位',
   DAILY_LOSS_LIMIT:'單日損失已達風控上限',
   WEEKLY_LOSS_LIMIT:'單週損失已達風控上限',
+  EXPERIMENT_OUTSIDE_ORDER_WINDOW:'已超出本次模擬操作期間，停止新增買單，等待結果驗收',
 };
 export const reasonDescriptions = codes => [...new Set(codes.map(code=>reasonLabels[code]||'其他必要條件尚未確認，暫不建立新買單'))];
 export const evidenceLabels = {history:'歷史行情',institutional:'法人多日紀錄',credit:'融資融券等信用資料',tdcc:'大戶與散戶多週持股',fundamental:'財務品質',event:'重大消息與事件風險',corporateAction:'除權息等公司行動'};
@@ -185,7 +187,8 @@ export function accountRisk(paper,input,config) {
 export function planSignals(result,paper,input,config) {
   const risk=accountRisk(paper,input,config), orders=[];
   const calendar=input.verifiedCalendar;
-  const nextDate=calendar?.sourceQuality==='SOURCE_A' && calendar?.asOf<=input.targetDate && calendar?.nextTradingDate>input.targetDate?calendar.nextTradingDate:null;
+  const periodCalendar=config.paperExperiment;
+  const nextDate=calendar?.sourceQuality==='SOURCE_A' && calendar?.asOf<=input.targetDate && calendar?.nextTradingDate>input.targetDate?calendar.nextTradingDate:periodCalendar?.calendarAsOf<=input.targetDate?periodCalendar.plannedTradingDates.find(d=>d>input.targetDate)??null:null;
   for(const r of result.rows) {
     if(!Object.values(r.gates).every(Boolean))continue;
     const threshold=r.assetType==='ETF'?config.assetProfiles.ETF.buyScoreThreshold[result.regime]:config.buyScoreThreshold[result.regime];
@@ -193,6 +196,7 @@ export function planSignals(result,paper,input,config) {
     if(!finite(r.universePercentile)||r.universePercentile>config.priority.percentileMax||r.universeRank>config.priority.rankMax){r.reasonCodes.push('RANKING_THRESHOLD_NOT_MET');continue;}
     if(!risk.pass){r.reasonCodes.push(...risk.reasons);continue;}
     if(!nextDate){r.reasonCodes.push('NEXT_TRADING_DATE_NOT_OFFICIALLY_VERIFIED');continue;}
+    if(!experimentAllowsOrder(paper.experiment,nextDate,config)){r.reasonCodes.push('EXPERIMENT_OUTSIDE_ORDER_WINDOW');continue;}
     if(paper.positions.some(p=>p.code===r.code)||orders.some(o=>o.code===r.code)){r.reasonCodes.push('DUPLICATE_SIGNAL');continue;}
     const s=r.setup, feeRate=config.execution.feeRate;
     const capital=risk.equity*Math.min(config.risk.riskPerTradePct,config.risk.riskPerTradeHardCapPct)/100;
@@ -274,7 +278,10 @@ export function publishCheckpoint(target) {
   const fingerprint=inputFingerprint(input,config);
   if(previousResearch.researchDate===target && previousPaper.asOf===target && previousResearch.inputFingerprint===fingerprint && previousResearch.strategyVersion===config.version) {console.log('NO_CHANGE');return;}
   const result=evaluateUniverse({...input,gateMatrix:gate},config), paper=markPaper(previousPaper,input,config), now=taipeiTime();
+  const evidence=evidenceSummary(input,result);
+  updatePaperExperiment(paper,previousPaper,{...input,gateMatrix:gate},config,evidence.researchComplete);
   const plan=planSignals(result,paper,input,config);paper.nextOrders=plan.orders;paper.riskCheck=plan.risk;
+  updatePaperExperiment(paper,previousPaper,{...input,gateMatrix:gate},config,evidence.researchComplete);
   let marketOverview=null;
   if(fs.existsSync(`${root}/market-overview.json`)) marketOverview=read(`${root}/market-overview.json`);
   else if(fs.existsSync(`${root}/twse-mi-index.raw.txt`)) {
@@ -301,7 +308,7 @@ export function publishCheckpoint(target) {
   });
   const stocks=input.deepDive.filter(r=>r.assetType==='STOCK'), missingCredit=stocks.filter(r=>!creditReady(r,config)).map(r=>r.code);
   const coverage={universe:input.universe.length,stocks:input.universe.filter(r=>r.assetType==='STOCK').length,etfs:input.universe.filter(r=>r.assetType==='ETF').length,deepDive:input.deepDive.length,deepDiveStocks:stocks.length,deepDiveEtfs:input.deepDive.length-stocks.length,creditReadyStocks:stocks.length-missingCredit.length,creditMissingCodes:missingCredit,eligibleRanked:result.rows.filter(r=>r.universeRank!==null).length};
-  const evidence=evidenceSummary(input,result),complete=evidence.researchComplete,publicationStatus=complete?'DATA_UPDATED':'SNAPSHOT_UPDATED_EVIDENCE_PENDING';
+  const complete=evidence.researchComplete,publicationStatus=complete?'DATA_UPDATED':'SNAPSHOT_UPDATED_EVIDENCE_PENDING';
   const conclusion=`${target}全市場 ${coverage.universe} 檔已完成初步篩選（普通股 ${coverage.stocks}、ETF ${coverage.etfs}），深度檢查 ${coverage.deepDive} 檔。普通股信用資料已核對 ${coverage.creditReadyStocks}/${coverage.deepDiveStocks} 檔。${complete?'必要研究資料均已核對；沒有合適買點也可以是完整研究結果。':`仍待核對：${Object.entries(evidence.counts).filter(([,n])=>n>0).map(([k,n])=>`${evidenceLabels[k]||'其他必要資料'} ${n}檔`).join('、')}。研究尚未完成。`}本次優先買進標的 ${candidates.filter(c=>c.group==='priority'&&c.decision==='BUY').length} 檔，下一交易日委託 ${paper.nextOrders.length} 筆；ETF專用評估條件通過，也不代表已出現買點。`;
   const p={version:config.version,signalMode:'EOD',marketRegime:result.regime,buyScoreThreshold:config.buyScoreThreshold[result.regime],liquidityMedianTurnover20dMin:config.liquidityMedianTurnover20dMin,priorityMaxCandidates:config.priority.maxCandidates,priorityPercentileMax:config.priority.percentileMax,priorityRankMax:config.priority.rankMax,minRiskReward:config.minRiskReward,...config.risk,scoreWeights:config.scoreWeights,assetProfiles:config.assetProfiles};
   const research={researchDate:target,latestTradingDate:target,strategyVersion:config.version,strategyProfile:p,conclusion,decision:{summary:conclusion},candidates,coverage,researchStatus:complete?'COMPLETE':'EVIDENCE_PENDING',researchComplete:complete,evidencePending:evidence.counts,screeningComplete:true,creditEvidenceComplete:missingCredit.length===0,inputFingerprint:fingerprint,inputGeneratedAt:input.generatedAt,researchInputGeneratedAt:input.generatedAt,simulationMode:false,liquiditySelectionBasis:'MEDIAN_TURNOVER_20D',sourceNote:`使用raw/${target}已PASS官方證據與本版inputFingerprint；未把後續資料回填為當時已知資訊。`,engineVersion:config.screening.engineVersion,marketOverview,marketRegimeEvidence:{source:'OFFICIAL_BROAD_MARKET_ETF_PROXY',code:result.marketProxyCode,verified:result.regimeVerified},screeningPath:`${root}/screening-results.json`,sourceGate:gate.gates};
@@ -313,7 +320,7 @@ export function publishCheckpoint(target) {
   write(`${prefix}/research.json`,research);write(`${prefix}/selection-history.json`,selection);write(`${prefix}/paper-account.json`,paper);
   write(`${root}/evidence-pending.json`,{targetDate:target,researchComplete:complete,counts:evidence.counts,pending:evidence.pending,retryPolicy:'AUTOMATIC_NEXT_SCHEDULE'});
   write(`${root}/screening-results.json`,{schemaVersion:1,targetDate:target,strategyVersion:config.version,inputFingerprint:fingerprint,coverage,marketRegime:result.regime,results:result.rows});
-  write(`${root}/daily-report.json`,{schemaVersion:1,targetDate:target,revision,strategyVersion:config.version,status:publicationStatus,screeningComplete:true,researchComplete:complete,evidencePending:evidence.counts,creditEvidenceComplete:missingCredit.length===0,coverage,conclusion,priority:candidates.filter(c=>c.group==='priority').map(c=>({code:c.code,name:c.name,decision:c.decision,score:c.score})),core:candidates.filter(c=>c.group==='core').map(c=>({code:c.code,name:c.name,decision:c.decision,score:c.score,reasonCodes:c.reasonCodes})),paperAccount:{asOf:paper.asOf,cash:paper.cash,positions:paper.positions,equity:paper.equity,benchmark:paper.benchmark,nextOrders:paper.nextOrders},gate:gate.gates,validation:'AWAITING_CI',inputFingerprint:fingerprint});
+  write(`${root}/daily-report.json`,{schemaVersion:1,targetDate:target,revision,strategyVersion:config.version,status:publicationStatus,screeningComplete:true,researchComplete:complete,evidencePending:evidence.counts,creditEvidenceComplete:missingCredit.length===0,coverage,conclusion,priority:candidates.filter(c=>c.group==='priority').map(c=>({code:c.code,name:c.name,decision:c.decision,score:c.score})),core:candidates.filter(c=>c.group==='core').map(c=>({code:c.code,name:c.name,decision:c.decision,score:c.score,reasonCodes:c.reasonCodes})),paperAccount:{asOf:paper.asOf,cash:paper.cash,positions:paper.positions,equity:paper.equity,benchmark:paper.benchmark,nextOrders:paper.nextOrders,experiment:paper.experiment},gate:gate.gates,validation:'AWAITING_CI',inputFingerprint:fingerprint});
   write('manifest.json',{...manifest,revision,updatedAt:now,researchPath:`${prefix}/research.json`,selectionHistoryPath:`${prefix}/selection-history.json`,paperAccountPath:`${prefix}/paper-account.json`});
   console.log(JSON.stringify({revision,status:publicationStatus,coverage,equity:paper.equity}));
 }
