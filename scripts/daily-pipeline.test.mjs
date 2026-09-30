@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import {completionCurrent,recoveryTargets,isFutureAfterCloseTarget,runPipeline} from './run-daily-pipeline.mjs';
+import {completionCurrent,recoveryTargets,isFutureAfterCloseTarget,runPipeline,resolvePipelineTarget} from './run-daily-pipeline.mjs';
 import {inputFingerprint} from './screen-market.mjs';
 import {discoverEvidenceSources,archiveUsable} from './collect-research-evidence.mjs';
 import {tdccWeeks,officialDate,evidenceSummary} from './research-evidence.mjs';
@@ -22,6 +22,9 @@ test('orders on a missed day are processed before the new target',()=>{
 test('morning recovery never uses today incomplete OHLC',()=>{
   assert.equal(isFutureAfterCloseTarget('2026-09-30',new Date('2026-09-30T01:00:00Z')),true);
   assert.equal(isFutureAfterCloseTarget('2026-09-29',new Date('2026-09-30T01:00:00Z')),false);
+});
+test('scheduled push with an empty optional date resolves the last completed date',()=>{
+  assert.equal(resolvePipelineTarget('',new Date('2026-09-30T01:00:00Z')),'2026-09-29');
 });
 test('financial endpoints must be discovered in the official specification',()=>{
   const spec={paths:{'/mopsfin_t187ap06_O_ci':{get:{summary:'上櫃公司綜合損益表(一般業)'}},'/unrelated':{get:{summary:'綜合損益表'}}}};

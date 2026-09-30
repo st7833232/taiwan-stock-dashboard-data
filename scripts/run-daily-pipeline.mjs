@@ -5,6 +5,7 @@ import {resolveCaptureTargetDate} from './resolve-capture-target-date.mjs';
 import {inputFingerprint} from './screen-market.mjs';
 
 const read=p=>{try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}};
+export const resolvePipelineTarget=(explicit,now=new Date())=>explicit||resolveCaptureTargetDate({now});
 export function completionCurrent({target,config,manifest,research,paper,history,input,state}) {
   const paths=[manifest?.researchPath,manifest?.selectionHistoryPath,manifest?.paperAccountPath];
   return Boolean(manifest?.revision&&paths.every(p=>p?.startsWith(`snapshots/${manifest.revision}/`))
@@ -75,4 +76,4 @@ export function runPipeline(target=resolveCaptureTargetDate(),{execute=execFileS
     finally{if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,`\n## ${day}\n\n- Pipeline: ${status.stage}\n- Research complete: ${status.researchComplete}\n- Retry: ${status.retryPolicy}\n- Revision: ${status.revision??'unchanged'}\n- Pending evidence: ${JSON.stringify(status.evidencePending??{})}\n`);}
   }
 }
-if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)runPipeline(process.env.TARGET_DATE);
+if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)runPipeline(resolvePipelineTarget(process.env.TARGET_DATE));
