@@ -7,16 +7,7 @@ on:
       - '.github/workflows/capture-official-market-data.yml'
       - '.github/market-data-trigger'
       - 'strategy-config.json'
-      - 'scripts/screen-market.mjs'
-      - 'scripts/screen-market.test.mjs'
-      - 'scripts/publish-data-atomic.mjs'
-      - 'scripts/validate-data.mjs'
-      - 'scripts/check-daily-publication.mjs'
-      - 'scripts/backfill-v2-market-history.mjs'
-      - 'scripts/summarize-official-market-data.mjs'
-      - 'scripts/fetch-official-market-data.mjs'
-      - 'scripts/resolve-capture-target-date.mjs'
-      - 'scripts/resolve-capture-target-date.test.mjs'
+      - 'scripts/**'
   workflow_dispatch:
     inputs:
       target_date:
@@ -29,7 +20,9 @@ on:
         default: false
         type: boolean
   schedule:
-    - cron: '0 10-15 * * 1-5'
+    - cron: '0,30 10-15 * * 1-5'
+    - cron: '20 23 * * 0-4'
+    - cron: '20 0 * * 1-5'
 
 permissions:
   contents: write
@@ -41,136 +34,37 @@ concurrency:
 jobs:
   capture:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     steps:
-      - name: Checkout main
+      - name: Checkout latest main
         uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 0
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-
-      - name: Resolve target date and backfill mode
-        shell: bash
+      - name: Test recovery and screening rules
+        run: node --test scripts/*.test.mjs
+      - name: Autonomous capture, evidence, screening and atomic publication
         env:
-          INPUT_TARGET_DATE: ${{ inputs.target_date }}
-          INPUT_BACKFILL_HISTORY: ${{ inputs.backfill_history }}
-        run: |
-          set -euo pipefail
-          node --test scripts/resolve-capture-target-date.test.mjs
-
-          if [[ -n "${INPUT_TARGET_DATE:-}" ]]; then
-            if [[ ! "$INPUT_TARGET_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
-              echo "Invalid target_date: $INPUT_TARGET_DATE" >&2
-              exit 1
-            fi
-            target="$INPUT_TARGET_DATE"
-            echo "Resolved explicit target date: $target"
-          else
-            target="$(node scripts/resolve-capture-target-date.mjs)"
-            echo "No explicit target date; resolved latest after-close Taipei weekday: $target"
-          fi
-
-          echo "TARGET_DATE=$target" >> "$GITHUB_ENV"
-
-          if [[ "${INPUT_BACKFILL_HISTORY:-false}" == "true" ]]; then
-            echo "BACKFILL_V2_HISTORY=1" >> "$GITHUB_ENV"
-            echo "V2 history backfill enabled by workflow input."
-          fi
-
-      - name: Capture official sources
-        run: node scripts/fetch-official-market-data.mjs
-
-      - name: Classify official Gate readiness
-        shell: bash
-        run: |
-          set -euo pipefail
-          node --input-type=module <<'NODE'
-          import fs from 'node:fs';
-          const target = process.env.TARGET_DATE;
-          const matrix = JSON.parse(fs.readFileSync(`raw/${target}/gate-matrix.json`, 'utf8'));
-          const ready = matrix.targetDate === target && matrix.overallStatus === 'PASS';
-          fs.appendFileSync(process.env.GITHUB_ENV, `GATE_READY=${ready ? 'true' : 'false'}\n`);
-          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `## Official data Gate\n\n- Target: ${target}\n- Status: ${matrix.overallStatus}\n`);
-          if (!ready) console.log(`Official Gate is ${matrix.overallStatus}; downstream research-input steps will wait for a later retry.`);
-          NODE
-
-      - name: Build dynamic full-market research input
-        if: env.GATE_READY == 'true'
-        run: node scripts/summarize-official-market-data.mjs
-
-      - name: Backfill or extend official V2 market history
-        if: env.GATE_READY == 'true'
-        run: node scripts/backfill-v2-market-history.mjs
-
-      - name: Rebuild research input with technical history
-        if: env.GATE_READY == 'true'
-        run: node scripts/summarize-official-market-data.mjs
-
-      - name: Validate research input artifact
-        if: env.GATE_READY == 'true'
-        shell: bash
-        run: |
-          set -euo pipefail
-          node --input-type=module <<'NODE'
-          import fs from 'node:fs';
-          const target = process.env.TARGET_DATE;
-          const file = `raw/${target}/research-input.json`;
-          const stat = fs.statSync(file);
-          if (stat.size < 1024) throw new Error(`research input unexpectedly small: ${stat.size} bytes`);
-          const input = JSON.parse(fs.readFileSync(file, 'utf8'));
-          if (input.targetDate !== target) throw new Error(`research input target mismatch: ${input.targetDate}`);
-          if (!Array.isArray(input.universe) || input.universe.length === 0) throw new Error('research input universe is empty after a PASS Gate');
-          if (!Array.isArray(input.deepDive)) throw new Error('research input deepDive is missing');
-          if (input.universeSummary?.liquiditySelectionBasis !== 'MEDIAN_TURNOVER_20D') {
-            throw new Error(`unexpected liquidity selection basis: ${input.universeSummary?.liquiditySelectionBasis}`);
-          }
-          console.log(JSON.stringify({
-            file,
-            bytes: stat.size,
-            universe: input.universe.length,
-            deepDive: input.deepDive.length,
-            liquidMedian20dStocks: input.universeSummary?.liquidMedian20dStocks,
-            liquidMedian20dEtfs: input.universeSummary?.liquidMedian20dEtfs
-          }));
-          NODE
-
-      - name: Screen full market and prepare immutable checkpoint
-        if: env.GATE_READY == 'true'
-        run: |
-          node --test scripts/screen-market.test.mjs
-          node scripts/screen-market.mjs
-          VALIDATE_PENDING=1 node scripts/validate-data.mjs
-          node scripts/validate-dashboard-contract.mjs
-          node scripts/validate-strategy-v2.mjs
-
-      - name: Check publication recovery state
-        run: node scripts/check-daily-publication.mjs
-
-      - name: Save checkpoint for recovery
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_DATE: ${{ inputs.target_date }}
+          BACKFILL_V2_HISTORY: ${{ inputs.backfill_history && '1' || '' }}
+        run: node scripts/run-daily-pipeline.mjs
+      - name: Save resumable checkpoint and failure details
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: market-checkpoint-${{ github.run_id }}
           path: |
-            raw/${{ env.TARGET_DATE }}/
+            raw/*/pipeline-status.json
+            raw/*/evidence-pending.json
+            raw/*/financial-evidence-captures.json
+            raw/*/daily-report.json
+            raw/*/publication-state.json
+            raw/*/gate-matrix.json
             snapshots/
             manifest.json
           retention-days: 7
-
-      - name: Atomic Git Data publication
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node scripts/publish-data-atomic.mjs
-
-      - name: Validate published main and manifest
-        if: env.GATE_READY == 'true'
-        run: |
-          git fetch origin main
-          git reset --hard origin/main
-          node scripts/validate-data.mjs
-          node scripts/validate-dashboard-contract.mjs
-          node scripts/validate-strategy-v2.mjs

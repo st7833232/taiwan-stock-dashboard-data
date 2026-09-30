@@ -42,7 +42,7 @@ node scripts/validate-strategy-v2.mjs
 
 這是公開資料庫，只能存放公開研究與完全虛擬的模擬交易資料。不得提交帳密、憑證、Cookie、Token、真實庫存或任何個人資料。
 
-不得因本資料庫更新而修改或部署 `st7833232/taiwan-stock-research-dashboard`，也不得建立或恢復任何排程。
+不得因本資料庫更新而修改或部署 `st7833232/taiwan-stock-research-dashboard`，GitHub資料管線依本協議自動接續；不得建立重複的ChatGPT/Work計算排程。
 # 對話查閱流程
 
 官方 capture 後由 GitHub Actions 執行 `scripts/screen-market.mjs`，將全市場逐檔結果寫入 `raw/<交易日>/screening-results.json`，並以單一 Git Data commit 發布三份 immutable snapshots 與 manifest。對話只需讀取 manifest 與 `raw/<交易日>/daily-report.json`、`publication-state.json`、最新 validation run；不必重抓16MB研究輸入或另開Work任務。流程不呼叫LLM API、不修改Dashboard。
@@ -51,3 +51,11 @@ node scripts/validate-strategy-v2.mjs
 
 重試保存已PASS的Gate與可驗證的官方auxiliary證據；週/月證據可使用targetDate之前已捕獲的archive，但仍須另驗freshness。來源內容不變且設定不變時NO_CHANGE；只有capture時間變更不重做快照。遠端main變動即停止發布並保存workflow artifact，下一次從新main重跑，禁止force push。
 
+
+## 自動接續，不需對話催跑
+
+唯一執行入口為 `node scripts/run-daily-pipeline.mjs`。台北時間工作日18:00～23:30每半小時檢查，07:20、08:20恢復前一盤後日期；GitHub排程可能延遲。完整成功先去重，部分研究繼續補官方證據，無新內容不建立新revision。來源或validator失敗留artifact，下次自動接續。
+
+查閱 `raw/<date>/daily-report.json`、`pipeline-status.json`、`evidence-pending.json` 與對應 workflow run。`validation.status=PASS` 只表示三層檔案驗證；`researchComplete` 必須另行成立，信用／財務／事件未完成不能混稱完整研究。財報與TDCC原始擷取已自動化；原始payload不會自行證明品質、前瞻事件風險或除權息調整已驗證。
+
+本管線是Node.js / GitHub Actions運算，不呼叫LLM API，不建立Work補跑任務。Dashboard仍只讀manifest，不修改／部署Dashboard。

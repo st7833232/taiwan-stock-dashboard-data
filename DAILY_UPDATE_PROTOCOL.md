@@ -2,7 +2,7 @@
 
 本文件是 `st7833232/taiwan-stock-dashboard-data` 的日常資料發布規範。日常研究對話只授權更新本資料庫的公開 JSON；不得因此修改或部署 `st7833232/taiwan-stock-research-dashboard`，不得提交任何秘密資訊或真實庫存。
 
-允許本資料庫建立純資料基礎設施排程，用於自動擷取、保存與驗證 TWSE、TPEx 等官方公開市場資料。此類排程不得自行產生研究結論、推薦、模擬交易、修改 `manifest.json` 或部署網站；其輸出只能作為後續資料完整性 Gate 與研究流程的官方原始證據。
+允許本資料庫建立純資料基礎設施排程，用於自動擷取、保存與驗證 TWSE、TPEx 等官方公開市場資料。官方擷取器本身只產生原始證據；授權的 deterministic pipeline 可接續全市場篩選、紙上帳戶與 immutable checkpoint 的原子發布。完整研究與證據未完成的 checkpoint 必須分別標示；不呼叫 LLM、不進行真實下單、不部署網站。
 
 目前研究進場策略版本：`entry-dual-track-v2.1`。
 
@@ -424,3 +424,15 @@ checkpoint 必須明確區分 `screeningComplete`、`creditEvidenceComplete`、`
 同日已成功發布且沒有新的有效資料或方法論變化：`NO_CHANGE`，不得建立無意義 commit。
 
 成功時回報：交易／研究日期、推薦清單與分層、主要升降級、Pullback／Breakout 進場條件、模擬帳戶現金與持倉、今日成交／未成交、新的下一交易日條件單、commit SHA 與 validation run。失敗或無變更時只回報狀態與原因。
+
+## 10. 自動接續與恢復（2026-09-30）
+
+- 單一 GitHub Actions workflow 由 `run-daily-pipeline.mjs` 接續 capture → input → history → rebuild input → official financial capture / point-in-time TDCC comparison → screening → prepublication validators → atomic publication → published-main validators → validation receipt。不得依賴使用者在對話催跑。
+- 台北時間週一至週五18:00開始，每半小時重試至23:30；07:20、08:20恢復檢查前一可用盤後日期。GitHub schedule 可延遲，不承諾準點。上午不能使用當日尚未收盤的日K。
+- 完整 publication 的日期、策略設定 fingerprint、必要信用證據與最新 input 一致，且三層 validator 通過時，停止該日抓取與計算。只有部分 checkpoint 不得視為完整成功。
+- 未處理的既有 nextOrders 日期早於當次 target 時，先按委託日期處理；該日官方OHLC無法驗證，則停止向後推進帳戶，不得使用較晚日期的價格補成交。
+- timeout / HTTP / parse error 保存 `pipeline-status.json` 或 workflow artifact，下一次排程自動從最新 main 接續；不是要求使用者重新下指令。HEAD變動不得force push；保留artifact，下一次從新main重算。
+- `evidence-pending.json` 逐檔記錄 history / institutional / credit / TDCC / fundamental / event / corporateAction 未驗證項目。沒有BUY買點與缺證據是兩種狀態：資料完整但策略不成立可研究完成；信用或其他Required Evidence未完成則不能。
+- 官方財報端點由交易所 OpenAPI 規格發現，保存 income / balance 與擷取時間；原始財報存在不等於品質、公司治理或催化劑已完成判斷。TDCC 1/2/4週僅使用 target 之前已擷取、資料日期可驗證的期別，不以新資料倒灌歷史。缺四週歷史只能等待／補官方歷史，不得捏造差分。
+- 原子 snapshot commit 仍必須包含三份snapshot與manifest；其後允許僅修改raw報告的 validation receipt commit，記錄已驗證 revision、commit、run URL。不得改寫任何immutable snapshot。
+- 舊ChatGPT/Work主排程與補跑保持停用，避免同日重複耗用工作任務；一般對話僅查閱 compact report。
