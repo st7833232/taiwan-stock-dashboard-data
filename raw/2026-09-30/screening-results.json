@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "targetDate": "2026-09-30",
   "strategyVersion": "entry-dual-track-v2.2",
-  "inputFingerprint": "f0d06928248939f3bec95cf3a62a8d8d6306160aa14e59048ff19f3541842d44",
+  "inputFingerprint": "c346b311a0df8257d5ea72b5c947ff7e6b97162145e899aefa57e0f89496a77b",
   "coverage": {
     "universe": 2318,
     "stocks": 1964,
@@ -73061,8 +73061,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": true,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": false
@@ -73070,8 +73070,6 @@
       "reasonCodes": [
         "HISTORY_NOT_VERIFIED",
         "TREND_NOT_CONFIRMED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED",
         "ETF_PROFILE_GATE_FAILED"
@@ -73195,16 +73193,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": true,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": false
       },
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED",
         "ETF_PROFILE_GATE_FAILED"
@@ -73276,16 +73272,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": true,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": false
       },
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED",
         "ETF_PROFILE_GATE_FAILED"
@@ -73669,16 +73663,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": true,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": false
       },
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED",
         "ETF_PROFILE_GATE_FAILED"
@@ -73854,16 +73846,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": true,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": false
       },
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED",
         "ETF_PROFILE_GATE_FAILED"
@@ -74403,16 +74393,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": true,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": false
       },
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED",
         "ETF_PROFILE_GATE_FAILED"
@@ -74848,16 +74836,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": true,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": false
       },
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED",
         "ETF_PROFILE_GATE_FAILED"
@@ -75761,16 +75747,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": true,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": false
       },
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED",
         "ETF_PROFILE_GATE_FAILED"
@@ -76674,16 +76658,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": true,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": false
       },
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED",
         "ETF_PROFILE_GATE_FAILED"
@@ -77275,16 +77257,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": true,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": false
       },
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED",
         "ETF_PROFILE_GATE_FAILED"
@@ -77512,16 +77492,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": true,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": false
       },
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED",
         "ETF_PROFILE_GATE_FAILED"
@@ -77593,16 +77571,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": true,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": false
       },
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED",
         "ETF_PROFILE_GATE_FAILED"
@@ -79494,8 +79470,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": true,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": false
@@ -79503,8 +79479,6 @@
       "reasonCodes": [
         "HISTORY_NOT_VERIFIED",
         "TREND_NOT_CONFIRMED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED",
         "ETF_PROFILE_GATE_FAILED"
@@ -80832,8 +80806,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -80841,8 +80815,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -81112,8 +81084,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -81121,8 +81093,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -81221,8 +81191,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -81230,8 +81200,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -81615,16 +81583,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
       },
       "reasonCodes": [
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -83604,8 +83570,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -83613,8 +83579,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -83827,8 +83791,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -83836,8 +83800,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -83993,8 +83955,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -84002,8 +83964,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -84330,8 +84290,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -84339,8 +84299,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -84382,8 +84340,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -84391,8 +84349,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -84434,8 +84390,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -84443,8 +84399,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -84600,8 +84554,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -84609,8 +84563,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -84652,8 +84604,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -84661,8 +84613,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -85217,8 +85167,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -85226,8 +85176,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -85440,16 +85388,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
       },
       "reasonCodes": [
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -85491,8 +85437,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -85500,8 +85446,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -85657,8 +85601,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -85666,8 +85610,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -85880,8 +85822,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -85889,8 +85831,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -85932,8 +85872,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -85941,8 +85881,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -86098,8 +86036,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -86107,8 +86045,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -86150,16 +86086,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
       },
       "reasonCodes": [
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -86201,8 +86135,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -86210,8 +86144,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -86652,8 +86584,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -86661,8 +86593,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -86761,8 +86691,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -86770,8 +86700,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -87326,16 +87254,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
       },
       "reasonCodes": [
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -87491,8 +87417,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -87500,8 +87426,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -87657,8 +87581,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -87666,8 +87590,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -87766,8 +87688,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -87775,8 +87697,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -87818,8 +87738,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -87827,8 +87747,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -87984,16 +87902,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
       },
       "reasonCodes": [
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -88434,16 +88350,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
       },
       "reasonCodes": [
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -88542,8 +88456,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -88551,8 +88465,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -88765,8 +88677,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -88774,8 +88686,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -89045,8 +88955,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -89054,8 +88964,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -89097,8 +89005,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -89106,8 +89014,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -89206,16 +89112,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
       },
       "reasonCodes": [
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -89884,8 +89788,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -89893,8 +89797,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -90278,8 +90180,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -90287,8 +90189,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -90786,8 +90686,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -90795,8 +90695,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -90895,8 +90793,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -90904,8 +90802,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -91289,8 +91185,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -91298,8 +91194,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -91968,8 +91862,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -91977,8 +91871,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -92020,8 +91912,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -92029,8 +91921,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -92243,8 +92133,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -92252,8 +92142,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -92352,8 +92240,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -92361,8 +92249,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -92404,8 +92290,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -92413,8 +92299,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -96446,8 +96330,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -96455,8 +96339,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -96498,8 +96380,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -96507,8 +96389,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -96778,8 +96658,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -96787,8 +96667,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -97400,8 +97278,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -97409,8 +97287,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -98193,8 +98069,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -98202,8 +98078,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -98302,8 +98176,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -98311,8 +98185,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -98411,8 +98283,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -98420,8 +98292,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -98463,8 +98333,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -98472,8 +98342,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -98686,8 +98554,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -98695,8 +98563,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -98966,8 +98832,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -98975,8 +98841,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -99075,8 +98939,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -99084,8 +98948,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -99355,8 +99217,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -99364,8 +99226,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -99407,8 +99267,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -99416,8 +99276,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -99516,8 +99374,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -99525,8 +99383,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -99625,8 +99481,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -99634,8 +99490,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -99677,8 +99531,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -99686,8 +99540,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -101154,8 +101006,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -101163,8 +101015,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -101377,8 +101227,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -101386,8 +101236,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -101771,8 +101619,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -101780,8 +101628,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -101994,8 +101840,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -102003,8 +101849,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -102046,8 +101890,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -102055,8 +101899,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -102212,8 +102054,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -102221,8 +102063,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -102321,8 +102161,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -102330,8 +102170,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -102658,8 +102496,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -102667,8 +102505,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -102938,8 +102774,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -102947,8 +102783,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -103161,8 +102995,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -103170,8 +103004,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -103213,8 +103045,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -103222,8 +103054,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -103493,8 +103323,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -103502,8 +103332,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -103716,8 +103544,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -103725,8 +103553,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -103882,8 +103708,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -103891,8 +103717,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -104219,8 +104043,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -104228,8 +104052,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -104727,8 +104549,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -104736,8 +104558,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -105292,8 +105112,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -105301,8 +105121,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -105515,8 +105333,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -105524,8 +105342,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -105681,8 +105497,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -105690,8 +105506,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -106474,8 +106288,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -106483,8 +106297,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -106811,8 +106623,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -106820,8 +106632,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -107034,8 +106844,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -107043,8 +106853,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -107314,8 +107122,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -107323,8 +107131,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -108107,8 +107913,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -108116,8 +107922,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -108273,16 +108077,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
       },
       "reasonCodes": [
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -108381,8 +108183,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -108390,8 +108192,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -108547,8 +108347,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -108556,8 +108356,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -108656,8 +108454,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -108665,8 +108463,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -108879,16 +108675,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
       },
       "reasonCodes": [
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -109044,8 +108838,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -109053,8 +108847,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -109210,8 +109002,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -109219,8 +109011,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -109262,16 +109052,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
       },
       "reasonCodes": [
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -109541,8 +109329,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -109550,8 +109338,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -109593,16 +109379,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
       },
       "reasonCodes": [
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -109758,8 +109542,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -109767,8 +109551,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -110266,8 +110048,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -110275,8 +110057,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -110660,8 +110440,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -110669,8 +110449,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -110826,8 +110604,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -110835,8 +110613,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -111049,8 +110825,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -111058,8 +110834,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -111101,8 +110875,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -111110,8 +110884,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -111153,8 +110925,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -111162,8 +110934,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -111718,8 +111488,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -111727,8 +111497,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -112340,8 +112108,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -112349,8 +112117,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -112848,8 +112614,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -112857,8 +112623,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -113185,8 +112949,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -113194,8 +112958,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -113237,8 +112999,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -113246,8 +113008,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -113346,16 +113106,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
       },
       "reasonCodes": [
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -113511,16 +113269,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
       },
       "reasonCodes": [
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -113562,8 +113318,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -113571,8 +113327,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -114184,8 +113938,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -114193,8 +113947,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -114236,8 +113988,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -114245,8 +113997,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -114687,8 +114437,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -114696,8 +114446,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -114853,16 +114601,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
       },
       "reasonCodes": [
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -114904,16 +114650,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
       },
       "reasonCodes": [
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -115126,8 +114870,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -115135,8 +114879,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -115235,8 +114977,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -115244,8 +114986,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -115458,8 +115198,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -115467,8 +115207,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -115510,8 +115248,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -115519,8 +115257,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -115676,8 +115412,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -115685,8 +115421,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -115899,8 +115633,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -115908,8 +115642,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -116179,8 +115911,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -116188,8 +115920,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -116402,8 +116132,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -116411,8 +116141,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -116739,8 +116467,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -116748,8 +116476,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -117247,8 +116973,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -117256,8 +116982,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -117470,16 +117194,14 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
       },
       "reasonCodes": [
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -117635,8 +117357,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -117644,8 +117366,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -118770,8 +118490,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -118779,8 +118499,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -118879,8 +118597,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -118888,8 +118606,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -120641,8 +120357,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -120650,8 +120366,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -120864,8 +120578,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -120873,8 +120587,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -121030,8 +120742,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -121039,8 +120751,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -121139,8 +120849,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -121148,8 +120858,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -121590,8 +121298,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -121599,8 +121307,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -122098,8 +121804,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -122109,8 +121815,6 @@
         "TREND_NOT_CONFIRMED",
         "CREDIT_EVIDENCE_INCOMPLETE",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -122380,8 +122084,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -122389,8 +122093,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -122603,8 +122305,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -122612,8 +122314,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -122655,8 +122355,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -122664,8 +122364,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -122707,8 +122405,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -122716,8 +122414,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -122987,8 +122683,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -122996,8 +122692,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -123039,8 +122733,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -123048,8 +122742,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -123148,8 +122840,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -123157,8 +122849,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -123371,8 +123061,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -123380,8 +123070,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -123879,8 +123567,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -123888,8 +123576,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -124102,8 +123788,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -124111,8 +123797,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -124268,8 +123952,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -124277,8 +123961,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -124605,8 +124287,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -124614,8 +124296,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -124771,8 +124451,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -124780,8 +124460,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -124994,8 +124672,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -125003,8 +124681,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -125559,8 +125235,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -125568,8 +125244,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -125782,8 +125456,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -125791,8 +125465,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -125834,8 +125506,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -125843,8 +125515,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -126513,8 +126183,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -126522,8 +126192,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -126736,8 +126404,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -126745,8 +126413,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -128042,8 +127708,8 @@
         "institutional": true,
         "tdcc": true,
         "fundamental": false,
-        "event": false,
-        "corporateAction": false,
+        "event": true,
+        "corporateAction": true,
         "strategy": false,
         "riskReward": false,
         "assetProfile": true
@@ -128051,8 +127717,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
