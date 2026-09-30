@@ -37,12 +37,12 @@ export function normalizeOfficialEvent(row,source) {
   if(!code||!date||!/^\d{6}$/.test(time)||Number(time.slice(0,2))>23||Number(time.slice(2,4))>59||Number(time.slice(4,6))>59)return null;
   const subject=String(row['主旨 ']??row['主旨']??row.subject??'').trim(),body=String(row['說明']??''),content=subject+' '+body;
   let eventType='OTHER';
-  if(/法人說明會|法說會/.test(content))eventType='INVESTOR_CONFERENCE';
-  else if(/面額|分割|減資|除權|除息|合併|股份轉換/.test(content))eventType='CORPORATE_ACTION';
-  else if(/停止買賣|恢復買賣|暫停交易/.test(content))eventType='TRADING_HALT';
+  if(/法人說明會|法說會/.test(subject))eventType='INVESTOR_CONFERENCE';
+  else if(/停止買賣|恢復買賣|暫停交易/.test(subject))eventType='TRADING_HALT';
+  else if(/面額|分割|減資|除權|除息|股份轉換/.test(subject))eventType='CORPORATE_ACTION';
   else if(/財務報告|盈餘|獲利/.test(subject))eventType='EARNINGS';
   else if(/營收/.test(subject))eventType='REVENUE';
-  else if(/裁罰|違規|法院|訴訟/.test(content))eventType='GOVERNANCE';
+  else if(/裁罰|違規|法院|訴訟/.test(subject))eventType='GOVERNANCE';
   return {code,sourceQuality:'SOURCE_A',source,eventType,direction:'UNCERTAIN',eventTimestamp:`${date}T${time.slice(0,2)}:${time.slice(2,4)}:${time.slice(4,6)}+08:00`,factDate:officialDate(row['事實發生日']),subject,body,catalystStatus:'UNVERIFIED',priceConfirmation:false,volumeConfirmation:false,institutionalConfirmation:false};
 }
 export function eventAssessment(events,target,coverage,nextTradingDate=null) {
