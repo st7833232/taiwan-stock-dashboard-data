@@ -1,7 +1,7 @@
 {
   "targetDate": "2026-09-29",
   "timezone": "Asia/Taipei",
-  "generatedAt": "2026-09-29T16:30:05.542Z",
+  "generatedAt": "2026-09-30T01:21:03.381Z",
   "simulatedTodayDate": null,
   "effectiveTodayDate": "2026-09-30",
   "overallStatus": "PASS",
@@ -79,7 +79,8 @@
       "httpStatus": 200,
       "contentType": "application/json;charset=UTF-8",
       "bytes": 4940389,
-      "officialDateEvidence": "20260929"
+      "officialDateEvidence": "20260929",
+      "preservedPass": true
     },
     {
       "source": "twse-mi-index",
@@ -94,7 +95,8 @@
       "httpStatus": 200,
       "contentType": "application/json;charset=UTF-8",
       "bytes": 4940389,
-      "officialDateEvidence": "20260929"
+      "officialDateEvidence": "20260929",
+      "preservedPass": true
     },
     {
       "source": "twse-fmtqik",
@@ -109,7 +111,8 @@
       "httpStatus": 200,
       "contentType": "application/json;charset=UTF-8",
       "bytes": 2101,
-      "officialDateEvidence": "20260929"
+      "officialDateEvidence": "20260929",
+      "preservedPass": true
     },
     {
       "source": "twse-t86",
@@ -124,7 +127,8 @@
       "httpStatus": 200,
       "contentType": "application/json;charset=UTF-8",
       "bytes": 2244750,
-      "officialDateEvidence": "20260929"
+      "officialDateEvidence": "20260929",
+      "preservedPass": true
     },
     {
       "source": "tpex-mainboard-daily-close-quotes",
@@ -139,7 +143,8 @@
       "httpStatus": 200,
       "contentType": "application/json",
       "bytes": 4584216,
-      "officialDateEvidence": "1150929"
+      "officialDateEvidence": "1150929",
+      "preservedPass": true
     },
     {
       "source": "tpex-mainboard-daily-close-quotes-legacy",
@@ -154,7 +159,8 @@
       "httpStatus": 200,
       "contentType": "application/json;charset=UTF-8",
       "bytes": 146545,
-      "officialDateEvidence": "20260929"
+      "officialDateEvidence": "20260929",
+      "preservedPass": true
     },
     {
       "source": "tpex-daily-trading-index",
@@ -169,7 +175,8 @@
       "httpStatus": 200,
       "contentType": "application/json",
       "bytes": 2767,
-      "officialDateEvidence": "1150929"
+      "officialDateEvidence": "1150929",
+      "preservedPass": true
     },
     {
       "source": "tpex-3insti-daily-trading",
@@ -184,7 +191,8 @@
       "httpStatus": 200,
       "contentType": "application/json",
       "bytes": 867695,
-      "officialDateEvidence": "1150929"
+      "officialDateEvidence": "1150929",
+      "preservedPass": true
     },
     {
       "source": "tpex-3insti-daily-trading-www",
@@ -199,7 +207,8 @@
       "httpStatus": 200,
       "contentType": "application/json;charset=UTF-8",
       "bytes": 148528,
-      "officialDateEvidence": "20260929"
+      "officialDateEvidence": "20260929",
+      "preservedPass": true
     },
     {
       "source": "tpex-3insti-summary",
@@ -214,7 +223,8 @@
       "httpStatus": 200,
       "contentType": "application/json",
       "bytes": 1014,
-      "officialDateEvidence": "1150929"
+      "officialDateEvidence": "1150929",
+      "preservedPass": true
     },
     {
       "source": "twse-margin-trading",
@@ -223,7 +233,7 @@
       "kind": "margin-short",
       "url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260929&response=json&selectType=ALL",
       "targetDate": "2026-09-29",
-      "capturedAt": "2026-09-29T16:29:56.700Z",
+      "capturedAt": "2026-09-30T01:20:55.645Z",
       "status": "CAPTURED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -240,7 +250,7 @@
       "kind": "margin-short",
       "url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20260929&response=json&selectType=ALL",
       "targetDate": "2026-09-29",
-      "capturedAt": "2026-09-29T16:29:58.771Z",
+      "capturedAt": "2026-09-30T01:20:55.679Z",
       "status": "CAPTURED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -257,7 +267,7 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/www/zh-tw/margin/balance?date=2026/09/29&response=json",
       "targetDate": "2026-09-29",
-      "capturedAt": "2026-09-29T16:29:59.976Z",
+      "capturedAt": "2026-09-30T01:21:00.162Z",
       "status": "CAPTURED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -274,7 +284,7 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/09/29",
       "targetDate": "2026-09-29",
-      "capturedAt": "2026-09-29T16:30:00.665Z",
+      "capturedAt": "2026-09-30T01:21:00.160Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -291,7 +301,7 @@
       "kind": "securities-lending",
       "url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl?date=2026/09/29&id=&response=json",
       "targetDate": "2026-09-29",
-      "capturedAt": "2026-09-29T16:30:02.083Z",
+      "capturedAt": "2026-09-30T01:21:00.163Z",
       "status": "CAPTURED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -308,10 +318,28 @@
       "kind": "monthly-revenue",
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap05_L",
       "targetDate": "2026-09-29",
-      "capturedAt": "2026-09-29T16:30:05.541Z",
-      "status": "NOT_CAPTURED_RETROSPECTIVE",
+      "capturedAt": "2026-09-24T15:01:17.406Z",
+      "status": "CAPTURED",
       "simulatedTodayDate": null,
-      "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
+      "httpStatus": 200,
+      "contentType": "application/json",
+      "bytes": 606355,
+      "note": "Previously captured official evidence; data-date/freshness gates still required. No later latest payload used.",
+      "archiveOrigin": "raw/2026-09-24/twse-monthly-revenue.raw.txt",
+      "archiveDate": "2026-09-24",
+      "archivedEvidence": true,
+      "latestAttempt": {
+        "source": "twse-monthly-revenue",
+        "gate": null,
+        "institution": "MOPS",
+        "kind": "monthly-revenue",
+        "url": "https://openapi.twse.com.tw/v1/opendata/t187ap05_L",
+        "targetDate": "2026-09-29",
+        "capturedAt": "2026-09-30T01:21:00.161Z",
+        "status": "NOT_CAPTURED_RETROSPECTIVE",
+        "simulatedTodayDate": null,
+        "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
+      }
     },
     {
       "source": "tpex-monthly-revenue",
@@ -320,10 +348,28 @@
       "kind": "monthly-revenue",
       "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap05_O",
       "targetDate": "2026-09-29",
-      "capturedAt": "2026-09-29T16:30:05.541Z",
-      "status": "NOT_CAPTURED_RETROSPECTIVE",
+      "capturedAt": "2026-09-24T15:01:18.859Z",
+      "status": "CAPTURED",
       "simulatedTodayDate": null,
-      "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
+      "httpStatus": 200,
+      "contentType": "application/json",
+      "bytes": 496547,
+      "note": "Previously captured official evidence; data-date/freshness gates still required. No later latest payload used.",
+      "archiveOrigin": "raw/2026-09-24/tpex-monthly-revenue.raw.txt",
+      "archiveDate": "2026-09-24",
+      "archivedEvidence": true,
+      "latestAttempt": {
+        "source": "tpex-monthly-revenue",
+        "gate": null,
+        "institution": "MOPS",
+        "kind": "monthly-revenue",
+        "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap05_O",
+        "targetDate": "2026-09-29",
+        "capturedAt": "2026-09-30T01:21:03.338Z",
+        "status": "NOT_CAPTURED_RETROSPECTIVE",
+        "simulatedTodayDate": null,
+        "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
+      }
     },
     {
       "source": "twse-material-information",
@@ -332,7 +378,7 @@
       "kind": "material-information",
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
       "targetDate": "2026-09-29",
-      "capturedAt": "2026-09-29T16:30:05.541Z",
+      "capturedAt": "2026-09-30T01:21:03.338Z",
       "status": "NOT_CAPTURED_RETROSPECTIVE",
       "simulatedTodayDate": null,
       "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
@@ -344,7 +390,7 @@
       "kind": "material-information",
       "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
       "targetDate": "2026-09-29",
-      "capturedAt": "2026-09-29T16:30:05.541Z",
+      "capturedAt": "2026-09-30T01:21:03.338Z",
       "status": "NOT_CAPTURED_RETROSPECTIVE",
       "simulatedTodayDate": null,
       "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
@@ -356,10 +402,28 @@
       "kind": "shareholding-distribution",
       "url": "https://openapi.tdcc.com.tw/v1/opendata/1-5",
       "targetDate": "2026-09-29",
-      "capturedAt": "2026-09-29T16:30:05.541Z",
-      "status": "NOT_CAPTURED_RETROSPECTIVE",
+      "capturedAt": "2026-09-24T15:01:24.474Z",
+      "status": "CAPTURED",
       "simulatedTodayDate": null,
-      "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
+      "httpStatus": 200,
+      "contentType": "application/json",
+      "bytes": 9767594,
+      "note": "Previously captured official evidence; data-date/freshness gates still required. No later latest payload used.",
+      "archiveOrigin": "raw/2026-09-24/tdcc-shareholding-distribution.raw.txt",
+      "archiveDate": "2026-09-24",
+      "archivedEvidence": true,
+      "latestAttempt": {
+        "source": "tdcc-shareholding-distribution",
+        "gate": null,
+        "institution": "TDCC",
+        "kind": "shareholding-distribution",
+        "url": "https://openapi.tdcc.com.tw/v1/opendata/1-5",
+        "targetDate": "2026-09-29",
+        "capturedAt": "2026-09-30T01:21:03.338Z",
+        "status": "NOT_CAPTURED_RETROSPECTIVE",
+        "simulatedTodayDate": null,
+        "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
+      }
     }
   ]
 }
