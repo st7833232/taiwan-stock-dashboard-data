@@ -1,0 +1,5349 @@
+{
+  "researchDate": "2026-09-29",
+  "latestTradingDate": "2026-09-29",
+  "strategyVersion": "entry-dual-track-v2.2",
+  "strategyProfile": {
+    "version": "entry-dual-track-v2.2",
+    "signalMode": "EOD",
+    "marketRegime": "BULL",
+    "buyScoreThreshold": 82,
+    "liquidityMedianTurnover20dMin": 50000000,
+    "priorityMaxCandidates": 3,
+    "priorityPercentileMax": 10,
+    "priorityRankMax": 50,
+    "minRiskReward": 2,
+    "riskPerTradePct": 0.5,
+    "riskPerTradeHardCapPct": 1,
+    "singleStockExposureMaxPct": 10,
+    "sectorExposureMaxPct": 20,
+    "totalExposureMaxPct": 50,
+    "dailyLossLimitPct": 1.5,
+    "weeklyLossLimitPct": 4,
+    "consecutiveRealizedLossLimit": 3,
+    "scoreWeights": {
+      "trend": 18,
+      "momentum": 8,
+      "volume": 10,
+      "marketRegime": 8,
+      "institutional": 15,
+      "largeHolder": 8,
+      "marginShortLending": 6,
+      "fundamental": 15,
+      "riskReward": 12
+    },
+    "assetProfiles": {
+      "STOCK": {
+        "profileVersion": "stock-v2",
+        "enabled": true
+      },
+      "ETF": {
+        "profileVersion": "taiwan-equity-etf-v1",
+        "enabled": true,
+        "classificationSource": "OFFICIAL_EXCHANGE_SECURITY_NAME",
+        "eligibleCategories": [
+          "TAIWAN_BROAD_MARKET",
+          "TAIWAN_EQUITY"
+        ],
+        "coreCategories": [
+          "TAIWAN_BROAD_MARKET"
+        ],
+        "liquidityMedianTurnover20dMin": 100000000,
+        "historyTradingDaysMin": 120,
+        "buyScoreThreshold": {
+          "BULL": 78,
+          "NEUTRAL": 84,
+          "BEAR": null,
+          "HIGH_RISK": null
+        },
+        "maxAtrPct": 6,
+        "maxDrawdown20dPct": 15,
+        "maxDrawdown60dPct": 25,
+        "scoreWeights": {
+          "trend": 22,
+          "momentum": 10,
+          "volume_liquidity": 18,
+          "market_regime": 12,
+          "volatility_drawdown": 14,
+          "product_structure": 12,
+          "risk_reward": 12
+        },
+        "excludedCategories": [
+          "LEVERAGED_INVERSE",
+          "BOND",
+          "COMMODITY",
+          "OVERSEAS_EQUITY",
+          "UNKNOWN"
+        ]
+      }
+    }
+  },
+  "conclusion": "2026-09-29全市場 2308 檔已完成初步篩選（普通股 1952、ETF 356），深度檢查 609 檔。普通股信用資料已核對 534/537 檔。仍待核對：歷史行情 12檔、重大消息與事件風險 609檔、除權息等公司行動 609檔、大戶與散戶多週持股 537檔、財務品質 537檔、法人多日紀錄 1檔、融資融券等信用資料 3檔。研究尚未完成。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "decision": {
+    "summary": "2026-09-29全市場 2308 檔已完成初步篩選（普通股 1952、ETF 356），深度檢查 609 檔。普通股信用資料已核對 534/537 檔。仍待核對：歷史行情 12檔、重大消息與事件風險 609檔、除權息等公司行動 609檔、大戶與散戶多週持股 537檔、財務品質 537檔、法人多日紀錄 1檔、融資融券等信用資料 3檔。研究尚未完成。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。"
+  },
+  "candidates": [
+    {
+      "code": "0050",
+      "name": "元大台灣50",
+      "market": "TWSE",
+      "assetType": "ETF",
+      "close": 111.3,
+      "decision": "WATCH",
+      "strategy": "NONE",
+      "score": 87.3502,
+      "scores": {
+        "trend": 22,
+        "momentum": 10,
+        "volume_liquidity": 17.3502,
+        "market_regime": 12,
+        "volatility_drawdown": 14,
+        "product_structure": 12,
+        "risk_reward": 0
+      },
+      "gates": {
+        "history": true,
+        "liquidity": true,
+        "market": true,
+        "trend": true,
+        "credit": true,
+        "institutional": true,
+        "tdcc": true,
+        "fundamental": true,
+        "event": false,
+        "corporateAction": false,
+        "strategy": false,
+        "riskReward": false,
+        "assetProfile": true
+      },
+      "reasonCodes": [
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ],
+      "universeRank": null,
+      "universePercentile": null,
+      "liquidityMedianTurnover20d": 7811969644.5,
+      "volumeRatio20d": 1.4458484386780537,
+      "riskReward": null,
+      "setup": null,
+      "etfProfile": {
+        "profileVersion": "taiwan-equity-etf-v1",
+        "category": "TAIWAN_BROAD_MARKET",
+        "classificationStatus": "VERIFIED_DERIVED_FROM_OFFICIAL_NAME",
+        "classificationSource": "OFFICIAL_EXCHANGE_SECURITY_NAME",
+        "classificationBasis": {
+          "code": "0050",
+          "name": "元大台灣50",
+          "market": "TWSE",
+          "reason": "Official exchange security name identifies a broad Taiwan equity index product."
+        },
+        "leveragedOrInverse": false,
+        "eligibleForIndependentResearch": true,
+        "eligibleForCore": true,
+        "eligibleForBuy": true,
+        "historyReady": true,
+        "historicalRiskReady": true,
+        "liquidityGateReady": true,
+        "liquidityGatePass": true,
+        "riskLimitsPass": true,
+        "exclusionReason": null,
+        "metrics": {
+          "medianTurnover20d": 7811969644.5,
+          "volumeRatio20d": 1.4458484386780537,
+          "return20dPct": 4.067321178120609,
+          "return60dPct": 2.297794117647056,
+          "annualizedVolatility20dPct": 17.048583061983464,
+          "maxDrawdown20dPct": 3.3212010919017376,
+          "maxDrawdown60dPct": 13.705583756345174,
+          "atrPct": 1.3637530483891698
+        }
+      },
+      "historyCoverageTradingDays": 135,
+      "evidenceAudit": {
+        "schemaVersion": 1,
+        "targetDate": "2026-09-29",
+        "tdcc": {
+          "status": "NOT_REQUIRED",
+          "asOfEvidence": {
+            "status": "PERSISTENCE_PENDING",
+            "latest": {
+              "code": "0050",
+              "date": "2026-09-18",
+              "large400": 25.46,
+              "retail50": 56.42000000000001
+            },
+            "comparisonBasis": "OFFICIAL_WEEKLY_EDITION",
+            "comparisons": {
+              "1w": null,
+              "2w": null,
+              "4w": null
+            }
+          },
+          "historicalComparisons": {},
+          "decisionEligible": true,
+          "publicationTimingVerified": true
+        },
+        "fundamental": {
+          "status": "NOT_REQUIRED",
+          "monthlyRevenue": null,
+          "quarterlyReportCaptured": false,
+          "assessment": {
+            "status": "UNVERIFIED",
+            "verified": false,
+            "qualityPass": false,
+            "pending": [
+              "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+              "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+              "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+              "FINANCIAL_METRICS_INCOMPLETE"
+            ],
+            "failures": [],
+            "metrics": {
+              "grossMargin": null,
+              "operatingMargin": null,
+              "liabilityAssetRatio": null,
+              "currentRatio": null,
+              "revenueYoY": null,
+              "netProfitYoY": null
+            },
+            "periodEnd": null,
+            "basis": null,
+            "sources": []
+          },
+          "qualityVerified": true
+        },
+        "eventRisk": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "events": [],
+            "binaryEvents": [],
+            "pending": [
+              "materialAnnouncements",
+              "futureBinaryEvents"
+            ],
+            "newsEvent": null
+          },
+          "historicalQuery": {
+            "status": "VERIFY_FAILED",
+            "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+            "requestedDate": "2026-09-29",
+            "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+            "dataAbsenceConfirmed": false
+          }
+        },
+        "corporateAction": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "pending": [
+              "exRightsDividends",
+              "splitReductionConversion",
+              "tradingHalts",
+              "historicalPriceAdjustment"
+            ],
+            "observed": []
+          },
+          "partialHistoricalQuery": {
+            "status": "PARTIAL_VERIFIED",
+            "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+            "actualDate": "2026-09-29",
+            "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+            "otherCorporateActionsVerified": false
+          }
+        }
+      },
+      "group": "core",
+      "rating": "Core／觀察",
+      "tone": "core",
+      "rank": "Core",
+      "closeDate": "2026-09-29",
+      "priceStatus": "final-close",
+      "thesis": "元大台灣50已納入全市場篩選，已驗證項目得分 87.3502。目前先觀察：2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "avoid": "在以下項目確認前，不新增買單：2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "entry": "目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。",
+      "technical": "MA20/60/120=108.9475/105.44/101.2867；RSI14=56.3636；量比=1.4458。",
+      "chips": "使用ETF專用評估，不套用普通股的營收、大戶持股與法人評分權重。",
+      "invalid": "正式收盤跌破MA20 108.9475元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "invalidCondition": "正式收盤跌破MA20 108.9475元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "pullbackEntry": {
+        "status": "unavailable",
+        "reason": "EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "breakoutTrigger": {
+        "status": "unavailable",
+        "reason": "EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "entryPrice": null,
+      "maxChase": null,
+      "stop": null,
+      "target": null,
+      "entryRoutes": [],
+      "allocationMax": "0%",
+      "candidatePositionSize": 0,
+      "positionSize": 0,
+      "executionReady": false,
+      "executionStatus": "NOT_SUBMITTED",
+      "hardGatesPassed": false,
+      "financialAssessment": {
+        "status": "UNVERIFIED",
+        "verified": false,
+        "qualityPass": false,
+        "pending": [
+          "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+          "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+          "FINANCIAL_METRICS_INCOMPLETE"
+        ],
+        "failures": [],
+        "metrics": {
+          "grossMargin": null,
+          "operatingMargin": null,
+          "liabilityAssetRatio": null,
+          "currentRatio": null,
+          "revenueYoY": null,
+          "netProfitYoY": null
+        },
+        "periodEnd": null,
+        "basis": null,
+        "sources": []
+      },
+      "eventAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "events": [],
+        "binaryEvents": [],
+        "pending": [
+          "materialAnnouncements",
+          "futureBinaryEvents"
+        ],
+        "newsEvent": null
+      },
+      "corporateActionAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "pending": [
+          "exRightsDividends",
+          "splitReductionConversion",
+          "tradingHalts",
+          "historicalPriceAdjustment"
+        ],
+        "observed": []
+      },
+      "newsEvent": {
+        "sourceQuality": "NONE",
+        "eventType": "EVENT_COVERAGE_NOT_VERIFIED",
+        "direction": "UNCERTAIN",
+        "eventTimestamp": null,
+        "catalystStatus": "UNVERIFIED"
+      },
+      "dataQuality": {
+        "price": "VALID",
+        "ohlcv": "VALID",
+        "institutional": "NOT_REQUIRED",
+        "margin": "NOT_REQUIRED",
+        "tdcc": "NOT_REQUIRED",
+        "fundamental": "NOT_REQUIRED",
+        "news": "MISSING",
+        "securitiesLending": "NOT_REQUIRED"
+      }
+    },
+    {
+      "code": "006208",
+      "name": "富邦台50",
+      "market": "TWSE",
+      "assetType": "ETF",
+      "close": 255.2,
+      "decision": "WATCH",
+      "strategy": "NONE",
+      "score": 86.345,
+      "scores": {
+        "trend": 22,
+        "momentum": 10,
+        "volume_liquidity": 16.345,
+        "market_regime": 12,
+        "volatility_drawdown": 14,
+        "product_structure": 12,
+        "risk_reward": 0
+      },
+      "gates": {
+        "history": true,
+        "liquidity": true,
+        "market": true,
+        "trend": true,
+        "credit": true,
+        "institutional": true,
+        "tdcc": true,
+        "fundamental": true,
+        "event": false,
+        "corporateAction": false,
+        "strategy": false,
+        "riskReward": false,
+        "assetProfile": true
+      },
+      "reasonCodes": [
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ],
+      "universeRank": null,
+      "universePercentile": null,
+      "liquidityMedianTurnover20d": 524418057.5,
+      "volumeRatio20d": 1.3620812721298028,
+      "riskReward": null,
+      "setup": null,
+      "etfProfile": {
+        "profileVersion": "taiwan-equity-etf-v1",
+        "category": "TAIWAN_BROAD_MARKET",
+        "classificationStatus": "VERIFIED_DERIVED_FROM_OFFICIAL_NAME",
+        "classificationSource": "OFFICIAL_EXCHANGE_SECURITY_NAME",
+        "classificationBasis": {
+          "code": "006208",
+          "name": "富邦台50",
+          "market": "TWSE",
+          "reason": "Official exchange security name identifies a broad Taiwan equity index product."
+        },
+        "leveragedOrInverse": false,
+        "eligibleForIndependentResearch": true,
+        "eligibleForCore": true,
+        "eligibleForBuy": true,
+        "historyReady": true,
+        "historicalRiskReady": true,
+        "liquidityGateReady": true,
+        "liquidityGatePass": true,
+        "riskLimitsPass": true,
+        "exclusionReason": null,
+        "metrics": {
+          "medianTurnover20d": 524418057.5,
+          "volumeRatio20d": 1.3620812721298028,
+          "return20dPct": 4.120767033863726,
+          "return60dPct": 1.1494252873563093,
+          "annualizedVolatility20dPct": 16.539219499410514,
+          "maxDrawdown20dPct": 3.23862507450825,
+          "maxDrawdown60dPct": 14.839864730455531,
+          "atrPct": 1.319693237796687
+        }
+      },
+      "historyCoverageTradingDays": 135,
+      "evidenceAudit": {
+        "schemaVersion": 1,
+        "targetDate": "2026-09-29",
+        "tdcc": {
+          "status": "NOT_REQUIRED",
+          "asOfEvidence": {
+            "status": "PERSISTENCE_PENDING",
+            "latest": {
+              "code": "006208",
+              "date": "2026-09-18",
+              "large400": 10.24,
+              "retail50": 81.36
+            },
+            "comparisonBasis": "OFFICIAL_WEEKLY_EDITION",
+            "comparisons": {
+              "1w": null,
+              "2w": null,
+              "4w": null
+            }
+          },
+          "historicalComparisons": {},
+          "decisionEligible": true,
+          "publicationTimingVerified": true
+        },
+        "fundamental": {
+          "status": "NOT_REQUIRED",
+          "monthlyRevenue": null,
+          "quarterlyReportCaptured": false,
+          "assessment": {
+            "status": "UNVERIFIED",
+            "verified": false,
+            "qualityPass": false,
+            "pending": [
+              "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+              "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+              "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+              "FINANCIAL_METRICS_INCOMPLETE"
+            ],
+            "failures": [],
+            "metrics": {
+              "grossMargin": null,
+              "operatingMargin": null,
+              "liabilityAssetRatio": null,
+              "currentRatio": null,
+              "revenueYoY": null,
+              "netProfitYoY": null
+            },
+            "periodEnd": null,
+            "basis": null,
+            "sources": []
+          },
+          "qualityVerified": true
+        },
+        "eventRisk": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "events": [],
+            "binaryEvents": [],
+            "pending": [
+              "materialAnnouncements",
+              "futureBinaryEvents"
+            ],
+            "newsEvent": null
+          },
+          "historicalQuery": {
+            "status": "VERIFY_FAILED",
+            "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+            "requestedDate": "2026-09-29",
+            "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+            "dataAbsenceConfirmed": false
+          }
+        },
+        "corporateAction": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "pending": [
+              "exRightsDividends",
+              "splitReductionConversion",
+              "tradingHalts",
+              "historicalPriceAdjustment"
+            ],
+            "observed": []
+          },
+          "partialHistoricalQuery": {
+            "status": "PARTIAL_VERIFIED",
+            "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+            "actualDate": "2026-09-29",
+            "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+            "otherCorporateActionsVerified": false
+          }
+        }
+      },
+      "group": "core",
+      "rating": "Core／觀察",
+      "tone": "core",
+      "rank": "Core",
+      "closeDate": "2026-09-29",
+      "priceStatus": "final-close",
+      "thesis": "富邦台50已納入全市場篩選，已驗證項目得分 86.345。目前先觀察：2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "avoid": "在以下項目確認前，不新增買單：2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "entry": "目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。",
+      "technical": "MA20/60/120=249.2975/241.7975/233.3942；RSI14=57.4113；量比=1.3621。",
+      "chips": "使用ETF專用評估，不套用普通股的營收、大戶持股與法人評分權重。",
+      "invalid": "正式收盤跌破MA20 249.2975元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "invalidCondition": "正式收盤跌破MA20 249.2975元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "pullbackEntry": {
+        "status": "unavailable",
+        "reason": "EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "breakoutTrigger": {
+        "status": "unavailable",
+        "reason": "EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "entryPrice": null,
+      "maxChase": null,
+      "stop": null,
+      "target": null,
+      "entryRoutes": [],
+      "allocationMax": "0%",
+      "candidatePositionSize": 0,
+      "positionSize": 0,
+      "executionReady": false,
+      "executionStatus": "NOT_SUBMITTED",
+      "hardGatesPassed": false,
+      "financialAssessment": {
+        "status": "UNVERIFIED",
+        "verified": false,
+        "qualityPass": false,
+        "pending": [
+          "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+          "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+          "FINANCIAL_METRICS_INCOMPLETE"
+        ],
+        "failures": [],
+        "metrics": {
+          "grossMargin": null,
+          "operatingMargin": null,
+          "liabilityAssetRatio": null,
+          "currentRatio": null,
+          "revenueYoY": null,
+          "netProfitYoY": null
+        },
+        "periodEnd": null,
+        "basis": null,
+        "sources": []
+      },
+      "eventAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "events": [],
+        "binaryEvents": [],
+        "pending": [
+          "materialAnnouncements",
+          "futureBinaryEvents"
+        ],
+        "newsEvent": null
+      },
+      "corporateActionAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "pending": [
+          "exRightsDividends",
+          "splitReductionConversion",
+          "tradingHalts",
+          "historicalPriceAdjustment"
+        ],
+        "observed": []
+      },
+      "newsEvent": {
+        "sourceQuality": "NONE",
+        "eventType": "EVENT_COVERAGE_NOT_VERIFIED",
+        "direction": "UNCERTAIN",
+        "eventTimestamp": null,
+        "catalystStatus": "UNVERIFIED"
+      },
+      "dataQuality": {
+        "price": "VALID",
+        "ohlcv": "VALID",
+        "institutional": "NOT_REQUIRED",
+        "margin": "NOT_REQUIRED",
+        "tdcc": "NOT_REQUIRED",
+        "fundamental": "NOT_REQUIRED",
+        "news": "MISSING",
+        "securitiesLending": "NOT_REQUIRED"
+      }
+    },
+    {
+      "code": "3005",
+      "name": "神基",
+      "market": "TWSE",
+      "assetType": "STOCK",
+      "close": 117,
+      "decision": "WATCH",
+      "strategy": "TREND_PULLBACK",
+      "score": 67.3694,
+      "scores": {
+        "trend": 18,
+        "momentum": 8,
+        "volume": 3.3694,
+        "market_regime": 8,
+        "institutional": 12,
+        "large_holder": 0,
+        "margin_short_lending": 6,
+        "fundamental": 0,
+        "risk_reward": 12
+      },
+      "gates": {
+        "history": true,
+        "liquidity": true,
+        "market": true,
+        "trend": true,
+        "credit": true,
+        "institutional": true,
+        "tdcc": false,
+        "fundamental": false,
+        "event": false,
+        "corporateAction": false,
+        "strategy": true,
+        "riskReward": true,
+        "assetProfile": true
+      },
+      "reasonCodes": [
+        "TDCC_PERSISTENCE_NOT_VERIFIED",
+        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED"
+      ],
+      "universeRank": null,
+      "universePercentile": null,
+      "liquidityMedianTurnover20d": 216791549,
+      "volumeRatio20d": 0.5054055290991661,
+      "riskReward": 2.333333333333332,
+      "setup": {
+        "strategy": "TREND_PULLBACK",
+        "entry": 117,
+        "stop": 113.57142857142857,
+        "target": 125,
+        "riskReward": 2.333333333333332,
+        "maxEntry": 117.38095238095237,
+        "resistance": 120,
+        "support": 112
+      },
+      "etfProfile": null,
+      "historyCoverageTradingDays": 135,
+      "evidenceAudit": {
+        "schemaVersion": 1,
+        "targetDate": "2026-09-29",
+        "tdcc": {
+          "status": "HISTORICAL_QUERIES_VERIFIED_ASOF_PENDING",
+          "asOfEvidence": {
+            "status": "PERSISTENCE_PENDING",
+            "latest": {
+              "code": "3005",
+              "date": "2026-09-18",
+              "large400": 73.55000000000001,
+              "retail50": 17.099999999999998
+            },
+            "comparisonBasis": "OFFICIAL_WEEKLY_EDITION",
+            "comparisons": {
+              "1w": null,
+              "2w": null,
+              "4w": null
+            }
+          },
+          "historicalComparisons": {
+            "2w": {
+              "date": "2026-09-04",
+              "large400Change": 0.54,
+              "retail50Change": -0.44,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:13:46.327399+08:00",
+              "decisionEligible": false
+            },
+            "4w": {
+              "date": "2026-08-21",
+              "large400Change": 0.67,
+              "retail50Change": -0.43,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:13:45.802641+08:00",
+              "decisionEligible": false
+            }
+          },
+          "decisionEligible": false,
+          "publicationTimingVerified": false
+        },
+        "fundamental": {
+          "status": "QUALITY_ASSESSMENT_PENDING",
+          "monthlyRevenue": {
+            "code": "3005",
+            "name": "神基",
+            "dataMonth": "11508",
+            "dataMonthKey": "2026-08",
+            "currentRevenue": 3861015,
+            "previousMonthRevenue": 3623371,
+            "previousYearRevenue": 3261303,
+            "yoyPct": 18.388723770836382,
+            "momPct": 6.558643870583498,
+            "cumulativeYoyPct": 9.956885927471163,
+            "sourceQuality": "SOURCE_A"
+          },
+          "quarterlyReportCaptured": false,
+          "assessment": {
+            "status": "UNVERIFIED",
+            "verified": false,
+            "qualityPass": false,
+            "pending": [
+              "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+              "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+              "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+              "FINANCIAL_METRICS_INCOMPLETE"
+            ],
+            "failures": [],
+            "metrics": {
+              "grossMargin": null,
+              "operatingMargin": null,
+              "liabilityAssetRatio": null,
+              "currentRatio": null,
+              "revenueYoY": null,
+              "netProfitYoY": null
+            },
+            "periodEnd": null,
+            "basis": null,
+            "sources": []
+          },
+          "qualityVerified": false
+        },
+        "eventRisk": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "events": [],
+            "binaryEvents": [],
+            "pending": [
+              "materialAnnouncements",
+              "futureBinaryEvents"
+            ],
+            "newsEvent": null
+          },
+          "historicalQuery": {
+            "status": "VERIFY_FAILED",
+            "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+            "requestedDate": "2026-09-29",
+            "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+            "dataAbsenceConfirmed": false
+          }
+        },
+        "corporateAction": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "pending": [
+              "exRightsDividends",
+              "splitReductionConversion",
+              "tradingHalts",
+              "historicalPriceAdjustment"
+            ],
+            "observed": []
+          },
+          "partialHistoricalQuery": {
+            "status": "PARTIAL_VERIFIED",
+            "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+            "actualDate": "2026-09-29",
+            "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+            "otherCorporateActionsVerified": false
+          }
+        }
+      },
+      "group": "watch",
+      "rating": "B／條件觀察",
+      "tone": "watch",
+      "rank": "Watch",
+      "closeDate": "2026-09-29",
+      "priceStatus": "final-close",
+      "thesis": "神基已納入全市場篩選，已驗證項目得分 67.3694。目前先觀察：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對。",
+      "avoid": "在以下項目確認前，不新增買單：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對。",
+      "entry": "目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。",
+      "technical": "MA20/60/120=116.1/114.55/107.8842；RSI14=65.3846；量比=0.5054。",
+      "chips": "外資1/3/5/10/20日=318407/-100937/371017/2577875/4122427股；投信1/3/5/10/20日=22566/-100257/366505/1201082/1261569股。歷史補核：2026-09-18大戶400張以上占73.55%、散戶50張以下占17.1%；2週大戶變動0.54、散戶變動-0.44個百分點；4週大戶變動0.67、散戶變動-0.43個百分點。此為事後歷史核對，不改寫原買進判斷。",
+      "invalid": "正式收盤跌破MA20 116.1元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "invalidCondition": "正式收盤跌破MA20 116.1元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "pullbackEntry": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED"
+      },
+      "breakoutTrigger": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED"
+      },
+      "entryPrice": null,
+      "maxChase": null,
+      "stop": null,
+      "target": null,
+      "entryRoutes": [],
+      "allocationMax": "0%",
+      "candidatePositionSize": 0,
+      "positionSize": 0,
+      "executionReady": false,
+      "executionStatus": "NOT_SUBMITTED",
+      "hardGatesPassed": false,
+      "financialAssessment": {
+        "status": "UNVERIFIED",
+        "verified": false,
+        "qualityPass": false,
+        "pending": [
+          "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+          "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+          "FINANCIAL_METRICS_INCOMPLETE"
+        ],
+        "failures": [],
+        "metrics": {
+          "grossMargin": null,
+          "operatingMargin": null,
+          "liabilityAssetRatio": null,
+          "currentRatio": null,
+          "revenueYoY": null,
+          "netProfitYoY": null
+        },
+        "periodEnd": null,
+        "basis": null,
+        "sources": []
+      },
+      "eventAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "events": [],
+        "binaryEvents": [],
+        "pending": [
+          "materialAnnouncements",
+          "futureBinaryEvents"
+        ],
+        "newsEvent": null
+      },
+      "corporateActionAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "pending": [
+          "exRightsDividends",
+          "splitReductionConversion",
+          "tradingHalts",
+          "historicalPriceAdjustment"
+        ],
+        "observed": []
+      },
+      "newsEvent": {
+        "sourceQuality": "NONE",
+        "eventType": "EVENT_COVERAGE_NOT_VERIFIED",
+        "direction": "UNCERTAIN",
+        "eventTimestamp": null,
+        "catalystStatus": "UNVERIFIED"
+      },
+      "dataQuality": {
+        "price": "VALID",
+        "ohlcv": "VALID",
+        "institutional": "VALID",
+        "margin": "VALID",
+        "tdcc": "MISSING",
+        "fundamental": "MISSING",
+        "news": "MISSING",
+        "securitiesLending": "NOT_REQUIRED"
+      }
+    },
+    {
+      "code": "1609",
+      "name": "大亞",
+      "market": "TWSE",
+      "assetType": "STOCK",
+      "close": 38.5,
+      "decision": "WATCH",
+      "strategy": "BREAKOUT",
+      "score": 62,
+      "scores": {
+        "trend": 18,
+        "momentum": 8,
+        "volume": 10,
+        "market_regime": 8,
+        "institutional": 4.5,
+        "large_holder": 0,
+        "margin_short_lending": 1.5,
+        "fundamental": 0,
+        "risk_reward": 12
+      },
+      "gates": {
+        "history": true,
+        "liquidity": true,
+        "market": true,
+        "trend": true,
+        "credit": true,
+        "institutional": true,
+        "tdcc": false,
+        "fundamental": false,
+        "event": false,
+        "corporateAction": false,
+        "strategy": true,
+        "riskReward": true,
+        "assetProfile": true
+      },
+      "reasonCodes": [
+        "TDCC_PERSISTENCE_NOT_VERIFIED",
+        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED"
+      ],
+      "universeRank": null,
+      "universePercentile": null,
+      "liquidityMedianTurnover20d": 100575345,
+      "volumeRatio20d": 1.7735517086534165,
+      "riskReward": 9.896551724138007,
+      "setup": {
+        "strategy": "BREAKOUT",
+        "entry": 38.5,
+        "stop": 37.87857142857143,
+        "target": 44.65,
+        "riskReward": 9.896551724138007,
+        "maxEntry": 38.642857142857146,
+        "resistance": 38.45,
+        "support": 36.7
+      },
+      "etfProfile": null,
+      "historyCoverageTradingDays": 135,
+      "evidenceAudit": {
+        "schemaVersion": 1,
+        "targetDate": "2026-09-29",
+        "tdcc": {
+          "status": "HISTORICAL_QUERIES_VERIFIED_ASOF_PENDING",
+          "asOfEvidence": {
+            "status": "PERSISTENCE_PENDING",
+            "latest": {
+              "code": "1609",
+              "date": "2026-09-18",
+              "large400": 32.61,
+              "retail50": 53.39
+            },
+            "comparisonBasis": "OFFICIAL_WEEKLY_EDITION",
+            "comparisons": {
+              "1w": null,
+              "2w": null,
+              "4w": null
+            }
+          },
+          "historicalComparisons": {
+            "2w": {
+              "date": "2026-09-04",
+              "large400Change": 0.21,
+              "retail50Change": -0.32,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:13:46.041145+08:00",
+              "decisionEligible": false
+            },
+            "4w": {
+              "date": "2026-08-21",
+              "large400Change": 0.8,
+              "retail50Change": -0.61,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:13:49.118192+08:00",
+              "decisionEligible": false
+            }
+          },
+          "decisionEligible": false,
+          "publicationTimingVerified": false
+        },
+        "fundamental": {
+          "status": "QUALITY_ASSESSMENT_PENDING",
+          "monthlyRevenue": {
+            "code": "1609",
+            "name": "大亞",
+            "dataMonth": "11508",
+            "dataMonthKey": "2026-08",
+            "currentRevenue": 3388884,
+            "previousMonthRevenue": 2905704,
+            "previousYearRevenue": 2513349,
+            "yoyPct": 34.835392935879575,
+            "momPct": 16.628672431878815,
+            "cumulativeYoyPct": 20.011540622804734,
+            "sourceQuality": "SOURCE_A"
+          },
+          "quarterlyReportCaptured": false,
+          "assessment": {
+            "status": "UNVERIFIED",
+            "verified": false,
+            "qualityPass": false,
+            "pending": [
+              "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+              "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+              "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+              "FINANCIAL_METRICS_INCOMPLETE"
+            ],
+            "failures": [],
+            "metrics": {
+              "grossMargin": null,
+              "operatingMargin": null,
+              "liabilityAssetRatio": null,
+              "currentRatio": null,
+              "revenueYoY": null,
+              "netProfitYoY": null
+            },
+            "periodEnd": null,
+            "basis": null,
+            "sources": []
+          },
+          "qualityVerified": false
+        },
+        "eventRisk": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "events": [],
+            "binaryEvents": [],
+            "pending": [
+              "materialAnnouncements",
+              "futureBinaryEvents"
+            ],
+            "newsEvent": null
+          },
+          "historicalQuery": {
+            "status": "VERIFY_FAILED",
+            "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+            "requestedDate": "2026-09-29",
+            "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+            "dataAbsenceConfirmed": false
+          }
+        },
+        "corporateAction": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "pending": [
+              "exRightsDividends",
+              "splitReductionConversion",
+              "tradingHalts",
+              "historicalPriceAdjustment"
+            ],
+            "observed": []
+          },
+          "partialHistoricalQuery": {
+            "status": "PARTIAL_VERIFIED",
+            "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+            "actualDate": "2026-09-29",
+            "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+            "otherCorporateActionsVerified": false
+          }
+        }
+      },
+      "group": "watch",
+      "rating": "B／條件觀察",
+      "tone": "watch",
+      "rank": "Watch",
+      "closeDate": "2026-09-29",
+      "priceStatus": "final-close",
+      "thesis": "大亞已納入全市場篩選，已驗證項目得分 62。目前先觀察：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對。",
+      "avoid": "在以下項目確認前，不新增買單：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對。",
+      "entry": "目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。",
+      "technical": "MA20/60/120=37.645/37.45/36.5683；RSI14=66.6667；量比=1.7736。",
+      "chips": "外資1/3/5/10/20日=-937383/-37774/361420/2351407/4759218股；投信1/3/5/10/20日=0/0/0/-90000/-105000股。歷史補核：2026-09-18大戶400張以上占32.61%、散戶50張以下占53.39%；2週大戶變動0.21、散戶變動-0.32個百分點；4週大戶變動0.8、散戶變動-0.61個百分點。此為事後歷史核對，不改寫原買進判斷。",
+      "invalid": "正式收盤跌破MA20 37.645元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "invalidCondition": "正式收盤跌破MA20 37.645元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "pullbackEntry": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED"
+      },
+      "breakoutTrigger": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED"
+      },
+      "entryPrice": null,
+      "maxChase": null,
+      "stop": null,
+      "target": null,
+      "entryRoutes": [],
+      "allocationMax": "0%",
+      "candidatePositionSize": 0,
+      "positionSize": 0,
+      "executionReady": false,
+      "executionStatus": "NOT_SUBMITTED",
+      "hardGatesPassed": false,
+      "financialAssessment": {
+        "status": "UNVERIFIED",
+        "verified": false,
+        "qualityPass": false,
+        "pending": [
+          "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+          "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+          "FINANCIAL_METRICS_INCOMPLETE"
+        ],
+        "failures": [],
+        "metrics": {
+          "grossMargin": null,
+          "operatingMargin": null,
+          "liabilityAssetRatio": null,
+          "currentRatio": null,
+          "revenueYoY": null,
+          "netProfitYoY": null
+        },
+        "periodEnd": null,
+        "basis": null,
+        "sources": []
+      },
+      "eventAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "events": [],
+        "binaryEvents": [],
+        "pending": [
+          "materialAnnouncements",
+          "futureBinaryEvents"
+        ],
+        "newsEvent": null
+      },
+      "corporateActionAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "pending": [
+          "exRightsDividends",
+          "splitReductionConversion",
+          "tradingHalts",
+          "historicalPriceAdjustment"
+        ],
+        "observed": []
+      },
+      "newsEvent": {
+        "sourceQuality": "NONE",
+        "eventType": "EVENT_COVERAGE_NOT_VERIFIED",
+        "direction": "UNCERTAIN",
+        "eventTimestamp": null,
+        "catalystStatus": "UNVERIFIED"
+      },
+      "dataQuality": {
+        "price": "VALID",
+        "ohlcv": "VALID",
+        "institutional": "VALID",
+        "margin": "VALID",
+        "tdcc": "MISSING",
+        "fundamental": "MISSING",
+        "news": "MISSING",
+        "securitiesLending": "NOT_REQUIRED"
+      }
+    },
+    {
+      "code": "6206",
+      "name": "飛捷",
+      "market": "TWSE",
+      "assetType": "STOCK",
+      "close": 143,
+      "decision": "WATCH",
+      "strategy": "NONE",
+      "score": 60.5,
+      "scores": {
+        "trend": 18,
+        "momentum": 8,
+        "volume": 10,
+        "market_regime": 8,
+        "institutional": 10.5,
+        "large_holder": 0,
+        "margin_short_lending": 6,
+        "fundamental": 0,
+        "risk_reward": 0
+      },
+      "gates": {
+        "history": true,
+        "liquidity": true,
+        "market": true,
+        "trend": true,
+        "credit": true,
+        "institutional": true,
+        "tdcc": false,
+        "fundamental": false,
+        "event": false,
+        "corporateAction": false,
+        "strategy": false,
+        "riskReward": false,
+        "assetProfile": true
+      },
+      "reasonCodes": [
+        "TDCC_PERSISTENCE_NOT_VERIFIED",
+        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ],
+      "universeRank": null,
+      "universePercentile": null,
+      "liquidityMedianTurnover20d": 109933161,
+      "volumeRatio20d": 1.531624266570613,
+      "riskReward": null,
+      "setup": null,
+      "etfProfile": null,
+      "historyCoverageTradingDays": 135,
+      "evidenceAudit": {
+        "schemaVersion": 1,
+        "targetDate": "2026-09-29",
+        "tdcc": {
+          "status": "HISTORICAL_QUERIES_VERIFIED_ASOF_PENDING",
+          "asOfEvidence": {
+            "status": "PERSISTENCE_PENDING",
+            "latest": {
+              "code": "6206",
+              "date": "2026-09-18",
+              "large400": 54.870000000000005,
+              "retail50": 29.57
+            },
+            "comparisonBasis": "OFFICIAL_WEEKLY_EDITION",
+            "comparisons": {
+              "1w": null,
+              "2w": null,
+              "4w": null
+            }
+          },
+          "historicalComparisons": {
+            "2w": {
+              "date": "2026-09-04",
+              "large400Change": 0.18,
+              "retail50Change": -0.46,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:13:48.882801+08:00",
+              "decisionEligible": false
+            },
+            "4w": {
+              "date": "2026-08-21",
+              "large400Change": -0.46,
+              "retail50Change": 0.18,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:13:49.439132+08:00",
+              "decisionEligible": false
+            }
+          },
+          "decisionEligible": false,
+          "publicationTimingVerified": false
+        },
+        "fundamental": {
+          "status": "QUALITY_ASSESSMENT_PENDING",
+          "monthlyRevenue": {
+            "code": "6206",
+            "name": "飛捷",
+            "dataMonth": "11508",
+            "dataMonthKey": "2026-08",
+            "currentRevenue": 583281,
+            "previousMonthRevenue": 568481,
+            "previousYearRevenue": 359661,
+            "yoyPct": 62.175214994119465,
+            "momPct": 2.603429138352909,
+            "cumulativeYoyPct": 30.078514957922568,
+            "sourceQuality": "SOURCE_A"
+          },
+          "quarterlyReportCaptured": false,
+          "assessment": {
+            "status": "UNVERIFIED",
+            "verified": false,
+            "qualityPass": false,
+            "pending": [
+              "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+              "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+              "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+              "FINANCIAL_METRICS_INCOMPLETE"
+            ],
+            "failures": [],
+            "metrics": {
+              "grossMargin": null,
+              "operatingMargin": null,
+              "liabilityAssetRatio": null,
+              "currentRatio": null,
+              "revenueYoY": null,
+              "netProfitYoY": null
+            },
+            "periodEnd": null,
+            "basis": null,
+            "sources": []
+          },
+          "qualityVerified": false
+        },
+        "eventRisk": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "events": [],
+            "binaryEvents": [],
+            "pending": [
+              "materialAnnouncements",
+              "futureBinaryEvents"
+            ],
+            "newsEvent": null
+          },
+          "historicalQuery": {
+            "status": "VERIFY_FAILED",
+            "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+            "requestedDate": "2026-09-29",
+            "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+            "dataAbsenceConfirmed": false
+          }
+        },
+        "corporateAction": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "pending": [
+              "exRightsDividends",
+              "splitReductionConversion",
+              "tradingHalts",
+              "historicalPriceAdjustment"
+            ],
+            "observed": []
+          },
+          "partialHistoricalQuery": {
+            "status": "PARTIAL_VERIFIED",
+            "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+            "actualDate": "2026-09-29",
+            "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+            "otherCorporateActionsVerified": false
+          }
+        }
+      },
+      "group": "watch",
+      "rating": "B／條件觀察",
+      "tone": "watch",
+      "rank": "Watch",
+      "closeDate": "2026-09-29",
+      "priceStatus": "final-close",
+      "thesis": "飛捷已納入全市場篩選，已驗證項目得分 60.5。目前先觀察：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "avoid": "在以下項目確認前，不新增買單：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "entry": "目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。",
+      "technical": "MA20/60/120=138.15/136.0667/130.2542；RSI14=60.9375；量比=1.5316。",
+      "chips": "外資1/3/5/10/20日=387844/417149/807306/584689/1066515股；投信1/3/5/10/20日=-2000/-4576/-4576/22056/551044股。歷史補核：2026-09-18大戶400張以上占54.87%、散戶50張以下占29.57%；2週大戶變動0.18、散戶變動-0.46個百分點；4週大戶變動-0.46、散戶變動0.18個百分點。此為事後歷史核對，不改寫原買進判斷。",
+      "invalid": "正式收盤跌破MA20 138.15元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "invalidCondition": "正式收盤跌破MA20 138.15元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "pullbackEntry": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "breakoutTrigger": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "entryPrice": null,
+      "maxChase": null,
+      "stop": null,
+      "target": null,
+      "entryRoutes": [],
+      "allocationMax": "0%",
+      "candidatePositionSize": 0,
+      "positionSize": 0,
+      "executionReady": false,
+      "executionStatus": "NOT_SUBMITTED",
+      "hardGatesPassed": false,
+      "financialAssessment": {
+        "status": "UNVERIFIED",
+        "verified": false,
+        "qualityPass": false,
+        "pending": [
+          "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+          "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+          "FINANCIAL_METRICS_INCOMPLETE"
+        ],
+        "failures": [],
+        "metrics": {
+          "grossMargin": null,
+          "operatingMargin": null,
+          "liabilityAssetRatio": null,
+          "currentRatio": null,
+          "revenueYoY": null,
+          "netProfitYoY": null
+        },
+        "periodEnd": null,
+        "basis": null,
+        "sources": []
+      },
+      "eventAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "events": [],
+        "binaryEvents": [],
+        "pending": [
+          "materialAnnouncements",
+          "futureBinaryEvents"
+        ],
+        "newsEvent": null
+      },
+      "corporateActionAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "pending": [
+          "exRightsDividends",
+          "splitReductionConversion",
+          "tradingHalts",
+          "historicalPriceAdjustment"
+        ],
+        "observed": []
+      },
+      "newsEvent": {
+        "sourceQuality": "NONE",
+        "eventType": "EVENT_COVERAGE_NOT_VERIFIED",
+        "direction": "UNCERTAIN",
+        "eventTimestamp": null,
+        "catalystStatus": "UNVERIFIED"
+      },
+      "dataQuality": {
+        "price": "VALID",
+        "ohlcv": "VALID",
+        "institutional": "VALID",
+        "margin": "VALID",
+        "tdcc": "MISSING",
+        "fundamental": "MISSING",
+        "news": "MISSING",
+        "securitiesLending": "NOT_REQUIRED"
+      }
+    },
+    {
+      "code": "2395",
+      "name": "研華",
+      "market": "TWSE",
+      "assetType": "STOCK",
+      "close": 730,
+      "decision": "WATCH",
+      "strategy": "NONE",
+      "score": 60.026,
+      "scores": {
+        "trend": 18,
+        "momentum": 8,
+        "volume": 8.026,
+        "market_regime": 8,
+        "institutional": 12,
+        "large_holder": 0,
+        "margin_short_lending": 6,
+        "fundamental": 0,
+        "risk_reward": 0
+      },
+      "gates": {
+        "history": true,
+        "liquidity": true,
+        "market": true,
+        "trend": true,
+        "credit": true,
+        "institutional": true,
+        "tdcc": false,
+        "fundamental": false,
+        "event": false,
+        "corporateAction": false,
+        "strategy": false,
+        "riskReward": false,
+        "assetProfile": true
+      },
+      "reasonCodes": [
+        "TDCC_PERSISTENCE_NOT_VERIFIED",
+        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ],
+      "universeRank": null,
+      "universePercentile": null,
+      "liquidityMedianTurnover20d": 2184853123.5,
+      "volumeRatio20d": 1.2039001452006364,
+      "riskReward": null,
+      "setup": null,
+      "etfProfile": null,
+      "historyCoverageTradingDays": 135,
+      "evidenceAudit": {
+        "schemaVersion": 1,
+        "targetDate": "2026-09-29",
+        "tdcc": {
+          "status": "HISTORICAL_QUERIES_VERIFIED_ASOF_PENDING",
+          "asOfEvidence": {
+            "status": "PERSISTENCE_PENDING",
+            "latest": {
+              "code": "2395",
+              "date": "2026-09-18",
+              "large400": 85.02,
+              "retail50": 5.430000000000001
+            },
+            "comparisonBasis": "OFFICIAL_WEEKLY_EDITION",
+            "comparisons": {
+              "1w": null,
+              "2w": null,
+              "4w": null
+            }
+          },
+          "historicalComparisons": {
+            "2w": {
+              "date": "2026-09-04",
+              "large400Change": -0.09,
+              "retail50Change": -0.02,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:13:51.890657+08:00",
+              "decisionEligible": false
+            },
+            "4w": {
+              "date": "2026-08-21",
+              "large400Change": -0.5,
+              "retail50Change": 0,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:13:52.177294+08:00",
+              "decisionEligible": false
+            }
+          },
+          "decisionEligible": false,
+          "publicationTimingVerified": false
+        },
+        "fundamental": {
+          "status": "QUALITY_ASSESSMENT_PENDING",
+          "monthlyRevenue": {
+            "code": "2395",
+            "name": "研華",
+            "dataMonth": "11508",
+            "dataMonthKey": "2026-08",
+            "currentRevenue": 10419341,
+            "previousMonthRevenue": 11272216,
+            "previousYearRevenue": 5556475,
+            "yoyPct": 87.51710391930136,
+            "momPct": -7.5661697753130355,
+            "cumulativeYoyPct": 45.88007993778177,
+            "sourceQuality": "SOURCE_A"
+          },
+          "quarterlyReportCaptured": false,
+          "assessment": {
+            "status": "UNVERIFIED",
+            "verified": false,
+            "qualityPass": false,
+            "pending": [
+              "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+              "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+              "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+              "FINANCIAL_METRICS_INCOMPLETE"
+            ],
+            "failures": [],
+            "metrics": {
+              "grossMargin": null,
+              "operatingMargin": null,
+              "liabilityAssetRatio": null,
+              "currentRatio": null,
+              "revenueYoY": null,
+              "netProfitYoY": null
+            },
+            "periodEnd": null,
+            "basis": null,
+            "sources": []
+          },
+          "qualityVerified": false
+        },
+        "eventRisk": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "events": [],
+            "binaryEvents": [],
+            "pending": [
+              "materialAnnouncements",
+              "futureBinaryEvents"
+            ],
+            "newsEvent": null
+          },
+          "historicalQuery": {
+            "status": "VERIFY_FAILED",
+            "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+            "requestedDate": "2026-09-29",
+            "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+            "dataAbsenceConfirmed": false
+          }
+        },
+        "corporateAction": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "pending": [
+              "exRightsDividends",
+              "splitReductionConversion",
+              "tradingHalts",
+              "historicalPriceAdjustment"
+            ],
+            "observed": []
+          },
+          "partialHistoricalQuery": {
+            "status": "PARTIAL_VERIFIED",
+            "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+            "actualDate": "2026-09-29",
+            "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+            "otherCorporateActionsVerified": false
+          }
+        }
+      },
+      "group": "watch",
+      "rating": "B／條件觀察",
+      "tone": "watch",
+      "rank": "Watch",
+      "closeDate": "2026-09-29",
+      "priceStatus": "final-close",
+      "thesis": "研華已納入全市場篩選，已驗證項目得分 60.026。目前先觀察：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "avoid": "在以下項目確認前，不新增買單：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "entry": "目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。",
+      "technical": "MA20/60/120=688.8/630.8917/537.1375；RSI14=67.8571；量比=1.2039。",
+      "chips": "外資1/3/5/10/20日=-545730/663466/1920300/4593900/5996864股；投信1/3/5/10/20日=528000/167000/97931/-63970/131183股。歷史補核：2026-09-18大戶400張以上占85.02%、散戶50張以下占5.43%；2週大戶變動-0.09、散戶變動-0.02個百分點；4週大戶變動-0.5、散戶變動0個百分點。此為事後歷史核對，不改寫原買進判斷。",
+      "invalid": "正式收盤跌破MA20 688.8元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "invalidCondition": "正式收盤跌破MA20 688.8元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "pullbackEntry": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "breakoutTrigger": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "entryPrice": null,
+      "maxChase": null,
+      "stop": null,
+      "target": null,
+      "entryRoutes": [],
+      "allocationMax": "0%",
+      "candidatePositionSize": 0,
+      "positionSize": 0,
+      "executionReady": false,
+      "executionStatus": "NOT_SUBMITTED",
+      "hardGatesPassed": false,
+      "financialAssessment": {
+        "status": "UNVERIFIED",
+        "verified": false,
+        "qualityPass": false,
+        "pending": [
+          "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+          "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+          "FINANCIAL_METRICS_INCOMPLETE"
+        ],
+        "failures": [],
+        "metrics": {
+          "grossMargin": null,
+          "operatingMargin": null,
+          "liabilityAssetRatio": null,
+          "currentRatio": null,
+          "revenueYoY": null,
+          "netProfitYoY": null
+        },
+        "periodEnd": null,
+        "basis": null,
+        "sources": []
+      },
+      "eventAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "events": [],
+        "binaryEvents": [],
+        "pending": [
+          "materialAnnouncements",
+          "futureBinaryEvents"
+        ],
+        "newsEvent": null
+      },
+      "corporateActionAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "pending": [
+          "exRightsDividends",
+          "splitReductionConversion",
+          "tradingHalts",
+          "historicalPriceAdjustment"
+        ],
+        "observed": []
+      },
+      "newsEvent": {
+        "sourceQuality": "NONE",
+        "eventType": "EVENT_COVERAGE_NOT_VERIFIED",
+        "direction": "UNCERTAIN",
+        "eventTimestamp": null,
+        "catalystStatus": "UNVERIFIED"
+      },
+      "dataQuality": {
+        "price": "VALID",
+        "ohlcv": "VALID",
+        "institutional": "VALID",
+        "margin": "VALID",
+        "tdcc": "MISSING",
+        "fundamental": "MISSING",
+        "news": "MISSING",
+        "securitiesLending": "NOT_REQUIRED"
+      }
+    },
+    {
+      "code": "2409",
+      "name": "友達",
+      "market": "TWSE",
+      "assetType": "STOCK",
+      "close": 35.05,
+      "decision": "WATCH",
+      "strategy": "NONE",
+      "score": 59.7503,
+      "scores": {
+        "trend": 18,
+        "momentum": 8,
+        "volume": 7.7503,
+        "market_regime": 8,
+        "institutional": 12,
+        "large_holder": 0,
+        "margin_short_lending": 6,
+        "fundamental": 0,
+        "risk_reward": 0
+      },
+      "gates": {
+        "history": true,
+        "liquidity": true,
+        "market": true,
+        "trend": true,
+        "credit": true,
+        "institutional": true,
+        "tdcc": false,
+        "fundamental": false,
+        "event": false,
+        "corporateAction": false,
+        "strategy": false,
+        "riskReward": false,
+        "assetProfile": true
+      },
+      "reasonCodes": [
+        "TDCC_PERSISTENCE_NOT_VERIFIED",
+        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ],
+      "universeRank": null,
+      "universePercentile": null,
+      "liquidityMedianTurnover20d": 13563081925.5,
+      "volumeRatio20d": 1.1625487400009669,
+      "riskReward": null,
+      "setup": null,
+      "etfProfile": null,
+      "historyCoverageTradingDays": 135,
+      "evidenceAudit": {
+        "schemaVersion": 1,
+        "targetDate": "2026-09-29",
+        "tdcc": {
+          "status": "HISTORICAL_QUERIES_VERIFIED_ASOF_PENDING",
+          "asOfEvidence": {
+            "status": "PERSISTENCE_PENDING",
+            "latest": {
+              "code": "2409",
+              "date": "2026-09-18",
+              "large400": 50.230000000000004,
+              "retail50": 33.559999999999995
+            },
+            "comparisonBasis": "OFFICIAL_WEEKLY_EDITION",
+            "comparisons": {
+              "1w": null,
+              "2w": null,
+              "4w": null
+            }
+          },
+          "historicalComparisons": {
+            "2w": {
+              "date": "2026-09-04",
+              "large400Change": 2.86,
+              "retail50Change": -2.15,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:13:52.470443+08:00",
+              "decisionEligible": false
+            },
+            "4w": {
+              "date": "2026-08-21",
+              "large400Change": 3.55,
+              "retail50Change": -2.75,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:13:55.059903+08:00",
+              "decisionEligible": false
+            }
+          },
+          "decisionEligible": false,
+          "publicationTimingVerified": false
+        },
+        "fundamental": {
+          "status": "QUALITY_ASSESSMENT_PENDING",
+          "monthlyRevenue": {
+            "code": "2409",
+            "name": "友達",
+            "dataMonth": "11508",
+            "dataMonthKey": "2026-08",
+            "currentRevenue": 23101650,
+            "previousMonthRevenue": 20370071,
+            "previousYearRevenue": 24539457,
+            "yoyPct": -5.8591638763645015,
+            "momPct": 13.409766711171503,
+            "cumulativeYoyPct": -1.8235901087120903,
+            "sourceQuality": "SOURCE_A"
+          },
+          "quarterlyReportCaptured": false,
+          "assessment": {
+            "status": "UNVERIFIED",
+            "verified": false,
+            "qualityPass": false,
+            "pending": [
+              "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+              "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+              "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+              "FINANCIAL_METRICS_INCOMPLETE"
+            ],
+            "failures": [],
+            "metrics": {
+              "grossMargin": null,
+              "operatingMargin": null,
+              "liabilityAssetRatio": null,
+              "currentRatio": null,
+              "revenueYoY": null,
+              "netProfitYoY": null
+            },
+            "periodEnd": null,
+            "basis": null,
+            "sources": []
+          },
+          "qualityVerified": false
+        },
+        "eventRisk": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "events": [],
+            "binaryEvents": [],
+            "pending": [
+              "materialAnnouncements",
+              "futureBinaryEvents"
+            ],
+            "newsEvent": null
+          },
+          "historicalQuery": {
+            "status": "VERIFY_FAILED",
+            "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+            "requestedDate": "2026-09-29",
+            "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+            "dataAbsenceConfirmed": false
+          }
+        },
+        "corporateAction": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "pending": [
+              "exRightsDividends",
+              "splitReductionConversion",
+              "tradingHalts",
+              "historicalPriceAdjustment"
+            ],
+            "observed": []
+          },
+          "partialHistoricalQuery": {
+            "status": "PARTIAL_VERIFIED",
+            "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+            "actualDate": "2026-09-29",
+            "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+            "otherCorporateActionsVerified": false
+          }
+        }
+      },
+      "group": "watch",
+      "rating": "B／條件觀察",
+      "tone": "watch",
+      "rank": "Watch",
+      "closeDate": "2026-09-29",
+      "priceStatus": "final-close",
+      "thesis": "友達已納入全市場篩選，已驗證項目得分 59.7503。目前先觀察：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "avoid": "在以下項目確認前，不新增買單：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "entry": "目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。",
+      "technical": "MA20/60/120=30.165/27.5292/24.9408；RSI14=67.7871；量比=1.1625。",
+      "chips": "外資1/3/5/10/20日=15537128/-218349662/262857763/190592440/491814564股；投信1/3/5/10/20日=0/223000/152808/3766119/1328299股。歷史補核：2026-09-18大戶400張以上占50.23%、散戶50張以下占33.56%；2週大戶變動2.86、散戶變動-2.15個百分點；4週大戶變動3.55、散戶變動-2.75個百分點。此為事後歷史核對，不改寫原買進判斷。",
+      "invalid": "正式收盤跌破MA20 30.165元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "invalidCondition": "正式收盤跌破MA20 30.165元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "pullbackEntry": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "breakoutTrigger": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "entryPrice": null,
+      "maxChase": null,
+      "stop": null,
+      "target": null,
+      "entryRoutes": [],
+      "allocationMax": "0%",
+      "candidatePositionSize": 0,
+      "positionSize": 0,
+      "executionReady": false,
+      "executionStatus": "NOT_SUBMITTED",
+      "hardGatesPassed": false,
+      "financialAssessment": {
+        "status": "UNVERIFIED",
+        "verified": false,
+        "qualityPass": false,
+        "pending": [
+          "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+          "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+          "FINANCIAL_METRICS_INCOMPLETE"
+        ],
+        "failures": [],
+        "metrics": {
+          "grossMargin": null,
+          "operatingMargin": null,
+          "liabilityAssetRatio": null,
+          "currentRatio": null,
+          "revenueYoY": null,
+          "netProfitYoY": null
+        },
+        "periodEnd": null,
+        "basis": null,
+        "sources": []
+      },
+      "eventAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "events": [],
+        "binaryEvents": [],
+        "pending": [
+          "materialAnnouncements",
+          "futureBinaryEvents"
+        ],
+        "newsEvent": null
+      },
+      "corporateActionAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "pending": [
+          "exRightsDividends",
+          "splitReductionConversion",
+          "tradingHalts",
+          "historicalPriceAdjustment"
+        ],
+        "observed": []
+      },
+      "newsEvent": {
+        "sourceQuality": "NONE",
+        "eventType": "EVENT_COVERAGE_NOT_VERIFIED",
+        "direction": "UNCERTAIN",
+        "eventTimestamp": null,
+        "catalystStatus": "UNVERIFIED"
+      },
+      "dataQuality": {
+        "price": "VALID",
+        "ohlcv": "VALID",
+        "institutional": "VALID",
+        "margin": "VALID",
+        "tdcc": "MISSING",
+        "fundamental": "MISSING",
+        "news": "MISSING",
+        "securitiesLending": "NOT_REQUIRED"
+      }
+    },
+    {
+      "code": "6505",
+      "name": "台塑化",
+      "market": "TWSE",
+      "assetType": "STOCK",
+      "close": 94.3,
+      "decision": "WATCH",
+      "strategy": "NONE",
+      "score": 59.5,
+      "scores": {
+        "trend": 18,
+        "momentum": 4,
+        "volume": 10,
+        "market_regime": 8,
+        "institutional": 13.5,
+        "large_holder": 0,
+        "margin_short_lending": 6,
+        "fundamental": 0,
+        "risk_reward": 0
+      },
+      "gates": {
+        "history": true,
+        "liquidity": true,
+        "market": true,
+        "trend": true,
+        "credit": true,
+        "institutional": true,
+        "tdcc": false,
+        "fundamental": false,
+        "event": false,
+        "corporateAction": false,
+        "strategy": false,
+        "riskReward": false,
+        "assetProfile": true
+      },
+      "reasonCodes": [
+        "TDCC_PERSISTENCE_NOT_VERIFIED",
+        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ],
+      "universeRank": null,
+      "universePercentile": null,
+      "liquidityMedianTurnover20d": 1999957150,
+      "volumeRatio20d": 1.5232893166981216,
+      "riskReward": null,
+      "setup": null,
+      "etfProfile": null,
+      "historyCoverageTradingDays": 135,
+      "evidenceAudit": {
+        "schemaVersion": 1,
+        "targetDate": "2026-09-29",
+        "tdcc": {
+          "status": "HISTORICAL_QUERIES_VERIFIED_ASOF_PENDING",
+          "asOfEvidence": {
+            "status": "PERSISTENCE_PENDING",
+            "latest": {
+              "code": "6505",
+              "date": "2026-09-18",
+              "large400": 95.96000000000001,
+              "retail50": 2.8600000000000003
+            },
+            "comparisonBasis": "OFFICIAL_WEEKLY_EDITION",
+            "comparisons": {
+              "1w": null,
+              "2w": null,
+              "4w": null
+            }
+          },
+          "historicalComparisons": {
+            "2w": {
+              "date": "2026-09-04",
+              "large400Change": 0.3,
+              "retail50Change": -0.23,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:13:55.392132+08:00",
+              "decisionEligible": false
+            },
+            "4w": {
+              "date": "2026-08-21",
+              "large400Change": 0.28,
+              "retail50Change": -0.25,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:13:55.390909+08:00",
+              "decisionEligible": false
+            }
+          },
+          "decisionEligible": false,
+          "publicationTimingVerified": false
+        },
+        "fundamental": {
+          "status": "QUALITY_ASSESSMENT_PENDING",
+          "monthlyRevenue": {
+            "code": "6505",
+            "name": "台塑化",
+            "dataMonth": "11508",
+            "dataMonthKey": "2026-08",
+            "currentRevenue": 81905673,
+            "previousMonthRevenue": 74820787,
+            "previousYearRevenue": 54499634,
+            "yoyPct": 50.28664779657053,
+            "momPct": 9.469141242793931,
+            "cumulativeYoyPct": 16.71517802366748,
+            "sourceQuality": "SOURCE_A"
+          },
+          "quarterlyReportCaptured": false,
+          "assessment": {
+            "status": "UNVERIFIED",
+            "verified": false,
+            "qualityPass": false,
+            "pending": [
+              "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+              "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+              "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+              "FINANCIAL_METRICS_INCOMPLETE"
+            ],
+            "failures": [],
+            "metrics": {
+              "grossMargin": null,
+              "operatingMargin": null,
+              "liabilityAssetRatio": null,
+              "currentRatio": null,
+              "revenueYoY": null,
+              "netProfitYoY": null
+            },
+            "periodEnd": null,
+            "basis": null,
+            "sources": []
+          },
+          "qualityVerified": false
+        },
+        "eventRisk": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "events": [],
+            "binaryEvents": [],
+            "pending": [
+              "materialAnnouncements",
+              "futureBinaryEvents"
+            ],
+            "newsEvent": null
+          },
+          "historicalQuery": {
+            "status": "VERIFY_FAILED",
+            "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+            "requestedDate": "2026-09-29",
+            "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+            "dataAbsenceConfirmed": false
+          }
+        },
+        "corporateAction": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "pending": [
+              "exRightsDividends",
+              "splitReductionConversion",
+              "tradingHalts",
+              "historicalPriceAdjustment"
+            ],
+            "observed": []
+          },
+          "partialHistoricalQuery": {
+            "status": "PARTIAL_VERIFIED",
+            "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+            "actualDate": "2026-09-29",
+            "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+            "otherCorporateActionsVerified": false
+          }
+        }
+      },
+      "group": "watch",
+      "rating": "B／條件觀察",
+      "tone": "watch",
+      "rank": "Watch",
+      "closeDate": "2026-09-29",
+      "priceStatus": "final-close",
+      "thesis": "台塑化已納入全市場篩選，已驗證項目得分 59.5。目前先觀察：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "avoid": "在以下項目確認前，不新增買單：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "entry": "目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。",
+      "technical": "MA20/60/120=83.175/75.475/64.3483；RSI14=72.956；量比=1.5233。",
+      "chips": "外資1/3/5/10/20日=8411155/11901649/13069377/3070412/-14247778股；投信1/3/5/10/20日=8088000/8494000/10414959/18280498/31200391股。歷史補核：2026-09-18大戶400張以上占95.96%、散戶50張以下占2.86%；2週大戶變動0.3、散戶變動-0.23個百分點；4週大戶變動0.28、散戶變動-0.25個百分點。此為事後歷史核對，不改寫原買進判斷。",
+      "invalid": "正式收盤跌破MA20 83.175元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "invalidCondition": "正式收盤跌破MA20 83.175元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "pullbackEntry": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "breakoutTrigger": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "entryPrice": null,
+      "maxChase": null,
+      "stop": null,
+      "target": null,
+      "entryRoutes": [],
+      "allocationMax": "0%",
+      "candidatePositionSize": 0,
+      "positionSize": 0,
+      "executionReady": false,
+      "executionStatus": "NOT_SUBMITTED",
+      "hardGatesPassed": false,
+      "financialAssessment": {
+        "status": "UNVERIFIED",
+        "verified": false,
+        "qualityPass": false,
+        "pending": [
+          "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+          "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+          "FINANCIAL_METRICS_INCOMPLETE"
+        ],
+        "failures": [],
+        "metrics": {
+          "grossMargin": null,
+          "operatingMargin": null,
+          "liabilityAssetRatio": null,
+          "currentRatio": null,
+          "revenueYoY": null,
+          "netProfitYoY": null
+        },
+        "periodEnd": null,
+        "basis": null,
+        "sources": []
+      },
+      "eventAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "events": [],
+        "binaryEvents": [],
+        "pending": [
+          "materialAnnouncements",
+          "futureBinaryEvents"
+        ],
+        "newsEvent": null
+      },
+      "corporateActionAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "pending": [
+          "exRightsDividends",
+          "splitReductionConversion",
+          "tradingHalts",
+          "historicalPriceAdjustment"
+        ],
+        "observed": []
+      },
+      "newsEvent": {
+        "sourceQuality": "NONE",
+        "eventType": "EVENT_COVERAGE_NOT_VERIFIED",
+        "direction": "UNCERTAIN",
+        "eventTimestamp": null,
+        "catalystStatus": "UNVERIFIED"
+      },
+      "dataQuality": {
+        "price": "VALID",
+        "ohlcv": "VALID",
+        "institutional": "VALID",
+        "margin": "VALID",
+        "tdcc": "MISSING",
+        "fundamental": "MISSING",
+        "news": "MISSING",
+        "securitiesLending": "NOT_REQUIRED"
+      }
+    },
+    {
+      "code": "6213",
+      "name": "聯茂",
+      "market": "TWSE",
+      "assetType": "STOCK",
+      "close": 620,
+      "decision": "WATCH",
+      "strategy": "NONE",
+      "score": 59,
+      "scores": {
+        "trend": 18,
+        "momentum": 8,
+        "volume": 10,
+        "market_regime": 8,
+        "institutional": 13.5,
+        "large_holder": 0,
+        "margin_short_lending": 1.5,
+        "fundamental": 0,
+        "risk_reward": 0
+      },
+      "gates": {
+        "history": true,
+        "liquidity": true,
+        "market": true,
+        "trend": true,
+        "credit": true,
+        "institutional": true,
+        "tdcc": false,
+        "fundamental": false,
+        "event": false,
+        "corporateAction": false,
+        "strategy": false,
+        "riskReward": false,
+        "assetProfile": true
+      },
+      "reasonCodes": [
+        "TDCC_PERSISTENCE_NOT_VERIFIED",
+        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ],
+      "universeRank": null,
+      "universePercentile": null,
+      "liquidityMedianTurnover20d": 8028714190,
+      "volumeRatio20d": 1.6412604591616542,
+      "riskReward": null,
+      "setup": null,
+      "etfProfile": null,
+      "historyCoverageTradingDays": 135,
+      "evidenceAudit": {
+        "schemaVersion": 1,
+        "targetDate": "2026-09-29",
+        "tdcc": {
+          "status": "HISTORICAL_QUERIES_VERIFIED_ASOF_PENDING",
+          "asOfEvidence": {
+            "status": "PERSISTENCE_PENDING",
+            "latest": {
+              "code": "6213",
+              "date": "2026-09-18",
+              "large400": 63.83,
+              "retail50": 24.799999999999997
+            },
+            "comparisonBasis": "OFFICIAL_WEEKLY_EDITION",
+            "comparisons": {
+              "1w": null,
+              "2w": null,
+              "4w": null
+            }
+          },
+          "historicalComparisons": {
+            "2w": {
+              "date": "2026-09-04",
+              "large400Change": -3.88,
+              "retail50Change": 3.25,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:13:58.293615+08:00",
+              "decisionEligible": false
+            },
+            "4w": {
+              "date": "2026-08-21",
+              "large400Change": -4.94,
+              "retail50Change": 3.76,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:13:58.291891+08:00",
+              "decisionEligible": false
+            }
+          },
+          "decisionEligible": false,
+          "publicationTimingVerified": false
+        },
+        "fundamental": {
+          "status": "QUALITY_ASSESSMENT_PENDING",
+          "monthlyRevenue": {
+            "code": "6213",
+            "name": "聯茂",
+            "dataMonth": "11508",
+            "dataMonthKey": "2026-08",
+            "currentRevenue": 5044034,
+            "previousMonthRevenue": 4749174,
+            "previousYearRevenue": 2548408,
+            "yoyPct": 97.92882458381861,
+            "momPct": 6.2086586004218836,
+            "cumulativeYoyPct": 42.24723210896934,
+            "sourceQuality": "SOURCE_A"
+          },
+          "quarterlyReportCaptured": false,
+          "assessment": {
+            "status": "UNVERIFIED",
+            "verified": false,
+            "qualityPass": false,
+            "pending": [
+              "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+              "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+              "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+              "FINANCIAL_METRICS_INCOMPLETE"
+            ],
+            "failures": [],
+            "metrics": {
+              "grossMargin": null,
+              "operatingMargin": null,
+              "liabilityAssetRatio": null,
+              "currentRatio": null,
+              "revenueYoY": null,
+              "netProfitYoY": null
+            },
+            "periodEnd": null,
+            "basis": null,
+            "sources": []
+          },
+          "qualityVerified": false
+        },
+        "eventRisk": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "events": [],
+            "binaryEvents": [],
+            "pending": [
+              "materialAnnouncements",
+              "futureBinaryEvents"
+            ],
+            "newsEvent": null
+          },
+          "historicalQuery": {
+            "status": "VERIFY_FAILED",
+            "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+            "requestedDate": "2026-09-29",
+            "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+            "dataAbsenceConfirmed": false
+          }
+        },
+        "corporateAction": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "pending": [
+              "exRightsDividends",
+              "splitReductionConversion",
+              "tradingHalts",
+              "historicalPriceAdjustment"
+            ],
+            "observed": []
+          },
+          "partialHistoricalQuery": {
+            "status": "PARTIAL_VERIFIED",
+            "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+            "actualDate": "2026-09-29",
+            "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+            "otherCorporateActionsVerified": false
+          }
+        }
+      },
+      "group": "watch",
+      "rating": "B／條件觀察",
+      "tone": "watch",
+      "rank": "Watch",
+      "closeDate": "2026-09-29",
+      "priceStatus": "final-close",
+      "thesis": "聯茂已納入全市場篩選，已驗證項目得分 59。目前先觀察：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "avoid": "在以下項目確認前，不新增買單：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "entry": "目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。",
+      "technical": "MA20/60/120=533.1/442.3583/357.5417；RSI14=70.9804；量比=1.6413。",
+      "chips": "外資1/3/5/10/20日=420317/1568380/9258812/1470375/-899319股；投信1/3/5/10/20日=181000/876000/803000/2692000/918800股。歷史補核：2026-09-18大戶400張以上占63.83%、散戶50張以下占24.8%；2週大戶變動-3.88、散戶變動3.25個百分點；4週大戶變動-4.94、散戶變動3.76個百分點。此為事後歷史核對，不改寫原買進判斷。",
+      "invalid": "正式收盤跌破MA20 533.1元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "invalidCondition": "正式收盤跌破MA20 533.1元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "pullbackEntry": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "breakoutTrigger": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "entryPrice": null,
+      "maxChase": null,
+      "stop": null,
+      "target": null,
+      "entryRoutes": [],
+      "allocationMax": "0%",
+      "candidatePositionSize": 0,
+      "positionSize": 0,
+      "executionReady": false,
+      "executionStatus": "NOT_SUBMITTED",
+      "hardGatesPassed": false,
+      "financialAssessment": {
+        "status": "UNVERIFIED",
+        "verified": false,
+        "qualityPass": false,
+        "pending": [
+          "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+          "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+          "FINANCIAL_METRICS_INCOMPLETE"
+        ],
+        "failures": [],
+        "metrics": {
+          "grossMargin": null,
+          "operatingMargin": null,
+          "liabilityAssetRatio": null,
+          "currentRatio": null,
+          "revenueYoY": null,
+          "netProfitYoY": null
+        },
+        "periodEnd": null,
+        "basis": null,
+        "sources": []
+      },
+      "eventAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "events": [],
+        "binaryEvents": [],
+        "pending": [
+          "materialAnnouncements",
+          "futureBinaryEvents"
+        ],
+        "newsEvent": null
+      },
+      "corporateActionAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "pending": [
+          "exRightsDividends",
+          "splitReductionConversion",
+          "tradingHalts",
+          "historicalPriceAdjustment"
+        ],
+        "observed": []
+      },
+      "newsEvent": {
+        "sourceQuality": "NONE",
+        "eventType": "EVENT_COVERAGE_NOT_VERIFIED",
+        "direction": "UNCERTAIN",
+        "eventTimestamp": null,
+        "catalystStatus": "UNVERIFIED"
+      },
+      "dataQuality": {
+        "price": "VALID",
+        "ohlcv": "VALID",
+        "institutional": "VALID",
+        "margin": "VALID",
+        "tdcc": "MISSING",
+        "fundamental": "MISSING",
+        "news": "MISSING",
+        "securitiesLending": "NOT_REQUIRED"
+      }
+    },
+    {
+      "code": "4961",
+      "name": "天鈺",
+      "market": "TWSE",
+      "assetType": "STOCK",
+      "close": 184.5,
+      "decision": "WATCH",
+      "strategy": "NONE",
+      "score": 58.9689,
+      "scores": {
+        "trend": 18,
+        "momentum": 8,
+        "volume": 9.9689,
+        "market_regime": 8,
+        "institutional": 13.5,
+        "large_holder": 0,
+        "margin_short_lending": 1.5,
+        "fundamental": 0,
+        "risk_reward": 0
+      },
+      "gates": {
+        "history": true,
+        "liquidity": true,
+        "market": true,
+        "trend": true,
+        "credit": true,
+        "institutional": true,
+        "tdcc": false,
+        "fundamental": false,
+        "event": false,
+        "corporateAction": false,
+        "strategy": false,
+        "riskReward": false,
+        "assetProfile": true
+      },
+      "reasonCodes": [
+        "TDCC_PERSISTENCE_NOT_VERIFIED",
+        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ],
+      "universeRank": null,
+      "universePercentile": null,
+      "liquidityMedianTurnover20d": 149491792,
+      "volumeRatio20d": 1.495328968834888,
+      "riskReward": null,
+      "setup": null,
+      "etfProfile": null,
+      "historyCoverageTradingDays": 135,
+      "evidenceAudit": {
+        "schemaVersion": 1,
+        "targetDate": "2026-09-29",
+        "tdcc": {
+          "status": "HISTORICAL_QUERIES_VERIFIED_ASOF_PENDING",
+          "asOfEvidence": {
+            "status": "PERSISTENCE_PENDING",
+            "latest": {
+              "code": "4961",
+              "date": "2026-09-18",
+              "large400": 48.379999999999995,
+              "retail50": 36.089999999999996
+            },
+            "comparisonBasis": "OFFICIAL_WEEKLY_EDITION",
+            "comparisons": {
+              "1w": null,
+              "2w": null,
+              "4w": null
+            }
+          },
+          "historicalComparisons": {
+            "2w": {
+              "date": "2026-09-04",
+              "large400Change": 2.57,
+              "retail50Change": -2.85,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:13:58.624250+08:00",
+              "decisionEligible": false
+            },
+            "4w": {
+              "date": "2026-08-21",
+              "large400Change": 2.22,
+              "retail50Change": -2.65,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:14:01.536229+08:00",
+              "decisionEligible": false
+            }
+          },
+          "decisionEligible": false,
+          "publicationTimingVerified": false
+        },
+        "fundamental": {
+          "status": "QUALITY_ASSESSMENT_PENDING",
+          "monthlyRevenue": {
+            "code": "4961",
+            "name": "天鈺",
+            "dataMonth": "11508",
+            "dataMonthKey": "2026-08",
+            "currentRevenue": 2109978,
+            "previousMonthRevenue": 1967297,
+            "previousYearRevenue": 1405234,
+            "yoyPct": 50.151362691195914,
+            "momPct": 7.2526415686091115,
+            "cumulativeYoyPct": 10.626183057015366,
+            "sourceQuality": "SOURCE_A"
+          },
+          "quarterlyReportCaptured": false,
+          "assessment": {
+            "status": "UNVERIFIED",
+            "verified": false,
+            "qualityPass": false,
+            "pending": [
+              "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+              "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+              "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+              "FINANCIAL_METRICS_INCOMPLETE"
+            ],
+            "failures": [],
+            "metrics": {
+              "grossMargin": null,
+              "operatingMargin": null,
+              "liabilityAssetRatio": null,
+              "currentRatio": null,
+              "revenueYoY": null,
+              "netProfitYoY": null
+            },
+            "periodEnd": null,
+            "basis": null,
+            "sources": []
+          },
+          "qualityVerified": false
+        },
+        "eventRisk": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "events": [],
+            "binaryEvents": [],
+            "pending": [
+              "materialAnnouncements",
+              "futureBinaryEvents"
+            ],
+            "newsEvent": null
+          },
+          "historicalQuery": {
+            "status": "VERIFY_FAILED",
+            "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+            "requestedDate": "2026-09-29",
+            "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+            "dataAbsenceConfirmed": false
+          }
+        },
+        "corporateAction": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "pending": [
+              "exRightsDividends",
+              "splitReductionConversion",
+              "tradingHalts",
+              "historicalPriceAdjustment"
+            ],
+            "observed": []
+          },
+          "partialHistoricalQuery": {
+            "status": "PARTIAL_VERIFIED",
+            "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+            "actualDate": "2026-09-29",
+            "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+            "otherCorporateActionsVerified": false
+          }
+        }
+      },
+      "group": "watch",
+      "rating": "B／條件觀察",
+      "tone": "watch",
+      "rank": "Watch",
+      "closeDate": "2026-09-29",
+      "priceStatus": "final-close",
+      "thesis": "天鈺已納入全市場篩選，已驗證項目得分 58.9689。目前先觀察：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。目前為既有模擬持倉。",
+      "avoid": "在以下項目確認前，不新增買單：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "entry": "目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。",
+      "technical": "MA20/60/120=175.05/167.6917/166.6083；RSI14=71.5909；量比=1.4953。",
+      "chips": "外資1/3/5/10/20日=186771/269837/797496/3055946/4567896股；投信1/3/5/10/20日=-2000/16000/16000/16000/15000股。歷史補核：2026-09-18大戶400張以上占48.38%、散戶50張以下占36.09%；2週大戶變動2.57、散戶變動-2.85個百分點；4週大戶變動2.22、散戶變動-2.65個百分點。此為事後歷史核對，不改寫原買進判斷。",
+      "invalid": "正式收盤跌破MA20 175.05元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "invalidCondition": "正式收盤跌破MA20 175.05元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "pullbackEntry": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "breakoutTrigger": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "entryPrice": null,
+      "maxChase": null,
+      "stop": null,
+      "target": null,
+      "entryRoutes": [],
+      "allocationMax": "0%",
+      "candidatePositionSize": 0,
+      "positionSize": 0,
+      "executionReady": false,
+      "executionStatus": "NOT_SUBMITTED",
+      "hardGatesPassed": false,
+      "financialAssessment": {
+        "status": "UNVERIFIED",
+        "verified": false,
+        "qualityPass": false,
+        "pending": [
+          "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+          "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+          "FINANCIAL_METRICS_INCOMPLETE"
+        ],
+        "failures": [],
+        "metrics": {
+          "grossMargin": null,
+          "operatingMargin": null,
+          "liabilityAssetRatio": null,
+          "currentRatio": null,
+          "revenueYoY": null,
+          "netProfitYoY": null
+        },
+        "periodEnd": null,
+        "basis": null,
+        "sources": []
+      },
+      "eventAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "events": [],
+        "binaryEvents": [],
+        "pending": [
+          "materialAnnouncements",
+          "futureBinaryEvents"
+        ],
+        "newsEvent": null
+      },
+      "corporateActionAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "pending": [
+          "exRightsDividends",
+          "splitReductionConversion",
+          "tradingHalts",
+          "historicalPriceAdjustment"
+        ],
+        "observed": []
+      },
+      "newsEvent": {
+        "sourceQuality": "NONE",
+        "eventType": "EVENT_COVERAGE_NOT_VERIFIED",
+        "direction": "UNCERTAIN",
+        "eventTimestamp": null,
+        "catalystStatus": "UNVERIFIED"
+      },
+      "dataQuality": {
+        "price": "VALID",
+        "ohlcv": "VALID",
+        "institutional": "VALID",
+        "margin": "VALID",
+        "tdcc": "MISSING",
+        "fundamental": "MISSING",
+        "news": "MISSING",
+        "securitiesLending": "NOT_REQUIRED"
+      }
+    },
+    {
+      "code": "8464",
+      "name": "億豐",
+      "market": "TWSE",
+      "assetType": "STOCK",
+      "close": 372.5,
+      "decision": "WATCH",
+      "strategy": "NONE",
+      "score": 58.9374,
+      "scores": {
+        "trend": 18,
+        "momentum": 4,
+        "volume": 9.4374,
+        "market_regime": 8,
+        "institutional": 13.5,
+        "large_holder": 0,
+        "margin_short_lending": 6,
+        "fundamental": 0,
+        "risk_reward": 0
+      },
+      "gates": {
+        "history": true,
+        "liquidity": true,
+        "market": true,
+        "trend": true,
+        "credit": true,
+        "institutional": true,
+        "tdcc": false,
+        "fundamental": false,
+        "event": false,
+        "corporateAction": false,
+        "strategy": false,
+        "riskReward": false,
+        "assetProfile": true
+      },
+      "reasonCodes": [
+        "TDCC_PERSISTENCE_NOT_VERIFIED",
+        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ],
+      "universeRank": null,
+      "universePercentile": null,
+      "liquidityMedianTurnover20d": 121192483,
+      "volumeRatio20d": 1.4156149633422703,
+      "riskReward": null,
+      "setup": null,
+      "etfProfile": null,
+      "historyCoverageTradingDays": 135,
+      "evidenceAudit": {
+        "schemaVersion": 1,
+        "targetDate": "2026-09-29",
+        "tdcc": {
+          "status": "HISTORICAL_QUERIES_VERIFIED_ASOF_PENDING",
+          "asOfEvidence": {
+            "status": "PERSISTENCE_PENDING",
+            "latest": {
+              "code": "8464",
+              "date": "2026-09-18",
+              "large400": 86.53999999999999,
+              "retail50": 2.6300000000000003
+            },
+            "comparisonBasis": "OFFICIAL_WEEKLY_EDITION",
+            "comparisons": {
+              "1w": null,
+              "2w": null,
+              "4w": null
+            }
+          },
+          "historicalComparisons": {
+            "2w": {
+              "date": "2026-09-04",
+              "large400Change": -0.58,
+              "retail50Change": -0.01,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:14:01.821148+08:00",
+              "decisionEligible": false
+            },
+            "4w": {
+              "date": "2026-08-21",
+              "large400Change": -0.48,
+              "retail50Change": -0.04,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:14:01.822581+08:00",
+              "decisionEligible": false
+            }
+          },
+          "decisionEligible": false,
+          "publicationTimingVerified": false
+        },
+        "fundamental": {
+          "status": "QUALITY_ASSESSMENT_PENDING",
+          "monthlyRevenue": {
+            "code": "8464",
+            "name": "億豐",
+            "dataMonth": "11508",
+            "dataMonthKey": "2026-08",
+            "currentRevenue": 2815597,
+            "previousMonthRevenue": 3004077,
+            "previousYearRevenue": 2390939,
+            "yoyPct": 17.761139033659997,
+            "momPct": -6.274140110256828,
+            "cumulativeYoyPct": 5.5219179955282245,
+            "sourceQuality": "SOURCE_A"
+          },
+          "quarterlyReportCaptured": false,
+          "assessment": {
+            "status": "UNVERIFIED",
+            "verified": false,
+            "qualityPass": false,
+            "pending": [
+              "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+              "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+              "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+              "FINANCIAL_METRICS_INCOMPLETE"
+            ],
+            "failures": [],
+            "metrics": {
+              "grossMargin": null,
+              "operatingMargin": null,
+              "liabilityAssetRatio": null,
+              "currentRatio": null,
+              "revenueYoY": null,
+              "netProfitYoY": null
+            },
+            "periodEnd": null,
+            "basis": null,
+            "sources": []
+          },
+          "qualityVerified": false
+        },
+        "eventRisk": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "events": [],
+            "binaryEvents": [],
+            "pending": [
+              "materialAnnouncements",
+              "futureBinaryEvents"
+            ],
+            "newsEvent": null
+          },
+          "historicalQuery": {
+            "status": "VERIFY_FAILED",
+            "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+            "requestedDate": "2026-09-29",
+            "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+            "dataAbsenceConfirmed": false
+          }
+        },
+        "corporateAction": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "pending": [
+              "exRightsDividends",
+              "splitReductionConversion",
+              "tradingHalts",
+              "historicalPriceAdjustment"
+            ],
+            "observed": []
+          },
+          "partialHistoricalQuery": {
+            "status": "PARTIAL_VERIFIED",
+            "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+            "actualDate": "2026-09-29",
+            "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+            "otherCorporateActionsVerified": false
+          }
+        }
+      },
+      "group": "watch",
+      "rating": "B／條件觀察",
+      "tone": "watch",
+      "rank": "Watch",
+      "closeDate": "2026-09-29",
+      "priceStatus": "final-close",
+      "thesis": "億豐已納入全市場篩選，已驗證項目得分 58.9374。目前先觀察：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "avoid": "在以下項目確認前，不新增買單：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "entry": "目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。",
+      "technical": "MA20/60/120=372.375/371.5333/356.8333；RSI14=60.7477；量比=1.4156。",
+      "chips": "外資1/3/5/10/20日=65974/212309/310503/745814/834422股；投信1/3/5/10/20日=30000/30000/31999/-96120/104897股。歷史補核：2026-09-18大戶400張以上占86.54%、散戶50張以下占2.63%；2週大戶變動-0.58、散戶變動-0.01個百分點；4週大戶變動-0.48、散戶變動-0.04個百分點。此為事後歷史核對，不改寫原買進判斷。",
+      "invalid": "正式收盤跌破MA20 372.375元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "invalidCondition": "正式收盤跌破MA20 372.375元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "pullbackEntry": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "breakoutTrigger": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "entryPrice": null,
+      "maxChase": null,
+      "stop": null,
+      "target": null,
+      "entryRoutes": [],
+      "allocationMax": "0%",
+      "candidatePositionSize": 0,
+      "positionSize": 0,
+      "executionReady": false,
+      "executionStatus": "NOT_SUBMITTED",
+      "hardGatesPassed": false,
+      "financialAssessment": {
+        "status": "UNVERIFIED",
+        "verified": false,
+        "qualityPass": false,
+        "pending": [
+          "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+          "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+          "FINANCIAL_METRICS_INCOMPLETE"
+        ],
+        "failures": [],
+        "metrics": {
+          "grossMargin": null,
+          "operatingMargin": null,
+          "liabilityAssetRatio": null,
+          "currentRatio": null,
+          "revenueYoY": null,
+          "netProfitYoY": null
+        },
+        "periodEnd": null,
+        "basis": null,
+        "sources": []
+      },
+      "eventAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "events": [],
+        "binaryEvents": [],
+        "pending": [
+          "materialAnnouncements",
+          "futureBinaryEvents"
+        ],
+        "newsEvent": null
+      },
+      "corporateActionAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "pending": [
+          "exRightsDividends",
+          "splitReductionConversion",
+          "tradingHalts",
+          "historicalPriceAdjustment"
+        ],
+        "observed": []
+      },
+      "newsEvent": {
+        "sourceQuality": "NONE",
+        "eventType": "EVENT_COVERAGE_NOT_VERIFIED",
+        "direction": "UNCERTAIN",
+        "eventTimestamp": null,
+        "catalystStatus": "UNVERIFIED"
+      },
+      "dataQuality": {
+        "price": "VALID",
+        "ohlcv": "VALID",
+        "institutional": "VALID",
+        "margin": "VALID",
+        "tdcc": "MISSING",
+        "fundamental": "MISSING",
+        "news": "MISSING",
+        "securitiesLending": "NOT_REQUIRED"
+      }
+    },
+    {
+      "code": "3665",
+      "name": "貿聯-KY",
+      "market": "TWSE",
+      "assetType": "STOCK",
+      "close": 2445,
+      "decision": "WATCH",
+      "strategy": "NONE",
+      "score": 57.5215,
+      "scores": {
+        "trend": 14.4,
+        "momentum": 8,
+        "volume": 9.1215,
+        "market_regime": 8,
+        "institutional": 12,
+        "large_holder": 0,
+        "margin_short_lending": 6,
+        "fundamental": 0,
+        "risk_reward": 0
+      },
+      "gates": {
+        "history": true,
+        "liquidity": true,
+        "market": true,
+        "trend": false,
+        "credit": true,
+        "institutional": true,
+        "tdcc": false,
+        "fundamental": false,
+        "event": false,
+        "corporateAction": false,
+        "strategy": false,
+        "riskReward": false,
+        "assetProfile": true
+      },
+      "reasonCodes": [
+        "TREND_NOT_CONFIRMED",
+        "TDCC_PERSISTENCE_NOT_VERIFIED",
+        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ],
+      "universeRank": null,
+      "universePercentile": null,
+      "liquidityMedianTurnover20d": 6556530025,
+      "volumeRatio20d": 1.368230227086051,
+      "riskReward": null,
+      "setup": null,
+      "etfProfile": null,
+      "historyCoverageTradingDays": 134,
+      "evidenceAudit": {
+        "schemaVersion": 1,
+        "targetDate": "2026-09-29",
+        "tdcc": {
+          "status": "HISTORICAL_QUERIES_VERIFIED_ASOF_PENDING",
+          "asOfEvidence": {
+            "status": "PERSISTENCE_PENDING",
+            "latest": {
+              "code": "3665",
+              "date": "2026-09-18",
+              "large400": 61.769999999999996,
+              "retail50": 15.870000000000001
+            },
+            "comparisonBasis": "OFFICIAL_WEEKLY_EDITION",
+            "comparisons": {
+              "1w": null,
+              "2w": null,
+              "4w": null
+            }
+          },
+          "historicalComparisons": {
+            "2w": {
+              "date": "2026-09-04",
+              "large400Change": 0.15,
+              "retail50Change": 0.86,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:14:04.704498+08:00",
+              "decisionEligible": false
+            },
+            "4w": {
+              "date": "2026-08-21",
+              "large400Change": -1.46,
+              "retail50Change": 1.56,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:14:05.202786+08:00",
+              "decisionEligible": false
+            }
+          },
+          "decisionEligible": false,
+          "publicationTimingVerified": false
+        },
+        "fundamental": {
+          "status": "QUALITY_ASSESSMENT_PENDING",
+          "monthlyRevenue": {
+            "code": "3665",
+            "name": "貿聯-KY",
+            "dataMonth": "11508",
+            "dataMonthKey": "2026-08",
+            "currentRevenue": 8891805,
+            "previousMonthRevenue": 9630165,
+            "previousYearRevenue": 5774218,
+            "yoyPct": 53.99150153319462,
+            "momPct": -7.667158350869378,
+            "cumulativeYoyPct": 40.00683620722877,
+            "sourceQuality": "SOURCE_A"
+          },
+          "quarterlyReportCaptured": false,
+          "assessment": {
+            "status": "UNVERIFIED",
+            "verified": false,
+            "qualityPass": false,
+            "pending": [
+              "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+              "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+              "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+              "FINANCIAL_METRICS_INCOMPLETE"
+            ],
+            "failures": [],
+            "metrics": {
+              "grossMargin": null,
+              "operatingMargin": null,
+              "liabilityAssetRatio": null,
+              "currentRatio": null,
+              "revenueYoY": null,
+              "netProfitYoY": null
+            },
+            "periodEnd": null,
+            "basis": null,
+            "sources": []
+          },
+          "qualityVerified": false
+        },
+        "eventRisk": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "events": [],
+            "binaryEvents": [],
+            "pending": [
+              "materialAnnouncements",
+              "futureBinaryEvents"
+            ],
+            "newsEvent": null
+          },
+          "historicalQuery": {
+            "status": "VERIFY_FAILED",
+            "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+            "requestedDate": "2026-09-29",
+            "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+            "dataAbsenceConfirmed": false
+          }
+        },
+        "corporateAction": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "pending": [
+              "exRightsDividends",
+              "splitReductionConversion",
+              "tradingHalts",
+              "historicalPriceAdjustment"
+            ],
+            "observed": []
+          },
+          "partialHistoricalQuery": {
+            "status": "PARTIAL_VERIFIED",
+            "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+            "actualDate": "2026-09-29",
+            "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+            "otherCorporateActionsVerified": false
+          }
+        }
+      },
+      "group": "watch",
+      "rating": "B／條件觀察",
+      "tone": "watch",
+      "rank": "Watch",
+      "closeDate": "2026-09-29",
+      "priceStatus": "final-close",
+      "thesis": "貿聯-KY已納入全市場篩選，已驗證項目得分 57.5215。目前先觀察：中期上升趨勢尚未確認；大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "avoid": "在以下項目確認前，不新增買單：中期上升趨勢尚未確認；大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "entry": "目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。",
+      "technical": "MA20/60/120=2125.25/2102.75/2197.7083；RSI14=69.6335；量比=1.3682。",
+      "chips": "外資1/3/5/10/20日=720485/427549/-483532/8210/-4142403股；投信1/3/5/10/20日=307000/457118/584322/702568/1251314股。歷史補核：2026-09-18大戶400張以上占61.77%、散戶50張以下占15.87%；2週大戶變動0.15、散戶變動0.86個百分點；4週大戶變動-1.46、散戶變動1.56個百分點。此為事後歷史核對，不改寫原買進判斷。",
+      "invalid": "正式收盤跌破MA20 2125.25元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "invalidCondition": "正式收盤跌破MA20 2125.25元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "pullbackEntry": {
+        "status": "unavailable",
+        "reason": "TREND_NOT_CONFIRMED,TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "breakoutTrigger": {
+        "status": "unavailable",
+        "reason": "TREND_NOT_CONFIRMED,TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "entryPrice": null,
+      "maxChase": null,
+      "stop": null,
+      "target": null,
+      "entryRoutes": [],
+      "allocationMax": "0%",
+      "candidatePositionSize": 0,
+      "positionSize": 0,
+      "executionReady": false,
+      "executionStatus": "NOT_SUBMITTED",
+      "hardGatesPassed": false,
+      "financialAssessment": {
+        "status": "UNVERIFIED",
+        "verified": false,
+        "qualityPass": false,
+        "pending": [
+          "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+          "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+          "FINANCIAL_METRICS_INCOMPLETE"
+        ],
+        "failures": [],
+        "metrics": {
+          "grossMargin": null,
+          "operatingMargin": null,
+          "liabilityAssetRatio": null,
+          "currentRatio": null,
+          "revenueYoY": null,
+          "netProfitYoY": null
+        },
+        "periodEnd": null,
+        "basis": null,
+        "sources": []
+      },
+      "eventAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "events": [],
+        "binaryEvents": [],
+        "pending": [
+          "materialAnnouncements",
+          "futureBinaryEvents"
+        ],
+        "newsEvent": null
+      },
+      "corporateActionAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "pending": [
+          "exRightsDividends",
+          "splitReductionConversion",
+          "tradingHalts",
+          "historicalPriceAdjustment"
+        ],
+        "observed": []
+      },
+      "newsEvent": {
+        "sourceQuality": "NONE",
+        "eventType": "EVENT_COVERAGE_NOT_VERIFIED",
+        "direction": "UNCERTAIN",
+        "eventTimestamp": null,
+        "catalystStatus": "UNVERIFIED"
+      },
+      "dataQuality": {
+        "price": "VALID",
+        "ohlcv": "VALID",
+        "institutional": "VALID",
+        "margin": "VALID",
+        "tdcc": "MISSING",
+        "fundamental": "MISSING",
+        "news": "MISSING",
+        "securitiesLending": "NOT_REQUIRED"
+      }
+    },
+    {
+      "code": "3016",
+      "name": "嘉晶",
+      "market": "TWSE",
+      "assetType": "STOCK",
+      "close": 172.5,
+      "decision": "WATCH",
+      "strategy": "NONE",
+      "score": 56.5,
+      "scores": {
+        "trend": 18,
+        "momentum": 4,
+        "volume": 10,
+        "market_regime": 8,
+        "institutional": 10.5,
+        "large_holder": 0,
+        "margin_short_lending": 6,
+        "fundamental": 0,
+        "risk_reward": 0
+      },
+      "gates": {
+        "history": true,
+        "liquidity": true,
+        "market": true,
+        "trend": true,
+        "credit": true,
+        "institutional": true,
+        "tdcc": false,
+        "fundamental": false,
+        "event": false,
+        "corporateAction": false,
+        "strategy": false,
+        "riskReward": false,
+        "assetProfile": true
+      },
+      "reasonCodes": [
+        "TDCC_PERSISTENCE_NOT_VERIFIED",
+        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ],
+      "universeRank": null,
+      "universePercentile": null,
+      "liquidityMedianTurnover20d": 1496139635,
+      "volumeRatio20d": 3.9732700290379888,
+      "riskReward": null,
+      "setup": null,
+      "etfProfile": null,
+      "historyCoverageTradingDays": 135,
+      "evidenceAudit": {
+        "schemaVersion": 1,
+        "targetDate": "2026-09-29",
+        "tdcc": {
+          "status": "HISTORICAL_QUERIES_VERIFIED_ASOF_PENDING",
+          "asOfEvidence": {
+            "status": "PERSISTENCE_PENDING",
+            "latest": {
+              "code": "3016",
+              "date": "2026-09-18",
+              "large400": 69.89999999999999,
+              "retail50": 23.950000000000003
+            },
+            "comparisonBasis": "OFFICIAL_WEEKLY_EDITION",
+            "comparisons": {
+              "1w": null,
+              "2w": null,
+              "4w": null
+            }
+          },
+          "historicalComparisons": {
+            "2w": {
+              "date": "2026-09-04",
+              "large400Change": -0.25,
+              "retail50Change": 0.12,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:14:04.691512+08:00",
+              "decisionEligible": false
+            },
+            "4w": {
+              "date": "2026-08-21",
+              "large400Change": -1.06,
+              "retail50Change": 0.46,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:14:07.781453+08:00",
+              "decisionEligible": false
+            }
+          },
+          "decisionEligible": false,
+          "publicationTimingVerified": false
+        },
+        "fundamental": {
+          "status": "QUALITY_ASSESSMENT_PENDING",
+          "monthlyRevenue": {
+            "code": "3016",
+            "name": "嘉晶",
+            "dataMonth": "11508",
+            "dataMonthKey": "2026-08",
+            "currentRevenue": 506698,
+            "previousMonthRevenue": 482058,
+            "previousYearRevenue": 321129,
+            "yoyPct": 57.78643473495075,
+            "momPct": 5.111418128109066,
+            "cumulativeYoyPct": 34.73380056609053,
+            "sourceQuality": "SOURCE_A"
+          },
+          "quarterlyReportCaptured": false,
+          "assessment": {
+            "status": "UNVERIFIED",
+            "verified": false,
+            "qualityPass": false,
+            "pending": [
+              "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+              "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+              "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+              "FINANCIAL_METRICS_INCOMPLETE"
+            ],
+            "failures": [],
+            "metrics": {
+              "grossMargin": null,
+              "operatingMargin": null,
+              "liabilityAssetRatio": null,
+              "currentRatio": null,
+              "revenueYoY": null,
+              "netProfitYoY": null
+            },
+            "periodEnd": null,
+            "basis": null,
+            "sources": []
+          },
+          "qualityVerified": false
+        },
+        "eventRisk": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "events": [],
+            "binaryEvents": [],
+            "pending": [
+              "materialAnnouncements",
+              "futureBinaryEvents"
+            ],
+            "newsEvent": null
+          },
+          "historicalQuery": {
+            "status": "VERIFY_FAILED",
+            "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+            "requestedDate": "2026-09-29",
+            "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+            "dataAbsenceConfirmed": false
+          }
+        },
+        "corporateAction": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "pending": [
+              "exRightsDividends",
+              "splitReductionConversion",
+              "tradingHalts",
+              "historicalPriceAdjustment"
+            ],
+            "observed": []
+          },
+          "partialHistoricalQuery": {
+            "status": "PARTIAL_VERIFIED",
+            "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+            "actualDate": "2026-09-29",
+            "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+            "otherCorporateActionsVerified": false
+          }
+        }
+      },
+      "group": "watch",
+      "rating": "B／條件觀察",
+      "tone": "watch",
+      "rank": "Watch",
+      "closeDate": "2026-09-29",
+      "priceStatus": "final-close",
+      "thesis": "嘉晶已納入全市場篩選，已驗證項目得分 56.5。目前先觀察：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "avoid": "在以下項目確認前，不新增買單：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "entry": "目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。",
+      "technical": "MA20/60/120=116.44/108.1667/106.695；RSI14=94.4444；量比=3.9733。",
+      "chips": "外資1/3/5/10/20日=2406738/16903239/25637189/19272882/20604958股；投信1/3/5/10/20日=0/0/0/7000/7000股。歷史補核：2026-09-18大戶400張以上占69.9%、散戶50張以下占23.95%；2週大戶變動-0.25、散戶變動0.12個百分點；4週大戶變動-1.06、散戶變動0.46個百分點。此為事後歷史核對，不改寫原買進判斷。",
+      "invalid": "正式收盤跌破MA20 116.44元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "invalidCondition": "正式收盤跌破MA20 116.44元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "pullbackEntry": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "breakoutTrigger": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "entryPrice": null,
+      "maxChase": null,
+      "stop": null,
+      "target": null,
+      "entryRoutes": [],
+      "allocationMax": "0%",
+      "candidatePositionSize": 0,
+      "positionSize": 0,
+      "executionReady": false,
+      "executionStatus": "NOT_SUBMITTED",
+      "hardGatesPassed": false,
+      "financialAssessment": {
+        "status": "UNVERIFIED",
+        "verified": false,
+        "qualityPass": false,
+        "pending": [
+          "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+          "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+          "FINANCIAL_METRICS_INCOMPLETE"
+        ],
+        "failures": [],
+        "metrics": {
+          "grossMargin": null,
+          "operatingMargin": null,
+          "liabilityAssetRatio": null,
+          "currentRatio": null,
+          "revenueYoY": null,
+          "netProfitYoY": null
+        },
+        "periodEnd": null,
+        "basis": null,
+        "sources": []
+      },
+      "eventAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "events": [],
+        "binaryEvents": [],
+        "pending": [
+          "materialAnnouncements",
+          "futureBinaryEvents"
+        ],
+        "newsEvent": null
+      },
+      "corporateActionAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "pending": [
+          "exRightsDividends",
+          "splitReductionConversion",
+          "tradingHalts",
+          "historicalPriceAdjustment"
+        ],
+        "observed": []
+      },
+      "newsEvent": {
+        "sourceQuality": "NONE",
+        "eventType": "EVENT_COVERAGE_NOT_VERIFIED",
+        "direction": "UNCERTAIN",
+        "eventTimestamp": null,
+        "catalystStatus": "UNVERIFIED"
+      },
+      "dataQuality": {
+        "price": "VALID",
+        "ohlcv": "VALID",
+        "institutional": "VALID",
+        "margin": "VALID",
+        "tdcc": "MISSING",
+        "fundamental": "MISSING",
+        "news": "MISSING",
+        "securitiesLending": "NOT_REQUIRED"
+      }
+    },
+    {
+      "code": "9945",
+      "name": "潤泰新",
+      "market": "TWSE",
+      "assetType": "STOCK",
+      "close": 29.05,
+      "decision": "WATCH",
+      "strategy": "NONE",
+      "score": 54.9323,
+      "scores": {
+        "trend": 18,
+        "momentum": 8,
+        "volume": 8.9323,
+        "market_regime": 8,
+        "institutional": 10.5,
+        "large_holder": 0,
+        "margin_short_lending": 1.5,
+        "fundamental": 0,
+        "risk_reward": 0
+      },
+      "gates": {
+        "history": true,
+        "liquidity": true,
+        "market": true,
+        "trend": true,
+        "credit": true,
+        "institutional": true,
+        "tdcc": false,
+        "fundamental": false,
+        "event": false,
+        "corporateAction": false,
+        "strategy": false,
+        "riskReward": false,
+        "assetProfile": true
+      },
+      "reasonCodes": [
+        "TDCC_PERSISTENCE_NOT_VERIFIED",
+        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ],
+      "universeRank": null,
+      "universePercentile": null,
+      "liquidityMedianTurnover20d": 120589409.5,
+      "volumeRatio20d": 1.339838627064826,
+      "riskReward": null,
+      "setup": null,
+      "etfProfile": null,
+      "historyCoverageTradingDays": 135,
+      "evidenceAudit": {
+        "schemaVersion": 1,
+        "targetDate": "2026-09-29",
+        "tdcc": {
+          "status": "HISTORICAL_QUERIES_VERIFIED_ASOF_PENDING",
+          "asOfEvidence": {
+            "status": "PERSISTENCE_PENDING",
+            "latest": {
+              "code": "9945",
+              "date": "2026-09-18",
+              "large400": 66.26,
+              "retail50": 19.620000000000005
+            },
+            "comparisonBasis": "OFFICIAL_WEEKLY_EDITION",
+            "comparisons": {
+              "1w": null,
+              "2w": null,
+              "4w": null
+            }
+          },
+          "historicalComparisons": {
+            "2w": {
+              "date": "2026-09-04",
+              "large400Change": 0.23,
+              "retail50Change": -0.05,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:14:08.073270+08:00",
+              "decisionEligible": false
+            },
+            "4w": {
+              "date": "2026-08-21",
+              "large400Change": 0.06,
+              "retail50Change": 0.01,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:14:08.067571+08:00",
+              "decisionEligible": false
+            }
+          },
+          "decisionEligible": false,
+          "publicationTimingVerified": false
+        },
+        "fundamental": {
+          "status": "QUALITY_ASSESSMENT_PENDING",
+          "monthlyRevenue": {
+            "code": "9945",
+            "name": "潤泰新",
+            "dataMonth": "11508",
+            "dataMonthKey": "2026-08",
+            "currentRevenue": 3463476,
+            "previousMonthRevenue": 3321019,
+            "previousYearRevenue": 2509912,
+            "yoyPct": 37.99192959753171,
+            "momPct": 4.289556910092957,
+            "cumulativeYoyPct": 34.40778930180521,
+            "sourceQuality": "SOURCE_A"
+          },
+          "quarterlyReportCaptured": false,
+          "assessment": {
+            "status": "UNVERIFIED",
+            "verified": false,
+            "qualityPass": false,
+            "pending": [
+              "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+              "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+              "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+              "FINANCIAL_METRICS_INCOMPLETE"
+            ],
+            "failures": [],
+            "metrics": {
+              "grossMargin": null,
+              "operatingMargin": null,
+              "liabilityAssetRatio": null,
+              "currentRatio": null,
+              "revenueYoY": null,
+              "netProfitYoY": null
+            },
+            "periodEnd": null,
+            "basis": null,
+            "sources": []
+          },
+          "qualityVerified": false
+        },
+        "eventRisk": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "events": [],
+            "binaryEvents": [],
+            "pending": [
+              "materialAnnouncements",
+              "futureBinaryEvents"
+            ],
+            "newsEvent": null
+          },
+          "historicalQuery": {
+            "status": "VERIFY_FAILED",
+            "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+            "requestedDate": "2026-09-29",
+            "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+            "dataAbsenceConfirmed": false
+          }
+        },
+        "corporateAction": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "pending": [
+              "exRightsDividends",
+              "splitReductionConversion",
+              "tradingHalts",
+              "historicalPriceAdjustment"
+            ],
+            "observed": []
+          },
+          "partialHistoricalQuery": {
+            "status": "PARTIAL_VERIFIED",
+            "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+            "actualDate": "2026-09-29",
+            "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+            "otherCorporateActionsVerified": false
+          }
+        }
+      },
+      "group": "watch",
+      "rating": "B／條件觀察",
+      "tone": "watch",
+      "rank": "Watch",
+      "closeDate": "2026-09-29",
+      "priceStatus": "final-close",
+      "thesis": "潤泰新已納入全市場篩選，已驗證項目得分 54.9323。目前先觀察：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "avoid": "在以下項目確認前，不新增買單：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "entry": "目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。",
+      "technical": "MA20/60/120=28.465/27.6308/26.2192；RSI14=61.8557；量比=1.3398。",
+      "chips": "外資1/3/5/10/20日=-1484000/655166/3011247/6726894/7532468股；投信1/3/5/10/20日=0/0/10000/2170000/2170000股。歷史補核：2026-09-18大戶400張以上占66.26%、散戶50張以下占19.62%；2週大戶變動0.23、散戶變動-0.05個百分點；4週大戶變動0.06、散戶變動0.01個百分點。此為事後歷史核對，不改寫原買進判斷。",
+      "invalid": "正式收盤跌破MA20 28.465元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "invalidCondition": "正式收盤跌破MA20 28.465元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "pullbackEntry": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "breakoutTrigger": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "entryPrice": null,
+      "maxChase": null,
+      "stop": null,
+      "target": null,
+      "entryRoutes": [],
+      "allocationMax": "0%",
+      "candidatePositionSize": 0,
+      "positionSize": 0,
+      "executionReady": false,
+      "executionStatus": "NOT_SUBMITTED",
+      "hardGatesPassed": false,
+      "financialAssessment": {
+        "status": "UNVERIFIED",
+        "verified": false,
+        "qualityPass": false,
+        "pending": [
+          "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+          "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+          "FINANCIAL_METRICS_INCOMPLETE"
+        ],
+        "failures": [],
+        "metrics": {
+          "grossMargin": null,
+          "operatingMargin": null,
+          "liabilityAssetRatio": null,
+          "currentRatio": null,
+          "revenueYoY": null,
+          "netProfitYoY": null
+        },
+        "periodEnd": null,
+        "basis": null,
+        "sources": []
+      },
+      "eventAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "events": [],
+        "binaryEvents": [],
+        "pending": [
+          "materialAnnouncements",
+          "futureBinaryEvents"
+        ],
+        "newsEvent": null
+      },
+      "corporateActionAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "pending": [
+          "exRightsDividends",
+          "splitReductionConversion",
+          "tradingHalts",
+          "historicalPriceAdjustment"
+        ],
+        "observed": []
+      },
+      "newsEvent": {
+        "sourceQuality": "NONE",
+        "eventType": "EVENT_COVERAGE_NOT_VERIFIED",
+        "direction": "UNCERTAIN",
+        "eventTimestamp": null,
+        "catalystStatus": "UNVERIFIED"
+      },
+      "dataQuality": {
+        "price": "VALID",
+        "ohlcv": "VALID",
+        "institutional": "VALID",
+        "margin": "VALID",
+        "tdcc": "MISSING",
+        "fundamental": "MISSING",
+        "news": "MISSING",
+        "securitiesLending": "NOT_REQUIRED"
+      }
+    },
+    {
+      "code": "1513",
+      "name": "中興電",
+      "market": "TWSE",
+      "assetType": "STOCK",
+      "close": 167,
+      "decision": "WATCH",
+      "strategy": "NONE",
+      "score": 54.1909,
+      "scores": {
+        "trend": 10.8,
+        "momentum": 8,
+        "volume": 6.3909,
+        "market_regime": 8,
+        "institutional": 15,
+        "large_holder": 0,
+        "margin_short_lending": 6,
+        "fundamental": 0,
+        "risk_reward": 0
+      },
+      "gates": {
+        "history": true,
+        "liquidity": true,
+        "market": true,
+        "trend": false,
+        "credit": true,
+        "institutional": true,
+        "tdcc": false,
+        "fundamental": false,
+        "event": false,
+        "corporateAction": false,
+        "strategy": false,
+        "riskReward": false,
+        "assetProfile": true
+      },
+      "reasonCodes": [
+        "TREND_NOT_CONFIRMED",
+        "TDCC_PERSISTENCE_NOT_VERIFIED",
+        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ],
+      "universeRank": null,
+      "universePercentile": null,
+      "liquidityMedianTurnover20d": 289634049,
+      "volumeRatio20d": 0.9586413841099324,
+      "riskReward": null,
+      "setup": null,
+      "etfProfile": null,
+      "historyCoverageTradingDays": 135,
+      "evidenceAudit": {
+        "schemaVersion": 1,
+        "targetDate": "2026-09-29",
+        "tdcc": {
+          "status": "HISTORICAL_QUERIES_VERIFIED_ASOF_PENDING",
+          "asOfEvidence": {
+            "status": "PERSISTENCE_PENDING",
+            "latest": {
+              "code": "1513",
+              "date": "2026-09-18",
+              "large400": 45.989999999999995,
+              "retail50": 45.650000000000006
+            },
+            "comparisonBasis": "OFFICIAL_WEEKLY_EDITION",
+            "comparisons": {
+              "1w": null,
+              "2w": null,
+              "4w": null
+            }
+          },
+          "historicalComparisons": {
+            "2w": {
+              "date": "2026-09-04",
+              "large400Change": 1.14,
+              "retail50Change": -0.87,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:14:10.822433+08:00",
+              "decisionEligible": false
+            },
+            "4w": {
+              "date": "2026-08-21",
+              "large400Change": 0.63,
+              "retail50Change": -0.78,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:14:11.122855+08:00",
+              "decisionEligible": false
+            }
+          },
+          "decisionEligible": false,
+          "publicationTimingVerified": false
+        },
+        "fundamental": {
+          "status": "QUALITY_ASSESSMENT_PENDING",
+          "monthlyRevenue": {
+            "code": "1513",
+            "name": "中興電",
+            "dataMonth": "11508",
+            "dataMonthKey": "2026-08",
+            "currentRevenue": 2502498,
+            "previousMonthRevenue": 2410391,
+            "previousYearRevenue": 2297365,
+            "yoyPct": 8.929055679006165,
+            "momPct": 3.8212472582249104,
+            "cumulativeYoyPct": 4.214029149541254,
+            "sourceQuality": "SOURCE_A"
+          },
+          "quarterlyReportCaptured": false,
+          "assessment": {
+            "status": "UNVERIFIED",
+            "verified": false,
+            "qualityPass": false,
+            "pending": [
+              "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+              "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+              "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+              "FINANCIAL_METRICS_INCOMPLETE"
+            ],
+            "failures": [],
+            "metrics": {
+              "grossMargin": null,
+              "operatingMargin": null,
+              "liabilityAssetRatio": null,
+              "currentRatio": null,
+              "revenueYoY": null,
+              "netProfitYoY": null
+            },
+            "periodEnd": null,
+            "basis": null,
+            "sources": []
+          },
+          "qualityVerified": false
+        },
+        "eventRisk": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "events": [],
+            "binaryEvents": [],
+            "pending": [
+              "materialAnnouncements",
+              "futureBinaryEvents"
+            ],
+            "newsEvent": null
+          },
+          "historicalQuery": {
+            "status": "VERIFY_FAILED",
+            "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+            "requestedDate": "2026-09-29",
+            "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+            "dataAbsenceConfirmed": false
+          }
+        },
+        "corporateAction": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "pending": [
+              "exRightsDividends",
+              "splitReductionConversion",
+              "tradingHalts",
+              "historicalPriceAdjustment"
+            ],
+            "observed": []
+          },
+          "partialHistoricalQuery": {
+            "status": "PARTIAL_VERIFIED",
+            "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+            "actualDate": "2026-09-29",
+            "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+            "otherCorporateActionsVerified": false
+          }
+        }
+      },
+      "group": "watch",
+      "rating": "B／條件觀察",
+      "tone": "watch",
+      "rank": "Watch",
+      "closeDate": "2026-09-29",
+      "priceStatus": "final-close",
+      "thesis": "中興電已納入全市場篩選，已驗證項目得分 54.1909。目前先觀察：中期上升趨勢尚未確認；大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。目前為既有模擬持倉。",
+      "avoid": "在以下項目確認前，不新增買單：中期上升趨勢尚未確認；大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "entry": "目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。",
+      "technical": "MA20/60/120=165.175/164.1917/163.125；RSI14=50；量比=0.9586。",
+      "chips": "外資1/3/5/10/20日=741227/1612824/2176739/2505546/4476148股；投信1/3/5/10/20日=101000/102000/496999/1355917/1122917股。歷史補核：2026-09-18大戶400張以上占45.99%、散戶50張以下占45.65%；2週大戶變動1.14、散戶變動-0.87個百分點；4週大戶變動0.63、散戶變動-0.78個百分點。此為事後歷史核對，不改寫原買進判斷。",
+      "invalid": "正式收盤跌破MA20 165.175元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "invalidCondition": "正式收盤跌破MA20 165.175元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "pullbackEntry": {
+        "status": "unavailable",
+        "reason": "TREND_NOT_CONFIRMED,TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "breakoutTrigger": {
+        "status": "unavailable",
+        "reason": "TREND_NOT_CONFIRMED,TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "entryPrice": null,
+      "maxChase": null,
+      "stop": null,
+      "target": null,
+      "entryRoutes": [],
+      "allocationMax": "0%",
+      "candidatePositionSize": 0,
+      "positionSize": 0,
+      "executionReady": false,
+      "executionStatus": "NOT_SUBMITTED",
+      "hardGatesPassed": false,
+      "financialAssessment": {
+        "status": "UNVERIFIED",
+        "verified": false,
+        "qualityPass": false,
+        "pending": [
+          "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+          "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+          "FINANCIAL_METRICS_INCOMPLETE"
+        ],
+        "failures": [],
+        "metrics": {
+          "grossMargin": null,
+          "operatingMargin": null,
+          "liabilityAssetRatio": null,
+          "currentRatio": null,
+          "revenueYoY": null,
+          "netProfitYoY": null
+        },
+        "periodEnd": null,
+        "basis": null,
+        "sources": []
+      },
+      "eventAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "events": [],
+        "binaryEvents": [],
+        "pending": [
+          "materialAnnouncements",
+          "futureBinaryEvents"
+        ],
+        "newsEvent": null
+      },
+      "corporateActionAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "pending": [
+          "exRightsDividends",
+          "splitReductionConversion",
+          "tradingHalts",
+          "historicalPriceAdjustment"
+        ],
+        "observed": []
+      },
+      "newsEvent": {
+        "sourceQuality": "NONE",
+        "eventType": "EVENT_COVERAGE_NOT_VERIFIED",
+        "direction": "UNCERTAIN",
+        "eventTimestamp": null,
+        "catalystStatus": "UNVERIFIED"
+      },
+      "dataQuality": {
+        "price": "VALID",
+        "ohlcv": "VALID",
+        "institutional": "VALID",
+        "margin": "VALID",
+        "tdcc": "MISSING",
+        "fundamental": "MISSING",
+        "news": "MISSING",
+        "securitiesLending": "NOT_REQUIRED"
+      }
+    },
+    {
+      "code": "2030",
+      "name": "彰源",
+      "market": "TWSE",
+      "assetType": "STOCK",
+      "close": 33.4,
+      "decision": "WATCH",
+      "strategy": "NONE",
+      "score": 47.2576,
+      "scores": {
+        "trend": 18,
+        "momentum": 4,
+        "volume": 6.7576,
+        "market_regime": 8,
+        "institutional": 4.5,
+        "large_holder": 0,
+        "margin_short_lending": 6,
+        "fundamental": 0,
+        "risk_reward": 0
+      },
+      "gates": {
+        "history": true,
+        "liquidity": true,
+        "market": true,
+        "trend": true,
+        "credit": true,
+        "institutional": true,
+        "tdcc": false,
+        "fundamental": false,
+        "event": false,
+        "corporateAction": false,
+        "strategy": false,
+        "riskReward": false,
+        "assetProfile": true
+      },
+      "reasonCodes": [
+        "TDCC_PERSISTENCE_NOT_VERIFIED",
+        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ],
+      "universeRank": null,
+      "universePercentile": null,
+      "liquidityMedianTurnover20d": 58413813.5,
+      "volumeRatio20d": 1.0136472690008536,
+      "riskReward": null,
+      "setup": null,
+      "etfProfile": null,
+      "historyCoverageTradingDays": 135,
+      "evidenceAudit": {
+        "schemaVersion": 1,
+        "targetDate": "2026-09-29",
+        "tdcc": {
+          "status": "HISTORICAL_QUERIES_VERIFIED_ASOF_PENDING",
+          "asOfEvidence": {
+            "status": "PERSISTENCE_PENDING",
+            "latest": {
+              "code": "2030",
+              "date": "2026-09-18",
+              "large400": 54,
+              "retail50": 33.04
+            },
+            "comparisonBasis": "OFFICIAL_WEEKLY_EDITION",
+            "comparisons": {
+              "1w": null,
+              "2w": null,
+              "4w": null
+            }
+          },
+          "historicalComparisons": {
+            "2w": {
+              "date": "2026-09-04",
+              "large400Change": 0.06,
+              "retail50Change": -0.85,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:14:11.485376+08:00",
+              "decisionEligible": false
+            },
+            "4w": {
+              "date": "2026-08-21",
+              "large400Change": 1.83,
+              "retail50Change": -2.58,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:14:13.789964+08:00",
+              "decisionEligible": false
+            }
+          },
+          "decisionEligible": false,
+          "publicationTimingVerified": false
+        },
+        "fundamental": {
+          "status": "QUALITY_ASSESSMENT_PENDING",
+          "monthlyRevenue": {
+            "code": "2030",
+            "name": "彰源",
+            "dataMonth": "11508",
+            "dataMonthKey": "2026-08",
+            "currentRevenue": 1175065,
+            "previousMonthRevenue": 1078093,
+            "previousYearRevenue": 745165,
+            "yoyPct": 57.69192058134775,
+            "momPct": 8.994771323067676,
+            "cumulativeYoyPct": 20.405940800672543,
+            "sourceQuality": "SOURCE_A"
+          },
+          "quarterlyReportCaptured": false,
+          "assessment": {
+            "status": "UNVERIFIED",
+            "verified": false,
+            "qualityPass": false,
+            "pending": [
+              "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+              "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+              "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+              "FINANCIAL_METRICS_INCOMPLETE"
+            ],
+            "failures": [],
+            "metrics": {
+              "grossMargin": null,
+              "operatingMargin": null,
+              "liabilityAssetRatio": null,
+              "currentRatio": null,
+              "revenueYoY": null,
+              "netProfitYoY": null
+            },
+            "periodEnd": null,
+            "basis": null,
+            "sources": []
+          },
+          "qualityVerified": false
+        },
+        "eventRisk": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "events": [],
+            "binaryEvents": [],
+            "pending": [
+              "materialAnnouncements",
+              "futureBinaryEvents"
+            ],
+            "newsEvent": null
+          },
+          "historicalQuery": {
+            "status": "VERIFY_FAILED",
+            "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+            "requestedDate": "2026-09-29",
+            "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+            "dataAbsenceConfirmed": false
+          }
+        },
+        "corporateAction": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "pending": [
+              "exRightsDividends",
+              "splitReductionConversion",
+              "tradingHalts",
+              "historicalPriceAdjustment"
+            ],
+            "observed": []
+          },
+          "partialHistoricalQuery": {
+            "status": "PARTIAL_VERIFIED",
+            "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+            "actualDate": "2026-09-29",
+            "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+            "otherCorporateActionsVerified": false
+          }
+        }
+      },
+      "group": "watch",
+      "rating": "B／條件觀察",
+      "tone": "watch",
+      "rank": "Watch",
+      "closeDate": "2026-09-29",
+      "priceStatus": "final-close",
+      "thesis": "彰源已納入全市場篩選，已驗證項目得分 47.2576。目前先觀察：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "avoid": "在以下項目確認前，不新增買單：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "entry": "目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。",
+      "technical": "MA20/60/120=24.62/21.0283/19.2629；RSI14=87.5445；量比=1.0136。",
+      "chips": "外資1/3/5/10/20日=-336000/-45047/2025771/3958641/5342082股；投信1/3/5/10/20日=0/0/0/0/0股。歷史補核：2026-09-18大戶400張以上占54%、散戶50張以下占33.04%；2週大戶變動0.06、散戶變動-0.85個百分點；4週大戶變動1.83、散戶變動-2.58個百分點。此為事後歷史核對，不改寫原買進判斷。",
+      "invalid": "正式收盤跌破MA20 24.62元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "invalidCondition": "正式收盤跌破MA20 24.62元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "pullbackEntry": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "breakoutTrigger": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "entryPrice": null,
+      "maxChase": null,
+      "stop": null,
+      "target": null,
+      "entryRoutes": [],
+      "allocationMax": "0%",
+      "candidatePositionSize": 0,
+      "positionSize": 0,
+      "executionReady": false,
+      "executionStatus": "NOT_SUBMITTED",
+      "hardGatesPassed": false,
+      "financialAssessment": {
+        "status": "UNVERIFIED",
+        "verified": false,
+        "qualityPass": false,
+        "pending": [
+          "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+          "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+          "FINANCIAL_METRICS_INCOMPLETE"
+        ],
+        "failures": [],
+        "metrics": {
+          "grossMargin": null,
+          "operatingMargin": null,
+          "liabilityAssetRatio": null,
+          "currentRatio": null,
+          "revenueYoY": null,
+          "netProfitYoY": null
+        },
+        "periodEnd": null,
+        "basis": null,
+        "sources": []
+      },
+      "eventAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "events": [],
+        "binaryEvents": [],
+        "pending": [
+          "materialAnnouncements",
+          "futureBinaryEvents"
+        ],
+        "newsEvent": null
+      },
+      "corporateActionAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "pending": [
+          "exRightsDividends",
+          "splitReductionConversion",
+          "tradingHalts",
+          "historicalPriceAdjustment"
+        ],
+        "observed": []
+      },
+      "newsEvent": {
+        "sourceQuality": "NONE",
+        "eventType": "EVENT_COVERAGE_NOT_VERIFIED",
+        "direction": "UNCERTAIN",
+        "eventTimestamp": null,
+        "catalystStatus": "UNVERIFIED"
+      },
+      "dataQuality": {
+        "price": "VALID",
+        "ohlcv": "VALID",
+        "institutional": "VALID",
+        "margin": "VALID",
+        "tdcc": "MISSING",
+        "fundamental": "MISSING",
+        "news": "MISSING",
+        "securitiesLending": "NOT_REQUIRED"
+      }
+    },
+    {
+      "code": "1727",
+      "name": "中華化",
+      "market": "TWSE",
+      "assetType": "STOCK",
+      "close": 118.5,
+      "decision": "WATCH",
+      "strategy": "NONE",
+      "score": 46,
+      "scores": {
+        "trend": 18,
+        "momentum": 4,
+        "volume": 10,
+        "market_regime": 8,
+        "institutional": 4.5,
+        "large_holder": 0,
+        "margin_short_lending": 1.5,
+        "fundamental": 0,
+        "risk_reward": 0
+      },
+      "gates": {
+        "history": true,
+        "liquidity": true,
+        "market": true,
+        "trend": true,
+        "credit": true,
+        "institutional": true,
+        "tdcc": false,
+        "fundamental": false,
+        "event": false,
+        "corporateAction": false,
+        "strategy": false,
+        "riskReward": false,
+        "assetProfile": true
+      },
+      "reasonCodes": [
+        "TDCC_PERSISTENCE_NOT_VERIFIED",
+        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ],
+      "universeRank": null,
+      "universePercentile": null,
+      "liquidityMedianTurnover20d": 624718883,
+      "volumeRatio20d": 2.9976114220825045,
+      "riskReward": null,
+      "setup": null,
+      "etfProfile": null,
+      "historyCoverageTradingDays": 135,
+      "evidenceAudit": {
+        "schemaVersion": 1,
+        "targetDate": "2026-09-29",
+        "tdcc": {
+          "status": "HISTORICAL_QUERIES_VERIFIED_ASOF_PENDING",
+          "asOfEvidence": {
+            "status": "PERSISTENCE_PENDING",
+            "latest": {
+              "code": "1727",
+              "date": "2026-09-18",
+              "large400": 64.88,
+              "retail50": 24.720000000000002
+            },
+            "comparisonBasis": "OFFICIAL_WEEKLY_EDITION",
+            "comparisons": {
+              "1w": null,
+              "2w": null,
+              "4w": null
+            }
+          },
+          "historicalComparisons": {
+            "2w": {
+              "date": "2026-09-04",
+              "large400Change": 5.86,
+              "retail50Change": -5.52,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:14:13.771167+08:00",
+              "decisionEligible": false
+            },
+            "4w": {
+              "date": "2026-08-21",
+              "large400Change": 8.46,
+              "retail50Change": -7.88,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:19:18.909032+08:00",
+              "decisionEligible": false
+            }
+          },
+          "decisionEligible": false,
+          "publicationTimingVerified": false
+        },
+        "fundamental": {
+          "status": "QUALITY_ASSESSMENT_PENDING",
+          "monthlyRevenue": {
+            "code": "1727",
+            "name": "中華化",
+            "dataMonth": "11508",
+            "dataMonthKey": "2026-08",
+            "currentRevenue": 256624,
+            "previousMonthRevenue": 235237,
+            "previousYearRevenue": 157756,
+            "yoyPct": 62.67146732929334,
+            "momPct": 9.09168200580691,
+            "cumulativeYoyPct": 26.367202463952438,
+            "sourceQuality": "SOURCE_A"
+          },
+          "quarterlyReportCaptured": false,
+          "assessment": {
+            "status": "UNVERIFIED",
+            "verified": false,
+            "qualityPass": false,
+            "pending": [
+              "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+              "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+              "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+              "FINANCIAL_METRICS_INCOMPLETE"
+            ],
+            "failures": [],
+            "metrics": {
+              "grossMargin": null,
+              "operatingMargin": null,
+              "liabilityAssetRatio": null,
+              "currentRatio": null,
+              "revenueYoY": null,
+              "netProfitYoY": null
+            },
+            "periodEnd": null,
+            "basis": null,
+            "sources": []
+          },
+          "qualityVerified": false
+        },
+        "eventRisk": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "events": [],
+            "binaryEvents": [],
+            "pending": [
+              "materialAnnouncements",
+              "futureBinaryEvents"
+            ],
+            "newsEvent": null
+          },
+          "historicalQuery": {
+            "status": "VERIFY_FAILED",
+            "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+            "requestedDate": "2026-09-29",
+            "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+            "dataAbsenceConfirmed": false
+          }
+        },
+        "corporateAction": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "pending": [
+              "exRightsDividends",
+              "splitReductionConversion",
+              "tradingHalts",
+              "historicalPriceAdjustment"
+            ],
+            "observed": []
+          },
+          "partialHistoricalQuery": {
+            "status": "PARTIAL_VERIFIED",
+            "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+            "actualDate": "2026-09-29",
+            "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+            "otherCorporateActionsVerified": false
+          }
+        }
+      },
+      "group": "watch",
+      "rating": "B／條件觀察",
+      "tone": "watch",
+      "rank": "Watch",
+      "closeDate": "2026-09-29",
+      "priceStatus": "final-close",
+      "thesis": "中華化已納入全市場篩選，已驗證項目得分 46。目前先觀察：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "avoid": "在以下項目確認前，不新增買單：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "entry": "目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。",
+      "technical": "MA20/60/120=98.52/88.0783/84.9792；RSI14=82.6603；量比=2.9976。",
+      "chips": "外資1/3/5/10/20日=-253541/1045421/-329186/6810972/3525400股；投信1/3/5/10/20日=0/0/0/0/0股。歷史補核：2026-09-18大戶400張以上占64.88%、散戶50張以下占24.72%；2週大戶變動5.86、散戶變動-5.52個百分點；4週大戶變動8.46、散戶變動-7.88個百分點。此為事後歷史核對，不改寫原買進判斷。",
+      "invalid": "正式收盤跌破MA20 98.52元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "invalidCondition": "正式收盤跌破MA20 98.52元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "pullbackEntry": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "breakoutTrigger": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "entryPrice": null,
+      "maxChase": null,
+      "stop": null,
+      "target": null,
+      "entryRoutes": [],
+      "allocationMax": "0%",
+      "candidatePositionSize": 0,
+      "positionSize": 0,
+      "executionReady": false,
+      "executionStatus": "NOT_SUBMITTED",
+      "hardGatesPassed": false,
+      "financialAssessment": {
+        "status": "UNVERIFIED",
+        "verified": false,
+        "qualityPass": false,
+        "pending": [
+          "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+          "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+          "FINANCIAL_METRICS_INCOMPLETE"
+        ],
+        "failures": [],
+        "metrics": {
+          "grossMargin": null,
+          "operatingMargin": null,
+          "liabilityAssetRatio": null,
+          "currentRatio": null,
+          "revenueYoY": null,
+          "netProfitYoY": null
+        },
+        "periodEnd": null,
+        "basis": null,
+        "sources": []
+      },
+      "eventAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "events": [],
+        "binaryEvents": [],
+        "pending": [
+          "materialAnnouncements",
+          "futureBinaryEvents"
+        ],
+        "newsEvent": null
+      },
+      "corporateActionAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "pending": [
+          "exRightsDividends",
+          "splitReductionConversion",
+          "tradingHalts",
+          "historicalPriceAdjustment"
+        ],
+        "observed": []
+      },
+      "newsEvent": {
+        "sourceQuality": "NONE",
+        "eventType": "EVENT_COVERAGE_NOT_VERIFIED",
+        "direction": "UNCERTAIN",
+        "eventTimestamp": null,
+        "catalystStatus": "UNVERIFIED"
+      },
+      "dataQuality": {
+        "price": "VALID",
+        "ohlcv": "VALID",
+        "institutional": "VALID",
+        "margin": "VALID",
+        "tdcc": "MISSING",
+        "fundamental": "MISSING",
+        "news": "MISSING",
+        "securitiesLending": "NOT_REQUIRED"
+      }
+    },
+    {
+      "code": "3045",
+      "name": "台灣大",
+      "market": "TWSE",
+      "assetType": "STOCK",
+      "close": 121,
+      "decision": "WATCH",
+      "strategy": "NONE",
+      "score": 45.3798,
+      "scores": {
+        "trend": 18,
+        "momentum": 4,
+        "volume": 4.8798,
+        "market_regime": 8,
+        "institutional": 9,
+        "large_holder": 0,
+        "margin_short_lending": 1.5,
+        "fundamental": 0,
+        "risk_reward": 0
+      },
+      "gates": {
+        "history": true,
+        "liquidity": true,
+        "market": true,
+        "trend": true,
+        "credit": true,
+        "institutional": true,
+        "tdcc": false,
+        "fundamental": false,
+        "event": false,
+        "corporateAction": false,
+        "strategy": false,
+        "riskReward": false,
+        "assetProfile": true
+      },
+      "reasonCodes": [
+        "TDCC_PERSISTENCE_NOT_VERIFIED",
+        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ],
+      "universeRank": null,
+      "universePercentile": null,
+      "liquidityMedianTurnover20d": 759699394,
+      "volumeRatio20d": 0.7319637186117931,
+      "riskReward": null,
+      "setup": null,
+      "etfProfile": null,
+      "historyCoverageTradingDays": 135,
+      "evidenceAudit": {
+        "schemaVersion": 1,
+        "targetDate": "2026-09-29",
+        "tdcc": {
+          "status": "HISTORICAL_QUERIES_VERIFIED_ASOF_PENDING",
+          "asOfEvidence": {
+            "status": "PERSISTENCE_PENDING",
+            "latest": {
+              "code": "3045",
+              "date": "2026-09-18",
+              "large400": 92.96,
+              "retail50": 4.380000000000001
+            },
+            "comparisonBasis": "OFFICIAL_WEEKLY_EDITION",
+            "comparisons": {
+              "1w": null,
+              "2w": null,
+              "4w": null
+            }
+          },
+          "historicalComparisons": {
+            "2w": {
+              "date": "2026-09-04",
+              "large400Change": 0.29,
+              "retail50Change": -0.2,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:14:16.655563+08:00",
+              "decisionEligible": false
+            },
+            "4w": {
+              "date": "2026-08-21",
+              "large400Change": 0.69,
+              "retail50Change": -0.45,
+              "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+              "capturedAt": "2026-09-30T12:14:16.882781+08:00",
+              "decisionEligible": false
+            }
+          },
+          "decisionEligible": false,
+          "publicationTimingVerified": false
+        },
+        "fundamental": {
+          "status": "QUALITY_ASSESSMENT_PENDING",
+          "monthlyRevenue": {
+            "code": "3045",
+            "name": "台灣大",
+            "dataMonth": "11508",
+            "dataMonthKey": "2026-08",
+            "currentRevenue": 16782864,
+            "previousMonthRevenue": 16171068,
+            "previousYearRevenue": 15468138,
+            "yoyPct": 8.499575061975785,
+            "momPct": 3.783275167725471,
+            "cumulativeYoyPct": 4.7269684262851275,
+            "sourceQuality": "SOURCE_A"
+          },
+          "quarterlyReportCaptured": false,
+          "assessment": {
+            "status": "UNVERIFIED",
+            "verified": false,
+            "qualityPass": false,
+            "pending": [
+              "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+              "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+              "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+              "FINANCIAL_METRICS_INCOMPLETE"
+            ],
+            "failures": [],
+            "metrics": {
+              "grossMargin": null,
+              "operatingMargin": null,
+              "liabilityAssetRatio": null,
+              "currentRatio": null,
+              "revenueYoY": null,
+              "netProfitYoY": null
+            },
+            "periodEnd": null,
+            "basis": null,
+            "sources": []
+          },
+          "qualityVerified": false
+        },
+        "eventRisk": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "events": [],
+            "binaryEvents": [],
+            "pending": [
+              "materialAnnouncements",
+              "futureBinaryEvents"
+            ],
+            "newsEvent": null
+          },
+          "historicalQuery": {
+            "status": "VERIFY_FAILED",
+            "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+            "requestedDate": "2026-09-29",
+            "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+            "dataAbsenceConfirmed": false
+          }
+        },
+        "corporateAction": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "pending": [
+              "exRightsDividends",
+              "splitReductionConversion",
+              "tradingHalts",
+              "historicalPriceAdjustment"
+            ],
+            "observed": []
+          },
+          "partialHistoricalQuery": {
+            "status": "PARTIAL_VERIFIED",
+            "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+            "actualDate": "2026-09-29",
+            "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+            "otherCorporateActionsVerified": false
+          }
+        }
+      },
+      "group": "watch",
+      "rating": "B／條件觀察",
+      "tone": "watch",
+      "rank": "Watch",
+      "closeDate": "2026-09-29",
+      "priceStatus": "final-close",
+      "thesis": "台灣大已納入全市場篩選，已驗證項目得分 45.3798。目前先觀察：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "avoid": "在以下項目確認前，不新增買單：大戶／散戶歷史已補查（2026-09-18、2026-09-04、2026-08-21）；補查資料的當時可得性未驗證，尚不納入買進判斷；已有2026-08營收；尚無當時保存的完整季財報及財務品質核對結果；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險。",
+      "entry": "目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。",
+      "technical": "MA20/60/120=120.55/115.0917/114.5625；RSI14=66.6667；量比=0.732。",
+      "chips": "外資1/3/5/10/20日=-211031/2539733/8770902/15800561/44876078股；投信1/3/5/10/20日=0/-248000/-425969/2040584/5805942股。歷史補核：2026-09-18大戶400張以上占92.96%、散戶50張以下占4.38%；2週大戶變動0.29、散戶變動-0.2個百分點；4週大戶變動0.69、散戶變動-0.45個百分點。此為事後歷史核對，不改寫原買進判斷。",
+      "invalid": "正式收盤跌破MA20 120.55元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "invalidCondition": "正式收盤跌破MA20 120.55元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "pullbackEntry": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "breakoutTrigger": {
+        "status": "unavailable",
+        "reason": "TDCC_PERSISTENCE_NOT_VERIFIED,FUNDAMENTAL_QUALITY_NOT_VERIFIED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED"
+      },
+      "entryPrice": null,
+      "maxChase": null,
+      "stop": null,
+      "target": null,
+      "entryRoutes": [],
+      "allocationMax": "0%",
+      "candidatePositionSize": 0,
+      "positionSize": 0,
+      "executionReady": false,
+      "executionStatus": "NOT_SUBMITTED",
+      "hardGatesPassed": false,
+      "financialAssessment": {
+        "status": "UNVERIFIED",
+        "verified": false,
+        "qualityPass": false,
+        "pending": [
+          "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+          "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+          "FINANCIAL_METRICS_INCOMPLETE"
+        ],
+        "failures": [],
+        "metrics": {
+          "grossMargin": null,
+          "operatingMargin": null,
+          "liabilityAssetRatio": null,
+          "currentRatio": null,
+          "revenueYoY": null,
+          "netProfitYoY": null
+        },
+        "periodEnd": null,
+        "basis": null,
+        "sources": []
+      },
+      "eventAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "events": [],
+        "binaryEvents": [],
+        "pending": [
+          "materialAnnouncements",
+          "futureBinaryEvents"
+        ],
+        "newsEvent": null
+      },
+      "corporateActionAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "pending": [
+          "exRightsDividends",
+          "splitReductionConversion",
+          "tradingHalts",
+          "historicalPriceAdjustment"
+        ],
+        "observed": []
+      },
+      "newsEvent": {
+        "sourceQuality": "NONE",
+        "eventType": "EVENT_COVERAGE_NOT_VERIFIED",
+        "direction": "UNCERTAIN",
+        "eventTimestamp": null,
+        "catalystStatus": "UNVERIFIED"
+      },
+      "dataQuality": {
+        "price": "VALID",
+        "ohlcv": "VALID",
+        "institutional": "VALID",
+        "margin": "VALID",
+        "tdcc": "MISSING",
+        "fundamental": "MISSING",
+        "news": "MISSING",
+        "securitiesLending": "NOT_REQUIRED"
+      }
+    },
+    {
+      "code": "00981A",
+      "name": "主動統一台股增長",
+      "market": "TWSE",
+      "assetType": "ETF",
+      "close": 30.31,
+      "decision": "WATCH",
+      "strategy": "NONE",
+      "score": 43.6827,
+      "scores": {
+        "trend": 13.2,
+        "momentum": 10,
+        "volume_liquidity": 8.4827,
+        "market_regime": 12,
+        "volatility_drawdown": 0,
+        "product_structure": 0,
+        "risk_reward": 0
+      },
+      "gates": {
+        "history": true,
+        "liquidity": true,
+        "market": true,
+        "trend": false,
+        "credit": true,
+        "institutional": true,
+        "tdcc": true,
+        "fundamental": true,
+        "event": false,
+        "corporateAction": false,
+        "strategy": false,
+        "riskReward": false,
+        "assetProfile": false
+      },
+      "reasonCodes": [
+        "TREND_NOT_CONFIRMED",
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED",
+        "ETF_PROFILE_GATE_FAILED"
+      ],
+      "universeRank": null,
+      "universePercentile": null,
+      "liquidityMedianTurnover20d": 4430650083,
+      "volumeRatio20d": 0.7068895958499132,
+      "riskReward": null,
+      "setup": null,
+      "etfProfile": {
+        "profileVersion": "taiwan-equity-etf-v1",
+        "category": "TAIWAN_EQUITY",
+        "classificationStatus": "VERIFIED_DERIVED_FROM_OFFICIAL_NAME",
+        "classificationSource": "OFFICIAL_EXCHANGE_SECURITY_NAME",
+        "classificationBasis": {
+          "code": "00981A",
+          "name": "主動統一台股增長",
+          "market": "TWSE",
+          "reason": "Official exchange security name identifies Taiwan equity exposure."
+        },
+        "leveragedOrInverse": false,
+        "eligibleForIndependentResearch": true,
+        "eligibleForCore": false,
+        "eligibleForBuy": true,
+        "historyReady": true,
+        "historicalRiskReady": true,
+        "liquidityGateReady": true,
+        "liquidityGatePass": true,
+        "riskLimitsPass": false,
+        "exclusionReason": null,
+        "metrics": {
+          "medianTurnover20d": 4430650083,
+          "volumeRatio20d": 0.7068895958499132,
+          "return20dPct": 0.7311399135925489,
+          "return60dPct": -5.429017160686422,
+          "annualizedVolatility20dPct": 28.811991141416886,
+          "maxDrawdown20dPct": 7.375699703654925,
+          "maxDrawdown60dPct": 26.348419094854304,
+          "atrPct": 2.370740443983599
+        }
+      },
+      "historyCoverageTradingDays": 135,
+      "evidenceAudit": {
+        "schemaVersion": 1,
+        "targetDate": "2026-09-29",
+        "tdcc": {
+          "status": "NOT_REQUIRED",
+          "asOfEvidence": {
+            "status": "PERSISTENCE_PENDING",
+            "latest": {
+              "code": "00981A",
+              "date": "2026-09-18",
+              "large400": 18.2,
+              "retail50": 54.58
+            },
+            "comparisonBasis": "OFFICIAL_WEEKLY_EDITION",
+            "comparisons": {
+              "1w": null,
+              "2w": null,
+              "4w": null
+            }
+          },
+          "historicalComparisons": {},
+          "decisionEligible": true,
+          "publicationTimingVerified": true
+        },
+        "fundamental": {
+          "status": "NOT_REQUIRED",
+          "monthlyRevenue": null,
+          "quarterlyReportCaptured": false,
+          "assessment": {
+            "status": "UNVERIFIED",
+            "verified": false,
+            "qualityPass": false,
+            "pending": [
+              "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+              "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+              "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+              "FINANCIAL_METRICS_INCOMPLETE"
+            ],
+            "failures": [],
+            "metrics": {
+              "grossMargin": null,
+              "operatingMargin": null,
+              "liabilityAssetRatio": null,
+              "currentRatio": null,
+              "revenueYoY": null,
+              "netProfitYoY": null
+            },
+            "periodEnd": null,
+            "basis": null,
+            "sources": []
+          },
+          "qualityVerified": true
+        },
+        "eventRisk": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "events": [],
+            "binaryEvents": [],
+            "pending": [
+              "materialAnnouncements",
+              "futureBinaryEvents"
+            ],
+            "newsEvent": null
+          },
+          "historicalQuery": {
+            "status": "VERIFY_FAILED",
+            "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+            "requestedDate": "2026-09-29",
+            "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+            "dataAbsenceConfirmed": false
+          }
+        },
+        "corporateAction": {
+          "status": "UNVERIFIED",
+          "assessment": {
+            "status": "COVERAGE_INCOMPLETE",
+            "verified": false,
+            "pending": [
+              "exRightsDividends",
+              "splitReductionConversion",
+              "tradingHalts",
+              "historicalPriceAdjustment"
+            ],
+            "observed": []
+          },
+          "partialHistoricalQuery": {
+            "status": "PARTIAL_VERIFIED",
+            "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+            "actualDate": "2026-09-29",
+            "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+            "otherCorporateActionsVerified": false
+          }
+        }
+      },
+      "group": "watch",
+      "rating": "B／條件觀察",
+      "tone": "watch",
+      "rank": "Watch",
+      "closeDate": "2026-09-29",
+      "priceStatus": "final-close",
+      "thesis": "主動統一台股增長已納入全市場篩選，已驗證項目得分 43.6827。目前先觀察：中期上升趨勢尚未確認；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險；ETF的商品分類、歷史、流動性或風險條件尚未全部通過。",
+      "avoid": "在以下項目確認前，不新增買單：中期上升趨勢尚未確認；2026-09-29重大訊息歷史查詢遭官方安全頁拒絕；事件風險仍未驗證，不能判定沒有公告；2026-09-29上市除權息結果已取得；分割、減資、停復牌等完整公司行動尚未核對；尚未確認符合條件的回測或突破買點；合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險；ETF的商品分類、歷史、流動性或風險條件尚未全部通過。",
+      "entry": "目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。",
+      "technical": "MA20/60/120=29.637/28.8905/28.9642；RSI14=51.6874；量比=0.7069。",
+      "chips": "使用ETF專用評估，不套用普通股的營收、大戶持股與法人評分權重。",
+      "invalid": "正式收盤跌破MA20 29.637元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "invalidCondition": "正式收盤跌破MA20 29.637元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。",
+      "pullbackEntry": {
+        "status": "unavailable",
+        "reason": "TREND_NOT_CONFIRMED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED,ETF_PROFILE_GATE_FAILED"
+      },
+      "breakoutTrigger": {
+        "status": "unavailable",
+        "reason": "TREND_NOT_CONFIRMED,EVENT_RISK_NOT_VERIFIED,CORPORATE_ACTION_NOT_VERIFIED,ENTRY_SETUP_NOT_CONFIRMED,STRUCTURAL_RR_NOT_VERIFIED,ETF_PROFILE_GATE_FAILED"
+      },
+      "entryPrice": null,
+      "maxChase": null,
+      "stop": null,
+      "target": null,
+      "entryRoutes": [],
+      "allocationMax": "0%",
+      "candidatePositionSize": 0,
+      "positionSize": 0,
+      "executionReady": false,
+      "executionStatus": "NOT_SUBMITTED",
+      "hardGatesPassed": false,
+      "financialAssessment": {
+        "status": "UNVERIFIED",
+        "verified": false,
+        "qualityPass": false,
+        "pending": [
+          "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
+          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
+          "GOVERNANCE_COVERAGE_NOT_VERIFIED",
+          "FINANCIAL_METRICS_INCOMPLETE"
+        ],
+        "failures": [],
+        "metrics": {
+          "grossMargin": null,
+          "operatingMargin": null,
+          "liabilityAssetRatio": null,
+          "currentRatio": null,
+          "revenueYoY": null,
+          "netProfitYoY": null
+        },
+        "periodEnd": null,
+        "basis": null,
+        "sources": []
+      },
+      "eventAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "events": [],
+        "binaryEvents": [],
+        "pending": [
+          "materialAnnouncements",
+          "futureBinaryEvents"
+        ],
+        "newsEvent": null
+      },
+      "corporateActionAssessment": {
+        "status": "COVERAGE_INCOMPLETE",
+        "verified": false,
+        "pending": [
+          "exRightsDividends",
+          "splitReductionConversion",
+          "tradingHalts",
+          "historicalPriceAdjustment"
+        ],
+        "observed": []
+      },
+      "newsEvent": {
+        "sourceQuality": "NONE",
+        "eventType": "EVENT_COVERAGE_NOT_VERIFIED",
+        "direction": "UNCERTAIN",
+        "eventTimestamp": null,
+        "catalystStatus": "UNVERIFIED"
+      },
+      "dataQuality": {
+        "price": "VALID",
+        "ohlcv": "VALID",
+        "institutional": "NOT_REQUIRED",
+        "margin": "NOT_REQUIRED",
+        "tdcc": "NOT_REQUIRED",
+        "fundamental": "NOT_REQUIRED",
+        "news": "MISSING",
+        "securitiesLending": "NOT_REQUIRED"
+      }
+    }
+  ],
+  "coverage": {
+    "universe": 2308,
+    "stocks": 1952,
+    "etfs": 356,
+    "deepDive": 609,
+    "deepDiveStocks": 537,
+    "deepDiveEtfs": 72,
+    "creditReadyStocks": 534,
+    "creditMissingCodes": [
+      "7610",
+      "7828",
+      "7822"
+    ],
+    "eligibleRanked": 0
+  },
+  "researchStatus": "EVIDENCE_PENDING",
+  "researchComplete": false,
+  "evidencePending": {
+    "history": 12,
+    "event": 609,
+    "corporateAction": 609,
+    "tdcc": 537,
+    "fundamental": 537,
+    "institutional": 1,
+    "credit": 3
+  },
+  "screeningComplete": true,
+  "creditEvidenceComplete": false,
+  "inputFingerprint": "fc8f39efdc70d115cff00544fe97dbb71bedc86df9a290ac7c8d7c2c54355f3d",
+  "inputGeneratedAt": "2026-09-30T09:20:01.029Z",
+  "researchInputGeneratedAt": "2026-09-30T09:20:01.029Z",
+  "simulationMode": false,
+  "liquiditySelectionBasis": "MEDIAN_TURNOVER_20D",
+  "sourceNote": "使用raw/2026-09-29已PASS官方證據與本版inputFingerprint；未把後續資料回填為當時已知資訊。",
+  "engineVersion": "deterministic-screening-v2",
+  "marketOverview": {
+    "date": "2026-09-29",
+    "taiexClose": 47631.96,
+    "taiexChange": -392.64,
+    "taiexChangePct": -0.82,
+    "source": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20260929&type=ALL&response=json",
+    "officialDateEvidence": "20260929",
+    "rawBlobSha": "b65f313844a1773e02ae8228c8811103fef6321a"
+  },
+  "marketRegimeEvidence": {
+    "source": "OFFICIAL_BROAD_MARKET_ETF_PROXY",
+    "code": "0050",
+    "verified": true
+  },
+  "screeningPath": "raw/2026-09-29/screening-results.json",
+  "sourceGate": [
+    {
+      "gate": "twse-daily-close-quotes",
+      "status": "PASS",
+      "source": "twse-mi-index-daily-close",
+      "officialDateEvidence": "20260929"
+    },
+    {
+      "gate": "twse-market-close-statistics",
+      "status": "PASS",
+      "source": "twse-mi-index",
+      "officialDateEvidence": "20260929"
+    },
+    {
+      "gate": "twse-market-turnover",
+      "status": "PASS",
+      "source": "twse-fmtqik",
+      "officialDateEvidence": "20260929"
+    },
+    {
+      "gate": "twse-individual-institutional",
+      "status": "PASS",
+      "source": "twse-t86",
+      "officialDateEvidence": "20260929"
+    },
+    {
+      "gate": "tpex-daily-close-quotes",
+      "status": "PASS",
+      "source": "tpex-mainboard-daily-close-quotes",
+      "officialDateEvidence": "1150929"
+    },
+    {
+      "gate": "tpex-market-turnover-index",
+      "status": "PASS",
+      "source": "tpex-daily-trading-index",
+      "officialDateEvidence": "1150929"
+    },
+    {
+      "gate": "tpex-individual-institutional",
+      "status": "PASS",
+      "source": "tpex-3insti-daily-trading",
+      "officialDateEvidence": "1150929"
+    },
+    {
+      "gate": "tpex-institutional-summary",
+      "status": "PASS",
+      "source": "tpex-3insti-summary",
+      "officialDateEvidence": "1150929"
+    }
+  ],
+  "evidenceAuditVersion": 1,
+  "auditFingerprint": "12c92217bc3937de9965acb0a07819ef154e0012dc65098fc290aaebd896811c"
+}

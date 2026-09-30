@@ -2,6 +2,33 @@
   "targetDate": "2026-09-29",
   "captures": [
     {
+      "id": "twse-events-L",
+      "market": "TWSE",
+      "kind": "events",
+      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
+      "summary": "上市公司每日重大訊息",
+      "status": "NOT_CAPTURED_RETROSPECTIVE",
+      "note": "No point-in-time archive; never backfill a historical decision using the current latest report."
+    },
+    {
+      "id": "twse-governance-L",
+      "market": "TWSE",
+      "kind": "governance",
+      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap23_L",
+      "summary": "上市公司違反資訊申報、重大訊息及說明記者會規定專區",
+      "status": "NOT_CAPTURED_RETROSPECTIVE",
+      "note": "No point-in-time archive; never backfill a historical decision using the current latest report."
+    },
+    {
+      "id": "twse-suspensions-L",
+      "market": "TWSE",
+      "kind": "suspensions",
+      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap26_L",
+      "summary": "上市公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
+      "status": "NOT_CAPTURED_RETROSPECTIVE",
+      "note": "No point-in-time archive; never backfill a historical decision using the current latest report."
+    },
+    {
       "id": "twse-income-bd",
       "market": "TWSE",
       "kind": "income",
@@ -110,6 +137,24 @@
       "note": "No point-in-time archive; never backfill a historical decision using the current latest report."
     },
     {
+      "id": "tpex-events-O",
+      "market": "TPEx",
+      "kind": "events",
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
+      "summary": "上櫃公司每日重大訊息",
+      "status": "NOT_CAPTURED_RETROSPECTIVE",
+      "note": "No point-in-time archive; never backfill a historical decision using the current latest report."
+    },
+    {
+      "id": "tpex-suspensions-O",
+      "market": "TPEx",
+      "kind": "suspensions",
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap26_O",
+      "summary": "上櫃公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
+      "status": "NOT_CAPTURED_RETROSPECTIVE",
+      "note": "No point-in-time archive; never backfill a historical decision using the current latest report."
+    },
+    {
       "id": "tpex-balance-basi",
       "market": "TPEx",
       "kind": "balance",
@@ -214,6 +259,15 @@
       "kind": "income",
       "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_mim",
       "summary": "上櫃公司綜合損益表(異業)",
+      "status": "NOT_CAPTURED_RETROSPECTIVE",
+      "note": "No point-in-time archive; never backfill a historical decision using the current latest report."
+    },
+    {
+      "id": "tpex-governance-O",
+      "market": "TPEx",
+      "kind": "governance",
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap23_O",
+      "summary": "上櫃公司違反資訊申報、重大訊息及說明記者會規定專區",
       "status": "NOT_CAPTURED_RETROSPECTIVE",
       "note": "No point-in-time archive; never backfill a historical decision using the current latest report."
     }
