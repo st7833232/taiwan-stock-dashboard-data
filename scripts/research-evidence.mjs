@@ -72,7 +72,10 @@ export function enrich(target) {
   const financial=new Map(),financialPeriods=new Map(),events=new Map(),governance=new Map();
   const captures=fs.readdirSync('raw').filter(d=>/^\d{4}-\d{2}-\d{2}$/.test(d)&&d<=target).sort().flatMap(d=>(read(`raw/${d}/financial-evidence-captures.json`)?.captures??[]).map(c=>{const rawRoot=`raw/${d}`;return {...c,rawRoot,rawUsable:Boolean(c.id&&fs.existsSync(`${rawRoot}/${c.id}.raw.txt`))};}));
   for(const c of captures.filter(c=>c.status==='CAPTURED'&&c.rawUsable&&Date.parse(c.capturedAt)<=Date.parse(`${target}T23:59:59+08:00`))) {
-    for(const row of read(`${c.rawRoot}/${c.id}.raw.txt`)??[]) {
+    if(c.kind==='coverage')continue;
+    const evidenceRows=read(`${c.rawRoot}/${c.id}.raw.txt`);
+    if(!Array.isArray(evidenceRows))continue;
+    for(const row of evidenceRows) {
       if(c.kind==='events') {const event=normalizeOfficialEvent(row,c.url);if(event&&Date.parse(event.eventTimestamp)<=cutoff){if(!events.has(event.code))events.set(event.code,[]);events.get(event.code).push(event);}continue;}
       if(c.kind==='governance'){const code=String(row['股票代號']??row['公司代號']??row['公司代碼']??row.SecuritiesCompanyCode??'').trim();if(code)governance.set(code,row);continue;}
       if(!['income','balance'].includes(c.kind))continue;
