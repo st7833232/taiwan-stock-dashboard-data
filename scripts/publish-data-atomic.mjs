@@ -8,10 +8,24 @@ export async function publish() {
   const token=process.env.GITHUB_TOKEN;if(!token) throw Error('GITHUB_TOKEN required');
   const git=(...a)=>execFileSync('git',a,{encoding:'utf8'}).trim();
   const base=git('rev-parse','HEAD');
+  const retryable=new Set([429,500,502,503,504]),sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
   const api=async(p,body,method=body?'POST':'GET')=>{
-    const response=await fetch(`https://api.github.com/repos/${repo}/${p}`,{method,headers:{accept:'application/vnd.github+json',authorization:`Bearer ${token}`,'content-type':'application/json','X-GitHub-Api-Version':'2022-11-28'},body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(60000)});
-    if(!response.ok) throw Error(`GitHub ${method} ${p}: HTTP ${response.status}`);
-    return response.json();
+    let lastError;
+    for(let attempt=0;attempt<3;attempt++){
+      try{
+        const response=await fetch(`https://api.github.com/repos/${repo}/${p}`,{method,headers:{accept:'application/vnd.github+json',authorization:`Bearer ${token}`,'content-type':'application/json','X-GitHub-Api-Version':'2022-11-28'},body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(60000)});
+        if(response.ok)return response.json();
+        lastError=Error(`GitHub ${method} ${p}: HTTP ${response.status}`);
+        if(!retryable.has(response.status)||attempt===2)throw lastError;
+        const retryAfter=Number(response.headers.get('retry-after'));
+        await sleep(Number.isFinite(retryAfter)&&retryAfter>0?retryAfter*1000:1000*(attempt+1));
+      }catch(error){
+        lastError=error;
+        if(attempt===2||/^GitHub /.test(String(error?.message??''))&&!/HTTP (429|500|502|503|504)$/.test(String(error.message)))throw error;
+        await sleep(1000*(attempt+1));
+      }
+    }
+    throw lastError;
   };
   const allowed=['raw/','history/','snapshots/'];
   const all=[...new Set([...git('diff','--name-only','HEAD').split('\n'),...git('ls-files','--others','--exclude-standard').split('\n')].filter(Boolean))];
