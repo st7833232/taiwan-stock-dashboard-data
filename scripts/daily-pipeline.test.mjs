@@ -43,7 +43,7 @@ test('TPEx corporate-action coverage is discovered from the official OpenAPI spe
   const sources=discoverCoverageSources(spec,'TPEx','https://www.tpex.org.tw/openapi/v1');
   const tags=new Set(sources.flatMap(s=>s.coverageTags));
   assert.ok(tags.has('exRightsDividends'));
-  assert.ok(tags.has('historicalPriceAdjustment:exRights'));
+  assert.equal(tags.has('historicalPriceAdjustment:exRights'),false); // TPEx OpenAPI result is current-day only; history uses the official range backend.
   assert.ok(tags.has('splitReductionConversion:reduction'));
   assert.ok(tags.has('historicalPriceAdjustment:reduction'));
   assert.ok(tags.has('splitReductionConversion:parValueChange'));
