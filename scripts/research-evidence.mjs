@@ -4,6 +4,27 @@ import {normalizeFinancial,financialAssessment,normalizeOfficialEvent,eventAsses
 
 const read=p=>{try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}};
 const num=x=>x===null||x===undefined||String(x).trim()===''?null:Number.isFinite(Number(String(x).replaceAll(',','')))?Number(String(x).replaceAll(',','')):null;
+const verifiedScope=c=>c?{status:'VERIFIED',capturedAt:c.capturedAt,source:c.url,id:c.id}:{status:'UNVERIFIED',capturedAt:null,source:null,id:null};
+export function evidenceCoverage(captures,market,target) {
+  const cutoff=Date.parse(`${target}T23:59:59+08:00`);
+  const usable=(captures??[]).filter(c=>c?.market===market&&c.status==='CAPTURED'&&c.rawUsable!==false&&Number.isFinite(Date.parse(c.capturedAt))&&Date.parse(c.capturedAt)<=cutoff);
+  const latest=(...kinds)=>usable.filter(c=>kinds.includes(c.kind)).sort((a,b)=>Date.parse(a.capturedAt)-Date.parse(b.capturedAt)).at(-1)??null;
+  const governanceScope=verifiedScope(latest('governance'));
+  return {
+    governanceVerified:governanceScope.status==='VERIFIED',
+    governanceScope,
+    eventCoverage:{scopes:{
+      materialAnnouncements:verifiedScope(latest('events')),
+      futureBinaryEvents:verifiedScope(latest('futureBinaryEvents'))
+    }},
+    corporateActionCoverage:{scopes:{
+      exRightsDividends:verifiedScope(latest('exRightsDividends')),
+      splitReductionConversion:verifiedScope(latest('splitReductionConversion')),
+      tradingHalts:verifiedScope(latest('tradingHalts')),
+      historicalPriceAdjustment:verifiedScope(latest('historicalPriceAdjustment'))
+    }}
+  };
+}
 export function officialDate(x) {
   const s=String(x??'').replace(/\D/g,'');
   let date=null;
@@ -43,11 +64,11 @@ export function enrich(target) {
   const unique=new Map(weeks.map(r=>[`${r.code}|${r.date}`,r])),byCode=new Map();
   for(const row of unique.values()){if(!byCode.has(row.code))byCode.set(row.code,[]);byCode.get(row.code).push(row);}
   const financial=new Map(),financialPeriods=new Map(),events=new Map(),governance=new Map();
-  const captures=fs.readdirSync('raw').filter(d=>/^\d{4}-\d{2}-\d{2}$/.test(d)&&d<=target).sort().flatMap(d=>(read(`raw/${d}/financial-evidence-captures.json`)?.captures??[]).map(c=>({...c,rawRoot:`raw/${d}`})));
-  for(const c of captures.filter(c=>c.status==='CAPTURED'&&Date.parse(c.capturedAt)<=Date.parse(`${target}T23:59:59+08:00`))) {
+  const captures=fs.readdirSync('raw').filter(d=>/^\d{4}-\d{2}-\d{2}$/.test(d)&&d<=target).sort().flatMap(d=>(read(`raw/${d}/financial-evidence-captures.json`)?.captures??[]).map(c=>{const rawRoot=`raw/${d}`;return {...c,rawRoot,rawUsable:Boolean(c.id&&fs.existsSync(`${rawRoot}/${c.id}.raw.txt`))};}));
+  for(const c of captures.filter(c=>c.status==='CAPTURED'&&c.rawUsable&&Date.parse(c.capturedAt)<=Date.parse(`${target}T23:59:59+08:00`))) {
     for(const row of read(`${c.rawRoot}/${c.id}.raw.txt`)??[]) {
       if(c.kind==='events') {const event=normalizeOfficialEvent(row,c.url);if(event&&Date.parse(event.eventTimestamp)<=cutoff){if(!events.has(event.code))events.set(event.code,[]);events.get(event.code).push(event);}continue;}
-      if(c.kind==='governance'){const code=String(row['股票代號']??row['公司代號']??'').trim();if(code)governance.set(code,row);continue;}
+      if(c.kind==='governance'){const code=String(row['股票代號']??row['公司代號']??row['公司代碼']??row.SecuritiesCompanyCode??'').trim();if(code)governance.set(code,row);continue;}
       if(!['income','balance'].includes(c.kind))continue;
       const code=String(row['公司代號']??row['公司代碼']??row.SecuritiesCompanyCode??'').trim(),year=num(row['年度']??row.Year),quarter=num(row['季別']??row['季']??row.Season??row.Quarter);
       if(!code||!year||!Number.isInteger(quarter)||quarter<1||quarter>4)continue;
@@ -70,9 +91,11 @@ export function enrich(target) {
     row.financialEvidence=financial.get(row.code)??null;
     const current=row.financialEvidence;
     const periodEnd=current?.income?.periodEnd,priorPeriod=periodEnd?`${Number(periodEnd.slice(0,4))-1}${periodEnd.slice(4)}`:null;
-    row.financialAssessment=financialAssessment({income:current?.income?.normalized,balance:current?.balance?.normalized},financialPeriods.get(`${row.code}|${priorPeriod}`),config.evidenceCollection.financialQuality,{governanceVerified:false,negativeGovernance:governance.has(row.code)});
-    row.eventAssessment=eventAssessment(events.get(row.code)??[],target,null);
-    row.corporateActionAssessment=corporateActionAssessment(events.get(row.code)??[],target,null);
+    const coverage=evidenceCoverage(captures,row.current?.market??row.market,target);
+    row.evidenceCoverage=coverage;
+    row.financialAssessment=financialAssessment({income:current?.income?.normalized,balance:current?.balance?.normalized},financialPeriods.get(`${row.code}|${priorPeriod}`),config.evidenceCollection.financialQuality,{governanceVerified:coverage.governanceVerified,negativeGovernance:governance.has(row.code)});
+    row.eventAssessment=eventAssessment(events.get(row.code)??[],target,coverage.eventCoverage,input.verifiedCalendar?.nextTradingDate??null);
+    row.corporateActionAssessment=corporateActionAssessment(events.get(row.code)??[],target,coverage.corporateActionCoverage);
     // Verified data is not a verified quality/catalyst decision. Do not grant BUY permission from raw reports.
     row.verifiedEvidence={...row.verifiedEvidence,tdcc:ready,tdccScoreFraction:ready?(old.filter(r=>last.large400>r.large400&&last.retail50<r.retail50).length/old.length):0,fundamental:row.financialAssessment.qualityPass,fundamentalScoreFraction:row.financialAssessment.qualityPass?config.evidenceCollection.financialQuality.qualityWeightFraction:0,eventRisk:row.eventAssessment.verified,corporateAction:row.corporateActionAssessment.verified};
   }
