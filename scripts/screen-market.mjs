@@ -11,6 +11,47 @@ const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
 const write = (p, x) => { fs.mkdirSync(p.slice(0,p.lastIndexOf('/')) || '.', {recursive:true}); fs.writeFileSync(p, JSON.stringify(x,null,2)+'\n'); };
 const round = x => Math.round(x*10000)/10000;
 
+const reasonLabels = {
+  TDCC_PERSISTENCE_NOT_VERIFIED:'大戶與散戶持股的連續多週變化尚未核對完成',
+  FUNDAMENTAL_QUALITY_NOT_VERIFIED:'營收、獲利及財務品質尚未核對完成',
+  EVENT_RISK_NOT_VERIFIED:'近期重大消息與下一交易日的事件風險尚未核對完成',
+  CORPORATE_ACTION_NOT_VERIFIED:'除權息、分割或減資等公司行動尚未核對完成',
+  ENTRY_SETUP_NOT_CONFIRMED:'尚未確認符合條件的回測或突破買點',
+  STRUCTURAL_RR_NOT_VERIFIED:'合理停損與目標價尚未確認，暫時無法判斷這筆交易是否值得承擔風險',
+  HISTORY_NOT_VERIFIED:'歷史行情尚不足以驗證均線、波動與成交量',
+  LOW_LIQUIDITY:'近期成交金額未達流動性門檻',
+  MARKET_REGIME_BLOCK:'目前大盤條件不允許新增買單',
+  TREND_NOT_CONFIRMED:'中期上升趨勢尚未確認',
+  CREDIT_EVIDENCE_INCOMPLETE:'融資、融券或必要借券資料尚未核對完成',
+  INSTITUTIONAL_HISTORY_INCOMPLETE:'外資、投信等法人多日買賣紀錄尚未核對完成',
+  ETF_PROFILE_GATE_FAILED:'ETF的商品分類、歷史、流動性或風險條件尚未全部通過',
+  SCORE_THRESHOLD_NOT_MET:'綜合評分未達目前市場環境的買進門檻',
+  RANKING_THRESHOLD_NOT_MET:'全市場排名未達優先買進門檻',
+  NEXT_TRADING_DATE_NOT_OFFICIALLY_VERIFIED:'下一個正式交易日尚未確認',
+  DUPLICATE_SIGNAL:'已有相同標的持倉或委託，避免重複加碼',
+  POSITION_SIZE_INVALID:'風控計算後沒有合適的可買股數',
+  PRIORITY_COUNT_LIMIT:'優先買進標的已達數量上限',
+  ACCOUNT_RISK_LIMIT:'既有單股曝險超過帳戶上限，暫不新增買單',
+  TOTAL_EXPOSURE_LIMIT:'總持股曝險超過上限',
+  SECTOR_EXPOSURE_LIMIT:'產業或相關持股曝險超過上限',
+  ACCOUNT_LOSS_HISTORY_UNVERIFIED:'帳戶日／週損失所需的歷史評價尚未確認',
+  ACCOUNT_EQUITY_HISTORY_UNVERIFIED:'歷史交易與帳戶權益尚未核對完成',
+  REALIZED_LOSS_HISTORY_UNVERIFIED:'已實現損益紀錄尚未核對完成',
+  CONSECUTIVE_LOSS_LIMIT:'連續虧損已達上限，暫停新增部位',
+  DAILY_LOSS_LIMIT:'單日損失已達風控上限',
+  WEEKLY_LOSS_LIMIT:'單週損失已達風控上限',
+};
+export const reasonDescriptions = codes => [...new Set(codes.map(code=>reasonLabels[code]||'其他必要條件尚未確認，暫不建立新買單'))];
+export const evidenceLabels = {history:'歷史行情',institutional:'法人多日紀錄',credit:'融資融券等信用資料',tdcc:'大戶與散戶多週持股',fundamental:'財務品質',event:'重大消息與事件風險',corporateAction:'除權息等公司行動'};
+export function candidateDisplayFields(row, held) {
+  const reasons=reasonDescriptions(row.reasonCodes||[]), pending=reasons.join('；');
+  return {
+    thesis:`${row.name}已納入全市場篩選，已驗證項目得分 ${row.score}。${pending?`目前先觀察：${pending}。`:'目前列出的檢查項目均已通過，仍須遵守進場價格與帳戶風控。'}${held?'目前為既有模擬持倉。':''}`,
+    avoid:pending?`在以下項目確認前，不新增買單：${pending}。`:'開盤或實際進場價格超過上限、停損或帳戶曝險不符規則時，取消買單。',
+    entry:row.decision==='BUY'?`僅供下一交易日條件單：進場價 ${row.entryPrice??row.setup?.entry} 元，最高可接受價格 ${row.maxChase??row.setup?.maxEntry} 元，停損 ${row.stop??row.setup?.stop} 元；超價即取消。`:'目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。',
+  };
+}
+
 // This function never assigns ranks to incomplete evidence or treats a score as a Hard Gate.
 export function creditReady(row, config) {
   const c = row?.marginShortLending, r = config.creditEvidence;
@@ -249,11 +290,10 @@ export function publishCheckpoint(target) {
   const candidates=sorted.filter(r=>keep.has(r.code)).map(r=>{
     const d=detailed.get(r.code),t=d?.indicators||{}, held=paper.positions.some(p=>p.code===r.code), core=r.etfProfile?.eligibleForCore && r.etfProfile?.historyReady && r.etfProfile?.riskLimitsPass && r.etfProfile?.liquidityGatePass;
     const invalid=finite(t.ma20)?`正式收盤跌破MA20 ${round(t.ma20)}元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。`:`必須先取得 ${target} 官方OHLC與至少 ${config.screening.historyTradingDaysMin} 日可驗證歷史；在此之前不建立進場路徑。`;
-    return {...r,group:core?'core':r.decision==='BUY'?'priority':r.decision==='NO_TRADE'?'excluded':'watch',rating:r.decision==='BUY'?'A-／條件買進':core?'Core／觀察':'B／條件觀察',tone:core?'core':'watch',rank:core?'Core':'Watch',closeDate:target,priceStatus:'final-close',thesis:`${r.name}已納入全市場篩選；可驗證部分得分 ${r.score}。未通過項目：${r.reasonCodes.join('、')||'無'}。${held?'目前為既有模擬持倉。':''}`,
+    return {...r,group:core?'core':r.decision==='BUY'?'priority':r.decision==='NO_TRADE'?'excluded':'watch',rating:r.decision==='BUY'?'A-／條件買進':core?'Core／觀察':'B／條件觀察',tone:core?'core':'watch',rank:core?'Core':'Watch',closeDate:target,priceStatus:'final-close',...candidateDisplayFields(r,held),
       technical:finite(t.ma20)?`MA20/60/120=${round(t.ma20)}/${round(t.ma60)}/${round(t.ma120)}；RSI14=${round(t.rsi14)}；量比=${round(r.volumeRatio20d)}。`:'尚無足夠官方歷史可计算MA/ATR。',
-      chips:r.assetType==='ETF'?'使用獨立ETF Profile，不套用普通股營收、TDCC與法人權重。':`外資1/3/5/10/20日=${[1,3,5,10,20].map(n=>d?.institutionalTrend?.[`foreign_${n}d`]??'未驗證').join('/')}股；投信1/3/5/10/20日=${[1,3,5,10,20].map(n=>d?.institutionalTrend?.[`investment_trust_${n}d`]??'未驗證').join('/')}股。`,
-      avoid:`禁止以 ${target} 單日成交額取代20日中位數；${r.reasonCodes.join('、')||'帳戶與開盤風控待重新驗證'}未通過時不建單。`,invalid,invalidCondition:invalid,
-      entry:'目前無可執行委託；完整證據、結構RR、排名與deterministic帳戶風控均通過後才重新生成下一交易日條件單。',
+      chips:r.assetType==='ETF'?'使用ETF專用評估，不套用普通股的營收、大戶持股與法人評分權重。':`外資1/3/5/10/20日=${[1,3,5,10,20].map(n=>d?.institutionalTrend?.[`foreign_${n}d`]??'未驗證').join('/')}股；投信1/3/5/10/20日=${[1,3,5,10,20].map(n=>d?.institutionalTrend?.[`investment_trust_${n}d`]??'未驗證').join('/')}股。`,
+      invalid,invalidCondition:invalid,
       pullbackEntry:{status:r.decision==='BUY'&&r.strategy==='TREND_PULLBACK'?'available':'unavailable',reason:r.reasonCodes.join(',')||'PULLBACK_CONFIRMATION_NOT_PRESENT'},breakoutTrigger:{status:r.decision==='BUY'&&r.strategy==='BREAKOUT'?'available':'unavailable',reason:r.reasonCodes.join(',')||'BREAKOUT_CONFIRMATION_NOT_PRESENT'},entryPrice:r.decision==='BUY'?r.setup.entry:null,maxChase:r.decision==='BUY'?r.setup.maxEntry:null,stop:r.decision==='BUY'?r.setup.stop:null,target:r.decision==='BUY'?r.setup.target:null,
       entryRoutes:r.decision==='BUY'?[{route_id:`${target}-${r.code}-${r.strategy}`,route_type:r.strategy==='BREAKOUT'?'BREAKOUT_ROUTE':'PULLBACK_ROUTE',trigger_price:r.setup.entry,zone_low:r.setup.entry,zone_high:r.setup.maxEntry,max_entry_price:r.setup.maxEntry,stop_loss:r.setup.stop,candidate_position_size:r.candidatePositionSize,expires_at:plan.nextDate,route_status:'PLANNED',mutual_exclusion_group:`${target}-${r.code}`}]:[],allocationMax:r.decision==='BUY'?`${config.risk.singleStockExposureMaxPct}%上限`:'0%',candidatePositionSize:r.candidatePositionSize||0,positionSize:0,executionReady:false,executionStatus:'NOT_SUBMITTED',hardGatesPassed:r.decision==='BUY',
       newsEvent:{sourceQuality:'NONE',eventType:'EVENT_COVERAGE_NOT_VERIFIED',direction:'UNCERTAIN',eventTimestamp:null,catalystStatus:'UNVERIFIED'},
@@ -262,7 +302,7 @@ export function publishCheckpoint(target) {
   const stocks=input.deepDive.filter(r=>r.assetType==='STOCK'), missingCredit=stocks.filter(r=>!creditReady(r,config)).map(r=>r.code);
   const coverage={universe:input.universe.length,stocks:input.universe.filter(r=>r.assetType==='STOCK').length,etfs:input.universe.filter(r=>r.assetType==='ETF').length,deepDive:input.deepDive.length,deepDiveStocks:stocks.length,deepDiveEtfs:input.deepDive.length-stocks.length,creditReadyStocks:stocks.length-missingCredit.length,creditMissingCodes:missingCredit,eligibleRanked:result.rows.filter(r=>r.universeRank!==null).length};
   const evidence=evidenceSummary(input,result),complete=evidence.researchComplete,publicationStatus=complete?'DATA_UPDATED':'SNAPSHOT_UPDATED_EVIDENCE_PENDING';
-  const conclusion=`${target}全市場 ${coverage.universe} 檔已完成資料篩選（普通股 ${coverage.stocks}、ETF ${coverage.etfs}），深度檢查 ${coverage.deepDive} 檔。信用證據普通股 ${coverage.creditReadyStocks}/${coverage.deepDiveStocks}；${complete?'必要研究證據均已驗證；允許結論為沒有買點。':`未完成證據：${Object.entries(evidence.counts).map(([k,n])=>`${k} ${n}檔`).join('、')}，研究狀態為EVIDENCE_PENDING。`}本次Priority BUY=${candidates.filter(c=>c.group==='priority'&&c.decision==='BUY').length}、nextOrders=${paper.nextOrders.length}筆；已有ETF Profile不等同取得買點。`;
+  const conclusion=`${target}全市場 ${coverage.universe} 檔已完成初步篩選（普通股 ${coverage.stocks}、ETF ${coverage.etfs}），深度檢查 ${coverage.deepDive} 檔。普通股信用資料已核對 ${coverage.creditReadyStocks}/${coverage.deepDiveStocks} 檔。${complete?'必要研究資料均已核對；沒有合適買點也可以是完整研究結果。':`仍待核對：${Object.entries(evidence.counts).filter(([,n])=>n>0).map(([k,n])=>`${evidenceLabels[k]||'其他必要資料'} ${n}檔`).join('、')}。研究尚未完成。`}本次優先買進標的 ${candidates.filter(c=>c.group==='priority'&&c.decision==='BUY').length} 檔，下一交易日委託 ${paper.nextOrders.length} 筆；ETF專用評估條件通過，也不代表已出現買點。`;
   const p={version:config.version,signalMode:'EOD',marketRegime:result.regime,buyScoreThreshold:config.buyScoreThreshold[result.regime],liquidityMedianTurnover20dMin:config.liquidityMedianTurnover20dMin,priorityMaxCandidates:config.priority.maxCandidates,priorityPercentileMax:config.priority.percentileMax,priorityRankMax:config.priority.rankMax,minRiskReward:config.minRiskReward,...config.risk,scoreWeights:config.scoreWeights,assetProfiles:config.assetProfiles};
   const research={researchDate:target,latestTradingDate:target,strategyVersion:config.version,strategyProfile:p,conclusion,decision:{summary:conclusion},candidates,coverage,researchStatus:complete?'COMPLETE':'EVIDENCE_PENDING',researchComplete:complete,evidencePending:evidence.counts,screeningComplete:true,creditEvidenceComplete:missingCredit.length===0,inputFingerprint:fingerprint,inputGeneratedAt:input.generatedAt,researchInputGeneratedAt:input.generatedAt,simulationMode:false,liquiditySelectionBasis:'MEDIAN_TURNOVER_20D',sourceNote:`使用raw/${target}已PASS官方證據與本版inputFingerprint；未把後續資料回填為當時已知資訊。`,engineVersion:config.screening.engineVersion,marketOverview,marketRegimeEvidence:{source:'OFFICIAL_BROAD_MARKET_ETF_PROXY',code:result.marketProxyCode,verified:result.regimeVerified},screeningPath:`${root}/screening-results.json`,sourceGate:gate.gates};
   const selected=candidates.filter(c=>c.group==='priority'&&c.decision==='BUY').map(c=>c.code), before=history.at(-1)?.selected||[];

@@ -21,6 +21,11 @@ if (!Array.isArray(research.candidates)) {
 } else {
   for (const candidate of research.candidates) {
     const code = candidate?.code ?? '?';
+    for (const field of ['thesis', 'avoid', 'entry']) {
+      if ((candidate.reasonCodes ?? []).some(reason => typeof reason === 'string' && candidate[field]?.includes(reason))) {
+        errors.push(`candidate ${code} ${field} exposes machine reason codes to Dashboard readers`);
+      }
+    }
     for (const field of ['avoid', 'invalid']) {
       const value = candidate?.[field];
       if (!nonBlank(value)) {
