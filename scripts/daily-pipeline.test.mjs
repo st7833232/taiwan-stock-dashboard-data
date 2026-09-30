@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {completionCurrent,recoveryTargets,isFutureAfterCloseTarget,runPipeline,resolvePipelineTarget} from './run-daily-pipeline.mjs';
 import {inputFingerprint} from './screen-market.mjs';
-import {discoverEvidenceSources,archiveUsable} from './collect-research-evidence.mjs';
+import {discoverEvidenceSources,discoverCoverageSources,archiveUsable} from './collect-research-evidence.mjs';
 import {tdccWeeks,officialDate,evidenceSummary} from './research-evidence.mjs';
 
 test('partial checkpoint never stops automated evidence recovery',()=>{
@@ -30,6 +30,26 @@ test('financial endpoints must be discovered in the official specification',()=>
   const spec={paths:{'/mopsfin_t187ap06_O_ci':{get:{summary:'上櫃公司綜合損益表(一般業)'}},'/unrelated':{get:{summary:'綜合損益表'}}}};
   assert.equal(discoverEvidenceSources(spec,'TPEx','https://www.tpex.org.tw/openapi/v1').length,1);
   assert.equal(archiveUsable({status:'CAPTURED',capturedAt:'2026-09-30T01:00:00Z'},'2026-09-29'),false);
+});
+test('TPEx corporate-action coverage is discovered from the official OpenAPI specification without unrelated trading endpoints',()=>{
+  const spec={paths:{
+    '/tpex_exright_preannounce':{get:{summary:'上櫃公司除權除息預告表'}},
+    '/tpex_exright_calc':{get:{summary:'上櫃股票除權除息計算結果表'}},
+    '/tpex_reduction_reference':{get:{summary:'上櫃公司減資恢復交易參考價'}},
+    '/tpex_parvalue_reference':{get:{summary:'上櫃公司變更股票面額恢復交易參考價'}},
+    '/tpex_halt_resume':{get:{summary:'公布暫停/恢復交易有價證券'}},
+    '/tpex_daytrade_suspend':{get:{summary:'當日沖銷交易暫停名單'}}
+  }};
+  const sources=discoverCoverageSources(spec,'TPEx','https://www.tpex.org.tw/openapi/v1');
+  const tags=new Set(sources.flatMap(s=>s.coverageTags));
+  assert.ok(tags.has('exRightsDividends'));
+  assert.ok(tags.has('historicalPriceAdjustment:exRights'));
+  assert.ok(tags.has('splitReductionConversion:reduction'));
+  assert.ok(tags.has('historicalPriceAdjustment:reduction'));
+  assert.ok(tags.has('splitReductionConversion:parValueChange'));
+  assert.ok(tags.has('historicalPriceAdjustment:parValueChange'));
+  assert.ok(tags.has('tradingHalts'));
+  assert.equal(sources.some(s=>s.url.includes('daytrade_suspend')),false);
 });
 test('TDCC counts 400+ once, includes the 40-50 retail bucket, and rejects future weeks',()=>{
   const rows=Array.from({length:15},(_,i)=>({'證券代號':'3005','資料日期':'1150925','持股分級':String(i+1),'占集保庫存數比例%':'1'}));
