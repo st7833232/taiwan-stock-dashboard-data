@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {normalizeFinancial,financialAssessment,normalizeOfficialEvent,eventAssessment,corporateActionAssessment} from './assess-research-evidence.mjs';
 import {availableWeeks,parseTdccHistory} from './collect-tdcc-history.mjs';
-import {enrich} from './research-evidence.mjs';
+import {enrich,evidenceCoverage} from './research-evidence.mjs';
 
 const policy={requirePriorYearSameQuarter:true,requireGovernanceReview:true,requirePositiveProfit:true,minRevenueYoY:0,minNetProfitYoY:0};
 const income=year=>normalizeFinancial({'公司代號':'3005 ','年度':year,'季別':'2','出表日期':'1150930','營業收入':'200','營業毛利（毛損）':'60','營業利益（損失）':'30','淨利（淨損）歸屬於母公司業主':'20','基本每股盈餘（元）':'4'},'income','https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci');
@@ -23,6 +23,23 @@ test('comparative year and actual deterioration are checked before financial per
  assert.equal(assess(income(113)).qualityPass,false);
  const stronger={...income(114),metrics:{...income(114).metrics,revenue:300}};
  assert.equal(assess(stronger).status,'FAIL');assert.ok(assess(stronger).failures.includes('REVENUE_DETERIORATION'));
+});
+test('official capture metadata becomes market-scoped coverage without widening incomplete scopes',()=>{
+ const captures=[
+  {id:'tpex-governance-O',market:'TPEx',kind:'governance',status:'CAPTURED',capturedAt:'2026-09-30T12:00:00+08:00',url:'https://example/governance',rawUsable:true},
+  {id:'tpex-events-O',market:'TPEx',kind:'events',status:'CAPTURED',capturedAt:'2026-09-30T12:05:00+08:00',url:'https://example/events',rawUsable:true},
+  {id:'tpex-suspensions-O',market:'TPEx',kind:'suspensions',status:'CAPTURED',capturedAt:'2026-09-30T12:10:00+08:00',url:'https://example/suspensions',rawUsable:true}
+ ];
+ const coverage=evidenceCoverage(captures,'TPEx','2026-09-30');
+ assert.equal(coverage.governanceVerified,true);
+ assert.equal(coverage.eventCoverage.scopes.materialAnnouncements.status,'VERIFIED');
+ assert.equal(coverage.eventCoverage.scopes.futureBinaryEvents.status,'UNVERIFIED');
+ assert.equal(coverage.corporateActionCoverage.scopes.tradingHalts.status,'UNVERIFIED');
+ assert.equal(evidenceCoverage([{...captures[0],rawUsable:false}],'TPEx','2026-09-30').governanceVerified,false);
+ const event=normalizeOfficialEvent({SecuritiesCompanyCode:'3005','發言日期':'1150930','發言時間':'120000','主旨':'法說會','事實發生日':'1151001'},'https://example/events');
+ assert.equal(event.code,'3005');
+ const tpexIncome=normalizeFinancial({SecuritiesCompanyCode:'3005',Year:'115',Season:'2','營業收入':'200','營業毛利（毛損）':'60','營業利益（損失）':'30','淨利（淨損）歸屬於母公司業主':'20','基本每股盈餘（元）':'4'},'income','https://example/income');
+ assert.equal(tpexIncome.code,'3005');assert.equal(tpexIncome.periodEnd,'2026-06-30');
 });
 test('latest eight-list absence is not complete event coverage; future notices cannot leak backward',()=>{
  const source='https://openapi.twse.com.tw/v1/opendata/t187ap04_L';
