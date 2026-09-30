@@ -1,0 +1,3935 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-29",
+  "purpose": "HISTORICAL_EVIDENCE_AUDIT_ONLY",
+  "records": [
+    {
+      "code": "3005",
+      "dataDate": "2026-09-04",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260904",
+        "stockNo": "3005"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 21337,
+          "shares": 2127091,
+          "ratio": 0.34
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 23219,
+          "shares": 44800527,
+          "ratio": 7.17
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 2570,
+          "shares": 20516490,
+          "ratio": 3.28
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 715,
+          "shares": 9197613,
+          "ratio": 1.47
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 481,
+          "shares": 8879598,
+          "ratio": 1.42
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 408,
+          "shares": 10634755,
+          "ratio": 1.7
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 195,
+          "shares": 7039463,
+          "ratio": 1.12
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 140,
+          "shares": 6527604,
+          "ratio": 1.04
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 242,
+          "shares": 16974876,
+          "ratio": 2.71
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 131,
+          "shares": 18309668,
+          "ratio": 2.93
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 84,
+          "shares": 23525731,
+          "ratio": 3.76
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 26,
+          "shares": 12031515,
+          "ratio": 1.92
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 17,
+          "shares": 11747277,
+          "ratio": 1.88
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 8,
+          "shares": 7211226,
+          "ratio": 1.15
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 70,
+          "shares": 425216116,
+          "ratio": 68.06
+        }
+      ],
+      "capturedAt": "2026-09-30T12:13:46.327399+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "3005",
+      "dataDate": "2026-08-21",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260821",
+        "stockNo": "3005"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 21470,
+          "shares": 2130416,
+          "ratio": 0.34
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 23267,
+          "shares": 44752859,
+          "ratio": 7.16
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 2577,
+          "shares": 20544663,
+          "ratio": 3.28
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 722,
+          "shares": 9299088,
+          "ratio": 1.48
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 487,
+          "shares": 9012969,
+          "ratio": 1.44
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 392,
+          "shares": 10205484,
+          "ratio": 1.63
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 206,
+          "shares": 7446289,
+          "ratio": 1.19
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 136,
+          "shares": 6356450,
+          "ratio": 1.01
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 244,
+          "shares": 17044142,
+          "ratio": 2.72
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 129,
+          "shares": 18206524,
+          "ratio": 2.91
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 85,
+          "shares": 24294766,
+          "ratio": 3.88
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 23,
+          "shares": 11145236,
+          "ratio": 1.78
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 17,
+          "shares": 11874959,
+          "ratio": 1.9
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 7,
+          "shares": 6519755,
+          "ratio": 1.04
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 68,
+          "shares": 425837850,
+          "ratio": 68.16
+        }
+      ],
+      "capturedAt": "2026-09-30T12:13:45.802641+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "1609",
+      "dataDate": "2026-09-04",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260904",
+        "stockNo": "1609"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 100983,
+          "shares": 8233172,
+          "ratio": 1.04
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 72348,
+          "shares": 145707735,
+          "ratio": 18.55
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 12666,
+          "shares": 88714902,
+          "ratio": 11.29
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 4812,
+          "shares": 57272438,
+          "ratio": 7.29
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 1836,
+          "shares": 32437260,
+          "ratio": 4.13
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 1840,
+          "shares": 44237881,
+          "ratio": 5.63
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 785,
+          "shares": 27055901,
+          "ratio": 3.44
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 410,
+          "shares": 18426118,
+          "ratio": 2.34
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 705,
+          "shares": 48262158,
+          "ratio": 6.14
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 283,
+          "shares": 39261451,
+          "ratio": 4.99
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 77,
+          "shares": 21043893,
+          "ratio": 2.67
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 28,
+          "shares": 13461356,
+          "ratio": 1.71
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 16,
+          "shares": 11037317,
+          "ratio": 1.4
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 5,
+          "shares": 4309604,
+          "ratio": 0.54
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 61,
+          "shares": 225800758,
+          "ratio": 28.75
+        }
+      ],
+      "capturedAt": "2026-09-30T12:13:46.041145+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "1609",
+      "dataDate": "2026-08-21",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260821",
+        "stockNo": "1609"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 101074,
+          "shares": 8244528,
+          "ratio": 1.04
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 72786,
+          "shares": 146558103,
+          "ratio": 18.66
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 12714,
+          "shares": 89086665,
+          "ratio": 11.34
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 4822,
+          "shares": 57319420,
+          "ratio": 7.29
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 1856,
+          "shares": 32783817,
+          "ratio": 4.17
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 1857,
+          "shares": 44606169,
+          "ratio": 5.68
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 777,
+          "shares": 26722227,
+          "ratio": 3.4
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 424,
+          "shares": 19044521,
+          "ratio": 2.42
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 710,
+          "shares": 48511990,
+          "ratio": 6.17
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 288,
+          "shares": 40040877,
+          "ratio": 5.09
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 80,
+          "shares": 22433415,
+          "ratio": 2.85
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 26,
+          "shares": 12686668,
+          "ratio": 1.61
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 13,
+          "shares": 8694875,
+          "ratio": 1.1
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 5,
+          "shares": 4241256,
+          "ratio": 0.54
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 60,
+          "shares": 224287413,
+          "ratio": 28.56
+        }
+      ],
+      "capturedAt": "2026-09-30T12:13:49.118192+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "6206",
+      "dataDate": "2026-09-04",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260904",
+        "stockNo": "6206"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 5278,
+          "shares": 962097,
+          "ratio": 0.67
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 9268,
+          "shares": 17566105,
+          "ratio": 12.27
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 1004,
+          "shares": 7691070,
+          "ratio": 5.37
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 316,
+          "shares": 4003578,
+          "ratio": 2.79
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 176,
+          "shares": 3228127,
+          "ratio": 2.25
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 174,
+          "shares": 4452692,
+          "ratio": 3.11
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 75,
+          "shares": 2652709,
+          "ratio": 1.85
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 54,
+          "shares": 2465665,
+          "ratio": 1.72
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 87,
+          "shares": 6312343,
+          "ratio": 4.41
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 46,
+          "shares": 6502528,
+          "ratio": 4.54
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 30,
+          "shares": 8956748,
+          "ratio": 6.26
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 13,
+          "shares": 6682980,
+          "ratio": 4.67
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 5,
+          "shares": 3458041,
+          "ratio": 2.41
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 4,
+          "shares": 3501308,
+          "ratio": 2.44
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 22,
+          "shares": 64626333,
+          "ratio": 45.17
+        }
+      ],
+      "capturedAt": "2026-09-30T12:13:48.882801+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "6206",
+      "dataDate": "2026-08-21",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260821",
+        "stockNo": "6206"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 5186,
+          "shares": 935369,
+          "ratio": 0.65
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 8936,
+          "shares": 16946204,
+          "ratio": 11.84
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 1013,
+          "shares": 7740834,
+          "ratio": 5.41
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 308,
+          "shares": 3906684,
+          "ratio": 2.73
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 168,
+          "shares": 3090677,
+          "ratio": 2.16
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 167,
+          "shares": 4257717,
+          "ratio": 2.97
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 78,
+          "shares": 2748709,
+          "ratio": 1.92
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 54,
+          "shares": 2457477,
+          "ratio": 1.71
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 79,
+          "shares": 5860695,
+          "ratio": 4.09
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 47,
+          "shares": 6684279,
+          "ratio": 4.67
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 30,
+          "shares": 9252862,
+          "ratio": 6.46
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 13,
+          "shares": 6590793,
+          "ratio": 4.6
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 3,
+          "shares": 2077070,
+          "ratio": 1.45
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 3,
+          "shares": 2810283,
+          "ratio": 1.96
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 24,
+          "shares": 67702671,
+          "ratio": 47.32
+        }
+      ],
+      "capturedAt": "2026-09-30T12:13:49.439132+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "2395",
+      "dataDate": "2026-09-04",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260904",
+        "stockNo": "2395"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 23131,
+          "shares": 3164317,
+          "ratio": 0.36
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 9058,
+          "shares": 16084300,
+          "ratio": 1.85
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 923,
+          "shares": 6933678,
+          "ratio": 0.79
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 325,
+          "shares": 4091934,
+          "ratio": 0.47
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 200,
+          "shares": 3543416,
+          "ratio": 0.4
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 204,
+          "shares": 5128191,
+          "ratio": 0.59
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 134,
+          "shares": 4694545,
+          "ratio": 0.54
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 89,
+          "shares": 3982859,
+          "ratio": 0.45
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 229,
+          "shares": 16209805,
+          "ratio": 1.86
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 186,
+          "shares": 26728257,
+          "ratio": 3.07
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 143,
+          "shares": 38606809,
+          "ratio": 4.44
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 67,
+          "shares": 33022570,
+          "ratio": 3.79
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 28,
+          "shares": 19196156,
+          "ratio": 2.2
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 16,
+          "shares": 14445418,
+          "ratio": 1.66
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 96,
+          "shares": 673343580,
+          "ratio": 77.46
+        }
+      ],
+      "capturedAt": "2026-09-30T12:13:51.890657+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "2395",
+      "dataDate": "2026-08-21",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260821",
+        "stockNo": "2395"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 22986,
+          "shares": 3136523,
+          "ratio": 0.36
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 9221,
+          "shares": 16369207,
+          "ratio": 1.88
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 922,
+          "shares": 6923417,
+          "ratio": 0.79
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 336,
+          "shares": 4224322,
+          "ratio": 0.48
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 196,
+          "shares": 3453551,
+          "ratio": 0.39
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 211,
+          "shares": 5301714,
+          "ratio": 0.6
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 118,
+          "shares": 4096728,
+          "ratio": 0.47
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 91,
+          "shares": 4078128,
+          "ratio": 0.46
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 222,
+          "shares": 15639892,
+          "ratio": 1.79
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 189,
+          "shares": 27001882,
+          "ratio": 3.1
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 130,
+          "shares": 35452700,
+          "ratio": 4.07
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 68,
+          "shares": 33172576,
+          "ratio": 3.81
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 28,
+          "shares": 19244828,
+          "ratio": 2.21
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 21,
+          "shares": 18888691,
+          "ratio": 2.17
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 92,
+          "shares": 672179752,
+          "ratio": 77.33
+        }
+      ],
+      "capturedAt": "2026-09-30T12:13:52.177294+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "2409",
+      "dataDate": "2026-09-04",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260904",
+        "stockNo": "2409"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 172408,
+          "shares": 45005879,
+          "ratio": 0.59
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 336211,
+          "shares": 766029652,
+          "ratio": 10.14
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 70598,
+          "shares": 564329485,
+          "ratio": 7.47
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 20773,
+          "shares": 264468539,
+          "ratio": 3.5
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 16814,
+          "shares": 307838770,
+          "ratio": 4.07
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 12706,
+          "shares": 326234828,
+          "ratio": 4.32
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 6445,
+          "shares": 232335233,
+          "ratio": 3.07
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 4119,
+          "shares": 192802667,
+          "ratio": 2.55
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 6838,
+          "shares": 498162913,
+          "ratio": 6.6
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 3053,
+          "shares": 432496987,
+          "ratio": 5.73
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 1220,
+          "shares": 340904834,
+          "ratio": 4.51
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 340,
+          "shares": 165749971,
+          "ratio": 2.19
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 143,
+          "shares": 100313560,
+          "ratio": 1.32
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 93,
+          "shares": 84796721,
+          "ratio": 1.12
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 331,
+          "shares": 3225647933,
+          "ratio": 42.74
+        }
+      ],
+      "capturedAt": "2026-09-30T12:13:52.470443+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "2409",
+      "dataDate": "2026-08-21",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260821",
+        "stockNo": "2409"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 174391,
+          "shares": 45671507,
+          "ratio": 0.6
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 347378,
+          "shares": 791410953,
+          "ratio": 10.48
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 72705,
+          "shares": 581344643,
+          "ratio": 7.7
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 21147,
+          "shares": 269564833,
+          "ratio": 3.57
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 16822,
+          "shares": 308499764,
+          "ratio": 4.08
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 12662,
+          "shares": 325684867,
+          "ratio": 4.31
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 6369,
+          "shares": 229668662,
+          "ratio": 3.04
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 4083,
+          "shares": 191288661,
+          "ratio": 2.53
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 6854,
+          "shares": 500745625,
+          "ratio": 6.63
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 3066,
+          "shares": 434766036,
+          "ratio": 5.76
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 1225,
+          "shares": 343892959,
+          "ratio": 4.55
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 338,
+          "shares": 164982885,
+          "ratio": 2.18
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 140,
+          "shares": 98145268,
+          "ratio": 1.3
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 96,
+          "shares": 87390820,
+          "ratio": 1.15
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 340,
+          "shares": 3174041489,
+          "ratio": 42.05
+        }
+      ],
+      "capturedAt": "2026-09-30T12:13:55.059903+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "6505",
+      "dataDate": "2026-09-04",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260904",
+        "stockNo": "6505"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 30513,
+          "shares": 5372625,
+          "ratio": 0.05
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 49981,
+          "shares": 99408112,
+          "ratio": 1.04
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 7252,
+          "shares": 56482990,
+          "ratio": 0.59
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 2692,
+          "shares": 33794493,
+          "ratio": 0.35
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 1576,
+          "shares": 28853661,
+          "ratio": 0.3
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 1395,
+          "shares": 35288481,
+          "ratio": 0.37
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 609,
+          "shares": 21735367,
+          "ratio": 0.22
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 369,
+          "shares": 16926777,
+          "ratio": 0.17
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 643,
+          "shares": 44751490,
+          "ratio": 0.46
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 264,
+          "shares": 37051789,
+          "ratio": 0.38
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 116,
+          "shares": 32471176,
+          "ratio": 0.34
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 53,
+          "shares": 25407478,
+          "ratio": 0.26
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 17,
+          "shares": 11720221,
+          "ratio": 0.12
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 11,
+          "shares": 9850140,
+          "ratio": 0.1
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 106,
+          "shares": 9066844852,
+          "ratio": 95.18
+        }
+      ],
+      "capturedAt": "2026-09-30T12:13:55.392132+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "6505",
+      "dataDate": "2026-08-21",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260821",
+        "stockNo": "6505"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 30491,
+          "shares": 5402592,
+          "ratio": 0.05
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 50204,
+          "shares": 100286315,
+          "ratio": 1.05
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 7299,
+          "shares": 56824091,
+          "ratio": 0.59
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 2707,
+          "shares": 33890356,
+          "ratio": 0.35
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 1598,
+          "shares": 29288633,
+          "ratio": 0.3
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 1383,
+          "shares": 34870970,
+          "ratio": 0.36
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 615,
+          "shares": 21943259,
+          "ratio": 0.23
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 378,
+          "shares": 17385314,
+          "ratio": 0.18
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 626,
+          "shares": 43501318,
+          "ratio": 0.45
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 259,
+          "shares": 36519528,
+          "ratio": 0.38
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 105,
+          "shares": 29752841,
+          "ratio": 0.31
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 50,
+          "shares": 24371454,
+          "ratio": 0.25
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 17,
+          "shares": 11898445,
+          "ratio": 0.12
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 11,
+          "shares": 10175140,
+          "ratio": 0.1
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 102,
+          "shares": 9069849396,
+          "ratio": 95.21
+        }
+      ],
+      "capturedAt": "2026-09-30T12:13:55.390909+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "6213",
+      "dataDate": "2026-09-04",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260904",
+        "stockNo": "6213"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 38667,
+          "shares": 4577360,
+          "ratio": 1.25
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 25571,
+          "shares": 41451747,
+          "ratio": 11.39
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 1474,
+          "shares": 11393391,
+          "ratio": 3.13
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 405,
+          "shares": 5164725,
+          "ratio": 1.42
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 227,
+          "shares": 4150051,
+          "ratio": 1.14
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 204,
+          "shares": 5178218,
+          "ratio": 1.42
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 96,
+          "shares": 3445003,
+          "ratio": 0.94
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 67,
+          "shares": 3152391,
+          "ratio": 0.86
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 134,
+          "shares": 9393759,
+          "ratio": 2.58
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 115,
+          "shares": 16719583,
+          "ratio": 4.59
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 45,
+          "shares": 12703585,
+          "ratio": 3.49
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 11,
+          "shares": 5461306,
+          "ratio": 1.5
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 14,
+          "shares": 9760430,
+          "ratio": 2.68
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 9,
+          "shares": 8105535,
+          "ratio": 2.22
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 38,
+          "shares": 222960134,
+          "ratio": 61.31
+        }
+      ],
+      "capturedAt": "2026-09-30T12:13:58.293615+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "6213",
+      "dataDate": "2026-08-21",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260821",
+        "stockNo": "6213"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 33763,
+          "shares": 4028672,
+          "ratio": 1.1
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 23666,
+          "shares": 38987083,
+          "ratio": 10.72
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 1457,
+          "shares": 11353761,
+          "ratio": 3.12
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 409,
+          "shares": 5241883,
+          "ratio": 1.44
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 237,
+          "shares": 4345910,
+          "ratio": 1.19
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 225,
+          "shares": 5721192,
+          "ratio": 1.57
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 98,
+          "shares": 3480322,
+          "ratio": 0.95
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 74,
+          "shares": 3463536,
+          "ratio": 0.95
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 139,
+          "shares": 9979433,
+          "ratio": 2.74
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 104,
+          "shares": 15169104,
+          "ratio": 4.17
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 42,
+          "shares": 11720229,
+          "ratio": 3.22
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 11,
+          "shares": 5282013,
+          "ratio": 1.45
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 16,
+          "shares": 11231173,
+          "ratio": 3.08
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 8,
+          "shares": 7291060,
+          "ratio": 2.0
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 40,
+          "shares": 226321847,
+          "ratio": 62.24
+        }
+      ],
+      "capturedAt": "2026-09-30T12:13:58.291891+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "4961",
+      "dataDate": "2026-09-04",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260904",
+        "stockNo": "4961"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 27710,
+          "shares": 4076329,
+          "ratio": 3.36
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 11924,
+          "shares": 21938099,
+          "ratio": 18.09
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 1083,
+          "shares": 8086634,
+          "ratio": 6.66
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 285,
+          "shares": 3590843,
+          "ratio": 2.96
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 154,
+          "shares": 2767122,
+          "ratio": 2.28
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 126,
+          "shares": 3197277,
+          "ratio": 2.63
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 63,
+          "shares": 2188058,
+          "ratio": 1.8
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 30,
+          "shares": 1411854,
+          "ratio": 1.16
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 76,
+          "shares": 5324977,
+          "ratio": 4.39
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 34,
+          "shares": 4644877,
+          "ratio": 3.83
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 30,
+          "shares": 8453898,
+          "ratio": 6.97
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 10,
+          "shares": 5216218,
+          "ratio": 4.3
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 3,
+          "shares": 2144906,
+          "ratio": 1.76
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 7,
+          "shares": 6177296,
+          "ratio": 5.09
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 12,
+          "shares": 42035215,
+          "ratio": 34.66
+        }
+      ],
+      "capturedAt": "2026-09-30T12:13:58.624250+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "4961",
+      "dataDate": "2026-08-21",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260821",
+        "stockNo": "4961"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 27517,
+          "shares": 4070932,
+          "ratio": 3.35
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 11737,
+          "shares": 21690176,
+          "ratio": 17.88
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 1083,
+          "shares": 8104991,
+          "ratio": 6.68
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 290,
+          "shares": 3660461,
+          "ratio": 3.01
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 152,
+          "shares": 2747524,
+          "ratio": 2.26
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 124,
+          "shares": 3161913,
+          "ratio": 2.6
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 62,
+          "shares": 2158713,
+          "ratio": 1.78
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 31,
+          "shares": 1439951,
+          "ratio": 1.18
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 76,
+          "shares": 5329141,
+          "ratio": 4.39
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 33,
+          "shares": 4461778,
+          "ratio": 3.67
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 30,
+          "shares": 8424052,
+          "ratio": 6.94
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 12,
+          "shares": 5971064,
+          "ratio": 4.92
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 4,
+          "shares": 2883406,
+          "ratio": 2.37
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 4,
+          "shares": 3596585,
+          "ratio": 2.96
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 13,
+          "shares": 43552916,
+          "ratio": 35.91
+        }
+      ],
+      "capturedAt": "2026-09-30T12:14:01.536229+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "8464",
+      "dataDate": "2026-09-04",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260904",
+        "stockNo": "8464"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 2223,
+          "shares": 258947,
+          "ratio": 0.08
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 1008,
+          "shares": 1849960,
+          "ratio": 0.63
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 113,
+          "shares": 866376,
+          "ratio": 0.29
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 67,
+          "shares": 832745,
+          "ratio": 0.28
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 46,
+          "shares": 826775,
+          "ratio": 0.28
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 42,
+          "shares": 1032262,
+          "ratio": 0.35
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 39,
+          "shares": 1351559,
+          "ratio": 0.46
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 18,
+          "shares": 819401,
+          "ratio": 0.27
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 76,
+          "shares": 5436530,
+          "ratio": 1.85
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 64,
+          "shares": 8960953,
+          "ratio": 3.05
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 52,
+          "shares": 15444948,
+          "ratio": 5.27
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 22,
+          "shares": 10779296,
+          "ratio": 3.67
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 14,
+          "shares": 9466990,
+          "ratio": 3.23
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 7,
+          "shares": 6283036,
+          "ratio": 2.14
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 49,
+          "shares": 228810422,
+          "ratio": 78.08
+        }
+      ],
+      "capturedAt": "2026-09-30T12:14:01.821148+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "8464",
+      "dataDate": "2026-08-21",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260821",
+        "stockNo": "8464"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 2203,
+          "shares": 253217,
+          "ratio": 0.08
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 1033,
+          "shares": 1912438,
+          "ratio": 0.65
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 118,
+          "shares": 907700,
+          "ratio": 0.3
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 64,
+          "shares": 800894,
+          "ratio": 0.27
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 49,
+          "shares": 880526,
+          "ratio": 0.3
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 45,
+          "shares": 1125261,
+          "ratio": 0.38
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 36,
+          "shares": 1248836,
+          "ratio": 0.42
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 18,
+          "shares": 819390,
+          "ratio": 0.27
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 74,
+          "shares": 5235701,
+          "ratio": 1.78
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 64,
+          "shares": 9276165,
+          "ratio": 3.16
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 53,
+          "shares": 15523461,
+          "ratio": 5.29
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 21,
+          "shares": 10191296,
+          "ratio": 3.47
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 16,
+          "shares": 10903660,
+          "ratio": 3.72
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 7,
+          "shares": 6170879,
+          "ratio": 2.1
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 48,
+          "shares": 227770776,
+          "ratio": 77.73
+        }
+      ],
+      "capturedAt": "2026-09-30T12:14:01.822581+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "3665",
+      "dataDate": "2026-09-04",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260904",
+        "stockNo": "3665"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 43146,
+          "shares": 3495763,
+          "ratio": 1.75
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 6227,
+          "shares": 10116169,
+          "ratio": 5.06
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 502,
+          "shares": 3610528,
+          "ratio": 1.8
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 211,
+          "shares": 2566897,
+          "ratio": 1.28
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 92,
+          "shares": 1635658,
+          "ratio": 0.81
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 142,
+          "shares": 3555156,
+          "ratio": 1.78
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 90,
+          "shares": 3129220,
+          "ratio": 1.56
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 44,
+          "shares": 1951914,
+          "ratio": 0.97
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 161,
+          "shares": 11319906,
+          "ratio": 5.67
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 91,
+          "shares": 13528869,
+          "ratio": 6.77
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 78,
+          "shares": 21616887,
+          "ratio": 10.83
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 19,
+          "shares": 9158429,
+          "ratio": 4.58
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 21,
+          "shares": 14688006,
+          "ratio": 7.35
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 11,
+          "shares": 9856694,
+          "ratio": 4.93
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 34,
+          "shares": 89348309,
+          "ratio": 44.76
+        }
+      ],
+      "capturedAt": "2026-09-30T12:14:04.704498+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "3665",
+      "dataDate": "2026-08-21",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260821",
+        "stockNo": "3665"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 39210,
+          "shares": 3221682,
+          "ratio": 1.61
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 5770,
+          "shares": 9450975,
+          "ratio": 4.73
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 483,
+          "shares": 3492675,
+          "ratio": 1.75
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 189,
+          "shares": 2291609,
+          "ratio": 1.14
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 89,
+          "shares": 1584670,
+          "ratio": 0.79
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 137,
+          "shares": 3412970,
+          "ratio": 1.71
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 84,
+          "shares": 2909130,
+          "ratio": 1.45
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 51,
+          "shares": 2274937,
+          "ratio": 1.13
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 151,
+          "shares": 10555519,
+          "ratio": 5.28
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 91,
+          "shares": 13430732,
+          "ratio": 6.72
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 76,
+          "shares": 20725858,
+          "ratio": 10.38
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 25,
+          "shares": 12082599,
+          "ratio": 6.05
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 16,
+          "shares": 11291980,
+          "ratio": 5.65
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 13,
+          "shares": 11438696,
+          "ratio": 5.73
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 35,
+          "shares": 91414373,
+          "ratio": 45.8
+        }
+      ],
+      "capturedAt": "2026-09-30T12:14:05.202786+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "3016",
+      "dataDate": "2026-09-04",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260904",
+        "stockNo": "3016"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 16522,
+          "shares": 1933587,
+          "ratio": 0.66
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 21395,
+          "shares": 36784678,
+          "ratio": 12.64
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 1568,
+          "shares": 12107140,
+          "ratio": 4.16
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 418,
+          "shares": 5264959,
+          "ratio": 1.8
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 224,
+          "shares": 4122055,
+          "ratio": 1.41
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 153,
+          "shares": 3880074,
+          "ratio": 1.33
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 92,
+          "shares": 3270769,
+          "ratio": 1.12
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 44,
+          "shares": 2071255,
+          "ratio": 0.71
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 74,
+          "shares": 5173823,
+          "ratio": 1.77
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 39,
+          "shares": 5446996,
+          "ratio": 1.87
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 24,
+          "shares": 6721781,
+          "ratio": 2.31
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 6,
+          "shares": 2745033,
+          "ratio": 0.94
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 6,
+          "shares": 4298000,
+          "ratio": 1.47
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 4,
+          "shares": 3694608,
+          "ratio": 1.26
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 17,
+          "shares": 193470823,
+          "ratio": 66.48
+        }
+      ],
+      "capturedAt": "2026-09-30T12:14:04.691512+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "3016",
+      "dataDate": "2026-08-21",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260821",
+        "stockNo": "3016"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 16605,
+          "shares": 1907426,
+          "ratio": 0.65
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 21202,
+          "shares": 36386951,
+          "ratio": 12.5
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 1538,
+          "shares": 11895271,
+          "ratio": 4.08
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 396,
+          "shares": 4990297,
+          "ratio": 1.71
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 214,
+          "shares": 3928942,
+          "ratio": 1.35
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 155,
+          "shares": 3986972,
+          "ratio": 1.37
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 89,
+          "shares": 3166985,
+          "ratio": 1.08
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 47,
+          "shares": 2200123,
+          "ratio": 0.75
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 82,
+          "shares": 5801075,
+          "ratio": 1.99
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 35,
+          "shares": 5092684,
+          "ratio": 1.75
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 18,
+          "shares": 5094874,
+          "ratio": 1.75
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 6,
+          "shares": 2853762,
+          "ratio": 0.98
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 6,
+          "shares": 4333779,
+          "ratio": 1.48
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 5,
+          "shares": 4631536,
+          "ratio": 1.59
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 16,
+          "shares": 194710685,
+          "ratio": 66.91
+        }
+      ],
+      "capturedAt": "2026-09-30T12:14:07.781453+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "9945",
+      "dataDate": "2026-09-04",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260904",
+        "stockNo": "9945"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 18846,
+          "shares": 6787277,
+          "ratio": 0.23
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 49931,
+          "shares": 118698117,
+          "ratio": 4.17
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 14213,
+          "shares": 107107180,
+          "ratio": 3.76
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 5690,
+          "shares": 71277982,
+          "ratio": 2.5
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 3518,
+          "shares": 63620682,
+          "ratio": 2.23
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 3340,
+          "shares": 83539574,
+          "ratio": 2.93
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 1686,
+          "shares": 59676088,
+          "ratio": 2.09
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 1103,
+          "shares": 50336256,
+          "ratio": 1.76
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 2098,
+          "shares": 149956333,
+          "ratio": 5.27
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 983,
+          "shares": 137338933,
+          "ratio": 4.82
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 420,
+          "shares": 116963303,
+          "ratio": 4.11
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 127,
+          "shares": 62802636,
+          "ratio": 2.2
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 51,
+          "shares": 35200665,
+          "ratio": 1.23
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 23,
+          "shares": 20378687,
+          "ratio": 0.71
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 149,
+          "shares": 1760541373,
+          "ratio": 61.89
+        }
+      ],
+      "capturedAt": "2026-09-30T12:14:08.073270+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "9945",
+      "dataDate": "2026-08-21",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260821",
+        "stockNo": "9945"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 18929,
+          "shares": 6815160,
+          "ratio": 0.23
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 50085,
+          "shares": 118882352,
+          "ratio": 4.17
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 14159,
+          "shares": 106770080,
+          "ratio": 3.75
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 5675,
+          "shares": 71021901,
+          "ratio": 2.49
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 3523,
+          "shares": 63693585,
+          "ratio": 2.23
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 3314,
+          "shares": 82947546,
+          "ratio": 2.91
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 1661,
+          "shares": 58811966,
+          "ratio": 2.06
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 1103,
+          "shares": 50359695,
+          "ratio": 1.77
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 2088,
+          "shares": 149017303,
+          "ratio": 5.23
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 977,
+          "shares": 136217309,
+          "ratio": 4.78
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 415,
+          "shares": 116106587,
+          "ratio": 4.08
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 118,
+          "shares": 58183912,
+          "ratio": 2.04
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 52,
+          "shares": 35818761,
+          "ratio": 1.25
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 24,
+          "shares": 21404867,
+          "ratio": 0.75
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 148,
+          "shares": 1768174062,
+          "ratio": 62.16
+        }
+      ],
+      "capturedAt": "2026-09-30T12:14:08.067571+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "1513",
+      "dataDate": "2026-09-04",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260904",
+        "stockNo": "1513"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 75459,
+          "shares": 9598892,
+          "ratio": 1.9
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 74224,
+          "shares": 130227492,
+          "ratio": 25.88
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 5119,
+          "shares": 40144762,
+          "ratio": 7.97
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 1201,
+          "shares": 15415879,
+          "ratio": 3.06
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 698,
+          "shares": 12996047,
+          "ratio": 2.58
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 470,
+          "shares": 12152172,
+          "ratio": 2.41
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 204,
+          "shares": 7359043,
+          "ratio": 1.46
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 136,
+          "shares": 6356376,
+          "ratio": 1.26
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 210,
+          "shares": 15193378,
+          "ratio": 3.01
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 100,
+          "shares": 13707844,
+          "ratio": 2.72
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 49,
+          "shares": 14204358,
+          "ratio": 2.82
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 19,
+          "shares": 9791434,
+          "ratio": 1.94
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 12,
+          "shares": 8233955,
+          "ratio": 1.63
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 7,
+          "shares": 6368934,
+          "ratio": 1.26
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 40,
+          "shares": 201361949,
+          "ratio": 40.02
+        }
+      ],
+      "capturedAt": "2026-09-30T12:14:10.822433+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "1513",
+      "dataDate": "2026-08-21",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260821",
+        "stockNo": "1513"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 75688,
+          "shares": 9644507,
+          "ratio": 1.91
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 74208,
+          "shares": 130013581,
+          "ratio": 25.84
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 5104,
+          "shares": 40043127,
+          "ratio": 7.95
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 1199,
+          "shares": 15397547,
+          "ratio": 3.06
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 715,
+          "shares": 13315588,
+          "ratio": 2.64
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 462,
+          "shares": 11927336,
+          "ratio": 2.37
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 203,
+          "shares": 7320457,
+          "ratio": 1.45
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 131,
+          "shares": 6104101,
+          "ratio": 1.21
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 211,
+          "shares": 15249860,
+          "ratio": 3.03
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 95,
+          "shares": 12759331,
+          "ratio": 2.53
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 44,
+          "shares": 13008003,
+          "ratio": 2.58
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 22,
+          "shares": 11199149,
+          "ratio": 2.22
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 11,
+          "shares": 7737702,
+          "ratio": 1.53
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 7,
+          "shares": 6363570,
+          "ratio": 1.26
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 39,
+          "shares": 203028656,
+          "ratio": 40.35
+        }
+      ],
+      "capturedAt": "2026-09-30T12:14:11.122855+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "2030",
+      "dataDate": "2026-09-04",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260904",
+        "stockNo": "2030"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 35991,
+          "shares": 909800,
+          "ratio": 0.32
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 14658,
+          "shares": 31392633,
+          "ratio": 11.19
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 2440,
+          "shares": 19570207,
+          "ratio": 6.97
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 763,
+          "shares": 9775643,
+          "ratio": 3.48
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 529,
+          "shares": 9763818,
+          "ratio": 3.48
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 404,
+          "shares": 10377817,
+          "ratio": 3.69
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 196,
+          "shares": 6912718,
+          "ratio": 2.46
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 137,
+          "shares": 6479819,
+          "ratio": 2.3
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 211,
+          "shares": 14627079,
+          "ratio": 5.21
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 79,
+          "shares": 11143308,
+          "ratio": 3.97
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 30,
+          "shares": 8194563,
+          "ratio": 2.92
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 10,
+          "shares": 5242942,
+          "ratio": 1.86
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 5,
+          "shares": 3476357,
+          "ratio": 1.23
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 4,
+          "shares": 3512000,
+          "ratio": 1.25
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 31,
+          "shares": 139147323,
+          "ratio": 49.6
+        }
+      ],
+      "capturedAt": "2026-09-30T12:14:11.485376+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "2030",
+      "dataDate": "2026-08-21",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260821",
+        "stockNo": "2030"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 35968,
+          "shares": 914270,
+          "ratio": 0.32
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 15150,
+          "shares": 32640328,
+          "ratio": 11.63
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 2572,
+          "shares": 20666752,
+          "ratio": 7.36
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 816,
+          "shares": 10478133,
+          "ratio": 3.73
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 543,
+          "shares": 10019122,
+          "ratio": 3.57
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 447,
+          "shares": 11489599,
+          "ratio": 4.09
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 183,
+          "shares": 6473974,
+          "ratio": 2.3
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 156,
+          "shares": 7363013,
+          "ratio": 2.62
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 214,
+          "shares": 14826981,
+          "ratio": 5.28
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 88,
+          "shares": 12464383,
+          "ratio": 4.44
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 25,
+          "shares": 6792563,
+          "ratio": 2.42
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 13,
+          "shares": 6654942,
+          "ratio": 2.37
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 5,
+          "shares": 3419348,
+          "ratio": 1.21
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 5,
+          "shares": 4809659,
+          "ratio": 1.71
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 27,
+          "shares": 131512960,
+          "ratio": 46.88
+        }
+      ],
+      "capturedAt": "2026-09-30T12:14:13.789964+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "1727",
+      "dataDate": "2026-09-04",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260904",
+        "stockNo": "1727"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 8039,
+          "shares": 1417235,
+          "ratio": 1.1
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 11288,
+          "shares": 19862680,
+          "ratio": 15.51
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 827,
+          "shares": 6530092,
+          "ratio": 5.1
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 204,
+          "shares": 2640252,
+          "ratio": 2.06
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 146,
+          "shares": 2708001,
+          "ratio": 2.11
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 103,
+          "shares": 2637899,
+          "ratio": 2.06
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 48,
+          "shares": 1734428,
+          "ratio": 1.35
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 26,
+          "shares": 1217635,
+          "ratio": 0.95
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 50,
+          "shares": 3785663,
+          "ratio": 2.95
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 32,
+          "shares": 4441338,
+          "ratio": 3.46
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 20,
+          "shares": 5459989,
+          "ratio": 4.26
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 8,
+          "shares": 3748937,
+          "ratio": 2.92
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 4,
+          "shares": 2728596,
+          "ratio": 2.13
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 4,
+          "shares": 3570682,
+          "ratio": 2.78
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 13,
+          "shares": 65536132,
+          "ratio": 51.19
+        }
+      ],
+      "capturedAt": "2026-09-30T12:14:13.771167+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "3045",
+      "dataDate": "2026-09-04",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260904",
+        "stockNo": "3045"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 19422,
+          "shares": 5013141,
+          "ratio": 0.13
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 33171,
+          "shares": 67344225,
+          "ratio": 1.8
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 4303,
+          "shares": 33342254,
+          "ratio": 0.89
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 1280,
+          "shares": 16243858,
+          "ratio": 0.43
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 763,
+          "shares": 13948472,
+          "ratio": 0.37
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 646,
+          "shares": 16483527,
+          "ratio": 0.44
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 306,
+          "shares": 10786275,
+          "ratio": 0.28
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 195,
+          "shares": 8960157,
+          "ratio": 0.24
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 412,
+          "shares": 29653250,
+          "ratio": 0.79
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 217,
+          "shares": 31021430,
+          "ratio": 0.83
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 140,
+          "shares": 39654613,
+          "ratio": 1.06
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 71,
+          "shares": 35003525,
+          "ratio": 0.94
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 41,
+          "shares": 28416213,
+          "ratio": 0.76
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 36,
+          "shares": 32826359,
+          "ratio": 0.88
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 228,
+          "shares": 3354748716,
+          "ratio": 90.09
+        }
+      ],
+      "capturedAt": "2026-09-30T12:14:16.655563+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "3045",
+      "dataDate": "2026-08-21",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260821",
+        "stockNo": "3045"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 19511,
+          "shares": 5013310,
+          "ratio": 0.13
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 34489,
+          "shares": 70168580,
+          "ratio": 1.88
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 4505,
+          "shares": 34884586,
+          "ratio": 0.93
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 1364,
+          "shares": 17331940,
+          "ratio": 0.46
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 809,
+          "shares": 14836354,
+          "ratio": 0.39
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 695,
+          "shares": 17769725,
+          "ratio": 0.47
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 329,
+          "shares": 11611811,
+          "ratio": 0.31
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 217,
+          "shares": 9994659,
+          "ratio": 0.26
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 447,
+          "shares": 32286871,
+          "ratio": 0.86
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 230,
+          "shares": 32744784,
+          "ratio": 0.87
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 143,
+          "shares": 40078863,
+          "ratio": 1.07
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 71,
+          "shares": 34849889,
+          "ratio": 0.93
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 42,
+          "shares": 29406946,
+          "ratio": 0.78
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 33,
+          "shares": 29956328,
+          "ratio": 0.8
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 228,
+          "shares": 3342496369,
+          "ratio": 89.76
+        }
+      ],
+      "capturedAt": "2026-09-30T12:14:16.882781+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    },
+    {
+      "code": "1727",
+      "dataDate": "2026-08-21",
+      "status": "VERIFIED_HISTORICAL_PAYLOAD",
+      "source": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock",
+      "query": {
+        "scaDate": "20260821",
+        "stockNo": "1727"
+      },
+      "rows": [
+        {
+          "level": 1,
+          "band": "1-999",
+          "holders": 8141,
+          "shares": 1462484,
+          "ratio": 1.14
+        },
+        {
+          "level": 2,
+          "band": "1,000-5,000",
+          "holders": 12285,
+          "shares": 21771388,
+          "ratio": 17.0
+        },
+        {
+          "level": 3,
+          "band": "5,001-10,000",
+          "holders": 948,
+          "shares": 7495927,
+          "ratio": 5.85
+        },
+        {
+          "level": 4,
+          "band": "10,001-15,000",
+          "holders": 219,
+          "shares": 2830172,
+          "ratio": 2.21
+        },
+        {
+          "level": 5,
+          "band": "15,001-20,000",
+          "holders": 134,
+          "shares": 2477468,
+          "ratio": 1.93
+        },
+        {
+          "level": 6,
+          "band": "20,001-30,000",
+          "holders": 103,
+          "shares": 2638206,
+          "ratio": 2.06
+        },
+        {
+          "level": 7,
+          "band": "30,001-40,000",
+          "holders": 46,
+          "shares": 1688908,
+          "ratio": 1.31
+        },
+        {
+          "level": 8,
+          "band": "40,001-50,000",
+          "holders": 30,
+          "shares": 1412325,
+          "ratio": 1.1
+        },
+        {
+          "level": 9,
+          "band": "50,001-100,000",
+          "holders": 51,
+          "shares": 3866862,
+          "ratio": 3.02
+        },
+        {
+          "level": 10,
+          "band": "100,001-200,000",
+          "holders": 33,
+          "shares": 4589333,
+          "ratio": 3.58
+        },
+        {
+          "level": 11,
+          "band": "200,001-400,000",
+          "holders": 20,
+          "shares": 5534506,
+          "ratio": 4.32
+        },
+        {
+          "level": 12,
+          "band": "400,001-600,000",
+          "holders": 10,
+          "shares": 5028412,
+          "ratio": 3.92
+        },
+        {
+          "level": 13,
+          "band": "600,001-800,000",
+          "holders": 4,
+          "shares": 2886525,
+          "ratio": 2.25
+        },
+        {
+          "level": 14,
+          "band": "800,001-1,000,000",
+          "holders": 1,
+          "shares": 949229,
+          "ratio": 0.74
+        },
+        {
+          "level": 15,
+          "band": "1,000,001以上",
+          "holders": 12,
+          "shares": 63387814,
+          "ratio": 49.51
+        }
+      ],
+      "capturedAt": "2026-09-30T12:19:18.909032+08:00",
+      "decisionEligible": false,
+      "reason": "RETROSPECTIVE_QUERY_PUBLICATION_TIME_NOT_VERIFIED"
+    }
+  ],
+  "eventQuery": {
+    "status": "VERIFY_FAILED",
+    "source": "https://mops.twse.com.tw/mops/web/ajax_t05st02?encodeURIComponent=1&step=1&firstin=1&TYPEK=all&year=115&month=09&day=29",
+    "requestedDate": "2026-09-29",
+    "officialResponse": "FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED",
+    "dataAbsenceConfirmed": false
+  },
+  "corporateActionQuery": {
+    "status": "PARTIAL_VERIFIED",
+    "source": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260929&endDate=20260929",
+    "actualDate": "2026-09-29",
+    "scope": "TWSE_EX_RIGHT_DIVIDEND_CALCULATION_ONLY",
+    "otherCorporateActionsVerified": false,
+    "payload": {
+      "stat": "OK",
+      "title": "115年09月29日 至 115年09月29日 除權除息計算結果表",
+      "fields": [
+        "資料日期",
+        "股票代號",
+        "股票名稱",
+        "除權息前收盤價",
+        "除權息參考價",
+        "權值+息值",
+        "權/息",
+        "漲停價格",
+        "跌停價格",
+        "開盤競價基準",
+        "減除股利參考價",
+        "詳細資料",
+        "最近一次申報資料 季別/日期",
+        "最近一次申報每股 (單位)淨值",
+        "最近一次申報每股 (單位)盈餘"
+      ],
+      "data": [
+        [
+          "115年09月29日",
+          "2109",
+          "華豐",
+          "15.00",
+          "14.50",
+          "0.500000",
+          "息",
+          "15.95",
+          "13.05",
+          "14.50",
+          "14.50",
+          "2109,20260929",
+          "115年第2季(https://mops.twse.com.tw/mops/web/t163sb01)",
+          "12.68",
+          "0.72"
+        ],
+        [
+          "115年09月29日",
+          "7631",
+          "聚賢研發-創",
+          "138.50",
+          "137.70",
+          "0.800000",
+          "息",
+          "151.00",
+          "124.00",
+          "137.50",
+          "137.70",
+          "7631,20260929",
+          "115年第2季(https://mops.twse.com.tw/mops/web/t163sb01)",
+          "45.79",
+          "6.26"
+        ]
+      ],
+      "extraNotes": [],
+      "notes": [
+        "股利資料自民國92年5月5日起開始提供",
+        "如果無該項配股率則用'0'帶入",
+        "開盤競價基準：當不含現金增資除權時，取最接近除權息參考價之檔位價，遇含現金增資除權時，則取最接近減除股利參考價之檔位價。",
+        "權值+息值=除權息前收盤價-除權息參考價",
+        "自民國100年3月28日起，除權息前一交易日如無收盤價格，以本公司營業細則第58-3條第2項第2款之原則所決定價格替代。",
+        "本表不含除息併案辦理退還股款減資或分割減資之資料。",
+        "本表所列股票、臺灣存託憑證、ETF、受益證券等財報資料，係發行公司最近一次申報資料，僅供參考，實際資料仍以公開資訊觀測發行公司公告資料為準，網址為：<a href='https://mops.twse.com.tw' target=_blank title='點擊前往公開資訊觀測站(另開新視窗)'>點擊前往公開資訊觀測站</a> 。ETF、受益證券無每股 (單位)盈餘，以「N/A」表示；特別股同普通股最新申報資料。"
+      ],
+      "formula": [
+        "除權息參考價 = (除權息前收盤價-息值+現金增資認購價*現金增資配股率)/(1+無償配股率+現金增資配股率)",
+        "減除股利參考價 = (除權息前收盤價-息值)/(1+無償配股率)"
+      ],
+      "strDate": "20260929",
+      "endDate": "20260929"
+    }
+  },
+  "policy": "Historical date-selected supplemental audit; original point-in-time decision gates, scores and paper ledger remain unchanged. Publication time is not independently verified."
+}

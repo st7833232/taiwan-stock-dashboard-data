@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-29",
-  "revision": "2026-09-30-115618",
+  "revision": "2026-09-30-122846",
   "strategyVersion": "entry-dual-track-v2.1",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
@@ -31,7 +31,7 @@
     ],
     "eligibleRanked": 0
   },
-  "conclusion": "2026-09-29全市場 2308 檔已完成初步篩選（普通股 1952、ETF 356），深度檢查 609 檔。普通股信用資料已核對 534/537 檔。仍待核對：歷史行情 12檔、重大消息與事件風險 609檔、除權息等公司行動 609檔、大戶與散戶多週持股 537檔、財務品質 537檔、法人多日紀錄 1檔、融資融券等信用資料 3檔。研究尚未完成。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-09-29全市場 2308 檔已完成初步篩選（普通股 1952、ETF 356），深度檢查 609 檔。普通股信用資料已核對 534/537 檔。仍待核對：歷史行情 12檔、重大消息與事件風險 609檔、除權息等公司行動 609檔、大戶與散戶多週持股 537檔、財務品質 537檔、法人多日紀錄 1檔、融資融券等信用資料 3檔。研究尚未完成。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。 本次補核快照中16檔普通股的32筆TDCC歷史週資料，並逐檔列出已取得的8月營收與尚未完成的核對項目；補查結果未用來倒改9/29買進判斷，研究仍未完成。",
   "priority": [],
   "core": [
     {
@@ -167,17 +167,23 @@
       "officialDateEvidence": "1150929"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "661c8a0a7a7220e0a5d6a564c3bc62a7b9a79949f8526df7bae04fd2f22e90ed",
+  "historicalSupplement": {
+    "capturedDate": "2026-09-30",
+    "targetDate": "2026-09-29",
+    "queriedStockCount": 16,
+    "verifiedWeeklyPayloadCount": 32,
+    "dataDates": [
+      "2026-09-04",
+      "2026-08-21"
     ],
-    "revision": "2026-09-30-115618",
-    "runId": "36666570078",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/36666570078",
-    "validatedCommit": "70e9e9fab922dd248eaf08079f2d32b5f69ff254"
+    "purpose": "AUDIT_ONLY",
+    "pointInTimeDecisionChanged": false,
+    "financialQualityStatus": "ASSESSMENT_NOT_COMPLETED",
+    "eventQueryStatus": "VERIFY_FAILED",
+    "corporateActionCoverage": "TWSE_EX_RIGHT_DIVIDEND_PARTIAL"
   },
-  "inputFingerprint": "661c8a0a7a7220e0a5d6a564c3bc62a7b9a79949f8526df7bae04fd2f22e90ed"
+  "evidenceAuditVersion": 1,
+  "auditFingerprint": "12c92217bc3937de9965acb0a07819ef154e0012dc65098fc290aaebd896811c"
 }

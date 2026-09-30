@@ -3,6 +3,7 @@ import crypto from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 import {evidenceSummary} from './research-evidence.mjs';
 import {updatePaperExperiment,experimentAllowsOrder} from './paper-experiment.mjs';
+import {EVIDENCE_AUDIT_VERSION,buildEvidenceAudit,auditedReasonDescriptions,auditChipSummary} from './evidence-audit.mjs';
 
 export const finite = x => typeof x === 'number' && Number.isFinite(x);
 export const hash = x => crypto.createHash('sha256').update(JSON.stringify(x)).digest('hex');
@@ -45,8 +46,8 @@ const reasonLabels = {
 };
 export const reasonDescriptions = codes => [...new Set(codes.map(code=>reasonLabels[code]||'其他必要條件尚未確認，暫不建立新買單'))];
 export const evidenceLabels = {history:'歷史行情',institutional:'法人多日紀錄',credit:'融資融券等信用資料',tdcc:'大戶與散戶多週持股',fundamental:'財務品質',event:'重大消息與事件風險',corporateAction:'除權息等公司行動'};
-export function candidateDisplayFields(row, held) {
-  const reasons=reasonDescriptions(row.reasonCodes||[]), pending=reasons.join('；');
+export function candidateDisplayFields(row, held, audit=null) {
+  const reasons=auditedReasonDescriptions(row.reasonCodes||[],audit,reasonDescriptions), pending=reasons.join('；');
   return {
     thesis:`${row.name}已納入全市場篩選，已驗證項目得分 ${row.score}。${pending?`目前先觀察：${pending}。`:'目前列出的檢查項目均已通過，仍須遵守進場價格與帳戶風控。'}${held?'目前為既有模擬持倉。':''}`,
     avoid:pending?`在以下項目確認前，不新增買單：${pending}。`:'開盤或實際進場價格超過上限、停損或帳戶曝險不符規則時，取消買單。',
@@ -276,7 +277,8 @@ export function publishCheckpoint(target) {
   read(`${root}/publication-state.json`);
   if(input.targetDate!==target || gate.targetDate!==target || gate.overallStatus!=='PASS') throw Error('Target Gate not PASS');
   const fingerprint=inputFingerprint(input,config);
-  if(previousResearch.researchDate===target && previousPaper.asOf===target && previousResearch.inputFingerprint===fingerprint && previousResearch.strategyVersion===config.version) {console.log('NO_CHANGE');return;}
+  const supplementPath=`${root}/historical-evidence-supplement.json`, supplement=fs.existsSync(supplementPath)?read(supplementPath):null, auditFingerprint=hash(supplement);
+  if(previousResearch.researchDate===target && previousPaper.asOf===target && previousResearch.inputFingerprint===fingerprint && previousResearch.strategyVersion===config.version && previousResearch.evidenceAuditVersion===EVIDENCE_AUDIT_VERSION && previousResearch.auditFingerprint===auditFingerprint) {console.log('NO_CHANGE');return;}
   const result=evaluateUniverse({...input,gateMatrix:gate},config), paper=markPaper(previousPaper,input,config), now=taipeiTime();
   const evidence=evidenceSummary(input,result);
   updatePaperExperiment(paper,previousPaper,{...input,gateMatrix:gate},config,evidence.researchComplete);
@@ -297,9 +299,10 @@ export function publishCheckpoint(target) {
   const candidates=sorted.filter(r=>keep.has(r.code)).map(r=>{
     const d=detailed.get(r.code),t=d?.indicators||{}, held=paper.positions.some(p=>p.code===r.code), core=r.etfProfile?.eligibleForCore && r.etfProfile?.historyReady && r.etfProfile?.riskLimitsPass && r.etfProfile?.liquidityGatePass;
     const invalid=finite(t.ma20)?`正式收盤跌破MA20 ${round(t.ma20)}元且5日法人轉為淨賣，重新判定目前觀察；既有持倉須另依原始出場委託規則處理。`:`必須先取得 ${target} 官方OHLC與至少 ${config.screening.historyTradingDaysMin} 日可驗證歷史；在此之前不建立進場路徑。`;
-    return {...r,group:core?'core':r.decision==='BUY'?'priority':r.decision==='NO_TRADE'?'excluded':'watch',rating:r.decision==='BUY'?'A-／條件買進':core?'Core／觀察':'B／條件觀察',tone:core?'core':'watch',rank:core?'Core':'Watch',closeDate:target,priceStatus:'final-close',...candidateDisplayFields(r,held),
+    const evidenceAudit=buildEvidenceAudit(d||{code:r.code,assetType:r.assetType,current:{market:r.market}},r.gates,target,supplement);
+    return {...r,evidenceAudit,group:core?'core':r.decision==='BUY'?'priority':r.decision==='NO_TRADE'?'excluded':'watch',rating:r.decision==='BUY'?'A-／條件買進':core?'Core／觀察':'B／條件觀察',tone:core?'core':'watch',rank:core?'Core':'Watch',closeDate:target,priceStatus:'final-close',...candidateDisplayFields(r,held,evidenceAudit),
       technical:finite(t.ma20)?`MA20/60/120=${round(t.ma20)}/${round(t.ma60)}/${round(t.ma120)}；RSI14=${round(t.rsi14)}；量比=${round(r.volumeRatio20d)}。`:'尚無足夠官方歷史可计算MA/ATR。',
-      chips:r.assetType==='ETF'?'使用ETF專用評估，不套用普通股的營收、大戶持股與法人評分權重。':`外資1/3/5/10/20日=${[1,3,5,10,20].map(n=>d?.institutionalTrend?.[`foreign_${n}d`]??'未驗證').join('/')}股；投信1/3/5/10/20日=${[1,3,5,10,20].map(n=>d?.institutionalTrend?.[`investment_trust_${n}d`]??'未驗證').join('/')}股。`,
+      chips:r.assetType==='ETF'?'使用ETF專用評估，不套用普通股的營收、大戶持股與法人評分權重。':`外資1/3/5/10/20日=${[1,3,5,10,20].map(n=>d?.institutionalTrend?.[`foreign_${n}d`]??'未驗證').join('/')}股；投信1/3/5/10/20日=${[1,3,5,10,20].map(n=>d?.institutionalTrend?.[`investment_trust_${n}d`]??'未驗證').join('/')}股。${auditChipSummary(evidenceAudit)}`,
       invalid,invalidCondition:invalid,
       pullbackEntry:{status:r.decision==='BUY'&&r.strategy==='TREND_PULLBACK'?'available':'unavailable',reason:r.reasonCodes.join(',')||'PULLBACK_CONFIRMATION_NOT_PRESENT'},breakoutTrigger:{status:r.decision==='BUY'&&r.strategy==='BREAKOUT'?'available':'unavailable',reason:r.reasonCodes.join(',')||'BREAKOUT_CONFIRMATION_NOT_PRESENT'},entryPrice:r.decision==='BUY'?r.setup.entry:null,maxChase:r.decision==='BUY'?r.setup.maxEntry:null,stop:r.decision==='BUY'?r.setup.stop:null,target:r.decision==='BUY'?r.setup.target:null,
       entryRoutes:r.decision==='BUY'?[{route_id:`${target}-${r.code}-${r.strategy}`,route_type:r.strategy==='BREAKOUT'?'BREAKOUT_ROUTE':'PULLBACK_ROUTE',trigger_price:r.setup.entry,zone_low:r.setup.entry,zone_high:r.setup.maxEntry,max_entry_price:r.setup.maxEntry,stop_loss:r.setup.stop,candidate_position_size:r.candidatePositionSize,expires_at:plan.nextDate,route_status:'PLANNED',mutual_exclusion_group:`${target}-${r.code}`}]:[],allocationMax:r.decision==='BUY'?`${config.risk.singleStockExposureMaxPct}%上限`:'0%',candidatePositionSize:r.candidatePositionSize||0,positionSize:0,executionReady:false,executionStatus:'NOT_SUBMITTED',hardGatesPassed:r.decision==='BUY',
@@ -312,6 +315,7 @@ export function publishCheckpoint(target) {
   const conclusion=`${target}全市場 ${coverage.universe} 檔已完成初步篩選（普通股 ${coverage.stocks}、ETF ${coverage.etfs}），深度檢查 ${coverage.deepDive} 檔。普通股信用資料已核對 ${coverage.creditReadyStocks}/${coverage.deepDiveStocks} 檔。${complete?'必要研究資料均已核對；沒有合適買點也可以是完整研究結果。':`仍待核對：${Object.entries(evidence.counts).filter(([,n])=>n>0).map(([k,n])=>`${evidenceLabels[k]||'其他必要資料'} ${n}檔`).join('、')}。研究尚未完成。`}本次優先買進標的 ${candidates.filter(c=>c.group==='priority'&&c.decision==='BUY').length} 檔，下一交易日委託 ${paper.nextOrders.length} 筆；ETF專用評估條件通過，也不代表已出現買點。`;
   const p={version:config.version,signalMode:'EOD',marketRegime:result.regime,buyScoreThreshold:config.buyScoreThreshold[result.regime],liquidityMedianTurnover20dMin:config.liquidityMedianTurnover20dMin,priorityMaxCandidates:config.priority.maxCandidates,priorityPercentileMax:config.priority.percentileMax,priorityRankMax:config.priority.rankMax,minRiskReward:config.minRiskReward,...config.risk,scoreWeights:config.scoreWeights,assetProfiles:config.assetProfiles};
   const research={researchDate:target,latestTradingDate:target,strategyVersion:config.version,strategyProfile:p,conclusion,decision:{summary:conclusion},candidates,coverage,researchStatus:complete?'COMPLETE':'EVIDENCE_PENDING',researchComplete:complete,evidencePending:evidence.counts,screeningComplete:true,creditEvidenceComplete:missingCredit.length===0,inputFingerprint:fingerprint,inputGeneratedAt:input.generatedAt,researchInputGeneratedAt:input.generatedAt,simulationMode:false,liquiditySelectionBasis:'MEDIAN_TURNOVER_20D',sourceNote:`使用raw/${target}已PASS官方證據與本版inputFingerprint；未把後續資料回填為當時已知資訊。`,engineVersion:config.screening.engineVersion,marketOverview,marketRegimeEvidence:{source:'OFFICIAL_BROAD_MARKET_ETF_PROXY',code:result.marketProxyCode,verified:result.regimeVerified},screeningPath:`${root}/screening-results.json`,sourceGate:gate.gates};
+  research.evidenceAuditVersion=EVIDENCE_AUDIT_VERSION;research.auditFingerprint=auditFingerprint;
   const selected=candidates.filter(c=>c.group==='priority'&&c.decision==='BUY').map(c=>c.code), before=history.at(-1)?.selected||[];
   const row={date:target,selected,added:selected.filter(c=>!before.includes(c)),retained:selected.filter(c=>before.includes(c)),removed:before.filter(c=>!selected.includes(c)),upgraded:[],downgraded:[],note:complete?'必要研究證據已驗證；無BUY亦可為完成。':'EVIDENCE_PENDING，尚未視為研究完成；必要信用等證據繼續自動補驗。'};
   const selection=[...history.filter(h=>h.date!==target),row].sort((a,b)=>a.date.localeCompare(b.date));
