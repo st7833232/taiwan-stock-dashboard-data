@@ -1,11 +1,20 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-29",
-  "revision": "2026-09-30-092112",
+  "revision": "2026-09-30-102140",
   "strategyVersion": "entry-dual-track-v2.1",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
   "researchComplete": false,
+  "evidencePending": {
+    "history": 12,
+    "event": 609,
+    "corporateAction": 609,
+    "tdcc": 537,
+    "fundamental": 537,
+    "institutional": 1,
+    "credit": 3
+  },
   "creditEvidenceComplete": false,
   "coverage": {
     "universe": 2308,
@@ -22,7 +31,7 @@
     ],
     "eligibleRanked": 0
   },
-  "conclusion": "2026-09-29全市場 2308 檔已完成資料篩選（普通股 1952、ETF 356），深度檢查 609 檔。信用證據普通股 534/537；TDCC多週變化、完整財務品質、當日事件風險與除權息證據尚未全部驗證，研究狀態為EVIDENCE_PENDING。本次Priority BUY=0、nextOrders=0筆；已有ETF Profile不等同取得買點。",
+  "conclusion": "2026-09-29全市場 2308 檔已完成資料篩選（普通股 1952、ETF 356），深度檢查 609 檔。信用證據普通股 534/537；未完成證據：history 12檔、event 609檔、corporateAction 609檔、tdcc 537檔、fundamental 537檔、institutional 1檔、credit 3檔，研究狀態為EVIDENCE_PENDING。本次Priority BUY=0、nextOrders=0筆；已有ETF Profile不等同取得買點。",
   "priority": [],
   "core": [
     {
@@ -131,5 +140,5 @@
     }
   ],
   "validation": "AWAITING_CI",
-  "inputFingerprint": "90559ad919ff450b1ef97aedfb83e86bf6dfc9f7700262d42373d0d8437122d0"
+  "inputFingerprint": "78a758cd66eaf9b9cb05e25e9c2a4176d022e005ddfbcbb5eaca09fbe5c47d3c"
 }

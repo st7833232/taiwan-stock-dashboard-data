@@ -1,7 +1,7 @@
 {
   "targetDate": "2026-09-29",
   "timezone": "Asia/Taipei",
-  "generatedAt": "2026-09-30T01:21:03.381Z",
+  "generatedAt": "2026-09-30T02:21:23.670Z",
   "simulatedTodayDate": null,
   "effectiveTodayDate": "2026-09-30",
   "overallStatus": "PASS",
@@ -233,7 +233,7 @@
       "kind": "margin-short",
       "url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260929&response=json&selectType=ALL",
       "targetDate": "2026-09-29",
-      "capturedAt": "2026-09-30T01:20:55.645Z",
+      "capturedAt": "2026-09-30T02:21:18.115Z",
       "status": "CAPTURED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -250,7 +250,7 @@
       "kind": "margin-short",
       "url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20260929&response=json&selectType=ALL",
       "targetDate": "2026-09-29",
-      "capturedAt": "2026-09-30T01:20:55.679Z",
+      "capturedAt": "2026-09-30T02:21:18.160Z",
       "status": "CAPTURED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -267,7 +267,7 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/www/zh-tw/margin/balance?date=2026/09/29&response=json",
       "targetDate": "2026-09-29",
-      "capturedAt": "2026-09-30T01:21:00.162Z",
+      "capturedAt": "2026-09-30T02:21:20.145Z",
       "status": "CAPTURED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -284,7 +284,7 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/09/29",
       "targetDate": "2026-09-29",
-      "capturedAt": "2026-09-30T01:21:00.160Z",
+      "capturedAt": "2026-09-30T02:21:20.143Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -301,7 +301,7 @@
       "kind": "securities-lending",
       "url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl?date=2026/09/29&id=&response=json",
       "targetDate": "2026-09-29",
-      "capturedAt": "2026-09-30T01:21:00.163Z",
+      "capturedAt": "2026-09-30T02:21:20.146Z",
       "status": "CAPTURED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -339,7 +339,8 @@
         "status": "NOT_CAPTURED_RETROSPECTIVE",
         "simulatedTodayDate": null,
         "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
-      }
+      },
+      "preservedCapture": true
     },
     {
       "source": "tpex-monthly-revenue",
@@ -369,7 +370,8 @@
         "status": "NOT_CAPTURED_RETROSPECTIVE",
         "simulatedTodayDate": null,
         "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
-      }
+      },
+      "preservedCapture": true
     },
     {
       "source": "twse-material-information",
@@ -378,7 +380,7 @@
       "kind": "material-information",
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
       "targetDate": "2026-09-29",
-      "capturedAt": "2026-09-30T01:21:03.338Z",
+      "capturedAt": "2026-09-30T02:21:23.670Z",
       "status": "NOT_CAPTURED_RETROSPECTIVE",
       "simulatedTodayDate": null,
       "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
@@ -390,7 +392,7 @@
       "kind": "material-information",
       "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
       "targetDate": "2026-09-29",
-      "capturedAt": "2026-09-30T01:21:03.338Z",
+      "capturedAt": "2026-09-30T02:21:23.670Z",
       "status": "NOT_CAPTURED_RETROSPECTIVE",
       "simulatedTodayDate": null,
       "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
@@ -423,7 +425,8 @@
         "status": "NOT_CAPTURED_RETROSPECTIVE",
         "simulatedTodayDate": null,
         "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
-      }
+      },
+      "preservedCapture": true
     }
   ]
 }
