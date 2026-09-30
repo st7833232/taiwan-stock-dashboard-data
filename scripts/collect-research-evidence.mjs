@@ -16,15 +16,13 @@ function shiftDate(date,days){const d=new Date(date+'T00:00:00Z');d.setUTCDate(d
 function compactDate(date){return date.replaceAll('-','');}
 function coverageSources(target){
   const start=shiftDate(target,-180),end=shiftDate(target,35),startCompact=compactDate(start),targetCompact=compactDate(target),endCompact=compactDate(end);
-  const tpexStart=start.replaceAll('-','/'),tpexEnd=end.replaceAll('-','/');
   return [
     {id:'twse-ca-exrights-preview',market:'TWSE',kind:'coverage',coverageTags:['exRightsDividends'],coverageOnly:true,url:'https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL',summary:'上市股票除權除息預告表'},
     {id:'twse-ca-trading-halts',market:'TWSE',kind:'coverage',coverageTags:['tradingHalts'],coverageOnly:true,allowEmpty:true,url:'https://openapi.twse.com.tw/v1/exchangeReport/TWTAWU',summary:'集中市場暫停交易證券'},
     {id:'twse-ca-exrights-history',market:'TWSE',kind:'coverage',coverageTags:['historicalPriceAdjustment:exRights'],coverageOnly:true,allowEmpty:true,url:`https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=${startCompact}&endDate=${targetCompact}`,summary:'上市股票除權除息計算結果表'},
     {id:'twse-ca-reduction-reference',market:'TWSE',kind:'coverage',coverageTags:['splitReductionConversion:reduction','historicalPriceAdjustment:reduction'],coverageOnly:true,allowEmpty:true,url:`https://www.twse.com.tw/exchangeReport/TWTAUU?response=json&startDate=${startCompact}&endDate=${endCompact}`,summary:'股票減資恢復買賣參考價格'},
     {id:'twse-ca-parvalue-preview',market:'TWSE',kind:'coverage',coverageTags:['splitReductionConversion:parValueChange'],coverageOnly:true,allowEmpty:true,url:'https://www.twse.com.tw/exchangeReport/TWTB7U?response=json',summary:'變更股票面額預告表'},
-    {id:'twse-ca-parvalue-history',market:'TWSE',kind:'coverage',coverageTags:['historicalPriceAdjustment:parValueChange'],coverageOnly:true,allowEmpty:true,url:`https://www.twse.com.tw/exchangeReport/TWTB8U?response=json&startDate=${startCompact}&endDate=${targetCompact}`,summary:'變更股票面額恢復買賣參考價格'},
-    {id:'tpex-ca-parvalue-reference',market:'TPEx',kind:'coverage',coverageTags:['splitReductionConversion:parValueChange','historicalPriceAdjustment:parValueChange'],coverageOnly:true,allowEmpty:true,url:`https://www.tpex.org.tw/www/zh-tw/announce/market/change/reference?startDate=${tpexStart}&endDate=${tpexEnd}&response=json`,summary:'上櫃變更股票面額恢復買賣參考價'}
+    {id:'twse-ca-parvalue-history',market:'TWSE',kind:'coverage',coverageTags:['historicalPriceAdjustment:parValueChange'],coverageOnly:true,allowEmpty:true,url:`https://www.twse.com.tw/exchangeReport/TWTB8U?response=json&startDate=${startCompact}&endDate=${targetCompact}`,summary:'變更股票面額恢復買賣參考價格'}
   ];
 }
 function structuredEvidence(payload,allowEmpty=false){
