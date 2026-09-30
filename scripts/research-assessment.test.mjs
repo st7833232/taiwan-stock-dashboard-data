@@ -24,20 +24,30 @@ test('comparative year and actual deterioration are checked before financial per
  const stronger={...income(114),metrics:{...income(114).metrics,revenue:300}};
  assert.equal(assess(stronger).status,'FAIL');assert.ok(assess(stronger).failures.includes('REVENUE_DETERIORATION'));
 });
-test('official capture metadata becomes market-scoped coverage without widening incomplete scopes',()=>{
+test('official capture metadata becomes market-scoped coverage only when every required part exists',()=>{
+ const base={market:'TPEx',kind:'coverage',status:'CAPTURED',capturedAt:'2026-09-30T12:10:00+08:00',rawUsable:true};
  const captures=[
   {id:'tpex-governance-O',market:'TPEx',kind:'governance',status:'CAPTURED',capturedAt:'2026-09-30T12:00:00+08:00',url:'https://example/governance',rawUsable:true},
   {id:'tpex-events-O',market:'TPEx',kind:'events',status:'CAPTURED',capturedAt:'2026-09-30T12:05:00+08:00',url:'https://example/events',rawUsable:true},
-  {id:'tpex-suspensions-O',market:'TPEx',kind:'suspensions',status:'CAPTURED',capturedAt:'2026-09-30T12:10:00+08:00',url:'https://example/suspensions',rawUsable:true}
+  {...base,id:'ex',url:'https://example/ex',coverageTags:['exRightsDividends','historicalPriceAdjustment:exRights']},
+  {...base,id:'halt',url:'https://example/halt',coverageTags:['tradingHalts']},
+  {...base,id:'reduction',url:'https://example/reduction',coverageTags:['splitReductionConversion:reduction','historicalPriceAdjustment:reduction']},
+  {...base,id:'par',url:'https://example/par',coverageTags:['splitReductionConversion:parValueChange','historicalPriceAdjustment:parValueChange']}
  ];
  const coverage=evidenceCoverage(captures,'TPEx','2026-09-30');
  assert.equal(coverage.governanceVerified,true);
  assert.equal(coverage.eventCoverage.scopes.materialAnnouncements.status,'VERIFIED');
- assert.equal(coverage.eventCoverage.scopes.futureBinaryEvents.status,'UNVERIFIED');
- assert.equal(coverage.corporateActionCoverage.scopes.tradingHalts.status,'UNVERIFIED');
+ assert.equal(coverage.eventCoverage.scopes.futureBinaryEvents.status,'VERIFIED');
+ assert.equal(coverage.corporateActionCoverage.scopes.exRightsDividends.status,'VERIFIED');
+ assert.equal(coverage.corporateActionCoverage.scopes.splitReductionConversion.status,'VERIFIED');
+ assert.equal(coverage.corporateActionCoverage.scopes.tradingHalts.status,'VERIFIED');
+ assert.equal(coverage.corporateActionCoverage.scopes.historicalPriceAdjustment.status,'VERIFIED');
+ assert.equal(evidenceCoverage(captures.filter(c=>c.id!=='par'),'TPEx','2026-09-30').corporateActionCoverage.scopes.splitReductionConversion.status,'UNVERIFIED');
  assert.equal(evidenceCoverage([{...captures[0],rawUsable:false}],'TPEx','2026-09-30').governanceVerified,false);
  const event=normalizeOfficialEvent({SecuritiesCompanyCode:'3005','發言日期':'1150930','發言時間':'120000','主旨':'法說會','事實發生日':'1151001'},'https://example/events');
  assert.equal(event.code,'3005');
+ const notCorporate=normalizeOfficialEvent({'公司代號':'8150','發言日期':'1150930','發言時間':'120000','主旨':'公布注意交易資訊','說明':'完整財務資訊可至合併/個別報表查閱'},'https://example/events');
+ assert.equal(notCorporate.eventType,'OTHER');
  const tpexIncome=normalizeFinancial({SecuritiesCompanyCode:'3005',Year:'115',Season:'2','營業收入':'200','營業毛利（毛損）':'60','營業利益（損失）':'30','淨利（淨損）歸屬於母公司業主':'20','基本每股盈餘（元）':'4'},'income','https://example/income');
  assert.equal(tpexIncome.code,'3005');assert.equal(tpexIncome.periodEnd,'2026-06-30');
 });
