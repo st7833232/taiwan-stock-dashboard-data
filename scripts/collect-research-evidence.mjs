@@ -7,8 +7,8 @@ export function discoverEvidenceSources(spec, market, apiRoot) {
   return Object.entries(spec.paths??{}).flatMap(([path,op])=>{
     const summary=op.get?.summary??'';
     // Discover exact endpoint names from the official specification, not guessed aliases.
-    const kind=summary.includes('綜合損益表')?'income':summary.includes('資產負債表')?'balance':null;
-    if(!kind || !/_(L|O)_(ci|basi|bd|fh|ins|mim)$/.test(path))return [];
+    const kind=summary.includes('綜合損益表')?'income':summary.includes('資產負債表')?'balance':/t187ap04_(L|O)$/.test(path)?'events':/t187ap23_(L|O)$/.test(path)?'governance':/t187ap26_(L|O)$/.test(path)?'suspensions':null;
+    if(!kind || (['income','balance'].includes(kind)&&! /_(L|O)_(ci|basi|bd|fh|ins|mim)$/.test(path)))return [];
     return [{id:`${market.toLowerCase()}-${kind}-${path.split('_').at(-1)}`,market,kind,url:apiRoot+path,summary}];
   });
 }
@@ -16,8 +16,13 @@ export function archiveUsable(meta,target) {
   return meta?.status==='CAPTURED' && Number.isFinite(Date.parse(meta.capturedAt))
     && Date.parse(meta.capturedAt)<=Date.parse(`${target}T23:59:59+08:00`);
 }
-export async function collect(target) {
-  const root=`raw/${target}`,today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei'}).format(new Date());
+export async function collect(target,{now=new Date()}={}) {
+  const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei'}).format(now);
+  // Archive today's quarterly and event evidence even during yesterday's recovery.
+  // Historical enrichment still excludes anything captured after its cutoff.
+  if(target!==today)await collect(today,{now});
+  const root=`raw/${target}`;fs.mkdirSync(root,{recursive:true});
+  const config=read('strategy-config.json');
   const old=read(`${root}/financial-evidence-captures.json`),captures=[];
   const requests=async url=>{
     const response=await fetch(url,{signal:AbortSignal.timeout(20000),headers:{accept:'application/json'}});
@@ -29,11 +34,12 @@ export async function collect(target) {
     ['TPEx','https://www.tpex.org.tw/openapi/swagger.json','https://www.tpex.org.tw/openapi/v1']
   ]) {
     let sources=(read('history/financial-source-catalog.json')?.sources??[]).filter(s=>s.market===market);
-    if(!sources.length)try{sources=discoverEvidenceSources(await requests(swagger),market,apiRoot);}catch(error){captures.push({market,kind:'discovery',url:swagger,status:'VERIFY_FAILED',error:String(error.message)});}
+    if(!sources.some(s=>s.kind==='events'))try{sources=discoverEvidenceSources(await requests(swagger),market,apiRoot);}catch(error){captures.push({market,kind:'discovery',url:swagger,status:'VERIFY_FAILED',error:String(error.message)});}
     for(let i=0;i<sources.length;i+=2) {
       await Promise.all(sources.slice(i,i+2).map(async source=>{
         const file=`${root}/${source.id}.raw.txt`,prior=old?.captures?.find(c=>c.id===source.id);
-        if(archiveUsable(prior,target) && fs.existsSync(file)){captures.push(prior);return;}
+        const financial=['income','balance'].includes(source.kind),fresh=financial||now.getTime()-Date.parse(prior?.capturedAt)<=config.evidenceCollection.sourceRefreshIntervalMs;
+        if(archiveUsable(prior,target) && fs.existsSync(file)&&fresh){captures.push(prior);return;}
         if(target!==today) {
           const dates=fs.readdirSync('raw').filter(d=>/^\d{4}-\d{2}-\d{2}$/.test(d)&&d<target).sort().reverse();
           for(const date of dates){const meta=read(`raw/${date}/financial-evidence-captures.json`)?.captures?.find(c=>c.id===source.id);if(archiveUsable(meta,target)&&fs.existsSync(`raw/${date}/${source.id}.raw.txt`)){fs.copyFileSync(`raw/${date}/${source.id}.raw.txt`,file);captures.push({...meta,archiveOrigin:`raw/${date}/${source.id}.raw.txt`});return;}}
@@ -41,9 +47,9 @@ export async function collect(target) {
         }
         try {
           const rows=await requests(source.url);
-          if(!Array.isArray(rows)||!rows.length||!rows.every(r=>r&&typeof r==='object'&&!Array.isArray(r)))throw Error('No usable official financial rows');
+          if(!Array.isArray(rows)||(financial&&!rows.length)||!rows.every(r=>r&&typeof r==='object'&&!Array.isArray(r)))throw Error('No usable official evidence rows');
           fs.writeFileSync(file,JSON.stringify(rows)+'\n');captures.push({...source,status:'CAPTURED',capturedAt:new Date().toISOString(),rows:rows.length});
-        }catch(error){captures.push({...source,status:'VERIFY_FAILED',error:String(error.message)});}
+        }catch(error){if(archiveUsable(prior,target)&&fs.existsSync(file))captures.push({...prior,refreshStatus:'VERIFY_FAILED',refreshError:String(error.message)});else captures.push({...source,status:'VERIFY_FAILED',error:String(error.message)});}
       }));
     }
     const catalog=read('history/financial-source-catalog.json')??{sources:[]};

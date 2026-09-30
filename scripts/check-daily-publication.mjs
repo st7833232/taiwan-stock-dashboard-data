@@ -53,11 +53,9 @@ if (!exists(gatePath)) {
       const coverageReady = Number.isInteger(stockCount) && stockCount >= 0
         && (!requireMargin || (Number.isInteger(marginReady) && marginReady >= stockCount))
         && (!requireLending || (Number.isInteger(lendingReady) && lendingReady >= stockCount));
-      const inputGeneratedAt = Date.parse(researchInput?.generatedAt ?? '');
-      const publicationUpdatedAt = Date.parse(manifest.updatedAt ?? '');
       state.creditEvidence = { stockCount, marginShortReadyCount: marginReady, securitiesLendingReadyCount: lendingReady, requireMargin, requireLending };
       state.creditEvidenceReady = coverageReady;
-      state.publicationUsesLatestResearchInput = Number.isFinite(inputGeneratedAt) && Number.isFinite(publicationUpdatedAt) && publicationUpdatedAt >= inputGeneratedAt;
+      // A refreshed generatedAt is not changed research evidence. Compare the content fingerprint below.
       state.manifestRevision = manifest.revision || null;
       const paths = [manifest.researchPath, manifest.selectionHistoryPath, manifest.paperAccountPath];
       const pathsExist = paths.every((p) => typeof p === 'string' && exists(p));
@@ -78,6 +76,7 @@ if (!exists(gatePath)) {
         state.strategyMatch = strategyMatch;
         researchComplete = research.researchComplete === true;
         screeningCurrent = research.screeningComplete === true && researchInput && research.inputFingerprint === inputFingerprint(researchInput, strategyConfig);
+        state.publicationUsesLatestResearchInput = Boolean(screeningCurrent);
         state.screeningComplete = Boolean(screeningCurrent);
         state.researchComplete = researchComplete;
         datesMatch = research.researchDate === targetDate && research.latestTradingDate === targetDate && paper.asOf === targetDate;

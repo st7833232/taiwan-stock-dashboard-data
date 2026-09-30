@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import {pathToFileURL} from 'node:url';
+import {normalizeFinancial,financialAssessment,normalizeOfficialEvent,eventAssessment,corporateActionAssessment} from './assess-research-evidence.mjs';
 
 const read=p=>{try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}};
 const num=x=>x===null||x===undefined||String(x).trim()===''?null:Number.isFinite(Number(String(x).replaceAll(',','')))?Number(String(x).replaceAll(',','')):null;
@@ -29,8 +30,11 @@ export function evidenceSummary(input,result) {
 }
 export function enrich(target) {
   const root=`raw/${target}`,input=read(`${root}/research-input.json`);if(!input)throw Error('Research input missing');
-  const weeks=[];
+  const config=read('strategy-config.json'),weeks=[],editions=new Set(),cutoff=Date.parse(`${target}T23:59:59+08:00`);
   for(const date of fs.readdirSync('raw').filter(d=>/^\d{4}-\d{2}-\d{2}$/.test(d)&&d<=target).sort()) {
+    const archive=read(`raw/${date}/tdcc-history-evidence.json`);
+    if(Date.parse(archive?.calendarCapturedAt)<=cutoff)for(const d of archive.officialAvailableDates??[])if(d<=target)editions.add(d);
+    for(const r of archive?.records??[])if(r.status==='VERIFIED'&&Date.parse(r.capturedAt)<=cutoff)weeks.push(...tdccWeeks(r.rows,target));
     const matrix=read(`raw/${date}/gate-matrix.json`),capture=matrix?.captures?.find(c=>c.source==='tdcc-shareholding-distribution'&&c.status==='CAPTURED');
     if(!capture||!Number.isFinite(Date.parse(capture.capturedAt))||Date.parse(capture.capturedAt)>Date.parse(`${target}T23:59:59+08:00`))continue;
     const capturedDate=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei'}).format(new Date(capture.capturedAt));
@@ -38,25 +42,39 @@ export function enrich(target) {
   }
   const unique=new Map(weeks.map(r=>[`${r.code}|${r.date}`,r])),byCode=new Map();
   for(const row of unique.values()){if(!byCode.has(row.code))byCode.set(row.code,[]);byCode.get(row.code).push(row);}
-  const captures=read(`${root}/financial-evidence-captures.json`)?.captures??[],financial=new Map();
+  const financial=new Map(),financialPeriods=new Map(),events=new Map(),governance=new Map();
+  const captures=fs.readdirSync('raw').filter(d=>/^\d{4}-\d{2}-\d{2}$/.test(d)&&d<=target).sort().flatMap(d=>(read(`raw/${d}/financial-evidence-captures.json`)?.captures??[]).map(c=>({...c,rawRoot:`raw/${d}`})));
   for(const c of captures.filter(c=>c.status==='CAPTURED'&&Date.parse(c.capturedAt)<=Date.parse(`${target}T23:59:59+08:00`))) {
-    for(const row of read(`${root}/${c.id}.raw.txt`)??[]) {
-      const code=String(row['公司代號']??row['公司代碼']??row.SecuritiesCompanyCode??''),year=num(row['年度']??row.Year),quarter=num(row['季別']??row['季']??row.Season??row.Quarter);
+    for(const row of read(`${c.rawRoot}/${c.id}.raw.txt`)??[]) {
+      if(c.kind==='events') {const event=normalizeOfficialEvent(row,c.url);if(event&&Date.parse(event.eventTimestamp)<=cutoff){if(!events.has(event.code))events.set(event.code,[]);events.get(event.code).push(event);}continue;}
+      if(c.kind==='governance'){const code=String(row['股票代號']??row['公司代號']??'').trim();if(code)governance.set(code,row);continue;}
+      if(!['income','balance'].includes(c.kind))continue;
+      const code=String(row['公司代號']??row['公司代碼']??row.SecuritiesCompanyCode??'').trim(),year=num(row['年度']??row.Year),quarter=num(row['季別']??row['季']??row.Season??row.Quarter);
       if(!code||!year||!Number.isInteger(quarter)||quarter<1||quarter>4)continue;
       const y=year<1911?year+1911:year,periodEnd=new Date(Date.UTC(y,quarter*3,0)).toISOString().slice(0,10);
       if(periodEnd>target)continue;
-      const data=financial.get(code)??{};data[c.kind]={source:c.url,periodEnd,row};financial.set(code,data);
+      const normalized=normalizeFinancial(row,c.kind,c.url);if(!normalized)continue;
+      const key=`${code}|${periodEnd}`,period=financialPeriods.get(key)??{};period[c.kind]=normalized;financialPeriods.set(key,period);
+      const data=financial.get(code)??{};
+      if(!data[c.kind]||periodEnd>=data[c.kind].periodEnd)data[c.kind]={source:c.url,periodEnd,row,normalized};financial.set(code,data);
     }
   }
   for(const row of input.deepDive) {
     const records=(byCode.get(row.code)??[]).sort((a,b)=>a.date.localeCompare(b.date));
     const last=records.at(-1),deltaDays=(a,b)=>(Date.parse(a)-Date.parse(b))/86400000;
-    const at=n=>last?records.filter(r=>deltaDays(last.date,r.date)>=n*7&&deltaDays(last.date,r.date)<=n*7+3).at(-1):null;
-    const old=[1,2,4].map(at),ready=Boolean(last&&deltaDays(target,last.date)<=14&&old.every(Boolean));
-    row.tdccEvidence={status:ready?'VERIFIED':'PERSISTENCE_PENDING',latest:last??null,comparisons:Object.fromEntries([1,2,4].map((n,i)=>[`${n}w`,old[i]?{date:old[i].date,large400Change:last.large400-old[i].large400,retail50Change:last.retail50-old[i].retail50}:null]))};
+    // Compare official weekly editions, not seven-calendar-day windows (holidays shift publication).
+    const calendar=[...editions].filter(d=>!last||d<=last.date).sort().reverse();
+    const at=n=>last&&calendar.length?records.find(r=>r.date===calendar[n]):null;
+    const offsets=config.evidenceCollection.tdcc.comparisonOffsets.filter(n=>n>0),old=offsets.map(at),ready=Boolean(last&&calendar[0]===last.date&&deltaDays(target,last.date)<=config.evidenceCollection.tdcc.freshnessCalendarDaysMax&&old.every(Boolean));
+    row.tdccEvidence={status:ready?'VERIFIED':'PERSISTENCE_PENDING',latest:last??null,comparisonBasis:'OFFICIAL_WEEKLY_EDITION',comparisons:Object.fromEntries(offsets.map((n,i)=>[`${n}w`,old[i]?{date:old[i].date,large400Change:last.large400-old[i].large400,retail50Change:last.retail50-old[i].retail50}:null]))};
     row.financialEvidence=financial.get(row.code)??null;
+    const current=row.financialEvidence;
+    const periodEnd=current?.income?.periodEnd,priorPeriod=periodEnd?`${Number(periodEnd.slice(0,4))-1}${periodEnd.slice(4)}`:null;
+    row.financialAssessment=financialAssessment({income:current?.income?.normalized,balance:current?.balance?.normalized},financialPeriods.get(`${row.code}|${priorPeriod}`),config.evidenceCollection.financialQuality,{governanceVerified:false,negativeGovernance:governance.has(row.code)});
+    row.eventAssessment=eventAssessment(events.get(row.code)??[],target,null);
+    row.corporateActionAssessment=corporateActionAssessment(events.get(row.code)??[],target,null);
     // Verified data is not a verified quality/catalyst decision. Do not grant BUY permission from raw reports.
-    row.verifiedEvidence={...row.verifiedEvidence,tdcc:ready,tdccScoreFraction:ready?(old.filter(r=>last.large400>r.large400&&last.retail50<r.retail50).length/old.length):0};
+    row.verifiedEvidence={...row.verifiedEvidence,tdcc:ready,tdccScoreFraction:ready?(old.filter(r=>last.large400>r.large400&&last.retail50<r.retail50).length/old.length):0,fundamental:row.financialAssessment.qualityPass,fundamentalScoreFraction:row.financialAssessment.qualityPass?config.evidenceCollection.financialQuality.qualityWeightFraction:0,eventRisk:row.eventAssessment.verified,corporateAction:row.corporateActionAssessment.verified};
   }
   fs.writeFileSync(`${root}/research-input.json`,JSON.stringify(input,null,2)+'\n');
   console.log(JSON.stringify({stage:'EVIDENCE_ENRICHMENT',targetDate:target,tdccReady:input.deepDive.filter(r=>r.verifiedEvidence.tdcc).length,financialRecords:financial.size}));

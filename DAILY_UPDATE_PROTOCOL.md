@@ -4,7 +4,7 @@
 
 允許本資料庫建立純資料基礎設施排程，用於自動擷取、保存與驗證 TWSE、TPEx 等官方公開市場資料。官方擷取器本身只產生原始證據；授權的 deterministic pipeline 可接續全市場篩選、紙上帳戶與 immutable checkpoint 的原子發布。完整研究與證據未完成的 checkpoint 必須分別標示；不呼叫 LLM、不進行真實下單、不部署網站。
 
-目前研究進場策略版本：`entry-dual-track-v2.1`。
+目前研究進場策略版本：以 `strategy-config.json.version` 為準（本次更新為 `entry-dual-track-v2.2`）。
 
 機器可執行的門檻與權重以根目錄 `strategy-config.json` 為單一設定來源；DAILY_UPDATE_PROTOCOL.md、排程提示詞與 validator 不得各自維護互相衝突的數值。策略版本變更時，`check-daily-publication.mjs` 必須把舊策略 publication 視為 `RESEARCH_REQUIRED`。
 
@@ -84,7 +84,7 @@
 
 突破型不是用來取代回測型；兩者的目的是降低「只等回測而錯失趨勢起漲」與「無限制追高」兩種相反風險。
 
-### 3.2 entry-dual-track-v2.1：全市場篩選、事件確認與決策 Gate
+### 3.2 現行版本：全市場篩選、事件確認與決策 Gate
 
 本版本在保留 Pullback + Breakout 雙軌互斥的前提下，新增下列強制研究規則。這些規則屬於研究與候選委託生成層；真實券商送單、成交、部分成交、拒單、撤單等狀態仍必須由外部 deterministic Execution Engine／Broker API 回報，研究流程不得自行宣稱成交。
 
@@ -212,7 +212,7 @@ Positive News + Price Weak + Institutional Selling 應標記為正面新聞背�
 
 ### 3.3 v2 機器可驗證研究欄位
 
-為了讓 CI 可以驗證新版策略，而不是只依賴自然語言，`entry-dual-track-v2.1` 的新 research snapshot 必須額外提供向後相容欄位；Dashboard 可以忽略這些新欄位，但資料發布 validator 必須檢查。
+為了讓 CI 可以驗證新版策略，而不是只依賴自然語言，現行策略的新 research snapshot 必須額外提供向後相容欄位；Dashboard 可以忽略這些新欄位，但資料發布 validator 必須檢查。
 
 頂層 `strategyProfile` 至少包含：
 
@@ -445,3 +445,12 @@ checkpoint 必須明確區分 `screeningComplete`、`creditEvidenceComplete`、`
 - 每5日保留交易數、必要證據未完成天數與報酬；第20日收盤停止產生新的買單並驗收。既有持倉不因期限而虛構清倉，出場仍遵守已存在的機械規則。
 - 基準權益、每日評價、期間報酬與最大回撤必須可重算。缺任何期間評價時報酬／完整最大回撤保留null並列缺日，不以零或估計值補足。
 - 只限模擬帳戶，不送真實券商委託，不建立新的ChatGPT/Work排程；由既有GitHub資料流程接續。
+
+## 12. 證據接續規則（2026-09-30）
+
+- `evidenceCollection` 的抓取預算、併發、週次、freshness與財務品質條件都由 `strategy-config.json` 讀取。TDCC 使用官網 `scaDate` 實際週次比較1/2/4期，不能以相隔七天要求排除假日提前公布的一期；逐檔正常官方表單查詢並保存進度，下一輪續抓缺少項目。日期、代號或15級持股任一不一致，一律 VERIFY_FAILED。
+- 回補昨日研究時也保存今日可取得的季財報與重大訊息，供今日及後續研究使用。今日才擷取的財務或TDCC不能改為昨日已知資料，也不能倒改既有模擬交易。
+- 季損益表為年度累計，資產負債表為期末。空值不得補零；財务品質要驗證同期、去年同期營收／淨利、財務結構與公司治理涵蓋。僅有當季正EPS、當月營收或沒有列在資訊申報違規名單，不能宣稱完整財務品質PASS。財務品質與Catalyst的分數不得混用。
+- 官方公告的發言日期、時間、內容與事實發生日分開記錄。TWSE IIH首頁僅列最新8筆，不具全市場歷史公告或未來事件日曆的完整涵蓋，不能由名單缺席推論沒有事件風險。
+- 除權息結果只是一種公司行動；分割／減資／股份轉換、停復牌、歷史價格調整尚未驗證時，保留明確未完成項目。新的逐檔assessment直接寫入research candidate；不得僅因資料列已抓取就設定Hard Gate PASS。
+- publication是否使用最新input以內容fingerprint判定；僅改變generatedAt不構成新證據，不能讓已一致的快照誤報過期。

@@ -1,5 +1,5 @@
 {
-  "version": "entry-dual-track-v2.1",
+  "version": "entry-dual-track-v2.2",
   "signalMode": "EOD",
   "liquidityMedianTurnover20dMin": 50000000,
   "buyScoreThreshold": {
@@ -162,5 +162,29 @@
       "2026-10-30"
     ],
     "calendarEvidencePath": "raw/calendars/2026-09-30/twse-holidays-2026.json"
+  },
+  "evidenceCollection": {
+    "tdcc": {
+      "comparisonOffsets": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "freshnessCalendarDaysMax": 14,
+      "concurrency": 3,
+      "maxQueriesPerRun": 240,
+      "requestTimeoutMs": 12000,
+      "budgetMs": 240000
+    },
+    "financialQuality": {
+      "requirePriorYearSameQuarter": true,
+      "requireGovernanceReview": true,
+      "requirePositiveProfit": true,
+      "minRevenueYoY": 0,
+      "minNetProfitYoY": 0,
+      "qualityWeightFraction": 0.6666666666666666
+    },
+    "sourceRefreshIntervalMs": 300000
   }
 }
