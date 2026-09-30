@@ -16,14 +16,26 @@ function shiftDate(date,days){const d=new Date(date+'T00:00:00Z');d.setUTCDate(d
 function compactDate(date){return date.replaceAll('-','');}
 function coverageSources(target){
   const start=shiftDate(target,-180),end=shiftDate(target,35),startCompact=compactDate(start),targetCompact=compactDate(target),endCompact=compactDate(end);
+  const slash=date=>date.replaceAll('-','/'),encoded=date=>encodeURIComponent(slash(date));
   return [
     {id:'twse-ca-exrights-preview',market:'TWSE',kind:'coverage',coverageTags:['exRightsDividends'],coverageOnly:true,url:'https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL',summary:'上市股票除權除息預告表'},
     {id:'twse-ca-trading-halts',market:'TWSE',kind:'coverage',coverageTags:['tradingHalts'],coverageOnly:true,allowEmpty:true,url:'https://openapi.twse.com.tw/v1/exchangeReport/TWTAWU',summary:'集中市場暫停交易證券'},
     {id:'twse-ca-exrights-history',market:'TWSE',kind:'coverage',coverageTags:['historicalPriceAdjustment:exRights'],coverageOnly:true,allowEmpty:true,url:`https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=${startCompact}&endDate=${targetCompact}`,summary:'上市股票除權除息計算結果表'},
     {id:'twse-ca-reduction-reference',market:'TWSE',kind:'coverage',coverageTags:['splitReductionConversion:reduction','historicalPriceAdjustment:reduction'],coverageOnly:true,allowEmpty:true,url:`https://www.twse.com.tw/exchangeReport/TWTAUU?response=json&startDate=${startCompact}&endDate=${endCompact}`,summary:'股票減資恢復買賣參考價格'},
     {id:'twse-ca-parvalue-preview',market:'TWSE',kind:'coverage',coverageTags:['splitReductionConversion:parValueChange'],coverageOnly:true,allowEmpty:true,url:'https://www.twse.com.tw/exchangeReport/TWTB7U?response=json',summary:'變更股票面額預告表'},
-    {id:'twse-ca-parvalue-history',market:'TWSE',kind:'coverage',coverageTags:['historicalPriceAdjustment:parValueChange'],coverageOnly:true,allowEmpty:true,url:`https://www.twse.com.tw/exchangeReport/TWTB8U?response=json&startDate=${startCompact}&endDate=${targetCompact}`,summary:'變更股票面額恢復買賣參考價格'}
+    {id:'twse-ca-parvalue-history',market:'TWSE',kind:'coverage',coverageTags:['historicalPriceAdjustment:parValueChange'],coverageOnly:true,allowEmpty:true,url:`https://www.twse.com.tw/exchangeReport/TWTB8U?response=json&startDate=${startCompact}&endDate=${targetCompact}`,summary:'變更股票面額恢復買賣參考價格'},
+    {id:'tpex-ca-exrights-history',market:'TPEx',kind:'coverage',coverageTags:['historicalPriceAdjustment:exRights'],coverageOnly:true,allowEmpty:true,expectedDateRange:{start,end:target},url:`https://www.tpex.org.tw/www/zh-tw/bulletin/exDailyQ?startDate=${encoded(start)}&endDate=${encoded(target)}&response=json`,summary:'上櫃股票除權除息計算結果表（歷史）'},
+    {id:'tpex-ca-reduction-reference',market:'TPEx',kind:'coverage',coverageTags:['splitReductionConversion:reduction','historicalPriceAdjustment:reduction'],coverageOnly:true,allowEmpty:true,expectedDateRange:{start,end},url:`https://www.tpex.org.tw/www/zh-tw/bulletin/revivt?startDate=${encoded(start)}&endDate=${encoded(end)}&response=json`,summary:'上櫃減資恢復交易參考價'},
+    {id:'tpex-ca-parvalue-reference',market:'TPEx',kind:'coverage',coverageTags:['splitReductionConversion:parValueChange','historicalPriceAdjustment:parValueChange'],coverageOnly:true,allowEmpty:true,expectedDateRange:{start,end},url:`https://www.tpex.org.tw/www/zh-tw/bulletin/pvChgRslt?startDate=${encoded(start)}&endDate=${encoded(end)}&response=json`,summary:'上櫃變更股票面額恢復買賣參考價'}
   ];
+}
+
+function coverageRangeMatches(source,payload){
+  if(!source.expectedDateRange)return true;
+  const raw=typeof payload?.date==='string'?payload.date:'';
+  const pieces=raw.split('~').map(x=>x.replace(/\D/g,''));
+  const expected=[source.expectedDateRange.start,source.expectedDateRange.end].map(x=>x.replaceAll('-',''));
+  return pieces.length===2 && pieces[0]===expected[0] && pieces[1]===expected[1];
 }
 function structuredEvidence(payload,allowEmpty=false){
   if(payload===null || typeof payload!=='object')return false;
@@ -41,7 +53,7 @@ export function discoverCoverageSources(spec,market,apiRoot) {
     const tags=[];
     if(/除權|除息/.test(text)){
       if(/預告|公告|基準日|停止過戶/.test(text))tags.push('exRightsDividends');
-      if(/計算結果|參考價|恢復.*(買賣|交易)/.test(text))tags.push('historicalPriceAdjustment:exRights');
+      if(market!=='TPEx' && /計算結果|參考價|恢復.*(買賣|交易)/.test(text))tags.push('historicalPriceAdjustment:exRights');
     }
     if(/減資/.test(text)){
       if(/預告|公告|參考價|恢復.*(買賣|交易)|計算結果/.test(text))tags.push('splitReductionConversion:reduction');
@@ -100,6 +112,7 @@ export async function collect(target,{now=new Date()}={}) {
           const rows=await requests(source.url);
           if(source.coverageOnly){
             if(!structuredEvidence(rows,source.allowEmpty===true))throw Error('No usable official coverage payload');
+            if(!coverageRangeMatches(source,rows))throw Error('Official coverage response date range did not match the requested range');
             fs.writeFileSync(file,JSON.stringify(rows)+'\n');captures.push({...source,status:'CAPTURED',capturedAt:new Date().toISOString(),rows:Array.isArray(rows)?rows.length:null});
           }else{
             if(!Array.isArray(rows)||(financial&&!rows.length)||!rows.every(r=>r&&typeof r==='object'&&!Array.isArray(r)))throw Error('No usable official evidence rows');
