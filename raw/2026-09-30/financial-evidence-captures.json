@@ -2,24 +2,24 @@
   "targetDate": "2026-09-30",
   "captures": [
     {
-      "id": "twse-governance-L",
-      "market": "TWSE",
-      "kind": "governance",
-      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap23_L",
-      "summary": "上市公司違反資訊申報、重大訊息及說明記者會規定專區",
-      "status": "CAPTURED",
-      "capturedAt": "2026-09-30T12:57:09.096Z",
-      "rows": 34
-    },
-    {
       "id": "twse-events-L",
       "market": "TWSE",
       "kind": "events",
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
       "summary": "上市公司每日重大訊息",
       "status": "CAPTURED",
-      "capturedAt": "2026-09-30T12:57:09.459Z",
+      "capturedAt": "2026-09-30T13:32:57.754Z",
       "rows": 115
+    },
+    {
+      "id": "twse-governance-L",
+      "market": "TWSE",
+      "kind": "governance",
+      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap23_L",
+      "summary": "上市公司違反資訊申報、重大訊息及說明記者會規定專區",
+      "status": "CAPTURED",
+      "capturedAt": "2026-09-30T13:32:58.174Z",
+      "rows": 34
     },
     {
       "id": "twse-income-bd",
@@ -38,7 +38,7 @@
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap26_L",
       "summary": "上市公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
       "status": "CAPTURED",
-      "capturedAt": "2026-09-30T12:57:09.650Z",
+      "capturedAt": "2026-09-30T13:32:58.370Z",
       "rows": 1
     },
     {
@@ -152,24 +152,24 @@
       "rows": 10
     },
     {
-      "id": "tpex-events-O",
-      "market": "TPEx",
-      "kind": "events",
-      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
-      "summary": "上櫃公司每日重大訊息",
-      "status": "CAPTURED",
-      "capturedAt": "2026-09-30T12:57:12.478Z",
-      "rows": 60
-    },
-    {
       "id": "tpex-suspensions-O",
       "market": "TPEx",
       "kind": "suspensions",
       "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap26_O",
       "summary": "上櫃公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
       "status": "CAPTURED",
-      "capturedAt": "2026-09-30T12:57:14.340Z",
+      "capturedAt": "2026-09-30T13:32:59.196Z",
       "rows": 1
+    },
+    {
+      "id": "tpex-events-O",
+      "market": "TPEx",
+      "kind": "events",
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
+      "summary": "上櫃公司每日重大訊息",
+      "status": "CAPTURED",
+      "capturedAt": "2026-09-30T13:33:02.098Z",
+      "rows": 60
     },
     {
       "id": "tpex-balance-basi",
@@ -298,7 +298,7 @@
       "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap23_O",
       "summary": "上櫃公司違反資訊申報、重大訊息及說明記者會規定專區",
       "status": "CAPTURED",
-      "capturedAt": "2026-09-30T12:57:14.568Z",
+      "capturedAt": "2026-09-30T13:33:02.550Z",
       "rows": 19
     }
   ]
