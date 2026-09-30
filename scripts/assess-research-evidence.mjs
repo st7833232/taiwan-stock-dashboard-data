@@ -3,13 +3,13 @@ import {officialDate} from './research-evidence.mjs';
 const value=(row,names)=>{for(const name of names){const raw=row?.[name];if(raw!==null&&raw!==undefined&&String(raw).trim()!==''){const n=Number(String(raw).replaceAll(',',''));if(Number.isFinite(n))return n;}}return null;};
 const ratio=(a,b)=>Number.isFinite(a)&&Number.isFinite(b)&&b>0?a/b:null;
 export function normalizeFinancial(row,kind,source) {
-  const code=String(row?.['公司代號']??row?.['公司代碼']??'').trim(),year=value(row,['年度']),quarter=value(row,['季別','季']);
+  const code=String(row?.['公司代號']??row?.['公司代碼']??row?.SecuritiesCompanyCode??row?.CompanyCode??'').trim(),year=value(row,['年度','Year']),quarter=value(row,['季別','季','Season','Quarter']);
   if(!code||!Number.isInteger(year)||!Number.isInteger(quarter)||quarter<1||quarter>4)return null;
   const periodEnd=new Date(Date.UTC(year<1911?year+1911:year,quarter*3,0)).toISOString().slice(0,10);
   const metrics=kind==='income'?{
     revenue:value(row,['營業收入']),grossProfit:value(row,['營業毛利（毛損）淨額','營業毛利（毛損）']),operatingProfit:value(row,['營業利益（損失）']),netProfit:value(row,['淨利（淨損）歸屬於母公司業主','本期淨利（淨損）']),eps:value(row,['基本每股盈餘（元）'])
   }:{assets:value(row,['資產總計']),liabilities:value(row,['負債總計']),equity:value(row,['權益總計']),currentAssets:value(row,['流動資產']),currentLiabilities:value(row,['流動負債'])};
-  return {code,periodEnd,quarter,kind,basis:kind==='income'?'YEAR_TO_DATE':'PERIOD_END',extractDate:officialDate(row['出表日期']),source,metrics};
+  return {code,periodEnd,quarter,kind,basis:kind==='income'?'YEAR_TO_DATE':'PERIOD_END',extractDate:officialDate(row['出表日期']??row.Date),source,metrics};
 }
 export function financialAssessment(current,comparative,policy,{governanceVerified=false,negativeGovernance=false}={}) {
   const income=current?.income,balance=current?.balance,prior=comparative?.income,pending=[];
@@ -32,7 +32,7 @@ export function financialAssessment(current,comparative,policy,{governanceVerifi
   return {status:pending.length?'UNVERIFIED':failures.length?'FAIL':'PASS',verified:pending.length===0,qualityPass:pending.length===0&&failures.length===0,pending,failures,metrics,periodEnd:income?.periodEnd??null,basis:income?.basis??null,sources:[income?.source,balance?.source,prior?.source].filter(Boolean)};
 }
 export function normalizeOfficialEvent(row,source) {
-  const code=String(row['公司代號']??row.companyId??'').trim(),date=officialDate(row['發言日期']??row.date),rawTime=String(row['發言時間']??row.time??'').replace(/\D/g,'');
+  const code=String(row['公司代號']??row['公司代碼']??row.SecuritiesCompanyCode??row.companyId??'').trim(),date=officialDate(row['發言日期']??row.date??row.Date),rawTime=String(row['發言時間']??row.time??'').replace(/\D/g,'');
   const time=rawTime.length===4?rawTime+'00':rawTime.padStart(6,'0');
   if(!code||!date||!/^\d{6}$/.test(time)||Number(time.slice(0,2))>23||Number(time.slice(2,4))>59||Number(time.slice(4,6))>59)return null;
   const subject=String(row['主旨 ']??row['主旨']??row.subject??'').trim(),body=String(row['說明']??''),content=subject+' '+body;
