@@ -48,9 +48,10 @@ function collectStrings(value, out = []) {
 
 function getGitChanges() {
   try {
-    const text = execFileSync('git', ['diff', '--name-status', 'HEAD^', 'HEAD'], { encoding: 'utf8' }).trim();
-    if (!text) return [];
-    return text.split('\n').map((line) => {
+    const pending = process.env.VALIDATE_PENDING === '1';
+    const text = execFileSync('git', pending ? ['diff', '--name-status', 'HEAD'] : ['diff', '--name-status', 'HEAD^', 'HEAD'], { encoding: 'utf8' }).trim();
+    const untracked = pending ? execFileSync('git', ['ls-files', '--others', '--exclude-standard'], { encoding: 'utf8' }).trim().split('\n').filter(Boolean).map(p=>`A\t${p}`) : [];
+    return [...(text ? text.split('\n') : []), ...untracked].map((line) => {
       const parts = line.split('\t');
       return { status: parts[0], path: parts.at(-1) };
     });

@@ -10,6 +10,7 @@ on:
       - 'scripts/screen-market.mjs'
       - 'scripts/screen-market.test.mjs'
       - 'scripts/publish-data-atomic.mjs'
+      - 'scripts/validate-data.mjs'
       - 'scripts/check-daily-publication.mjs'
       - 'scripts/backfill-v2-market-history.mjs'
       - 'scripts/summarize-official-market-data.mjs'
@@ -28,7 +29,7 @@ on:
         default: false
         type: boolean
   schedule:
-    - cron: '15 10-14 * * 1-5'
+    - cron: '0 10-15 * * 1-5'
 
 permissions:
   contents: write
@@ -142,12 +143,11 @@ jobs:
         run: |
           node --test scripts/screen-market.test.mjs
           node scripts/screen-market.mjs
-          node scripts/validate-data.mjs
+          VALIDATE_PENDING=1 node scripts/validate-data.mjs
           node scripts/validate-dashboard-contract.mjs
           node scripts/validate-strategy-v2.mjs
 
       - name: Check publication recovery state
-        if: env.GATE_READY == 'true'
         run: node scripts/check-daily-publication.mjs
 
       - name: Save checkpoint for recovery

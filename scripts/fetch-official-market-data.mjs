@@ -66,7 +66,8 @@ function dateVariants(date) {
 }
 
 function findOfficialDate(value, variants) {
-  const text = JSON.stringify(value);
+  // Request echoes are not evidence of an actual publication date.
+  const text = JSON.stringify(value, (key, child) => /^(params|query|request|targetDate|url)$/i.test(key) ? undefined : child);
   for (const v of variants) if (text.includes(v)) return v;
   return null;
 }
@@ -138,6 +139,9 @@ async function capture(source) {
             : 'Auxiliary payload was readable but target-date evidence was not found; do not use it as point-in-time research evidence.';
         return result;
       }
+      if(typeof parsed!=='object' || payloadRowCount(parsed)===0) {
+        result.status='VERIFY_FAILED';result.note='Auxiliary endpoint did not return usable structured official rows; preserve prior verified capture.';return result;
+      }
       result.status = 'CAPTURED';
       await fs.writeFile(path.join(outDir, `${source.id}.raw.txt`), text);
       result.note = 'Auxiliary source captured at this run time; it is not part of the daily publication Gate.';
@@ -145,7 +149,8 @@ async function capture(source) {
     }
     const matchedDate = findOfficialDate(parsed, dateVariants(targetDate));
     result.officialDateEvidence = matchedDate;
-    result.status = matchedDate ? 'PASS' : 'VERIFY_FAILED';
+    result.rowCount = payloadRowCount(parsed);
+    result.status = matchedDate && result.rowCount>0 ? 'PASS' : 'VERIFY_FAILED';
     if (result.status === 'PASS') await fs.writeFile(path.join(outDir, `${source.id}.raw.txt`), text);
     if (!matchedDate) result.note = 'Readable official payload obtained, but affirmative target-date evidence was not found; do not classify as missing.';
     return result;
