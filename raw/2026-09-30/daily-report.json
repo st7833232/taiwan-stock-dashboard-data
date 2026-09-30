@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-30",
-  "revision": "2026-09-30-213330",
+  "revision": "2026-09-30-214724",
   "strategyVersion": "entry-dual-track-v2.2",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
   "researchComplete": false,
   "evidencePending": {
-    "event": 611,
-    "corporateAction": 611,
     "history": 11,
     "fundamental": 540,
     "institutional": 1,
-    "credit": 3
+    "credit": 3,
+    "event": 168,
+    "corporateAction": 168
   },
   "creditEvidenceComplete": false,
   "coverage": {
@@ -30,7 +30,7 @@
     ],
     "eligibleRanked": 0
   },
-  "conclusion": "2026-09-30全市場 2318 檔已完成初步篩選（普通股 1964、ETF 354），深度檢查 611 檔。普通股信用資料已核對 537/540 檔。仍待核對：重大消息與事件風險 611檔、除權息等公司行動 611檔、歷史行情 11檔、財務品質 540檔、法人多日紀錄 1檔、融資融券等信用資料 3檔。研究尚未完成。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-09-30全市場 2318 檔已完成初步篩選（普通股 1964、ETF 354），深度檢查 611 檔。普通股信用資料已核對 537/540 檔。仍待核對：歷史行情 11檔、財務品質 540檔、法人多日紀錄 1檔、融資融券等信用資料 3檔、重大消息與事件風險 168檔、除權息等公司行動 168檔。研究尚未完成。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [],
   "core": [
     {
@@ -39,8 +39,6 @@
       "decision": "WATCH",
       "score": 81.6401,
       "reasonCodes": [
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ]
@@ -51,8 +49,6 @@
       "decision": "WATCH",
       "score": 79.6214,
       "reasonCodes": [
-        "EVENT_RISK_NOT_VERIFIED",
-        "CORPORATE_ACTION_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ]
@@ -166,17 +162,6 @@
       "officialDateEvidence": "1150930"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-09-30-213330",
-    "runId": "36722340474",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/36722340474",
-    "validatedCommit": "28f186aa54a7cdb3a05fb5e32ba3d464068b9b56"
-  },
-  "inputFingerprint": "a60a2eed4484521b20f30ad0252b059a8d9c5c29b6615725da502618f55faab4"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "06fcb4ef4e6a5b794a51c3819560ea7f90db8ecf0b6f0d5aa0167e6348ba116a"
 }
