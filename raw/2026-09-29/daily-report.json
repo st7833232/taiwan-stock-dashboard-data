@@ -167,6 +167,17 @@
       "officialDateEvidence": "1150929"
     }
   ],
-  "validation": "AWAITING_CI",
+  "validation": {
+    "status": "PASS",
+    "validators": [
+      "validate-data",
+      "validate-dashboard-contract",
+      "validate-strategy-v2"
+    ],
+    "revision": "2026-09-30-114235",
+    "runId": "36665572841",
+    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/36665572841",
+    "validatedCommit": "8993fcdcf354346d5ab5f09d650a9a69adf22828"
+  },
   "inputFingerprint": "745b312c8de12c4c252c1a5f9489b1912544a4d89bfec31121407d6c3c441022"
 }
