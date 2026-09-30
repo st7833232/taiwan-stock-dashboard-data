@@ -1,7 +1,7 @@
 {
   "targetDate": "2026-09-29",
   "timezone": "Asia/Taipei",
-  "checkedAt": "2026-09-30T12:28:46+08:00",
+  "checkedAt": "2026-09-30T05:35:23.749Z",
   "stage": "SCREENING_UPDATED_EVIDENCE_PENDING",
   "gateStatus": "PASS",
   "manifestRevision": "2026-09-30-122846",
@@ -9,7 +9,7 @@
   "currentStrategyVersion": "entry-dual-track-v2.1",
   "strategyMatch": true,
   "creditEvidenceReady": false,
-  "publicationUsesLatestResearchInput": true,
+  "publicationUsesLatestResearchInput": false,
   "publicationComplete": false,
   "reason": "Snapshot and full-universe screening are current; required per-stock credit or research evidence is unfinished. This is not a completed research publication. Retry only changed evidence.",
   "creditEvidence": {
@@ -21,20 +21,5 @@
   },
   "screeningComplete": true,
   "researchComplete": false,
-  "publishedCreditFieldsReady": true,
-  "historicalSupplement": {
-    "capturedDate": "2026-09-30",
-    "targetDate": "2026-09-29",
-    "queriedStockCount": 16,
-    "verifiedWeeklyPayloadCount": 32,
-    "dataDates": [
-      "2026-09-04",
-      "2026-08-21"
-    ],
-    "purpose": "AUDIT_ONLY",
-    "pointInTimeDecisionChanged": false,
-    "financialQualityStatus": "ASSESSMENT_NOT_COMPLETED",
-    "eventQueryStatus": "VERIFY_FAILED",
-    "corporateActionCoverage": "TWSE_EX_RIGHT_DIVIDEND_PARTIAL"
-  }
+  "publishedCreditFieldsReady": true
 }
