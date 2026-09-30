@@ -2,6 +2,7 @@ import fs from 'node:fs';
 
 const manifest = JSON.parse(fs.readFileSync('manifest.json', 'utf8'));
 const research = JSON.parse(fs.readFileSync(manifest.researchPath, 'utf8'));
+const paper = JSON.parse(fs.readFileSync(manifest.paperAccountPath, 'utf8'));
 const errors = [];
 
 const nonBlank = (value) => typeof value === 'string' && value.trim().length > 0;
@@ -42,6 +43,51 @@ if (!Array.isArray(research.candidates)) {
     }
   }
 }
+
+// Mirror required values consumed by Dashboard parsePaperTradingAccount.
+// A research-only check misses failures that discard the entire remote bundle.
+const finite = value => typeof value === 'number' && Number.isFinite(value);
+const textFields = (row, fields, prefix) => {
+  for (const key of fields) if (!nonBlank(row?.[key])) errors.push(`${prefix}.${key} must be non-blank text`);
+};
+const numberFields = (row, fields, prefix) => {
+  for (const key of fields) if (!finite(row?.[key])) errors.push(`${prefix}.${key} must be finite`);
+};
+const rows = (value, field) => {
+  if (!Array.isArray(value)) { errors.push(`${field} must be an array`); return []; }
+  return value;
+};
+textFields(paper, ['asOf', 'experimentTitle', 'statusLabel', 'description', 'rule', 'sourceNote', 'note'], 'paper');
+numberFields(paper, ['initialCash', 'cash'], 'paper');
+if (paper.currency !== 'TWD') errors.push('paper.currency must be TWD');
+for (const [i, row] of rows(paper.positions, 'paper.positions').entries()) {
+  const field = `paper.positions[${i}]`;
+  textFields(row, ['code', 'name'], field);
+  numberFields(row, ['shares', 'averageCost'], field);
+  if (row.lastPrice !== undefined) numberFields(row, ['lastPrice'], field);
+  if (!Number.isInteger(row.shares) || row.shares <= 0 || row.averageCost <= 0) errors.push(`${field} must have positive shares and averageCost`);
+}
+for (const [i, row] of rows(paper.ledger, 'paper.ledger').entries()) {
+  const field = `paper.ledger[${i}]`;
+  textFields(row, ['date', 'status', 'rationale'], field);
+  numberFields(row, ['shares', 'fee', 'tax'], field);
+  if (!Number.isInteger(row.shares) || row.shares < 0 || row.fee < 0 || row.tax < 0) errors.push(`${field} must have non-negative shares and fees`);
+  for (const key of ['price', 'closePnl']) if (row[key] !== undefined) numberFields(row, [key], field);
+  for (const key of ['code', 'name']) if (row[key] !== undefined) textFields(row, [key], field);
+}
+for (const [i, row] of rows(paper.rationale, 'paper.rationale').entries()) textFields(row, ['title', 'detail'], `paper.rationale[${i}]`);
+for (const [i, row] of rows(paper.nextOrders, 'paper.nextOrders').entries()) {
+  const field = `paper.nextOrders[${i}]`;
+  textFields(row, ['tradingDate', 'code', 'name', 'executionRule', 'cancelCondition'], field);
+  numberFields(row, ['shares'], field);
+  if (!['buy', 'sell'].includes(row.side) || !Number.isInteger(row.shares) || row.shares <= 0) errors.push(`${field} must have valid side and positive shares`);
+  for (const key of ['route', 'mutualExclusionGroup', 'estimatedAllocation', 'invalidation', 'note']) if (row[key] !== undefined) textFields(row, [key], field);
+  for (const key of ['triggerPrice', 'maxChase', 'priority']) if (row[key] !== undefined) numberFields(row, [key], field);
+}
+textFields(paper.benchmark, ['date', 'etfCode'], 'paper.benchmark');
+numberFields(paper.benchmark, ['accountReturn', 'taiexReturn', 'etfReturn'], 'paper.benchmark');
+for (const key of ['cumulativeAccountReturn', 'cumulativeTaiexReturn', 'cumulativeEtfReturn']) if (paper.benchmark?.[key] !== undefined) numberFields(paper.benchmark, [key], 'paper.benchmark');
+for (const [i, code] of rows(paper.monitorCodes, 'paper.monitorCodes').entries()) if (!nonBlank(code)) errors.push(`paper.monitorCodes[${i}] must be text`);
 
 if (errors.length) {
   console.error('DASHBOARD CONTRACT VALIDATION FAILED');

@@ -212,9 +212,11 @@ export function markPaper(previous, input, config) {
   for(const pos of paper.positions) { const q=quotes.get(pos.code);if(!q || !finite(q.close)) throw Error(`Official close unavailable for held ${pos.code}`);pos.lastPrice=q.close; }
   const equity=paper.cash+paper.positions.reduce((a,p)=>a+p.shares*p.lastPrice,0);
   paper.equity=equity;paper.marketValue=equity-paper.cash;
-  if(!previous.nextOrders.length) paper.ledger.push({date:input.targetDate,status:'無既有委託',fee:0,tax:0,rationale:`前一正式帳戶 ${previous.asOf} 的 nextOrders=[]；當日沒有可執行委託。僅按官方收盤評價持倉。`});
+  if(!previous.nextOrders.length) paper.ledger.push({date:input.targetDate,status:'無既有委託',shares:0,fee:0,tax:0,rationale:`前一正式帳戶 ${previous.asOf} 的 nextOrders=[]；當日沒有可執行委託。僅按官方收盤評價持倉。`});
   const benchmark=input.deepDive.find(r=>r.code==='0050'), day=benchmark?.history?.filter(r=>r[0]<=input.targetDate).slice(-2);
-  paper.benchmark={date:input.targetDate,cumulativeAccountReturn:(equity/paper.initialCash-1)*100,etfCode:'0050',etfReturn:day?.length===2?(day[1][4]/day[0][4]-1)*100:null,method:'Account cumulative percent return from ledger; ETF daily percent return from official OHLCV.'};
+  const previousEquity=previous.cash+previous.positions.reduce((sum,p)=>sum+p.shares*p.lastPrice,0);
+  if(!finite(previousEquity)||previousEquity<=0 || day?.length!==2 || day[1][0]!==input.targetDate || !finite(day[0][4]) || day[0][4]<=0 || !finite(day[1][4])) throw Error('Paper benchmark official valuation history unavailable');
+  paper.benchmark={date:input.targetDate,accountReturn:(equity/previousEquity-1)*100,cumulativeAccountReturn:(equity/paper.initialCash-1)*100,etfCode:'0050',etfReturn:(day[1][4]/day[0][4]-1)*100,accountBaseDate:previous.asOf,accountBaseEquity:previousEquity,method:'Account percent return since previous published valuation; cumulative return from initial cash; ETF daily percent return from verified official OHLCV.'};
   paper.nextOrders=[];paper.statusLabel=`${input.targetDate}正式評價已更新；當日成交0筆；研究證據仍待補驗證`;
   paper.rule=`現股／ETF、無槓桿；新單依strategy-config風控：單股${config.risk.singleStockExposureMaxPct}%、產業${config.risk.sectorExposureMaxPct}%、總曝險${config.risk.totalExposureMaxPct}%；既有持倉超限不事後改寫成交。個股賣出稅0.3%、ETF 0.1%，買賣手續費沿用0.1425%。`;
   paper.rationale=[{title:'無前視偏誤',detail:`僅讀前一正式帳戶 ${previous.asOf} 的 nextOrders；今日新研究不產生今日成交。`},{title:'逐檔信用與研究證據',detail:'未驗證欄位保留缺項；ETF與普通股分流，不以ETF覆蓋普通股信用證據。'}];
@@ -240,6 +242,7 @@ export function publishCheckpoint(target) {
     if(payload.date===target.replaceAll('-','')&&record) marketOverview={date:target,taiexClose:Number(record[1].replaceAll(',','')),taiexChangePct:Number(record[4]),source:`raw/${target}/twse-mi-index.raw.txt`,officialDateEvidence:payload.date};
   }
   if(marketOverview?.date===target && finite(marketOverview.taiexChangePct)) paper.benchmark.taiexReturn=marketOverview.taiexChangePct;
+  if(!finite(paper.benchmark.taiexReturn)) throw Error('Official TAIEX benchmark return unavailable');
   const sorted=result.rows.slice().sort((a,b)=>b.score-a.score || a.code.localeCompare(b.code));
   const keep=new Set([...sorted.filter(r=>r.assetType==='STOCK' && r.historyCoverageTradingDays>=config.screening.historyTradingDaysMin).slice(0,config.screening.displayStockCount).map(r=>r.code),...result.rows.filter(r=>r.decision==='BUY').map(r=>r.code),...paper.positions.map(p=>p.code),...previousResearch.candidates.map(c=>c.code),...result.rows.filter(r=>r.etfProfile?.eligibleForCore).map(r=>r.code)]);
   const detailed=new Map(input.deepDive.map(r=>[r.code,r]));

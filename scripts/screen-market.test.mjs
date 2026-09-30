@@ -29,6 +29,18 @@ test('same-day reanalysis never repeats a ledger entry',()=>{
   const p={asOf:'2026-09-29',cash:200000,initialCash:200000,positions:[],ledger:[],nextOrders:[]};
   assert.deepEqual(markPaper(p,{targetDate:p.asOf,universe:[]},config),p);
 });
+test('no-order valuation preserves the Dashboard ledger and benchmark contract',()=>{
+  const previous={asOf:'2026-09-24',initialCash:200000,cash:165936.528625,positions:[{code:'1513',shares:150,lastPrice:166},{code:'4961',shares:50,lastPrice:180.5}],ledger:[],nextOrders:[]};
+  const input={targetDate:'2026-09-29',universe:[{code:'1513',close:167},{code:'4961',close:184.5}],deepDive:[{code:'0050',history:[['2026-09-24',0,0,0,112.39],['2026-09-29',0,0,0,111.29]]}]};
+  const result=markPaper(previous,input,config);
+  assert.equal(result.ledger.length,1);assert.equal(result.ledger[0].shares,0);
+  assert.equal(result.cash,previous.cash);assert.deepEqual(result.positions.map(p=>p.shares),[150,50]);
+  const base=previous.cash+150*166+50*180.5;
+  assert.equal(result.benchmark.accountReturn,(result.equity/base-1)*100);
+  assert.equal(result.benchmark.accountBaseDate,previous.asOf);
+  assert.equal(result.benchmark.etfReturn,(111.29/112.39-1)*100);
+  assert.throws(()=>markPaper(previous,{...input,deepDive:[]},config),/benchmark.*unavailable/);
+});
 test('existing position concentration cannot be hidden by a high candidate score',()=>{
   const p={cash:175000,positions:[{code:'1513',shares:150,lastPrice:167}],ledger:[]};
   const input={targetDate:'2026-09-29',deepDive:[{code:'1513',history:[['2026-09-23',0,0,0,166],['2026-09-24',0,0,0,166]]}]};

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-29",
-  "revision": "2026-09-30-102140",
+  "revision": "2026-09-30-103610",
   "strategyVersion": "entry-dual-track-v2.1",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
@@ -84,8 +84,11 @@
       "cumulativeAccountReturn": 0.10576431250000073,
       "etfCode": "0050",
       "etfReturn": -0.9786476868327454,
-      "method": "Account cumulative percent return from ledger; ETF daily percent return from official OHLCV.",
-      "taiexReturn": -0.82
+      "method": "Account percent return since previous published valuation; cumulative return from initial cash; ETF daily percent return from verified official OHLCV.",
+      "taiexReturn": -0.82,
+      "accountReturn": 0.1751212463989127,
+      "accountBaseDate": "2026-09-24",
+      "accountBaseEquity": 199861.528625
     },
     "nextOrders": []
   },
@@ -139,17 +142,6 @@
       "officialDateEvidence": "1150929"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-09-30-102140",
-    "runId": "36659433033",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/36659433033",
-    "validatedCommit": "a77ea40a0c39700f8ec207d66b418aaebc267fc0"
-  },
+  "validation": "AWAITING_CI",
   "inputFingerprint": "78a758cd66eaf9b9cb05e25e9c2a4176d022e005ddfbcbb5eaca09fbe5c47d3c"
 }
