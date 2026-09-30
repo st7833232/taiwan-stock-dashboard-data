@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { creditReady, inputFingerprint } from './screen-market.mjs';
 
 const TZ = 'Asia/Taipei';
 const dateFmt = new Intl.DateTimeFormat('en-CA', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' });
@@ -43,9 +44,10 @@ if (!exists(gatePath)) {
     if (exists(manifestPath)) {
       const manifest = readJson(manifestPath);
       const researchInput = exists(researchInputPath) ? readJson(researchInputPath) : null;
-      const stockCount = researchInput?.universeSummary?.deepDiveStocks ?? null;
-      const marginReady = researchInput?.v2Readiness?.marginShortLendingReadyCount ?? null;
-      const lendingReady = researchInput?.v2Readiness?.securitiesLendingReadyCount ?? null;
+      const stockRows = (researchInput?.deepDive ?? []).filter(row => row.assetType === 'STOCK');
+      const stockCount = researchInput ? stockRows.length : null;
+      const marginReady = researchInput ? stockRows.filter(row => creditReady(row, strategyConfig)).length : null;
+      const lendingReady = researchInput ? stockRows.filter(row => Number.isFinite(row.marginShortLending?.lendingBalance)).length : null;
       const requireMargin = strategyConfig?.creditEvidence?.requireMarginBalance === true || strategyConfig?.creditEvidence?.requireShortBalance === true;
       const requireLending = strategyConfig?.creditEvidence?.requireSecuritiesLending === true;
       const coverageReady = Number.isInteger(stockCount) && stockCount >= 0
@@ -65,6 +67,8 @@ if (!exists(gatePath)) {
       let selectionUnique = false;
       let strategyMatch = false;
       let publishedCreditFieldsReady = false;
+      let screeningCurrent = false;
+      let researchComplete = false;
       if (pathsExist) {
         const research = readJson(manifest.researchPath);
         const history = normalizeHistory(readJson(manifest.selectionHistoryPath));
@@ -72,6 +76,10 @@ if (!exists(gatePath)) {
         state.currentStrategyVersion = research.strategyVersion ?? null;
         strategyMatch = Boolean(requiredStrategyVersion) && research.strategyVersion === requiredStrategyVersion;
         state.strategyMatch = strategyMatch;
+        researchComplete = research.researchComplete === true;
+        screeningCurrent = research.screeningComplete === true && researchInput && research.inputFingerprint === inputFingerprint(researchInput, strategyConfig);
+        state.screeningComplete = Boolean(screeningCurrent);
+        state.researchComplete = researchComplete;
         datesMatch = research.researchDate === targetDate && research.latestTradingDate === targetDate && paper.asOf === targetDate;
         selectionUnique = history.filter((row) => row?.date === targetDate).length === 1;
         const stocks = (research.candidates ?? []).filter((row) => row?.assetType === 'STOCK');
@@ -80,10 +88,13 @@ if (!exists(gatePath)) {
       }
       state.publishedCreditFieldsReady = publishedCreditFieldsReady;
       state.publicationComplete = sameRevision && pathsExist && datesMatch && selectionUnique && strategyMatch
-        && coverageReady && state.publicationUsesLatestResearchInput && publishedCreditFieldsReady;
+        && coverageReady && screeningCurrent && researchComplete && publishedCreditFieldsReady;
       if (state.publicationComplete) {
         state.stage = 'DATA_UPDATED';
         state.reason = 'Gate PASS, required credit evidence is complete, and manifest references research built from the latest research input';
+      } else if (sameRevision && pathsExist && datesMatch && selectionUnique && strategyMatch && screeningCurrent) {
+        state.stage = 'SCREENING_UPDATED_EVIDENCE_PENDING';
+        state.reason = 'Snapshot and full-universe screening are current; required per-stock credit or research evidence is unfinished. This is not a completed research publication. Retry only changed evidence.';
       } else {
         state.stage = 'RESEARCH_REQUIRED';
         state.reason = !coverageReady

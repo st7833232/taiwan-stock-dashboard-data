@@ -43,3 +43,11 @@ node scripts/validate-strategy-v2.mjs
 這是公開資料庫，只能存放公開研究與完全虛擬的模擬交易資料。不得提交帳密、憑證、Cookie、Token、真實庫存或任何個人資料。
 
 不得因本資料庫更新而修改或部署 `st7833232/taiwan-stock-research-dashboard`，也不得建立或恢復任何排程。
+# 對話查閱流程
+
+官方 capture 後由 GitHub Actions 執行 `scripts/screen-market.mjs`，將全市場逐檔結果寫入 `raw/<交易日>/screening-results.json`，並以單一 Git Data commit 發布三份 immutable snapshots 與 manifest。對話只需讀取 manifest 與 `raw/<交易日>/daily-report.json`、`publication-state.json`、最新 validation run；不必重抓16MB研究輸入或另開Work任務。流程不呼叫LLM API、不修改Dashboard。
+
+`SNAPSHOT_UPDATED_EVIDENCE_PENDING` 只代表資料快照與全市場篩選已更新，不能視為完整研究。必要信用證據與其他研究Hard Gate未通過時，維持WATCH/NO_TRADE與空新單；所有缺項保留在逐檔結果。帳戶執行尚未通過確定性風控時，既有委託記為未確認，禁止猜測成交。
+
+重試保存已PASS的Gate與可驗證的官方auxiliary證據；週/月證據可使用targetDate之前已捕獲的archive，但仍須另驗freshness。來源內容不變且設定不變時NO_CHANGE；只有capture時間變更不重做快照。遠端main變動即停止發布並保存workflow artifact，下一次從新main重跑，禁止force push。
+

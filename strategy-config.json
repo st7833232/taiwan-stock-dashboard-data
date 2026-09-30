@@ -106,5 +106,26 @@
     "unverifiedSources": [
       "SOURCE_C"
     ]
+  },
+  "screening": {
+    "engineVersion": "deterministic-screening-v1",
+    "historyTradingDaysMin": 120,
+    "institutionalTradingDaysMin": 20,
+    "breakoutLookback": 20,
+    "targetLookback": 120,
+    "stopAtrMultiplier": 1,
+    "maxChaseAtrMultiplier": 0.25,
+    "maxEntryRsi": 72,
+    "momentumRsiMin": 50,
+    "pullbackVolumeRatioMax": 1,
+    "neutralMarketScoreFraction": 0.5,
+    "marginIncreaseScoreFraction": 0.25,
+    "marketProxyCode": "0050",
+    "displayStockCount": 10
+  },
+  "execution": {
+    "feeRate": 0.001425,
+    "stockTaxRate": 0.003,
+    "etfTaxRate": 0.001
   }
 }

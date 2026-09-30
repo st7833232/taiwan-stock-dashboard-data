@@ -157,16 +157,39 @@ async function capture(source) {
 
 const previousMatrix = await readPreviousMatrix();
 const priorPassBySource = new Map((previousMatrix?.captures || []).filter((c) => c.status === 'PASS').map((c) => [c.source, c]));
-const captures = [];
-for (const source of sources) {
-  const attempt = await capture(source);
-  const prior = priorPassBySource.get(source.id);
-  if (source.gate && attempt.status !== 'PASS' && prior) {
-    captures.push({ ...prior, gate: source.gate, preservedPass: true, latestAttempt: attempt });
-  } else {
-    captures.push(attempt);
+const exists = async (p) => { try { await fs.access(p); return true; } catch { return false; } };
+const priorCapturedBySource = new Map((previousMatrix?.captures || []).filter(c=>c.status==='CAPTURED').map(c=>[c.source,c]));
+async function archivedAuxiliary(source) {
+  // Monthly and weekly evidence can be reused, never an old daily news feed.
+  if(!source.latestOnly || !['monthly-revenue','shareholding-distribution'].includes(source.kind)) return null;
+  const dirs=(await fs.readdir('raw',{withFileTypes:true})).filter(d=>d.isDirectory()&&/^\d{4}-\d{2}-\d{2}$/.test(d.name)&&d.name<targetDate).map(d=>d.name).sort().reverse();
+  for(const date of dirs) {
+    const base=path.join('raw',date), file=path.join(base,`${source.id}.raw.txt`);
+    if(!await exists(file)) continue;
+    let m;try {m=JSON.parse(await fs.readFile(path.join(base,'gate-matrix.json'),'utf8'));} catch {continue;}
+    const c=m.captures?.find(c=>c.source===source.id&&c.status==='CAPTURED');
+    if(!c || !Number.isFinite(Date.parse(c.capturedAt)) || Date.parse(c.capturedAt)>Date.parse(`${targetDate}T23:59:59+08:00`)) continue;
+    await fs.copyFile(file,path.join(outDir,`${source.id}.raw.txt`));
+    return {...c,targetDate,archiveOrigin:file,archiveDate:date,archivedEvidence:true,note:'Previously captured official evidence; data-date/freshness gates still required. No later latest payload used.'};
   }
+  return null;
 }
+async function captureOrPreserve(source) {
+  const file=path.join(outDir,`${source.id}.raw.txt`), prior=priorPassBySource.get(source.id);
+  if(source.gate && prior && await exists(file)) return {...prior,preservedPass:true};
+  const aux=priorCapturedBySource.get(source.id);
+  if(aux && await exists(file) && Date.parse(aux.capturedAt)<=Date.parse(`${targetDate}T23:59:59+08:00`)) return {...aux,preservedCapture:true};
+  const attempt=await capture(source);
+  if(source.gate && attempt.status!=='PASS' && prior) return {...prior,preservedPass:true,latestAttempt:attempt};
+  if(!source.gate && attempt.status!=='CAPTURED') {
+    const archived=await archivedAuxiliary(source);
+    if(archived) return {...archived,latestAttempt:attempt};
+  }
+  return attempt;
+}
+const captures=[];
+// Bounded requests keep retries short without overwhelming official endpoints.
+for(let i=0;i<sources.length;i+=4) captures.push(...await Promise.all(sources.slice(i,i+4).map(captureOrPreserve)));
 
 const gates = requiredGates.map((gate) => {
   const evidence = captures.filter((c) => c.gate === gate);

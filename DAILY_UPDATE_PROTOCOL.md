@@ -409,6 +409,14 @@ Gate 通過後，以執行當下台北時間建立 `revision = YYYY-MM-DD-HHmmss
 
 ## 9. 狀態回報
 
+### 對話直接查閱與研究 checkpoint
+
+GitHub Actions 可在官方 capture 後執行 deterministic 全市場篩選與帳戶評價，並原子發布 immutable checkpoint snapshot。`raw/<targetDate>/screening-results.json` 必須包含整個動態 Universe 的逐檔結果，`daily-report.json` 提供對話可直接讀取的摘要，不依賴另一個 Work 任務或外部 LLM API。
+
+checkpoint 必須明確區分 `screeningComplete`、`creditEvidenceComplete`、`researchComplete`。任何普通股必要信用證據未完成，或 TDCC 多週、完整財務、事件風險、除權息與風控尚未驗證，不得稱研究完成；發布狀態為 `SNAPSHOT_UPDATED_EVIDENCE_PENDING`，不得回報完整 `DATA_UPDATED`。未通過項目逐檔保留原因，不產生新買單。既有委託仍只能按前一正式帳戶的機械規則處理；未知規則須記錄未確認，禁止猜測成交。
+
+同一 targetDate、strategy-config 與資料 fingerprint 不變時立即 NO_CHANGE；capture 重試的 generatedAt 變更不構成重做研究理由。已 PASS 官方 Gate 與已驗證的同日 auxiliary 證據不得因後續請求失敗消失。週頻/月頻 evidence 只可使用 targetDate 之前已捕獲、日期與時效可驗證的官方記錄；不得把今天最新 payload 回填歷史 targetDate。
+
 成功資料提交：`DATA_UPDATED`，只能稱「資料檔已更新」，不得稱網站已重新部署。
 
 非交易日、資料不完整或驗證失敗：`NO_UPDATE`，GitHub 保持原狀。

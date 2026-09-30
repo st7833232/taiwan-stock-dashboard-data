@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-29",
+  "revision": "2026-09-30-090154",
+  "strategyVersion": "entry-dual-track-v2.1",
+  "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
+  "screeningComplete": true,
+  "researchComplete": false,
+  "creditEvidenceComplete": false,
+  "coverage": {
+    "universe": 2308,
+    "stocks": 1952,
+    "etfs": 356,
+    "deepDive": 609,
+    "deepDiveStocks": 537,
+    "deepDiveEtfs": 72,
+    "creditReadyStocks": 534,
+    "creditMissingCodes": [
+      "7610",
+      "7828",
+      "7822"
+    ],
+    "eligibleRanked": 0
+  },
+  "conclusion": "2026-09-29全市場 2308 檔已完成資料篩選（普通股 1952、ETF 356），深度檢查 609 檔。信用證據普通股 534/537；TDCC多週變化、完整財務品質、當日事件風險與除權息證據尚未全部驗證，研究狀態為EVIDENCE_PENDING。本次Priority BUY=0、nextOrders=0筆；已有ETF Profile不等同取得買點。",
+  "priority": [],
+  "core": [
+    {
+      "code": "0050",
+      "name": "元大台灣50",
+      "decision": "WATCH",
+      "score": 87.3502,
+      "reasonCodes": [
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ]
+    },
+    {
+      "code": "006208",
+      "name": "富邦台50",
+      "decision": "WATCH",
+      "score": 86.345,
+      "reasonCodes": [
+        "EVENT_RISK_NOT_VERIFIED",
+        "CORPORATE_ACTION_NOT_VERIFIED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ]
+    }
+  ],
+  "paperAccount": {
+    "asOf": "2026-09-29",
+    "cash": 165936.528625,
+    "positions": [
+      {
+        "code": "1513",
+        "name": "中興電",
+        "shares": 150,
+        "averageCost": 166.06964583333334,
+        "lastPrice": 167
+      },
+      {
+        "code": "4961",
+        "name": "天鈺",
+        "shares": 50,
+        "averageCost": 183.06049,
+        "lastPrice": 184.5
+      }
+    ],
+    "equity": 200211.528625,
+    "benchmark": {
+      "date": "2026-09-29",
+      "cumulativeAccountReturn": 0.10576431250000073,
+      "etfCode": "0050",
+      "etfReturn": -0.9786476868327454,
+      "method": "Account cumulative percent return from ledger; ETF daily percent return from official OHLCV.",
+      "taiexReturn": -0.82
+    },
+    "nextOrders": []
+  },
+  "gate": [
+    {
+      "gate": "twse-daily-close-quotes",
+      "status": "PASS",
+      "source": "twse-mi-index-daily-close",
+      "officialDateEvidence": "20260929"
+    },
+    {
+      "gate": "twse-market-close-statistics",
+      "status": "PASS",
+      "source": "twse-mi-index",
+      "officialDateEvidence": "20260929"
+    },
+    {
+      "gate": "twse-market-turnover",
+      "status": "PASS",
+      "source": "twse-fmtqik",
+      "officialDateEvidence": "20260929"
+    },
+    {
+      "gate": "twse-individual-institutional",
+      "status": "PASS",
+      "source": "twse-t86",
+      "officialDateEvidence": "20260929"
+    },
+    {
+      "gate": "tpex-daily-close-quotes",
+      "status": "PASS",
+      "source": "tpex-mainboard-daily-close-quotes",
+      "officialDateEvidence": "1150929"
+    },
+    {
+      "gate": "tpex-market-turnover-index",
+      "status": "PASS",
+      "source": "tpex-daily-trading-index",
+      "officialDateEvidence": "1150929"
+    },
+    {
+      "gate": "tpex-individual-institutional",
+      "status": "PASS",
+      "source": "tpex-3insti-daily-trading",
+      "officialDateEvidence": "1150929"
+    },
+    {
+      "gate": "tpex-institutional-summary",
+      "status": "PASS",
+      "source": "tpex-3insti-summary",
+      "officialDateEvidence": "1150929"
+    }
+  ],
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "346cebba0071bc4e5c3ccc492dc275f64105c5b2876681503748519516605d5d"
+}
