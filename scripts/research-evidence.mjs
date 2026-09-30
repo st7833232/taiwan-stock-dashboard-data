@@ -5,24 +5,30 @@ import {normalizeFinancial,financialAssessment,normalizeOfficialEvent,eventAsses
 const read=p=>{try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}};
 const num=x=>x===null||x===undefined||String(x).trim()===''?null:Number.isFinite(Number(String(x).replaceAll(',','')))?Number(String(x).replaceAll(',','')):null;
 const verifiedScope=c=>c?{status:'VERIFIED',capturedAt:c.capturedAt,source:c.url,id:c.id}:{status:'UNVERIFIED',capturedAt:null,source:null,id:null};
+const compositeScope=(usable,tags)=>{
+  const matched=tags.map(tag=>usable.filter(c=>c.coverageTags?.includes(tag)).sort((a,b)=>Date.parse(a.capturedAt)-Date.parse(b.capturedAt)).at(-1)??null);
+  if(matched.some(x=>!x))return {status:'UNVERIFIED',capturedAt:null,sources:matched.filter(Boolean).map(x=>x.url),ids:matched.filter(Boolean).map(x=>x.id),requiredTags:tags,missingTags:tags.filter((_,i)=>!matched[i])};
+  return {status:'VERIFIED',capturedAt:new Date(Math.max(...matched.map(x=>Date.parse(x.capturedAt)))).toISOString(),sources:matched.map(x=>x.url),ids:matched.map(x=>x.id),requiredTags:tags,missingTags:[]};
+};
 export function evidenceCoverage(captures,market,target) {
   const cutoff=Date.parse(`${target}T23:59:59+08:00`);
   const usable=(captures??[]).filter(c=>c?.market===market&&c.status==='CAPTURED'&&c.rawUsable!==false&&Number.isFinite(Date.parse(c.capturedAt))&&Date.parse(c.capturedAt)<=cutoff);
   const latest=(...kinds)=>usable.filter(c=>kinds.includes(c.kind)).sort((a,b)=>Date.parse(a.capturedAt)-Date.parse(b.capturedAt)).at(-1)??null;
   const governanceScope=verifiedScope(latest('governance'));
+  const materialAnnouncements=verifiedScope(latest('events'));
+  const exRightsDividends=compositeScope(usable,['exRightsDividends']);
+  const splitReductionConversion=compositeScope(usable,['splitReductionConversion:reduction','splitReductionConversion:parValueChange']);
+  const tradingHalts=compositeScope(usable,['tradingHalts']);
+  const historicalPriceAdjustment=compositeScope(usable,['historicalPriceAdjustment:exRights','historicalPriceAdjustment:reduction','historicalPriceAdjustment:parValueChange']);
+  const futureInputs=[materialAnnouncements,exRightsDividends,splitReductionConversion,tradingHalts];
+  const futureBinaryEvents=futureInputs.every(s=>s.status==='VERIFIED')
+    ? {status:'VERIFIED',capturedAt:new Date(Math.max(...futureInputs.map(s=>Date.parse(s.capturedAt)))).toISOString(),method:'OFFICIAL_DISCLOSURES_PLUS_EXCHANGE_CORPORATE_ACTION_CALENDARS'}
+    : {status:'UNVERIFIED',capturedAt:null,method:'OFFICIAL_DISCLOSURES_PLUS_EXCHANGE_CORPORATE_ACTION_CALENDARS',missingScopes:['materialAnnouncements','exRightsDividends','splitReductionConversion','tradingHalts'].filter((_,i)=>futureInputs[i].status!=='VERIFIED')};
   return {
     governanceVerified:governanceScope.status==='VERIFIED',
     governanceScope,
-    eventCoverage:{scopes:{
-      materialAnnouncements:verifiedScope(latest('events')),
-      futureBinaryEvents:verifiedScope(latest('futureBinaryEvents'))
-    }},
-    corporateActionCoverage:{scopes:{
-      exRightsDividends:verifiedScope(latest('exRightsDividends')),
-      splitReductionConversion:verifiedScope(latest('splitReductionConversion')),
-      tradingHalts:verifiedScope(latest('tradingHalts')),
-      historicalPriceAdjustment:verifiedScope(latest('historicalPriceAdjustment'))
-    }}
+    eventCoverage:{scopes:{materialAnnouncements,futureBinaryEvents}},
+    corporateActionCoverage:{scopes:{exRightsDividends,splitReductionConversion,tradingHalts,historicalPriceAdjustment}}
   };
 }
 export function officialDate(x) {
