@@ -19,6 +19,11 @@ on:
         required: false
         default: false
         type: boolean
+      financial_continuation:
+        description: Internal financial evidence continuation count
+        required: false
+        default: '0'
+        type: string
   schedule:
     - cron: '0,30 10-15 * * 1-5'
     - cron: '20 23 * * 0-4'
@@ -26,6 +31,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: official-market-data-${{ github.ref }}
@@ -55,6 +61,11 @@ jobs:
           TARGET_DATE: ${{ inputs.target_date }}
           BACKFILL_V2_HISTORY: ${{ inputs.backfill_history && '1' || '' }}
         run: node scripts/run-daily-pipeline.mjs
+      - name: Continue actionable financial evidence automatically
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FINANCIAL_CONTINUATION: ${{ inputs.financial_continuation || '0' }}
+        run: node scripts/continue-financial-evidence.mjs
       - name: Save resumable checkpoint and failure details
         if: always()
         uses: actions/upload-artifact@v4

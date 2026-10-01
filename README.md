@@ -61,3 +61,7 @@ node scripts/validate-strategy-v2.mjs
 本管線是Node.js / GitHub Actions運算，不呼叫LLM API，不建立Work補跑任務。Dashboard仍只讀manifest，不修改／部署Dashboard。
 
 `evidencePending.fundamental` 僅計入財務證據未完成的個股。證據完整但品質未通過者另列 `fundamentalQualityRejected`（代號與失敗原因），不阻止 `researchComplete`，但 Fundamental 買進 Gate 維持不通過；其他必要證據缺項仍阻止研究完成。
+
+財報 PDF 蒐集以 5 分鐘批次保存進度，不再固定只處理 12 筆。可處理的佇列仍有項目且本輪正式資料驗證成功時，Actions 自動接續，單一接續鏈最多 40 輪；既有定時排程仍會繼續處理剩餘項目。連線與 OCR 暫時失敗依退避時間重試，官方限流會停止本輪接續。已下載的 PDF、期間表與 OCR 頁面會重用，仍須核對合併財報版本、公開截止時間、檔案雜湊、累計期間、幣別單位與母公司淨利。
+
+前一年同期已驗證為虧損或零基期時，年增率維持 `null`，另列 `COMPARATIVE_GROWTH_NOT_APPLICABLE`，不再把已取得數字稱為證據缺失，且不放行買進。缺少數字、獲利口徑不同及無法證明當時版本的資料仍保留 pending。金融業沒有揭露的毛利欄位不會被捏造或以其他收益替代。

@@ -7,8 +7,8 @@ export function normalizeFinancial(row,kind,source) {
   if(!code||!Number.isInteger(year)||!Number.isInteger(quarter)||quarter<1||quarter>4)return null;
   const periodEnd=new Date(Date.UTC(year<1911?year+1911:year,quarter*3,0)).toISOString().slice(0,10);
   const metrics=kind==='income'?{
-    revenue:value(row,['營業收入']),grossProfit:value(row,['營業毛利（毛損）淨額','營業毛利（毛損）']),operatingProfit:value(row,['營業利益（損失）']),netProfit:value(row,['淨利（淨損）歸屬於母公司業主','淨利（損）歸屬於母公司業主','本期淨利（淨損）','本期稅後淨利（淨損）']),eps:value(row,['基本每股盈餘（元）'])
-  }:{assets:value(row,['資產總計']),liabilities:value(row,['負債總計']),equity:value(row,['權益總計','權益總額']),currentAssets:value(row,['流動資產']),currentLiabilities:value(row,['流動負債'])};
+    revenue:value(row,['營業收入','收入','收益']),grossProfit:value(row,['營業毛利（毛損）淨額','營業毛利（毛損）']),operatingProfit:value(row,['營業利益（損失）','營業利益']),netProfit:value(row,['淨利（淨損）歸屬於母公司業主','淨利（損）歸屬於母公司業主','本期淨利（淨損）','本期稅後淨利（淨損）']),eps:value(row,['基本每股盈餘（元）'])
+  }:{assets:value(row,['資產總計','資產總額']),liabilities:value(row,['負債總計','負債總額']),equity:value(row,['權益總計','權益總額']),currentAssets:value(row,['流動資產']),currentLiabilities:value(row,['流動負債'])};
   return {code,periodEnd,quarter,kind,basis:kind==='income'?'YEAR_TO_DATE':'PERIOD_END',extractDate:officialDate(row['出表日期']??row.Date),source,profitBasis:kind==='income'?(value(row,['淨利（淨損）歸屬於母公司業主','淨利（損）歸屬於母公司業主'])!==null?'PARENT':'TOTAL'):null,metrics};
 }
 export function financialAssessment(current,comparative,policy,{governanceVerified=false,negativeGovernance=false}={}) {
@@ -21,8 +21,9 @@ export function financialAssessment(current,comparative,policy,{governanceVerifi
   const metrics={...m,...b,grossMargin:ratio(m.grossProfit,m.revenue),operatingMargin:ratio(m.operatingProfit,m.revenue),liabilityAssetRatio:ratio(b.liabilities,b.assets),currentRatio:ratio(b.currentAssets,b.currentLiabilities),revenueYoY:ratio(m.revenue,p.revenue)===null?null:m.revenue/p.revenue-1,netProfitYoY:ratio(m.netProfit,p.netProfit)===null?null:m.netProfit/p.netProfit-1};
   const required=['revenue','grossProfit','operatingProfit','netProfit','eps','assets','liabilities','equity'];
   if(required.some(k=>!Number.isFinite(metrics[k])))pending.push('FINANCIAL_METRICS_INCOMPLETE');
-  if(prior&&['revenue','netProfit'].some(k=>!Number.isFinite(p[k])||p[k]<=0))pending.push('COMPARATIVE_METRICS_NOT_VERIFIED');
+  if(prior&&['revenue','netProfit'].some(k=>!Number.isFinite(p[k])))pending.push('COMPARATIVE_METRICS_NOT_VERIFIED');
   const failures=[];
+  if(prior&&['revenue','netProfit'].some(k=>Number.isFinite(p[k])&&p[k]<=0))failures.push('COMPARATIVE_GROWTH_NOT_APPLICABLE');
   if(Number.isFinite(m.revenue)&&m.revenue<=0)failures.push('NONPOSITIVE_REVENUE');
   if(policy.requirePositiveProfit&&['grossProfit','operatingProfit','netProfit','eps'].some(k=>Number.isFinite(m[k])&&m[k]<=0))failures.push('PROFIT_QUALITY_FAILED');
   if(Number.isFinite(b.equity)&&b.equity<=0)failures.push('NONPOSITIVE_EQUITY');

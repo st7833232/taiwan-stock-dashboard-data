@@ -149,3 +149,19 @@ test('reviewed filed PDFs require the actual archived file, unchanged hash and p
  for(const change of [{sha256:'0'.repeat(64)},{uploadedAt:'114/08/14 15:14:07'},{filename:'../other.pdf'},{basis:'QUARTER_ONLY'},{unit:'TWD'},{source:'https://example.com/'}])assert.equal(reviewedFinancialReport({...report,...change},'2026-09-30'),null);
  assert.equal(reviewedFinancialReport({...report,row:{...report.row,'公司代號':'8150'}},'2026-09-30'),null);
 });
+
+test('known loss-year amounts finish evidence review but never bypass growth thresholds',()=>{
+ const prior={...income(114),metrics:{...income(114).metrics,netProfit:-10}};
+ const a=financialAssessment({income:income(115),balance},{income:prior},policy,{governanceVerified:true});
+ assert.equal(a.verified,true);assert.equal(a.status,'FAIL');assert.equal(a.qualityPass,false);
+ assert.equal(a.metrics.netProfitYoY,null);assert.deepEqual(a.pending,[]);
+ assert.ok(a.failures.includes('COMPARATIVE_GROWTH_NOT_APPLICABLE'));
+ const missing=financialAssessment({income:income(115),balance},{income:{...prior,metrics:{...prior.metrics,netProfit:null}}},policy,{governanceVerified:true});
+ assert.equal(missing.verified,false);assert.ok(missing.pending.includes('COMPARATIVE_METRICS_NOT_VERIFIED'));
+});
+test('official balance total aliases preserve missing profit fields instead of inventing them',()=>{
+ const b=normalizeFinancial({'公司代號':'2881','年度':115,'季別':2,'資產總額':'500','負債總額':'200','權益總額':'300'},'balance','official');
+ assert.equal(b.metrics.assets,500);assert.equal(b.metrics.liabilities,200);
+ const i=normalizeFinancial({'公司代號':'2855','年度':115,'季別':2,'收益':'100','營業利益':'10'},'income','official');
+ assert.equal(i.metrics.revenue,100);assert.equal(i.metrics.operatingProfit,10);assert.equal(i.metrics.grossProfit,null);
+});

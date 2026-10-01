@@ -4,27 +4,29 @@ import {execFileSync} from 'node:child_process';
 
 const read = p => {try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}};
 const write = (p,x) => {fs.mkdirSync(p.slice(0,p.lastIndexOf('/')),{recursive:true});fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n');};
-const compactNumber=x=>{const s=String(x??'').trim().replaceAll(',','');if(!s||s==='--')return null;const n=Number(s);return Number.isFinite(n)?n:null;};
+const compactNumber=x=>{const s=String(x??'').trim().replaceAll(',','');if(!s||s==='--')return null;const n=/^\([\d.]+\)$/.test(s)?-Number(s.slice(1,-1)):Number(s);return Number.isFinite(n)?n:null;};
 const htmlText=x=>String(x??'').replace(/<br\s*\/?\s*>/gi,' ').replace(/<[^>]*>/g,'').replace(/&nbsp;/gi,' ').replace(/&amp;/gi,'&').replace(/&lt;/gi,'<').replace(/&gt;/gi,'>').replace(/&quot;/gi,'"').replace(/&#39;|&apos;/gi,"'").replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Number(n))).replace(/\s+/g,' ').trim();
 export function parseMopsCompanyHistoricalIncomeHtml(html,{code,year,quarter}) {
+  const labelKey=x=>x.replace(/\s+/g,'').replace(/[（]/g,'(').replace(/[）]/g,')').replace(/[∕／]/g,'/');
+  const cumulativePattern=new RegExp(`^(?:${year-1911}|${year})年0?1月0?1日至(?:(?:${year-1911}|${year})年)?0?${quarter*3}月0?${new Date(Date.UTC(year,quarter*3,0)).getUTCDate()}日$`);
   const wanted=new Map([
-    ['revenue',new Set(['營業收入合計','營業收入'])],
+    ['revenue',new Set(['營業收入合計','營業收入','收入','收益'])],
     ['netProfit',new Set(['本期淨利（淨損）','本期淨利(淨損)'])],
     ['parentProfit',new Set(['淨利（淨損）歸屬於母公司業主','淨利（損）歸屬於母公司業主','淨利(淨損)歸屬於母公司業主','母公司業主（淨利∕損）','母公司業主（淨利／損）'])]
   ]), values={};
   let amountIndex=null;
   for(const m of String(html??'').matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)){
     const cells=[...m[1].matchAll(/<(?:th|td)\b[^>]*>([\s\S]*?)<\/(?:th|td)>/gi)].map(x=>htmlText(x[1]));
-    const cumulative=cells.findIndex(cell=>cell.replace(/\s+/g,'')===`${year-1911}年01月01日至${year-1911}年${String(quarter*3).padStart(2,'0')}月${new Date(Date.UTC(year,quarter*3,0)).getUTCDate()}日`);
+    const cumulative=cells.findIndex(cell=>cumulativePattern.test(cell.replace(/\s+/g,'')));
     if(cumulative>=0){
       const headerCells=[...m[1].matchAll(/<(?:th|td)\b([^>]*)>([\s\S]*?)<\/(?:th|td)>/gi)];
       amountIndex=headerCells.slice(0,cumulative).reduce((sum,cell)=>sum+Number(cell[1].match(/colspan=['"]?(\d+)/i)?.[1]??1),0);continue;
     }
     if(cells.length<2||amountIndex===null)continue;
-    const labelIndex=cells.findIndex(cell=>!/^\d+$/.test(cell)&&[...wanted.values()].some(labels=>[...labels].some(x=>x.replace(/\s+/g,'')===cell.replace(/\s+/g,''))));
+    const labelIndex=cells.findIndex(cell=>!/^\d+$/.test(cell)&&[...wanted.values()].some(labels=>[...labels].some(x=>labelKey(x)===labelKey(cell))));
     if(labelIndex<0)continue;
     const label=cells[labelIndex].replace(/\s+/g,'');
-    for(const [key,labels] of wanted)if(values[key]===undefined&&[...labels].some(x=>x.replace(/\s+/g,'')===label)){
+    for(const [key,labels] of wanted)if(values[key]===undefined&&[...labels].some(x=>labelKey(x)===labelKey(label))){
       const n=compactNumber(cells[amountIndex]);
       if(Number.isFinite(n))values[key]=n;
     }
