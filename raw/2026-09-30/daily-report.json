@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-30",
-  "revision": "2026-10-01-113202",
+  "revision": "2026-10-01-115149",
   "strategyVersion": "entry-dual-track-v2.2",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
   "researchComplete": false,
   "evidencePending": {
     "history": 11,
-    "fundamental": 540,
+    "fundamental": 535,
     "institutional": 1,
     "credit": 3
   },
@@ -28,7 +28,7 @@
     ],
     "eligibleRanked": 0
   },
-  "conclusion": "2026-09-30全市場 2318 檔已完成初步篩選（普通股 1964、ETF 354），深度檢查 611 檔。普通股信用資料已核對 537/540 檔。仍待核對：歷史行情 11檔、財務品質 540檔、法人多日紀錄 1檔、融資融券等信用資料 3檔。研究尚未完成。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-09-30全市場 2318 檔已完成初步篩選（普通股 1964、ETF 354），深度檢查 611 檔。普通股信用資料已核對 537/540 檔。仍待核對：歷史行情 11檔、財務品質 535檔、法人多日紀錄 1檔、融資融券等信用資料 3檔。研究尚未完成。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [],
   "core": [
     {
@@ -160,17 +160,6 @@
       "officialDateEvidence": "1150930"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-01-113202",
-    "runId": "36810804655",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/36810804655",
-    "validatedCommit": "c1690df1b817d8fe6b1acf378c1c7700a8225b92"
-  },
-  "inputFingerprint": "9b655da9b9eee53b3c49ecb8f64f9b2103fa32ebf7da3cca24b34b0955e029bf"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "34056d04b8d9b8d3d69ae38ac6468d12554dae1607f144cc5728d14dcd11d3d7"
 }
