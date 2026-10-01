@@ -63,7 +63,10 @@ export function reviewedFinancialReport(report,target) {
     if(report.filename!==`${year}${String(quarter).padStart(2,'0')}_${code}_AI1.pdf`||report.basis!=='YEAR_TO_DATE'||report.unit!=='TWD_THOUSAND'||!report.reviewedPages?.length)return null;
     const source=new URL(report.source);
     if(source.origin!=='https://doc.twse.com.tw'||source.pathname!=='/server-java/t57sb01'||source.searchParams.get('co_id')!==code||source.searchParams.get('year')!==String(year-1911))return null;
-    const index=fs.readFileSync(`history/financial-reports/${code}.html`,'utf8');
+    if(!/^[a-f0-9]{64}$/.test(report.sha256))return null;
+    const archiveKey=report.archiveKey;
+    if(archiveKey&&archiveKey!==`${report.filename}.${report.sha256}`)return null;
+    const index=fs.readFileSync(archiveKey?`history/financial-reports/${archiveKey}.html`:`history/financial-reports/${code}.html`,'utf8');
     const filing=[...index.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)].find(m=>m[1].includes(report.filename));
     if(!filing)return null;
     const cells=[...filing[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(m=>m[1].replace(/<[^>]*>/g,'').trim());
@@ -72,7 +75,7 @@ export function reviewedFinancialReport(report,target) {
     if(!date)return null;
     const publication=`${Number(date[1])+1911}-${date[2]}-${date[3]}T${date[4]}+08:00`;
     if(!Number.isFinite(Date.parse(publication))||Date.parse(publication)>Date.parse(`${target}T23:59:59+08:00`))return null;
-    const pdf=fs.readFileSync(`history/financial-reports/${report.filename}`);
+    const pdf=fs.readFileSync(archiveKey?`history/financial-reports/${archiveKey}.pdf`:`history/financial-reports/${report.filename}`);
     if(pdf.subarray(0,5).toString()!=='%PDF-'||createHash('sha256').update(pdf).digest('hex')!==report.sha256)return null;
     const normalized=normalizeFinancial(row,'income',report.source);
     return normalized?.periodEnd<=target?{...normalized,publicationTimestamp:publication,filename:report.filename,sha256:report.sha256,reviewedPages:report.reviewedPages}:null;

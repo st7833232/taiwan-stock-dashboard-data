@@ -454,3 +454,10 @@ checkpoint 必須明確區分 `screeningComplete`、`creditEvidenceComplete`、`
 - 官方公告的發言日期、時間、內容與事實發生日分開記錄。TWSE IIH首頁僅列最新8筆，不具全市場歷史公告或未來事件日曆的完整涵蓋，不能由名單缺席推論沒有事件風險。
 - 除權息結果只是一種公司行動；分割／減資／股份轉換、停復牌、歷史價格調整尚未驗證時，保留明確未完成項目。新的逐檔assessment直接寫入research candidate；不得僅因資料列已抓取就設定Hard Gate PASS。
 - publication是否使用最新input以內容fingerprint判定；僅改變generatedAt不構成新證據，不能讓已一致的快照誤報過期。
+
+### 官方財報 PDF 自動證據
+
+- 每日 pipeline 在官方財報 capture 後執行 `collect-financial-pdfs.mjs`，以最新當期財報期間查前一年同期的官方申報版本。
+- 同一申報檔名與上傳時間且封存雜湊一致時沿用；新版本另存檔案與清單，不覆寫舊版本。上傳晚於決策截止時間或更補正狀態未驗證時維持 Fail Closed。
+- PDF 文字／OCR 的累計營收與母公司淨利必須符合官方同期表格。無法確認期間、單位、欄位或歸屬口徑時記錄 pending，不以模型猜測數字。
+- 每批最多 12 檔、每檔間隔 5 秒、批次時間上限 5 分鐘；限流即停止並保存查核結果，後續排程接續。OCR 查前 12 頁，超出可解析範圍仍列未驗證。

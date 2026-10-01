@@ -10,7 +10,7 @@ export function parseMopsCompanyHistoricalIncomeHtml(html,{code,year,quarter}) {
   const wanted=new Map([
     ['revenue',new Set(['營業收入合計','營業收入'])],
     ['netProfit',new Set(['本期淨利（淨損）','本期淨利(淨損)'])],
-    ['parentProfit',new Set(['淨利（淨損）歸屬於母公司業主','淨利（損）歸屬於母公司業主','淨利(淨損)歸屬於母公司業主'])]
+    ['parentProfit',new Set(['淨利（淨損）歸屬於母公司業主','淨利（損）歸屬於母公司業主','淨利(淨損)歸屬於母公司業主','母公司業主（淨利∕損）','母公司業主（淨利／損）'])]
   ]), values={};
   let amountIndex=null;
   for(const m of String(html??'').matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)){
@@ -43,7 +43,7 @@ function latestDeepDiveStocks(target){
 }
 export function parseMopsHistoricalIncomeHtml(html,{year,quarter}) {
   const revenueLabels=new Set(['營業收入合計','營業收入']);
-  const profitLabels=new Set(['本期淨利（淨損）','本期淨利(淨損)','淨利（淨損）歸屬於母公司業主','淨利(淨損)歸屬於母公司業主']);
+  const profitLabels=new Set(['本期淨利（淨損）','本期淨利(淨損)','淨利（淨損）歸屬於母公司業主','淨利(淨損)歸屬於母公司業主','母公司業主（淨利∕損）','母公司業主（淨利／損）']);
   const grossLabels=new Set(['營業毛利（毛損）','營業毛利(毛損)','營業毛利（毛損）淨額']);
   const operatingLabels=new Set(['營業利益（損失）','營業利益(損失)']);
   let indexes=null;const rows=[];
@@ -290,7 +290,8 @@ export async function collect(target,{now=new Date(),skipHistoricalComparative=f
     if(discovered.length)write('history/financial-source-catalog.json',{sources:[...catalog.sources.filter(s=>s.market!==market),...discovered]});
   }
   // Period end alone does not prove publication before a historical decision cutoff.
-  if(!skipHistoricalComparative)captures.push(...await captureHistoricalComparativeIncome(root,captures,old,target,now));
+  if(!skipHistoricalComparative)captures.push(...(old?.captures??[]).filter(c=>c.historicalFinancial&&c.kind==='income'));
+  // Versioned PDF collection runs next in the pipeline; never retry hundreds of latest-table requests here.
   if(target===today)captures.push(...await captureHistoricalXbrlDiagnostic(root,captures,target,now));
   write(`${root}/financial-evidence-captures.json`,{targetDate:target,captures});
   console.log(JSON.stringify({stage:'FINANCIAL_EVIDENCE_CAPTURE',targetDate:target,captured:captures.filter(c=>c.status==='CAPTURED').length,unverified:captures.filter(c=>c.status!=='CAPTURED').length}));

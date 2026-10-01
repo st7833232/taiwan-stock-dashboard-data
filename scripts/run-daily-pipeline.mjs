@@ -55,7 +55,7 @@ export function runPipeline(target=resolveCaptureTargetDate(),{execute=execFileS
       status.stage='INPUT';run('scripts/summarize-official-market-data.mjs');
       status.stage='HISTORY';run('scripts/backfill-v2-market-history.mjs',{retry:true});
       status.stage='INPUT';run('scripts/summarize-official-market-data.mjs');
-      status.stage='EVIDENCE';run('scripts/collect-research-evidence.mjs',{retry:true});run('scripts/collect-tdcc-history.mjs',{retry:true});run('scripts/research-evidence.mjs');
+      status.stage='EVIDENCE';run('scripts/collect-research-evidence.mjs',{retry:true});run('scripts/collect-financial-pdfs.mjs');run('scripts/collect-tdcc-history.mjs',{retry:true});run('scripts/research-evidence.mjs');
       run('scripts/check-daily-publication.mjs');
       status.stage='SCREENING';run('scripts/screen-market.mjs');
       status.stage='PREPUBLICATION_VALIDATION';validate(true);run('scripts/check-daily-publication.mjs');
