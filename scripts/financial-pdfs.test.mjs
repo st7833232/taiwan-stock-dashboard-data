@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {parseMopsCompanyHistoricalIncomeHtml} from './collect-research-evidence.mjs';
-import {filingVersion,verifyPdfText} from './collect-financial-pdfs.mjs';
+import {filingVersion,verifyPdfText,requestOfficial} from './collect-financial-pdfs.mjs';
 test('file versions use official upload time and never accept a later or corrected filing',()=>{
  const html=fs.readFileSync('history/financial-reports/2409.html','utf8');
  assert.equal(filingVersion(html,'2409',2025,2,'2026-09-30').filename,'202502_2409_AI1.pdf');
@@ -23,4 +23,17 @@ test('a PDF must independently match cumulative revenue and parent profit rather
 test('MOPS parent profit labels preserve the ownership basis used by archived PDFs',()=>{
  const html='<tr><th>項目</th><th colspan="2">114年第2季</th><th colspan="2">113年第2季</th><th colspan="2">114年01月01日至114年06月30日</th></tr>'+['營業收入','本期淨利（淨損）','母公司業主（淨利∕損）'].map(label=>`<tr><td>${label}</td><td>1</td><td>1</td><td>2</td><td>2</td><td>3000</td><td>3</td></tr>`).join('');
  assert.equal(parseMopsCompanyHistoricalIncomeHtml(html,{code:'2330',year:2025,quarter:2})['淨利（淨損）歸屬於母公司業主'],3000);
+});
+
+test('transient official reads retry once, while an explicit rate limit stops without retrying',async()=>{
+ let calls=0;
+ const bytes=await requestOfficial('https://doc.twse.com.tw/',null,{pause:async()=>{},fetcher:async()=>{calls++;if(calls===1)throw Error('fetch failed');return new Response('official');}});
+ assert.equal(calls,2);assert.equal(bytes.toString(),'official');
+ calls=0;
+ await assert.rejects(()=>requestOfficial('https://doc.twse.com.tw/',null,{pause:async()=>{},fetcher:async()=>{calls++;return new Response('',{status:403});}}),/HTTP_403/);
+ assert.equal(calls,1);
+});
+
+test('an official query-limit page is never retried as a transport failure',async()=>{
+ let calls=0;await assert.rejects(()=>requestOfficial('https://doc.twse.com.tw/',null,{pause:async()=>{},fetcher:async()=>{calls++;return new Response(Buffer.from('ac64b8dfb94cb671','hex'));}}),/OFFICIAL_RATE_LIMITED/);assert.equal(calls,1);
 });

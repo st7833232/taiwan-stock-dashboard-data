@@ -7,6 +7,30 @@ import {reviewedFinancialReport} from './research-evidence.mjs';
 import {parseMopsCompanyHistoricalIncomeHtml} from './collect-research-evidence.mjs';
 const read=p=>{try{return JSON.parse(fs.readFileSync(p));}catch{return null;}};
 const save=(p,x)=>fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n');
+export async function requestOfficial(url,body,{fetcher=fetch,pause=ms=>new Promise(resolve=>setTimeout(resolve,ms))}={}){
+ for(let attempt=0;attempt<2;attempt++){
+  try{
+   const res=await fetcher(url,{method:body?'POST':'GET',body,signal:AbortSignal.timeout(30000),headers:body?{'content-type':'application/x-www-form-urlencoded'}:{}});
+   if(!res.ok)throw Error(`HTTP_${res.status}`);
+   const bytes=Buffer.from(await res.arrayBuffer());
+   if(new TextDecoder('big5').decode(bytes).includes('查詢過量'))throw Error('OFFICIAL_RATE_LIMITED');
+   return bytes;
+  }catch(error){
+   if(error.message==='OFFICIAL_RATE_LIMITED'||/^HTTP_(?!429|5)/.test(error.message)||attempt===1)throw error;
+   await pause(5000);
+  }
+ }
+}
+export function reusablePdf(filename,uploadedAt,code,year,quarter,target){
+ for(const name of fs.readdirSync('history/financial-reports').filter(p=>p.startsWith(filename+'.')&&/\.[a-f0-9]{64}\.pdf$/.test(p))){
+  const path=`history/financial-reports/${name.slice(0,-4)}`;
+  try{
+   const version=filingVersion(fs.readFileSync(path+'.html','utf8'),code,year,quarter,target),pdf=fs.readFileSync(path+'.pdf');
+   if(version.uploadedAt===uploadedAt&&createHash('sha256').update(pdf).digest('hex')===name.slice(-68,-4))return pdf;
+  }catch{}
+ }
+ return null;
+}
 export function filingVersion(html,code,year,quarter,target){
  const filename=`${year}${String(quarter).padStart(2,'0')}_${code}_AI1.pdf`;
  const tr=[...html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)].find(m=>m[1].includes(filename));
@@ -49,7 +73,7 @@ export async function collectFinancialPdfs(target){
  const manifest=read('manifest.json'),candidates=new Set((read(manifest?.researchPath)?.candidates??[]).map(r=>r.code)),today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei'}).format(new Date()),deadline=Date.now()+5*60*1000;
  const queue=input.deepDive.filter(r=>(r.assetType??r.current?.assetType)==='STOCK'&&periods.has(r.code)).map(r=>({...r,key:`${r.code}|${periods.get(r.code).periodEnd}`})).filter(r=>state[r.key]?.checkedDate!==today).sort((a,b)=>(state[a.key]?.checkedAt??'').localeCompare(state[b.key]?.checkedAt??'')||Number(candidates.has(b.code))-Number(candidates.has(a.code)));
  fs.mkdirSync('history/financial-reports',{recursive:true});
- const request=async(url,body)=>{const res=await fetch(url,{method:body?'POST':'GET',body,signal:AbortSignal.timeout(20000),headers:body?{'content-type':'application/x-www-form-urlencoded'}:{}});if(!res.ok)throw Error(`HTTP_${res.status}`);const bytes=Buffer.from(await res.arrayBuffer());if(new TextDecoder('big5').decode(bytes).includes('查詢過量'))throw Error('OFFICIAL_RATE_LIMITED');return bytes;};
+ const request=(url,body)=>requestOfficial(url,body);
  for(const r of queue.slice(0,12)){
   if(Date.now()>deadline)break;
   const current=periods.get(r.code),year=Number(current.periodEnd.slice(0,4))-1,quarter=current.quarter,code=r.code,source=`https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=${code}&year=${year-1911}&seamon=&mtype=A`;
@@ -57,7 +81,7 @@ export async function collectFinancialPdfs(target){
    const index=new TextDecoder('big5').decode(await request(source)),version=filingVersion(index,code,year,quarter,target);
    if(!reports.some(p=>p.filename===version.filename&&p.uploadedAt===version.uploadedAt&&reviewedFinancialReport(p,target))){
     const download=new TextDecoder('big5').decode(await request('https://doc.twse.com.tw/server-java/t57sb01',new URLSearchParams({step:'9',kind:'A',co_id:code,filename:version.filename}))),link=download.match(/href=['"](\/pdf\/[^'"<>]+\.pdf)['"]/);if(!link||!link[1].startsWith('/pdf/'+version.filename.slice(0,-4)+'_'))throw Error('OFFICIAL_PDF_LINK_MISSING');
-    const pdfUrl='https://doc.twse.com.tw'+link[1],pdf=await request(pdfUrl);if(pdf.subarray(0,5).toString()!=='%PDF-')throw Error('NOT_PDF');
+    const pdfUrl='https://doc.twse.com.tw'+link[1],pdf=reusablePdf(version.filename,version.uploadedAt,code,year,quarter,target)??await request(pdfUrl);if(pdf.subarray(0,5).toString()!=='%PDF-')throw Error('NOT_PDF');
     const sha256=createHash('sha256').update(pdf).digest('hex'),archiveKey=`${version.filename}.${sha256}`,path=`history/financial-reports/${archiveKey}`;fs.writeFileSync(path+'.pdf',pdf);fs.writeFileSync(path+'.html',index);
     const html=new TextDecoder('utf-8').decode(await request('https://mopsov.twse.com.tw/mops/web/ajax_t164sb04',new URLSearchParams({step:'1',firstin:'1',off:'1',TYPEK:r.current?.market==='TPEx'?'otc':'sii',isnew:'false',co_id:code,year:String(year-1911),season:String(quarter).padStart(2,'0')}))),row=parseMopsCompanyHistoricalIncomeHtml(html,{code,year,quarter});
     const pdfText=execFileSync('pdftotext',['-layout',path+'.pdf','-'],{encoding:'utf8',timeout:20000,maxBuffer:12*1024*1024}),reviewedPages=verifyPdfWithOcr(pdfText,path,row,deadline),report={...version,archiveKey,sha256,source,pdfUrl,row,reviewedPages,basis:'YEAR_TO_DATE',unit:'TWD_THOUSAND',verificationMethod:'PDF_TEXT_MATCHED_OFFICIAL_PERIOD_TABLE'};
