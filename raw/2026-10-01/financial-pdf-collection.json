@@ -1905,9 +1905,41 @@
       "checkedDate": "2026-10-01",
       "checkedAt": "2026-10-01T13:37:25.666Z",
       "nextRetryAt": "2026-10-01T13:42:25.666Z"
+    },
+    "3227|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T13:44:27.569Z",
+      "nextRetryAt": "2026-10-01T13:49:27.569Z"
+    },
+    "3033|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T13:46:14.458Z",
+      "nextRetryAt": "2026-10-01T13:51:14.458Z"
+    },
+    "3576|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T13:46:39.710Z"
+    },
+    "9914|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T13:47:12.144Z"
     }
   },
-  "remaining": 490,
+  "remaining": 488,
   "ready": 471,
   "continuationNeeded": true,
   "rateLimited": false,
