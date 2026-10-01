@@ -805,5 +805,77 @@
     "checkedDate": "2026-10-01",
     "checkedAt": "2026-10-01T10:20:49.976Z",
     "nextRetryAt": "2026-10-01T10:25:49.976Z"
+  },
+  "2421|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "PDF_DOWNLOAD",
+    "reason": "fetch failed",
+    "attempts": 1,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T10:24:58.530Z",
+    "nextRetryAt": "2026-10-01T10:29:58.530Z"
+  },
+  "4763|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "FILING_INDEX",
+    "reason": "fetch failed",
+    "attempts": 1,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T10:25:19.254Z",
+    "nextRetryAt": "2026-10-01T10:30:19.254Z"
+  },
+  "3019|2026-06-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T10:25:53.824Z"
+  },
+  "2441|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "PDF_LINK",
+    "reason": "fetch failed",
+    "attempts": 1,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T10:26:10.069Z",
+    "nextRetryAt": "2026-10-01T10:31:10.069Z"
+  },
+  "2605|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "PDF_LINK",
+    "reason": "fetch failed",
+    "attempts": 1,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T10:26:42.776Z",
+    "nextRetryAt": "2026-10-01T10:31:42.776Z"
+  },
+  "8033|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "FILING_INDEX",
+    "reason": "fetch failed",
+    "attempts": 1,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T10:27:13.764Z",
+    "nextRetryAt": "2026-10-01T10:32:13.764Z"
+  },
+  "5876|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "PDF_DOWNLOAD",
+    "reason": "The operation was aborted due to timeout",
+    "attempts": 1,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T10:28:25.717Z",
+    "nextRetryAt": "2026-10-01T10:33:25.717Z"
+  },
+  "6214|2026-06-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T10:29:49.860Z"
   }
 }
