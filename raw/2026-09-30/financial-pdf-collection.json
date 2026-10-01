@@ -426,11 +426,10 @@
       "checkedAt": "2026-10-01T07:35:37.842Z"
     },
     "5425|2026-06-30": {
-      "status": "UNVERIFIED",
-      "stage": "PDF_METRICS",
-      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "status": "VERIFIED",
+      "parserVersion": 2,
       "checkedDate": "2026-10-01",
-      "checkedAt": "2026-10-01T07:37:13.461Z"
+      "checkedAt": "2026-10-01T09:40:12.568Z"
     },
     "8111|2026-06-30": {
       "status": "UNVERIFIED",
@@ -502,10 +501,13 @@
     },
     "6706|2026-06-30": {
       "status": "UNVERIFIED",
+      "parserVersion": 2,
       "stage": "FILING_INDEX",
       "reason": "FILING_VERSION_UNVERIFIED",
+      "attempts": 1,
       "checkedDate": "2026-10-01",
-      "checkedAt": "2026-10-01T08:05:48.438Z"
+      "checkedAt": "2026-10-01T09:40:18.019Z",
+      "nextRetryAt": "2026-10-02T09:40:18.019Z"
     },
     "6834|2026-06-30": {
       "status": "UNVERIFIED",
@@ -513,10 +515,40 @@
       "reason": "The operation was aborted due to timeout",
       "checkedDate": "2026-10-01",
       "checkedAt": "2026-10-01T08:07:02.104Z"
+    },
+    "3441|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T09:42:05.888Z",
+      "nextRetryAt": "2026-10-01T09:47:05.888Z"
+    },
+    "6207|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T09:44:05.842Z",
+      "nextRetryAt": "2026-10-01T09:49:05.842Z"
+    },
+    "5871|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_DOWNLOAD",
+      "reason": "The operation was aborted due to timeout",
+      "attempts": 1,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T09:45:17.433Z",
+      "nextRetryAt": "2026-10-01T09:50:17.433Z"
     }
   },
-  "remaining": 538,
-  "ready": 532,
+  "remaining": 537,
+  "ready": 533,
   "continuationNeeded": true,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [

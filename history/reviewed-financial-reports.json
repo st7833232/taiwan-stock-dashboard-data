@@ -296,5 +296,28 @@
     "basis": "YEAR_TO_DATE",
     "unit": "TWD_THOUSAND",
     "verificationMethod": "PDF_TEXT_MATCHED_OFFICIAL_PERIOD_TABLE"
+  },
+  {
+    "filename": "202502_5425_AI1.pdf",
+    "uploadedAt": "114/08/13 11:45:09",
+    "archiveKey": "202502_5425_AI1.pdf.e11d984ac50d6bcac637723680781b6a6dacd492921a3ff66cf9821b60101c0d",
+    "sha256": "e11d984ac50d6bcac637723680781b6a6dacd492921a3ff66cf9821b60101c0d",
+    "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=5425&year=114&seamon=&mtype=A&check2858=Y",
+    "pdfUrl": null,
+    "row": {
+      "公司代號": "5425",
+      "年度": 2025,
+      "季別": 2,
+      "營業收入": 9216282,
+      "本期淨利（淨損）": 424484,
+      "淨利（淨損）歸屬於母公司業主": 157655
+    },
+    "reviewedPages": [
+      6,
+      7
+    ],
+    "basis": "YEAR_TO_DATE",
+    "unit": "TWD_THOUSAND",
+    "verificationMethod": "PDF_TEXT_MATCHED_OFFICIAL_PERIOD_TABLE"
   }
 ]
