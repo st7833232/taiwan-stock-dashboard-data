@@ -77,18 +77,23 @@ export async function collectFinancialPdfs(target){
  for(const r of queue.slice(0,12)){
   if(Date.now()>deadline)break;
   const current=periods.get(r.code),year=Number(current.periodEnd.slice(0,4))-1,quarter=current.quarter,code=r.code,source=`https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=${code}&year=${year-1911}&seamon=&mtype=A`;
+  let stage='FILING_INDEX';
   try{
    const index=new TextDecoder('big5').decode(await request(source)),version=filingVersion(index,code,year,quarter,target);
    if(!reports.some(p=>p.filename===version.filename&&p.uploadedAt===version.uploadedAt&&reviewedFinancialReport(p,target))){
-    const download=new TextDecoder('big5').decode(await request('https://doc.twse.com.tw/server-java/t57sb01',new URLSearchParams({step:'9',kind:'A',co_id:code,filename:version.filename}))),link=download.match(/href=['"](\/pdf\/[^'"<>]+\.pdf)['"]/);if(!link||!link[1].startsWith('/pdf/'+version.filename.slice(0,-4)+'_'))throw Error('OFFICIAL_PDF_LINK_MISSING');
+    stage='PDF_LINK';
+    const download=new TextDecoder('big5').decode(await request('https://doc.twse.com.tw/server-java/t57sb01?'+new URLSearchParams({step:'9',kind:'A',co_id:code,filename:version.filename}))),link=download.match(/href=['"](\/pdf\/[^'"<>]+\.pdf)['"]/);if(!link||!link[1].startsWith('/pdf/'+version.filename.slice(0,-4)+'_'))throw Error('OFFICIAL_PDF_LINK_MISSING');
+    stage='PDF_DOWNLOAD';
     const pdfUrl='https://doc.twse.com.tw'+link[1],pdf=reusablePdf(version.filename,version.uploadedAt,code,year,quarter,target)??await request(pdfUrl);if(pdf.subarray(0,5).toString()!=='%PDF-')throw Error('NOT_PDF');
     const sha256=createHash('sha256').update(pdf).digest('hex'),archiveKey=`${version.filename}.${sha256}`,path=`history/financial-reports/${archiveKey}`;fs.writeFileSync(path+'.pdf',pdf);fs.writeFileSync(path+'.html',index);
+    stage='MOPS_PERIOD_TABLE';
     const html=new TextDecoder('utf-8').decode(await request('https://mopsov.twse.com.tw/mops/web/ajax_t164sb04',new URLSearchParams({step:'1',firstin:'1',off:'1',TYPEK:r.current?.market==='TPEx'?'otc':'sii',isnew:'false',co_id:code,year:String(year-1911),season:String(quarter).padStart(2,'0')}))),row=parseMopsCompanyHistoricalIncomeHtml(html,{code,year,quarter});
+    stage='PDF_METRICS';
     const pdfText=execFileSync('pdftotext',['-layout',path+'.pdf','-'],{encoding:'utf8',timeout:20000,maxBuffer:12*1024*1024}),reviewedPages=verifyPdfWithOcr(pdfText,path,row,deadline),report={...version,archiveKey,sha256,source,pdfUrl,row,reviewedPages,basis:'YEAR_TO_DATE',unit:'TWD_THOUSAND',verificationMethod:'PDF_TEXT_MATCHED_OFFICIAL_PERIOD_TABLE'};
     if(!reviewedFinancialReport(report,target))throw Error('ARCHIVE_PROVENANCE_UNVERIFIED');reports.push(report);save('history/reviewed-financial-reports.json',reports);
    }
    state[r.key]={status:'VERIFIED',checkedDate:today,checkedAt:new Date().toISOString()};
-  }catch(e){state[r.key]={status:'UNVERIFIED',reason:e.message,checkedDate:today,checkedAt:new Date().toISOString()};if(e.message==='OFFICIAL_RATE_LIMITED'){save('history/financial-pdf-collection.json',state);break;}}
+  }catch(e){state[r.key]={status:'UNVERIFIED',stage,reason:e.message,checkedDate:today,checkedAt:new Date().toISOString()};if(e.message==='OFFICIAL_RATE_LIMITED'){save('history/financial-pdf-collection.json',state);break;}}
   save('history/financial-pdf-collection.json',state);await new Promise(resolve=>setTimeout(resolve,5000));
  }
  save(`${root}/financial-pdf-collection.json`,{targetDate:target,results:state,remaining:queue.filter(r=>state[r.key]?.checkedDate!==today).length});
