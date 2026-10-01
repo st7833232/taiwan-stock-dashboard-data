@@ -4,7 +4,7 @@
   "counts": {
     "history": 13,
     "credit": 543,
-    "fundamental": 501
+    "fundamental": 499
   },
   "pending": {
     "history": [
@@ -579,7 +579,6 @@
       "1409",
       "1476",
       "1477",
-      "1503",
       "1504",
       "1513",
       "1514",
@@ -1052,7 +1051,6 @@
       "8027",
       "8040",
       "8042",
-      "8043",
       "8050",
       "8054",
       "8064",
@@ -1225,6 +1223,12 @@
     },
     {
       "code": "6182",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "8043",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
