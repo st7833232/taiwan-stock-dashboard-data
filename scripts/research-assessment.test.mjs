@@ -6,7 +6,7 @@ import path from 'node:path';
 import {normalizeFinancial,financialAssessment,normalizeOfficialEvent,eventAssessment,corporateActionAssessment} from './assess-research-evidence.mjs';
 import {availableWeeks,parseTdccHistory} from './collect-tdcc-history.mjs';
 import {captureHistoricalComparativeIncome,shouldReuseTargetArchive,parseMopsHistoricalIncomeHtml,parseMopsCompanyHistoricalIncomeHtml} from './collect-research-evidence.mjs';
-import {enrich,evidenceCoverage} from './research-evidence.mjs';
+import {enrich,evidenceCoverage,reviewedFinancialReport} from './research-evidence.mjs';
 
 const policy={requirePriorYearSameQuarter:true,requireGovernanceReview:true,requirePositiveProfit:true,minRevenueYoY:0,minNetProfitYoY:0};
 const income=year=>normalizeFinancial({'公司代號':'3005 ','年度':year,'季別':'2','出表日期':'1150930','營業收入':'200','營業毛利（毛損）':'60','營業利益（損失）':'30','淨利（淨損）歸屬於母公司業主':'20','基本每股盈餘（元）':'4'},'income','https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci');
@@ -140,4 +140,12 @@ test('historical recovery never refetches financial reports that cannot be admit
  const rows=await captureHistoricalComparativeIncome('/absent',[],old,'2026-09-30',new Date('2026-10-01T01:00:00Z'));
  assert.equal(rows[0].status,'CAPTURED');assert.equal(rows[0].preservedTargetArchive,true);
  assert.ok(rows.slice(1).every(r=>r.status==='NOT_CAPTURED_RETROSPECTIVE'));
+});
+
+test('reviewed filed PDFs require the actual archived file, unchanged hash and publication before cutoff',()=>{
+ const report=JSON.parse(fs.readFileSync('history/reviewed-financial-reports.json'))[0];
+ assert.equal(reviewedFinancialReport(report,'2026-09-30').metrics.revenue,141338620);
+ assert.equal(reviewedFinancialReport(report,'2025-08-12'),null);
+ for(const change of [{sha256:'0'.repeat(64)},{uploadedAt:'114/08/14 15:14:07'},{filename:'../other.pdf'},{basis:'QUARTER_ONLY'},{unit:'TWD'},{source:'https://example.com/'}])assert.equal(reviewedFinancialReport({...report,...change},'2026-09-30'),null);
+ assert.equal(reviewedFinancialReport({...report,row:{...report.row,'公司代號':'8150'}},'2026-09-30'),null);
 });

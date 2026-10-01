@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {createHash} from 'node:crypto';
 import {pathToFileURL} from 'node:url';
 import {normalizeFinancial,financialAssessment,normalizeOfficialEvent,eventAssessment,corporateActionAssessment} from './assess-research-evidence.mjs';
 
@@ -55,6 +56,28 @@ export function evidenceSummary(input,result) {
   if(!result.regimeVerified)pending.marketRegime=['MARKET'];
   return {researchComplete:Object.keys(pending).length===0,pending,counts:Object.fromEntries(Object.entries(pending).map(([key,codes])=>[key,codes.length]))};
 }
+export function reviewedFinancialReport(report,target) {
+  try {
+    const row=report.row,code=String(row?.['公司代號']??''),year=row?.['年度'],quarter=row?.['季別'];
+    if(!/^\d{4}$/.test(code)||!Number.isInteger(year)||!Number.isInteger(quarter)||quarter<1||quarter>4)return null;
+    if(report.filename!==`${year}${String(quarter).padStart(2,'0')}_${code}_AI1.pdf`||report.basis!=='YEAR_TO_DATE'||report.unit!=='TWD_THOUSAND'||!report.reviewedPages?.length)return null;
+    const source=new URL(report.source);
+    if(source.origin!=='https://doc.twse.com.tw'||source.pathname!=='/server-java/t57sb01'||source.searchParams.get('co_id')!==code||source.searchParams.get('year')!==String(year-1911))return null;
+    const index=fs.readFileSync(`history/financial-reports/${code}.html`,'utf8');
+    const filing=[...index.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)].find(m=>m[1].includes(report.filename));
+    if(!filing)return null;
+    const cells=[...filing[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(m=>m[1].replace(/<[^>]*>/g,'').trim());
+    if(cells.length!==11||cells[0]!==code||cells[5]!=='IFRSs合併財報'||cells[7]!==report.filename||cells[9]!==report.uploadedAt||cells[10]!=='無')return null;
+    const date=report.uploadedAt.match(/^(\d{3})\/(\d{2})\/(\d{2}) (\d{2}:\d{2}:\d{2})$/);
+    if(!date)return null;
+    const publication=`${Number(date[1])+1911}-${date[2]}-${date[3]}T${date[4]}+08:00`;
+    if(!Number.isFinite(Date.parse(publication))||Date.parse(publication)>Date.parse(`${target}T23:59:59+08:00`))return null;
+    const pdf=fs.readFileSync(`history/financial-reports/${report.filename}`);
+    if(pdf.subarray(0,5).toString()!=='%PDF-'||createHash('sha256').update(pdf).digest('hex')!==report.sha256)return null;
+    const normalized=normalizeFinancial(row,'income',report.source);
+    return normalized?.periodEnd<=target?{...normalized,publicationTimestamp:publication,filename:report.filename,sha256:report.sha256,reviewedPages:report.reviewedPages}:null;
+  }catch{return null;}
+}
 export function enrich(target) {
   const root=`raw/${target}`,input=read(`${root}/research-input.json`);if(!input)throw Error('Research input missing');
   const config=read('strategy-config.json'),weeks=[],editions=new Set(),cutoff=Date.parse(`${target}T23:59:59+08:00`);
@@ -89,6 +112,12 @@ export function enrich(target) {
       const data=financial.get(code)??{};
       if(!data[c.kind]||periodEnd>=data[c.kind].periodEnd)data[c.kind]={source:c.url,periodEnd,row,normalized};financial.set(code,data);
     }
+  }
+  // Reviewed official files retain their documented publication version; latest-only feeds do not.
+  for(const report of read('history/reviewed-financial-reports.json')??[]) {
+    const normalized=reviewedFinancialReport(report,target);if(!normalized)continue;
+    const key=`${normalized.code}|${normalized.periodEnd}`,period=financialPeriods.get(key)??{};
+    period.income=normalized;financialPeriods.set(key,period);
   }
   for(const row of input.deepDive) {
     const records=(byCode.get(row.code)??[]).sort((a,b)=>a.date.localeCompare(b.date));
