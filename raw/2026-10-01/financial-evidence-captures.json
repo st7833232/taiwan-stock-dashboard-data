@@ -22,16 +22,6 @@
       "rows": 34
     },
     {
-      "id": "twse-income-bd",
-      "market": "TWSE",
-      "kind": "income",
-      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_bd",
-      "summary": "上市公司綜合損益表(證券期貨業)",
-      "status": "CAPTURED",
-      "capturedAt": "2026-09-30T16:09:26.852Z",
-      "rows": 3
-    },
-    {
       "id": "twse-suspensions-L",
       "market": "TWSE",
       "kind": "suspensions",
@@ -40,6 +30,16 @@
       "status": "CAPTURED",
       "capturedAt": "2026-10-01T02:09:23.208Z",
       "rows": 1
+    },
+    {
+      "id": "twse-income-bd",
+      "market": "TWSE",
+      "kind": "income",
+      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_bd",
+      "summary": "上市公司綜合損益表(證券期貨業)",
+      "status": "CAPTURED",
+      "capturedAt": "2026-09-30T16:09:26.852Z",
+      "rows": 3
     },
     {
       "id": "twse-income-ci",
@@ -242,16 +242,6 @@
       "rows": null
     },
     {
-      "id": "tpex-suspensions-O",
-      "market": "TPEx",
-      "kind": "suspensions",
-      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap26_O",
-      "summary": "上櫃公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:09:35.358Z",
-      "rows": 1
-    },
-    {
       "id": "tpex-events-O",
       "market": "TPEx",
       "kind": "events",
@@ -260,6 +250,16 @@
       "status": "CAPTURED",
       "capturedAt": "2026-10-01T02:09:35.405Z",
       "rows": 60
+    },
+    {
+      "id": "tpex-suspensions-O",
+      "market": "TPEx",
+      "kind": "suspensions",
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap26_O",
+      "summary": "上櫃公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-01T02:09:35.358Z",
+      "rows": 1
     },
     {
       "id": "tpex-balance-basi",
@@ -411,26 +411,6 @@
       "rows": null
     },
     {
-      "id": "tpex-ca-parvalue-reference",
-      "market": "TPEx",
-      "kind": "coverage",
-      "coverageTags": [
-        "splitReductionConversion:parValueChange",
-        "historicalPriceAdjustment:parValueChange"
-      ],
-      "coverageOnly": true,
-      "allowEmpty": true,
-      "expectedDateRange": {
-        "start": "2026-04-04",
-        "end": "2026-11-05"
-      },
-      "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/pvChgRslt?startDate=2026%2F04%2F04&endDate=2026%2F11%2F05&response=json",
-      "summary": "上櫃變更股票面額恢復買賣參考價",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:09:36.818Z",
-      "rows": null
-    },
-    {
       "id": "tpex-ca-reduction-reference",
       "market": "TPEx",
       "kind": "coverage",
@@ -448,6 +428,26 @@
       "summary": "上櫃減資恢復交易參考價",
       "status": "CAPTURED",
       "capturedAt": "2026-10-01T02:09:44.643Z",
+      "rows": null
+    },
+    {
+      "id": "tpex-ca-parvalue-reference",
+      "market": "TPEx",
+      "kind": "coverage",
+      "coverageTags": [
+        "splitReductionConversion:parValueChange",
+        "historicalPriceAdjustment:parValueChange"
+      ],
+      "coverageOnly": true,
+      "allowEmpty": true,
+      "expectedDateRange": {
+        "start": "2026-04-04",
+        "end": "2026-11-05"
+      },
+      "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/pvChgRslt?startDate=2026%2F04%2F04&endDate=2026%2F11%2F05&response=json",
+      "summary": "上櫃變更股票面額恢復買賣參考價",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-01T02:09:36.818Z",
       "rows": null
     },
     {
@@ -481,21 +481,6 @@
       "rows": 362
     },
     {
-      "id": "tpex-coverage-tpex-exright-prepost",
-      "market": "TPEx",
-      "kind": "coverage",
-      "coverageTags": [
-        "exRightsDividends"
-      ],
-      "coverageOnly": true,
-      "allowEmpty": true,
-      "url": "https://www.tpex.org.tw/openapi/v1/tpex_exright_prepost",
-      "summary": "上櫃股票除權除息預告表",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:09:45.478Z",
-      "rows": 37
-    },
-    {
       "id": "tpex-coverage-mopsfin-t187ap26-O",
       "market": "TPEx",
       "kind": "coverage",
@@ -511,40 +496,28 @@
       "rows": 1
     },
     {
-      "id": "mops-historical-income-twse-2025Q2",
-      "market": "TWSE",
-      "kind": "income",
-      "historicalFinancial": true,
-      "periodEnd": "2025-06-30",
-      "url": "https://mops.twse.com.tw/mops/web/ajax_t164sb04",
-      "status": "VERIFY_FAILED",
-      "error": "MOPS company historical canary failed",
-      "requestedCodes": 385,
-      "failures": [
-        {
-          "code": "2303",
-          "error": "MOPS company historical income: required metrics missing",
-          "responsePreview": "<html> <head> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"> </head> <body> 因為安全性考量，您所執行的頁面無法呈現。<BR> FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED.<BR> <BR> 您可以<A HREF=\"javascript:history.back()\">回上一頁</A>繼續其他動作，或撥打以下電話通報問題：(02)8101-5840, (02)8101-5834。<BR> YOU COULD GO <A HREF=\"javascript:history.back()\">BACK</A> TO PREVIOUS PAGE OR CALL US FOR FURTHER HELP：(02)8101-5840, (02)8101-5834。<BR> <BR> 錯誤代碼：7641438221588598608<BR> <script type=\"application/javascript\"> func"
-        }
-      ]
+      "id": "tpex-coverage-tpex-exright-prepost",
+      "market": "TPEx",
+      "kind": "coverage",
+      "coverageTags": [
+        "exRightsDividends"
+      ],
+      "coverageOnly": true,
+      "allowEmpty": true,
+      "url": "https://www.tpex.org.tw/openapi/v1/tpex_exright_prepost",
+      "summary": "上櫃股票除權除息預告表",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-01T02:09:45.478Z",
+      "rows": 37
     },
     {
-      "id": "mops-historical-income-tpex-2025Q2",
-      "market": "TPEx",
-      "kind": "income",
+      "id": "mops-xbrl-bulk-2025Q2",
+      "market": "ALL",
+      "kind": "xbrl-bulk-diagnostic",
       "historicalFinancial": true,
-      "periodEnd": "2025-06-30",
-      "url": "https://mops.twse.com.tw/mops/web/ajax_t164sb04",
+      "url": "https://mops.twse.com.tw/mops/server-java/FileDownLoad?step=9&fileName=tifrs-2025Q2.zip&filePath=/home/html/nas/ifrs/2025/",
       "status": "VERIFY_FAILED",
-      "error": "MOPS company historical canary failed",
-      "requestedCodes": 155,
-      "failures": [
-        {
-          "code": "1815",
-          "error": "MOPS company historical income: required metrics missing",
-          "responsePreview": "<html> <head> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"> </head> <body> 因為安全性考量，您所執行的頁面無法呈現。<BR> FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED.<BR> <BR> 您可以<A HREF=\"javascript:history.back()\">回上一頁</A>繼續其他動作，或撥打以下電話通報問題：(02)8101-5840, (02)8101-5834。<BR> YOU COULD GO <A HREF=\"javascript:history.back()\">BACK</A> TO PREVIOUS PAGE OR CALL US FOR FURTHER HELP：(02)8101-5840, (02)8101-5834。<BR> <BR> 錯誤代碼：7641438221588601545<BR> <script type=\"application/javascript\"> func"
-        }
-      ]
+      "error": "XBRL bulk ZIP too small"
     }
   ]
 }
