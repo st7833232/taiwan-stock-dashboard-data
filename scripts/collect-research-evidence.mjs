@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import {pathToFileURL} from 'node:url';
+import {execFileSync} from 'node:child_process';
 
 const read = p => {try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}};
 const write = (p,x) => {fs.mkdirSync(p.slice(0,p.lastIndexOf('/')),{recursive:true});fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n');};
@@ -114,6 +115,24 @@ async function captureHistoricalComparativeIncome(root,captures,old,target,now){
     }else out.push({id,market,kind:'income',historicalFinancial:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,status:'VERIFY_FAILED',error:'No company historical income rows captured',requestedCodes:marketCodes.length,failures:failures.slice(0,20)});
   }
   return out;
+}
+async function captureHistoricalXbrlDiagnostic(root,captures,target,now){
+  const latest=latestFinancialPeriod(root,captures);if(!latest)return [];
+  const year=latest.year-1,quarter=latest.quarter,id=`mops-xbrl-bulk-${year}Q${quarter}`;
+  const url=`https://mops.twse.com.tw/mops/server-java/FileDownLoad?step=9&fileName=tifrs-${year}Q${quarter}.zip&filePath=/home/html/nas/ifrs/${year}/`;
+  const zip=`/tmp/tifrs-${year}Q${quarter}.zip`;
+  try{
+    const response=await fetch(url,{headers:{'user-agent':'Mozilla/5.0','accept':'application/zip,*/*'},signal:AbortSignal.timeout(60000)});
+    if(!response.ok)throw Error(`HTTP ${response.status}`);
+    const bytes=Buffer.from(await response.arrayBuffer());
+    if(bytes.length<1000)throw Error('XBRL bulk ZIP too small');
+    fs.writeFileSync(zip,bytes);
+    const entries=execFileSync('unzip',['-Z1',zip],{encoding:'utf8',maxBuffer:8*1024*1024}).split(/\r?\n/).filter(Boolean);
+    const sample=entries.find(x=>/\.(xbrl|xml|html|htm)$/i.test(x))??entries[0];
+    const preview=sample?execFileSync('unzip',['-p',zip,sample],{encoding:'utf8',maxBuffer:2*1024*1024}).slice(0,4000):'';
+    fs.rmSync(zip,{force:true});
+    return [{id,market:'ALL',kind:'xbrl-bulk-diagnostic',historicalFinancial:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,status:'CAPTURED',capturedAt:now.toISOString(),bytes:bytes.length,entryCount:entries.length,sampleEntry:sample??null,samplePreview:preview.replace(/\s+/g,' ').slice(0,1500)}];
+  }catch(error){try{fs.rmSync(zip,{force:true});}catch{}return [{id,market:'ALL',kind:'xbrl-bulk-diagnostic',historicalFinancial:true,url,status:'VERIFY_FAILED',error:String(error.message)}];}
 }
 export function discoverEvidenceSources(spec, market, apiRoot) {
   return Object.entries(spec.paths??{}).flatMap(([path,op])=>{
@@ -249,7 +268,7 @@ export async function collect(target,{now=new Date()}={}) {
     const discovered=sources.filter(s=>!s.coverageOnly);
     if(discovered.length)write('history/financial-source-catalog.json',{sources:[...catalog.sources.filter(s=>s.market!==market),...discovered]});
   }
-  if(target===today)captures.push(...await captureHistoricalComparativeIncome(root,captures,old,target,now));
+  if(target===today)captures.push(...await captureHistoricalXbrlDiagnostic(root,captures,target,now));
   write(`${root}/financial-evidence-captures.json`,{targetDate:target,captures});
   console.log(JSON.stringify({stage:'FINANCIAL_EVIDENCE_CAPTURE',targetDate:target,captured:captures.filter(c=>c.status==='CAPTURED').length,unverified:captures.filter(c=>c.status!=='CAPTURED').length}));
 }
