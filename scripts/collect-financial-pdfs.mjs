@@ -43,7 +43,7 @@ export function filingVersion(html,code,year,quarter,target){
 export function verifyPdfText(pages,row){
  const year=row['年度']-1911,end=row['季別']*3;
  for(let i=0;i<pages.length;i++){
-  const page=pages[i]+(pages[i+1]??''),c=page.replace(/\s/g,'');
+  const page=(pages[i]+(pages[i+1]??'')).replace(/(\d{3})\.(\d{2})\.(\d{2})[~～](\d{3})\.(\d{2})\.(\d{2})/g,(s,y,m,d,y2,m2,d2)=>y===y2?`${y}年${Number(m)}月${Number(d)}日至${Number(m2)}月${Number(d2)}日`:s),c=page.replace(/\s/g,'');
   if(!c.includes('綜合損益表')||!/(新台幣|新臺幣)(千|仟)元/.test(c)||!c.includes(String(year))||!c.includes(String(year-1))||!new RegExp(`(1月至${end}月|1月1日至${end}月30日)`).test(c))continue;
   const quarterStart=(row['季別']-1)*3+1,headers=[...c.matchAll(new RegExp(`(${year}|${year-1})年(\\d{1,2}月|第${row['季別']}季)`,'g'))].map(m=>`${m[1]}|${m[2]}`);
   const expected=[`${year}|${quarterStart}月`,`${year-1}|${quarterStart}月`,`${year}|1月`,`${year-1}|1月`];
