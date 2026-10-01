@@ -25,6 +25,13 @@ test('comparative year and actual deterioration are checked before financial per
  const stronger={...income(114),metrics:{...income(114).metrics,revenue:300}};
  assert.equal(assess(stronger).status,'FAIL');assert.ok(assess(stronger).failures.includes('REVENUE_DETERIORATION'));
 });
+test('fixed-period historical financial archive is distinct from latest-only evidence',()=>{
+ const target='2026-09-30';
+ const meta={status:'CAPTURED',historicalFinancial:true,historicalArchiveSafe:true,periodEnd:'2025-06-30',capturedAt:'2026-10-01T01:00:00Z'};
+ assert.equal(meta.periodEnd<target,true);
+ assert.equal(meta.historicalArchiveSafe,true);
+ assert.equal(meta.historicalFinancial,true);
+});
 test('MOPS company historical income parser skips row index and reads current-period cumulative values',()=>{
  const html='<table><tr><th>4</th><td>營業收入合計</td><td>124594602</td><td>100.00</td><td>98311776</td><td>100.00</td></tr><tr><th>23</th><td>本期淨利（淨損）</td><td>22644071</td><td>18.17</td><td>10322800</td><td>10.50</td></tr></table>';
  assert.deepEqual(parseMopsCompanyHistoricalIncomeHtml(html,{code:'1101',year:2025,quarter:2}),{'公司代號':'1101','年度':2025,'季別':2,'營業收入':124594602,'本期淨利（淨損）':22644071});
