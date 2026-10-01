@@ -3,7 +3,7 @@
   "researchComplete": false,
   "counts": {
     "history": 11,
-    "fundamental": 530,
+    "fundamental": 527,
     "institutional": 1,
     "credit": 3
   },
@@ -242,7 +242,6 @@
       "3583",
       "3592",
       "3596",
-      "3605",
       "3617",
       "3645",
       "3653",
@@ -329,7 +328,6 @@
       "6456",
       "6472",
       "6491",
-      "6505",
       "6515",
       "6525",
       "6526",
@@ -483,7 +481,6 @@
       "6147",
       "6173",
       "6179",
-      "6182",
       "6187",
       "6190",
       "6199",
@@ -595,6 +592,18 @@
       "code": "4961",
       "failures": [
         "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6505",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6182",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
     }
   ],
