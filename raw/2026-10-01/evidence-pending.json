@@ -4,7 +4,7 @@
   "counts": {
     "history": 13,
     "credit": 543,
-    "fundamental": 507
+    "fundamental": 505
   },
   "pending": {
     "history": [
@@ -573,7 +573,6 @@
       "1229",
       "1301",
       "1303",
-      "1312",
       "1314",
       "1319",
       "1326",
@@ -946,7 +945,6 @@
       "3236",
       "3260",
       "3264",
-      "3265",
       "3289",
       "3293",
       "3324",
@@ -1082,6 +1080,13 @@
       "code": "1102",
       "failures": [
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1312",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
       ]
     },
     {

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "targetDate": "2026-10-01",
   "strategyVersion": "entry-dual-track-v2.2",
-  "inputFingerprint": "30500c421d03b24b45f051733cb093f6ffd2b8d68dc0c1058a1b85eab87d4803",
+  "inputFingerprint": "051f62ea1eed3d7a430a4b0e1649a6b65478a518c0282b9d14d1cc3d4b076baa",
   "coverage": {
     "universe": 2303,
     "stocks": 1949,
@@ -86890,7 +86890,7 @@
       "close": 185,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 47.64,
+      "score": 57.64,
       "scores": {
         "trend": 14.4,
         "momentum": 8,
@@ -86899,7 +86899,7 @@
         "institutional": 4.5,
         "large_holder": 8,
         "margin_short_lending": 0,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -86910,7 +86910,7 @@
         "credit": false,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -86920,7 +86920,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "CREDIT_EVIDENCE_INCOMPLETE",
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
