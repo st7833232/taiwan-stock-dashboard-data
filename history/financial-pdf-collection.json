@@ -205,5 +205,33 @@
     "reason": "fetch failed",
     "checkedDate": "2026-10-01",
     "checkedAt": "2026-10-01T06:05:20.358Z"
+  },
+  "3481|2026-06-30": {
+    "status": "UNVERIFIED",
+    "stage": "PDF_DOWNLOAD",
+    "reason": "The operation was aborted due to timeout",
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T06:12:15.491Z"
+  },
+  "2481|2026-06-30": {
+    "status": "UNVERIFIED",
+    "stage": "PDF_DOWNLOAD",
+    "reason": "The operation was aborted due to timeout",
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T06:13:26.602Z"
+  },
+  "6182|2026-06-30": {
+    "status": "UNVERIFIED",
+    "stage": "PDF_METRICS",
+    "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T06:15:16.276Z"
+  },
+  "2426|2026-06-30": {
+    "status": "UNVERIFIED",
+    "stage": "PDF_DOWNLOAD",
+    "reason": "The operation was aborted due to timeout",
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T06:16:43.655Z"
   }
 }
