@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "targetDate": "2026-10-01",
   "strategyVersion": "entry-dual-track-v2.2",
-  "inputFingerprint": "5dcf1c5c17732722130d87e70fe69631bf0c317527bc866849242e8fbb0541ad",
+  "inputFingerprint": "e9bce427a44bff07300de09890cacd8343d5c78d8dd4a42c1dafdc644c5fe2d1",
   "coverage": {
     "universe": 2303,
     "stocks": 1949,
@@ -55318,7 +55318,7 @@
       "close": 71.3,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 19.7508,
+      "score": 29.7508,
       "scores": {
         "trend": 0,
         "momentum": 4,
@@ -55327,7 +55327,7 @@
         "institutional": 0,
         "large_holder": 0,
         "margin_short_lending": 0,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -55338,7 +55338,7 @@
         "credit": false,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -55348,7 +55348,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "CREDIT_EVIDENCE_INCOMPLETE",
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -109206,7 +109205,7 @@
       "close": 71.2,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 36.8841,
+      "score": 46.8841,
       "scores": {
         "trend": 7.2,
         "momentum": 8,
@@ -109215,7 +109214,7 @@
         "institutional": 6,
         "large_holder": 2.6667,
         "margin_short_lending": 0,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -109226,7 +109225,7 @@
         "credit": false,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -109236,7 +109235,6 @@
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
         "CREDIT_EVIDENCE_INCOMPLETE",
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
