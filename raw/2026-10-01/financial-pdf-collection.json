@@ -3287,10 +3287,74 @@
       "checkedDate": "2026-10-02",
       "checkedAt": "2026-10-01T19:04:30.442Z",
       "nextRetryAt": "2026-10-01T19:09:30.442Z"
+    },
+    "2357|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T19:08:49.496Z"
+    },
+    "6187|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T19:09:02.114Z"
+    },
+    "6257|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_DOWNLOAD",
+      "reason": "fetch failed",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T19:09:50.040Z",
+      "nextRetryAt": "2026-10-01T19:14:50.040Z"
+    },
+    "5483|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "FILING_INDEX",
+      "reason": "fetch failed",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T19:10:07.179Z",
+      "nextRetryAt": "2026-10-01T19:15:07.179Z"
+    },
+    "3491|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T19:10:41.749Z"
+    },
+    "2379|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T19:11:08.272Z"
+    },
+    "3363|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T19:13:10.477Z",
+      "nextRetryAt": "2026-10-01T19:18:10.477Z"
+    },
+    "3042|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T19:13:39.241Z",
+      "nextRetryAt": "2026-10-01T19:18:39.241Z"
     }
   },
-  "remaining": 519,
-  "ready": 481,
+  "remaining": 515,
+  "ready": 477,
   "continuationNeeded": true,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [
