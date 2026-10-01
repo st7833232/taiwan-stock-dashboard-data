@@ -3147,10 +3147,60 @@
       "checkedDate": "2026-10-02",
       "checkedAt": "2026-10-01T18:36:58.690Z",
       "nextRetryAt": "2026-10-01T18:41:58.690Z"
+    },
+    "3167|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_DOWNLOAD",
+      "reason": "fetch failed",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T18:42:37.547Z",
+      "nextRetryAt": "2026-10-01T18:47:37.547Z"
+    },
+    "6510|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T18:44:53.687Z",
+      "nextRetryAt": "2026-10-01T18:49:53.687Z"
+    },
+    "3529|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_DOWNLOAD",
+      "reason": "The operation was aborted due to timeout",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T18:45:39.801Z",
+      "nextRetryAt": "2026-10-01T18:50:39.801Z"
+    },
+    "6446|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_DOWNLOAD",
+      "reason": "The operation was aborted due to timeout",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T18:46:28.388Z",
+      "nextRetryAt": "2026-10-01T18:51:28.388Z"
+    },
+    "6442|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T18:46:45.478Z",
+      "nextRetryAt": "2026-10-01T18:51:45.478Z"
     }
   },
   "remaining": 519,
-  "ready": 484,
+  "ready": 481,
   "continuationNeeded": true,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [
