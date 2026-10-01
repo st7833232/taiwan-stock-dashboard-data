@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-01",
-  "revision": "2026-10-01-190439",
+  "revision": "2026-10-01-191258",
   "strategyVersion": "entry-dual-track-v2.2",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
@@ -9,7 +9,7 @@
   "evidencePending": {
     "history": 13,
     "credit": 543,
-    "fundamental": 511
+    "fundamental": 509
   },
   "fundamentalQualityRejected": [
     {
@@ -28,6 +28,13 @@
       "code": "2354",
       "failures": [
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2385",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
       ]
     },
     {
@@ -72,6 +79,13 @@
     },
     {
       "code": "6168",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "6269",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED"
@@ -680,7 +694,7 @@
     ],
     "eligibleRanked": 0
   },
-  "conclusion": "2026-10-01全市場 2303 檔已完成初步篩選（普通股 1949、ETF 354），深度檢查 615 檔。普通股信用資料已核對 0/543 檔。仍待核對：歷史行情 13檔、融資融券等信用資料 543檔、財務證據 511檔。研究尚未完成。財務證據完整但品質未通過 17 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-10-01全市場 2303 檔已完成初步篩選（普通股 1949、ETF 354），深度檢查 615 檔。普通股信用資料已核對 0/543 檔。仍待核對：歷史行情 13檔、融資融券等信用資料 543檔、財務證據 509檔。研究尚未完成。財務證據完整但品質未通過 19 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [],
   "core": [
     {
@@ -822,17 +836,6 @@
       "officialDateEvidence": "1151001"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-01-190439",
-    "runId": "36852243084",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/36852243084",
-    "validatedCommit": "882edad837bc8aa6be9ef3265cf82fcbf29443fd"
-  },
-  "inputFingerprint": "d58f74f207dde9eacbef1d16ecfc1be9f705ad30705c8a6b24fe4950fe986e82"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "34ebcf0f448a9a7677716dba1bd0f1d5ed23609e56ff49cc8a65c047a198deb4"
 }

@@ -4,7 +4,7 @@
   "counts": {
     "history": 13,
     "credit": 543,
-    "fundamental": 511
+    "fundamental": 509
   },
   "pending": {
     "history": [
@@ -659,7 +659,6 @@
       "2379",
       "2382",
       "2383",
-      "2385",
       "2388",
       "2392",
       "2393",
@@ -846,7 +845,6 @@
       "6226",
       "6239",
       "6257",
-      "6269",
       "6271",
       "6278",
       "6282",
@@ -1101,6 +1099,13 @@
       ]
     },
     {
+      "code": "2385",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
       "code": "2409",
       "failures": [
         "PROFIT_QUALITY_FAILED",
@@ -1142,6 +1147,13 @@
     },
     {
       "code": "6168",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "6269",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED"
