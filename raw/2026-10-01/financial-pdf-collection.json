@@ -3351,10 +3351,68 @@
       "checkedDate": "2026-10-02",
       "checkedAt": "2026-10-01T19:13:39.241Z",
       "nextRetryAt": "2026-10-01T19:18:39.241Z"
+    },
+    "3260|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T19:21:14.624Z"
+    },
+    "8021|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T19:21:21.624Z"
+    },
+    "4991|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T19:23:00.135Z",
+      "nextRetryAt": "2026-10-01T19:28:00.135Z"
+    },
+    "2455|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "FILING_INDEX",
+      "reason": "FILING_VERSION_UNVERIFIED",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T19:23:02.456Z",
+      "nextRetryAt": "2026-10-02T19:23:02.456Z"
+    },
+    "2376|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T19:23:13.684Z"
+    },
+    "2404|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T19:24:53.375Z",
+      "nextRetryAt": "2026-10-01T19:29:53.375Z"
+    },
+    "3264|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T19:25:51.950Z",
+      "nextRetryAt": "2026-10-01T19:30:51.950Z"
     }
   },
-  "remaining": 515,
-  "ready": 477,
+  "remaining": 512,
+  "ready": 474,
   "continuationNeeded": true,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [
