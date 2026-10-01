@@ -3,6 +3,65 @@ import {pathToFileURL} from 'node:url';
 
 const read = p => {try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}};
 const write = (p,x) => {fs.mkdirSync(p.slice(0,p.lastIndexOf('/')),{recursive:true});fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n');};
+const compactNumber=x=>{const s=String(x??'').trim().replaceAll(',','');if(!s||s==='--')return null;const n=Number(s);return Number.isFinite(n)?n:null;};
+const htmlText=x=>String(x??'').replace(/<br\s*\/?\s*>/gi,' ').replace(/<[^>]*>/g,'').replace(/&nbsp;/gi,' ').replace(/&amp;/gi,'&').replace(/&lt;/gi,'<').replace(/&gt;/gi,'>').replace(/&quot;/gi,'"').replace(/&#39;|&apos;/gi,"'").replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Number(n))).replace(/\s+/g,' ').trim();
+export function parseMopsHistoricalIncomeHtml(html,{year,quarter}) {
+  const required=['公司代號','公司名稱','營業收入','營業毛利（毛損）','營業利益（損失）','本期淨利（淨損）'];
+  let header=null,indexes=null;const rows=[];
+  for(const m of String(html??'').matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)){
+    const cells=[...m[1].matchAll(/<(?:th|td)\b[^>]*>([\s\S]*?)<\/(?:th|td)>/gi)].map(x=>htmlText(x[1]));
+    if(cells[0]==='公司代號'){
+      if(header)break;
+      if(!required.every(field=>cells.includes(field)))continue;
+      header=cells;indexes=Object.fromEntries(required.map(field=>[field,cells.indexOf(field)]));continue;
+    }
+    if(!header||!/^\d{4}$/.test(cells[0]??'')||cells.length!==header.length)continue;
+    rows.push({
+      '公司代號':cells[indexes['公司代號']],
+      '公司名稱':cells[indexes['公司名稱']],
+      '年度':year,
+      '季別':quarter,
+      '營業收入':compactNumber(cells[indexes['營業收入']]),
+      '營業毛利（毛損）':compactNumber(cells[indexes['營業毛利（毛損）']]),
+      '營業利益（損失）':compactNumber(cells[indexes['營業利益（損失）']]),
+      '本期淨利（淨損）':compactNumber(cells[indexes['本期淨利（淨損）']])
+    });
+  }
+  if(!header)throw Error('MOPS historical income: general-industry header missing');
+  if(!rows.length)throw Error('MOPS historical income: 0 general-industry rows');
+  return rows;
+}
+function latestFinancialPeriod(root,captures){
+  let best=null;
+  for(const c of captures.filter(c=>c.status==='CAPTURED'&&c.kind==='income'&&!c.historicalFinancial)){
+    const rows=read(`${root}/${c.id}.raw.txt`);if(!Array.isArray(rows))continue;
+    for(const row of rows){
+      const rawYear=Number(String(row['年度']??row.Year??'').trim()),quarter=Number(String(row['季別']??row['季']??row.Season??row.Quarter??'').trim());
+      if(!Number.isInteger(rawYear)||!Number.isInteger(quarter)||quarter<1||quarter>4)continue;
+      const year=rawYear<1911?rawYear+1911:rawYear,key=year*10+quarter;
+      if(!best||key>best.key)best={year,quarter,key};
+    }
+  }
+  return best;
+}
+async function captureHistoricalComparativeIncome(root,captures,old,target,now){
+  const latest=latestFinancialPeriod(root,captures);if(!latest)return [];
+  const year=latest.year-1,quarter=latest.quarter,rocYear=year-1911,season=String(quarter).padStart(2,'0'),url='https://mops.twse.com.tw/mops/web/ajax_t163sb04';
+  const out=[];
+  for(const [market,typek] of [['TWSE','sii'],['TPEx','otc']]){
+    const id=`mops-historical-income-${typek}-${year}Q${quarter}`,file=`${root}/${id}.raw.txt`,prior=old?.captures?.find(c=>c.id===id);
+    if(archiveUsable(prior,target)&&fs.existsSync(file)){out.push({...prior,preservedTargetArchive:true});continue;}
+    try{
+      const body=new URLSearchParams({encodeURIComponent:'1',step:'1',firstin:'1',off:'1',isQuery:'Y',TYPEK:typek,year:String(rocYear),season}).toString();
+      const response=await fetch(url,{method:'POST',redirect:'follow',headers:{'content-type':'application/x-www-form-urlencoded','user-agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120 Safari/537.36',referer:'https://mopsov.twse.com.tw/',accept:'text/html,*/*'},body,signal:AbortSignal.timeout(60000)});
+      if(!response.ok)throw Error(`HTTP ${response.status}`);
+      const html=await response.text(),rows=parseMopsHistoricalIncomeHtml(html,{year,quarter});
+      fs.writeFileSync(file,JSON.stringify(rows)+'\n');
+      out.push({id,market,kind:'income',historicalFinancial:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,summary:`MOPS ${year}Q${quarter} 綜合損益表彙總（一般業）`,status:'CAPTURED',capturedAt:now.toISOString(),rows:rows.length});
+    }catch(error){out.push({id,market,kind:'income',historicalFinancial:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,status:'VERIFY_FAILED',error:String(error.message)});}
+  }
+  return out;
+}
 export function discoverEvidenceSources(spec, market, apiRoot) {
   return Object.entries(spec.paths??{}).flatMap(([path,op])=>{
     const summary=op.get?.summary??'';
@@ -137,6 +196,7 @@ export async function collect(target,{now=new Date()}={}) {
     const discovered=sources.filter(s=>!s.coverageOnly);
     if(discovered.length)write('history/financial-source-catalog.json',{sources:[...catalog.sources.filter(s=>s.market!==market),...discovered]});
   }
+  if(target===today)captures.push(...await captureHistoricalComparativeIncome(root,captures,old,target,now));
   write(`${root}/financial-evidence-captures.json`,{targetDate:target,captures});
   console.log(JSON.stringify({stage:'FINANCIAL_EVIDENCE_CAPTURE',targetDate:target,captured:captures.filter(c=>c.status==='CAPTURED').length,unverified:captures.filter(c=>c.status!=='CAPTURED').length}));
 }
