@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "targetDate": "2026-10-01",
   "strategyVersion": "entry-dual-track-v2.2",
-  "inputFingerprint": "219bc0e25f50df9885c8206389d6fea154fea8651708cbd046314f3f6e46fe28",
+  "inputFingerprint": "4dccbc8a9f90d7c31eba0f219b6773f5779cc369074a69436428df7d338e4cf1",
   "coverage": {
     "universe": 2303,
     "stocks": 1949,
@@ -30202,7 +30202,7 @@
       "close": 41.3,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 29.8794,
+      "score": 39.8794,
       "scores": {
         "trend": 0,
         "momentum": 4,
@@ -30211,7 +30211,7 @@
         "institutional": 4.5,
         "large_holder": 5.3333,
         "margin_short_lending": 1.5,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -30222,7 +30222,7 @@
         "credit": true,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -30231,7 +30231,6 @@
       },
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -56088,7 +56087,7 @@
       "close": 47.7,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 52.2252,
+      "score": 62.2252,
       "scores": {
         "trend": 14.4,
         "momentum": 4,
@@ -56097,7 +56096,7 @@
         "institutional": 13.5,
         "large_holder": 5.3333,
         "margin_short_lending": 6,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -56108,7 +56107,7 @@
         "credit": true,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -56117,7 +56116,6 @@
       },
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
