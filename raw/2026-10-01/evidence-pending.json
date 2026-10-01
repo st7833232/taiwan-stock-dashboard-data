@@ -4,7 +4,7 @@
   "counts": {
     "history": 13,
     "credit": 543,
-    "fundamental": 497
+    "fundamental": 493
   },
   "pending": {
     "history": [
@@ -795,10 +795,8 @@
       "4722",
       "4739",
       "4763",
-      "4764",
       "4770",
       "4906",
-      "4915",
       "4916",
       "4919",
       "4927",
@@ -841,7 +839,6 @@
       "6257",
       "6271",
       "6278",
-      "6282",
       "6285",
       "6409",
       "6414",
@@ -1025,7 +1022,6 @@
       "6547",
       "6548",
       "6584",
-      "6588",
       "6613",
       "6617",
       "6620",
@@ -1148,6 +1144,12 @@
       ]
     },
     {
+      "code": "4915",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
       "code": "4961",
       "failures": [
         "PROFIT_DETERIORATION"
@@ -1165,6 +1167,12 @@
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "6282",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
     },
     {
@@ -1221,6 +1229,12 @@
     },
     {
       "code": "6182",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6588",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]

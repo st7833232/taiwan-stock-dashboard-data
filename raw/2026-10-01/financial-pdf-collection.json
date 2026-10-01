@@ -1467,10 +1467,84 @@
       "parserVersion": 2,
       "checkedDate": "2026-10-01",
       "checkedAt": "2026-10-01T12:05:21.011Z"
+    },
+    "4764|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T12:10:26.891Z"
+    },
+    "6282|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T12:10:50.606Z"
+    },
+    "8040|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "FILING_INDEX",
+      "reason": "FILING_VERSION_UNVERIFIED",
+      "attempts": 1,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T12:10:56.649Z",
+      "nextRetryAt": "2026-10-02T12:10:56.649Z"
+    },
+    "6588|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T12:11:26.298Z"
+    },
+    "6176|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_LINK",
+      "reason": "fetch failed",
+      "attempts": 1,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T12:11:57.794Z",
+      "nextRetryAt": "2026-10-01T12:16:57.794Z"
+    },
+    "4915|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T12:12:37.537Z"
+    },
+    "5328|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "FILING_INDEX",
+      "reason": "fetch failed",
+      "attempts": 1,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T12:13:08.537Z",
+      "nextRetryAt": "2026-10-01T12:18:08.537Z"
+    },
+    "2645|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "FILING_INDEX",
+      "reason": "FILING_VERSION_UNVERIFIED",
+      "attempts": 1,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T12:13:14.899Z",
+      "nextRetryAt": "2026-10-02T12:13:14.899Z"
+    },
+    "3014|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T12:14:15.429Z",
+      "nextRetryAt": "2026-10-01T12:19:15.429Z"
     }
   },
-  "remaining": 508,
-  "ready": 494,
+  "remaining": 504,
+  "ready": 488,
   "continuationNeeded": true,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [

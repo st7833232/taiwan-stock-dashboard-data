@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-01",
-  "revision": "2026-10-01-200543",
+  "revision": "2026-10-01-201440",
   "strategyVersion": "entry-dual-track-v2.2",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
@@ -9,7 +9,7 @@
   "evidencePending": {
     "history": 13,
     "credit": 543,
-    "fundamental": 497
+    "fundamental": 493
   },
   "fundamentalQualityRejected": [
     {
@@ -92,6 +92,12 @@
       ]
     },
     {
+      "code": "4915",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
       "code": "4961",
       "failures": [
         "PROFIT_DETERIORATION"
@@ -109,6 +115,12 @@
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "6282",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
     },
     {
@@ -165,6 +177,12 @@
     },
     {
       "code": "6182",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6588",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
@@ -740,7 +758,7 @@
     ],
     "eligibleRanked": 0
   },
-  "conclusion": "2026-10-01全市場 2303 檔已完成初步篩選（普通股 1949、ETF 354），深度檢查 615 檔。普通股信用資料已核對 0/543 檔。仍待核對：歷史行情 13檔、融資融券等信用資料 543檔、財務證據 497檔。研究尚未完成。財務證據完整但品質未通過 26 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-10-01全市場 2303 檔已完成初步篩選（普通股 1949、ETF 354），深度檢查 615 檔。普通股信用資料已核對 0/543 檔。仍待核對：歷史行情 13檔、融資融券等信用資料 543檔、財務證據 493檔。研究尚未完成。財務證據完整但品質未通過 29 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [],
   "core": [
     {
@@ -882,17 +900,6 @@
       "officialDateEvidence": "1151001"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-01-200543",
-    "runId": "36858611455",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/36858611455",
-    "validatedCommit": "38615ce4225d413c166bd2552a21d63e0726bcd2"
-  },
-  "inputFingerprint": "7c32145c5cbd44a50e2512e098f3e0985f74d67d7692abe7d7716bd75e8a7368"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "3eb182ea7de573adcfb44f87f169d1a5b9da10c402b615da56f64930ea9991b2"
 }
