@@ -2895,5 +2895,45 @@
     "checkedDate": "2026-10-02",
     "checkedAt": "2026-10-01T17:47:30.179Z",
     "nextRetryAt": "2026-10-01T17:52:30.179Z"
+  },
+  "6147|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "PDF_METRICS",
+    "reason": "PDF_OCR_REVIEW_PENDING",
+    "attempts": 1,
+    "checkedDate": "2026-10-02",
+    "checkedAt": "2026-10-01T17:55:32.084Z",
+    "nextRetryAt": "2026-10-01T18:00:32.084Z"
+  },
+  "3443|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "PDF_METRICS",
+    "reason": "PDF_OCR_REVIEW_PENDING",
+    "attempts": 1,
+    "checkedDate": "2026-10-02",
+    "checkedAt": "2026-10-01T17:58:08.047Z",
+    "nextRetryAt": "2026-10-01T18:03:08.047Z"
+  },
+  "3081|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "FILING_INDEX",
+    "reason": "FILING_VERSION_UNVERIFIED",
+    "attempts": 1,
+    "checkedDate": "2026-10-02",
+    "checkedAt": "2026-10-01T17:58:10.468Z",
+    "nextRetryAt": "2026-10-02T17:58:10.468Z"
+  },
+  "6274|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "PDF_METRICS",
+    "reason": "PDF_OCR_REVIEW_PENDING",
+    "attempts": 1,
+    "checkedDate": "2026-10-02",
+    "checkedAt": "2026-10-01T17:58:44.981Z",
+    "nextRetryAt": "2026-10-01T18:03:44.981Z"
   }
 }
