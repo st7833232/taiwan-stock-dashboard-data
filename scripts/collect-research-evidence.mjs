@@ -81,7 +81,11 @@ function latestFinancialPeriod(root,captures){
   }
   return best;
 }
-async function captureHistoricalComparativeIncome(root,captures,old,target,now){
+export async function captureHistoricalComparativeIncome(root,captures,old,target,now){
+  const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei'}).format(now);
+  if(target<today)return (old?.captures??[]).filter(c=>c.historicalFinancial&&c.kind==='income').map(c=>
+    c.parserVersion===2&&archiveUsable(c,target)?{...c,preservedTargetArchive:true}:
+    {...c,status:'NOT_CAPTURED_RETROSPECTIVE',note:'No admissible point-in-time comparative archive; current retrieval cannot establish historical availability.'});
   const latest=latestFinancialPeriod(root,captures);if(!latest)return [];
   const year=latest.year-1,quarter=latest.quarter,rocYear=year-1911,season=String(quarter).padStart(2,'0');
   const stocks=latestDeepDiveStocks(target),url='https://mopsov.twse.com.tw/mops/web/ajax_t164sb04',out=[];

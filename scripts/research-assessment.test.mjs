@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {normalizeFinancial,financialAssessment,normalizeOfficialEvent,eventAssessment,corporateActionAssessment} from './assess-research-evidence.mjs';
 import {availableWeeks,parseTdccHistory} from './collect-tdcc-history.mjs';
-import {shouldReuseTargetArchive,parseMopsHistoricalIncomeHtml,parseMopsCompanyHistoricalIncomeHtml} from './collect-research-evidence.mjs';
+import {captureHistoricalComparativeIncome,shouldReuseTargetArchive,parseMopsHistoricalIncomeHtml,parseMopsCompanyHistoricalIncomeHtml} from './collect-research-evidence.mjs';
 import {enrich,evidenceCoverage} from './research-evidence.mjs';
 
 const policy={requirePriorYearSameQuarter:true,requireGovernanceReview:true,requirePositiveProfit:true,minRevenueYoY:0,minNetProfitYoY:0};
@@ -128,4 +128,16 @@ test('late or obsolete historical captures never authorize a retrospective finan
    enrich('2026-09-30');assert.equal(JSON.parse(fs.readFileSync('raw/2026-09-30/research-input.json')).deepDive[0].financialEvidence,null);
   }
  }finally{process.chdir(cwd);fs.rmSync(dir,{recursive:true,force:true});}
+});
+
+test('historical recovery never refetches financial reports that cannot be admitted as of its cutoff',async()=>{
+ const old={captures:[
+  {id:'prior-safe',historicalFinancial:true,kind:'income',parserVersion:2,status:'CAPTURED',capturedAt:'2026-09-30T01:00:00Z'},
+  {id:'prior-late',historicalFinancial:true,kind:'income',parserVersion:2,status:'CAPTURED',capturedAt:'2026-10-01T01:00:00Z'},
+  {id:'prior-obsolete',historicalFinancial:true,kind:'income',status:'CAPTURED',capturedAt:'2026-09-30T01:00:00Z'}
+ ]};
+ // An absent root proves retrospective recovery does not begin a network or filesystem collection.
+ const rows=await captureHistoricalComparativeIncome('/absent',[],old,'2026-09-30',new Date('2026-10-01T01:00:00Z'));
+ assert.equal(rows[0].status,'CAPTURED');assert.equal(rows[0].preservedTargetArchive,true);
+ assert.ok(rows.slice(1).every(r=>r.status==='NOT_CAPTURED_RETROSPECTIVE'));
 });
