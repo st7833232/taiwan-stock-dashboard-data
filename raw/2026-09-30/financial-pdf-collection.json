@@ -223,11 +223,9 @@
       "checkedAt": "2026-10-01T06:13:26.602Z"
     },
     "6182|2026-06-30": {
-      "status": "UNVERIFIED",
-      "stage": "PDF_METRICS",
-      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "status": "VERIFIED",
       "checkedDate": "2026-10-01",
-      "checkedAt": "2026-10-01T06:15:16.276Z"
+      "checkedAt": "2026-10-01T06:51:50.323Z"
     },
     "2426|2026-06-30": {
       "status": "UNVERIFIED",
@@ -235,7 +233,56 @@
       "reason": "The operation was aborted due to timeout",
       "checkedDate": "2026-10-01",
       "checkedAt": "2026-10-01T06:16:43.655Z"
+    },
+    "2337|2026-06-30": {
+      "status": "UNVERIFIED",
+      "stage": "PDF_DOWNLOAD",
+      "reason": "The operation was aborted due to timeout",
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T06:57:09.630Z"
+    },
+    "2881|2026-06-30": {
+      "status": "UNVERIFIED",
+      "stage": "FILING_INDEX",
+      "reason": "FILING_VERSION_UNVERIFIED",
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T06:57:14.834Z"
+    },
+    "3624|2026-06-30": {
+      "status": "UNVERIFIED",
+      "stage": "PDF_METRICS",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T06:58:24.304Z"
+    },
+    "2887|2026-06-30": {
+      "status": "UNVERIFIED",
+      "stage": "FILING_INDEX",
+      "reason": "FILING_VERSION_UNVERIFIED",
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T06:58:30.336Z"
+    },
+    "2882|2026-06-30": {
+      "status": "UNVERIFIED",
+      "stage": "FILING_INDEX",
+      "reason": "FILING_VERSION_UNVERIFIED",
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T06:58:54.366Z"
+    },
+    "2464|2026-06-30": {
+      "status": "UNVERIFIED",
+      "stage": "PDF_DOWNLOAD",
+      "reason": "The operation was aborted due to timeout",
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T07:00:03.960Z"
+    },
+    "5347|2026-06-30": {
+      "status": "UNVERIFIED",
+      "stage": "PDF_DOWNLOAD",
+      "reason": "The operation was aborted due to timeout",
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T07:01:17.871Z"
     }
   },
-  "remaining": 501
+  "remaining": 494
 }
