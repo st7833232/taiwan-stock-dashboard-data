@@ -2,24 +2,24 @@
   "targetDate": "2026-10-01",
   "captures": [
     {
-      "id": "twse-governance-L",
-      "market": "TWSE",
-      "kind": "governance",
-      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap23_L",
-      "summary": "上市公司違反資訊申報、重大訊息及說明記者會規定專區",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:02:48.525Z",
-      "rows": 34
-    },
-    {
       "id": "twse-events-L",
       "market": "TWSE",
       "kind": "events",
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
       "summary": "上市公司每日重大訊息",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:02:48.881Z",
+      "capturedAt": "2026-10-01T02:09:22.491Z",
       "rows": 157
+    },
+    {
+      "id": "twse-governance-L",
+      "market": "TWSE",
+      "kind": "governance",
+      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap23_L",
+      "summary": "上市公司違反資訊申報、重大訊息及說明記者會規定專區",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-01T02:09:23.025Z",
+      "rows": 34
     },
     {
       "id": "twse-income-bd",
@@ -38,7 +38,7 @@
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap26_L",
       "summary": "上市公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:02:49.066Z",
+      "capturedAt": "2026-10-01T02:09:23.208Z",
       "rows": 1
     },
     {
@@ -162,7 +162,7 @@
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL",
       "summary": "上市股票除權除息預告表",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:02:49.255Z",
+      "capturedAt": "2026-10-01T02:09:24.012Z",
       "rows": 35
     },
     {
@@ -177,7 +177,7 @@
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWTAWU",
       "summary": "集中市場暫停交易證券",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:02:49.443Z",
+      "capturedAt": "2026-10-01T02:09:24.615Z",
       "rows": 1
     },
     {
@@ -192,22 +192,7 @@
       "url": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260404&endDate=20261001",
       "summary": "上市股票除權除息計算結果表",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:02:59.536Z",
-      "rows": null
-    },
-    {
-      "id": "twse-ca-parvalue-preview",
-      "market": "TWSE",
-      "kind": "coverage",
-      "coverageTags": [
-        "splitReductionConversion:parValueChange"
-      ],
-      "coverageOnly": true,
-      "allowEmpty": true,
-      "url": "https://www.twse.com.tw/exchangeReport/TWTB7U?response=json",
-      "summary": "變更股票面額預告表",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:03:02.034Z",
+      "capturedAt": "2026-10-01T02:09:25.340Z",
       "rows": null
     },
     {
@@ -223,7 +208,22 @@
       "url": "https://www.twse.com.tw/exchangeReport/TWTAUU?response=json&startDate=20260404&endDate=20261105",
       "summary": "股票減資恢復買賣參考價格",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:03:06.357Z",
+      "capturedAt": "2026-10-01T02:09:25.522Z",
+      "rows": null
+    },
+    {
+      "id": "twse-ca-parvalue-preview",
+      "market": "TWSE",
+      "kind": "coverage",
+      "coverageTags": [
+        "splitReductionConversion:parValueChange"
+      ],
+      "coverageOnly": true,
+      "allowEmpty": true,
+      "url": "https://www.twse.com.tw/exchangeReport/TWTB7U?response=json",
+      "summary": "變更股票面額預告表",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-01T02:09:26.061Z",
       "rows": null
     },
     {
@@ -238,18 +238,8 @@
       "url": "https://www.twse.com.tw/exchangeReport/TWTB8U?response=json&startDate=20260404&endDate=20261001",
       "summary": "變更股票面額恢復買賣參考價格",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:03:08.107Z",
+      "capturedAt": "2026-10-01T02:09:26.239Z",
       "rows": null
-    },
-    {
-      "id": "tpex-events-O",
-      "market": "TPEx",
-      "kind": "events",
-      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
-      "summary": "上櫃公司每日重大訊息",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:03:10.401Z",
-      "rows": 60
     },
     {
       "id": "tpex-suspensions-O",
@@ -258,8 +248,18 @@
       "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap26_O",
       "summary": "上櫃公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:03:10.863Z",
+      "capturedAt": "2026-10-01T02:09:35.358Z",
       "rows": 1
+    },
+    {
+      "id": "tpex-events-O",
+      "market": "TPEx",
+      "kind": "events",
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
+      "summary": "上櫃公司每日重大訊息",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-01T02:09:35.405Z",
+      "rows": 60
     },
     {
       "id": "tpex-balance-basi",
@@ -388,7 +388,7 @@
       "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap23_O",
       "summary": "上櫃公司違反資訊申報、重大訊息及說明記者會規定專區",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:03:11.079Z",
+      "capturedAt": "2026-10-01T02:09:35.638Z",
       "rows": 19
     },
     {
@@ -407,7 +407,7 @@
       "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/exDailyQ?startDate=2026%2F04%2F04&endDate=2026%2F10%2F01&response=json",
       "summary": "上櫃股票除權除息計算結果表（歷史）",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:03:22.294Z",
+      "capturedAt": "2026-10-01T02:09:36.605Z",
       "rows": null
     },
     {
@@ -427,7 +427,7 @@
       "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/pvChgRslt?startDate=2026%2F04%2F04&endDate=2026%2F11%2F05&response=json",
       "summary": "上櫃變更股票面額恢復買賣參考價",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:03:22.528Z",
+      "capturedAt": "2026-10-01T02:09:36.818Z",
       "rows": null
     },
     {
@@ -447,7 +447,7 @@
       "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/revivt?startDate=2026%2F04%2F04&endDate=2026%2F11%2F05&response=json",
       "summary": "上櫃減資恢復交易參考價",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:03:23.006Z",
+      "capturedAt": "2026-10-01T02:09:44.643Z",
       "rows": null
     },
     {
@@ -462,7 +462,7 @@
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_spendi_today",
       "summary": "上櫃當日公布暫停/恢復交易股票",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:03:23.208Z",
+      "capturedAt": "2026-10-01T02:09:44.892Z",
       "rows": 1
     },
     {
@@ -477,23 +477,8 @@
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_spendi_history",
       "summary": "上櫃歷史公布暫停/恢復交易股票",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:03:26.388Z",
+      "capturedAt": "2026-10-01T02:09:45.268Z",
       "rows": 362
-    },
-    {
-      "id": "tpex-coverage-mopsfin-t187ap26-O",
-      "market": "TPEx",
-      "kind": "coverage",
-      "coverageTags": [
-        "tradingHalts"
-      ],
-      "coverageOnly": true,
-      "allowEmpty": true,
-      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap26_O",
-      "summary": "上櫃公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:03:26.593Z",
-      "rows": 1
     },
     {
       "id": "tpex-coverage-tpex-exright-prepost",
@@ -507,8 +492,23 @@
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_exright_prepost",
       "summary": "上櫃股票除權除息預告表",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-01T02:03:26.825Z",
+      "capturedAt": "2026-10-01T02:09:45.478Z",
       "rows": 37
+    },
+    {
+      "id": "tpex-coverage-mopsfin-t187ap26-O",
+      "market": "TPEx",
+      "kind": "coverage",
+      "coverageTags": [
+        "tradingHalts"
+      ],
+      "coverageOnly": true,
+      "allowEmpty": true,
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap26_O",
+      "summary": "上櫃公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-01T02:09:45.494Z",
+      "rows": 1
     },
     {
       "id": "mops-historical-income-twse-2025Q2",
@@ -518,88 +518,13 @@
       "periodEnd": "2025-06-30",
       "url": "https://mops.twse.com.tw/mops/web/ajax_t164sb04",
       "status": "VERIFY_FAILED",
-      "error": "No company historical income rows captured",
+      "error": "MOPS company historical canary failed",
       "requestedCodes": 385,
       "failures": [
         {
-          "code": "2409",
-          "error": "fetch failed"
-        },
-        {
-          "code": "3481",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "2344",
-          "error": "fetch failed"
-        },
-        {
-          "code": "3605",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "2426",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "3231",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "2881",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "2481",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "2887",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "2337",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
           "code": "2303",
-          "error": "fetch failed"
-        },
-        {
-          "code": "6770",
-          "error": "The operation was aborted due to timeout"
-        },
-        {
-          "code": "2882",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "2464",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "3016",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "2891",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "8150",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "2884",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "2615",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "2609",
-          "error": "MOPS company historical income: required metrics missing"
+          "error": "MOPS company historical income: required metrics missing",
+          "responsePreview": "<html> <head> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"> </head> <body> 因為安全性考量，您所執行的頁面無法呈現。<BR> FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED.<BR> <BR> 您可以<A HREF=\"javascript:history.back()\">回上一頁</A>繼續其他動作，或撥打以下電話通報問題：(02)8101-5840, (02)8101-5834。<BR> YOU COULD GO <A HREF=\"javascript:history.back()\">BACK</A> TO PREVIOUS PAGE OR CALL US FOR FURTHER HELP：(02)8101-5840, (02)8101-5834。<BR> <BR> 錯誤代碼：7641438221588598608<BR> <script type=\"application/javascript\"> func"
         }
       ]
     },
@@ -611,88 +536,13 @@
       "periodEnd": "2025-06-30",
       "url": "https://mops.twse.com.tw/mops/web/ajax_t164sb04",
       "status": "VERIFY_FAILED",
-      "error": "No company historical income rows captured",
+      "error": "MOPS company historical canary failed",
       "requestedCodes": 155,
       "failures": [
         {
-          "code": "6182",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "3624",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "5351",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "8069",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "5425",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "3441",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "6207",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "5347",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
           "code": "1815",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "8064",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "5475",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "8111",
-          "error": "The operation was aborted due to timeout"
-        },
-        {
-          "code": "3141",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "5314",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "3234",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "6217",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "6620",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "4939",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "8042",
-          "error": "MOPS company historical income: required metrics missing"
-        },
-        {
-          "code": "1785",
-          "error": "MOPS company historical income: required metrics missing"
+          "error": "MOPS company historical income: required metrics missing",
+          "responsePreview": "<html> <head> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"> </head> <body> 因為安全性考量，您所執行的頁面無法呈現。<BR> FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED.<BR> <BR> 您可以<A HREF=\"javascript:history.back()\">回上一頁</A>繼續其他動作，或撥打以下電話通報問題：(02)8101-5840, (02)8101-5834。<BR> YOU COULD GO <A HREF=\"javascript:history.back()\">BACK</A> TO PREVIOUS PAGE OR CALL US FOR FURTHER HELP：(02)8101-5840, (02)8101-5834。<BR> <BR> 錯誤代碼：7641438221588601545<BR> <script type=\"application/javascript\"> func"
         }
       ]
     }
