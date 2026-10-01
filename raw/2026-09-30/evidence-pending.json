@@ -3,7 +3,7 @@
   "researchComplete": false,
   "counts": {
     "history": 11,
-    "fundamental": 535,
+    "fundamental": 530,
     "institutional": 1,
     "credit": 3
   },
@@ -63,7 +63,6 @@
       "1802",
       "1808",
       "2002",
-      "2006",
       "2009",
       "2027",
       "2030",
@@ -128,7 +127,6 @@
       "2404",
       "2406",
       "2408",
-      "2409",
       "2412",
       "2413",
       "2421",
@@ -168,7 +166,6 @@
       "2610",
       "2615",
       "2617",
-      "2618",
       "2633",
       "2634",
       "2637",
@@ -228,7 +225,6 @@
       "3229",
       "3231",
       "3305",
-      "3376",
       "3380",
       "3406",
       "3413",
@@ -278,7 +274,6 @@
       "4938",
       "4956",
       "4958",
-      "4961",
       "4967",
       "4977",
       "4989",
@@ -567,5 +562,41 @@
       "7828"
     ]
   },
+  "fundamentalQualityRejected": [
+    {
+      "code": "2006",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2409",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2618",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3376",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4961",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    }
+  ],
   "retryPolicy": "AUTOMATIC_NEXT_SCHEDULE"
 }
