@@ -35,30 +35,31 @@ function latestDeepDiveStocks(target){
   return [];
 }
 export function parseMopsHistoricalIncomeHtml(html,{year,quarter}) {
-  const required=['公司代號','公司名稱','營業收入','營業毛利（毛損）','營業利益（損失）','本期淨利（淨損）'];
-  let header=null,indexes=null;const rows=[];
+  const revenueLabels=new Set(['營業收入合計','營業收入']);
+  const profitLabels=new Set(['本期淨利（淨損）','本期淨利(淨損)','淨利（淨損）歸屬於母公司業主','淨利(淨損)歸屬於母公司業主']);
+  const grossLabels=new Set(['營業毛利（毛損）','營業毛利(毛損)','營業毛利（毛損）淨額']);
+  const operatingLabels=new Set(['營業利益（損失）','營業利益(損失)']);
+  let indexes=null;const rows=[];
   for(const m of String(html??'').matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)){
     const cells=[...m[1].matchAll(/<(?:th|td)\b[^>]*>([\s\S]*?)<\/(?:th|td)>/gi)].map(x=>htmlText(x[1]));
-    if(cells[0]==='公司代號'){
-      if(header)break;
-      if(!required.every(field=>cells.includes(field)))continue;
-      header=cells;indexes=Object.fromEntries(required.map(field=>[field,cells.indexOf(field)]));continue;
+    const normalized=cells.map(x=>x.replace(/\s+/g,''));
+    const codeIndex=normalized.findIndex(x=>x==='公司代號');
+    if(codeIndex>=0){
+      const find=labels=>normalized.findIndex(x=>labels.has(x));
+      const revenue=find(revenueLabels),netProfit=find(profitLabels);
+      indexes=revenue>=0&&netProfit>=0?{code:codeIndex,name:normalized.findIndex(x=>x==='公司名稱'),revenue,netProfit,grossProfit:find(grossLabels),operatingProfit:find(operatingLabels)}:null;
+      continue;
     }
-    if(!header||!/^\d{4}$/.test(cells[0]??'')||cells.length!==header.length)continue;
-    rows.push({
-      '公司代號':cells[indexes['公司代號']],
-      '公司名稱':cells[indexes['公司名稱']],
-      '年度':year,
-      '季別':quarter,
-      '營業收入':compactNumber(cells[indexes['營業收入']]),
-      '營業毛利（毛損）':compactNumber(cells[indexes['營業毛利（毛損）']]),
-      '營業利益（損失）':compactNumber(cells[indexes['營業利益（損失）']]),
-      '本期淨利（淨損）':compactNumber(cells[indexes['本期淨利（淨損）']])
-    });
+    if(!indexes)continue;
+    const code=String(cells[indexes.code]??'').trim();
+    if(!/^\d{4}$/.test(code))continue;
+    const row={'公司代號':code,'公司名稱':indexes.name>=0?cells[indexes.name]:'','年度':year,'季別':quarter,'營業收入':compactNumber(cells[indexes.revenue]),'本期淨利（淨損）':compactNumber(cells[indexes.netProfit])};
+    if(indexes.grossProfit>=0)row['營業毛利（毛損）']=compactNumber(cells[indexes.grossProfit]);
+    if(indexes.operatingProfit>=0)row['營業利益（損失）']=compactNumber(cells[indexes.operatingProfit]);
+    if(Number.isFinite(row['營業收入'])&&Number.isFinite(row['本期淨利（淨損）']))rows.push(row);
   }
-  if(!header)throw Error('MOPS historical income: general-industry header missing');
-  if(!rows.length)throw Error('MOPS historical income: 0 general-industry rows');
-  return rows;
+  if(!rows.length)throw Error('MOPS historical income: no usable company rows');
+  return [...new Map(rows.map(row=>[row['公司代號'],row])).values()];
 }
 function latestFinancialPeriod(root,captures){
   let best=null;
@@ -76,43 +77,25 @@ function latestFinancialPeriod(root,captures){
 async function captureHistoricalComparativeIncome(root,captures,old,target,now){
   const latest=latestFinancialPeriod(root,captures);if(!latest)return [];
   const year=latest.year-1,quarter=latest.quarter,rocYear=year-1911,season=String(quarter).padStart(2,'0');
-  const stocks=latestDeepDiveStocks(target),url='https://mops.twse.com.tw/mops/web/ajax_t164sb04';
+  const stocks=latestDeepDiveStocks(target),url='https://mopsov.twse.com.tw/mops/web/ajax_t163sb04';
   const out=[];
-  for(const market of ['TWSE','TPEx']){
+  for(const [market,typek] of [['TWSE','sii'],['TPEx','otc']]){
     const id=`mops-historical-income-${market.toLowerCase()}-${year}Q${quarter}`,file=`${root}/${id}.raw.txt`,prior=old?.captures?.find(c=>c.id===id);
     if(archiveUsable(prior,target)&&fs.existsSync(file)){out.push({...prior,preservedTargetArchive:true});continue;}
-    const marketCodes=stocks.filter(r=>r.market===market).map(r=>r.code);
-    const rows=[],failures=[];
-    const fetchOne=async code=>{
-      let html='';
-      try{
-        const body=new URLSearchParams({encodeURIComponent:'1',step:'1',firstin:'1',off:'1',keyword4:'',code1:'',TYPEK2:'',checkbtn:'',queryName:'co_id',inpuType:'co_id',TYPEK:'all',isnew:'false',co_id:code,year:String(rocYear),season}).toString();
-        const response=await fetch(url,{method:'POST',redirect:'follow',headers:{'content-type':'application/x-www-form-urlencoded','user-agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36',referer:'https://mops.twse.com.tw/mops/web/t164sb04',accept:'text/html,*/*'},body,signal:AbortSignal.timeout(8000)});
-        if(!response.ok)throw Error(`HTTP ${response.status}`);
-        html=await response.text();
-        return parseMopsCompanyHistoricalIncomeHtml(html,{code,year,quarter});
-      }catch(error){
-        failures.push({code,error:String(error.message),responsePreview:html.slice(0,500).replace(/\s+/g,' ')||undefined});
-        return null;
-      }
-    };
-    if(marketCodes.length){
-      const canary=await fetchOne(marketCodes[0]);
-      if(canary)rows.push(canary);
-      else{
-        out.push({id,market,kind:'income',historicalFinancial:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,status:'VERIFY_FAILED',error:'MOPS company historical canary failed',requestedCodes:marketCodes.length,failures:failures.slice(0,3)});
-        continue;
-      }
-    }
-    for(let i=1;i<marketCodes.length;i+=12){
-      const chunk=marketCodes.slice(i,i+12);
-      const settled=await Promise.all(chunk.map(fetchOne));
-      rows.push(...settled.filter(Boolean));
-    }
-    if(rows.length){
+    const wanted=new Set(stocks.filter(r=>r.market===market).map(r=>r.code));
+    try{
+      const body=new URLSearchParams({encodeURIComponent:'1',step:'1',firstin:'1',off:'1',TYPEK:typek,year:String(rocYear),season}).toString();
+      const response=await fetch(url,{method:'POST',redirect:'follow',headers:{'content-type':'application/x-www-form-urlencoded','user-agent':'taiwan-stock-dashboard-data/official-mops-history','accept':'text/html,*/*'},body,signal:AbortSignal.timeout(30000)});
+      if(!response.ok)throw Error(`HTTP ${response.status}`);
+      const html=await response.text(),allRows=parseMopsHistoricalIncomeHtml(html,{year,quarter});
+      const rows=allRows.filter(row=>wanted.has(String(row['公司代號'])));
+      if(!rows.length)throw Error('No requested deep-dive comparative rows in official MOPS aggregate');
+      const covered=new Set(rows.map(row=>String(row['公司代號']))),missing=[...wanted].filter(code=>!covered.has(code));
       fs.writeFileSync(file,JSON.stringify(rows)+'\n');
-      out.push({id,market,kind:'income',historicalFinancial:true,historicalArchiveSafe:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,summary:`MOPS ${year}Q${quarter} 單一公司綜合損益表（deep-dive comparative）`,status:'CAPTURED',capturedAt:now.toISOString(),rows:rows.length,requestedCodes:marketCodes.length,failedCodes:failures.map(x=>x.code)});
-    }else out.push({id,market,kind:'income',historicalFinancial:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,status:'VERIFY_FAILED',error:'No company historical income rows captured',requestedCodes:marketCodes.length,failures:failures.slice(0,20)});
+      out.push({id,market,kind:'income',historicalFinancial:true,historicalArchiveSafe:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,summary:`MOPSOV ${year}Q${quarter} 綜合損益彙總表（deep-dive comparative）`,status:'CAPTURED',capturedAt:now.toISOString(),rows:rows.length,requestedCodes:wanted.size,failedCodes:missing,sourceMarket:typek});
+    }catch(error){
+      out.push({id,market,kind:'income',historicalFinancial:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,status:'VERIFY_FAILED',error:String(error.message),requestedCodes:wanted.size});
+    }
   }
   return out;
 }
