@@ -4,7 +4,7 @@
   "counts": {
     "history": 10,
     "credit": 386,
-    "fundamental": 371
+    "fundamental": 367
   },
   "pending": {
     "history": [
@@ -462,7 +462,6 @@
       "2301",
       "2302",
       "2303",
-      "2305",
       "2308",
       "2312",
       "2313",
@@ -647,7 +646,6 @@
       "4763",
       "4764",
       "4770",
-      "4904",
       "4906",
       "4915",
       "4916",
@@ -737,7 +735,6 @@
       "6933",
       "6937",
       "6944",
-      "6949",
       "6957",
       "7610",
       "7711",
@@ -758,7 +755,6 @@
       "8081",
       "8103",
       "8110",
-      "8112",
       "8114",
       "8131",
       "8150",
@@ -786,6 +782,12 @@
       "code": "2006",
       "failures": [
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2305",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
     },
     {
@@ -826,6 +828,14 @@
       "code": "6505",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6949",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
       ]
     }
   ],
