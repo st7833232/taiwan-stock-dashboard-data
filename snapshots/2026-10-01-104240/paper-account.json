@@ -1,0 +1,235 @@
+{
+  "asOf": "2026-09-30",
+  "experimentTitle": "20 萬虛擬操作實驗｜20個交易日",
+  "statusLabel": "20個交易日試驗：2026-10-01開始，預計2026-10-30收盤驗收；每5個交易日檢查一次。",
+  "description": "與真實庫存完全分開。只以決策當下可取得的資料形成紀錄，並以事先寫明的成交規則進行模擬。",
+  "initialCash": 200000,
+  "cash": 165936.528625,
+  "currency": "TWD",
+  "rule": "現股／ETF、無槓桿；新單依strategy-config風控：單股10%、產業20%、總曝險50%；既有持倉超限不事後改寫成交。個股賣出稅0.3%、ETF 0.1%，買賣手續費沿用0.1425%。",
+  "positions": [
+    {
+      "code": "1513",
+      "name": "中興電",
+      "shares": 150,
+      "averageCost": 166.06964583333334,
+      "lastPrice": 168
+    },
+    {
+      "code": "4961",
+      "name": "天鈺",
+      "shares": 50,
+      "averageCost": 183.06049,
+      "lastPrice": 181
+    }
+  ],
+  "ledger": [
+    {
+      "date": "2026-09-02",
+      "status": "買進成交",
+      "code": "1513",
+      "name": "中興電",
+      "side": "buy",
+      "shares": 100,
+      "price": 166.5,
+      "fee": 23.72625,
+      "tax": 0,
+      "rationale": "9/1既有委託依官方開盤價成交。"
+    },
+    {
+      "date": "2026-09-09",
+      "status": "買進成交",
+      "code": "1513",
+      "name": "中興電",
+      "side": "buy",
+      "shares": 50,
+      "price": 164.5,
+      "fee": 11.720625,
+      "tax": 0,
+      "rationale": "9/8既有委託依官方開盤價成交。"
+    },
+    {
+      "date": "2026-09-16",
+      "status": "買進成交",
+      "code": "4961",
+      "name": "天鈺",
+      "side": "buy",
+      "shares": 30,
+      "route": "breakout",
+      "price": 181,
+      "fee": 7.73775,
+      "tax": 0,
+      "rationale": "9/15既有breakout stop-entry條件成立。"
+    },
+    {
+      "date": "2026-09-17",
+      "status": "買進成交",
+      "code": "4961",
+      "name": "天鈺",
+      "side": "buy",
+      "shares": 20,
+      "route": "breakout",
+      "price": 185.5,
+      "fee": 5.28675,
+      "tax": 0,
+      "rationale": "9/16既有breakout stop-entry條件成立。"
+    },
+    {
+      "date": "2026-09-18",
+      "status": "條件未成立／取消",
+      "code": "2303",
+      "name": "聯電",
+      "side": "buy",
+      "shares": 30,
+      "route": "pullback",
+      "fee": 0,
+      "tax": 0,
+      "rationale": "9/17既有pullback要求官方開盤144–146元；9/18官方開盤155元，高於上限146元，因此取消。"
+    },
+    {
+      "date": "2026-09-18",
+      "status": "條件未成立／取消",
+      "code": "2303",
+      "name": "聯電",
+      "side": "buy",
+      "shares": 20,
+      "route": "breakout",
+      "fee": 0,
+      "tax": 0,
+      "rationale": "9/17既有breakout的maxChase為153元；9/18官方開盤155元高於maxChase，依規則取消且不得追價。"
+    },
+    {
+      "date": "2026-09-18",
+      "status": "條件未成立／取消",
+      "code": "4961",
+      "name": "天鈺",
+      "side": "buy",
+      "shares": 30,
+      "route": "pullback",
+      "fee": 0,
+      "tax": 0,
+      "rationale": "9/17既有pullback要求官方開盤179–181元；9/18官方開盤184元，高於181元，因此取消。"
+    },
+    {
+      "date": "2026-09-18",
+      "status": "條件未觸發／取消",
+      "code": "4961",
+      "name": "天鈺",
+      "side": "buy",
+      "shares": 20,
+      "route": "breakout",
+      "fee": 0,
+      "tax": 0,
+      "rationale": "pullback未成交；9/18官方開盤184元低於186.5元trigger，最高184元亦未達186.5元，因此breakout未觸發。"
+    },
+    {
+      "date": "2026-09-21",
+      "status": "條件未成立／取消",
+      "code": "2441",
+      "name": "超豐",
+      "side": "buy",
+      "shares": 160,
+      "route": "breakout",
+      "fee": 0,
+      "tax": 0,
+      "rationale": "9/18既有BREAKOUT委託maxChase為124.4214285714元；9/21官方開盤125元高於maxChase，依規則整筆取消且不得追價。"
+    },
+    {
+      "date": "2026-09-29",
+      "status": "無既有委託",
+      "fee": 0,
+      "tax": 0,
+      "rationale": "前一正式帳戶 2026-09-24 的 nextOrders=[]；當日沒有可執行委託。僅按官方收盤評價持倉。",
+      "shares": 0
+    },
+    {
+      "date": "2026-09-30",
+      "status": "無既有委託",
+      "shares": 0,
+      "fee": 0,
+      "tax": 0,
+      "rationale": "前一正式帳戶 2026-09-29 的 nextOrders=[]；當日沒有可執行委託。僅按官方收盤評價持倉。"
+    }
+  ],
+  "rationale": [
+    {
+      "title": "無前視偏誤",
+      "detail": "僅讀前一正式帳戶 2026-09-29 的 nextOrders；今日新研究不產生今日成交。"
+    },
+    {
+      "title": "逐檔信用與研究證據",
+      "detail": "未驗證欄位保留缺項；ETF與普通股分流，不以ETF覆蓋普通股信用證據。"
+    },
+    {
+      "title": "固定期間驗收",
+      "detail": "20個交易日試驗：2026-10-01開始，預計2026-10-30收盤驗收；每5個交易日檢查一次。"
+    },
+    {
+      "title": "期間驗收指標",
+      "detail": "試驗期間成交0筆；研究未完成0天；研究完成但無新委託0天。尚無完整期間評價，暫不公布期間報酬或最大回撤。"
+    }
+  ],
+  "nextOrders": [],
+  "benchmark": {
+    "date": "2026-09-30",
+    "accountReturn": -0.012486793428778675,
+    "cumulativeAccountReturn": 0.09326431250000766,
+    "etfCode": "0050",
+    "etfReturn": 0.6738544474393482,
+    "accountBaseDate": "2026-09-29",
+    "accountBaseEquity": 200211.528625,
+    "method": "Account percent return since previous published valuation; cumulative return from initial cash; ETF daily percent return from verified official OHLCV.",
+    "taiexReturn": 0.65
+  },
+  "monitorCodes": [
+    "3016",
+    "9945",
+    "1609",
+    "1727",
+    "2030",
+    "3045",
+    "1513",
+    "4961",
+    "0050",
+    "006208",
+    "00981A"
+  ],
+  "sourceNote": "2026-09-30官方Gate PASS；維持既有帳簿費率與成本；當日無委託，未新增任何真實或模擬交易。",
+  "note": "本區用於檢驗研究流程，不代表保證報酬或真實下單。任何新交易都必須先存在於上一版nextOrders。",
+  "equity": 200186.528625,
+  "marketValue": 34250,
+  "riskCheck": {
+    "pass": false,
+    "reasons": [
+      "ACCOUNT_RISK_LIMIT"
+    ],
+    "equity": 200186.528625,
+    "exposurePct": 17.109043368327203,
+    "sectorMethod": "ALL_HOLDINGS_ONE_CORRELATED_BUCKET"
+  },
+  "experiment": {
+    "id": "paper-20td-2026-10-01",
+    "status": "PLANNED",
+    "startDate": "2026-10-01",
+    "plannedEndDate": "2026-10-30",
+    "durationTradingDays": 20,
+    "reviewEveryTradingDays": 5,
+    "completedTradingDays": 0,
+    "tradingDates": [],
+    "baselineDate": null,
+    "baselineEquity": null,
+    "dailyMarks": [],
+    "reviews": [],
+    "metrics": {
+      "filledTrades": 0,
+      "evidenceBlockedDays": 0,
+      "noNewOrderDays": 0,
+      "returnPct": null,
+      "maxDrawdownPct": null,
+      "valuationCoverageComplete": false,
+      "missingValuationDates": []
+    },
+    "processReviewRequired": false,
+    "summary": "20個交易日試驗：2026-10-01開始，預計2026-10-30收盤驗收；每5個交易日檢查一次。"
+  }
+}
