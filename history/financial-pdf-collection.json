@@ -1769,5 +1769,41 @@
     "checkedDate": "2026-10-01",
     "checkedAt": "2026-10-01T13:09:36.681Z",
     "nextRetryAt": "2026-10-01T13:14:36.681Z"
+  },
+  "1722|2026-06-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T13:14:33.869Z"
+  },
+  "1718|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "PDF_LINK",
+    "reason": "fetch failed",
+    "attempts": 1,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T13:15:05.914Z",
+    "nextRetryAt": "2026-10-01T13:20:05.914Z"
+  },
+  "6617|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "PDF_METRICS",
+    "reason": "PDF_OCR_REVIEW_PENDING",
+    "attempts": 1,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T13:17:03.639Z",
+    "nextRetryAt": "2026-10-01T13:22:03.639Z"
+  },
+  "2374|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "PDF_METRICS",
+    "reason": "PDF_OCR_REVIEW_PENDING",
+    "attempts": 1,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T13:18:55.640Z",
+    "nextRetryAt": "2026-10-01T13:23:55.640Z"
   }
 }

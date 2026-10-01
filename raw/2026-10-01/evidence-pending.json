@@ -3,7 +3,7 @@
   "researchComplete": false,
   "counts": {
     "history": 13,
-    "fundamental": 483,
+    "fundamental": 482,
     "credit": 159
   },
   "pending": {
@@ -52,7 +52,6 @@
       "1714",
       "1717",
       "1718",
-      "1722",
       "1727",
       "1773",
       "1795",
@@ -681,6 +680,12 @@
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "1722",
+      "failures": [
+        "PROFIT_DETERIORATION"
       ]
     },
     {
