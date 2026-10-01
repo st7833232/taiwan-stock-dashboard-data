@@ -111,7 +111,7 @@ async function captureHistoricalComparativeIncome(root,captures,old,target,now){
     }
     if(rows.length){
       fs.writeFileSync(file,JSON.stringify(rows)+'\n');
-      out.push({id,market,kind:'income',historicalFinancial:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,summary:`MOPS ${year}Q${quarter} 單一公司綜合損益表（deep-dive comparative）`,status:'CAPTURED',capturedAt:now.toISOString(),rows:rows.length,requestedCodes:marketCodes.length,failedCodes:failures.map(x=>x.code)});
+      out.push({id,market,kind:'income',historicalFinancial:true,historicalArchiveSafe:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,summary:`MOPS ${year}Q${quarter} 單一公司綜合損益表（deep-dive comparative）`,status:'CAPTURED',capturedAt:now.toISOString(),rows:rows.length,requestedCodes:marketCodes.length,failedCodes:failures.map(x=>x.code)});
     }else out.push({id,market,kind:'income',historicalFinancial:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,status:'VERIFY_FAILED',error:'No company historical income rows captured',requestedCodes:marketCodes.length,failures:failures.slice(0,20)});
   }
   return out;
@@ -269,6 +269,10 @@ export async function collect(target,{now=new Date()}={}) {
     const discovered=sources.filter(s=>!s.coverageOnly);
     if(discovered.length)write('history/financial-source-catalog.json',{sources:[...catalog.sources.filter(s=>s.market!==market),...discovered]});
   }
+  // Fixed-period prior-year comparative statements are historical facts whose period end predates target.
+  // They may be retrieved from the official MOPS historical-report endpoint during a replay, but are kept
+  // separate from latest-only feeds and are only admitted downstream when periodEnd < target.
+  captures.push(...await captureHistoricalComparativeIncome(root,captures,old,target,now));
   if(target===today)captures.push(...await captureHistoricalXbrlDiagnostic(root,captures,target,now));
   write(`${root}/financial-evidence-captures.json`,{targetDate:target,captures});
   console.log(JSON.stringify({stage:'FINANCIAL_EVIDENCE_CAPTURE',targetDate:target,captured:captures.filter(c=>c.status==='CAPTURED').length,unverified:captures.filter(c=>c.status!=='CAPTURED').length}));
