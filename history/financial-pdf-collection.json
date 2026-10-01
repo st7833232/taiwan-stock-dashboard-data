@@ -3029,5 +3029,79 @@
     "checkedDate": "2026-10-02",
     "checkedAt": "2026-10-01T18:18:34.777Z",
     "nextRetryAt": "2026-10-01T18:23:34.777Z"
+  },
+  "3324|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "FILING_INDEX",
+    "reason": "FILING_VERSION_UNVERIFIED",
+    "attempts": 1,
+    "checkedDate": "2026-10-02",
+    "checkedAt": "2026-10-01T18:23:14.618Z",
+    "nextRetryAt": "2026-10-02T18:23:14.618Z"
+  },
+  "2449|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "PDF_METRICS",
+    "reason": "PDF_OCR_REVIEW_PENDING",
+    "attempts": 1,
+    "checkedDate": "2026-10-02",
+    "checkedAt": "2026-10-01T18:24:55.309Z",
+    "nextRetryAt": "2026-10-01T18:29:55.309Z"
+  },
+  "3653|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "PDF_METRICS",
+    "reason": "PDF_OCR_REVIEW_PENDING",
+    "attempts": 1,
+    "checkedDate": "2026-10-02",
+    "checkedAt": "2026-10-01T18:26:57.541Z",
+    "nextRetryAt": "2026-10-01T18:31:57.541Z"
+  },
+  "6223|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "FILING_INDEX",
+    "reason": "FILING_VERSION_UNVERIFIED",
+    "attempts": 1,
+    "checkedDate": "2026-10-02",
+    "checkedAt": "2026-10-01T18:26:59.913Z",
+    "nextRetryAt": "2026-10-02T18:26:59.913Z"
+  },
+  "8299|2026-06-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-10-02",
+    "checkedAt": "2026-10-01T18:27:15.954Z"
+  },
+  "2059|2026-06-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-10-02",
+    "checkedAt": "2026-10-01T18:27:25.971Z"
+  },
+  "7769|2026-06-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-10-02",
+    "checkedAt": "2026-10-01T18:27:35.023Z"
+  },
+  "2360|2026-06-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-10-02",
+    "checkedAt": "2026-10-01T18:27:43.036Z"
+  },
+  "6173|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "PDF_METRICS",
+    "reason": "PDF_OCR_REVIEW_PENDING",
+    "attempts": 1,
+    "checkedDate": "2026-10-02",
+    "checkedAt": "2026-10-01T18:28:08.585Z",
+    "nextRetryAt": "2026-10-01T18:33:08.585Z"
   }
 }
