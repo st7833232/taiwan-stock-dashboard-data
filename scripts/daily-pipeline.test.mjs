@@ -123,3 +123,24 @@ test('new-day recovery builds input before history and records validation only a
     assert.equal(JSON.parse(fs.readFileSync('raw/2026-09-29/daily-report.json')).validation.validatedCommit,'published-sha');
   }finally{process.chdir(original);if(targetEnv===undefined)delete process.env.TARGET_DATE;else process.env.TARGET_DATE=targetEnv;fs.rmSync(tmp,{recursive:true,force:true});}
 });
+
+test('pending-only recovery reuses PASS daily capture and skips completed history and TDCC',()=>{
+  const original=process.cwd(),targetEnv=process.env.TARGET_DATE,tmp=fs.mkdtempSync(path.join(os.tmpdir(),'daily-pipeline-'));
+  try {
+    process.chdir(tmp);fs.mkdirSync('snapshots/r',{recursive:true});fs.mkdirSync('raw/2026-09-29',{recursive:true});fs.writeFileSync('DAILY_UPDATE_PROTOCOL.md','fixture');
+    const manifest={revision:'r',researchPath:'snapshots/r/research.json',selectionHistoryPath:'snapshots/r/selection-history.json',paperAccountPath:'snapshots/r/paper-account.json'};
+    for(const [file,value] of [['manifest.json',manifest],['strategy-config.json',{version:'v2'}],[manifest.researchPath,{}],[manifest.selectionHistoryPath,[]],[manifest.paperAccountPath,{asOf:'2026-09-28',nextOrders:[]}],['raw/2026-09-29/research-input.json',{targetDate:'2026-09-29'}],['raw/2026-09-29/gate-matrix.json',{targetDate:'2026-09-29',overallStatus:'PASS'}],['raw/2026-09-29/evidence-pending.json',{targetDate:'2026-09-29',counts:{history:0,fundamental:1,credit:1}}]])fs.writeFileSync(file,JSON.stringify(value));
+    const calls=[];
+    const execute=(cmd,args,options)=>{
+      if(cmd==='git')return 'published-sha';
+      const script=args[0];calls.push(script);
+      if(script.endsWith('screen-market.mjs')){fs.writeFileSync('manifest.json',JSON.stringify({...manifest,revision:'new'}));fs.writeFileSync('raw/2026-09-29/daily-report.json',JSON.stringify({researchComplete:false,evidencePending:{fundamental:1,credit:1}}));}
+    };
+    runPipeline('2026-09-29',{execute,now:new Date('2026-09-30T01:00:00Z')});
+    assert.equal(calls.includes('scripts/fetch-official-market-data.mjs'),false);
+    assert.equal(calls.includes('scripts/backfill-v2-market-history.mjs'),false);
+    assert.equal(calls.includes('scripts/collect-tdcc-history.mjs'),false);
+    assert.equal(calls.includes('scripts/collect-financial-pdfs.mjs'),true);
+    assert.equal(calls.includes('scripts/collect-research-evidence.mjs'),true);
+  }finally{process.chdir(original);if(targetEnv===undefined)delete process.env.TARGET_DATE;else process.env.TARGET_DATE=targetEnv;fs.rmSync(tmp,{recursive:true,force:true});}
+});
