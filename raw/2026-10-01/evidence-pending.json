@@ -4,7 +4,7 @@
   "counts": {
     "history": 13,
     "credit": 543,
-    "fundamental": 499
+    "fundamental": 497
   },
   "pending": {
     "history": [
@@ -1064,9 +1064,7 @@
       "8299",
       "8358",
       "8383",
-      "8431",
-      "8436",
-      "8932"
+      "8436"
     ]
   },
   "fundamentalQualityRejected": [
@@ -1231,6 +1229,14 @@
       "code": "8043",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "8431",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
       ]
     }
   ],
