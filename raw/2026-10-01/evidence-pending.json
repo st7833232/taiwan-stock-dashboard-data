@@ -4,7 +4,7 @@
   "counts": {
     "history": 13,
     "credit": 543,
-    "fundamental": 509
+    "fundamental": 507
   },
   "pending": {
     "history": [
@@ -568,7 +568,6 @@
       "8932"
     ],
     "fundamental": [
-      "1102",
       "1215",
       "1216",
       "1229",
@@ -996,7 +995,6 @@
       "5351",
       "5386",
       "5439",
-      "5443",
       "5464",
       "5475",
       "5483",
@@ -1080,6 +1078,12 @@
     ]
   },
   "fundamentalQualityRejected": [
+    {
+      "code": "1102",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
     {
       "code": "2006",
       "failures": [
@@ -1195,6 +1199,12 @@
     },
     {
       "code": "5314",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "5443",
       "failures": [
         "PROFIT_DETERIORATION"
       ]
