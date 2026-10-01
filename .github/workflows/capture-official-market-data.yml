@@ -35,7 +35,7 @@ permissions:
 
 concurrency:
   group: official-market-data-${{ github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'push' }}
+  cancel-in-progress: false
 
 jobs:
   capture:
@@ -51,9 +51,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Cache official PDF text reader packages
+        uses: actions/cache@v4
+        with:
+          path: /var/cache/apt/archives
+          key: apt-pdf-reader-${{ runner.os }}-v1
       - name: Install official PDF text reader
-        run: sudo apt-get update -qq && sudo apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-chi-tra
+        run: |
+          command -v pdftotext >/dev/null && command -v tesseract >/dev/null || {
+            sudo apt-get update -qq
+            sudo apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-chi-tra
+          }
       - name: Test recovery and screening rules
+        if: ${{ inputs.financial_continuation == '' || inputs.financial_continuation == '0' }}
         run: node --test scripts/*.test.mjs
       - name: Autonomous capture, evidence, screening and atomic publication
         env:
