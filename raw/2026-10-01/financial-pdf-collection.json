@@ -2393,10 +2393,56 @@
       "checkedDate": "2026-10-01",
       "checkedAt": "2026-10-01T15:04:12.272Z",
       "nextRetryAt": "2026-10-02T15:04:12.272Z"
+    },
+    "4739|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T15:52:37.947Z"
+    },
+    "2646|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "FILING_INDEX",
+      "reason": "FILING_VERSION_UNVERIFIED",
+      "attempts": 1,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T15:52:43.756Z",
+      "nextRetryAt": "2026-10-02T15:52:43.756Z"
+    },
+    "6133|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "FILING_INDEX",
+      "reason": "fetch failed",
+      "attempts": 1,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T15:53:14.754Z",
+      "nextRetryAt": "2026-10-01T15:58:14.754Z"
+    },
+    "3289|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_DOWNLOAD",
+      "reason": "fetch failed",
+      "attempts": 1,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T15:54:12.631Z",
+      "nextRetryAt": "2026-10-01T15:59:12.631Z"
+    },
+    "8436|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T15:56:07.360Z",
+      "nextRetryAt": "2026-10-01T16:01:07.360Z"
     }
   },
-  "remaining": 467,
-  "ready": 439,
+  "remaining": 466,
+  "ready": 438,
   "continuationNeeded": true,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [

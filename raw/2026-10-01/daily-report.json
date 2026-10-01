@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-01",
-  "revision": "2026-10-01-230448",
+  "revision": "2026-10-01-235651",
   "strategyVersion": "entry-dual-track-v2.2",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
   "researchComplete": false,
   "evidencePending": {
     "history": 13,
-    "fundamental": 456,
+    "fundamental": 455,
     "credit": 159
   },
   "fundamentalQualityRejected": [
@@ -166,6 +166,12 @@
     },
     {
       "code": "3704",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "4739",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
@@ -533,7 +539,7 @@
     ],
     "eligibleRanked": 0
   },
-  "conclusion": "2026-10-01全市場 2303 檔已完成初步篩選（普通股 1949、ETF 354），深度檢查 615 檔。普通股信用資料已核對 384/543 檔。仍待核對：歷史行情 13檔、財務證據 456檔、融資融券等信用資料 159檔。研究尚未完成。財務證據完整但品質未通過 53 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-10-01全市場 2303 檔已完成初步篩選（普通股 1949、ETF 354），深度檢查 615 檔。普通股信用資料已核對 384/543 檔。仍待核對：歷史行情 13檔、財務證據 455檔、融資融券等信用資料 159檔。研究尚未完成。財務證據完整但品質未通過 54 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [],
   "core": [
     {
@@ -676,5 +682,5 @@
     }
   ],
   "validation": "AWAITING_CI",
-  "inputFingerprint": "65611f44da0d0279371eee7b88e178177737dc4f15fbaef10da6277e32711e3f"
+  "inputFingerprint": "a9c57ba1a996c0a0b3919a240bb2ff95f5cd0ef092c5394109b59e03cbf8e9d9"
 }
