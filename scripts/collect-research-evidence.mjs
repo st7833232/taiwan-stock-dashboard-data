@@ -119,7 +119,7 @@ async function captureHistoricalComparativeIncome(root,captures,old,target,now){
 async function captureHistoricalXbrlDiagnostic(root,captures,target,now){
   const latest=latestFinancialPeriod(root,captures);if(!latest)return [];
   const year=latest.year-1,quarter=latest.quarter,id=`mops-xbrl-bulk-${year}Q${quarter}`;
-  const url=`https://mops.twse.com.tw/mops/server-java/FileDownLoad?step=9&fileName=tifrs-${year}Q${quarter}.zip&filePath=/home/html/nas/ifrs/${year}/`;
+  const url=`https://mops.twse.com.tw/server-java/FileDownLoad?step=9&fileName=tifrs-${year}Q${quarter}.zip&filePath=/home/html/nas/ifrs/${year}/`;
   const zip=`/tmp/tifrs-${year}Q${quarter}.zip`;
   try{
     const response=await fetch(url,{headers:{'user-agent':'Mozilla/5.0','accept':'application/zip,*/*'},signal:AbortSignal.timeout(60000)});
