@@ -7,6 +7,7 @@ import {completionCurrent,recoveryTargets,isFutureAfterCloseTarget,runPipeline,r
 import {inputFingerprint} from './screen-market.mjs';
 import {discoverEvidenceSources,discoverCoverageSources,archiveUsable} from './collect-research-evidence.mjs';
 import {tdccWeeks,officialDate,evidenceSummary} from './research-evidence.mjs';
+import {recoveryDecision} from './continue-pipeline-recovery.mjs';
 
 test('partial checkpoint never stops automated evidence recovery',()=>{
   const config={version:'v2'},input={targetDate:'2026-09-29',universe:[],deepDive:[]};
@@ -143,4 +144,12 @@ test('pending-only recovery reuses PASS daily capture and skips completed histor
     assert.equal(calls.includes('scripts/collect-financial-pdfs.mjs'),true);
     assert.equal(calls.includes('scripts/collect-research-evidence.mjs'),true);
   }finally{process.chdir(original);if(targetEnv===undefined)delete process.env.TARGET_DATE;else process.env.TARGET_DATE=targetEnv;fs.rmSync(tmp,{recursive:true,force:true});}
+});
+
+test('self-healing retries pending evidence and transient failures but stops on completion or breaker',()=>{
+  assert.deepEqual(recoveryDecision({report:{researchComplete:false,validation:{status:'PASS'}},status:{},count:0}),{dispatch:true,reason:'EVIDENCE_PENDING'});
+  assert.deepEqual(recoveryDecision({report:{researchComplete:false},status:{error:'GitHub POST git/blobs: HTTP 502'},count:3}),{dispatch:true,reason:'RECOVERABLE_FAILURE'});
+  assert.deepEqual(recoveryDecision({report:{researchComplete:true,validation:{status:'PASS'}},status:{},count:3}),{dispatch:false,reason:'COMPLETE'});
+  assert.deepEqual(recoveryDecision({report:{researchComplete:false},status:{error:'logic invariant violated'},count:3}),{dispatch:false,reason:'NON_RECOVERABLE_FAILURE'});
+  assert.deepEqual(recoveryDecision({report:{researchComplete:false,validation:{status:'PASS'}},status:{},count:12}),{dispatch:false,reason:'RECOVERY_LIMIT'});
 });
