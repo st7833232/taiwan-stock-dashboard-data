@@ -3,7 +3,7 @@
   "researchComplete": false,
   "counts": {
     "history": 13,
-    "fundamental": 471,
+    "fundamental": 466,
     "credit": 159
   },
   "pending": {
@@ -111,7 +111,6 @@
       "2401",
       "2402",
       "2404",
-      "2406",
       "2408",
       "2412",
       "2413",
@@ -119,7 +118,6 @@
       "2426",
       "2428",
       "2436",
-      "2439",
       "2441",
       "2449",
       "2451",
@@ -176,7 +174,6 @@
       "2892",
       "2897",
       "2912",
-      "2915",
       "3005",
       "3006",
       "3008",
@@ -286,7 +283,6 @@
       "6415",
       "6426",
       "6442",
-      "6443",
       "6446",
       "6449",
       "6451",
@@ -304,7 +300,6 @@
       "6691",
       "6706",
       "6715",
-      "6719",
       "6753",
       "6770",
       "6781",
@@ -731,6 +726,12 @@
       ]
     },
     {
+      "code": "2406",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "2409",
       "failures": [
         "PROFIT_QUALITY_FAILED",
@@ -748,6 +749,12 @@
       "code": "2618",
       "failures": [
         "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2915",
+      "failures": [
+        "REVENUE_DETERIORATION"
       ]
     },
     {
@@ -832,9 +839,23 @@
       ]
     },
     {
+      "code": "6443",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
       "code": "6505",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6719",
+      "failures": [
+        "REVENUE_DETERIORATION"
       ]
     },
     {
