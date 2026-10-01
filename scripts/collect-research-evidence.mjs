@@ -77,30 +77,34 @@ function latestFinancialPeriod(root,captures){
 async function captureHistoricalComparativeIncome(root,captures,old,target,now){
   const latest=latestFinancialPeriod(root,captures);if(!latest)return [];
   const year=latest.year-1,quarter=latest.quarter,rocYear=year-1911,season=String(quarter).padStart(2,'0');
-  const stocks=latestDeepDiveStocks(target),urls=['https://mops.twse.com.tw/mops/web/ajax_t163sb04','https://mopsov.twse.com.tw/mops/web/ajax_t163sb04'];
-  const out=[];
-  for(const [market,typek] of [['TWSE','sii'],['TPEx','otc']]){
+  const stocks=latestDeepDiveStocks(target),url='https://mopsov.twse.com.tw/mops/web/ajax_t164sb04',out=[];
+  for(const market of ['TWSE','TPEx']){
     const id=`mops-historical-income-${market.toLowerCase()}-${year}Q${quarter}`,file=`${root}/${id}.raw.txt`,prior=old?.captures?.find(c=>c.id===id);
-    if(archiveUsable(prior,target)&&fs.existsSync(file)){out.push({...prior,preservedTargetArchive:true});continue;}
-    const wanted=new Set(stocks.filter(r=>r.market===market).map(r=>r.code));
-    const body=new URLSearchParams({encodeURIComponent:'1',step:'1',firstin:'1',off:'1',TYPEK:typek,year:String(rocYear),season}).toString();
-    let lastError=null,usedUrl=null,rows=null;
-    for(const url of urls){
+    const wanted=[...new Set(stocks.filter(r=>r.market===market).map(r=>r.code))];
+    const existingRows=Array.isArray(read(file))?read(file):[];
+    const existing=new Map(existingRows.map(row=>[String(row['公司代號']),row]));
+    if(archiveUsable(prior,target)&&fs.existsSync(file)&&!(prior.failedCodes?.length)){out.push({...prior,preservedTargetArchive:true});continue;}
+    const todo=wanted.filter(code=>!existing.has(code)),failures=[];
+    const fetchOne=async code=>{
+      let html='';
       try{
-        const response=await fetch(url,{method:'POST',redirect:'follow',headers:{'content-type':'application/x-www-form-urlencoded','user-agent':'taiwan-stock-dashboard-data/official-mops-history','accept':'text/html,*/*'},body,signal:AbortSignal.timeout(60000)});
+        const body=new URLSearchParams({encodeURIComponent:'1',step:'1',firstin:'1',off:'1',keyword4:'',code1:'',TYPEK2:'',checkbtn:'',queryName:'co_id',inpuType:'co_id',TYPEK:'all',isnew:'false',co_id:code,year:String(rocYear),season}).toString();
+        const response=await fetch(url,{method:'POST',redirect:'follow',headers:{'content-type':'application/x-www-form-urlencoded','user-agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36','referer':'https://mopsov.twse.com.tw/mops/web/t164sb04','accept':'text/html,*/*'},body,signal:AbortSignal.timeout(12000)});
         if(!response.ok)throw Error(`HTTP ${response.status}`);
-        const html=await response.text(),allRows=parseMopsHistoricalIncomeHtml(html,{year,quarter});
-        const selected=allRows.filter(row=>wanted.has(String(row['公司代號'])));
-        if(!selected.length)throw Error('No requested deep-dive comparative rows in official MOPS aggregate');
-        rows=selected;usedUrl=url;break;
-      }catch(error){lastError=error;}
-    }
-    if(rows){
-      const covered=new Set(rows.map(row=>String(row['公司代號']))),missing=[...wanted].filter(code=>!covered.has(code));
+        html=await response.text();
+        const row=parseMopsCompanyHistoricalIncomeHtml(html,{code,year,quarter});existing.set(code,row);return true;
+      }catch(error){
+        failures.push({code,error:String(error.message),responsePreview:html.slice(0,240).replace(/\s+/g,' ')||undefined});
+        return false;
+      }
+    };
+    for(let i=0;i<todo.length;i+=12)await Promise.all(todo.slice(i,i+12).map(fetchOne));
+    const rows=wanted.map(code=>existing.get(code)).filter(Boolean),failedCodes=wanted.filter(code=>!existing.has(code));
+    if(rows.length){
       fs.writeFileSync(file,JSON.stringify(rows)+'\n');
-      out.push({id,market,kind:'income',historicalFinancial:true,historicalArchiveSafe:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url:usedUrl,summary:`MOPS ${year}Q${quarter} 綜合損益彙總表（deep-dive comparative）`,status:'CAPTURED',capturedAt:now.toISOString(),rows:rows.length,requestedCodes:wanted.size,failedCodes:missing,sourceMarket:typek});
+      out.push({id,market,kind:'income',historicalFinancial:true,historicalArchiveSafe:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,summary:`MOPSOV ${year}Q${quarter} 單一公司綜合損益表（deep-dive comparative）`,status:'CAPTURED',capturedAt:now.toISOString(),rows:rows.length,requestedCodes:wanted.length,failedCodes,failures:failures.slice(0,20)});
     }else{
-      out.push({id,market,kind:'income',historicalFinancial:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url:urls.join(' | '),status:'VERIFY_FAILED',error:String(lastError?.message??'No usable MOPS aggregate response'),requestedCodes:wanted.size});
+      out.push({id,market,kind:'income',historicalFinancial:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,status:'VERIFY_FAILED',error:'No company historical income rows captured from MOPSOV',requestedCodes:wanted.length,failedCodes:wanted,failures:failures.slice(0,20)});
     }
   }
   return out;
