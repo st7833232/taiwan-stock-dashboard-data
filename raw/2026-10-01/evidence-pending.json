@@ -3,7 +3,7 @@
   "researchComplete": false,
   "counts": {
     "history": 13,
-    "fundamental": 480,
+    "fundamental": 479,
     "credit": 159
   },
   "pending": {
@@ -357,7 +357,6 @@
       "9105",
       "9910",
       "9914",
-      "9921",
       "9933",
       "9939",
       "9941",
@@ -837,6 +836,13 @@
       "code": "9904",
       "failures": [
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "9921",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
       ]
     },
     {
