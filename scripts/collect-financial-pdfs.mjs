@@ -106,7 +106,7 @@ export async function collectFinancialPdfs(target){
  const root=`raw/${target}`,input=read(`${root}/research-input.json`),reports=read('history/reviewed-financial-reports.json')??[],state=read('history/financial-pdf-collection.json')??{},periods=new Map();
  if(!input)throw Error('Research input missing');
  for(const c of read(`${root}/financial-evidence-captures.json`)?.captures??[])if(c.kind==='income'&&c.status==='CAPTURED'&&!c.historicalFinancial)for(const row of read(`${root}/${c.id}.raw.txt`)??[]){const n=normalizeFinancial(row,'income',c.url);if(n&&n.periodEnd<=target&&(!periods.has(n.code)||periods.get(n.code).periodEnd<n.periodEnd))periods.set(n.code,n);}
- const now=new Date(),today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei'}).format(now),deadline=Date.now()+5*60*1000;
+ const now=new Date(),today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei'}).format(now),deadline=Date.now()+5*60*1000,requestSpacingMs=Number(process.env.FINANCIAL_REQUEST_SPACING_MS||1500);
  const stocks=input.deepDive.filter(r=>(r.assetType??r.current?.assetType)==='STOCK'),rows=stocks.filter(r=>periods.has(r.code)).map(r=>({...r,key:`${r.code}|${periods.get(r.code).periodEnd}`})),admitted=new Set();
  const admit=()=>{for(const r of rows){const current=periods.get(r.code);if(state[r.key]?.checkedDate===today&&state[r.key]?.parserVersion===2&&reports.some(p=>{const n=reviewedFinancialReport(p,target);return n?.code===r.code&&n.periodEnd===`${Number(current.periodEnd.slice(0,4))-1}${current.periodEnd.slice(4)}`&&n.profitBasis===current.profitBasis;}))admitted.add(r.key);}};
  admit();const queue=financialQueue(rows,state,now,admitted);let rateLimited=false;
@@ -142,7 +142,7 @@ export async function collectFinancialPdfs(target){
    state[r.key]={status:'UNVERIFIED',parserVersion:2,stage,reason:e.message,attempts,checkedDate:today,checkedAt:new Date().toISOString(),nextRetryAt:new Date(Date.now()+(transient?Math.min(300000*2**(attempts-1),86400000):86400000)).toISOString()};
    if(e.message==='OFFICIAL_RATE_LIMITED'){rateLimited=true;save('history/financial-pdf-collection.json',state);break;}
   }
-  save('history/financial-pdf-collection.json',state);await new Promise(resolve=>setTimeout(resolve,5000));
+  save('history/financial-pdf-collection.json',state);await new Promise(resolve=>setTimeout(resolve,requestSpacingMs));
  }
  admit();const ready=financialQueue(rows,state,new Date(),admitted);
  save(`${root}/financial-pdf-collection.json`,{targetDate:target,results:state,remaining:rows.filter(r=>!admitted.has(r.key)).length,ready:ready.length,continuationNeeded:!rateLimited&&ready.length>0,rateLimited,missingCurrentPeriodCodes:stocks.filter(r=>!periods.has(r.code)).map(r=>r.code)});
