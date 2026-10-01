@@ -77,24 +77,30 @@ function latestFinancialPeriod(root,captures){
 async function captureHistoricalComparativeIncome(root,captures,old,target,now){
   const latest=latestFinancialPeriod(root,captures);if(!latest)return [];
   const year=latest.year-1,quarter=latest.quarter,rocYear=year-1911,season=String(quarter).padStart(2,'0');
-  const stocks=latestDeepDiveStocks(target),url='https://mopsov.twse.com.tw/mops/web/ajax_t163sb04';
+  const stocks=latestDeepDiveStocks(target),urls=['https://mops.twse.com.tw/mops/web/ajax_t163sb04','https://mopsov.twse.com.tw/mops/web/ajax_t163sb04'];
   const out=[];
   for(const [market,typek] of [['TWSE','sii'],['TPEx','otc']]){
     const id=`mops-historical-income-${market.toLowerCase()}-${year}Q${quarter}`,file=`${root}/${id}.raw.txt`,prior=old?.captures?.find(c=>c.id===id);
     if(archiveUsable(prior,target)&&fs.existsSync(file)){out.push({...prior,preservedTargetArchive:true});continue;}
     const wanted=new Set(stocks.filter(r=>r.market===market).map(r=>r.code));
-    try{
-      const body=new URLSearchParams({encodeURIComponent:'1',step:'1',firstin:'1',off:'1',TYPEK:typek,year:String(rocYear),season}).toString();
-      const response=await fetch(url,{method:'POST',redirect:'follow',headers:{'content-type':'application/x-www-form-urlencoded','user-agent':'taiwan-stock-dashboard-data/official-mops-history','accept':'text/html,*/*'},body,signal:AbortSignal.timeout(30000)});
-      if(!response.ok)throw Error(`HTTP ${response.status}`);
-      const html=await response.text(),allRows=parseMopsHistoricalIncomeHtml(html,{year,quarter});
-      const rows=allRows.filter(row=>wanted.has(String(row['公司代號'])));
-      if(!rows.length)throw Error('No requested deep-dive comparative rows in official MOPS aggregate');
+    const body=new URLSearchParams({encodeURIComponent:'1',step:'1',firstin:'1',off:'1',TYPEK:typek,year:String(rocYear),season}).toString();
+    let lastError=null,usedUrl=null,rows=null;
+    for(const url of urls){
+      try{
+        const response=await fetch(url,{method:'POST',redirect:'follow',headers:{'content-type':'application/x-www-form-urlencoded','user-agent':'taiwan-stock-dashboard-data/official-mops-history','accept':'text/html,*/*'},body,signal:AbortSignal.timeout(60000)});
+        if(!response.ok)throw Error(`HTTP ${response.status}`);
+        const html=await response.text(),allRows=parseMopsHistoricalIncomeHtml(html,{year,quarter});
+        const selected=allRows.filter(row=>wanted.has(String(row['公司代號'])));
+        if(!selected.length)throw Error('No requested deep-dive comparative rows in official MOPS aggregate');
+        rows=selected;usedUrl=url;break;
+      }catch(error){lastError=error;}
+    }
+    if(rows){
       const covered=new Set(rows.map(row=>String(row['公司代號']))),missing=[...wanted].filter(code=>!covered.has(code));
       fs.writeFileSync(file,JSON.stringify(rows)+'\n');
-      out.push({id,market,kind:'income',historicalFinancial:true,historicalArchiveSafe:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,summary:`MOPSOV ${year}Q${quarter} 綜合損益彙總表（deep-dive comparative）`,status:'CAPTURED',capturedAt:now.toISOString(),rows:rows.length,requestedCodes:wanted.size,failedCodes:missing,sourceMarket:typek});
-    }catch(error){
-      out.push({id,market,kind:'income',historicalFinancial:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,status:'VERIFY_FAILED',error:String(error.message),requestedCodes:wanted.size});
+      out.push({id,market,kind:'income',historicalFinancial:true,historicalArchiveSafe:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url:usedUrl,summary:`MOPS ${year}Q${quarter} 綜合損益彙總表（deep-dive comparative）`,status:'CAPTURED',capturedAt:now.toISOString(),rows:rows.length,requestedCodes:wanted.size,failedCodes:missing,sourceMarket:typek});
+    }else{
+      out.push({id,market,kind:'income',historicalFinancial:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url:urls.join(' | '),status:'VERIFY_FAILED',error:String(lastError?.message??'No usable MOPS aggregate response'),requestedCodes:wanted.size});
     }
   }
   return out;
@@ -206,11 +212,11 @@ export function archiveUsable(meta,target) {
 export function shouldReuseTargetArchive(meta,target,{fileExists,historical,fresh}) {
   return Boolean(fileExists && archiveUsable(meta,target) && (historical || fresh));
 }
-export async function collect(target,{now=new Date()}={}) {
+export async function collect(target,{now=new Date(),skipHistoricalComparative=false}={}) {
   const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei'}).format(now);
   // Archive today's quarterly and event evidence even during yesterday's recovery.
   // Historical enrichment still excludes anything captured after its cutoff.
-  if(target!==today)await collect(today,{now});
+  if(target!==today)await collect(today,{now,skipHistoricalComparative:true});
   const root=`raw/${target}`;fs.mkdirSync(root,{recursive:true});
   const config=read('strategy-config.json');
   const old=read(`${root}/financial-evidence-captures.json`),captures=[];
@@ -263,7 +269,7 @@ export async function collect(target,{now=new Date()}={}) {
   // Fixed-period prior-year comparative statements are historical facts whose period end predates target.
   // They may be retrieved from the official MOPS historical-report endpoint during a replay, but are kept
   // separate from latest-only feeds and are only admitted downstream when periodEnd < target.
-  captures.push(...await captureHistoricalComparativeIncome(root,captures,old,target,now));
+  if(!skipHistoricalComparative)captures.push(...await captureHistoricalComparativeIncome(root,captures,old,target,now));
   if(target===today)captures.push(...await captureHistoricalXbrlDiagnostic(root,captures,target,now));
   write(`${root}/financial-evidence-captures.json`,{targetDate:target,captures});
   console.log(JSON.stringify({stage:'FINANCIAL_EVIDENCE_CAPTURE',targetDate:target,captured:captures.filter(c=>c.status==='CAPTURED').length,unverified:captures.filter(c=>c.status!=='CAPTURED').length}));
