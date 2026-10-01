@@ -83,22 +83,30 @@ async function captureHistoricalComparativeIncome(root,captures,old,target,now){
     const wanted=[...new Set(stocks.filter(r=>r.market===market).map(r=>r.code))];
     const existingRows=Array.isArray(read(file))?read(file):[];
     const existing=new Map(existingRows.map(row=>[String(row['公司代號']),row]));
-    if(archiveUsable(prior,target)&&fs.existsSync(file)&&!(prior.failedCodes?.length)){out.push({...prior,preservedTargetArchive:true});continue;}
+    if(fs.existsSync(file)&&!(prior?.failedCodes?.length)&&(archiveUsable(prior,target)||(prior?.historicalArchiveSafe===true&&prior?.periodEnd<target))){out.push({...prior,preservedTargetArchive:true});continue;}
     const todo=wanted.filter(code=>!existing.has(code)),failures=[];
+    const typek=market==='TWSE'?'sii':'otc';
     const fetchOne=async code=>{
-      let html='';
-      try{
-        const body=new URLSearchParams({encodeURIComponent:'1',step:'1',firstin:'1',off:'1',keyword4:'',code1:'',TYPEK2:'',checkbtn:'',queryName:'co_id',inpuType:'co_id',TYPEK:'all',isnew:'false',co_id:code,year:String(rocYear),season}).toString();
-        const response=await fetch(url,{method:'POST',redirect:'follow',headers:{'content-type':'application/x-www-form-urlencoded','user-agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36','referer':'https://mopsov.twse.com.tw/mops/web/t164sb04','accept':'text/html,*/*'},body,signal:AbortSignal.timeout(12000)});
-        if(!response.ok)throw Error(`HTTP ${response.status}`);
-        html=await response.text();
-        const row=parseMopsCompanyHistoricalIncomeHtml(html,{code,year,quarter});existing.set(code,row);return true;
-      }catch(error){
-        failures.push({code,error:String(error.message),responsePreview:html.slice(0,240).replace(/\s+/g,' ')||undefined});
-        return false;
+      let html='',lastError=null;
+      for(let attempt=1;attempt<=3;attempt++){
+        try{
+          const body=new URLSearchParams({encodeURIComponent:'1',step:'1',firstin:'1',off:'1',keyword4:'',code1:'',TYPEK2:'',checkbtn:'',queryName:'co_id',inpuType:'co_id',TYPEK:typek,isnew:'false',co_id:code,year:String(rocYear),season}).toString();
+          const response=await fetch(url,{method:'POST',redirect:'follow',headers:{'content-type':'application/x-www-form-urlencoded','user-agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36','referer':'https://mopsov.twse.com.tw/mops/web/t164sb04','accept':'text/html,*/*'},body,signal:AbortSignal.timeout(15000)});
+          if(!response.ok)throw Error(`HTTP ${response.status}${response.headers.get('location')?` -> ${response.headers.get('location')}`:''}`);
+          html=await response.text();
+          const row=parseMopsCompanyHistoricalIncomeHtml(html,{code,year,quarter});existing.set(code,row);return true;
+        }catch(error){
+          lastError=error;
+          if(attempt<3)await new Promise(resolve=>setTimeout(resolve,700*attempt));
+        }
       }
+      failures.push({code,error:String(lastError?.message??'unknown'),responsePreview:html.slice(0,240).replace(/\s+/g,' ')||undefined});
+      return false;
     };
-    for(let i=0;i<todo.length;i+=12)await Promise.all(todo.slice(i,i+12).map(fetchOne));
+    for(let i=0;i<todo.length;i+=3){
+      await Promise.all(todo.slice(i,i+3).map(fetchOne));
+      if(i+3<todo.length)await new Promise(resolve=>setTimeout(resolve,350));
+    }
     const rows=wanted.map(code=>existing.get(code)).filter(Boolean),failedCodes=wanted.filter(code=>!existing.has(code));
     if(rows.length){
       fs.writeFileSync(file,JSON.stringify(rows)+'\n');
