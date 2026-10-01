@@ -564,7 +564,7 @@
       "periodEnd": "2025-06-30",
       "url": "https://mopsov.twse.com.tw/mops/web/ajax_t164sb04",
       "summary": "MOPSOV 2025Q2 單一公司綜合損益表（deep-dive comparative）",
-      "status": "CAPTURED",
+      "status": "NOT_CAPTURED_RETROSPECTIVE",
       "capturedAt": "2026-10-01T02:36:37.442Z",
       "rows": 73,
       "requestedCodes": 385,
@@ -980,7 +980,8 @@
           "code": "2812",
           "error": "HTTP 307"
         }
-      ]
+      ],
+      "note": "No admissible point-in-time comparative archive; current retrieval cannot establish historical availability."
     },
     {
       "id": "mops-historical-income-tpex-2025Q2",
@@ -989,7 +990,7 @@
       "historicalFinancial": true,
       "periodEnd": "2025-06-30",
       "url": "https://mopsov.twse.com.tw/mops/web/ajax_t164sb04",
-      "status": "VERIFY_FAILED",
+      "status": "NOT_CAPTURED_RETROSPECTIVE",
       "error": "No company historical income rows captured from MOPSOV",
       "requestedCodes": 155,
       "failedCodes": [
@@ -1230,7 +1231,8 @@
           "code": "5904",
           "error": "HTTP 307"
         }
-      ]
+      ],
+      "note": "No admissible point-in-time comparative archive; current retrieval cannot establish historical availability."
     }
   ]
 }
