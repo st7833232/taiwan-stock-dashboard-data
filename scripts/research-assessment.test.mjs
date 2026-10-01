@@ -41,7 +41,7 @@ test('MOPS historical income parser accepts only a complete general-industry tab
  const html=`<table><tr><th>公司代號</th><th>公司名稱</th><th>營業收入</th><th>營業毛利（毛損）</th><th>營業利益（損失）</th><th>本期淨利（淨損）</th></tr><tr><td>2409</td><td>友達</td><td>100,000</td><td>20,000</td><td>8,000</td><td>6,000</td></tr></table>`;
  const rows=parseMopsHistoricalIncomeHtml(html,{year:2025,quarter:2});
  assert.deepEqual(rows,[{'公司代號':'2409','公司名稱':'友達','年度':2025,'季別':2,'營業收入':100000,'營業毛利（毛損）':20000,'營業利益（損失）':8000,'本期淨利（淨損）':6000}]);
- assert.throws(()=>parseMopsHistoricalIncomeHtml('<table><tr><th>公司代號</th></tr></table>',{year:2025,quarter:2}),/header missing/);
+ assert.throws(()=>parseMopsHistoricalIncomeHtml('<table><tr><th>公司代號</th></tr></table>',{year:2025,quarter:2}),/no usable company rows/);
 });
 test('historical replay preserves same-target point-in-time evidence even when refresh age expired',()=>{
  const meta={status:'CAPTURED',capturedAt:'2026-09-30T14:00:00Z'};
