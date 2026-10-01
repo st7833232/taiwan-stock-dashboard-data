@@ -44,18 +44,35 @@ export function runPipeline(target=resolveCaptureTargetDate(),{execute=execFileS
     const status={targetDate:day,runId:process.env.GITHUB_RUN_ID??null,runUrl:process.env.GITHUB_RUN_ID?`https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`:null,stage:'CAPTURE',researchComplete:false};
     const save=()=>fs.writeFileSync(`${root}/pipeline-status.json`,JSON.stringify(status,null,2)+'\n');
     try {
-      run('scripts/fetch-official-market-data.mjs',{retry:true});
-      const gate=read(`${root}/gate-matrix.json`);
+      const priorPending=read(`${root}/evidence-pending.json`);
+      let gate=read(`${root}/gate-matrix.json`);
+      const reusableDailyCapture=gate?.overallStatus==='PASS'&&input?.targetDate===day;
+      if(!reusableDailyCapture) {
+        run('scripts/fetch-official-market-data.mjs',{retry:true});
+        gate=read(`${root}/gate-matrix.json`);
+      } else {
+        console.log(`PENDING_ONLY ${day}: reuse PASS daily capture`);
+      }
       if(gate?.overallStatus!=='PASS') {
         run('scripts/check-daily-publication.mjs');status.stage='WAITING_OFFICIAL_VERIFICATION';status.gateStatus=gate?.overallStatus??'VERIFY_FAILED';status.retryPolicy='AUTOMATIC_NEXT_SCHEDULE';save();
         run('scripts/publish-data-atomic.mjs');
         // An old order still lacks official candles. Do not skip ahead and expire it without those candles.
         break;
       }
-      status.stage='INPUT';run('scripts/summarize-official-market-data.mjs');
-      status.stage='HISTORY';run('scripts/backfill-v2-market-history.mjs',{retry:true});
-      status.stage='INPUT';run('scripts/summarize-official-market-data.mjs');
-      status.stage='EVIDENCE';run('scripts/collect-research-evidence.mjs',{retry:true});run('scripts/collect-financial-pdfs.mjs');run('scripts/collect-tdcc-history.mjs',{retry:true});run('scripts/research-evidence.mjs');
+      if(!reusableDailyCapture) {status.stage='INPUT';run('scripts/summarize-official-market-data.mjs');}
+      if(!priorPending||Number(priorPending?.counts?.history??0)>0) {
+        status.stage='HISTORY';run('scripts/backfill-v2-market-history.mjs',{retry:true});
+        status.stage='INPUT';run('scripts/summarize-official-market-data.mjs');
+      } else {
+        console.log(`PENDING_ONLY ${day}: history complete, skip backfill`);
+      }
+      status.stage='EVIDENCE';
+      // Evidence collectors are incremental. Keep financial/credit retries active while pending;
+      // skip TDCC only when the prior checkpoint proves it is already complete.
+      run('scripts/collect-research-evidence.mjs',{retry:true});
+      if(!priorPending||Number(priorPending?.counts?.fundamental??0)>0)run('scripts/collect-financial-pdfs.mjs');
+      if(!priorPending||Number(priorPending?.counts?.tdcc??0)>0)run('scripts/collect-tdcc-history.mjs',{retry:true});
+      run('scripts/research-evidence.mjs');
       run('scripts/check-daily-publication.mjs');
       status.stage='SCREENING';run('scripts/screen-market.mjs');
       status.stage='PREPUBLICATION_VALIDATION';validate(true);run('scripts/check-daily-publication.mjs');
