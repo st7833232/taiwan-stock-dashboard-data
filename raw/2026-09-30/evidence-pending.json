@@ -3,7 +3,7 @@
   "researchComplete": false,
   "counts": {
     "history": 11,
-    "fundamental": 526,
+    "fundamental": 524,
     "institutional": 1,
     "credit": 3
   },
@@ -64,7 +64,6 @@
       "1808",
       "2002",
       "2009",
-      "2027",
       "2030",
       "2049",
       "2059",
@@ -98,7 +97,6 @@
       "2351",
       "2352",
       "2353",
-      "2354",
       "2355",
       "2356",
       "2357",
@@ -561,6 +559,12 @@
   "fundamentalQualityRejected": [
     {
       "code": "2006",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2354",
       "failures": [
         "REVENUE_DETERIORATION"
       ]

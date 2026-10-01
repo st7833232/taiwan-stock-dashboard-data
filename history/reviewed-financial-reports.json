@@ -319,5 +319,51 @@
     "basis": "YEAR_TO_DATE",
     "unit": "TWD_THOUSAND",
     "verificationMethod": "PDF_TEXT_MATCHED_OFFICIAL_PERIOD_TABLE"
+  },
+  {
+    "filename": "202502_2354_AI1.pdf",
+    "uploadedAt": "114/08/11 14:43:49",
+    "archiveKey": "202502_2354_AI1.pdf.631d5f685aac23427b6e6142d2ffce1aca5c0ec171d73f8daee459dcbe367c03",
+    "sha256": "631d5f685aac23427b6e6142d2ffce1aca5c0ec171d73f8daee459dcbe367c03",
+    "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=2354&year=114&seamon=&mtype=A&check2858=Y",
+    "pdfUrl": "https://doc.twse.com.tw/pdf/202502_2354_AI1_20261001_175750.pdf",
+    "row": {
+      "公司代號": "2354",
+      "年度": 2025,
+      "季別": 2,
+      "營業收入": 71224059,
+      "本期淨利（淨損）": 1470471,
+      "淨利（淨損）歸屬於母公司業主": 1493316
+    },
+    "reviewedPages": [
+      8,
+      9
+    ],
+    "basis": "YEAR_TO_DATE",
+    "unit": "TWD_THOUSAND",
+    "verificationMethod": "PDF_TEXT_MATCHED_OFFICIAL_PERIOD_TABLE"
+  },
+  {
+    "filename": "202502_2027_AI1.pdf",
+    "uploadedAt": "114/08/12 17:34:29",
+    "archiveKey": "202502_2027_AI1.pdf.2fe8d72bcbfc1d79bdb151fe7b1608482af182ce0075ea55e837144b542bddbc",
+    "sha256": "2fe8d72bcbfc1d79bdb151fe7b1608482af182ce0075ea55e837144b542bddbc",
+    "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=2027&year=114&seamon=&mtype=A&check2858=Y",
+    "pdfUrl": "https://doc.twse.com.tw/pdf/202502_2027_AI1_20261001_175805.pdf",
+    "row": {
+      "公司代號": "2027",
+      "年度": 2025,
+      "季別": 2,
+      "營業收入": 51499716,
+      "本期淨利（淨損）": 3166712,
+      "淨利（淨損）歸屬於母公司業主": 2509162
+    },
+    "reviewedPages": [
+      6,
+      7
+    ],
+    "basis": "YEAR_TO_DATE",
+    "unit": "TWD_THOUSAND",
+    "verificationMethod": "PDF_TEXT_MATCHED_OFFICIAL_PERIOD_TABLE"
   }
 ]
