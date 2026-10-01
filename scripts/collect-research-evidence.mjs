@@ -82,16 +82,30 @@ async function captureHistoricalComparativeIncome(root,captures,old,target,now){
     if(archiveUsable(prior,target)&&fs.existsSync(file)){out.push({...prior,preservedTargetArchive:true});continue;}
     const marketCodes=stocks.filter(r=>r.market===market).map(r=>r.code);
     const rows=[],failures=[];
-    for(let i=0;i<marketCodes.length;i+=12){
+    const fetchOne=async code=>{
+      let html='';
+      try{
+        const body=new URLSearchParams({encodeURIComponent:'1',step:'1',firstin:'1',off:'1',keyword4:'',code1:'',TYPEK2:'',checkbtn:'',queryName:'co_id',inpuType:'co_id',TYPEK:'all',isnew:'false',co_id:code,year:String(rocYear),season}).toString();
+        const response=await fetch(url,{method:'POST',redirect:'follow',headers:{'content-type':'application/x-www-form-urlencoded','user-agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36',referer:'https://mops.twse.com.tw/mops/web/t164sb04',accept:'text/html,*/*'},body,signal:AbortSignal.timeout(8000)});
+        if(!response.ok)throw Error(`HTTP ${response.status}`);
+        html=await response.text();
+        return parseMopsCompanyHistoricalIncomeHtml(html,{code,year,quarter});
+      }catch(error){
+        failures.push({code,error:String(error.message),responsePreview:html.slice(0,500).replace(/\s+/g,' ')||undefined});
+        return null;
+      }
+    };
+    if(marketCodes.length){
+      const canary=await fetchOne(marketCodes[0]);
+      if(canary)rows.push(canary);
+      else{
+        out.push({id,market,kind:'income',historicalFinancial:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,status:'VERIFY_FAILED',error:'MOPS company historical canary failed',requestedCodes:marketCodes.length,failures:failures.slice(0,3)});
+        continue;
+      }
+    }
+    for(let i=1;i<marketCodes.length;i+=12){
       const chunk=marketCodes.slice(i,i+12);
-      const settled=await Promise.all(chunk.map(async code=>{
-        try{
-          const body=new URLSearchParams({encodeURIComponent:'1',step:'1',firstin:'1',off:'1',keyword4:'',code1:'',TYPEK2:'',checkbtn:'',queryName:'co_id',inpuType:'co_id',TYPEK:'all',isnew:'false',co_id:code,year:String(rocYear),season}).toString();
-          const response=await fetch(url,{method:'POST',redirect:'follow',headers:{'content-type':'application/x-www-form-urlencoded','user-agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36',referer:'https://mops.twse.com.tw/mops/web/t164sb04',accept:'text/html,*/*'},body,signal:AbortSignal.timeout(8000)});
-          if(!response.ok)throw Error(`HTTP ${response.status}`);
-          return parseMopsCompanyHistoricalIncomeHtml(await response.text(),{code,year,quarter});
-        }catch(error){failures.push({code,error:String(error.message)});return null;}
-      }));
+      const settled=await Promise.all(chunk.map(fetchOne));
       rows.push(...settled.filter(Boolean));
     }
     if(rows.length){
