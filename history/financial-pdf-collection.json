@@ -2313,5 +2313,83 @@
     "checkedDate": "2026-10-01",
     "checkedAt": "2026-10-01T14:55:42.422Z",
     "nextRetryAt": "2026-10-01T15:00:42.422Z"
+  },
+  "4541|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "FILING_INDEX",
+    "reason": "FILING_VERSION_UNVERIFIED",
+    "attempts": 1,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T14:59:31.104Z",
+    "nextRetryAt": "2026-10-02T14:59:31.104Z"
+  },
+  "9941|2026-06-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T14:59:43.450Z"
+  },
+  "2233|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "PDF_METRICS",
+    "reason": "PDF_OCR_REVIEW_PENDING",
+    "attempts": 1,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T15:01:24.844Z",
+    "nextRetryAt": "2026-10-01T15:06:24.844Z"
+  },
+  "1215|2026-06-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T15:01:42.315Z"
+  },
+  "2548|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "PDF_DOWNLOAD",
+    "reason": "The operation was aborted due to timeout",
+    "attempts": 1,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T15:02:53.254Z",
+    "nextRetryAt": "2026-10-01T15:07:53.254Z"
+  },
+  "1229|2026-06-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T15:03:23.082Z"
+  },
+  "1808|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "PDF_LINK",
+    "reason": "fetch failed",
+    "attempts": 1,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T15:03:34.126Z",
+    "nextRetryAt": "2026-10-01T15:08:34.126Z"
+  },
+  "6245|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "PDF_LINK",
+    "reason": "fetch failed",
+    "attempts": 1,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T15:04:06.166Z",
+    "nextRetryAt": "2026-10-01T15:09:06.166Z"
+  },
+  "5243|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "stage": "FILING_INDEX",
+    "reason": "FILING_VERSION_UNVERIFIED",
+    "attempts": 1,
+    "checkedDate": "2026-10-01",
+    "checkedAt": "2026-10-01T15:04:12.272Z",
+    "nextRetryAt": "2026-10-02T15:04:12.272Z"
   }
 }

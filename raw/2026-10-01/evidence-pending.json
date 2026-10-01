@@ -3,7 +3,7 @@
   "researchComplete": false,
   "counts": {
     "history": 13,
-    "fundamental": 459,
+    "fundamental": 456,
     "credit": 159
   },
   "pending": {
@@ -23,9 +23,7 @@
       "7828"
     ],
     "fundamental": [
-      "1215",
       "1216",
-      "1229",
       "1301",
       "1303",
       "1314",
@@ -342,7 +340,6 @@
       "9105",
       "9910",
       "9933",
-      "9941",
       "9958",
       "1569",
       "1815",
@@ -653,6 +650,19 @@
       ]
     },
     {
+      "code": "1215",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1229",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
       "code": "1312",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
@@ -889,6 +899,12 @@
       "failures": [
         "REVENUE_DETERIORATION",
         "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "9941",
+      "failures": [
+        "REVENUE_DETERIORATION"
       ]
     },
     {
