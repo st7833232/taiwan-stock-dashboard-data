@@ -4,7 +4,7 @@
   "counts": {
     "history": 13,
     "credit": 543,
-    "fundamental": 513
+    "fundamental": 511
   },
   "pending": {
     "history": [
@@ -704,7 +704,6 @@
       "2548",
       "2603",
       "2605",
-      "2606",
       "2609",
       "2615",
       "2617",
@@ -834,7 +833,6 @@
       "6141",
       "6155",
       "6166",
-      "6168",
       "6176",
       "6177",
       "6191",
@@ -1140,6 +1138,13 @@
       "code": "4961",
       "failures": [
         "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6168",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
       ]
     },
     {
