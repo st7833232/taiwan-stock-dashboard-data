@@ -74,6 +74,9 @@ export function archiveUsable(meta,target) {
   return meta?.status==='CAPTURED' && Number.isFinite(Date.parse(meta.capturedAt))
     && Date.parse(meta.capturedAt)<=Date.parse(`${target}T23:59:59+08:00`);
 }
+export function shouldReuseTargetArchive(meta,target,{fileExists,historical,fresh}) {
+  return Boolean(fileExists && archiveUsable(meta,target) && (historical || fresh));
+}
 export async function collect(target,{now=new Date()}={}) {
   const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei'}).format(now);
   // Archive today's quarterly and event evidence even during yesterday's recovery.
@@ -102,8 +105,11 @@ export async function collect(target,{now=new Date()}={}) {
       await Promise.all(sources.slice(i,i+2).map(async source=>{
         const file=`${root}/${source.id}.raw.txt`,prior=old?.captures?.find(c=>c.id===source.id);
         const financial=['income','balance'].includes(source.kind),fresh=financial||now.getTime()-Date.parse(prior?.capturedAt)<=config.evidenceCollection.sourceRefreshIntervalMs;
-        if(archiveUsable(prior,target) && fs.existsSync(file)&&fresh){captures.push(prior);return;}
-        if(target!==today) {
+        const historical=target!==today,fileExists=fs.existsSync(file);
+        // Historical replays must preserve same-target point-in-time evidence captured before the target cutoff.
+        // Refresh age is relevant only for the live target; a retrospective run cannot safely replace an older daily feed.
+        if(shouldReuseTargetArchive(prior,target,{fileExists,historical,fresh})){captures.push({...prior,preservedTargetArchive:historical||undefined});return;}
+        if(historical) {
           const dates=fs.readdirSync('raw').filter(d=>/^\d{4}-\d{2}-\d{2}$/.test(d)&&d<target).sort().reverse();
           for(const date of dates){const meta=read(`raw/${date}/financial-evidence-captures.json`)?.captures?.find(c=>c.id===source.id);if(archiveUsable(meta,target)&&fs.existsSync(`raw/${date}/${source.id}.raw.txt`)){fs.copyFileSync(`raw/${date}/${source.id}.raw.txt`,file);captures.push({...meta,archiveOrigin:`raw/${date}/${source.id}.raw.txt`});return;}}
           captures.push({...source,status:'NOT_CAPTURED_RETROSPECTIVE',note:'No point-in-time archive; never backfill a historical decision using the current latest report.'});return;
