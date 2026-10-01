@@ -71,7 +71,12 @@ export function enrich(target) {
   for(const row of unique.values()){if(!byCode.has(row.code))byCode.set(row.code,[]);byCode.get(row.code).push(row);}
   const financial=new Map(),financialPeriods=new Map(),events=new Map(),governance=new Map();
   const captures=fs.readdirSync('raw').filter(d=>/^\d{4}-\d{2}-\d{2}$/.test(d)&&d<=target).sort().flatMap(d=>(read(`raw/${d}/financial-evidence-captures.json`)?.captures??[]).map(c=>{const rawRoot=`raw/${d}`;return {...c,rawRoot,rawUsable:Boolean(c.id&&fs.existsSync(`${rawRoot}/${c.id}.raw.txt`))};}));
-  for(const c of captures.filter(c=>c.status==='CAPTURED'&&c.rawUsable&&Date.parse(c.capturedAt)<=Date.parse(`${target}T23:59:59+08:00`))) {
+  for(const c of captures.filter(c=>{
+    if(c.status!=='CAPTURED'||!c.rawUsable)return false;
+    const capturedInTime=Date.parse(c.capturedAt)<=Date.parse(`${target}T23:59:59+08:00`);
+    const fixedHistorical=Boolean(c.historicalFinancial&&c.historicalArchiveSafe&&c.periodEnd&&c.periodEnd<target);
+    return capturedInTime||fixedHistorical;
+  })) {
     if(c.kind==='coverage')continue;
     const evidenceRows=read(`${c.rawRoot}/${c.id}.raw.txt`);
     if(!Array.isArray(evidenceRows))continue;
