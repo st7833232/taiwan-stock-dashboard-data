@@ -26,7 +26,13 @@ function coverageSources(target){
     {id:'twse-ca-parvalue-history',market:'TWSE',kind:'coverage',coverageTags:['historicalPriceAdjustment:parValueChange'],coverageOnly:true,allowEmpty:true,url:`https://www.twse.com.tw/exchangeReport/TWTB8U?response=json&startDate=${startCompact}&endDate=${targetCompact}`,summary:'變更股票面額恢復買賣參考價格'},
     {id:'tpex-ca-exrights-history',market:'TPEx',kind:'coverage',coverageTags:['historicalPriceAdjustment:exRights'],coverageOnly:true,allowEmpty:true,expectedDateRange:{start,end:target},url:`https://www.tpex.org.tw/www/zh-tw/bulletin/exDailyQ?startDate=${encoded(start)}&endDate=${encoded(target)}&response=json`,summary:'上櫃股票除權除息計算結果表（歷史）'},
     {id:'tpex-ca-reduction-reference',market:'TPEx',kind:'coverage',coverageTags:['splitReductionConversion:reduction','historicalPriceAdjustment:reduction'],coverageOnly:true,allowEmpty:true,expectedDateRange:{start,end},url:`https://www.tpex.org.tw/www/zh-tw/bulletin/revivt?startDate=${encoded(start)}&endDate=${encoded(end)}&response=json`,summary:'上櫃減資恢復交易參考價'},
-    {id:'tpex-ca-parvalue-reference',market:'TPEx',kind:'coverage',coverageTags:['splitReductionConversion:parValueChange','historicalPriceAdjustment:parValueChange'],coverageOnly:true,allowEmpty:true,expectedDateRange:{start,end},url:`https://www.tpex.org.tw/www/zh-tw/bulletin/pvChgRslt?startDate=${encoded(start)}&endDate=${encoded(end)}&response=json`,summary:'上櫃變更股票面額恢復買賣參考價'}
+    {id:'tpex-ca-parvalue-reference',market:'TPEx',kind:'coverage',coverageTags:['splitReductionConversion:parValueChange','historicalPriceAdjustment:parValueChange'],coverageOnly:true,allowEmpty:true,expectedDateRange:{start,end},url:`https://www.tpex.org.tw/www/zh-tw/bulletin/pvChgRslt?startDate=${encoded(start)}&endDate=${encoded(end)}&response=json`,summary:'上櫃變更股票面額恢復買賣參考價'},
+    // Verified TPEx OpenAPI fallbacks. These exact endpoints were previously discovered from the official spec
+    // and successfully archived; keep them available when swagger discovery is temporarily unavailable.
+    {id:'tpex-coverage-tpex-spendi-today',market:'TPEx',kind:'coverage',coverageTags:['tradingHalts'],coverageOnly:true,allowEmpty:true,url:'https://www.tpex.org.tw/openapi/v1/tpex_spendi_today',summary:'上櫃當日公布暫停/恢復交易股票'},
+    {id:'tpex-coverage-tpex-spendi-history',market:'TPEx',kind:'coverage',coverageTags:['tradingHalts'],coverageOnly:true,allowEmpty:true,url:'https://www.tpex.org.tw/openapi/v1/tpex_spendi_history',summary:'上櫃歷史公布暫停/恢復交易股票'},
+    {id:'tpex-coverage-mopsfin-t187ap26-O',market:'TPEx',kind:'coverage',coverageTags:['tradingHalts'],coverageOnly:true,allowEmpty:true,url:'https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap26_O',summary:'上櫃公司停止買賣公司'},
+    {id:'tpex-coverage-tpex-exright-prepost',market:'TPEx',kind:'coverage',coverageTags:['exRightsDividends'],coverageOnly:true,allowEmpty:true,url:'https://www.tpex.org.tw/openapi/v1/tpex_exright_prepost',summary:'上櫃股票除權除息預告表'}
   ];
 }
 
@@ -100,7 +106,7 @@ export async function collect(target,{now=new Date()}={}) {
     const staticCoverage=coverageSources(target).filter(s=>s.market===market);
     const discoveredCoverage=market==='TPEx'&&spec?discoverCoverageSources(spec,market,apiRoot):[];
     if(market==='TPEx'&&spec&&!discoveredCoverage.length)captures.push({market,kind:'coverage-discovery',url:swagger,status:'VERIFY_FAILED',error:'No corporate-action coverage endpoints matched the official OpenAPI specification'});
-    sources=[...sources,...staticCoverage,...discoveredCoverage];
+    sources=[...new Map([...sources,...staticCoverage,...discoveredCoverage].map(source=>[source.id,source])).values()];
     for(let i=0;i<sources.length;i+=2) {
       await Promise.all(sources.slice(i,i+2).map(async source=>{
         const file=`${root}/${source.id}.raw.txt`,prior=old?.captures?.find(c=>c.id===source.id);
