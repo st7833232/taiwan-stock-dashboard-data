@@ -554,6 +554,42 @@
       "capturedAt": "2026-09-30T14:00:44.524Z",
       "rows": 37,
       "preservedTargetArchive": true
+    },
+    {
+      "id": "mops-historical-income-twse-2025Q2",
+      "market": "TWSE",
+      "kind": "income",
+      "historicalFinancial": true,
+      "periodEnd": "2025-06-30",
+      "url": "https://mops.twse.com.tw/mops/web/ajax_t164sb04",
+      "status": "VERIFY_FAILED",
+      "error": "MOPS company historical canary failed",
+      "requestedCodes": 385,
+      "failures": [
+        {
+          "code": "2303",
+          "error": "MOPS company historical income: required metrics missing",
+          "responsePreview": "<html> <head> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"> </head> <body> 因為安全性考量，您所執行的頁面無法呈現。<BR> FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED.<BR> <BR> 您可以<A HREF=\"javascript:history.back()\">回上一頁</A>繼續其他動作，或撥打以下電話通報問題：(02)8101-5840, (02)8101-5834。<BR> YOU COULD GO <A HREF=\"javascript:history.back()\">BACK</A> TO PREVIOUS PAGE OR CALL US FOR FURTHER HELP：(02)8101-5840, (02)8101-5834。<BR> <BR> 錯誤代碼：7641438221589305012<BR> <script type=\"application/javascript\"> func"
+        }
+      ]
+    },
+    {
+      "id": "mops-historical-income-tpex-2025Q2",
+      "market": "TPEx",
+      "kind": "income",
+      "historicalFinancial": true,
+      "periodEnd": "2025-06-30",
+      "url": "https://mops.twse.com.tw/mops/web/ajax_t164sb04",
+      "status": "VERIFY_FAILED",
+      "error": "MOPS company historical canary failed",
+      "requestedCodes": 155,
+      "failures": [
+        {
+          "code": "1815",
+          "error": "MOPS company historical income: required metrics missing",
+          "responsePreview": "<html> <head> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"> </head> <body> 因為安全性考量，您所執行的頁面無法呈現。<BR> FOR SECURITY REASONS, THIS PAGE CAN NOT BE ACCESSED.<BR> <BR> 您可以<A HREF=\"javascript:history.back()\">回上一頁</A>繼續其他動作，或撥打以下電話通報問題：(02)8101-5840, (02)8101-5834。<BR> YOU COULD GO <A HREF=\"javascript:history.back()\">BACK</A> TO PREVIOUS PAGE OR CALL US FOR FURTHER HELP：(02)8101-5840, (02)8101-5834。<BR> <BR> 錯誤代碼：7641438221589305896<BR> <script type=\"application/javascript\"> func"
+        }
+      ]
     }
   ]
 }
