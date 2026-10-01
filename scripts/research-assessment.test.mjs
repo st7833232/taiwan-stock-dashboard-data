@@ -5,6 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {normalizeFinancial,financialAssessment,normalizeOfficialEvent,eventAssessment,corporateActionAssessment} from './assess-research-evidence.mjs';
 import {availableWeeks,parseTdccHistory} from './collect-tdcc-history.mjs';
+import {shouldReuseTargetArchive} from './collect-research-evidence.mjs';
 import {enrich,evidenceCoverage} from './research-evidence.mjs';
 
 const policy={requirePriorYearSameQuarter:true,requireGovernanceReview:true,requirePositiveProfit:true,minRevenueYoY:0,minNetProfitYoY:0};
@@ -23,6 +24,13 @@ test('comparative year and actual deterioration are checked before financial per
  assert.equal(assess(income(113)).qualityPass,false);
  const stronger={...income(114),metrics:{...income(114).metrics,revenue:300}};
  assert.equal(assess(stronger).status,'FAIL');assert.ok(assess(stronger).failures.includes('REVENUE_DETERIORATION'));
+});
+test('historical replay preserves same-target point-in-time evidence even when refresh age expired',()=>{
+ const meta={status:'CAPTURED',capturedAt:'2026-09-30T14:00:00Z'};
+ assert.equal(shouldReuseTargetArchive(meta,'2026-09-30',{fileExists:true,historical:true,fresh:false}),true);
+ assert.equal(shouldReuseTargetArchive(meta,'2026-09-30',{fileExists:true,historical:false,fresh:false}),false);
+ assert.equal(shouldReuseTargetArchive(meta,'2026-09-30',{fileExists:false,historical:true,fresh:false}),false);
+ assert.equal(shouldReuseTargetArchive({status:'CAPTURED',capturedAt:'2026-09-30T16:30:00Z'},'2026-09-30',{fileExists:true,historical:true,fresh:false}),false);
 });
 test('official capture metadata becomes market-scoped coverage only when every required part exists',()=>{
  const base={market:'TPEx',kind:'coverage',status:'CAPTURED',capturedAt:'2026-09-30T12:10:00+08:00',rawUsable:true};
