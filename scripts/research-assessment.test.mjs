@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {normalizeFinancial,financialAssessment,normalizeOfficialEvent,eventAssessment,corporateActionAssessment} from './assess-research-evidence.mjs';
 import {availableWeeks,parseTdccHistory} from './collect-tdcc-history.mjs';
-import {shouldReuseTargetArchive} from './collect-research-evidence.mjs';
+import {shouldReuseTargetArchive,parseMopsHistoricalIncomeHtml} from './collect-research-evidence.mjs';
 import {enrich,evidenceCoverage} from './research-evidence.mjs';
 
 const policy={requirePriorYearSameQuarter:true,requireGovernanceReview:true,requirePositiveProfit:true,minRevenueYoY:0,minNetProfitYoY:0};
@@ -24,6 +24,12 @@ test('comparative year and actual deterioration are checked before financial per
  assert.equal(assess(income(113)).qualityPass,false);
  const stronger={...income(114),metrics:{...income(114).metrics,revenue:300}};
  assert.equal(assess(stronger).status,'FAIL');assert.ok(assess(stronger).failures.includes('REVENUE_DETERIORATION'));
+});
+test('MOPS historical income parser accepts only a complete general-industry table',()=>{
+ const html=`<table><tr><th>公司代號</th><th>公司名稱</th><th>營業收入</th><th>營業毛利（毛損）</th><th>營業利益（損失）</th><th>本期淨利（淨損）</th></tr><tr><td>2409</td><td>友達</td><td>100,000</td><td>20,000</td><td>8,000</td><td>6,000</td></tr></table>`;
+ const rows=parseMopsHistoricalIncomeHtml(html,{year:2025,quarter:2});
+ assert.deepEqual(rows,[{'公司代號':'2409','公司名稱':'友達','年度':2025,'季別':2,'營業收入':100000,'營業毛利（毛損）':20000,'營業利益（損失）':8000,'本期淨利（淨損）':6000}]);
+ assert.throws(()=>parseMopsHistoricalIncomeHtml('<table><tr><th>公司代號</th></tr></table>',{year:2025,quarter:2}),/header missing/);
 });
 test('historical replay preserves same-target point-in-time evidence even when refresh age expired',()=>{
  const meta={status:'CAPTURED',capturedAt:'2026-09-30T14:00:00Z'};
