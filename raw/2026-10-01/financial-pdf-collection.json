@@ -2225,10 +2225,70 @@
       "checkedDate": "2026-10-01",
       "checkedAt": "2026-10-01T14:36:07.800Z",
       "nextRetryAt": "2026-10-01T14:41:07.800Z"
+    },
+    "2393|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T14:40:08.529Z"
+    },
+    "4556|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T14:41:47.596Z",
+      "nextRetryAt": "2026-10-01T14:46:47.596Z"
+    },
+    "1773|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T14:42:00.908Z"
+    },
+    "2485|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T14:42:12.650Z"
+    },
+    "3339|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T14:42:21.096Z"
+    },
+    "6532|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 1,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T14:44:10.871Z",
+      "nextRetryAt": "2026-10-02T14:44:10.871Z"
+    },
+    "3305|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T14:44:25.231Z"
+    },
+    "3535|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T14:44:40.447Z",
+      "nextRetryAt": "2026-10-01T14:49:40.447Z"
     }
   },
-  "remaining": 475,
-  "ready": 451,
+  "remaining": 470,
+  "ready": 446,
   "continuationNeeded": true,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [
