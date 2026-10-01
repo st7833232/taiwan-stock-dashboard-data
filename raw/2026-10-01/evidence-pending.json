@@ -4,7 +4,7 @@
   "counts": {
     "history": 13,
     "credit": 543,
-    "fundamental": 515
+    "fundamental": 513
   },
   "pending": {
     "history": [
@@ -706,7 +706,6 @@
       "2605",
       "2606",
       "2609",
-      "2610",
       "2615",
       "2617",
       "2633",
@@ -1072,7 +1071,6 @@
       "8069",
       "8086",
       "8091",
-      "8096",
       "8111",
       "8155",
       "8227",
@@ -1109,6 +1107,12 @@
       "failures": [
         "PROFIT_QUALITY_FAILED",
         "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2610",
+      "failures": [
         "PROFIT_DETERIORATION"
       ]
     },
