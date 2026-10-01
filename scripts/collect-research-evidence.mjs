@@ -123,9 +123,10 @@ async function captureHistoricalXbrlDiagnostic(root,captures,target,now){
   const zip=`/tmp/tifrs-${year}Q${quarter}.zip`;
   try{
     const response=await fetch(url,{headers:{'user-agent':'Mozilla/5.0','accept':'application/zip,*/*'},signal:AbortSignal.timeout(60000)});
-    if(!response.ok)throw Error(`HTTP ${response.status}`);
+    const contentType=response.headers.get('content-type');
     const bytes=Buffer.from(await response.arrayBuffer());
-    if(bytes.length<1000)throw Error('XBRL bulk ZIP too small');
+    if(!response.ok)return [{id,market:'ALL',kind:'xbrl-bulk-diagnostic',historicalFinancial:true,url,status:'VERIFY_FAILED',error:`HTTP ${response.status}`,contentType,bytes:bytes.length,responsePreview:bytes.toString('utf8',0,Math.min(500,bytes.length)).replace(/\s+/g,' ')}];
+    if(bytes.length<1000)return [{id,market:'ALL',kind:'xbrl-bulk-diagnostic',historicalFinancial:true,url,status:'VERIFY_FAILED',error:'XBRL bulk ZIP too small',contentType,bytes:bytes.length,responsePreview:bytes.toString('utf8',0,Math.min(500,bytes.length)).replace(/\s+/g,' ')}];
     fs.writeFileSync(zip,bytes);
     const entries=execFileSync('unzip',['-Z1',zip],{encoding:'utf8',maxBuffer:8*1024*1024}).split(/\r?\n/).filter(Boolean);
     const sample=entries.find(x=>/\.(xbrl|xml|html|htm)$/i.test(x))??entries[0];
