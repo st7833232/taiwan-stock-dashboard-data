@@ -20,7 +20,12 @@ on:
         default: false
         type: boolean
       financial_continuation:
-        description: Internal financial evidence continuation count
+        description: Legacy internal continuation count
+        required: false
+        default: '0'
+        type: string
+      recovery_count:
+        description: Internal bounded self-healing continuation count
         required: false
         default: '0'
         type: string
@@ -63,19 +68,22 @@ jobs:
             sudo apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-chi-tra
           }
       - name: Test recovery and screening rules
-        if: ${{ inputs.financial_continuation == '' || inputs.financial_continuation == '0' }}
+        if: ${{ (inputs.recovery_count == '' || inputs.recovery_count == '0') && (inputs.financial_continuation == '' || inputs.financial_continuation == '0') }}
         run: node --test scripts/*.test.mjs
       - name: Autonomous capture, evidence, screening and atomic publication
+        id: capture
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TARGET_DATE: ${{ inputs.target_date }}
           BACKFILL_V2_HISTORY: ${{ inputs.backfill_history && '1' || '' }}
         run: node scripts/run-daily-pipeline.mjs
-      - name: Continue actionable financial evidence automatically
+      - name: Self-heal incomplete or recoverable pipeline
+        if: always() && !cancelled()
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FINANCIAL_CONTINUATION: ${{ inputs.financial_continuation || '0' }}
-        run: node scripts/continue-financial-evidence.mjs
+          RECOVERY_COUNT: ${{ inputs.recovery_count || inputs.financial_continuation || '0' }}
+          CAPTURE_OUTCOME: ${{ steps.capture.outcome }}
+        run: node scripts/continue-pipeline-recovery.mjs
       - name: Save resumable checkpoint and failure details
         if: always()
         uses: actions/upload-artifact@v4
