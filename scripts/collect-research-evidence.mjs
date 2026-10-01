@@ -9,21 +9,28 @@ const htmlText=x=>String(x??'').replace(/<br\s*\/?\s*>/gi,' ').replace(/<[^>]*>/
 export function parseMopsCompanyHistoricalIncomeHtml(html,{code,year,quarter}) {
   const wanted=new Map([
     ['revenue',new Set(['營業收入合計','營業收入'])],
-    ['netProfit',new Set(['本期淨利（淨損）','本期淨利(淨損)'])]
+    ['netProfit',new Set(['本期淨利（淨損）','本期淨利(淨損)'])],
+    ['parentProfit',new Set(['淨利（淨損）歸屬於母公司業主','淨利（損）歸屬於母公司業主','淨利(淨損)歸屬於母公司業主'])]
   ]), values={};
+  let amountIndex=null;
   for(const m of String(html??'').matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)){
-    const cells=[...m[1].matchAll(/<(?:th|td)\b[^>]*>([\s\S]*?)<\/(?:th|td)>/gi)].map(x=>htmlText(x[1])).filter(Boolean);
-    if(cells.length<2)continue;
+    const cells=[...m[1].matchAll(/<(?:th|td)\b[^>]*>([\s\S]*?)<\/(?:th|td)>/gi)].map(x=>htmlText(x[1]));
+    const cumulative=cells.findIndex(cell=>cell.replace(/\s+/g,'')===`${year-1911}年01月01日至${year-1911}年${String(quarter*3).padStart(2,'0')}月${new Date(Date.UTC(year,quarter*3,0)).getUTCDate()}日`);
+    if(cumulative>=0){
+      const headerCells=[...m[1].matchAll(/<(?:th|td)\b([^>]*)>([\s\S]*?)<\/(?:th|td)>/gi)];
+      amountIndex=headerCells.slice(0,cumulative).reduce((sum,cell)=>sum+Number(cell[1].match(/colspan=['"]?(\d+)/i)?.[1]??1),0);continue;
+    }
+    if(cells.length<2||amountIndex===null)continue;
     const labelIndex=cells.findIndex(cell=>!/^\d+$/.test(cell)&&[...wanted.values()].some(labels=>[...labels].some(x=>x.replace(/\s+/g,'')===cell.replace(/\s+/g,''))));
     if(labelIndex<0)continue;
     const label=cells[labelIndex].replace(/\s+/g,'');
     for(const [key,labels] of wanted)if(values[key]===undefined&&[...labels].some(x=>x.replace(/\s+/g,'')===label)){
-      const n=cells.slice(labelIndex+1).map(compactNumber).find(Number.isFinite);
+      const n=compactNumber(cells[amountIndex]);
       if(Number.isFinite(n))values[key]=n;
     }
   }
   if(!Number.isFinite(values.revenue)||!Number.isFinite(values.netProfit))throw Error('MOPS company historical income: required metrics missing');
-  return {'公司代號':String(code),'年度':year,'季別':quarter,'營業收入':values.revenue,'本期淨利（淨損）':values.netProfit};
+  return {'公司代號':String(code),'年度':year,'季別':quarter,'營業收入':values.revenue,'本期淨利（淨損）':values.netProfit,...(Number.isFinite(values.parentProfit)?{'淨利（淨損）歸屬於母公司業主':values.parentProfit}:{})};
 }
 function latestDeepDiveStocks(target){
   const dirs=fs.readdirSync('raw').filter(d=>/^\d{4}-\d{2}-\d{2}$/.test(d)&&d<=target).sort().reverse();
@@ -81,9 +88,9 @@ async function captureHistoricalComparativeIncome(root,captures,old,target,now){
   for(const market of ['TWSE','TPEx']){
     const id=`mops-historical-income-${market.toLowerCase()}-${year}Q${quarter}`,file=`${root}/${id}.raw.txt`,prior=old?.captures?.find(c=>c.id===id);
     const wanted=[...new Set(stocks.filter(r=>r.market===market).map(r=>r.code))];
-    const existingRows=Array.isArray(read(file))?read(file):[];
+    const existingRows=prior?.parserVersion===2&&archiveUsable(prior,target)&&Array.isArray(read(file))?read(file):[];
     const existing=new Map(existingRows.map(row=>[String(row['公司代號']),row]));
-    if(fs.existsSync(file)&&!(prior?.failedCodes?.length)&&(archiveUsable(prior,target)||(prior?.historicalArchiveSafe===true&&prior?.periodEnd<target))){out.push({...prior,preservedTargetArchive:true});continue;}
+    if(prior?.parserVersion===2&&fs.existsSync(file)&&!(prior?.failedCodes?.length)&&wanted.every(code=>existing.has(code))&&archiveUsable(prior,target)){out.push({...prior,preservedTargetArchive:true});continue;}
     const todo=wanted.filter(code=>!existing.has(code)),failures=[];
     const typek=market==='TWSE'?'sii':'otc';
     const fetchOne=async code=>{
@@ -110,7 +117,7 @@ async function captureHistoricalComparativeIncome(root,captures,old,target,now){
     const rows=wanted.map(code=>existing.get(code)).filter(Boolean),failedCodes=wanted.filter(code=>!existing.has(code));
     if(rows.length){
       fs.writeFileSync(file,JSON.stringify(rows)+'\n');
-      out.push({id,market,kind:'income',historicalFinancial:true,historicalArchiveSafe:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,summary:`MOPSOV ${year}Q${quarter} 單一公司綜合損益表（deep-dive comparative）`,status:'CAPTURED',capturedAt:now.toISOString(),rows:rows.length,requestedCodes:wanted.length,failedCodes,failures:failures.slice(0,20)});
+      out.push({id,market,kind:'income',historicalFinancial:true,parserVersion:2,basis:'YEAR_TO_DATE',periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,summary:`MOPSOV ${year}Q${quarter} 單一公司綜合損益表（deep-dive comparative）`,status:'CAPTURED',capturedAt:new Date().toISOString(),rows:rows.length,requestedCodes:wanted.length,failedCodes,failures:failures.slice(0,20)});
     }else{
       out.push({id,market,kind:'income',historicalFinancial:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,status:'VERIFY_FAILED',error:'No company historical income rows captured from MOPSOV',requestedCodes:wanted.length,failedCodes:wanted,failures:failures.slice(0,20)});
     }
@@ -278,9 +285,7 @@ export async function collect(target,{now=new Date(),skipHistoricalComparative=f
     const discovered=sources.filter(s=>!s.coverageOnly);
     if(discovered.length)write('history/financial-source-catalog.json',{sources:[...catalog.sources.filter(s=>s.market!==market),...discovered]});
   }
-  // Fixed-period prior-year comparative statements are historical facts whose period end predates target.
-  // They may be retrieved from the official MOPS historical-report endpoint during a replay, but are kept
-  // separate from latest-only feeds and are only admitted downstream when periodEnd < target.
+  // Period end alone does not prove publication before a historical decision cutoff.
   if(!skipHistoricalComparative)captures.push(...await captureHistoricalComparativeIncome(root,captures,old,target,now));
   if(target===today)captures.push(...await captureHistoricalXbrlDiagnostic(root,captures,target,now));
   write(`${root}/financial-evidence-captures.json`,{targetDate:target,captures});

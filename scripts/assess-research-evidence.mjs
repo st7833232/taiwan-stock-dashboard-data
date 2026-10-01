@@ -7,15 +7,15 @@ export function normalizeFinancial(row,kind,source) {
   if(!code||!Number.isInteger(year)||!Number.isInteger(quarter)||quarter<1||quarter>4)return null;
   const periodEnd=new Date(Date.UTC(year<1911?year+1911:year,quarter*3,0)).toISOString().slice(0,10);
   const metrics=kind==='income'?{
-    revenue:value(row,['營業收入']),grossProfit:value(row,['營業毛利（毛損）淨額','營業毛利（毛損）']),operatingProfit:value(row,['營業利益（損失）']),netProfit:value(row,['淨利（淨損）歸屬於母公司業主','本期淨利（淨損）']),eps:value(row,['基本每股盈餘（元）'])
-  }:{assets:value(row,['資產總計']),liabilities:value(row,['負債總計']),equity:value(row,['權益總計']),currentAssets:value(row,['流動資產']),currentLiabilities:value(row,['流動負債'])};
-  return {code,periodEnd,quarter,kind,basis:kind==='income'?'YEAR_TO_DATE':'PERIOD_END',extractDate:officialDate(row['出表日期']??row.Date),source,metrics};
+    revenue:value(row,['營業收入']),grossProfit:value(row,['營業毛利（毛損）淨額','營業毛利（毛損）']),operatingProfit:value(row,['營業利益（損失）']),netProfit:value(row,['淨利（淨損）歸屬於母公司業主','淨利（損）歸屬於母公司業主','本期淨利（淨損）','本期稅後淨利（淨損）']),eps:value(row,['基本每股盈餘（元）'])
+  }:{assets:value(row,['資產總計']),liabilities:value(row,['負債總計']),equity:value(row,['權益總計','權益總額']),currentAssets:value(row,['流動資產']),currentLiabilities:value(row,['流動負債'])};
+  return {code,periodEnd,quarter,kind,basis:kind==='income'?'YEAR_TO_DATE':'PERIOD_END',extractDate:officialDate(row['出表日期']??row.Date),source,profitBasis:kind==='income'?(value(row,['淨利（淨損）歸屬於母公司業主','淨利（損）歸屬於母公司業主'])!==null?'PARENT':'TOTAL'):null,metrics};
 }
 export function financialAssessment(current,comparative,policy,{governanceVerified=false,negativeGovernance=false}={}) {
   const income=current?.income,balance=current?.balance,prior=comparative?.income,pending=[];
   if(!income||!balance)pending.push('QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF');
   if(income&&balance&&income.periodEnd!==balance.periodEnd)pending.push('FINANCIAL_PERIOD_CONFLICT');
-  if(policy.requirePriorYearSameQuarter&&(!prior||prior.quarter!==income?.quarter||Number(prior.periodEnd.slice(0,4))!==Number(income?.periodEnd.slice(0,4))-1))pending.push('COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED');
+  if(policy.requirePriorYearSameQuarter&&(!prior||prior.quarter!==income?.quarter||prior.basis!==income?.basis||prior.profitBasis!==income?.profitBasis||Number(prior.periodEnd.slice(0,4))!==Number(income?.periodEnd.slice(0,4))-1))pending.push('COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED');
   if(policy.requireGovernanceReview&&!governanceVerified)pending.push('GOVERNANCE_COVERAGE_NOT_VERIFIED');
   const m=income?.metrics??{},b=balance?.metrics??{},p=prior?.metrics??{};
   const metrics={...m,...b,grossMargin:ratio(m.grossProfit,m.revenue),operatingMargin:ratio(m.operatingProfit,m.revenue),liabilityAssetRatio:ratio(b.liabilities,b.assets),currentRatio:ratio(b.currentAssets,b.currentLiabilities),revenueYoY:ratio(m.revenue,p.revenue)===null?null:m.revenue/p.revenue-1,netProfitYoY:ratio(m.netProfit,p.netProfit)===null?null:m.netProfit/p.netProfit-1};

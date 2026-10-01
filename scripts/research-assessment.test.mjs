@@ -32,9 +32,10 @@ test('fixed-period historical financial archive is distinct from latest-only evi
  assert.equal(meta.historicalArchiveSafe,true);
  assert.equal(meta.historicalFinancial,true);
 });
-test('MOPS company historical income parser skips row index and reads current-period cumulative values',()=>{
- const html='<table><tr><th>4</th><td>營業收入合計</td><td>124594602</td><td>100.00</td><td>98311776</td><td>100.00</td></tr><tr><th>23</th><td>本期淨利（淨損）</td><td>22644071</td><td>18.17</td><td>10322800</td><td>10.50</td></tr></table>';
+test('MOPS company historical income parser selects cumulative rather than single-quarter values',()=>{
+ const html='<table><tr><th>會計項目</th><th colspan="2">114年第2季</th><th colspan="2">113年第2季</th><th colspan="2">114年01月01日至114年06月30日</th><th colspan="2">113年01月01日至113年06月30日</th></tr><tr><td>營業收入合計</td><td>124594602</td><td>100.00</td><td>1</td><td>1</td><td>124594602</td><td>100.00</td><td>98311776</td><td>100.00</td></tr><tr><td>本期淨利（淨損）</td><td>22644071</td><td>18.17</td><td>1</td><td>1</td><td>22644071</td><td>18.17</td><td>10322800</td><td>10.50</td></tr></table>';
  assert.deepEqual(parseMopsCompanyHistoricalIncomeHtml(html,{code:'1101',year:2025,quarter:2}),{'公司代號':'1101','年度':2025,'季別':2,'營業收入':124594602,'本期淨利（淨損）':22644071});
+ assert.throws(()=>parseMopsCompanyHistoricalIncomeHtml(html,{code:'1101',year:2023,quarter:2}),/required metrics missing/);
  assert.throws(()=>parseMopsCompanyHistoricalIncomeHtml('<table></table>',{code:'1101',year:2025,quarter:2}),/required metrics missing/);
 });
 test('MOPS historical income parser accepts only a complete general-industry table',()=>{
@@ -108,6 +109,23 @@ test('official weekly editions accept a holiday-shifted six-day interval without
    const row=JSON.parse(fs.readFileSync(`raw/${d}/research-input.json`)).deepDive[0];
    assert.equal(row.verifiedEvidence.tdcc,d==='2026-09-30');
    if(d==='2026-09-30')assert.equal(row.tdccEvidence.comparisons['1w'].date,'2026-09-18');
+  }
+ }finally{process.chdir(cwd);fs.rmSync(dir,{recursive:true,force:true});}
+});
+
+test('same quarter cannot grant permission with a different cumulative or profit basis',()=>{
+ for(const prior of [{...income(114),basis:'QUARTER_ONLY'},{...income(114),profitBasis:'TOTAL'}])assert.ok(financialAssessment({income:income(115),balance},{income:prior},policy,{governanceVerified:true}).pending.includes('COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED'));
+});
+test('late or obsolete historical captures never authorize a retrospective financial gate',()=>{
+ const cwd=process.cwd(),dir=fs.mkdtempSync(path.join(os.tmpdir(),'financial-cutoff-'));
+ try{
+  process.chdir(dir);fs.mkdirSync('raw/2026-09-30',{recursive:true});
+  fs.writeFileSync('strategy-config.json',JSON.stringify({evidenceCollection:{tdcc:{comparisonOffsets:[1],freshnessCalendarDaysMax:14},financialQuality:policy}}));
+  for(const meta of [{capturedAt:'2026-10-01T01:00:00Z',parserVersion:2},{capturedAt:'2026-09-30T01:00:00Z'}]){
+   fs.writeFileSync('raw/2026-09-30/research-input.json',JSON.stringify({deepDive:[{code:'3005'}]}));
+   fs.writeFileSync('raw/2026-09-30/financial-evidence-captures.json',JSON.stringify({captures:[{id:'prior',kind:'income',status:'CAPTURED',historicalFinancial:true,historicalArchiveSafe:true,periodEnd:'2025-06-30',...meta}]}));
+   fs.writeFileSync('raw/2026-09-30/prior.raw.txt',JSON.stringify([{'公司代號':'3005','年度':114,'季別':2,'營業收入':100,'本期淨利（淨損）':10}]));
+   enrich('2026-09-30');assert.equal(JSON.parse(fs.readFileSync('raw/2026-09-30/research-input.json')).deepDive[0].financialEvidence,null);
   }
  }finally{process.chdir(cwd);fs.rmSync(dir,{recursive:true,force:true});}
 });

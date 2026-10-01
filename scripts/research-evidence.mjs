@@ -74,8 +74,7 @@ export function enrich(target) {
   for(const c of captures.filter(c=>{
     if(c.status!=='CAPTURED'||!c.rawUsable)return false;
     const capturedInTime=Date.parse(c.capturedAt)<=Date.parse(`${target}T23:59:59+08:00`);
-    const fixedHistorical=Boolean(c.historicalFinancial&&c.historicalArchiveSafe&&c.periodEnd&&c.periodEnd<target);
-    return capturedInTime||fixedHistorical;
+    return capturedInTime&&(!c.historicalFinancial||c.parserVersion===2);
   })) {
     if(c.kind==='coverage')continue;
     const evidenceRows=read(`${c.rawRoot}/${c.id}.raw.txt`);
@@ -84,11 +83,8 @@ export function enrich(target) {
       if(c.kind==='events') {const event=normalizeOfficialEvent(row,c.url);if(event&&Date.parse(event.eventTimestamp)<=cutoff){if(!events.has(event.code))events.set(event.code,[]);events.get(event.code).push(event);}continue;}
       if(c.kind==='governance'){const code=String(row['股票代號']??row['公司代號']??row['公司代碼']??row.SecuritiesCompanyCode??'').trim();if(code)governance.set(code,row);continue;}
       if(!['income','balance'].includes(c.kind))continue;
-      const code=String(row['公司代號']??row['公司代碼']??row.SecuritiesCompanyCode??'').trim(),year=num(row['年度']??row.Year),quarter=num(row['季別']??row['季']??row.Season??row.Quarter);
-      if(!code||!year||!Number.isInteger(quarter)||quarter<1||quarter>4)continue;
-      const y=year<1911?year+1911:year,periodEnd=new Date(Date.UTC(y,quarter*3,0)).toISOString().slice(0,10);
-      if(periodEnd>target)continue;
-      const normalized=normalizeFinancial(row,c.kind,c.url);if(!normalized)continue;
+      const normalized=normalizeFinancial(row,c.kind,c.url);if(!normalized||normalized.periodEnd>target||normalized.extractDate>target)continue;
+      const {code,periodEnd}=normalized;
       const key=`${code}|${periodEnd}`,period=financialPeriods.get(key)??{};period[c.kind]=normalized;financialPeriods.set(key,period);
       const data=financial.get(code)??{};
       if(!data[c.kind]||periodEnd>=data[c.kind].periodEnd)data[c.kind]={source:c.url,periodEnd,row,normalized};financial.set(code,data);
