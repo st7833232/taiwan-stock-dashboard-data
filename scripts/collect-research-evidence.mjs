@@ -13,21 +13,23 @@ export function parseMopsCompanyHistoricalIncomeHtml(html,{code,year,quarter}) {
   for(const m of String(html??'').matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)){
     const cells=[...m[1].matchAll(/<(?:th|td)\b[^>]*>([\s\S]*?)<\/(?:th|td)>/gi)].map(x=>htmlText(x[1])).filter(Boolean);
     if(cells.length<2)continue;
-    const label=cells[0].replace(/\s+/g,'');
+    const labelIndex=cells.findIndex(cell=>!/^\d+$/.test(cell)&&[...wanted.values()].some(labels=>[...labels].some(x=>x.replace(/\s+/g,'')===cell.replace(/\s+/g,''))));
+    if(labelIndex<0)continue;
+    const label=cells[labelIndex].replace(/\s+/g,'');
     for(const [key,labels] of wanted)if(values[key]===undefined&&[...labels].some(x=>x.replace(/\s+/g,'')===label)){
-      const n=cells.slice(1).map(compactNumber).find(Number.isFinite);
+      const n=cells.slice(labelIndex+1).map(compactNumber).find(Number.isFinite);
       if(Number.isFinite(n))values[key]=n;
     }
   }
   if(!Number.isFinite(values.revenue)||!Number.isFinite(values.netProfit))throw Error('MOPS company historical income: required metrics missing');
   return {'公司代號':String(code),'年度':year,'季別':quarter,'營業收入':values.revenue,'本期淨利（淨損）':values.netProfit};
 }
-function latestDeepDiveStockCodes(target){
+function latestDeepDiveStocks(target){
   const dirs=fs.readdirSync('raw').filter(d=>/^\d{4}-\d{2}-\d{2}$/.test(d)&&d<=target).sort().reverse();
   for(const date of dirs){
     const input=read(`raw/${date}/research-input.json`);
-    const codes=(input?.deepDive??[]).filter(r=>(r.assetType??r.current?.assetType)==='STOCK').map(r=>String(r.code)).filter(Boolean);
-    if(codes.length)return [...new Set(codes)];
+    const rows=(input?.deepDive??[]).filter(r=>(r.assetType??r.current?.assetType)==='STOCK').map(r=>({code:String(r.code),market:r.current?.market??r.market??null})).filter(r=>r.code&&['TWSE','TPEx'].includes(r.market));
+    if(rows.length)return [...new Map(rows.map(r=>[r.code,r])).values()];
   }
   return [];
 }
@@ -73,12 +75,12 @@ function latestFinancialPeriod(root,captures){
 async function captureHistoricalComparativeIncome(root,captures,old,target,now){
   const latest=latestFinancialPeriod(root,captures);if(!latest)return [];
   const year=latest.year-1,quarter=latest.quarter,rocYear=year-1911,season=String(quarter).padStart(2,'0');
-  const codes=latestDeepDiveStockCodes(target),url='https://mops.twse.com.tw/mops/web/ajax_t164sb04';
+  const stocks=latestDeepDiveStocks(target),url='https://mops.twse.com.tw/mops/web/ajax_t164sb04';
   const out=[];
   for(const market of ['TWSE','TPEx']){
     const id=`mops-historical-income-${market.toLowerCase()}-${year}Q${quarter}`,file=`${root}/${id}.raw.txt`,prior=old?.captures?.find(c=>c.id===id);
     if(archiveUsable(prior,target)&&fs.existsSync(file)){out.push({...prior,preservedTargetArchive:true});continue;}
-    const marketCodes=codes;
+    const marketCodes=stocks.filter(r=>r.market===market).map(r=>r.code);
     const rows=[],failures=[];
     for(let i=0;i<marketCodes.length;i+=3){
       const chunk=marketCodes.slice(i,i+3);
