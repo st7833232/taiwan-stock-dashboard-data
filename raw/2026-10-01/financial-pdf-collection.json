@@ -2673,10 +2673,58 @@
       "checkedDate": "2026-10-02",
       "checkedAt": "2026-10-01T16:33:13.117Z",
       "nextRetryAt": "2026-10-01T16:38:13.117Z"
+    },
+    "8240|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T16:43:17.295Z",
+      "nextRetryAt": "2026-10-01T16:48:17.295Z"
+    },
+    "3048|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T16:45:00.322Z",
+      "nextRetryAt": "2026-10-01T16:50:00.322Z"
+    },
+    "8383|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T16:45:12.097Z"
+    },
+    "3049|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T16:45:23.067Z"
+    },
+    "1809|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T16:45:30.648Z"
+    },
+    "3689|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-01T16:46:28.345Z",
+      "nextRetryAt": "2026-10-01T16:51:28.345Z"
     }
   },
-  "remaining": 538,
-  "ready": 506,
+  "remaining": 535,
+  "ready": 503,
   "continuationNeeded": true,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [
