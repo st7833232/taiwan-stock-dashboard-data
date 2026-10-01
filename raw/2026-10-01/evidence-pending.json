@@ -4,7 +4,7 @@
   "counts": {
     "history": 13,
     "credit": 543,
-    "fundamental": 517
+    "fundamental": 515
   },
   "pending": {
     "history": [
@@ -934,7 +934,6 @@
       "9941",
       "9958",
       "1569",
-      "1785",
       "1815",
       "2061",
       "2221",
@@ -1016,7 +1015,6 @@
       "6138",
       "6147",
       "6173",
-      "6179",
       "6187",
       "6190",
       "6199",
@@ -1152,6 +1150,12 @@
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED",
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1785",
+      "failures": [
+        "OFFICIAL_GOVERNANCE_WARNING"
       ]
     },
     {
