@@ -118,22 +118,30 @@ async function captureHistoricalComparativeIncome(root,captures,old,target,now){
 }
 async function captureHistoricalXbrlDiagnostic(root,captures,target,now){
   const latest=latestFinancialPeriod(root,captures);if(!latest)return [];
-  const year=latest.year-1,quarter=latest.quarter,id=`mops-xbrl-bulk-${year}Q${quarter}`;
-  const url=`https://mops.twse.com.tw/server-java/FileDownLoad?step=9&fileName=tifrs-${year}Q${quarter}.zip&filePath=/home/html/nas/ifrs/${year}/`;
-  const zip=`/tmp/tifrs-${year}Q${quarter}.zip`;
-  try{
-    const response=await fetch(url,{headers:{'user-agent':'Mozilla/5.0','accept':'application/zip,*/*'},signal:AbortSignal.timeout(60000)});
-    const contentType=response.headers.get('content-type');
-    const bytes=Buffer.from(await response.arrayBuffer());
-    if(!response.ok)return [{id,market:'ALL',kind:'xbrl-bulk-diagnostic',historicalFinancial:true,url,status:'VERIFY_FAILED',error:`HTTP ${response.status}`,contentType,bytes:bytes.length,responsePreview:bytes.toString('utf8',0,Math.min(500,bytes.length)).replace(/\s+/g,' ')}];
-    if(bytes.length<1000)return [{id,market:'ALL',kind:'xbrl-bulk-diagnostic',historicalFinancial:true,url,status:'VERIFY_FAILED',error:'XBRL bulk ZIP too small',contentType,bytes:bytes.length,responsePreview:bytes.toString('utf8',0,Math.min(500,bytes.length)).replace(/\s+/g,' ')}];
-    fs.writeFileSync(zip,bytes);
-    const entries=execFileSync('unzip',['-Z1',zip],{encoding:'utf8',maxBuffer:8*1024*1024}).split(/\r?\n/).filter(Boolean);
-    const sample=entries.find(x=>/\.(xbrl|xml|html|htm)$/i.test(x))??entries[0];
-    const preview=sample?execFileSync('unzip',['-p',zip,sample],{encoding:'utf8',maxBuffer:2*1024*1024}).slice(0,4000):'';
-    fs.rmSync(zip,{force:true});
-    return [{id,market:'ALL',kind:'xbrl-bulk-diagnostic',historicalFinancial:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,status:'CAPTURED',capturedAt:now.toISOString(),bytes:bytes.length,entryCount:entries.length,sampleEntry:sample??null,samplePreview:preview.replace(/\s+/g,' ').slice(0,1500)}];
-  }catch(error){try{fs.rmSync(zip,{force:true});}catch{}return [{id,market:'ALL',kind:'xbrl-bulk-diagnostic',historicalFinancial:true,url,status:'VERIFY_FAILED',error:String(error.message)}];}
+  const year=latest.year-1,quarter=latest.quarter,id=`mops-xbrl-bulk-${year}Q${quarter}`,name=`tifrs-${year}Q${quarter}.zip`;
+  const candidates=[
+    `https://mops.twse.com.tw/nas/ifrs/${year}/${name}`,
+    `https://mops.twse.com.tw/server-java/FileDownLoad?step=9&fileName=${name}&filePath=/home/html/nas/ifrs/${year}/`,
+    `https://mops.twse.com.tw/mops/server-java/FileDownLoad?step=9&fileName=${name}&filePath=/home/html/nas/ifrs/${year}/`,
+    `https://mopsov.twse.com.tw/server-java/FileDownLoad?step=9&fileName=${name}&filePath=/home/html/nas/ifrs/${year}/`,
+    `https://mopsov.twse.com.tw/mops/server-java/FileDownLoad?step=9&fileName=${name}&filePath=/home/html/nas/ifrs/${year}/`
+  ];
+  const attempts=[];
+  for(const url of candidates){
+    try{
+      const response=await fetch(url,{headers:{'user-agent':'Mozilla/5.0','accept':'application/zip,*/*'},redirect:'follow',signal:AbortSignal.timeout(30000)});
+      const contentType=response.headers.get('content-type'),bytes=Buffer.from(await response.arrayBuffer()),magic=bytes.subarray(0,2).toString('binary');
+      attempts.push({url,status:response.status,contentType,bytes:bytes.length,zipMagic:magic==='PK',preview:magic==='PK'?undefined:bytes.toString('utf8',0,Math.min(300,bytes.length)).replace(/\s+/g,' ')});
+      if(!response.ok||magic!=='PK')continue;
+      const zip=`/tmp/${name}`;fs.writeFileSync(zip,bytes);
+      const entries=execFileSync('unzip',['-Z1',zip],{encoding:'utf8',maxBuffer:8*1024*1024}).split(/\r?\n/).filter(Boolean);
+      const sample=entries.find(x=>/\.(xbrl|xml|html|htm)$/i.test(x))??entries[0];
+      const preview=sample?execFileSync('unzip',['-p',zip,sample],{encoding:'utf8',maxBuffer:2*1024*1024}).slice(0,4000):'';
+      fs.rmSync(zip,{force:true});
+      return [{id,market:'ALL',kind:'xbrl-bulk-diagnostic',historicalFinancial:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,status:'CAPTURED',capturedAt:now.toISOString(),bytes:bytes.length,entryCount:entries.length,sampleEntry:sample??null,samplePreview:preview.replace(/\s+/g,' ').slice(0,1500),attempts}];
+    }catch(error){attempts.push({url,error:String(error.message)});}
+  }
+  return [{id,market:'ALL',kind:'xbrl-bulk-diagnostic',historicalFinancial:true,status:'VERIFY_FAILED',error:'No official XBRL ZIP candidate succeeded',attempts}];
 }
 export function discoverEvidenceSources(spec, market, apiRoot) {
   return Object.entries(spec.paths??{}).flatMap(([path,op])=>{
