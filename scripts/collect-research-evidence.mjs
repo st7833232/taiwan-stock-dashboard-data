@@ -46,7 +46,7 @@ function latestFinancialPeriod(root,captures){
 }
 async function captureHistoricalComparativeIncome(root,captures,old,target,now){
   const latest=latestFinancialPeriod(root,captures);if(!latest)return [];
-  const year=latest.year-1,quarter=latest.quarter,rocYear=year-1911,season=String(quarter).padStart(2,'0'),url='https://mops.twse.com.tw/mops/web/ajax_t163sb04';
+  const year=latest.year-1,quarter=latest.quarter,rocYear=year-1911,season=String(quarter).padStart(2,'0'),url='https://mopsov.twse.com.tw/mops/web/ajax_t163sb04';
   const out=[];
   for(const [market,typek] of [['TWSE','sii'],['TPEx','otc']]){
     const id=`mops-historical-income-${typek}-${year}Q${quarter}`,file=`${root}/${id}.raw.txt`,prior=old?.captures?.find(c=>c.id===id);
@@ -55,7 +55,9 @@ async function captureHistoricalComparativeIncome(root,captures,old,target,now){
       const body=new URLSearchParams({encodeURIComponent:'1',step:'1',firstin:'1',off:'1',isQuery:'Y',TYPEK:typek,year:String(rocYear),season}).toString();
       const response=await fetch(url,{method:'POST',redirect:'follow',headers:{'content-type':'application/x-www-form-urlencoded','user-agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120 Safari/537.36',referer:'https://mopsov.twse.com.tw/',accept:'text/html,*/*'},body,signal:AbortSignal.timeout(60000)});
       if(!response.ok)throw Error(`HTTP ${response.status}`);
-      const html=await response.text(),rows=parseMopsHistoricalIncomeHtml(html,{year,quarter});
+      const html=await response.text();
+      fs.writeFileSync(`${root}/${id}.source.html`,html);
+      const rows=parseMopsHistoricalIncomeHtml(html,{year,quarter});
       fs.writeFileSync(file,JSON.stringify(rows)+'\n');
       out.push({id,market,kind:'income',historicalFinancial:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,summary:`MOPS ${year}Q${quarter} 綜合損益表彙總（一般業）`,status:'CAPTURED',capturedAt:now.toISOString(),rows:rows.length});
     }catch(error){out.push({id,market,kind:'income',historicalFinancial:true,periodEnd:new Date(Date.UTC(year,quarter*3,0)).toISOString().slice(0,10),url,status:'VERIFY_FAILED',error:String(error.message)});}
