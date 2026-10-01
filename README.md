@@ -59,3 +59,5 @@ node scripts/validate-strategy-v2.mjs
 查閱 `raw/<date>/daily-report.json`、`pipeline-status.json`、`evidence-pending.json` 與對應 workflow run。`validation.status=PASS` 只表示三層檔案驗證；`researchComplete` 必須另行成立，信用／財務／事件未完成不能混稱完整研究。財報與TDCC原始擷取已自動化；原始payload不會自行證明品質、前瞻事件風險或除權息調整已驗證。
 
 本管線是Node.js / GitHub Actions運算，不呼叫LLM API，不建立Work補跑任務。Dashboard仍只讀manifest，不修改／部署Dashboard。
+
+`evidencePending.fundamental` 僅計入財務證據未完成的個股。證據完整但品質未通過者另列 `fundamentalQualityRejected`（代號與失敗原因），不阻止 `researchComplete`，但 Fundamental 買進 Gate 維持不通過；其他必要證據缺項仍阻止研究完成。

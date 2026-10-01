@@ -51,10 +51,15 @@ export function tdccWeeks(rows,target) {
 export function evidenceSummary(input,result) {
   // A rejected strategy is a finished decision. Missing evidence is unfinished research.
   const checks=['history','institutional','credit','tdcc','fundamental','event','corporateAction'];
-  const detail=new Set(input.deepDive.map(r=>r.code)),pending={};
-  for(const r of result.rows.filter(r=>detail.has(r.code)))for(const key of checks)if(r.gates[key]!==true)(pending[key]??=[]).push(r.code);
+  const detail=new Map(input.deepDive.map(r=>[r.code,r])),pending={},fundamentalQualityRejected=[];
+  for(const r of result.rows.filter(r=>detail.has(r.code))) {
+    const assessment=detail.get(r.code).financialAssessment;
+    const rejected=assessment?.status==='FAIL'&&assessment.verified===true&&assessment.qualityPass===false&&assessment.pending?.length===0&&assessment.failures?.length>0;
+    if(rejected)fundamentalQualityRejected.push({code:r.code,failures:assessment.failures});
+    for(const key of checks)if(r.gates[key]!==true&&!(key==='fundamental'&&rejected))(pending[key]??=[]).push(r.code);
+  }
   if(!result.regimeVerified)pending.marketRegime=['MARKET'];
-  return {researchComplete:Object.keys(pending).length===0,pending,counts:Object.fromEntries(Object.entries(pending).map(([key,codes])=>[key,codes.length]))};
+  return {researchComplete:Object.keys(pending).length===0,pending,counts:Object.fromEntries(Object.entries(pending).map(([key,codes])=>[key,codes.length])),fundamentalQualityRejected};
 }
 export function reviewedFinancialReport(report,target) {
   try {

@@ -66,6 +66,23 @@ test('no valid BUY setup can still be a completed study; missing credit cannot',
   assert.equal(evidenceSummary(input,result).researchComplete,true);
   assert.equal(evidenceSummary(input,{...result,rows:[{code:'3005',gates:{...gates,credit:false}}]}).researchComplete,false);
 });
+test('verified financial rejection completes research without granting a fundamental gate',()=>{
+  const gates={history:true,institutional:true,credit:true,tdcc:true,fundamental:false,event:true,corporateAction:true};
+  const assessment={status:'FAIL',verified:true,qualityPass:false,pending:[],failures:['PROFIT_DETERIORATION']};
+  const input={deepDive:[{code:'3005',financialAssessment:assessment}]},result={regimeVerified:true,rows:[{code:'3005',gates}]};
+  const summary=evidenceSummary(input,result);
+  assert.equal(summary.researchComplete,true);
+  assert.deepEqual(summary.counts,{});
+  assert.deepEqual(summary.fundamentalQualityRejected,[{code:'3005',failures:['PROFIT_DETERIORATION']}]);
+  assert.equal(gates.fundamental,false);
+  for(const financialAssessment of [undefined,{...assessment,status:'UNVERIFIED',verified:false,pending:['COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED']},{...assessment,pending:['FINANCIAL_METRICS_INCOMPLETE']},{...assessment,verified:false},{...assessment,failures:[]}]){
+    const pending=evidenceSummary({deepDive:[{code:'3005',financialAssessment}]},result);
+    assert.equal(pending.researchComplete,false);
+    assert.deepEqual(pending.counts,{fundamental:1});
+    assert.deepEqual(pending.fundamentalQualityRejected,[]);
+  }
+  assert.equal(evidenceSummary(input,{...result,rows:[{code:'3005',gates:{...gates,credit:false}}]}).researchComplete,false);
+});
 test('failed verification never skips an old order day',()=>{
   const original=process.cwd(),targetEnv=process.env.TARGET_DATE,tmp=fs.mkdtempSync(path.join(os.tmpdir(),'daily-pipeline-'));
   try {
