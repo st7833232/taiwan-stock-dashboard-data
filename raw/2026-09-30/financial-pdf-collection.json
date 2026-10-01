@@ -1,0 +1,74 @@
+{
+  "targetDate": "2026-09-30",
+  "results": {
+    "2409|2026-06-30": {
+      "status": "VERIFIED",
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T04:14:31.583Z"
+    },
+    "3605|2026-06-30": {
+      "status": "UNVERIFIED",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T04:15:37.411Z"
+    },
+    "6505|2026-06-30": {
+      "status": "VERIFIED",
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T04:15:44.306Z"
+    },
+    "8150|2026-06-30": {
+      "status": "VERIFIED",
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T04:15:52.039Z"
+    },
+    "3016|2026-06-30": {
+      "status": "UNVERIFIED",
+      "reason": "The operation was aborted due to timeout",
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T04:16:20.839Z"
+    },
+    "2609|2026-06-30": {
+      "status": "UNVERIFIED",
+      "reason": "fetch failed",
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T04:16:36.338Z"
+    },
+    "2412|2026-06-30": {
+      "status": "UNVERIFIED",
+      "reason": "fetch failed",
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T04:16:51.837Z"
+    },
+    "3702|2026-06-30": {
+      "status": "UNVERIFIED",
+      "reason": "The operation was aborted due to timeout",
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T04:17:18.896Z"
+    },
+    "3045|2026-06-30": {
+      "status": "UNVERIFIED",
+      "reason": "The operation was aborted due to timeout",
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T04:17:45.528Z"
+    },
+    "2618|2026-06-30": {
+      "status": "UNVERIFIED",
+      "reason": "fetch failed",
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T04:18:00.824Z"
+    },
+    "1727|2026-06-30": {
+      "status": "UNVERIFIED",
+      "reason": "fetch failed",
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T04:18:16.323Z"
+    },
+    "1101|2026-06-30": {
+      "status": "VERIFIED",
+      "checkedDate": "2026-10-01",
+      "checkedAt": "2026-10-01T04:18:21.899Z"
+    }
+  },
+  "remaining": 527
+}
