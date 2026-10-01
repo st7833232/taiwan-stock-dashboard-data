@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "targetDate": "2026-10-01",
   "strategyVersion": "entry-dual-track-v2.2",
-  "inputFingerprint": "ed5c32dcf611239ac60746eb476deb4a8d0fe4b192dcf8189c1781143141ec3e",
+  "inputFingerprint": "d9ea8def173604f727c6f1462ce1def9fc88793edf5c76114ca308470bc17132",
   "coverage": {
     "universe": 2303,
     "stocks": 1949,
@@ -27116,7 +27116,7 @@
       "close": 30.55,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 34.0499,
+      "score": 44.0499,
       "scores": {
         "trend": 3.6,
         "momentum": 4,
@@ -27125,7 +27125,7 @@
         "institutional": 10.5,
         "large_holder": 0,
         "margin_short_lending": 1.5,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -27136,7 +27136,7 @@
         "credit": true,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -27145,7 +27145,6 @@
       },
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -59182,7 +59181,7 @@
       "close": 120.5,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 46.3002,
+      "score": 56.3002,
       "scores": {
         "trend": 18,
         "momentum": 0,
@@ -59191,7 +59190,7 @@
         "institutional": 3,
         "large_holder": 8,
         "margin_short_lending": 1.5,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -59202,7 +59201,7 @@
         "credit": true,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -59210,7 +59209,6 @@
         "assetProfile": true
       },
       "reasonCodes": [
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
