@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {normalizeFinancial,financialAssessment,normalizeOfficialEvent,eventAssessment,corporateActionAssessment} from './assess-research-evidence.mjs';
 import {availableWeeks,parseTdccHistory} from './collect-tdcc-history.mjs';
-import {shouldReuseTargetArchive,parseMopsHistoricalIncomeHtml} from './collect-research-evidence.mjs';
+import {shouldReuseTargetArchive,parseMopsHistoricalIncomeHtml,parseMopsCompanyHistoricalIncomeHtml} from './collect-research-evidence.mjs';
 import {enrich,evidenceCoverage} from './research-evidence.mjs';
 
 const policy={requirePriorYearSameQuarter:true,requireGovernanceReview:true,requirePositiveProfit:true,minRevenueYoY:0,minNetProfitYoY:0};
@@ -24,6 +24,11 @@ test('comparative year and actual deterioration are checked before financial per
  assert.equal(assess(income(113)).qualityPass,false);
  const stronger={...income(114),metrics:{...income(114).metrics,revenue:300}};
  assert.equal(assess(stronger).status,'FAIL');assert.ok(assess(stronger).failures.includes('REVENUE_DETERIORATION'));
+});
+test('MOPS company historical income parser skips row index and reads current-period cumulative values',()=>{
+ const html='<table><tr><th>4</th><td>營業收入合計</td><td>124594602</td><td>100.00</td><td>98311776</td><td>100.00</td></tr><tr><th>23</th><td>本期淨利（淨損）</td><td>22644071</td><td>18.17</td><td>10322800</td><td>10.50</td></tr></table>';
+ assert.deepEqual(parseMopsCompanyHistoricalIncomeHtml(html,{code:'1101',year:2025,quarter:2}),{'公司代號':'1101','年度':2025,'季別':2,'營業收入':124594602,'本期淨利（淨損）':22644071});
+ assert.throws(()=>parseMopsCompanyHistoricalIncomeHtml('<table></table>',{code:'1101',year:2025,quarter:2}),/required metrics missing/);
 });
 test('MOPS historical income parser accepts only a complete general-industry table',()=>{
  const html=`<table><tr><th>公司代號</th><th>公司名稱</th><th>營業收入</th><th>營業毛利（毛損）</th><th>營業利益（損失）</th><th>本期淨利（淨損）</th></tr><tr><td>2409</td><td>友達</td><td>100,000</td><td>20,000</td><td>8,000</td><td>6,000</td></tr></table>`;
