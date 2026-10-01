@@ -3,7 +3,7 @@
   "researchComplete": false,
   "counts": {
     "history": 13,
-    "fundamental": 466,
+    "fundamental": 464,
     "credit": 159
   },
   "pending": {
@@ -225,7 +225,6 @@
       "3665",
       "3673",
       "3702",
-      "3704",
       "3706",
       "3711",
       "3714",
@@ -347,7 +346,6 @@
       "9105",
       "9910",
       "9933",
-      "9939",
       "9941",
       "9958",
       "1569",
@@ -784,6 +782,12 @@
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED",
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3704",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
     },
     {
