@@ -44,8 +44,11 @@ export async function publish() {
   const tree=await api('git/trees',{base_tree:commit.tree.sha,tree:entries});
   const created=await api('git/commits',{message:`data: official screening checkpoint ${process.env.TARGET_DATE}`,tree:tree.sha,parents:[base]});
   const again=await api('git/ref/heads/main');if(again.object.sha!==base) throw Error('MAIN_HEAD_CHANGED: not updating ref');
+  // The pre-PATCH compare-and-stop above is the ownership gate. Once this fast-forward
+  // succeeds, another workflow may legitimately advance main immediately afterward.
+  // Requiring HEAD to remain equal to created.sha would turn that valid successor
+  // publication into a false failure for this run.
   await api('git/refs/heads/main',{sha:created.sha,force:false},'PATCH');
-  if((await api('git/ref/heads/main')).object.sha!==created.sha) throw Error('Post-publication main HEAD mismatch');
   if(process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,`\nAtomic data commit: ${created.sha}\n`);
   console.log(`PUBLISHED_COMMIT=${created.sha}`);
 }
