@@ -559,12 +559,15 @@
   "2885|2026-06-30": {
     "status": "UNVERIFIED",
     "parserVersion": 2,
-    "stage": "PDF_DOWNLOAD",
-    "reason": "The operation was aborted due to timeout",
+    "filingParserVersion": 2,
+    "textParserVersion": 10,
+    "filingFallback": null,
+    "stage": "MOPS_PERIOD_TABLE",
+    "reason": "MOPS company historical income: required metrics missing",
     "attempts": 1,
-    "checkedDate": "2026-10-01",
-    "checkedAt": "2026-10-01T09:35:07.787Z",
-    "nextRetryAt": "2026-10-01T09:40:07.787Z"
+    "checkedDate": "2026-10-02",
+    "checkedAt": "2026-10-02T09:23:45.589Z",
+    "nextRetryAt": "2026-10-03T09:23:45.589Z"
   },
   "8064|2026-06-30": {
     "status": "VERIFIED",
@@ -588,22 +591,28 @@
   "2892|2026-06-30": {
     "status": "UNVERIFIED",
     "parserVersion": 2,
+    "filingParserVersion": 2,
+    "textParserVersion": 10,
+    "filingFallback": null,
     "stage": "PDF_DOWNLOAD",
     "reason": "The operation was aborted due to timeout",
     "attempts": 1,
-    "checkedDate": "2026-10-01",
-    "checkedAt": "2026-10-01T09:36:00.255Z",
-    "nextRetryAt": "2026-10-01T09:41:00.255Z"
+    "checkedDate": "2026-10-02",
+    "checkedAt": "2026-10-02T09:27:53.933Z",
+    "nextRetryAt": "2026-10-02T09:32:53.933Z"
   },
   "2886|2026-06-30": {
     "status": "UNVERIFIED",
     "parserVersion": 2,
+    "filingParserVersion": 2,
+    "textParserVersion": 10,
+    "filingFallback": null,
     "stage": "PDF_DOWNLOAD",
-    "reason": "The operation was aborted due to timeout",
+    "reason": "FINANCIAL_COLLECTION_BUDGET_EXHAUSTED",
     "attempts": 1,
-    "checkedDate": "2026-10-01",
-    "checkedAt": "2026-10-01T09:37:12.427Z",
-    "nextRetryAt": "2026-10-01T09:42:12.427Z"
+    "checkedDate": "2026-10-02",
+    "checkedAt": "2026-10-02T09:29:44.860Z",
+    "nextRetryAt": "2026-10-02T09:34:44.860Z"
   },
   "1802|2026-06-30": {
     "status": "VERIFIED",
