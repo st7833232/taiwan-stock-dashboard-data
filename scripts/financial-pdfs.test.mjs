@@ -96,3 +96,17 @@ test('a truncated percentage row cannot impersonate four complete amount columns
  const page='合併綜合損益表 新台幣千元 114年4月至6月 113年4月至6月 114年1月至6月 113年1月至6月\n金額 ％ 金額 ％ 金額 ％ 金額 ％\n4000 營業收入 10,000 100 11,000 100\n8610 母公司業主 1,000 10 1,100 10';
  assert.throws(()=>verifyPdfText([page],{'年度':2025,'季別':2,'營業收入':11000,'淨利（淨損）歸屬於母公司業主':1100}));
 });
+
+test('wrapped official footnotes retain the amount row without consuming another account',()=>{
+ const header='合併綜合損益表 新台幣千元 114年4月1日至6月30日 113年4月1日至6月30日 114年1月1日至6月30日 113年1月1日至6月30日\n金額 ％ 金額 ％ 金額 ％ 金額 ％\n';
+ const row={'年度':2025,'季別':2,'營業收入':20000,'淨利（淨損）歸屬於母公司業主':2000};
+ const page=header+'4000 營業收入淨額（附註二五及\n 三四）   $ 10,000 100 11,000 100 20,000 100 22,000 100\n8610 母公司業主 1,000 10 1,100 10 2,000 10 2,200 10';
+ assert.deepEqual(verifyPdfText([page],row),[1]);
+ assert.throws(()=>verifyPdfText([page.replace(' 三四）','5000 營業成本')],row));
+});
+test('parent profit includes the explicit total of continuing and discontinued operations',()=>{
+ const page='合併綜合損益表 新台幣千元 114年4月至6月 113年4月至6月 114年1月至6月 113年1月至6月\n金額 ％ 金額 ％ 金額 ％ 金額 ％\n4000 營業收入 10,000 100 11,000 100 20,000 100 22,000 100\n8610 母公司業主\n 繼續營業單位本期淨利 1,000 10 1,100 10 2,000 10 2,200 10\n 停業單位本期淨利 (100) (1) (110) (1) (200) (1) (220) (1)\n 歸屬於母公司業主之本期淨利(損) $ 900 9 990 9 1,800 9 1,980 9\n8620 非控制權益 10 1 10 1 20 1 20 1';
+ const row={'年度':2025,'季別':2,'營業收入':20000,'淨利（淨損）歸屬於母公司業主':1800};
+ assert.deepEqual(verifyPdfText([page],row),[1]);
+ assert.throws(()=>verifyPdfText([page],{...row,'淨利（淨損）歸屬於母公司業主':2000}));
+});

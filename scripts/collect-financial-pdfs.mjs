@@ -72,7 +72,12 @@ export function verifyPdfText(pages,row){
    }
    if(n<0)return null;
    let line=lines[n].replace(/^\s*\d{4}\s+/,'');
-   if(!/\d/.test(line)&&lines[n+1]&&!/\p{Script=Han}/u.test(lines[n+1]))line=lines[n+1];
+   if(code==='8610'&&!/\d/.test(line)){
+    const end=lines.findIndex((l,j)=>j>n&&/^\s*\d{4}\s/.test(l));
+    const total=lines.slice(n+1,end<0?lines.length:end).find(l=>/歸屬於母公司業主之本期淨利/.test(l));
+    if(total)line=total;
+   }
+   if(!/\d/.test(line)&&lines[n+1]&&!/^\s*\d{4}\s/.test(lines[n+1])&&(!/\p{Script=Han}/u.test(lines[n+1])||/^\s*[\p{Script=Han}、]+[）)]/u.test(lines[n+1])))line=lines[n+1];
    const tokens=[...line.matchAll(/\(?\s*\$?\s*-?\d[\d,]*(?:\.\d+)?\s*\)?|(?<!\S)-(?!\S)/g)].map(m=>m[0]),values=tokens.map(t=>t.trim()==='-'?null:Number(t.replace(/[\s,$()]/g,''))*(t.includes('(')?-1:1));
    return values.length===columns*2?values[cumulativeIndex*2]:!percentColumns&&values.length===columns&&tokens.every(t=>/,\d{3}/.test(t))?values[cumulativeIndex]:null;
   };
