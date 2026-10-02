@@ -802,9 +802,9 @@
       "stage": "PDF_METRICS",
       "reason": "PDF_OCR_REVIEW_PENDING",
       "attempts": 1,
-      "checkedDate": "2026-10-01",
-      "checkedAt": "2026-10-01T10:20:49.976Z",
-      "nextRetryAt": "2026-10-01T10:25:49.976Z"
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T02:12:38.391Z",
+      "nextRetryAt": "2026-10-02T02:17:38.391Z"
     },
     "2421|2026-06-30": {
       "status": "UNVERIFIED",
@@ -898,11 +898,11 @@
       "status": "UNVERIFIED",
       "parserVersion": 2,
       "stage": "PDF_METRICS",
-      "reason": "PDF_OCR_REVIEW_PENDING",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-01",
-      "checkedAt": "2026-10-01T10:36:39.505Z",
-      "nextRetryAt": "2026-10-01T10:41:39.505Z"
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T02:13:20.321Z",
+      "nextRetryAt": "2026-10-03T02:13:20.321Z"
     },
     "5314|2026-06-30": {
       "status": "VERIFIED",
@@ -920,11 +920,11 @@
       "status": "UNVERIFIED",
       "parserVersion": 2,
       "stage": "MOPS_PERIOD_TABLE",
-      "reason": "fetch failed",
+      "reason": "MOPS company historical income: required metrics missing",
       "attempts": 1,
-      "checkedDate": "2026-10-01",
-      "checkedAt": "2026-10-01T10:38:11.549Z",
-      "nextRetryAt": "2026-10-01T10:43:11.549Z"
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T02:13:25.680Z",
+      "nextRetryAt": "2026-10-03T02:13:25.680Z"
     },
     "1785|2026-06-30": {
       "status": "VERIFIED",
@@ -952,21 +952,21 @@
       "status": "UNVERIFIED",
       "parserVersion": 2,
       "stage": "PDF_METRICS",
-      "reason": "PDF_OCR_REVIEW_PENDING",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-01",
-      "checkedAt": "2026-10-01T10:44:17.169Z",
-      "nextRetryAt": "2026-10-01T10:49:17.169Z"
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T02:14:13.920Z",
+      "nextRetryAt": "2026-10-03T02:14:13.920Z"
     },
     "4919|2026-06-30": {
       "status": "UNVERIFIED",
       "parserVersion": 2,
       "stage": "PDF_METRICS",
-      "reason": "PDF_OCR_REVIEW_PENDING",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-01",
-      "checkedAt": "2026-10-01T10:46:14.998Z",
-      "nextRetryAt": "2026-10-01T10:51:14.998Z"
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T02:15:14.981Z",
+      "nextRetryAt": "2026-10-03T02:15:14.981Z"
     },
     "1504|2026-06-30": {
       "status": "UNVERIFIED",
@@ -1026,9 +1026,9 @@
       "stage": "PDF_METRICS",
       "reason": "PDF_OCR_REVIEW_PENDING",
       "attempts": 1,
-      "checkedDate": "2026-10-01",
-      "checkedAt": "2026-10-01T10:55:38.189Z",
-      "nextRetryAt": "2026-10-01T11:00:38.189Z"
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T02:15:26.090Z",
+      "nextRetryAt": "2026-10-02T02:20:26.090Z"
     },
     "2606|2026-06-30": {
       "status": "VERIFIED",
@@ -3409,8 +3409,8 @@
       "nextRetryAt": "2026-10-01T19:30:51.950Z"
     }
   },
-  "remaining": 502,
-  "ready": 463,
+  "remaining": 433,
+  "ready": 391,
   "continuationNeeded": true,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [

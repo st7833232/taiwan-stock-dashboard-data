@@ -1,7 +1,7 @@
 {
   "targetDate": "2026-10-01",
   "timezone": "Asia/Taipei",
-  "generatedAt": "2026-10-02T01:55:00.704Z",
+  "generatedAt": "2026-10-02T02:08:59.780Z",
   "simulatedTodayDate": null,
   "effectiveTodayDate": "2026-10-02",
   "overallStatus": "PASS",
@@ -287,7 +287,8 @@
       "bytes": 107286,
       "officialDateEvidence": "20261001",
       "rowCount": 918,
-      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+      "preservedCapture": true
     },
     {
       "source": "tpex-margin-balance-legacy",
@@ -296,7 +297,7 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/10/01",
       "targetDate": "2026-10-01",
-      "capturedAt": "2026-10-02T01:54:58.912Z",
+      "capturedAt": "2026-10-02T02:08:58.283Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -321,7 +322,8 @@
       "bytes": 99546,
       "officialDateEvidence": "20261001",
       "rowCount": 931,
-      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+      "preservedCapture": true
     },
     {
       "source": "twse-monthly-revenue",
