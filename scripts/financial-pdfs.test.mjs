@@ -52,6 +52,11 @@ test('transient official reads retry once, while an explicit rate limit stops wi
  await assert.rejects(()=>requestOfficial('https://doc.twse.com.tw/',null,{pause:async()=>{},fetcher:async()=>{calls++;return new Response('',{status:403});}}),/HTTP_403/);
  assert.equal(calls,1);
 });
+test('financial collection stops new reads and retries when its time budget is exhausted, leaving recovery to the next run',async()=>{
+ let calls=0;const fetcher=async()=>{calls++;throw Error('fetch failed');};
+ await assert.rejects(()=>requestOfficial('https://doc.twse.com.tw/',null,{deadline:Date.now()-1,fetcher,pause:async()=>{}}),/FINANCIAL_COLLECTION_BUDGET_EXHAUSTED/);assert.equal(calls,0);
+ await assert.rejects(()=>requestOfficial('https://doc.twse.com.tw/',null,{deadline:Date.now()+5000,fetcher,pause:async()=>{}}),/FINANCIAL_COLLECTION_BUDGET_EXHAUSTED/);assert.equal(calls,1);
+});
 
 test('an official query-limit page is never retried as a transport failure',async()=>{
  let calls=0;await assert.rejects(()=>requestOfficial('https://doc.twse.com.tw/',null,{pause:async()=>{},fetcher:async()=>{calls++;return new Response(Buffer.from('ac64b8dfb94cb671','hex'));}}),/OFFICIAL_RATE_LIMITED/);assert.equal(calls,1);

@@ -18,17 +18,19 @@ export async function filingIndex(source,request){
  }
  return html;
 }
-export async function requestOfficial(url,body,{fetcher=fetch,pause=ms=>new Promise(resolve=>setTimeout(resolve,ms))}={}){
+export async function requestOfficial(url,body,{fetcher=fetch,pause=ms=>new Promise(resolve=>setTimeout(resolve,ms)),deadline=Infinity,timeoutMs=30000}={}){
  for(let attempt=0;attempt<2;attempt++){
+  const remaining=deadline-Date.now();if(remaining<=0)throw Error('FINANCIAL_COLLECTION_BUDGET_EXHAUSTED');
   try{
    const origin=new URL(url).origin,headers={'user-agent':'Mozilla/5.0',accept:'text/html,application/pdf,*/*',...(body?{'content-type':'application/x-www-form-urlencoded',referer:origin+'/mops/web/t164sb04'}:{})};
-   const res=await fetcher(url,{method:body?'POST':'GET',body,signal:AbortSignal.timeout(30000),headers});
+   const res=await fetcher(url,{method:body?'POST':'GET',body,signal:AbortSignal.timeout(Math.max(1,Math.floor(Math.min(timeoutMs,remaining)))),headers});
    if(!res.ok)throw Error(`HTTP_${res.status}`);
    const bytes=Buffer.from(await res.arrayBuffer());
    if(new TextDecoder('big5').decode(bytes).includes('查詢過量'))throw Error('OFFICIAL_RATE_LIMITED');
    return bytes;
   }catch(error){
    if(error.message==='OFFICIAL_RATE_LIMITED'||/^HTTP_(?!429|5)/.test(error.message)||attempt===1)throw error;
+   if(Date.now()+5000>=deadline)throw Error('FINANCIAL_COLLECTION_BUDGET_EXHAUSTED');
    await pause(5000);
   }
  }
@@ -141,7 +143,7 @@ export async function collectFinancialPdfs(target){
  };
  admit();const queue=financialQueue(rows,state,now,admitted);let rateLimited=false;
  fs.mkdirSync('history/financial-reports',{recursive:true});
- const request=(url,body)=>requestOfficial(url,body);
+ const request=(url,body)=>requestOfficial(url,body,{deadline,timeoutMs:url.endsWith('.pdf')?120000:30000});
  for(const r of queue){
   if(Date.now()>deadline)break;
   const current=periods.get(r.code),year=Number(current.periodEnd.slice(0,4))-1,quarter=current.quarter,code=r.code,source=`https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=${code}&year=${year-1911}&seamon=&mtype=A&check2858=Y`;
@@ -168,9 +170,10 @@ export async function collectFinancialPdfs(target){
    }
    state[r.key]={status:'VERIFIED',parserVersion:2,checkedDate:today,checkedAt:new Date().toISOString()};admitted.add(r.key);
   }catch(e){
-   const attempts=state[r.key]?.checkedDate===today?(state[r.key]?.attempts??0)+1:1,transient=/fetch failed|timeout|aborted|HTTP_(429|5\d\d)|PDF_OCR_REVIEW_PENDING/i.test(e.message);
+   const attempts=state[r.key]?.checkedDate===today?(state[r.key]?.attempts??0)+1:1,transient=/fetch failed|timeout|aborted|HTTP_(429|5\d\d)|PDF_OCR_REVIEW_PENDING|FINANCIAL_COLLECTION_BUDGET_EXHAUSTED/i.test(e.message);
    state[r.key]={status:'UNVERIFIED',parserVersion:2,textParserVersion:4,stage,reason:e.message,attempts,checkedDate:today,checkedAt:new Date().toISOString(),nextRetryAt:new Date(Date.now()+(transient?Math.min(300000*2**(attempts-1),86400000):86400000)).toISOString()};
    if(e.message==='OFFICIAL_RATE_LIMITED'){rateLimited=true;save('history/financial-pdf-collection.json',state);break;}
+   if(e.message==='FINANCIAL_COLLECTION_BUDGET_EXHAUSTED'){save('history/financial-pdf-collection.json',state);break;}
   }
   save('history/financial-pdf-collection.json',state);await new Promise(resolve=>setTimeout(resolve,requestSpacingMs));
  }
