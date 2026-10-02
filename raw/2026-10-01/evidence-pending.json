@@ -2,7 +2,7 @@
   "targetDate": "2026-10-01",
   "researchComplete": false,
   "counts": {
-    "fundamental": 330,
+    "fundamental": 325,
     "credit": 3
   },
   "pending": {
@@ -121,9 +121,7 @@
       "3006",
       "3013",
       "3016",
-      "3023",
       "3029",
-      "3030",
       "3033",
       "3044",
       "3045",
@@ -192,7 +190,6 @@
       "6446",
       "6449",
       "6456",
-      "6472",
       "6491",
       "6515",
       "6525",
@@ -249,7 +246,6 @@
       "3234",
       "3236",
       "3289",
-      "3357",
       "3374",
       "3490",
       "3498",
@@ -269,7 +265,6 @@
       "4903",
       "4908",
       "4939",
-      "4966",
       "4973",
       "4979",
       "4991",
@@ -759,6 +754,12 @@
       ]
     },
     {
+      "code": "6472",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
       "code": "6505",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
@@ -922,6 +923,13 @@
     },
     {
       "code": "3693",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4966",
       "failures": [
         "REVENUE_DETERIORATION",
         "PROFIT_DETERIORATION"

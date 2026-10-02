@@ -4400,10 +4400,82 @@
       "checkedDate": "2026-10-02",
       "checkedAt": "2026-10-02T06:45:18.046Z",
       "nextRetryAt": "2026-10-02T06:50:18.046Z"
+    },
+    "6829|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 2,
+      "textParserVersion": 10,
+      "filingFallback": {
+        "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=6829&year=114&seamon=&mtype=A&check2858=Y",
+        "reason": "FILING_VERSION_UNVERIFIED"
+      },
+      "stage": "FILING_INDEX",
+      "reason": "FILING_VERSION_UNVERIFIED",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T06:48:36.869Z",
+      "nextRetryAt": "2026-10-03T06:48:36.869Z"
+    },
+    "3023|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T06:49:45.282Z"
+    },
+    "6643|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 2,
+      "textParserVersion": 10,
+      "filingFallback": null,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T06:51:22.355Z",
+      "nextRetryAt": "2026-10-03T06:51:22.355Z"
+    },
+    "6472|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T06:54:04.350Z"
+    },
+    "3357|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T06:55:33.495Z"
+    },
+    "4966|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T06:57:32.672Z"
+    },
+    "3030|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T06:58:05.249Z"
+    },
+    "3413|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 2,
+      "textParserVersion": 10,
+      "filingFallback": null,
+      "stage": "PDF_DOWNLOAD",
+      "reason": "FINANCIAL_COLLECTION_BUDGET_EXHAUSTED",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T06:58:31.143Z",
+      "nextRetryAt": "2026-10-02T07:03:31.143Z"
     }
   },
-  "remaining": 338,
-  "ready": 254,
+  "remaining": 333,
+  "ready": 250,
   "continuationNeeded": true,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [
