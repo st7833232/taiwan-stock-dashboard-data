@@ -78,16 +78,17 @@ function payloadRowCount(value) {
     if (value.every((item) => Array.isArray(item))) return value.length;
     if (value.every((item) => item && typeof item === 'object')) {
       const nested = Math.max(0, ...value.map((item) => payloadRowCount(item)));
-      return nested || value.length;
+      const containers=value.some(item=>Object.keys(item).some(key=>/^(tables|data\d*|aaData|records|rows)$/i.test(key)));
+      return containers ? nested : nested || value.length;
     }
     return 0;
   }
   if (!value || typeof value !== 'object') return 0;
-  let best = 0;
+  let best = 0, hasRows = false;
   for (const [key, child] of Object.entries(value)) {
-    if (/^(data\d*|aaData|records|rows)$/i.test(key)) best = Math.max(best, payloadRowCount(child));
+    if (/^(data\d*|aaData|records|rows)$/i.test(key)) {hasRows=true;best=Math.max(best,payloadRowCount(child));}
   }
-  if (best) return best;
+  if (hasRows) return best;
   for (const child of Object.values(value)) best = Math.max(best, payloadRowCount(child));
   return best;
 }
@@ -183,7 +184,12 @@ async function captureOrPreserve(source) {
   const file=path.join(outDir,`${source.id}.raw.txt`), prior=priorPassBySource.get(source.id);
   if(source.gate && prior && await exists(file)) return {...prior,preservedPass:true};
   const aux=priorCapturedBySource.get(source.id);
-  if(aux && await exists(file) && Date.parse(aux.capturedAt)<=Date.parse(`${targetDate}T23:59:59+08:00`)) return {...aux,preservedCapture:true};
+  let auxUsable=false;
+  if(aux && await exists(file))try{
+    const payload=JSON.parse(await fs.readFile(file,'utf8'));
+    auxUsable=payloadRowCount(payload)>0&&(!source.requireTargetDate||Boolean(findOfficialDate(payload,dateVariants(targetDate))));
+  }catch{}
+  if(auxUsable && (source.requireTargetDate||Date.parse(aux.capturedAt)<=Date.parse(`${targetDate}T23:59:59+08:00`))) return {...aux,preservedCapture:true};
   const attempt=await capture(source);
   if(source.gate && attempt.status!=='PASS' && prior) return {...prior,preservedPass:true,latestAttempt:attempt};
   if(!source.gate && attempt.status!=='CAPTURED') {

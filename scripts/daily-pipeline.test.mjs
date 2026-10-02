@@ -165,3 +165,24 @@ test('TPEx balances use official named columns, never repayments or trades',asyn
   assert.equal(row.shortPrev,20);assert.equal(row.shortBalance,14);
   assert.equal(row.marginChange,-6);assert.equal(row.shortChange,-6);
 });
+
+test('empty official tables contain zero observations despite table metadata',()=>{
+ const source=fs.readFileSync(new URL('./fetch-official-market-data.mjs',import.meta.url),'utf8');
+ const body=source.slice(source.indexOf('function payloadRowCount'),source.indexOf('async function readPreviousMatrix'));
+ const count=new Function(body+';return payloadRowCount;')();
+ assert.equal(count({date:'20261001',tables:[{title:'balance',fields:['code'],data:[],notes:[]}]}),0);
+ assert.equal(count({tables:[{fields:['code'],data:[['1569']]}]}),1);
+ assert.equal(count([{code:'1569',balance:'100'}]),1);
+});
+test('an empty auxiliary cache is retried without downgrading official PASS Gates on fetch failure',async()=>{
+ const {execFileSync}=await import('node:child_process'),script=new URL('./fetch-official-market-data.mjs',import.meta.url).href;
+ const original=process.cwd(),matrix=JSON.parse(fs.readFileSync('raw/2026-10-01/gate-matrix.json','utf8')),tmp=fs.mkdtempSync(path.join(os.tmpdir(),'empty-credit-'));
+ try{
+  process.chdir(tmp);fs.mkdirSync('raw/2026-10-01',{recursive:true});fs.writeFileSync('raw/2026-10-01/gate-matrix.json',JSON.stringify(matrix));
+  for(const capture of matrix.captures)if(['PASS','CAPTURED'].includes(capture.status))fs.writeFileSync(`raw/2026-10-01/${capture.source}.raw.txt`,JSON.stringify({date:'20261001',tables:[{fields:['code'],data:[]}]}));
+  execFileSync(process.execPath,['--input-type=module','-e',`globalThis.fetch=async()=>new Response('',{status:503});await import(${JSON.stringify(script)});`],{env:{...process.env,TARGET_DATE:'2026-10-01',SIMULATED_TODAY_DATE:'2026-10-02'},stdio:'pipe'});
+  const result=JSON.parse(fs.readFileSync('raw/2026-10-01/gate-matrix.json'));
+  assert.equal(result.overallStatus,'PASS');assert.ok(result.gates.every(g=>g.status==='PASS'));
+  assert.equal(result.captures.find(c=>c.source==='tpex-margin-balance').status,'VERIFY_FAILED');
+ }finally{process.chdir(original);fs.rmSync(tmp,{recursive:true,force:true});}
+});
