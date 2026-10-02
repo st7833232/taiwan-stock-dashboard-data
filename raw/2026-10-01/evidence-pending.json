@@ -2,7 +2,7 @@
   "targetDate": "2026-10-01",
   "researchComplete": false,
   "counts": {
-    "fundamental": 274,
+    "fundamental": 266,
     "credit": 3
   },
   "pending": {
@@ -37,7 +37,6 @@
       "2254",
       "2303",
       "2313",
-      "2317",
       "2328",
       "2329",
       "2330",
@@ -65,13 +64,11 @@
       "2481",
       "2484",
       "2486",
-      "2492",
       "2493",
       "2498",
       "2548",
       "2605",
       "2615",
-      "2617",
       "2633",
       "2634",
       "2645",
@@ -121,7 +118,6 @@
       "3592",
       "3617",
       "3653",
-      "3661",
       "3673",
       "3702",
       "3711",
@@ -198,7 +194,6 @@
       "1815",
       "2221",
       "3081",
-      "3105",
       "3131",
       "3147",
       "3162",
@@ -212,7 +207,6 @@
       "3490",
       "3498",
       "3529",
-      "3551",
       "3587",
       "3624",
       "3680",
@@ -248,7 +242,6 @@
       "6231",
       "6245",
       "6274",
-      "6284",
       "6290",
       "6291",
       "6435",
@@ -274,7 +267,6 @@
       "8027",
       "8040",
       "8042",
-      "8054",
       "8069",
       "8086",
       "8111",
@@ -669,6 +661,12 @@
       ]
     },
     {
+      "code": "3661",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
       "code": "3704",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
@@ -935,6 +933,12 @@
       ]
     },
     {
+      "code": "3105",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "3141",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
@@ -1074,6 +1078,13 @@
       ]
     },
     {
+      "code": "6284",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
       "code": "6488",
       "failures": [
         "REVENUE_DETERIORATION"
@@ -1104,6 +1115,13 @@
       "code": "8043",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "8054",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
       ]
     },
     {
