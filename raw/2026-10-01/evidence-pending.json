@@ -2,7 +2,7 @@
   "targetDate": "2026-10-01",
   "researchComplete": false,
   "counts": {
-    "fundamental": 310,
+    "fundamental": 308,
     "credit": 3
   },
   "pending": {
@@ -89,7 +89,6 @@
       "2542",
       "2548",
       "2605",
-      "2609",
       "2615",
       "2617",
       "2633",
@@ -177,7 +176,6 @@
       "6177",
       "6197",
       "6202",
-      "6206",
       "6209",
       "6213",
       "6226",
@@ -535,6 +533,12 @@
       "code": "2603",
       "failures": [
         "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2609",
+      "failures": [
         "PROFIT_DETERIORATION"
       ]
     },
