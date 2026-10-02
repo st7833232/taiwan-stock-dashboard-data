@@ -1,8 +1,19 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {execFileSync} from 'node:child_process';
 import {parseMopsCompanyHistoricalIncomeHtml} from './collect-research-evidence.mjs';
 import {filingVersion,verifyPdfText,requestOfficial} from './collect-financial-pdfs.mjs';
+test('readable filed income tables verify Chinese dates, half-year headers and amount-only ownership rows without OCR',()=>{
+ for(const code of ['1528','2233','2312','2316','2363','2371']){
+  const file=fs.readdirSync('history/financial-reports').find(p=>p.startsWith(`202502_${code}_AI1.pdf.`)&&p.endsWith('.pdf'));
+  const stem='history/financial-reports/'+file.slice(0,-4),row=parseMopsCompanyHistoricalIncomeHtml(fs.readFileSync(stem+'.income.html','utf8'),{code,year:2025,quarter:2});
+  const pages=execFileSync('pdftotext',['-layout',stem+'.pdf','-'],{encoding:'utf8'}).split('\f');
+  assert.ok(verifyPdfText(pages,row).length,code);
+  assert.throws(()=>verifyPdfText(pages,{...row,'營業收入':row['營業收入']+1}),code);
+  assert.throws(()=>verifyPdfText(pages,{...row,'淨利（淨損）歸屬於母公司業主':row['淨利（淨損）歸屬於母公司業主']+1}),code);
+ }
+});
 test('file versions use official upload time and never accept a later or corrected filing',()=>{
  const html=fs.readFileSync('history/financial-reports/2409.html','utf8');
  assert.equal(filingVersion(html,'2409',2025,2,'2026-09-30').filename,'202502_2409_AI1.pdf');
@@ -129,6 +140,13 @@ test('saved PDFs make progress before new network work during official outages',
  const {financialQueue}=await import('./collect-financial-pdfs.mjs');
  const rows=[{key:'network',archived:false},{key:'local',archived:true}];
  assert.deepEqual(financialQueue(rows,{},new Date(),new Set()).map(r=>r.key),['local','network']);
+});
+test('OCR reviews the identified income table and its continuation instead of unrelated notes, but scanned files still resume all pages',async()=>{
+ const {pdfReviewPages,financialQueue}=await import('./collect-financial-pdfs.mjs');
+ assert.deepEqual(pdfReviewPages(['目錄','資產負債表','合併綜合損益表 金額','續表','附註'],5),[3,4]);
+ assert.deepEqual(pdfReviewPages(['','',''],3),[1,2,3]);
+ const now=new Date('2026-10-02T01:00:00Z'),state={old:{parserVersion:2,textParserVersion:2,nextRetryAt:'2026-10-03T01:00:00Z'},current:{parserVersion:2,textParserVersion:3,nextRetryAt:'2026-10-03T01:00:00Z'}};
+ assert.deepEqual(financialQueue([{key:'old',archived:true},{key:'current',archived:true}],state,now,new Set()).map(r=>r.key),['old']);
 });
 
 test('a verified historical PDF stays admitted on later recovery days without network requests',async()=>{

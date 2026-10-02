@@ -67,6 +67,13 @@ test('no valid BUY setup can still be a completed study; missing credit cannot',
   assert.equal(evidenceSummary(input,result).researchComplete,true);
   assert.equal(evidenceSummary(input,{...result,rows:[{code:'3005',gates:{...gates,credit:false}}]}).researchComplete,false);
 });
+test('financial recovery continues actionable validated work beyond the general retry cap, without retrying rate-limited or stale work',()=>{
+ const report={targetDate:'2026-10-01',researchComplete:false,evidencePending:{fundamental:400},validation:{status:'PASS',runId:'123'}},collection={targetDate:'2026-10-01',ready:200,continuationNeeded:true};
+ assert.deepEqual(recoveryDecision({report,status:{},collection,runId:'123',count:12}),{dispatch:true,reason:'FINANCIAL_WORK_READY'});
+ for(const c of [{...collection,rateLimited:true},{...collection,ready:0},{...collection,targetDate:'2026-09-30'}])assert.equal(recoveryDecision({report,status:{},collection:c,runId:'123',count:12}).dispatch,false);
+ assert.equal(recoveryDecision({report,status:{},collection,runId:'old',count:12}).dispatch,false);
+ assert.equal(recoveryDecision({report,status:{},collection,runId:'123',count:40}).dispatch,false);
+});
 test('verified financial rejection completes research without granting a fundamental gate',()=>{
   const gates={history:true,institutional:true,credit:true,tdcc:true,fundamental:false,event:true,corporateAction:true};
   const assessment={status:'FAIL',verified:true,qualityPass:false,pending:[],failures:['PROFIT_DETERIORATION']};

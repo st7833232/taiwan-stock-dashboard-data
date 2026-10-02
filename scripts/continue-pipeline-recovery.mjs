@@ -1,7 +1,9 @@
 import fs from 'node:fs';
 import {pathToFileURL} from 'node:url';
+import {shouldContinueFinancial} from './continue-financial-evidence.mjs';
 const read=p=>{try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}};
-export function recoveryDecision({report,status,count,max=12}) {
+export function recoveryDecision({report,status,count,max=12,collection,runId}) {
+  if(shouldContinueFinancial(collection,report,runId,count))return {dispatch:true,reason:'FINANCIAL_WORK_READY'};
   if(!Number.isInteger(count)||count<0||count>=max)return {dispatch:false,reason:'RECOVERY_LIMIT'};
   if(report?.researchComplete===true&&report?.validation?.status==='PASS')return {dispatch:false,reason:'COMPLETE'};
   const error=String(status?.error??'');
@@ -14,7 +16,8 @@ export async function continuePipelineRecovery(){
   const manifest=read('manifest.json'),research=read(manifest?.researchPath),target=research?.researchDate;
   if(!target)throw Error('Cannot resolve recovery target from manifest');
   const root=`raw/${target}`,report=read(`${root}/daily-report.json`),status=read(`${root}/pipeline-status.json`);
-  const count=Number(process.env.RECOVERY_COUNT||0),decision=recoveryDecision({report,status,count});
+  const collection=read(`${root}/financial-pdf-collection.json`);
+  const count=Number(process.env.RECOVERY_COUNT||0),decision=recoveryDecision({report,status,count,collection,runId:process.env.GITHUB_RUN_ID});
   if(!decision.dispatch){console.log(JSON.stringify({selfHealing:'STOP',reason:decision.reason,chain:count,target}));return;}
   const repo=process.env.GITHUB_REPOSITORY,token=process.env.GITHUB_TOKEN;
   if(!/^[\w.-]+\/[\w.-]+$/.test(repo??'')||!token)throw Error('Self-healing GitHub identity or token missing');
