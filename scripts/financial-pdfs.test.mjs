@@ -149,20 +149,20 @@ test('OCR reviews the identified income table and its continuation instead of un
  assert.deepEqual(financialQueue([{key:'old',archived:true},{key:'current',archived:true}],state,now,new Set()).map(r=>r.key),['old']);
 });
 
-test('a verified historical PDF stays admitted on later recovery days without network requests',async()=>{
+test('verified historical PDFs stay admitted across days with linear archive reads and no network work',async()=>{
  const {collectFinancialPdfs}=await import('./collect-financial-pdfs.mjs');
  const {default:os}=await import('node:os');const {default:path}=await import('node:path');
- const original=process.cwd(),fetcher=globalThis.fetch,report=JSON.parse(fs.readFileSync('history/reviewed-financial-reports.json')).find(r=>r.row['公司代號']==='2409'),tmp=fs.mkdtempSync(path.join(os.tmpdir(),'financial-admission-'));let requests=0;
+ const original=process.cwd(),fetcher=globalThis.fetch,reader=fs.readFileSync,reports=JSON.parse(fs.readFileSync('history/reviewed-financial-reports.json')).filter(r=>['2409','3605'].includes(r.row['公司代號'])),tmp=fs.mkdtempSync(path.join(os.tmpdir(),'financial-admission-'));let requests=0,pdfReads=0;
  try{
   fs.mkdirSync(path.join(tmp,'history/financial-reports'),{recursive:true});
-  const prefix=report.archiveKey??'2409';fs.copyFileSync(`history/financial-reports/${prefix}.html`,path.join(tmp,`history/financial-reports/${prefix}.html`));
-  const pdf=report.archiveKey?report.archiveKey+'.pdf':report.filename;fs.copyFileSync('history/financial-reports/'+pdf,path.join(tmp,'history/financial-reports/'+pdf));
+  for(const report of reports){const code=report.row['公司代號'],prefix=report.archiveKey??code;fs.copyFileSync(`history/financial-reports/${prefix}.html`,path.join(tmp,`history/financial-reports/${prefix}.html`));
+   const pdf=report.archiveKey?report.archiveKey+'.pdf':report.filename;fs.copyFileSync('history/financial-reports/'+pdf,path.join(tmp,'history/financial-reports/'+pdf));}
   process.chdir(tmp);fs.mkdirSync('raw/2026-10-01',{recursive:true});
-  fs.writeFileSync('history/reviewed-financial-reports.json',JSON.stringify([report]));fs.writeFileSync('history/financial-pdf-collection.json',JSON.stringify({'2409|2026-06-30':{status:'VERIFIED',parserVersion:2,checkedDate:'2026-09-30'}}));
-  fs.writeFileSync('raw/2026-10-01/research-input.json',JSON.stringify({deepDive:[{code:'2409',assetType:'STOCK'}]}));fs.writeFileSync('raw/2026-10-01/financial-evidence-captures.json',JSON.stringify({captures:[{id:'income',kind:'income',status:'CAPTURED'}]}));
-  fs.writeFileSync('raw/2026-10-01/income.raw.txt',JSON.stringify([{'公司代號':'2409','年度':2026,'季別':2,'淨利（淨損）歸屬於母公司業主':100}]));
-  globalThis.fetch=async()=>{requests++;throw Error('OFFICIAL_RATE_LIMITED');};
+  fs.writeFileSync('history/reviewed-financial-reports.json',JSON.stringify(reports));fs.writeFileSync('history/financial-pdf-collection.json',JSON.stringify(Object.fromEntries(['2409','3605'].map(code=>[`${code}|2026-06-30`,{status:'VERIFIED',parserVersion:2,checkedDate:'2026-09-30'}]))));
+  fs.writeFileSync('raw/2026-10-01/research-input.json',JSON.stringify({deepDive:['2409','3605'].map(code=>({code,assetType:'STOCK'}))}));fs.writeFileSync('raw/2026-10-01/financial-evidence-captures.json',JSON.stringify({captures:[{id:'income',kind:'income',status:'CAPTURED'}]}));
+  fs.writeFileSync('raw/2026-10-01/income.raw.txt',JSON.stringify(['2409','3605'].map(code=>({'公司代號':code,'年度':2026,'季別':2,'淨利（淨損）歸屬於母公司業主':100}))));
+  globalThis.fetch=async()=>{requests++;throw Error('OFFICIAL_RATE_LIMITED');};fs.readFileSync=(p,...args)=>{if(String(p).endsWith('.pdf'))pdfReads++;return reader(p,...args);};
   await collectFinancialPdfs('2026-10-01');
-  assert.equal(requests,0);assert.equal(JSON.parse(fs.readFileSync('raw/2026-10-01/financial-pdf-collection.json')).remaining,0);
- }finally{globalThis.fetch=fetcher;process.chdir(original);fs.rmSync(tmp,{recursive:true,force:true});}
+  assert.equal(requests,0);assert.equal(JSON.parse(fs.readFileSync('raw/2026-10-01/financial-pdf-collection.json')).remaining,0);assert.equal(pdfReads,4);
+ }finally{globalThis.fetch=fetcher;fs.readFileSync=reader;process.chdir(original);fs.rmSync(tmp,{recursive:true,force:true});}
 });
