@@ -5,7 +5,11 @@ import {resolveCaptureTargetDate} from './resolve-capture-target-date.mjs';
 import {inputFingerprint} from './screen-market.mjs';
 
 const read=p=>{try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}};
-export const resolvePipelineTarget=(explicit,now=new Date())=>explicit||resolveCaptureTargetDate({now});
+export function resolvePipelineTarget(explicit,now=new Date()){
+  if(explicit)return explicit;
+  const ready=resolveCaptureTargetDate({now}),manifest=read('manifest.json'),target=read(manifest?.researchPath)?.researchDate,report=target?read(`raw/${target}/daily-report.json`):null;
+  return target<=ready&&read(manifest?.paperAccountPath)?.asOf===target&&report?.targetDate===target&&report.screeningComplete===true&&report.researchComplete===false&&report.validation?.status==='PASS'?target:ready;
+}
 export function completionCurrent({target,config,manifest,research,paper,history,input,state}) {
   const paths=[manifest?.researchPath,manifest?.selectionHistoryPath,manifest?.paperAccountPath];
   return Boolean(manifest?.revision&&paths.every(p=>p?.startsWith(`snapshots/${manifest.revision}/`))

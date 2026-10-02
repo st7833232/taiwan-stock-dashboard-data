@@ -1,0 +1,701 @@
+{
+  "targetDate": "2026-10-01",
+  "calendar": {
+    "url": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115",
+    "status": "CAPTURED",
+    "payload": {
+      "stat": "ok",
+      "date": "20260101",
+      "title": "115 年市場開休市日期",
+      "fields": [
+        "日期",
+        "名稱",
+        "說明"
+      ],
+      "data": [
+        [
+          "2026-01-01",
+          "中華民國開國紀念日",
+          "依規定放假1日。"
+        ],
+        [
+          "2026-01-02",
+          "國曆新年開始交易日",
+          "國曆新年開始交易。"
+        ],
+        [
+          "2026-02-11",
+          "農曆春節前最後交易日",
+          "農曆春節前最後交易。\r\n"
+        ],
+        [
+          "2026-02-12",
+          "市場無交易，僅辦理結算交割作業",
+          ""
+        ],
+        [
+          "2026-02-13",
+          "市場無交易，僅辦理結算交割作業",
+          ""
+        ],
+        [
+          "2026-02-15",
+          "農曆除夕及春節",
+          "依規定於2月15日至2月19日放假5日。2月15日適逢星期日，於2月20日（星期五）補假。"
+        ],
+        [
+          "2026-02-16",
+          "農曆除夕及春節",
+          "依規定於2月15日至2月19日放假5日。2月15日適逢星期日，於2月20日（星期五）補假。"
+        ],
+        [
+          "2026-02-17",
+          "農曆除夕及春節",
+          "依規定於2月15日至2月19日放假5日。2月15日適逢星期日，於2月20日（星期五）補假。\r\n\r\n\r\n"
+        ],
+        [
+          "2026-02-18",
+          "農曆除夕及春節",
+          "依規定於2月15日至2月19日放假5日。2月15日適逢星期日，於2月20日（星期五）補假。"
+        ],
+        [
+          "2026-02-19",
+          "農曆除夕及春節",
+          "依規定於2月15日至2月19日放假5日。2月15日適逢星期日，於2月20日（星期五）補假。"
+        ],
+        [
+          "2026-02-20",
+          "農曆除夕及春節",
+          "依規定於2月15日至2月19日放假5日。2月15日適逢星期日，於2月20日（星期五）補假。"
+        ],
+        [
+          "2026-02-23",
+          "農曆春節後開始交易日",
+          "農曆春節後開始交易。"
+        ],
+        [
+          "2026-02-27",
+          "和平紀念日",
+          "和平紀念日為2月28日適逢星期六，於2月27日（星期五）補假。"
+        ],
+        [
+          "2026-02-28",
+          "和平紀念日",
+          "依規定放假1日。"
+        ],
+        [
+          "2026-04-03",
+          "兒童節及民族掃墓節",
+          "兒童節為4月4日適逢星期六，於4月3日（星期五）補假。"
+        ],
+        [
+          "2026-04-04",
+          "兒童節及民族掃墓節",
+          "依規定放假1日。"
+        ],
+        [
+          "2026-04-05",
+          "兒童節及民族掃墓節",
+          "依規定放假1日。"
+        ],
+        [
+          "2026-04-06",
+          "兒童節及民族掃墓節",
+          "民族掃墓節為4月5日適逢星期日，於4月6日（星期一）補假。"
+        ],
+        [
+          "2026-05-01",
+          "勞動節",
+          "依規定放假1日。"
+        ],
+        [
+          "2026-06-19",
+          "端午節",
+          "依規定放假1日。"
+        ],
+        [
+          "2026-09-25",
+          "中秋節",
+          "依規定放假1日。"
+        ],
+        [
+          "2026-09-28",
+          "孔子誕辰紀念日/ 教師節",
+          "依規定放假1日。"
+        ],
+        [
+          "2026-10-09",
+          "國慶日",
+          "國慶日為10月10日適逢星期六，於10月9日（星期五）補假。"
+        ],
+        [
+          "2026-10-10",
+          "國慶日",
+          "依規定放假1日。"
+        ],
+        [
+          "2026-10-25",
+          "臺灣光復暨金門古寧頭大捷紀念日",
+          "依規定放假1日。"
+        ],
+        [
+          "2026-10-26",
+          "臺灣光復暨金門古寧頭大捷紀念日",
+          "臺灣光復暨金門古寧頭大捷紀念日為10月25日適逢星期日，於10月26日（星期一）補假。"
+        ],
+        [
+          "2026-12-25",
+          "行憲紀念日",
+          "依規定放假1日。"
+        ]
+      ],
+      "queryYear": 2026,
+      "total": 27
+    }
+  },
+  "records": [
+    {
+      "code": "7828",
+      "sources": [
+        {
+          "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+          "status": "CAPTURED",
+          "record": {
+            "Date": "1151001",
+            "SecuritiesCompanyCode": "7828",
+            "CompanyName": "創新服務股份有限公司",
+            "CompanyAbbreviation": "創新服務",
+            "Registration": "－ ",
+            "SecuritiesIndustryCode": "24",
+            "Address": "No.10, Ln. 116, Da-Angang Rd., Dajia Dist.,Taichung City 437, TAIWAN.",
+            "UnifiedBusinessNo.": "27472283",
+            "Chairman": "吳智孟",
+            "GeneralManager": "吳智孟",
+            "Spokesman": "林俊忠",
+            "TitleOfSpokesman": "業務部副總",
+            "DeputySpokesperson": "張琪琪",
+            "Telephone": "04-2680-1023",
+            "DateOfIncorporation": "20041020",
+            "DateOfListing": "20260422",
+            "ParValueOfCommonStock": "新台幣                 10.0000元",
+            "Paidin.Capital.NTDollars": "404939110",
+            "PrivateStock.shares": "0",
+            "PreferredStock.shares": "0",
+            "PreparationOfFinancialReportType": "1",
+            "StockTransferAgent": "凱基證券股份有限公司股務代理部",
+            "StockTransferAgentTelephone": "02-2389-2999",
+            "StockTransferAgentAddress": "台北市中正區重慶南路1段2號5樓",
+            "AccountingFirm": "資誠聯合會計師事務所",
+            "CPA.CharteredPublicAccountant.First": "蔡欣怡",
+            "CPA.CharteredPublicAccountant.Second": "白淑蒨",
+            "Symbol": "INNOSTAR",
+            "Fax": "04-2680-1202",
+            "EmailAddress": "ir@inno-stars.com",
+            "WebAddress": "https://www.inno-stars.com/",
+            "IssueShares": "40493911"
+          }
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=7828&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW0007828006</td>\n        <td align=center bgcolor=#FAFAD2>7828</td>\n        <td bgcolor=#FAFAD2>創新服務</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>股票</td>\n        <td bgcolor=#FAFAD2>半導體業</td>\n        \n        <td bgcolor=#FAFAD2>2026/04/22</td>\n        <td bgcolor=#FAFAD2>ESVUFR</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-02T02:43:13.300Z"
+    },
+    {
+      "code": "00406A",
+      "sources": [
+        {
+          "url": "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+          "status": "CAPTURED",
+          "record": {
+            "出表日期": "1151001",
+            "基金代號": "00406A",
+            "基金簡稱": "主動中信台灣收益",
+            "基金類型": "國內成分證券主動式交易所交易基金(股票)",
+            "基金中文名稱": "中國信託台灣收益成長主動式ETF證券投資信託基金",
+            "基金英文名稱": "CTBC Taiwan Income and Growth Active ETF",
+            "標的指數/追蹤指數名稱": "不適用",
+            "標的指數是否為客製化或需揭露相關資訊之指數": "不適用",
+            "股票及債券投資比例說明": "不適用",
+            "是否設有績效指標": "否",
+            "績效指標中文名稱": "",
+            "績效指標英文名稱": "",
+            "是否包含國外成分股": "否",
+            "基金統一編號": "00682450",
+            "成立日期": "1150602",
+            "上市日期": "1150611",
+            "基金經理人": "張書廷",
+            "經理公司總機": "(02)2652-6688",
+            "經理公司地址": "台北市南港區經貿二路188號12樓",
+            "經理公司董事長": "陳金榮",
+            "經理公司發言人": "陳正華",
+            "經理公司總經理": "陳正華",
+            "經理公司代理發言人": "黃伊芃",
+            "總代理人": "",
+            "發行單位數/轉換數": "5856562000",
+            "保管機構": "合作金庫商業銀行股份有限公司",
+            "保管機構電話": "(02)2173-8888",
+            "保管機構地址": "臺北市松山區長安東路2段225號",
+            "備註": ""
+          }
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00406A&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW00000406A0</td>\n        <td align=center bgcolor=#FAFAD2>00406A</td>\n        <td bgcolor=#FAFAD2>主動中信台灣收益</td>\n        \n        <td bgcolor=#FAFAD2>上市</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/06/11</td>\n        <td bgcolor=#FAFAD2>CEOIEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-02T02:43:14.028Z"
+    },
+    {
+      "code": "00403A",
+      "sources": [
+        {
+          "url": "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+          "status": "CAPTURED",
+          "record": {
+            "出表日期": "1151001",
+            "基金代號": "00403A",
+            "基金簡稱": "主動統一升級50",
+            "基金類型": "國內成分證券主動式交易所交易基金(股票)",
+            "基金中文名稱": "統一台股升級50主動式ETF證券投資信託基金",
+            "基金英文名稱": "UPAMC Taiwan Elite 50 Active ETF",
+            "標的指數/追蹤指數名稱": "不適用",
+            "標的指數是否為客製化或需揭露相關資訊之指數": "不適用",
+            "股票及債券投資比例說明": "不適用",
+            "是否設有績效指標": "是",
+            "績效指標中文名稱": "臺灣證券交易所發行量加權股價指數",
+            "績效指標英文名稱": "Taiwan Stock Exchange Capitalization Weighted Stock Index",
+            "是否包含國外成分股": "否",
+            "基金統一編號": "00670969",
+            "成立日期": "1150428",
+            "上市日期": "1150512",
+            "基金經理人": "張哲瑋",
+            "經理公司總機": "(02)2747-8388",
+            "經理公司地址": "台北市松山區東興路8號8樓",
+            "經理公司董事長": "鄧潤澤",
+            "經理公司發言人": "董永寬",
+            "經理公司總經理": "董永寬",
+            "經理公司代理發言人": "董永寬",
+            "總代理人": "",
+            "發行單位數/轉換數": "13479519000",
+            "保管機構": "彰化商業銀行股份有限公司",
+            "保管機構電話": "(02)2536-2951",
+            "保管機構地址": "台北市中山北路2段57號13樓",
+            "備註": ""
+          }
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00403A&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW00000403A7</td>\n        <td align=center bgcolor=#FAFAD2>00403A</td>\n        <td bgcolor=#FAFAD2>主動統一升級50</td>\n        \n        <td bgcolor=#FAFAD2>上市</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/05/12</td>\n        <td bgcolor=#FAFAD2>CEOIEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-02T02:43:14.414Z"
+    },
+    {
+      "code": "009828",
+      "sources": [
+        {
+          "url": "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+          "status": "CAPTURED",
+          "record": {
+            "出表日期": "1151001",
+            "基金代號": "009828",
+            "基金簡稱": "中信台日韓PCB",
+            "基金類型": "國外成分證券指數股票型基金",
+            "基金中文名稱": "中國信託台日韓PCB ETF證券投資信託基金",
+            "基金英文名稱": "CTBC Taiwan/Japan/Korea PCB value chain ETF",
+            "標的指數/追蹤指數名稱": "NYSE TIP台日韓PCB指數",
+            "標的指數是否為客製化或需揭露相關資訊之指數": "是",
+            "股票及債券投資比例說明": "不適用",
+            "是否設有績效指標": "不適用",
+            "績效指標中文名稱": "不適用",
+            "績效指標英文名稱": "不適用",
+            "是否包含國外成分股": "是",
+            "基金統一編號": "00719359",
+            "成立日期": "1150824",
+            "上市日期": "1150902",
+            "基金經理人": "葉松炫",
+            "經理公司總機": "(02)2652-6688",
+            "經理公司地址": "台北市南港區經貿二路188號12樓",
+            "經理公司董事長": "陳金榮",
+            "經理公司發言人": "陳正華",
+            "經理公司總經理": "陳正華",
+            "經理公司代理發言人": "黃伊芃",
+            "總代理人": "",
+            "發行單位數/轉換數": "831045000",
+            "保管機構": "永豐商業銀行股份有限公司",
+            "保管機構電話": "(02)2517-3336",
+            "保管機構地址": "台北市中山區南京東路三段36號",
+            "備註": ""
+          }
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=009828&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW0000098284</td>\n        <td align=center bgcolor=#FAFAD2>009828</td>\n        <td bgcolor=#FAFAD2>中信台日韓PCB</td>\n        \n        <td bgcolor=#FAFAD2>上市</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/09/02</td>\n        <td bgcolor=#FAFAD2>CEOGEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-02T02:43:14.495Z"
+    },
+    {
+      "code": "00405A",
+      "sources": [
+        {
+          "url": "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+          "status": "CAPTURED",
+          "record": {
+            "出表日期": "1151001",
+            "基金代號": "00405A",
+            "基金簡稱": "主動富邦台灣龍耀",
+            "基金類型": "國內成分證券主動式交易所交易基金(股票)",
+            "基金中文名稱": "富邦台灣龍耀主動式ETF證券投資信託基金",
+            "基金英文名稱": "Fubon Taiwan Glory Active ETF",
+            "標的指數/追蹤指數名稱": "不適用",
+            "標的指數是否為客製化或需揭露相關資訊之指數": "不適用",
+            "股票及債券投資比例說明": "不適用",
+            "是否設有績效指標": "否",
+            "績效指標中文名稱": "",
+            "績效指標英文名稱": "",
+            "是否包含國外成分股": "否",
+            "基金統一編號": "00675654",
+            "成立日期": "1150525",
+            "上市日期": "1150609",
+            "基金經理人": "高日告欣",
+            "經理公司總機": "(02)8771-6688",
+            "經理公司地址": "台北市敦化南路一段108號8樓",
+            "經理公司董事長": "黃昭棠",
+            "經理公司發言人": "黃昭棠",
+            "經理公司總經理": "呂其倫",
+            "經理公司代理發言人": "呂其倫",
+            "總代理人": "",
+            "發行單位數/轉換數": "2786745000",
+            "保管機構": "彰化商業銀行股份有限公司",
+            "保管機構電話": "(02)2536-2951",
+            "保管機構地址": "台北市中山區中山北路二段57號12樓",
+            "備註": ""
+          }
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00405A&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW00000405A2</td>\n        <td align=center bgcolor=#FAFAD2>00405A</td>\n        <td bgcolor=#FAFAD2>主動富邦台灣龍耀</td>\n        \n        <td bgcolor=#FAFAD2>上市</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/06/09</td>\n        <td bgcolor=#FAFAD2>CEOIEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-02T02:43:14.538Z"
+    },
+    {
+      "code": "00407A",
+      "sources": [
+        {
+          "url": "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+          "status": "CAPTURED",
+          "record": {
+            "出表日期": "1151001",
+            "基金代號": "00407A",
+            "基金簡稱": "主動凱基台灣",
+            "基金類型": "國內成分證券主動式交易所交易基金(股票)",
+            "基金中文名稱": "凱基台灣主動式ETF證券投資信託基金",
+            "基金英文名稱": "KGI Taiwan Equity Active ETF",
+            "標的指數/追蹤指數名稱": "不適用",
+            "標的指數是否為客製化或需揭露相關資訊之指數": "不適用",
+            "股票及債券投資比例說明": "不適用",
+            "是否設有績效指標": "否",
+            "績效指標中文名稱": "無",
+            "績效指標英文名稱": "無",
+            "是否包含國外成分股": "否",
+            "基金統一編號": "00684611",
+            "成立日期": "1150612",
+            "上市日期": "1150624",
+            "基金經理人": "趙偉志",
+            "經理公司總機": "(02)2181-5678",
+            "經理公司地址": "台北市中山區明水路698號",
+            "經理公司董事長": "丁紹曾",
+            "經理公司發言人": "張慈恩",
+            "經理公司總經理": "張慈恩",
+            "經理公司代理發言人": "張慈恩",
+            "總代理人": "無",
+            "發行單位數/轉換數": "2330739000",
+            "保管機構": "彰化銀行股份有限公司",
+            "保管機構電話": "(02)2536-2951",
+            "保管機構地址": "台北市中山區中山北路二段57號12樓",
+            "備註": ""
+          }
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00407A&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW00000407A8</td>\n        <td align=center bgcolor=#FAFAD2>00407A</td>\n        <td bgcolor=#FAFAD2>主動凱基台灣</td>\n        \n        <td bgcolor=#FAFAD2>上市</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/06/24</td>\n        <td bgcolor=#FAFAD2>CEOGEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-02T02:43:14.678Z"
+    },
+    {
+      "code": "00409A",
+      "sources": [
+        {
+          "url": "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+          "status": "CAPTURED",
+          "record": {
+            "出表日期": "1151001",
+            "基金代號": "00409A",
+            "基金簡稱": "主動復華全球50",
+            "基金類型": "國外成分證券主動式交易所交易基金(股票)",
+            "基金中文名稱": "復華全球未來50主動式ETF證券投資信託基金",
+            "基金英文名稱": "Fuh Hwa Global Future 50 Active ETF",
+            "標的指數/追蹤指數名稱": "不適用",
+            "標的指數是否為客製化或需揭露相關資訊之指數": "不適用",
+            "股票及債券投資比例說明": "不適用",
+            "是否設有績效指標": "否",
+            "績效指標中文名稱": "",
+            "績效指標英文名稱": "",
+            "是否包含國外成分股": "是",
+            "基金統一編號": "00672586",
+            "成立日期": "1150820",
+            "上市日期": "1150902",
+            "基金經理人": "胡家菱",
+            "經理公司總機": "(02)8161-6800",
+            "經理公司地址": "台北市八德路二段308號8樓",
+            "經理公司董事長": "杜俊雄",
+            "經理公司發言人": "張偉智",
+            "經理公司總經理": "張偉智",
+            "經理公司代理發言人": "無",
+            "總代理人": "",
+            "發行單位數/轉換數": "1525948000",
+            "保管機構": "國泰世華商業銀行股份有限公司",
+            "保管機構電話": "(02)8722-6666",
+            "保管機構地址": "臺北市信義區松仁路7號",
+            "備註": ""
+          }
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00409A&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW00000409A4</td>\n        <td align=center bgcolor=#FAFAD2>00409A</td>\n        <td bgcolor=#FAFAD2>主動復華全球50</td>\n        \n        <td bgcolor=#FAFAD2>上市</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/09/02</td>\n        <td bgcolor=#FAFAD2>CEOIEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-02T02:43:14.756Z"
+    },
+    {
+      "code": "009829",
+      "sources": [
+        {
+          "url": "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+          "status": "CAPTURED",
+          "record": {
+            "出表日期": "1151001",
+            "基金代號": "009829",
+            "基金簡稱": "大華韓國KOSPI 50",
+            "基金類型": "國外成分證券指數股票型基金",
+            "基金中文名稱": "大華銀韓國KOSPI 50 ETF 證券投資信託基金",
+            "基金英文名稱": "United Korea KOSPI 50 ETF",
+            "標的指數/追蹤指數名稱": "KOSPI 50指數",
+            "標的指數是否為客製化或需揭露相關資訊之指數": "否",
+            "股票及債券投資比例說明": "不適用",
+            "是否設有績效指標": "不適用",
+            "績效指標中文名稱": "不適用",
+            "績效指標英文名稱": "不適用",
+            "是否包含國外成分股": "是",
+            "基金統一編號": "00719554",
+            "成立日期": "1150812",
+            "上市日期": "1150821",
+            "基金經理人": "郭修誠",
+            "經理公司總機": "(02)2719-7005",
+            "經理公司地址": "台北市松山區民生東路三段109號16樓",
+            "經理公司董事長": "張文傑",
+            "經理公司發言人": "張耿豪",
+            "經理公司總經理": "王政修",
+            "經理公司代理發言人": "無",
+            "總代理人": "",
+            "發行單位數/轉換數": "333870000",
+            "保管機構": "臺灣集中保管結算所股份有限公司",
+            "保管機構電話": "(02)2719-5805",
+            "保管機構地址": "台北市復興北路363號11樓",
+            "備註": ""
+          }
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=009829&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW0000098292</td>\n        <td align=center bgcolor=#FAFAD2>009829</td>\n        <td bgcolor=#FAFAD2>大華韓國KOSPI50</td>\n        \n        <td bgcolor=#FAFAD2>上市</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/08/21</td>\n        <td bgcolor=#FAFAD2>CEOIEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-02T02:43:14.867Z"
+    },
+    {
+      "code": "00411A",
+      "sources": [
+        {
+          "url": "https://isin.twse.com.tw/isin/C_public.jsp?strMode=4",
+          "status": "CAPTURED",
+          "recordHtml": "<tr><td bgcolor=#FAFAD2>00411A　主動統一前沿科技</td><td bgcolor=#FAFAD2>TW00000411A0</td><td bgcolor=#FAFAD2>2026/08/26</td><td bgcolor=#FAFAD2>上櫃</td><td bgcolor=#FAFAD2></td><td bgcolor=#FAFAD2>CEOIEU</td><td bgcolor=#FAFAD2></td></tr>",
+          "capturedAt": "2026-10-02T01:53:51.746Z"
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00411A&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW00000411A0</td>\n        <td align=center bgcolor=#FAFAD2>00411A</td>\n        <td bgcolor=#FAFAD2>主動統一前沿科技</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/08/26</td>\n        <td bgcolor=#FAFAD2>CEOIEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-02T02:43:34.917Z"
+    },
+    {
+      "code": "00404A",
+      "sources": [
+        {
+          "url": "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+          "status": "CAPTURED",
+          "record": {
+            "出表日期": "1151001",
+            "基金代號": "00404A",
+            "基金簡稱": "主動聯博動能50",
+            "基金類型": "國內成分證券主動式交易所交易基金(股票)",
+            "基金中文名稱": "聯博台灣動能收益50主動式ETF證券投資信託基金",
+            "基金英文名稱": "ABITL Taiwan Momentum Equity Premium Income 50 Active ETF",
+            "標的指數/追蹤指數名稱": "不適用",
+            "標的指數是否為客製化或需揭露相關資訊之指數": "不適用",
+            "股票及債券投資比例說明": "不適用",
+            "是否設有績效指標": "否",
+            "績效指標中文名稱": "不適用",
+            "績效指標英文名稱": "不適用",
+            "是否包含國外成分股": "否",
+            "基金統一編號": "00675444",
+            "成立日期": "1150528",
+            "上市日期": "1150609",
+            "基金經理人": "黃靜怡",
+            "經理公司總機": "(02)8758-3888",
+            "經理公司地址": "台北市信義路五段7 號81 樓及81 樓之1",
+            "經理公司董事長": "翁振國",
+            "經理公司發言人": "龔俊誠",
+            "經理公司總經理": "吳中嵐",
+            "經理公司代理發言人": "N/A",
+            "總代理人": "不適用",
+            "發行單位數/轉換數": "434295000",
+            "保管機構": "台北富邦商業銀行股份有限公司",
+            "保管機構電話": "(02)2771-6699",
+            "保管機構地址": "臺北市大安區仁愛路四段169 號",
+            "備註": ""
+          }
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00404A&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW00000404A5</td>\n        <td align=center bgcolor=#FAFAD2>00404A</td>\n        <td bgcolor=#FAFAD2>主動聯博動能50</td>\n        \n        <td bgcolor=#FAFAD2>上市</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/06/09</td>\n        <td bgcolor=#FAFAD2>CEOIEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-02T02:43:35.058Z"
+    },
+    {
+      "code": "00998A",
+      "sources": [
+        {
+          "url": "https://isin.twse.com.tw/isin/C_public.jsp?strMode=4",
+          "status": "CAPTURED",
+          "recordHtml": "<tr><td bgcolor=#FAFAD2>00998A　主動復華金融股息</td><td bgcolor=#FAFAD2>TW00000998A6</td><td bgcolor=#FAFAD2>2026/04/15</td><td bgcolor=#FAFAD2>上櫃</td><td bgcolor=#FAFAD2></td><td bgcolor=#FAFAD2>CEOIEU</td><td bgcolor=#FAFAD2></td></tr>",
+          "capturedAt": "2026-10-02T01:53:51.746Z"
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00998A&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW00000998A6</td>\n        <td align=center bgcolor=#FAFAD2>00998A</td>\n        <td bgcolor=#FAFAD2>主動復華金融股息</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/04/15</td>\n        <td bgcolor=#FAFAD2>CEOIEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-02T02:43:35.106Z"
+    },
+    {
+      "code": "009826",
+      "sources": [
+        {
+          "url": "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+          "status": "CAPTURED",
+          "record": {
+            "出表日期": "1151001",
+            "基金代號": "009826",
+            "基金簡稱": "貝萊德世界股票",
+            "基金類型": "國外成分證券指數股票型基金",
+            "基金中文名稱": "貝萊德iShares安碩世界股票ETF證券投資信託基金",
+            "基金英文名稱": "BlackRock iShares Global All Cap ETF",
+            "標的指數/追蹤指數名稱": "標普TIP世界股票指數",
+            "標的指數是否為客製化或需揭露相關資訊之指數": "否",
+            "股票及債券投資比例說明": "不適用",
+            "是否設有績效指標": "不適用",
+            "績效指標中文名稱": "不適用",
+            "績效指標英文名稱": "不適用",
+            "是否包含國外成分股": "是",
+            "基金統一編號": "00718470",
+            "成立日期": "1150722",
+            "上市日期": "1150803",
+            "基金經理人": "楊貽甯",
+            "經理公司總機": "(02)2326-1600",
+            "經理公司地址": "台北市信義區松仁路100號28樓",
+            "經理公司董事長": "謝宛芝",
+            "經理公司發言人": "謝宛芝",
+            "經理公司總經理": "佘曉光",
+            "經理公司代理發言人": "佘曉光",
+            "總代理人": "",
+            "發行單位數/轉換數": "854804000",
+            "保管機構": "永豐商業銀行股份有限公司",
+            "保管機構電話": "(02)2517-3336",
+            "保管機構地址": "臺北市中山區南京東路三段36號",
+            "備註": ""
+          }
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=009826&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW0000098268</td>\n        <td align=center bgcolor=#FAFAD2>009826</td>\n        <td bgcolor=#FAFAD2>貝萊德世界股票</td>\n        \n        <td bgcolor=#FAFAD2>上市</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/08/03</td>\n        <td bgcolor=#FAFAD2>CEOGEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-02T02:43:35.171Z"
+    },
+    {
+      "code": "00999A",
+      "sources": [
+        {
+          "url": "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+          "status": "CAPTURED",
+          "record": {
+            "出表日期": "1151001",
+            "基金代號": "00999A",
+            "基金簡稱": "主動野村臺灣高息",
+            "基金類型": "國內成分證券主動式交易所交易基金(股票)",
+            "基金中文名稱": "野村臺灣策略高息主動式ETF證券投資信託基金",
+            "基金英文名稱": "NEXT FUNDS – Nomura Taiwan Strategic High Dividend Active ETF",
+            "標的指數/追蹤指數名稱": "不適用",
+            "標的指數是否為客製化或需揭露相關資訊之指數": "不適用",
+            "股票及債券投資比例說明": "不適用",
+            "是否設有績效指標": "否",
+            "績效指標中文名稱": "",
+            "績效指標英文名稱": "",
+            "是否包含國外成分股": "否",
+            "基金統一編號": "00666156",
+            "成立日期": "1150421",
+            "上市日期": "1150505",
+            "基金經理人": "游景德",
+            "經理公司總機": "(02)8101-5501",
+            "經理公司地址": "台北市信義區信義路五段7號30樓",
+            "經理公司董事長": "毛昱文",
+            "經理公司發言人": "黃宏治",
+            "經理公司總經理": "黃宏治",
+            "經理公司代理發言人": "賴峰彰",
+            "總代理人": "",
+            "發行單位數/轉換數": "1018517000",
+            "保管機構": "第一商業銀行股份有限公司",
+            "保管機構電話": "(02)2348-1111",
+            "保管機構地址": "台北市中正區重慶南路一段30 號",
+            "備註": ""
+          }
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00999A&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW00000999A4</td>\n        <td align=center bgcolor=#FAFAD2>00999A</td>\n        <td bgcolor=#FAFAD2>主動野村臺灣高息</td>\n        \n        <td bgcolor=#FAFAD2>上市</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/05/05</td>\n        <td bgcolor=#FAFAD2>CEOIEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-02T02:43:35.219Z"
+    }
+  ]
+}

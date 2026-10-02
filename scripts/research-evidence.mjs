@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {pathToFileURL} from 'node:url';
 import {normalizeFinancial,financialAssessment,normalizeOfficialEvent,eventAssessment,corporateActionAssessment} from './assess-research-evidence.mjs';
+import {parseListingHtml} from './collect-research-evidence.mjs';
 
 const read=p=>{try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}};
 const num=x=>x===null||x===undefined||String(x).trim()===''?null:Number.isFinite(Number(String(x).replaceAll(',','')))?Number(String(x).replaceAll(',','')):null;
@@ -51,15 +52,38 @@ export function tdccWeeks(rows,target) {
 export function evidenceSummary(input,result) {
   // A rejected strategy is a finished decision. Missing evidence is unfinished research.
   const checks=['history','institutional','credit','tdcc','fundamental','event','corporateAction'];
-  const detail=new Map(input.deepDive.map(r=>[r.code,r])),pending={},fundamentalQualityRejected=[];
+  const detail=new Map(input.deepDive.map(r=>[r.code,r])),pending={},fundamentalQualityRejected=[],historyQualityRejected=[];
   for(const r of result.rows.filter(r=>detail.has(r.code))) {
     const assessment=detail.get(r.code).financialAssessment;
     const rejected=assessment?.status==='FAIL'&&assessment.verified===true&&assessment.qualityPass===false&&assessment.pending?.length===0&&assessment.failures?.length>0;
     if(rejected)fundamentalQualityRejected.push({code:r.code,failures:assessment.failures});
-    for(const key of checks)if(r.gates[key]!==true&&!(key==='fundamental'&&rejected))(pending[key]??=[]).push(r.code);
+    const h=detail.get(r.code).historyAssessment,historyRejected=h?.verified===true&&h.qualityPass===false&&h.pending?.length===0&&h.failures?.includes('INSUFFICIENT_HISTORY_SINCE_LISTING');
+    if(historyRejected)historyQualityRejected.push({code:r.code,...h});
+    for(const key of checks)if(r.gates[key]!==true&&!(key==='fundamental'&&rejected)&&!(key==='history'&&historyRejected))(pending[key]??=[]).push(r.code);
   }
   if(!result.regimeVerified)pending.marketRegime=['MARKET'];
-  return {researchComplete:Object.keys(pending).length===0,pending,counts:Object.fromEntries(Object.entries(pending).map(([key,codes])=>[key,codes.length])),fundamentalQualityRejected};
+  return {researchComplete:Object.keys(pending).length===0,pending,counts:Object.fromEntries(Object.entries(pending).map(([key,codes])=>[key,codes.length])),fundamentalQualityRejected,historyQualityRejected};
+}
+export function historyAssessment(row,archive,cache,required,target){
+ const unverified=reason=>({status:'VERIFY_FAILED',verified:false,qualityPass:false,pending:[reason],failures:[]}),market=row.current?.market??row.market;
+ const sources=archive?.records?.find(r=>r.code===row.code)?.sources,calendar=archive?.calendar,c=calendar?.payload;
+ if(archive?.targetDate!==target||sources?.length!==2||sources.some(s=>s.status!=='CAPTURED')||new Set(sources.map(s=>s.url)).size!==2)return unverified('OFFICIAL_LISTING_SOURCES_UNVERIFIED');
+ const dates=sources.map(s=>{
+  if(s.url===`https://isin.twse.com.tw/isin/single_main.jsp?owncode=${row.code}&stockname=&isincode=`||market==='TPEx'&&s.url==='https://isin.twse.com.tw/isin/C_public.jsp?strMode=4')return officialDate(parseListingHtml(s.recordHtml,row.code,market)?.listingDate);
+  const r=s.record;
+  if(market==='TWSE'&&s.url==='https://openapi.twse.com.tw/v1/opendata/t187ap47_L'&&r?.['基金代號']===row.code&&officialDate(r['出表日期'])<=target)return officialDate(r['上市日期']);
+  if(market==='TPEx'&&s.url==='https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O'&&r?.SecuritiesCompanyCode===row.code&&officialDate(r.Date)<=target)return officialDate(r.DateOfListing);
+  return null;
+ });
+ const listingDate=dates[0];if(!listingDate||dates.some(d=>d!==listingDate)||listingDate>target||listingDate.slice(0,4)!==target.slice(0,4))return unverified('OFFICIAL_LISTING_DATE_UNVERIFIED');
+ if(calendar?.url!==`https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=${Number(target.slice(0,4))-1911}`||calendar.status!=='CAPTURED'||String(c?.stat).toLowerCase()!=='ok'||c.queryYear!==Number(target.slice(0,4))||!officialDate(c.date)||officialDate(c.date)>target||!c.data?.length||c.data.some(r=>!officialDate(r[0])))return unverified('OFFICIAL_TRADING_CALENDAR_UNVERIFIED');
+ const closed=new Set(c.data.filter(r=>/放假|無交易/.test(r.slice(1).join(''))).map(r=>officialDate(r[0]))),opened=new Set(c.data.filter(r=>/開始交易|最後交易|補行交易/.test(r.slice(1).join(''))).map(r=>officialDate(r[0]))),expected=[];
+ for(let d=new Date(listingDate+'T00:00:00Z');d.toISOString().slice(0,10)<=target;d.setUTCDate(d.getUTCDate()+1)){const date=d.toISOString().slice(0,10);if(!closed.has(date)&&(d.getUTCDay()%6!==0||opened.has(date)))expected.push(date);}
+ const quotes=new Map((row.history??[]).filter(h=>h[0]>=listingDate&&h[0]<=target&&h.slice(1,7).length===6&&h.slice(1,7).every(Number.isFinite)).map(h=>[h[0],h]));
+ // The calendar is an upper bound: suspensions or exceptional closures can only reduce available history.
+ // This proves rejection without claiming that every historical candle was retrieved or missing.
+ if(!expected.length||expected.length>=required||!quotes.has(target)||[...quotes.keys()].some(date=>!(cache?.provenance?.[date]?.[market?.toLowerCase()]?.status==='PASS'||cache?.provenance?.[date]?.currentResearchInput===true&&read(`raw/${date}/gate-matrix.json`)?.overallStatus==='PASS')))return unverified('HISTORY_ELIGIBILITY_NOT_VERIFIED');
+ return {status:'FAIL',verified:true,qualityPass:false,pending:[],failures:['INSUFFICIENT_HISTORY_SINCE_LISTING'],listingDate,availableTradingDays:quotes.size,verifiedTradingDays:quotes.size,maximumPossibleTradingDays:expected.length,requiredTradingDays:required,sources:sources.map(s=>s.url),calendarSource:calendar.url};
 }
 export function reviewedFinancialReport(report,target) {
   try {
@@ -88,6 +112,7 @@ export function reviewedFinancialReport(report,target) {
 }
 export function enrich(target) {
   const root=`raw/${target}`,input=read(`${root}/research-input.json`);if(!input)throw Error('Research input missing');
+  const listingArchive=read(`${root}/listing-history-evidence.json`),historyCache=read('history/market-history.json');
   const config=read('strategy-config.json'),weeks=[],editions=new Set(),cutoff=Date.parse(`${target}T23:59:59+08:00`);
   for(const date of fs.readdirSync('raw').filter(d=>/^\d{4}-\d{2}-\d{2}$/.test(d)&&d<=target).sort()) {
     const archive=read(`raw/${date}/tdcc-history-evidence.json`);
@@ -128,6 +153,7 @@ export function enrich(target) {
     period.income=normalized;financialPeriods.set(key,period);
   }
   for(const row of input.deepDive) {
+    row.historyAssessment=Number.isFinite(row.historyCoverageTradingDays)&&row.historyCoverageTradingDays<config.screening.historyTradingDaysMin?historyAssessment(row,listingArchive,historyCache,config.screening.historyTradingDaysMin,target):null;
     const records=(byCode.get(row.code)??[]).sort((a,b)=>a.date.localeCompare(b.date));
     const last=records.at(-1),deltaDays=(a,b)=>(Date.parse(a)-Date.parse(b))/86400000;
     // Compare official weekly editions, not seven-calendar-day windows (holidays shift publication).

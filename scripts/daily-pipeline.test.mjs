@@ -6,8 +6,19 @@ import path from 'node:path';
 import {completionCurrent,recoveryTargets,isFutureAfterCloseTarget,runPipeline,resolvePipelineTarget} from './run-daily-pipeline.mjs';
 import {inputFingerprint} from './screen-market.mjs';
 import {discoverEvidenceSources,discoverCoverageSources,archiveUsable} from './collect-research-evidence.mjs';
-import {tdccWeeks,officialDate,evidenceSummary} from './research-evidence.mjs';
+import {tdccWeeks,officialDate,evidenceSummary,historyAssessment} from './research-evidence.mjs';
 import {recoveryDecision} from './continue-pipeline-recovery.mjs';
+import {captureListingHistory} from './collect-research-evidence.mjs';
+test('scheduled recovery finishes the published incomplete date before advancing the paper account to a new day',()=>{
+ const cwd=process.cwd(),tmp=fs.mkdtempSync(path.join(os.tmpdir(),'pipeline-date-'));
+ try{
+  process.chdir(tmp);fs.mkdirSync('snapshots/r',{recursive:true});fs.mkdirSync('raw/2026-10-01',{recursive:true});fs.writeFileSync('manifest.json',JSON.stringify({researchPath:'snapshots/r/research.json',paperAccountPath:'snapshots/r/paper.json'}));
+  fs.writeFileSync('snapshots/r/research.json',JSON.stringify({researchDate:'2026-10-01'}));fs.writeFileSync('snapshots/r/paper.json',JSON.stringify({asOf:'2026-10-01'}));
+  const path='raw/2026-10-01/daily-report.json',report={targetDate:'2026-10-01',screeningComplete:true,researchComplete:false,validation:{status:'PASS'}};fs.writeFileSync(path,JSON.stringify(report));
+  const now=new Date('2026-10-02T11:00:00Z');assert.equal(resolvePipelineTarget(undefined,now),'2026-10-01');assert.equal(resolvePipelineTarget('2026-10-02',now),'2026-10-02');
+  fs.writeFileSync(path,JSON.stringify({...report,researchComplete:true}));assert.equal(resolvePipelineTarget(undefined,now),'2026-10-02');
+ }finally{process.chdir(cwd);fs.rmSync(tmp,{recursive:true,force:true});}
+});
 
 test('partial checkpoint never stops automated evidence recovery',()=>{
   const config={version:'v2'},input={targetDate:'2026-09-29',universe:[],deepDive:[]};
@@ -66,6 +77,31 @@ test('no valid BUY setup can still be a completed study; missing credit cannot',
   const input={deepDive:[{code:'3005'}]},result={regimeVerified:true,rows:[{code:'3005',gates}]};
   assert.equal(evidenceSummary(input,result).researchComplete,true);
   assert.equal(evidenceSummary(input,{...result,rows:[{code:'3005',gates:{...gates,credit:false}}]}).researchComplete,false);
+});
+test('a verified listing and calendar can prove insufficient possible history without authorizing BUY or asserting missing candles',()=>{
+ const row={code:'00403A',current:{market:'TWSE'},history:[['2026-09-29',10,11,9,10,100,1000],['2026-09-30',10,11,9,10,100,1000],['2026-10-01',10,11,9,10,100,1000]]};
+ const source={url:'https://openapi.twse.com.tw/v1/opendata/t187ap47_L',status:'CAPTURED',record:{'出表日期':'1151001','基金代號':'00403A','上市日期':'1150929'}},isin={url:'https://isin.twse.com.tw/isin/single_main.jsp?owncode=00403A&stockname=&isincode=',status:'CAPTURED',recordHtml:'<tr><td>1</td><td>TW00000403A7</td><td>00403A</td><td>基金</td><td>上市</td><td>ETF</td><td></td><td>2026/09/29</td></tr>'};
+ const archive={targetDate:'2026-10-01',calendar:{url:'https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115',status:'CAPTURED',payload:{stat:'ok',date:'20260101',queryYear:2026,data:[['2026-01-01','開國紀念日','依規定放假1日。']]}},records:[{code:row.code,sources:[source,isin]}]};
+ const cache={provenance:Object.fromEntries(row.history.map(h=>[h[0],{twse:{status:'PASS',url:'https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX'}}]))};
+ const assessment=historyAssessment(row,archive,cache,120,'2026-10-01');
+ assert.equal(assessment.verified,true);assert.equal(assessment.qualityPass,false);assert.equal(assessment.availableTradingDays,3);
+ const gates={history:false,institutional:true,credit:true,tdcc:true,fundamental:true,event:true,corporateAction:true},result={regimeVerified:true,rows:[{code:row.code,gates}]};
+ assert.equal(evidenceSummary({deepDive:[{...row,historyAssessment:assessment}]},result).researchComplete,true);assert.equal(gates.history,false);
+ const partial=historyAssessment({...row,history:row.history.slice(1)},archive,cache,120,'2026-10-01');assert.equal(partial.verified,true);assert.equal(partial.verifiedTradingDays,2);assert.equal(partial.maximumPossibleTradingDays,3);
+ for(const [r,a,c] of [[row,{...archive,records:[{code:row.code,sources:[{...source,record:{...source.record,'出表日期':'1151002'}},isin]}]},cache],[row,archive,{provenance:{}}],[row,{...archive,records:[{code:row.code,sources:[source,{...isin,status:'VERIFY_FAILED'}]}]},cache]])assert.equal(historyAssessment(r,a,c,120,'2026-10-01').verified,false);
+ assert.equal(evidenceSummary({deepDive:[row]},result).researchComplete,false);
+});
+test('listing recovery keeps a dated official record through fetch failure and never archives future metadata as usable',async()=>{
+ const cwd=process.cwd(),tmp=fs.mkdtempSync(path.join(os.tmpdir(),'listing-recovery-')),url='https://openapi.twse.com.tw/v1/opendata/t187ap47_L',record={'出表日期':'1151001','基金代號':'00403A','上市日期':'1150512'},file='raw/2026-10-01/listing-history-evidence.json';
+ try{
+  process.chdir(tmp);fs.mkdirSync('raw/2026-10-01',{recursive:true});fs.writeFileSync('strategy-config.json',JSON.stringify({screening:{historyTradingDaysMin:120}}));
+  fs.writeFileSync(file,JSON.stringify({targetDate:'2026-10-01',calendar:{status:'CAPTURED'},records:[{code:'00403A',sources:[{url,status:'CAPTURED',record}]}]}));
+  const input={deepDive:[{code:'00403A',assetType:'ETF',current:{market:'TWSE'},historyCoverageTradingDays:99}]};
+  await captureListingHistory('2026-10-01',input,async()=>{throw Error('HTTP 503');});
+  let sources=JSON.parse(fs.readFileSync(file)).records[0].sources;assert.deepEqual(sources[0].record,record);assert.equal(sources[0].status,'CAPTURED');assert.equal(sources[1].status,'VERIFY_FAILED');
+  fs.unlinkSync(file);await captureListingHistory('2026-10-01',input,async request=>request===url?[{...record,'出表日期':'1151002'}]:{});
+  sources=JSON.parse(fs.readFileSync(file)).records[0].sources;assert.equal(sources[0].status,'VERIFY_FAILED');assert.equal(sources[0].error,'OFFICIAL_LISTING_RECORD_UNVERIFIED_ASOF');
+ }finally{process.chdir(cwd);fs.rmSync(tmp,{recursive:true,force:true});}
 });
 test('financial recovery continues actionable validated work beyond the general retry cap, without retrying rate-limited or stale work',()=>{
  const report={targetDate:'2026-10-01',researchComplete:false,evidencePending:{fundamental:400},validation:{status:'PASS',runId:'123'}},collection={targetDate:'2026-10-01',ready:200,continuationNeeded:true};

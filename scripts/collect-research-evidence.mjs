@@ -6,6 +6,34 @@ const read = p => {try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{retur
 const write = (p,x) => {fs.mkdirSync(p.slice(0,p.lastIndexOf('/')),{recursive:true});fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n');};
 const compactNumber=x=>{const s=String(x??'').trim().replaceAll(',','');if(!s||s==='--')return null;const n=/^\([\d.]+\)$/.test(s)?-Number(s.slice(1,-1)):Number(s);return Number.isFinite(n)?n:null;};
 const htmlText=x=>String(x??'').replace(/<br\s*\/?\s*>/gi,' ').replace(/<[^>]*>/g,'').replace(/&nbsp;/gi,' ').replace(/&amp;/gi,'&').replace(/&lt;/gi,'<').replace(/&gt;/gi,'>').replace(/&quot;/gi,'"').replace(/&#39;|&apos;/gi,"'").replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Number(n))).replace(/\s+/g,' ').trim();
+export function parseListingHtml(html,code,market){
+ for(const m of String(html??'').matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)){
+  const cells=[...m[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(x=>htmlText(x[1]));
+  const single=cells[2]===code,full=cells[0]?.startsWith(code+' '),expected=market==='TWSE'?'上市':'上櫃';
+  if((single&&cells[4]===expected)||(full&&cells[3]===expected))return {recordHtml:m[0],listingDate:single?cells[7]:cells[2]};
+ }
+ return null;
+}
+export async function captureListingHistory(target,input,requests){
+ const root=`raw/${target}`,path=`${root}/listing-history-evidence.json`,old=read(path),config=read('strategy-config.json'),wanted=(input?.deepDive??[]).filter(r=>r.historyCoverageTradingDays<config.screening.historyTradingDaysMin);
+ if(!wanted.length)return;
+ const archive={targetDate:target,calendar:old?.calendar??null,records:old?.records??[]},calendarUrl=`https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=${Number(target.slice(0,4))-1911}`;
+ const rocTarget=String(Number(target.slice(0,4))-1911)+target.replaceAll('-','').slice(4),inTime=r=>/^\d{7}$/.test(String(r?.['出表日期']??r?.Date??''))&&String(r['出表日期']??r.Date)<=rocTarget;
+ if(archive.calendar?.status!=='CAPTURED')try{archive.calendar={url:calendarUrl,status:'CAPTURED',payload:await requests(calendarUrl)};}catch(e){archive.calendar={url:calendarUrl,status:'VERIFY_FAILED',error:e.message};}
+ const basics=new Map();
+ for(const r of wanted){
+  const prior=archive.records.find(x=>x.code===r.code);if(prior?.sources?.length===2&&prior.sources.every(s=>s.status==='CAPTURED'&&(!s.record||inTime(s.record))))continue;
+  const market=r.current?.market??r.market,url=market==='TWSE'?'https://openapi.twse.com.tw/v1/opendata/t187ap47_L':r.assetType==='STOCK'?'https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O':'https://isin.twse.com.tw/isin/C_public.jsp?strMode=4';
+  const saved=prior?.sources?.find(s=>s.url===url&&s.status==='CAPTURED'&&(s.record?inTime(s.record):parseListingHtml(s.recordHtml,r.code,market)));
+  if(!saved&&!basics.has(url))try{basics.set(url,await requests(url,url.includes('isin/')?'big5':null));}catch(e){basics.set(url,{error:e.message});}
+  const payload=basics.get(url),record=Array.isArray(payload)?payload.find(x=>String(x['基金代號']??x.SecuritiesCompanyCode)===r.code):null,full=typeof payload==='string'?parseListingHtml(payload,r.code,market):null;
+  const sources=[saved??(record&&inTime(record)?{url,status:'CAPTURED',record}:full?{url,status:'CAPTURED',recordHtml:full.recordHtml}:{url,status:'VERIFY_FAILED',error:payload?.error??'OFFICIAL_LISTING_RECORD_UNVERIFIED_ASOF'})];
+  const isinUrl=`https://isin.twse.com.tw/isin/single_main.jsp?owncode=${r.code}&stockname=&isincode=`;
+  try{const parsed=parseListingHtml(await requests(isinUrl,'big5'),r.code,market);if(!parsed)throw Error('OFFICIAL_LISTING_RECORD_UNVERIFIED');sources.push({url:isinUrl,status:'CAPTURED',recordHtml:parsed.recordHtml});}catch(e){sources.push({url:isinUrl,status:'VERIFY_FAILED',error:e.message});}
+  archive.records=archive.records.filter(x=>x.code!==r.code).concat({code:r.code,sources,capturedAt:new Date().toISOString()});write(path,archive);
+ }
+ write(path,archive);
+}
 export function parseMopsCompanyHistoricalIncomeHtml(html,{code,year,quarter}) {
   const labelKey=x=>x.replace(/\s+/g,'').replace(/[（]/g,'(').replace(/[）]/g,')').replace(/[∕／]/g,'/');
   const cumulativePattern=new RegExp(`^(?:${year-1911}|${year})年0?1月0?1日至(?:(?:${year-1911}|${year})年)?0?${quarter*3}月0?${new Date(Date.UTC(year,quarter*3,0)).getUTCDate()}日$`);
@@ -245,10 +273,10 @@ export async function collect(target,{now=new Date(),skipHistoricalComparative=f
   const root=`raw/${target}`;fs.mkdirSync(root,{recursive:true});
   const config=read('strategy-config.json');
   const old=read(`${root}/financial-evidence-captures.json`),captures=[];
-  const requests=async url=>{
+  const requests=async (url,encoding)=>{
     const response=await fetch(url,{signal:AbortSignal.timeout(20000),headers:{accept:'application/json'}});
     if(!response.ok)throw Error(`HTTP ${response.status}`);
-    return response.json();
+    return encoding?new TextDecoder(encoding).decode(await response.arrayBuffer()):response.json();
   };
   for(const [market,swagger,apiRoot] of [
     ['TWSE','https://openapi.twse.com.tw/v1/swagger.json','https://openapi.twse.com.tw/v1'],
@@ -296,6 +324,7 @@ export async function collect(target,{now=new Date(),skipHistoricalComparative=f
   // Versioned PDF collection runs next in the pipeline; never retry hundreds of latest-table requests here.
   if(target===today)captures.push(...await captureHistoricalXbrlDiagnostic(root,captures,target,now));
   write(`${root}/financial-evidence-captures.json`,{targetDate:target,captures});
+  await captureListingHistory(target,read(`${root}/research-input.json`),requests);
   console.log(JSON.stringify({stage:'FINANCIAL_EVIDENCE_CAPTURE',targetDate:target,captured:captures.filter(c=>c.status==='CAPTURED').length,unverified:captures.filter(c=>c.status!=='CAPTURED').length}));
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)await collect(process.env.TARGET_DATE);
