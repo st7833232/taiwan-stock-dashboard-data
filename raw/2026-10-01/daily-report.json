@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-01",
-  "revision": "2026-10-02-100147",
+  "revision": "2026-10-02-105147",
   "strategyVersion": "entry-dual-track-v2.2",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
   "researchComplete": false,
   "evidencePending": {
     "history": 13,
-    "fundamental": 424,
+    "fundamental": 400,
     "credit": 3
   },
   "fundamentalQualityRejected": [
@@ -45,6 +45,21 @@
       ]
     },
     {
+      "code": "1314",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1528",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
       "code": "1711",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
@@ -58,6 +73,12 @@
     },
     {
       "code": "2006",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2233",
       "failures": [
         "REVENUE_DETERIORATION"
       ]
@@ -116,6 +137,12 @@
       ]
     },
     {
+      "code": "2401",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "2406",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
@@ -126,6 +153,12 @@
       "failures": [
         "PROFIT_QUALITY_FAILED",
         "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2449",
+      "failures": [
         "PROFIT_DETERIORATION"
       ]
     },
@@ -149,6 +182,12 @@
     },
     {
       "code": "2915",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3014",
       "failures": [
         "REVENUE_DETERIORATION"
       ]
@@ -182,6 +221,18 @@
       ]
     },
     {
+      "code": "3504",
+      "failures": [
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "3535",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "3543",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
@@ -201,6 +252,14 @@
       "code": "3704",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "4526",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
       ]
     },
     {
@@ -273,6 +332,13 @@
       "code": "6505",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6668",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
       ]
     },
     {
@@ -405,6 +471,14 @@
       ]
     },
     {
+      "code": "6547",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
       "code": "6588",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
@@ -414,6 +488,12 @@
       "code": "8043",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "8240",
+      "failures": [
+        "REVENUE_DETERIORATION"
       ]
     },
     {
@@ -441,7 +521,7 @@
     ],
     "eligibleRanked": 0
   },
-  "conclusion": "2026-10-01全市場 2303 檔已完成初步篩選（普通股 1949、ETF 354），深度檢查 615 檔。普通股信用資料已核對 540/543 檔。仍待核對：歷史行情 13檔、財務證據 424檔、融資融券等信用資料 3檔。研究尚未完成。財務證據完整但品質未通過 63 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-10-01全市場 2303 檔已完成初步篩選（普通股 1949、ETF 354），深度檢查 615 檔。普通股信用資料已核對 540/543 檔。仍待核對：歷史行情 13檔、財務證據 400檔、融資融券等信用資料 3檔。研究尚未完成。財務證據完整但品質未通過 75 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [],
   "core": [
     {
@@ -583,17 +663,6 @@
       "officialDateEvidence": "1151001"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-02-100147",
-    "runId": "36955654507",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/36955654507",
-    "validatedCommit": "73226c231bdaf71e08fe24f2fd0468e63e0f58bc"
-  },
-  "inputFingerprint": "2507857f3e99b6566b434a43420858a737b864e3b06edd0567dea1c804a93666"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "64832819bae0158119fe61da416ff1463731e5bfb0c64e22e4ddf64dc63a3101"
 }
