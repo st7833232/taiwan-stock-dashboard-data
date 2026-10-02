@@ -800,11 +800,11 @@
     "textParserVersion": 10,
     "filingFallback": null,
     "stage": "PDF_METRICS",
-    "reason": "PDF_OCR_REVIEW_PENDING",
-    "attempts": 1,
+    "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+    "attempts": 2,
     "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T09:40:09.652Z",
-    "nextRetryAt": "2026-10-02T09:45:09.652Z"
+    "checkedAt": "2026-10-02T09:47:37.782Z",
+    "nextRetryAt": "2026-10-03T09:47:37.782Z"
   },
   "4977|2026-06-30": {
     "status": "VERIFIED",
@@ -828,22 +828,21 @@
   "2880|2026-06-30": {
     "status": "UNVERIFIED",
     "parserVersion": 2,
+    "filingParserVersion": 2,
+    "textParserVersion": 10,
+    "filingFallback": null,
     "stage": "PDF_DOWNLOAD",
     "reason": "The operation was aborted due to timeout",
     "attempts": 1,
-    "checkedDate": "2026-10-01",
-    "checkedAt": "2026-10-01T09:53:33.132Z",
-    "nextRetryAt": "2026-10-01T09:58:33.132Z"
+    "checkedDate": "2026-10-02",
+    "checkedAt": "2026-10-02T09:51:47.629Z",
+    "nextRetryAt": "2026-10-02T09:56:47.629Z"
   },
   "3706|2026-06-30": {
-    "status": "UNVERIFIED",
+    "status": "VERIFIED",
     "parserVersion": 2,
-    "stage": "PDF_DOWNLOAD",
-    "reason": "The operation was aborted due to timeout",
-    "attempts": 1,
-    "checkedDate": "2026-10-01",
-    "checkedAt": "2026-10-01T09:54:44.254Z",
-    "nextRetryAt": "2026-10-01T09:59:44.254Z"
+    "checkedDate": "2026-10-02",
+    "checkedAt": "2026-10-02T09:52:52.779Z"
   },
   "2354|2026-06-30": {
     "status": "VERIFIED",
@@ -879,12 +878,15 @@
   "2634|2026-06-30": {
     "status": "UNVERIFIED",
     "parserVersion": 2,
-    "stage": "PDF_DOWNLOAD",
-    "reason": "The operation was aborted due to timeout",
+    "filingParserVersion": 2,
+    "textParserVersion": 10,
+    "filingFallback": null,
+    "stage": "MOPS_PERIOD_TABLE",
+    "reason": "FINANCIAL_COLLECTION_BUDGET_EXHAUSTED",
     "attempts": 1,
-    "checkedDate": "2026-10-01",
-    "checkedAt": "2026-10-01T10:01:43.431Z",
-    "nextRetryAt": "2026-10-01T10:06:43.431Z"
+    "checkedDate": "2026-10-02",
+    "checkedAt": "2026-10-02T09:56:46.171Z",
+    "nextRetryAt": "2026-10-02T10:01:46.171Z"
   },
   "8103|2026-06-30": {
     "status": "UNVERIFIED",
