@@ -9,7 +9,7 @@ const read=p=>{try{return JSON.parse(fs.readFileSync(p));}catch{return null;}};
 const save=(p,x)=>fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n');
 export function financialQueue(rows,state,now,admitted){
  const reparsed=r=>state[r.key]?.parserVersion!==2&&/PDF_PERIOD|FILING_VERSION|PROFIT_BASIS/.test(state[r.key]?.reason??'');
- return rows.filter(r=>!admitted.has(r.key)&&(!state[r.key]||state[r.key].parserVersion!==2||state[r.key].status==='VERIFIED'||Date.parse(state[r.key].nextRetryAt)<=now.getTime())).sort((a,b)=>Number(reparsed(b))-Number(reparsed(a))||(state[a.key]?.checkedAt??'').localeCompare(state[b.key]?.checkedAt??''));
+ return rows.filter(r=>!admitted.has(r.key)&&(!state[r.key]||state[r.key].parserVersion!==2||state[r.key].status==='VERIFIED'||Date.parse(state[r.key].nextRetryAt)<=now.getTime())).sort((a,b)=>Number(b.archived===true)-Number(a.archived===true)||Number(reparsed(b))-Number(reparsed(a))||(state[a.key]?.checkedAt??'').localeCompare(state[b.key]?.checkedAt??''));
 }
 export async function filingIndex(source,request){
  let html=new TextDecoder('big5').decode(await request(source));
@@ -41,6 +41,15 @@ export function reusablePdf(filename,uploadedAt,code,year,quarter,target){
    if(version.uploadedAt===uploadedAt&&createHash('sha256').update(pdf).digest('hex')===name.slice(-68,-4))return pdf;
   }catch{}
  }
+ return null;
+}
+export function archivedFilingIndex(code,year,quarter,target){
+ const filename=`${year}${String(quarter).padStart(2,'0')}_${code}_AI1.pdf`;
+ // ponytail: scan the small archive; index by company only if archive size makes this costly.
+ for(const name of fs.readdirSync('history/financial-reports').filter(p=>p.startsWith(filename+'.')&&/\.[a-f0-9]{64}\.html$/.test(p)))try{
+  const index=fs.readFileSync(`history/financial-reports/${name}`,'utf8'),version=filingVersion(index,code,year,quarter,target);
+  if(reusablePdf(filename,version.uploadedAt,code,year,quarter,target))return index;
+ }catch{}
  return null;
 }
 export function filingVersion(html,code,year,quarter,target){
@@ -112,7 +121,8 @@ export async function collectFinancialPdfs(target){
  if(!input)throw Error('Research input missing');
  for(const c of read(`${root}/financial-evidence-captures.json`)?.captures??[])if(c.kind==='income'&&c.status==='CAPTURED'&&!c.historicalFinancial)for(const row of read(`${root}/${c.id}.raw.txt`)??[]){const n=normalizeFinancial(row,'income',c.url);if(n&&n.periodEnd<=target&&(!periods.has(n.code)||periods.get(n.code).periodEnd<n.periodEnd))periods.set(n.code,n);}
  const now=new Date(),today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei'}).format(now),deadline=Date.now()+5*60*1000,requestSpacingMs=Number(process.env.FINANCIAL_REQUEST_SPACING_MS||1500);
- const stocks=input.deepDive.filter(r=>(r.assetType??r.current?.assetType)==='STOCK'),rows=stocks.filter(r=>periods.has(r.code)).map(r=>({...r,key:`${r.code}|${periods.get(r.code).periodEnd}`})),admitted=new Set();
+ const archiveNames=fs.existsSync('history/financial-reports')?fs.readdirSync('history/financial-reports'):[];
+ const stocks=input.deepDive.filter(r=>(r.assetType??r.current?.assetType)==='STOCK'),rows=stocks.filter(r=>periods.has(r.code)).map(r=>({...r,key:`${r.code}|${periods.get(r.code).periodEnd}`,archived:archiveNames.some(name=>name.startsWith(`${Number(periods.get(r.code).periodEnd.slice(0,4))-1}${String(periods.get(r.code).quarter).padStart(2,'0')}_${r.code}_AI1.pdf.`)&&name.endsWith('.pdf'))})),admitted=new Set();
  const admit=()=>{for(const r of rows){const current=periods.get(r.code);if(state[r.key]?.checkedDate===today&&state[r.key]?.parserVersion===2&&reports.some(p=>{const n=reviewedFinancialReport(p,target);return n?.code===r.code&&n.periodEnd===`${Number(current.periodEnd.slice(0,4))-1}${current.periodEnd.slice(4)}`&&n.profitBasis===current.profitBasis;}))admitted.add(r.key);}};
  admit();const queue=financialQueue(rows,state,now,admitted);let rateLimited=false;
  fs.mkdirSync('history/financial-reports',{recursive:true});
@@ -122,7 +132,7 @@ export async function collectFinancialPdfs(target){
   const current=periods.get(r.code),year=Number(current.periodEnd.slice(0,4))-1,quarter=current.quarter,code=r.code,source=`https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=${code}&year=${year-1911}&seamon=&mtype=A&check2858=Y`;
   let stage='FILING_INDEX';
   try{
-    const index=await filingIndex(source,request),version=filingVersion(index,code,year,quarter,target);
+    const index=archivedFilingIndex(code,year,quarter,target)??await filingIndex(source,request),version=filingVersion(index,code,year,quarter,target);
    if(!reports.some(p=>p.filename===version.filename&&p.uploadedAt===version.uploadedAt&&reviewedFinancialReport(p,target)?.profitBasis===current.profitBasis)){
     let pdf=reusablePdf(version.filename,version.uploadedAt,code,year,quarter,target),pdfUrl=null;
     if(!pdf){

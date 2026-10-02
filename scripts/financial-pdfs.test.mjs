@@ -110,3 +110,23 @@ test('parent profit includes the explicit total of continuing and discontinued o
  assert.deepEqual(verifyPdfText([page],row),[1]);
  assert.throws(()=>verifyPdfText([page],{...row,'淨利（淨損）歸屬於母公司業主':2000}));
 });
+
+test('an intact official archive resumes without a fresh index request, while tampering or future filings cannot',async()=>{
+ const {archivedFilingIndex}=await import('./collect-financial-pdfs.mjs');
+ const {createHash}=await import('node:crypto');const {default:os}=await import('node:os');const {default:path}=await import('node:path');
+ const original=process.cwd(),html=fs.readFileSync('history/financial-reports/2409.html','utf8'),tmp=fs.mkdtempSync(path.join(os.tmpdir(),'filing-cache-'));
+ try{
+  process.chdir(tmp);fs.mkdirSync('history/financial-reports',{recursive:true});
+  const pdf=Buffer.from('%PDF-official-test-archive'),sha=createHash('sha256').update(pdf).digest('hex'),stem=`history/financial-reports/202502_2409_AI1.pdf.${sha}`;
+  fs.writeFileSync(stem+'.pdf',pdf);fs.writeFileSync(stem+'.html',html);
+  assert.equal(archivedFilingIndex('2409',2025,2,'2026-10-01'),html);
+  assert.equal(archivedFilingIndex('2409',2025,2,'2025-08-12'),null);
+  fs.writeFileSync(stem+'.pdf','%PDF-changed');assert.equal(archivedFilingIndex('2409',2025,2,'2026-10-01'),null);
+ }finally{process.chdir(original);fs.rmSync(tmp,{recursive:true,force:true});}
+});
+
+test('saved PDFs make progress before new network work during official outages',async()=>{
+ const {financialQueue}=await import('./collect-financial-pdfs.mjs');
+ const rows=[{key:'network',archived:false},{key:'local',archived:true}];
+ assert.deepEqual(financialQueue(rows,{},new Date(),new Set()).map(r=>r.key),['local','network']);
+});
