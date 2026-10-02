@@ -752,17 +752,17 @@
       "status": "UNVERIFIED",
       "parserVersion": 2,
       "filingParserVersion": 2,
-      "textParserVersion": 8,
+      "textParserVersion": 10,
       "filingFallback": {
         "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=6706&year=114&seamon=&mtype=A&check2858=Y",
         "reason": "FILING_VERSION_UNVERIFIED"
       },
-      "stage": "PDF_DOWNLOAD",
-      "reason": "FINANCIAL_COLLECTION_BUDGET_EXHAUSTED",
-      "attempts": 1,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 2,
       "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T04:30:34.373Z",
-      "nextRetryAt": "2026-10-02T04:35:34.373Z"
+      "checkedAt": "2026-10-02T12:23:22.951Z",
+      "nextRetryAt": "2026-10-03T12:23:22.951Z"
     },
     "6834|2026-06-30": {
       "status": "VERIFIED",
@@ -1443,14 +1443,17 @@
       "status": "UNVERIFIED",
       "parserVersion": 2,
       "filingParserVersion": 2,
-      "textParserVersion": 9,
-      "filingFallback": null,
+      "textParserVersion": 10,
+      "filingFallback": {
+        "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=6530&year=114&seamon=&mtype=A&check2858=Y",
+        "reason": "FILING_VERSION_UNVERIFIED"
+      },
       "stage": "FILING_INDEX",
       "reason": "fetch failed",
-      "attempts": 1,
+      "attempts": 2,
       "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T04:40:05.804Z",
-      "nextRetryAt": "2026-10-02T04:45:05.804Z"
+      "checkedAt": "2026-10-02T12:23:51.616Z",
+      "nextRetryAt": "2026-10-02T12:33:51.616Z"
     },
     "5443|2026-06-30": {
       "status": "VERIFIED",
@@ -1462,14 +1465,17 @@
       "status": "UNVERIFIED",
       "parserVersion": 2,
       "filingParserVersion": 2,
-      "textParserVersion": 9,
-      "filingFallback": null,
+      "textParserVersion": 10,
+      "filingFallback": {
+        "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=8086&year=114&seamon=&mtype=A&check2858=Y",
+        "reason": "FILING_VERSION_UNVERIFIED"
+      },
       "stage": "FILING_INDEX",
-      "reason": "fetch failed",
-      "attempts": 1,
+      "reason": "FILING_VERSION_UNVERIFIED",
+      "attempts": 2,
       "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T04:40:33.305Z",
-      "nextRetryAt": "2026-10-02T04:45:33.305Z"
+      "checkedAt": "2026-10-02T12:24:11.328Z",
+      "nextRetryAt": "2026-10-03T12:24:11.328Z"
     },
     "2889|2026-06-30": {
       "status": "UNVERIFIED",
@@ -1717,17 +1723,10 @@
       "nextRetryAt": "2026-10-02T11:05:22.572Z"
     },
     "4906|2026-06-30": {
-      "status": "UNVERIFIED",
+      "status": "VERIFIED",
       "parserVersion": 2,
-      "filingParserVersion": 2,
-      "textParserVersion": 9,
-      "filingFallback": null,
-      "stage": "FILING_INDEX",
-      "reason": "fetch failed",
-      "attempts": 1,
       "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T04:41:00.809Z",
-      "nextRetryAt": "2026-10-02T04:46:00.809Z"
+      "checkedAt": "2026-10-02T12:24:53.809Z"
     },
     "3229|2026-06-30": {
       "status": "UNVERIFIED",
@@ -2111,17 +2110,17 @@
       "status": "UNVERIFIED",
       "parserVersion": 2,
       "filingParserVersion": 2,
-      "textParserVersion": 9,
+      "textParserVersion": 10,
       "filingFallback": {
         "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=6141&year=114&seamon=&mtype=A&check2858=Y",
         "reason": "FILING_VERSION_UNVERIFIED"
       },
-      "stage": "PDF_DOWNLOAD",
-      "reason": "The operation was aborted due to timeout",
-      "attempts": 1,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 2,
       "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T04:44:38.103Z",
-      "nextRetryAt": "2026-10-02T04:49:38.103Z"
+      "checkedAt": "2026-10-02T12:27:51.689Z",
+      "nextRetryAt": "2026-10-02T12:37:51.689Z"
     },
     "4540|2026-06-30": {
       "status": "UNVERIFIED",
@@ -2303,13 +2302,16 @@
       "parserVersion": 2,
       "filingParserVersion": 2,
       "textParserVersion": 10,
-      "filingFallback": null,
+      "filingFallback": {
+        "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=3135&year=114&seamon=&mtype=A&check2858=Y",
+        "reason": "FILING_VERSION_UNVERIFIED"
+      },
       "stage": "FILING_INDEX",
-      "reason": "fetch failed",
-      "attempts": 1,
+      "reason": "FILING_VERSION_UNVERIFIED",
+      "attempts": 2,
       "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T04:51:46.976Z",
-      "nextRetryAt": "2026-10-02T04:56:46.976Z"
+      "checkedAt": "2026-10-02T12:27:55.548Z",
+      "nextRetryAt": "2026-10-03T12:27:55.548Z"
     },
     "2103|2026-06-30": {
       "status": "UNVERIFIED",
@@ -2344,20 +2346,10 @@
       "checkedAt": "2026-10-02T11:15:36.036Z"
     },
     "3162|2026-06-30": {
-      "status": "UNVERIFIED",
+      "status": "VERIFIED",
       "parserVersion": 2,
-      "filingParserVersion": 2,
-      "textParserVersion": 10,
-      "filingFallback": {
-        "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=3162&year=114&seamon=&mtype=A&check2858=Y",
-        "reason": "FILING_VERSION_UNVERIFIED"
-      },
-      "stage": "FILING_INDEX",
-      "reason": "fetch failed",
-      "attempts": 1,
       "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T04:52:32.707Z",
-      "nextRetryAt": "2026-10-02T04:57:32.707Z"
+      "checkedAt": "2026-10-02T12:28:27.553Z"
     },
     "5864|2026-06-30": {
       "status": "UNVERIFIED",
@@ -2412,13 +2404,16 @@
       "parserVersion": 2,
       "filingParserVersion": 2,
       "textParserVersion": 10,
-      "filingFallback": null,
+      "filingFallback": {
+        "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=8131&year=114&seamon=&mtype=A&check2858=Y",
+        "reason": "FILING_VERSION_UNVERIFIED"
+      },
       "stage": "FILING_INDEX",
-      "reason": "fetch failed",
-      "attempts": 1,
+      "reason": "FILING_VERSION_UNVERIFIED",
+      "attempts": 2,
       "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T04:52:49.900Z",
-      "nextRetryAt": "2026-10-02T04:57:49.900Z"
+      "checkedAt": "2026-10-02T12:28:31.069Z",
+      "nextRetryAt": "2026-10-03T12:28:31.069Z"
     },
     "2633|2026-06-30": {
       "status": "UNVERIFIED",
@@ -2714,12 +2709,12 @@
         "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=5243&year=114&seamon=&mtype=A&check2858=Y",
         "reason": "FILING_VERSION_UNVERIFIED"
       },
-      "stage": "PDF_LINK",
-      "reason": "fetch failed",
-      "attempts": 1,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 2,
       "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T04:54:43.788Z",
-      "nextRetryAt": "2026-10-02T04:59:43.788Z"
+      "checkedAt": "2026-10-02T12:29:12.807Z",
+      "nextRetryAt": "2026-10-03T12:29:12.807Z"
     },
     "4739|2026-06-30": {
       "status": "VERIFIED",
@@ -2818,17 +2813,10 @@
       "nextRetryAt": "2026-10-02T11:38:44.060Z"
     },
     "5464|2026-06-30": {
-      "status": "UNVERIFIED",
+      "status": "VERIFIED",
       "parserVersion": 2,
-      "filingParserVersion": 2,
-      "textParserVersion": 10,
-      "filingFallback": null,
-      "stage": "FILING_INDEX",
-      "reason": "fetch failed",
-      "attempts": 2,
       "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T04:55:24.757Z",
-      "nextRetryAt": "2026-10-02T05:05:24.757Z"
+      "checkedAt": "2026-10-02T12:29:45.210Z"
     },
     "3236|2026-06-30": {
       "status": "UNVERIFIED",
@@ -2848,13 +2836,16 @@
       "parserVersion": 2,
       "filingParserVersion": 2,
       "textParserVersion": 10,
-      "filingFallback": null,
+      "filingFallback": {
+        "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=6753&year=114&seamon=&mtype=A&check2858=Y",
+        "reason": "FILING_VERSION_UNVERIFIED"
+      },
       "stage": "FILING_INDEX",
       "reason": "fetch failed",
-      "attempts": 2,
+      "attempts": 3,
       "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T04:55:52.258Z",
-      "nextRetryAt": "2026-10-02T05:05:52.258Z"
+      "checkedAt": "2026-10-02T12:30:13.800Z",
+      "nextRetryAt": "2026-10-02T12:50:13.800Z"
     },
     "1608|2026-06-30": {
       "status": "UNVERIFIED",
@@ -2924,11 +2915,11 @@
       "textParserVersion": 10,
       "filingFallback": null,
       "stage": "PDF_METRICS",
-      "reason": "PDF_OCR_REVIEW_PENDING",
-      "attempts": 3,
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 4,
       "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T11:54:02.334Z",
-      "nextRetryAt": "2026-10-02T12:14:02.334Z"
+      "checkedAt": "2026-10-02T12:21:15.021Z",
+      "nextRetryAt": "2026-10-03T12:21:15.021Z"
     },
     "1569|2026-06-30": {
       "status": "VERIFIED",
@@ -2947,13 +2938,16 @@
       "parserVersion": 2,
       "filingParserVersion": 2,
       "textParserVersion": 10,
-      "filingFallback": null,
-      "stage": "FILING_INDEX",
-      "reason": "fetch failed",
-      "attempts": 2,
+      "filingFallback": {
+        "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=4903&year=114&seamon=&mtype=A&check2858=Y",
+        "reason": "FILING_VERSION_UNVERIFIED"
+      },
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 3,
       "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T04:56:09.451Z",
-      "nextRetryAt": "2026-10-02T05:06:09.451Z"
+      "checkedAt": "2026-10-02T12:31:11.200Z",
+      "nextRetryAt": "2026-10-02T12:51:11.200Z"
     },
     "2402|2026-06-30": {
       "status": "UNVERIFIED",
@@ -3534,11 +3528,11 @@
       "textParserVersion": 10,
       "filingFallback": null,
       "stage": "PDF_METRICS",
-      "reason": "PDF_OCR_REVIEW_PENDING",
-      "attempts": 2,
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 3,
       "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T11:56:59.413Z",
-      "nextRetryAt": "2026-10-02T12:06:59.413Z"
+      "checkedAt": "2026-10-02T12:21:37.947Z",
+      "nextRetryAt": "2026-10-03T12:21:37.947Z"
     },
     "6446|2026-06-30": {
       "status": "VERIFIED",
@@ -3559,11 +3553,11 @@
       "textParserVersion": 10,
       "filingFallback": null,
       "stage": "PDF_METRICS",
-      "reason": "PDF_OCR_REVIEW_PENDING",
-      "attempts": 2,
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 3,
       "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T12:00:24.317Z",
-      "nextRetryAt": "2026-10-02T12:10:24.317Z"
+      "checkedAt": "2026-10-02T12:22:33.625Z",
+      "nextRetryAt": "2026-10-03T12:22:33.625Z"
     },
     "3532|2026-06-30": {
       "status": "UNVERIFIED",
@@ -5185,8 +5179,8 @@
       "nextRetryAt": "2026-10-03T07:47:03.837Z"
     }
   },
-  "remaining": 256,
-  "ready": 120,
+  "remaining": 253,
+  "ready": 109,
   "continuationNeeded": true,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [
