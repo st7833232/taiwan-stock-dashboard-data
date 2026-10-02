@@ -2,26 +2,10 @@
   "targetDate": "2026-10-01",
   "researchComplete": false,
   "counts": {
-    "history": 13,
-    "fundamental": 400,
+    "fundamental": 380,
     "credit": 3
   },
   "pending": {
-    "history": [
-      "00403A",
-      "00404A",
-      "00405A",
-      "00406A",
-      "00407A",
-      "00409A",
-      "009826",
-      "009828",
-      "009829",
-      "00999A",
-      "00411A",
-      "00998A",
-      "7828"
-    ],
     "fundamental": [
       "1216",
       "1301",
@@ -59,16 +43,13 @@
       "2207",
       "2254",
       "2303",
-      "2312",
       "2313",
-      "2316",
       "2317",
       "2324",
       "2328",
       "2329",
       "2330",
       "2337",
-      "2338",
       "2340",
       "2342",
       "2344",
@@ -78,10 +59,8 @@
       "2353",
       "2356",
       "2359",
-      "2363",
       "2368",
       "2369",
-      "2374",
       "2375",
       "2377",
       "2388",
@@ -91,14 +70,12 @@
       "2404",
       "2408",
       "2412",
-      "2413",
       "2421",
       "2426",
       "2428",
       "2436",
       "2441",
       "2451",
-      "2454",
       "2455",
       "2458",
       "2464",
@@ -158,7 +135,6 @@
       "3029",
       "3030",
       "3033",
-      "3034",
       "3035",
       "3036",
       "3042",
@@ -203,7 +179,6 @@
       "4919",
       "4938",
       "4956",
-      "4958",
       "4967",
       "4977",
       "4989",
@@ -220,7 +195,6 @@
       "6005",
       "6116",
       "6133",
-      "6139",
       "6141",
       "6155",
       "6176",
@@ -232,7 +206,6 @@
       "6209",
       "6213",
       "6226",
-      "6239",
       "6257",
       "6271",
       "6278",
@@ -287,7 +260,6 @@
       "8046",
       "8081",
       "8103",
-      "8110",
       "8131",
       "8150",
       "8210",
@@ -303,7 +275,6 @@
       "1815",
       "2221",
       "3081",
-      "3088",
       "3105",
       "3131",
       "3147",
@@ -314,12 +285,10 @@
       "3227",
       "3234",
       "3236",
-      "3264",
       "3289",
       "3293",
       "3324",
       "3357",
-      "3363",
       "3374",
       "3455",
       "3490",
@@ -335,7 +304,6 @@
       "3707",
       "4541",
       "4542",
-      "4556",
       "4707",
       "4749",
       "4760",
@@ -370,11 +338,8 @@
       "6147",
       "6173",
       "6199",
-      "6207",
-      "6217",
       "6218",
       "6223",
-      "6227",
       "6231",
       "6245",
       "6274",
@@ -421,8 +386,7 @@
       "8111",
       "8155",
       "8227",
-      "8358",
-      "8436"
+      "8358"
     ],
     "credit": [
       "7610",
@@ -509,10 +473,29 @@
       ]
     },
     {
+      "code": "2312",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2316",
+      "failures": [
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
       "code": "2332",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "2338",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "REVENUE_DETERIORATION"
       ]
     },
     {
@@ -525,6 +508,12 @@
       "code": "2357",
       "failures": [
         "OFFICIAL_GOVERNANCE_WARNING"
+      ]
+    },
+    {
+      "code": "2363",
+      "failures": [
+        "PROFIT_DETERIORATION"
       ]
     },
     {
@@ -576,8 +565,21 @@
       ]
     },
     {
+      "code": "2413",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "2449",
       "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2454",
+      "failures": [
+        "REVENUE_DETERIORATION",
         "PROFIT_DETERIORATION"
       ]
     },
@@ -615,6 +617,12 @@
       "code": "3019",
       "failures": [
         "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3034",
+      "failures": [
+        "REVENUE_DETERIORATION"
       ]
     },
     {
@@ -775,6 +783,12 @@
       ]
     },
     {
+      "code": "8110",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "8114",
       "failures": [
         "REVENUE_DETERIORATION",
@@ -841,6 +855,14 @@
       ]
     },
     {
+      "code": "3363",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
       "code": "3441",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
@@ -884,6 +906,13 @@
       ]
     },
     {
+      "code": "6217",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
       "code": "6265",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
@@ -922,6 +951,274 @@
         "PROFIT_QUALITY_FAILED",
         "REVENUE_DETERIORATION"
       ]
+    },
+    {
+      "code": "8436",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    }
+  ],
+  "historyQualityRejected": [
+    {
+      "code": "00403A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-05-12",
+      "availableTradingDays": 99,
+      "verifiedTradingDays": 99,
+      "maximumPossibleTradingDays": 100,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00403A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00404A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-06-09",
+      "availableTradingDays": 79,
+      "verifiedTradingDays": 79,
+      "maximumPossibleTradingDays": 80,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00404A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00405A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-06-09",
+      "availableTradingDays": 79,
+      "verifiedTradingDays": 79,
+      "maximumPossibleTradingDays": 80,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00405A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00406A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-06-11",
+      "availableTradingDays": 77,
+      "verifiedTradingDays": 77,
+      "maximumPossibleTradingDays": 78,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00406A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00407A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-06-24",
+      "availableTradingDays": 69,
+      "verifiedTradingDays": 69,
+      "maximumPossibleTradingDays": 70,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00407A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00409A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-09-02",
+      "availableTradingDays": 20,
+      "verifiedTradingDays": 20,
+      "maximumPossibleTradingDays": 20,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00409A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "009826",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-08-03",
+      "availableTradingDays": 42,
+      "verifiedTradingDays": 42,
+      "maximumPossibleTradingDays": 42,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=009826&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "009828",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-09-02",
+      "availableTradingDays": 20,
+      "verifiedTradingDays": 20,
+      "maximumPossibleTradingDays": 20,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=009828&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "009829",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-08-21",
+      "availableTradingDays": 28,
+      "verifiedTradingDays": 28,
+      "maximumPossibleTradingDays": 28,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=009829&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00999A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-05-05",
+      "availableTradingDays": 104,
+      "verifiedTradingDays": 104,
+      "maximumPossibleTradingDays": 105,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00999A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00411A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-08-26",
+      "availableTradingDays": 24,
+      "verifiedTradingDays": 24,
+      "maximumPossibleTradingDays": 25,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://isin.twse.com.tw/isin/C_public.jsp?strMode=4",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00411A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00998A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-04-15",
+      "availableTradingDays": 116,
+      "verifiedTradingDays": 116,
+      "maximumPossibleTradingDays": 118,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://isin.twse.com.tw/isin/C_public.jsp?strMode=4",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00998A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "7828",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-04-22",
+      "availableTradingDays": 111,
+      "verifiedTradingDays": 111,
+      "maximumPossibleTradingDays": 113,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=7828&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
     }
   ],
   "retryPolicy": "AUTOMATIC_NEXT_SCHEDULE"
