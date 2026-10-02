@@ -4012,10 +4012,69 @@
       "checkedDate": "2026-10-02",
       "checkedAt": "2026-10-02T05:51:02.186Z",
       "nextRetryAt": "2026-10-02T05:56:02.186Z"
+    },
+    "3455|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T05:55:58.539Z"
+    },
+    "6715|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T05:57:12.487Z"
+    },
+    "4749|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T05:58:20.030Z"
+    },
+    "2467|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T05:59:05.739Z"
+    },
+    "7788|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 2,
+      "textParserVersion": 10,
+      "filingFallback": null,
+      "stage": "PDF_DOWNLOAD",
+      "reason": "fetch failed",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T05:59:41.173Z",
+      "nextRetryAt": "2026-10-02T06:04:41.173Z"
+    },
+    "2472|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T06:01:04.464Z"
+    },
+    "7799|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 2,
+      "textParserVersion": 10,
+      "filingFallback": {
+        "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=7799&year=114&seamon=&mtype=A&check2858=Y",
+        "reason": "FILING_VERSION_UNVERIFIED"
+      },
+      "stage": "PDF_DOWNLOAD",
+      "reason": "The operation was aborted due to timeout",
+      "attempts": 1,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T06:04:22.854Z",
+      "nextRetryAt": "2026-10-02T06:09:22.854Z"
     }
   },
-  "remaining": 353,
-  "ready": 280,
+  "remaining": 348,
+  "ready": 274,
   "continuationNeeded": true,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [
