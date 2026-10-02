@@ -123,7 +123,7 @@ export async function collectFinancialPdfs(target){
  const now=new Date(),today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei'}).format(now),deadline=Date.now()+5*60*1000,requestSpacingMs=Number(process.env.FINANCIAL_REQUEST_SPACING_MS||1500);
  const archiveNames=fs.existsSync('history/financial-reports')?fs.readdirSync('history/financial-reports'):[];
  const stocks=input.deepDive.filter(r=>(r.assetType??r.current?.assetType)==='STOCK'),rows=stocks.filter(r=>periods.has(r.code)).map(r=>({...r,key:`${r.code}|${periods.get(r.code).periodEnd}`,archived:archiveNames.some(name=>name.startsWith(`${Number(periods.get(r.code).periodEnd.slice(0,4))-1}${String(periods.get(r.code).quarter).padStart(2,'0')}_${r.code}_AI1.pdf.`)&&name.endsWith('.pdf'))})),admitted=new Set();
- const admit=()=>{for(const r of rows){const current=periods.get(r.code);if(state[r.key]?.checkedDate===today&&state[r.key]?.parserVersion===2&&reports.some(p=>{const n=reviewedFinancialReport(p,target);return n?.code===r.code&&n.periodEnd===`${Number(current.periodEnd.slice(0,4))-1}${current.periodEnd.slice(4)}`&&n.profitBasis===current.profitBasis;}))admitted.add(r.key);}};
+ const admit=()=>{for(const r of rows){const current=periods.get(r.code);if(state[r.key]?.parserVersion===2&&reports.some(p=>{const n=reviewedFinancialReport(p,target);return n?.code===r.code&&n.periodEnd===`${Number(current.periodEnd.slice(0,4))-1}${current.periodEnd.slice(4)}`&&n.profitBasis===current.profitBasis;}))admitted.add(r.key);}};
  admit();const queue=financialQueue(rows,state,now,admitted);let rateLimited=false;
  fs.mkdirSync('history/financial-reports',{recursive:true});
  const request=(url,body)=>requestOfficial(url,body);

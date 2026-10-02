@@ -1,0 +1,69 @@
+{
+  "targetDate": "2026-10-01",
+  "status": "VERIFY_FAILED",
+  "reason": "HISTORY_REQUIREMENT_UNSATISFIABLE_ASOF",
+  "code": "7828",
+  "listingDate": "2026-04-22",
+  "requiredTradingDays": 120,
+  "verifiedTradingDays": 111,
+  "maximumPossibleWeekdays": 117,
+  "verifiedHistoryRange": [
+    "2026-04-22",
+    "2026-10-01"
+  ],
+  "capturedAt": "2026-10-02T02:06:03.184145+00:00",
+  "sources": [
+    {
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+      "officialDataDate": "2026-10-01",
+      "record": {
+        "Date": "1151001",
+        "SecuritiesCompanyCode": "7828",
+        "CompanyName": "創新服務股份有限公司",
+        "CompanyAbbreviation": "創新服務",
+        "Registration": "－ ",
+        "SecuritiesIndustryCode": "24",
+        "Address": "No.10, Ln. 116, Da-Angang Rd., Dajia Dist.,Taichung City 437, TAIWAN.",
+        "UnifiedBusinessNo.": "27472283",
+        "Chairman": "吳智孟",
+        "GeneralManager": "吳智孟",
+        "Spokesman": "林俊忠",
+        "TitleOfSpokesman": "業務部副總",
+        "DeputySpokesperson": "張琪琪",
+        "Telephone": "04-2680-1023",
+        "DateOfIncorporation": "20041020",
+        "DateOfListing": "20260422",
+        "ParValueOfCommonStock": "新台幣                 10.0000元",
+        "Paidin.Capital.NTDollars": "404939110",
+        "PrivateStock.shares": "0",
+        "PreferredStock.shares": "0",
+        "PreparationOfFinancialReportType": "1",
+        "StockTransferAgent": "凱基證券股份有限公司股務代理部",
+        "StockTransferAgentTelephone": "02-2389-2999",
+        "StockTransferAgentAddress": "台北市中正區重慶南路1段2號5樓",
+        "AccountingFirm": "資誠聯合會計師事務所",
+        "CPA.CharteredPublicAccountant.First": "蔡欣怡",
+        "CPA.CharteredPublicAccountant.Second": "白淑蒨",
+        "Symbol": "INNOSTAR",
+        "Fax": "04-2680-1202",
+        "EmailAddress": "ir@inno-stars.com",
+        "WebAddress": "https://www.inno-stars.com/",
+        "IssueShares": "40493911"
+      }
+    },
+    {
+      "url": "https://isin.twse.com.tw/isin/C_public.jsp?strMode=4",
+      "recordHtml": "<td bgcolor=#FAFAD2>7828　創新服務</td><td bgcolor=#FAFAD2>TW0007828006</td><td bgcolor=#FAFAD2>2026/04/22</td><td bgcolor=#FAFAD2>上櫃</td><td bgcolor=#FAFAD2>半導體業</td><td bgcolor=#FAFAD2>ESVUFR</td><td bgcolor=#FAFAD2></td>",
+      "cells": [
+        "7828　創新服務",
+        "TW0007828006",
+        "2026/04/22",
+        "上櫃",
+        "半導體業",
+        "ESVUFR",
+        ""
+      ]
+    }
+  ],
+  "interpretation": "Two official endpoints agree on the listing date. Even the weekday upper bound is below the unchanged history requirement. This is insufficient pre-cutoff trading history, not missing published target-day quotes. No strategy Gate is granted and no CONFIRMED_MISSING classification is made."
+}
