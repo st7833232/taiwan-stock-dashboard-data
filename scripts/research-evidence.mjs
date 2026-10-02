@@ -87,9 +87,9 @@ export function historyAssessment(row,archive,cache,required,target){
 }
 export function reviewedFinancialReport(report,target) {
   try {
-    const row=report.row,code=String(row?.['公司代號']??''),year=row?.['年度'],quarter=row?.['季別'],filingYear=report.filingYear??year;
+    const row=report.row,code=String(row?.['公司代號']??''),year=row?.['年度'],quarter=row?.['季別'],filingYear=report.filingYear??year,type=report.filename?.endsWith('_AI2.pdf')?'AI2':'AI1';
     if(!/^\d{4}$/.test(code)||!Number.isInteger(year)||!Number.isInteger(quarter)||quarter<1||quarter>4)return null;
-    if(![year,year+1].includes(filingYear)||report.filename!==`${filingYear}${String(quarter).padStart(2,'0')}_${code}_AI1.pdf`||report.basis!=='YEAR_TO_DATE'||report.unit!=='TWD_THOUSAND'||!report.reviewedPages?.length)return null;
+    if(![year,year+1].includes(filingYear)||report.filename!==`${filingYear}${String(quarter).padStart(2,'0')}_${code}_${type}.pdf`||report.basis!=='YEAR_TO_DATE'||report.unit!=='TWD_THOUSAND'||!report.reviewedPages?.length)return null;
     const source=new URL(report.source);
     if(source.origin!=='https://doc.twse.com.tw'||source.pathname!=='/server-java/t57sb01'||source.searchParams.get('co_id')!==code||source.searchParams.get('year')!==String(filingYear-1911))return null;
     if(!/^[a-f0-9]{64}$/.test(report.sha256))return null;
@@ -99,7 +99,7 @@ export function reviewedFinancialReport(report,target) {
     const filing=[...index.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)].find(m=>m[1].includes(report.filename));
     if(!filing)return null;
     const cells=[...filing[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(m=>m[1].replace(/<[^>]*>/g,'').trim());
-    if(cells.length!==11||cells[0]!==code||cells[5]!=='IFRSs合併財報'||cells[7]!==report.filename||cells[9]!==report.uploadedAt||cells[10]!=='無')return null;
+    if(cells.length!==11||cells[0]!==code||cells[5]!==`IFRSs${type==='AI2'?'個別':'合併'}財報`||cells[7]!==report.filename||cells[9]!==report.uploadedAt||cells[10]!=='無')return null;
     const date=report.uploadedAt.match(/^(\d{3})\/(\d{2})\/(\d{2}) (\d{2}:\d{2}:\d{2})$/);
     if(!date)return null;
     const publication=`${Number(date[1])+1911}-${date[2]}-${date[3]}T${date[4]}+08:00`;
@@ -107,6 +107,7 @@ export function reviewedFinancialReport(report,target) {
     const pdf=fs.readFileSync(archiveKey?`history/financial-reports/${archiveKey}.pdf`:`history/financial-reports/${report.filename}`);
     if(pdf.subarray(0,5).toString()!=='%PDF-'||createHash('sha256').update(pdf).digest('hex')!==report.sha256)return null;
     const normalized=normalizeFinancial(row,'income',report.source);
+    if(type==='AI2'&&(normalized?.profitBasis!=='TOTAL'||!archiveKey||!fs.readFileSync(`history/financial-reports/${archiveKey}.income.html`,'utf8').replace(/\s/g,'').includes('個別綜合損益表')))return null;
     return normalized?.periodEnd<=target?{...normalized,publicationTimestamp:publication,filename:report.filename,sha256:report.sha256,reviewedPages:report.reviewedPages}:null;
   }catch{return null;}
 }

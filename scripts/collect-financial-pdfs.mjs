@@ -8,12 +8,12 @@ import {parseMopsCompanyHistoricalIncomeHtml} from './collect-research-evidence.
 const read=p=>{try{return JSON.parse(fs.readFileSync(p));}catch{return null;}};
 const save=(p,x)=>fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n');
 export function financialQueue(rows,state,now,admitted){
- const reparsed=r=>state[r.key]?.parserVersion!==2&&/PDF_PERIOD|FILING_VERSION|PROFIT_BASIS/.test(state[r.key]?.reason??'')||state[r.key]?.filingParserVersion!==2&&/FILING_VERSION/.test(state[r.key]?.reason??'');
- return rows.filter(r=>!admitted.has(r.key)&&(!state[r.key]||state[r.key].parserVersion!==2||reparsed(r)||r.archived&&(state[r.key].textParserVersion??0)<10||state[r.key].status==='VERIFIED'||Date.parse(state[r.key].nextRetryAt)<=now.getTime())).sort((a,b)=>Number(b.archived===true)-Number(a.archived===true)||Number(reparsed(b))-Number(reparsed(a))||(state[a.key]?.checkedAt??'').localeCompare(state[b.key]?.checkedAt??''));
+ const reparsed=r=>state[r.key]?.parserVersion!==2&&/PDF_PERIOD|FILING_VERSION|PROFIT_BASIS/.test(state[r.key]?.reason??'')||state[r.key]?.filingParserVersion!==3&&/FILING_VERSION/.test(state[r.key]?.reason??'');
+ return rows.filter(r=>!admitted.has(r.key)&&(!state[r.key]||state[r.key].parserVersion!==2||reparsed(r)||r.archived&&(state[r.key].textParserVersion??0)<12||state[r.key].status==='VERIFIED'||Date.parse(state[r.key].nextRetryAt)<=now.getTime())).sort((a,b)=>Number(b.archived===true)-Number(a.archived===true)||Number(reparsed(b))-Number(reparsed(a))||(state[a.key]?.checkedAt??'').localeCompare(state[b.key]?.checkedAt??''));
 }
 export async function filingIndex(source,request){
  let html=new TextDecoder('big5').decode(await request(source));
- if(/name=['"]check2858['"]\s+value=['"]Y['"]/i.test(html)&&!html.includes('_AI1.pdf')){
+ if(/name=['"]check2858['"]\s+value=['"]Y['"]/i.test(html)&&!/_AI[12]\.pdf/.test(html)){
   const url=new URL(source);url.searchParams.set('check2858','Y');html=new TextDecoder('big5').decode(await request(url.toString()));
  }
  return html;
@@ -39,26 +39,26 @@ export function reusablePdf(filename,uploadedAt,code,year,quarter,target){
  for(const name of fs.readdirSync('history/financial-reports').filter(p=>p.startsWith(filename+'.')&&/\.[a-f0-9]{64}\.pdf$/.test(p))){
   const path=`history/financial-reports/${name.slice(0,-4)}`;
   try{
-   const version=filingVersion(fs.readFileSync(path+'.html','utf8'),code,year,quarter,target),pdf=fs.readFileSync(path+'.pdf');
-   if(version.uploadedAt===uploadedAt&&createHash('sha256').update(pdf).digest('hex')===name.slice(-68,-4))return pdf;
+   const version=filingVersion(fs.readFileSync(path+'.html','utf8'),code,year,quarter,target,{profitBasis:filename.endsWith('_AI2.pdf')?'TOTAL':'PARENT'}),pdf=fs.readFileSync(path+'.pdf');
+   if(version.filename===filename&&version.uploadedAt===uploadedAt&&createHash('sha256').update(pdf).digest('hex')===name.slice(-68,-4))return pdf;
   }catch{}
  }
  return null;
 }
-export function archivedFilingIndex(code,year,quarter,target){
- const filename=`${year}${String(quarter).padStart(2,'0')}_${code}_AI1.pdf`;
+export function archivedFilingIndex(code,year,quarter,target,{profitBasis='PARENT'}={}){
+ const filenames=['AI1',...(profitBasis==='TOTAL'?['AI2']:[])].map(type=>`${year}${String(quarter).padStart(2,'0')}_${code}_${type}.pdf`);
  // ponytail: scan the small archive; index by company only if archive size makes this costly.
- for(const name of fs.readdirSync('history/financial-reports').filter(p=>p.startsWith(filename+'.')&&/\.[a-f0-9]{64}\.html$/.test(p)))try{
-  const index=fs.readFileSync(`history/financial-reports/${name}`,'utf8'),version=filingVersion(index,code,year,quarter,target);
-  if(reusablePdf(filename,version.uploadedAt,code,year,quarter,target))return index;
+ for(const name of fs.readdirSync('history/financial-reports').filter(p=>filenames.some(filename=>p.startsWith(filename+'.'))&&/\.[a-f0-9]{64}\.html$/.test(p)))try{
+  const index=fs.readFileSync(`history/financial-reports/${name}`,'utf8'),version=filingVersion(index,code,year,quarter,target,{profitBasis});
+  if(reusablePdf(version.filename,version.uploadedAt,code,year,quarter,target))return index;
  }catch{}
  return null;
 }
-export function filingVersion(html,code,year,quarter,target){
- const filename=`${year}${String(quarter).padStart(2,'0')}_${code}_AI1.pdf`;
+export function filingVersion(html,code,year,quarter,target,{profitBasis='PARENT'}={}){
+ const prefix=`${year}${String(quarter).padStart(2,'0')}_${code}_`,type=profitBasis==='TOTAL'&&!html.includes(prefix+'AI1.pdf')?'AI2':'AI1',filename=prefix+type+'.pdf';
  const tr=[...html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)].find(m=>m[1].includes(filename));
  const cells=tr?[...tr[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(m=>m[1].replace(/<[^>]*>/g,'').trim()):[];
- if(cells.length!==11||cells[0]!==code||cells[5]!=='IFRSs合併財報'||cells[7]!==filename||cells[10]!=='無')throw Error('FILING_VERSION_UNVERIFIED');
+ if(cells.length!==11||cells[0]!==code||cells[5]!==`IFRSs${type==='AI2'?'個別':'合併'}財報`||cells[7]!==filename||cells[10]!=='無')throw Error('FILING_VERSION_UNVERIFIED');
  const d=cells[9].match(/^(\d{3})\/(\d{2})\/(\d{2}) (\d{2}:\d{2}:\d{2})$/),stamp=d?`${Number(d[1])+1911}-${d[2]}-${d[3]}T${d[4]}+08:00`:'';
  if(!Number.isFinite(Date.parse(stamp))||Date.parse(stamp)>Date.parse(`${target}T23:59:59+08:00`))throw Error('FILING_AFTER_CUTOFF_OR_INVALID');
  return {filename,uploadedAt:cells[9]};
@@ -82,7 +82,7 @@ export function verifyPdfText(pages,row,{filingYear=row['年度']}={}){
   const columns=four?4:2,cumulativeIndex=(four?2:0)+(filingYear-row['年度']);
   const amount=code=>{
    const lines=page.split('\n').filter(l=>l.trim());let n=lines.findIndex(l=>new RegExp(`^\\s*${code}\\s`).test(l));
-   if(n<0&&code==='4000')n=lines.findIndex(l=>/^\s*4100\s+(營業收入(?:淨額)?|銷貨收入[－-]?淨額)(?:[（(]|\s)/.test(l));
+   if(n<0&&code==='4000')n=lines.findIndex(l=>/^\s*4100\s+(營業收入(?:淨額)?|銷貨收入(?:[－-]?淨額)?)(?:[（(]|\s)/.test(l));
    if(code==='4000'){
     const subtotal=lines.findIndex(l=>/^\s*(?:4XXX\s+)?(?:營業收入(?:淨額|合計)?|銷貨收入淨額|收入合計|收益合計)(?:[（(][^\n]*?[）)])?\s{2,}[$(\d-]/.test(l));
     if(subtotal>=0)n=subtotal;
@@ -91,6 +91,7 @@ export function verifyPdfText(pages,row,{filingYear=row['年度']}={}){
     const start=lines.findIndex(l=>/(?:淨[（(]損[）)]利|淨利(?:[（(](?:淨)?損[）)])?)歸屬(?:於)?/.test(l));
     if(start>=0){const end=lines.findIndex((l,j)=>j>start&&/綜合損益.*歸屬/.test(l));n=lines.findIndex((l,j)=>j>start&&(end<0||j<end)&&/^\s*(?:(?:8615|6810)\s+)?(?:母公司|本公司)業主\s/.test(l));}
    }
+   if(n<0&&code==='8200')n=lines.findIndex(l=>/^\s*本期(?:淨利(?:[（(]淨損[）)])?|淨損|淨[（(]損[）)]利)\s{2,}[$(\d-]/.test(l));
    if(n<0)return null;
    let line=lines[n].replace(/^\s*\d{4}\s+/,'');
    if(code==='8610'&&!/\d/.test(line)){
@@ -104,7 +105,8 @@ export function verifyPdfText(pages,row,{filingYear=row['年度']}={}){
    const tokens=[...line.matchAll(/\(?\s*\$?\s*-?\d[\d,]*(?:\.\d+)?\s*\)?|(?<!\S)-(?!\S)/g)].map(m=>m[0]),values=tokens.map(t=>t.trim()==='-'?null:Number(t.replace(/[\s,$()]/g,''))*(t.includes('(')?-1:1));
    return values.length===columns*2?values[cumulativeIndex*2]:values.length===columns&&tokens.every(t=>/,\d{3}/.test(t))?values[cumulativeIndex]:null;
   };
-  if(amount('4000')===row['營業收入']&&amount('8610')===row['淨利（淨損）歸屬於母公司業主'])return [i+1,...(pages[i+1]?[i+2]:[])];
+  const parent=Number.isFinite(row['淨利（淨損）歸屬於母公司業主']);
+  if(amount('4000')===row['營業收入']&&amount(parent?'8610':'8200')===row[parent?'淨利（淨損）歸屬於母公司業主':'本期淨利（淨損）'])return [i+1,...(pages[i+1]?[i+2]:[])];
  }
  throw Error('PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED');
 }
@@ -141,7 +143,7 @@ export async function collectFinancialPdfs(target){
  for(const c of read(`${root}/financial-evidence-captures.json`)?.captures??[])if(c.kind==='income'&&c.status==='CAPTURED'&&!c.historicalFinancial)for(const row of read(`${root}/${c.id}.raw.txt`)??[]){const n=normalizeFinancial(row,'income',c.url);if(n&&n.periodEnd<=target&&(!periods.has(n.code)||periods.get(n.code).periodEnd<n.periodEnd))periods.set(n.code,n);}
  const now=new Date(),today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei'}).format(now),deadline=Date.now()+10*60*1000,requestSpacingMs=Number(process.env.FINANCIAL_REQUEST_SPACING_MS||1500);
  const archiveNames=fs.existsSync('history/financial-reports')?fs.readdirSync('history/financial-reports'):[];
- const stocks=input.deepDive.filter(r=>(r.assetType??r.current?.assetType)==='STOCK'),rows=stocks.filter(r=>periods.has(r.code)).map(r=>({...r,key:`${r.code}|${periods.get(r.code).periodEnd}`,archived:archiveNames.some(name=>[0,1].some(offset=>name.startsWith(`${Number(periods.get(r.code).periodEnd.slice(0,4))-offset}${String(periods.get(r.code).quarter).padStart(2,'0')}_${r.code}_AI1.pdf.`))&&name.endsWith('.pdf'))})),admitted=new Set();
+ const stocks=input.deepDive.filter(r=>(r.assetType??r.current?.assetType)==='STOCK'),rows=stocks.filter(r=>periods.has(r.code)).map(r=>({...r,key:`${r.code}|${periods.get(r.code).periodEnd}`,archived:archiveNames.some(name=>[0,1].some(offset=>['AI1',...(periods.get(r.code).profitBasis==='TOTAL'?['AI2']:[])].some(type=>name.startsWith(`${Number(periods.get(r.code).periodEnd.slice(0,4))-offset}${String(periods.get(r.code).quarter).padStart(2,'0')}_${r.code}_${type}.pdf.`)))&&name.endsWith('.pdf'))})),admitted=new Set();
  const admit=()=>{
   const verified=new Set(reports.map(p=>reviewedFinancialReport(p,target)).filter(Boolean).map(n=>`${n.code}|${n.periodEnd}|${n.profitBasis}`));
   for(const r of rows){const current=periods.get(r.code);if(state[r.key]?.parserVersion===2&&verified.has(`${r.code}|${Number(current.periodEnd.slice(0,4))-1}${current.periodEnd.slice(4)}|${current.profitBasis}`))admitted.add(r.key);}
@@ -151,16 +153,16 @@ export async function collectFinancialPdfs(target){
  const request=(url,body)=>requestOfficial(url,body,{deadline,timeoutMs:url.endsWith('.pdf')?120000:30000});
  for(const r of queue){
   if(Date.now()>deadline)break;
-  const current=periods.get(r.code),year=Number(current.periodEnd.slice(0,4))-1,quarter=current.quarter,code=r.code;
+  const current=periods.get(r.code),year=Number(current.periodEnd.slice(0,4))-1,quarter=current.quarter,code=r.code,filingOptions={profitBasis:current.profitBasis};
   let stage='FILING_INDEX',filingYear=year,source=`https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=${code}&year=${year-1911}&seamon=&mtype=A&check2858=Y`,filingFallback=null;
   try{
-   let index=archivedFilingIndex(code,filingYear,quarter,target),version;
-   if(!index){index=archivedFilingIndex(code,year+1,quarter,target);if(index){filingYear=year+1;source=source.replace(`year=${year-1911}&`,`year=${filingYear-1911}&`);}}
-   try{index??=await filingIndex(source,request);version=filingVersion(index,code,filingYear,quarter,target);}
+   let index=archivedFilingIndex(code,filingYear,quarter,target,filingOptions),version;
+   if(!index){index=archivedFilingIndex(code,year+1,quarter,target,filingOptions);if(index){filingYear=year+1;source=source.replace(`year=${year-1911}&`,`year=${filingYear-1911}&`);}}
+   try{index??=await filingIndex(source,request);version=filingVersion(index,code,filingYear,quarter,target,filingOptions);}
    catch(e){
     if(e.message!=='FILING_VERSION_UNVERIFIED'||filingYear!==year)throw e;
     filingFallback={source,reason:e.message};filingYear=year+1;source=source.replace(`year=${year-1911}&`,`year=${filingYear-1911}&`);
-    index=archivedFilingIndex(code,filingYear,quarter,target)??await filingIndex(source,request);version=filingVersion(index,code,filingYear,quarter,target);
+    index=archivedFilingIndex(code,filingYear,quarter,target,filingOptions)??await filingIndex(source,request);version=filingVersion(index,code,filingYear,quarter,target,filingOptions);
    }
    if(!reports.some(p=>p.filename===version.filename&&p.row?.['年度']===year&&p.uploadedAt===version.uploadedAt&&reviewedFinancialReport(p,target)?.profitBasis===current.profitBasis)){
     let pdf=reusablePdf(version.filename,version.uploadedAt,code,filingYear,quarter,target),pdfUrl=null;
@@ -183,7 +185,7 @@ export async function collectFinancialPdfs(target){
    state[r.key]={status:'VERIFIED',parserVersion:2,checkedDate:today,checkedAt:new Date().toISOString()};admitted.add(r.key);
   }catch(e){
    const attempts=state[r.key]?.checkedDate===today?(state[r.key]?.attempts??0)+1:1,transient=/fetch failed|timeout|aborted|HTTP_(429|5\d\d)|PDF_OCR_REVIEW_PENDING|FINANCIAL_COLLECTION_BUDGET_EXHAUSTED/i.test(e.message);
-   state[r.key]={status:'UNVERIFIED',parserVersion:2,filingParserVersion:2,textParserVersion:10,filingFallback,stage,reason:e.message,attempts,checkedDate:today,checkedAt:new Date().toISOString(),nextRetryAt:new Date(Date.now()+(transient?Math.min(300000*2**(attempts-1),86400000):86400000)).toISOString()};
+   state[r.key]={status:'UNVERIFIED',parserVersion:2,filingParserVersion:3,textParserVersion:12,filingFallback,stage,reason:e.message,attempts,checkedDate:today,checkedAt:new Date().toISOString(),nextRetryAt:new Date(Date.now()+(transient?Math.min(300000*2**(attempts-1),86400000):86400000)).toISOString()};
    if(e.message==='OFFICIAL_RATE_LIMITED'){rateLimited=true;save('history/financial-pdf-collection.json',state);break;}
    if(e.message==='FINANCIAL_COLLECTION_BUDGET_EXHAUSTED'){save('history/financial-pdf-collection.json',state);break;}
   }
