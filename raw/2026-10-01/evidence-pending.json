@@ -2,7 +2,7 @@
   "targetDate": "2026-10-01",
   "researchComplete": false,
   "counts": {
-    "fundamental": 372,
+    "fundamental": 371,
     "credit": 3
   },
   "pending": {
@@ -209,7 +209,6 @@
       "6409",
       "6414",
       "6415",
-      "6426",
       "6446",
       "6449",
       "6451",
@@ -735,6 +734,12 @@
     },
     {
       "code": "6282",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6426",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
