@@ -38,23 +38,27 @@ export function parseMopsCompanyHistoricalIncomeHtml(html,{code,year,quarter}) {
   const labelKey=x=>x.replace(/\s+/g,'').replace(/[（]/g,'(').replace(/[）]/g,')').replace(/[∕／]/g,'/');
   const cumulativePattern=new RegExp(`^(?:${year-1911}|${year})年0?1月0?1日至(?:(?:${year-1911}|${year})年)?0?${quarter*3}月0?${new Date(Date.UTC(year,quarter*3,0)).getUTCDate()}日$`);
   const wanted=new Map([
-    ['revenue',new Set(['營業收入合計','營業收入','收入','收益'])],
+    ['revenue',new Set(['營業收入合計','營業收入','收入','收入合計','收益','收益合計'])],
     ['netProfit',new Set(['本期淨利（淨損）','本期淨利(淨損)'])],
-    ['parentProfit',new Set(['淨利（淨損）歸屬於母公司業主','淨利（損）歸屬於母公司業主','淨利(淨損)歸屬於母公司業主','母公司業主（淨利∕損）','母公司業主（淨利／損）'])]
+    ['parentProfit',new Set(['淨利（淨損）歸屬於母公司業主','淨利（損）歸屬於母公司業主','淨利(淨損)歸屬於母公司業主','母公司業主（淨利∕損）','母公司業主（淨利／損）','母公司業主'])]
   ]), values={};
-  let amountIndex=null;
+  let amountIndex=null,profitOwnership=false;
   for(const m of String(html??'').matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)){
     const cells=[...m[1].matchAll(/<(?:th|td)\b[^>]*>([\s\S]*?)<\/(?:th|td)>/gi)].map(x=>htmlText(x[1]));
-    const cumulative=cells.findIndex(cell=>cumulativePattern.test(cell.replace(/\s+/g,'')));
+    const cumulative=cells.findIndex(cell=>cumulativePattern.test(cell.replace(/\s+/g,''))||quarter===2&&new RegExp(`^(?:${year-1911}|${year})年上半年度$`).test(cell));
     if(cumulative>=0){
       const headerCells=[...m[1].matchAll(/<(?:th|td)\b([^>]*)>([\s\S]*?)<\/(?:th|td)>/gi)];
       amountIndex=headerCells.slice(0,cumulative).reduce((sum,cell)=>sum+Number(cell[1].match(/colspan=['"]?(\d+)/i)?.[1]??1),0);continue;
     }
+    const section=labelKey(cells[0]??'');
+    if(/^淨利(?:\((?:淨)?損\))?歸屬於[：:]?$/.test(section))profitOwnership=true;
+    if(/^綜合損益/.test(section))profitOwnership=false;
     if(cells.length<2||amountIndex===null)continue;
     const labelIndex=cells.findIndex(cell=>!/^\d+$/.test(cell)&&[...wanted.values()].some(labels=>[...labels].some(x=>labelKey(x)===labelKey(cell))));
     if(labelIndex<0)continue;
     const label=cells[labelIndex].replace(/\s+/g,'');
     for(const [key,labels] of wanted)if(values[key]===undefined&&[...labels].some(x=>labelKey(x)===labelKey(label))){
+      if(key==='parentProfit'&&label==='母公司業主'&&!profitOwnership)continue;
       const n=compactNumber(cells[amountIndex]);
       if(Number.isFinite(n))values[key]=n;
     }

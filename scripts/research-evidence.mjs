@@ -87,11 +87,11 @@ export function historyAssessment(row,archive,cache,required,target){
 }
 export function reviewedFinancialReport(report,target) {
   try {
-    const row=report.row,code=String(row?.['公司代號']??''),year=row?.['年度'],quarter=row?.['季別'];
+    const row=report.row,code=String(row?.['公司代號']??''),year=row?.['年度'],quarter=row?.['季別'],filingYear=report.filingYear??year;
     if(!/^\d{4}$/.test(code)||!Number.isInteger(year)||!Number.isInteger(quarter)||quarter<1||quarter>4)return null;
-    if(report.filename!==`${year}${String(quarter).padStart(2,'0')}_${code}_AI1.pdf`||report.basis!=='YEAR_TO_DATE'||report.unit!=='TWD_THOUSAND'||!report.reviewedPages?.length)return null;
+    if(![year,year+1].includes(filingYear)||report.filename!==`${filingYear}${String(quarter).padStart(2,'0')}_${code}_AI1.pdf`||report.basis!=='YEAR_TO_DATE'||report.unit!=='TWD_THOUSAND'||!report.reviewedPages?.length)return null;
     const source=new URL(report.source);
-    if(source.origin!=='https://doc.twse.com.tw'||source.pathname!=='/server-java/t57sb01'||source.searchParams.get('co_id')!==code||source.searchParams.get('year')!==String(year-1911))return null;
+    if(source.origin!=='https://doc.twse.com.tw'||source.pathname!=='/server-java/t57sb01'||source.searchParams.get('co_id')!==code||source.searchParams.get('year')!==String(filingYear-1911))return null;
     if(!/^[a-f0-9]{64}$/.test(report.sha256))return null;
     const archiveKey=report.archiveKey;
     if(archiveKey&&archiveKey!==`${report.filename}.${report.sha256}`)return null;

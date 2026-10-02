@@ -30,10 +30,25 @@ test('a PDF must independently match cumulative revenue and parent profit rather
  assert.throws(()=>verifyPdfText(['scanned or unreadable'],row));
  assert.throws(()=>verifyPdfText([page.replace('114年1月至6月 113年1月至6月','113年1月至6月 114年1月至6月')],row));
 });
+test('a pre-cutoff later filing may verify its prior-year comparative column without substituting the current year',()=>{
+ const page='合併綜合損益表 新台幣千元 115年4月至6月 114年4月至6月 115年1月至6月 114年1月至6月\n4000 營業收入 10,000 100 11,000 100 20,000 100 22,000 100\n8610 母公司業主 1,000 10 1,100 10 2,000 10 2,200 10',row={'年度':2025,'季別':2,'營業收入':22000,'淨利（淨損）歸屬於母公司業主':2200};
+ assert.deepEqual(verifyPdfText([page],row,{filingYear:2026}),[1]);
+ assert.throws(()=>verifyPdfText([page],{...row,'營業收入':20000},{filingYear:2026}));assert.throws(()=>verifyPdfText([page],row,{filingYear:2027}));
+ const half=page.replace('115年4月至6月 114年4月至6月 ','').replace('10,000 100 11,000 100 ','').replace('1,000 10 1,100 10 ','');assert.deepEqual(verifyPdfText([half],row,{filingYear:2026}),[1]);
+});
 
 test('MOPS parent profit labels preserve the ownership basis used by archived PDFs',()=>{
  const html='<tr><th>項目</th><th colspan="2">114年第2季</th><th colspan="2">113年第2季</th><th colspan="2">114年01月01日至114年06月30日</th></tr>'+['營業收入','本期淨利（淨損）','母公司業主（淨利∕損）'].map(label=>`<tr><td>${label}</td><td>1</td><td>1</td><td>2</td><td>2</td><td>3000</td><td>3</td></tr>`).join('');
  assert.equal(parseMopsCompanyHistoricalIncomeHtml(html,{code:'2330',year:2025,quarter:2})['淨利（淨損）歸屬於母公司業主'],3000);
+});
+test('official half-year and financial-sector subtotal labels preserve cumulative revenue and profit ownership',()=>{
+ for(const [code,revenue,profit] of [['1409',20103421,288663],['6005',8442476,2014359],['6620',939799,367419]]){
+  const file=fs.readdirSync('history/financial-reports').find(p=>p.startsWith(`202502_${code}_AI1.pdf.`)&&p.endsWith('.income.html')),html=fs.readFileSync('history/financial-reports/'+file,'utf8');
+  const row=parseMopsCompanyHistoricalIncomeHtml(html,{code,year:2025,quarter:2});assert.equal(row['營業收入'],revenue);assert.equal(row['淨利（淨損）歸屬於母公司業主'],profit);
+  assert.throws(()=>parseMopsCompanyHistoricalIncomeHtml(html,{code,year:2026,quarter:2}));assert.throws(()=>parseMopsCompanyHistoricalIncomeHtml(html,{code,year:2025,quarter:1}));
+ }
+ const html='<tr><th>項目</th><th>114年01月01日至114年06月30日</th></tr><tr><td>收入合計</td><td>1000</td></tr><tr><td>本期淨利（淨損）</td><td>100</td></tr><tr><td>綜合損益總額歸屬於：</td></tr><tr><td>母公司業主</td><td>300</td></tr>';
+ assert.equal(parseMopsCompanyHistoricalIncomeHtml(html,{code:'1409',year:2025,quarter:2})['淨利（淨損）歸屬於母公司業主'],undefined);
 });
 
 test('dotted ROC date ranges verify the same cumulative period without accepting a shifted year',()=>{
@@ -82,6 +97,8 @@ test('resumable financial queue prioritizes new work, skips admitted PDFs, and r
  const now=new Date('2026-10-01T08:00:00Z'),rows=['new','retry','wait','done','blocked'].map(key=>({key,code:key}));
  const state={retry:{parserVersion:2,nextRetryAt:'2026-10-01T07:00:00Z',checkedAt:'2026-10-01T06:00:00Z'},wait:{parserVersion:2,nextRetryAt:'2026-10-01T09:00:00Z'},blocked:{parserVersion:2,nextRetryAt:'2026-10-02T08:00:00Z'}};
  assert.deepEqual(financialQueue(rows,state,now,new Set(['done'])).map(r=>r.key),['new','retry']);
+ const version={parserVersion:2,reason:'FILING_VERSION_UNVERIFIED',nextRetryAt:'2026-10-02T08:00:00Z'};
+ assert.deepEqual(financialQueue([{key:'old'},{key:'current'}],{old:version,current:{...version,filingParserVersion:2}},now,new Set()).map(r=>r.key),['old']);
 });
 
 test('an admitted record with a missing local archive is rechecked rather than silently skipped',async()=>{
@@ -148,9 +165,10 @@ test('saved PDFs make progress before new network work during official outages',
 });
 test('OCR reviews the identified income table and its continuation instead of unrelated notes, but scanned files still resume all pages',async()=>{
  const {pdfReviewPages,financialQueue}=await import('./collect-financial-pdfs.mjs');
- assert.deepEqual(pdfReviewPages(['目錄','資產負債表','合併綜合損益表 金額','續表','附註'],5),[3,4]);
+ assert.deepEqual(pdfReviewPages(['目錄','資產負債表','合併綜合損益表 金額\n4000 營業收入','續表','附註'],5),[3,4]);
  assert.deepEqual(pdfReviewPages(['','',''],3),[1,2,3]);
- const now=new Date('2026-10-02T01:00:00Z'),state={old:{parserVersion:2,textParserVersion:2,nextRetryAt:'2026-10-03T01:00:00Z'},current:{parserVersion:2,textParserVersion:5,nextRetryAt:'2026-10-03T01:00:00Z'}};
+ assert.ok(pdfReviewPages(['目錄\n合併綜合損益表 8\n合併現金流量表','會計師核閱報告提及綜合損益表與現金流量',''],12).includes(8));
+ const now=new Date('2026-10-02T01:00:00Z'),state={old:{parserVersion:2,textParserVersion:2,nextRetryAt:'2026-10-03T01:00:00Z'},current:{parserVersion:2,textParserVersion:7,nextRetryAt:'2026-10-03T01:00:00Z'}};
  assert.deepEqual(financialQueue([{key:'old',archived:true},{key:'current',archived:true}],state,now,new Set()).map(r=>r.key),['old']);
 });
 
@@ -170,4 +188,17 @@ test('verified historical PDFs stay admitted across days with linear archive rea
   await collectFinancialPdfs('2026-10-01');
   assert.equal(requests,0);assert.equal(JSON.parse(fs.readFileSync('raw/2026-10-01/financial-pdf-collection.json')).remaining,0);assert.equal(pdfReads,4);
  }finally{globalThis.fetch=fetcher;fs.readFileSync=reader;process.chdir(original);fs.rmSync(tmp,{recursive:true,force:true});}
+});
+test('collection recovers an unverified old filing through a dated official comparative PDF without changing the requested period',async()=>{
+ const {collectFinancialPdfs}=await import('./collect-financial-pdfs.mjs'),{default:os}=await import('node:os'),{default:path}=await import('node:path');
+ const original=process.cwd(),fetcher=globalThis.fetch,spacing=process.env.FINANCIAL_REQUEST_SPACING_MS,tmp=fs.mkdtempSync(path.join(os.tmpdir(),'financial-comparative-')),file=fs.readdirSync('history/financial-reports').find(f=>f.startsWith('202502_6239_AI1.pdf.')&&f.endsWith('.pdf')),stem=file.slice(0,-4);let requests=0;
+ try{
+  fs.mkdirSync(path.join(tmp,'history/financial-reports'),{recursive:true});for(const suffix of ['.pdf','.html','.income.html'])fs.copyFileSync('history/financial-reports/'+stem+suffix,path.join(tmp,'history/financial-reports/'+stem+suffix));
+  process.chdir(tmp);fs.mkdirSync('raw/2025-09-30',{recursive:true});
+  fs.writeFileSync('raw/2025-09-30/research-input.json',JSON.stringify({deepDive:[{code:'6239',assetType:'STOCK',current:{market:'TWSE'}}]}));fs.writeFileSync('raw/2025-09-30/financial-evidence-captures.json',JSON.stringify({captures:[{id:'income',kind:'income',status:'CAPTURED'}]}));
+  fs.writeFileSync('raw/2025-09-30/income.raw.txt',JSON.stringify([{'公司代號':'6239','年度':2025,'季別':2,'淨利（淨損）歸屬於母公司業主':100}]));
+  globalThis.fetch=async url=>{requests++;assert.equal(new URL(url).searchParams.get('year'),'113');return new Response('<html>Filing version unverified</html>');};process.env.FINANCIAL_REQUEST_SPACING_MS='0';
+  await collectFinancialPdfs('2025-09-30');const [report]=JSON.parse(fs.readFileSync('history/reviewed-financial-reports.json'));
+  assert.equal(requests,1);assert.equal(report.filingYear,2025);assert.equal(report.row['年度'],2024);assert.equal(report.row['營業收入'],37915361);assert.equal(report.row['淨利（淨損）歸屬於母公司業主'],3564919);assert.equal(report.filingFallback.reason,'FILING_VERSION_UNVERIFIED');assert.equal(JSON.parse(fs.readFileSync('raw/2025-09-30/financial-pdf-collection.json')).remaining,0);
+ }finally{globalThis.fetch=fetcher;if(spacing===undefined)delete process.env.FINANCIAL_REQUEST_SPACING_MS;else process.env.FINANCIAL_REQUEST_SPACING_MS=spacing;process.chdir(original);fs.rmSync(tmp,{recursive:true,force:true});}
 });

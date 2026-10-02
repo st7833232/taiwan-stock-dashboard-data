@@ -148,6 +148,11 @@ test('reviewed filed PDFs require the actual archived file, unchanged hash and p
  assert.equal(reviewedFinancialReport(report,'2025-08-12'),null);
  for(const change of [{sha256:'0'.repeat(64)},{uploadedAt:'114/08/14 15:14:07'},{filename:'../other.pdf'},{basis:'QUARTER_ONLY'},{unit:'TWD'},{source:'https://example.com/'}])assert.equal(reviewedFinancialReport({...report,...change},'2026-09-30'),null);
  assert.equal(reviewedFinancialReport({...report,row:{...report.row,'公司代號':'8150'}},'2026-09-30'),null);
+ const year=report.row['年度'],comparative={...report,filingYear:year,row:{...report.row,'年度':year-1}};
+ assert.equal(reviewedFinancialReport(comparative,'2026-09-30').periodEnd,`${year-1}-06-30`);
+ assert.equal(reviewedFinancialReport(comparative,'2025-08-12'),null);
+ assert.equal(reviewedFinancialReport({...comparative,row:{...comparative.row,'年度':year-2}},'2026-09-30'),null);
+ assert.equal(reviewedFinancialReport({...comparative,filingYear:year+1},'2026-09-30'),null);
 });
 
 test('known loss-year amounts finish evidence review but never bypass growth thresholds',()=>{
