@@ -138,7 +138,9 @@ test('pending-only recovery reuses PASS daily capture and skips completed histor
       if(script.endsWith('screen-market.mjs')){fs.writeFileSync('manifest.json',JSON.stringify({...manifest,revision:'new'}));fs.writeFileSync('raw/2026-09-29/daily-report.json',JSON.stringify({researchComplete:false,evidencePending:{fundamental:1,credit:1}}));}
     };
     runPipeline('2026-09-29',{execute,now:new Date('2026-09-30T01:00:00Z')});
-    assert.equal(calls.includes('scripts/fetch-official-market-data.mjs'),false);
+    assert.equal(calls.includes('scripts/fetch-official-market-data.mjs'),true);
+    assert.ok(calls.indexOf('scripts/fetch-official-market-data.mjs')<calls.indexOf('scripts/summarize-official-market-data.mjs'));
+    assert.equal(JSON.parse(fs.readFileSync('raw/2026-09-29/gate-matrix.json')).overallStatus,'PASS');
     assert.equal(calls.includes('scripts/backfill-v2-market-history.mjs'),false);
     assert.equal(calls.includes('scripts/collect-tdcc-history.mjs'),false);
     assert.equal(calls.includes('scripts/collect-financial-pdfs.mjs'),true);
@@ -152,4 +154,14 @@ test('self-healing retries pending evidence and transient failures but stops on 
   assert.deepEqual(recoveryDecision({report:{researchComplete:true,validation:{status:'PASS'}},status:{},count:3}),{dispatch:false,reason:'COMPLETE'});
   assert.deepEqual(recoveryDecision({report:{researchComplete:false},status:{error:'logic invariant violated'},count:3}),{dispatch:false,reason:'NON_RECOVERABLE_FAILURE'});
   assert.deepEqual(recoveryDecision({report:{researchComplete:false,validation:{status:'PASS'}},status:{},count:12}),{dispatch:false,reason:'RECOVERY_LIMIT'});
+});
+
+test('TPEx balances use official named columns, never repayments or trades',async()=>{
+  const source=fs.readFileSync(new URL('./summarize-official-market-data.mjs',import.meta.url),'utf8');
+  const body=source.slice(source.indexOf('async function creditRowsFrom'),source.indexOf('function mergeCreditRows'));
+  const parse=new Function('fs','tableRows','normalizeMargin','num','uniqueRows',body+';return creditRowsFrom;')({readFile:async()=>JSON.stringify({tables:[{title:'上櫃股票融資融券餘額',fields:['代號','名稱','前資餘額(張)','資買','資賣','現償','資餘額','資屬證金','資使用率(%)','資限額','前券餘額(張)','券賣','券買','券償','券餘額'],data:[['1569','stock','100','9','8','7','94','0','0','0','20','3','4','5','14']]}]})},()=>[],()=>null,x=>x==null?null:Number(x),x=>x);
+  const [row]=await parse('fixture','TPEx');
+  assert.equal(row.marginPrev,100);assert.equal(row.marginBalance,94);
+  assert.equal(row.shortPrev,20);assert.equal(row.shortBalance,14);
+  assert.equal(row.marginChange,-6);assert.equal(row.shortChange,-6);
 });

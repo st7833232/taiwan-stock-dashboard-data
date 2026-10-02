@@ -157,7 +157,8 @@ async function creditRowsFrom(rel,market) {
         for (const row of table.data) {
           if (!Array.isArray(row)||row.length<13) continue;
           const code=String(row[0]??'').trim(); if (!code) continue;
-          const marginPrev=num(row[5]), marginBalance=num(row[6]), shortPrev=num(row[11]), shortBalance=num(row[12]);
+          const field=name=>num(row[table.fields?.indexOf(name)]);
+          const marginPrev=field('前資餘額(張)'), marginBalance=field('資餘額'), shortPrev=field('前券餘額(張)'), shortBalance=field('券餘額');
           out.push({code,market,marginPrev,marginBalance,marginChange:marginPrev!==null&&marginBalance!==null?marginBalance-marginPrev:null,shortPrev,shortBalance,shortChange:shortPrev!==null&&shortBalance!==null?shortBalance-shortPrev:null,lendingPrev:null,lendingBalance:null,lendingChange:null});
         }
       }

@@ -47,7 +47,8 @@ export function runPipeline(target=resolveCaptureTargetDate(),{execute=execFileS
       const priorPending=read(`${root}/evidence-pending.json`);
       let gate=read(`${root}/gate-matrix.json`);
       const reusableDailyCapture=gate?.overallStatus==='PASS'&&input?.targetDate===day;
-      if(!reusableDailyCapture) {
+      const retryCredit=!priorPending||Number(priorPending?.counts?.credit??0)>0;
+      if(!reusableDailyCapture||retryCredit) {
         run('scripts/fetch-official-market-data.mjs',{retry:true});
         gate=read(`${root}/gate-matrix.json`);
       } else {
@@ -59,7 +60,7 @@ export function runPipeline(target=resolveCaptureTargetDate(),{execute=execFileS
         // An old order still lacks official candles. Do not skip ahead and expire it without those candles.
         break;
       }
-      if(!reusableDailyCapture) {status.stage='INPUT';run('scripts/summarize-official-market-data.mjs');}
+      if(!reusableDailyCapture||retryCredit) {status.stage='INPUT';run('scripts/summarize-official-market-data.mjs');}
       if(!priorPending||Number(priorPending?.counts?.history??0)>0) {
         status.stage='HISTORY';run('scripts/backfill-v2-market-history.mjs',{retry:true});
         status.stage='INPUT';run('scripts/summarize-official-market-data.mjs');
