@@ -9,7 +9,7 @@ const read=p=>{try{return JSON.parse(fs.readFileSync(p));}catch{return null;}};
 const save=(p,x)=>fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n');
 export function financialQueue(rows,state,now,admitted){
  const reparsed=r=>state[r.key]?.parserVersion!==2&&/PDF_PERIOD|FILING_VERSION|PROFIT_BASIS/.test(state[r.key]?.reason??'')||state[r.key]?.filingParserVersion!==2&&/FILING_VERSION/.test(state[r.key]?.reason??'');
- return rows.filter(r=>!admitted.has(r.key)&&(!state[r.key]||state[r.key].parserVersion!==2||reparsed(r)||r.archived&&(state[r.key].textParserVersion??0)<7||state[r.key].status==='VERIFIED'||Date.parse(state[r.key].nextRetryAt)<=now.getTime())).sort((a,b)=>Number(b.archived===true)-Number(a.archived===true)||Number(reparsed(b))-Number(reparsed(a))||(state[a.key]?.checkedAt??'').localeCompare(state[b.key]?.checkedAt??''));
+ return rows.filter(r=>!admitted.has(r.key)&&(!state[r.key]||state[r.key].parserVersion!==2||reparsed(r)||r.archived&&(state[r.key].textParserVersion??0)<8||state[r.key].status==='VERIFIED'||Date.parse(state[r.key].nextRetryAt)<=now.getTime())).sort((a,b)=>Number(b.archived===true)-Number(a.archived===true)||Number(reparsed(b))-Number(reparsed(a))||(state[a.key]?.checkedAt??'').localeCompare(state[b.key]?.checkedAt??''));
 }
 export async function filingIndex(source,request){
  let html=new TextDecoder('big5').decode(await request(source));
@@ -96,7 +96,7 @@ export function verifyPdfText(pages,row,{filingYear=row['年度']}={}){
    }
    if(!/\d/.test(line)&&lines[n+1]&&!/^\s*\d{4}\s/.test(lines[n+1])&&(!/\p{Script=Han}/u.test(lines[n+1])||/^\s*[\p{Script=Han}、]+(?:[）)]|\s{2,}[$(\d])/u.test(lines[n+1])))line=lines[n+1];
    // Footnote numbers precede a wide column gap; they are never financial amounts.
-   line=line.match(/\s{2,}((?:[$（(]\s*)*-?\d[\d,]*(?:\.\d+)?(?:\s|\)|$)[\s\S]*)$/)?.[1]??line;
+   line=line.match(/(?:\s{2,}|\s(?=\$|[（(]\s*\$))((?:[$（(]\s*)*-?\d[\d,]*(?:\.\d+)?(?:\s|\)|$)[\s\S]*)$/)?.[1]??line;
    const tokens=[...line.matchAll(/\(?\s*\$?\s*-?\d[\d,]*(?:\.\d+)?\s*\)?|(?<!\S)-(?!\S)/g)].map(m=>m[0]),values=tokens.map(t=>t.trim()==='-'?null:Number(t.replace(/[\s,$()]/g,''))*(t.includes('(')?-1:1));
    return values.length===columns*2?values[cumulativeIndex*2]:values.length===columns&&tokens.every(t=>/,\d{3}/.test(t))?values[cumulativeIndex]:null;
   };
@@ -150,10 +150,11 @@ export async function collectFinancialPdfs(target){
   const current=periods.get(r.code),year=Number(current.periodEnd.slice(0,4))-1,quarter=current.quarter,code=r.code;
   let stage='FILING_INDEX',filingYear=year,source=`https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=${code}&year=${year-1911}&seamon=&mtype=A&check2858=Y`,filingFallback=null;
   try{
-   let index,version;
-   try{index=archivedFilingIndex(code,filingYear,quarter,target)??await filingIndex(source,request);version=filingVersion(index,code,filingYear,quarter,target);}
+   let index=archivedFilingIndex(code,filingYear,quarter,target),version;
+   if(!index){index=archivedFilingIndex(code,year+1,quarter,target);if(index){filingYear=year+1;source=source.replace(`year=${year-1911}&`,`year=${filingYear-1911}&`);}}
+   try{index??=await filingIndex(source,request);version=filingVersion(index,code,filingYear,quarter,target);}
    catch(e){
-    if(e.message!=='FILING_VERSION_UNVERIFIED')throw e;
+    if(e.message!=='FILING_VERSION_UNVERIFIED'||filingYear!==year)throw e;
     filingFallback={source,reason:e.message};filingYear=year+1;source=source.replace(`year=${year-1911}&`,`year=${filingYear-1911}&`);
     index=archivedFilingIndex(code,filingYear,quarter,target)??await filingIndex(source,request);version=filingVersion(index,code,filingYear,quarter,target);
    }
@@ -178,7 +179,7 @@ export async function collectFinancialPdfs(target){
    state[r.key]={status:'VERIFIED',parserVersion:2,checkedDate:today,checkedAt:new Date().toISOString()};admitted.add(r.key);
   }catch(e){
    const attempts=state[r.key]?.checkedDate===today?(state[r.key]?.attempts??0)+1:1,transient=/fetch failed|timeout|aborted|HTTP_(429|5\d\d)|PDF_OCR_REVIEW_PENDING|FINANCIAL_COLLECTION_BUDGET_EXHAUSTED/i.test(e.message);
-   state[r.key]={status:'UNVERIFIED',parserVersion:2,filingParserVersion:2,textParserVersion:7,filingFallback,stage,reason:e.message,attempts,checkedDate:today,checkedAt:new Date().toISOString(),nextRetryAt:new Date(Date.now()+(transient?Math.min(300000*2**(attempts-1),86400000):86400000)).toISOString()};
+   state[r.key]={status:'UNVERIFIED',parserVersion:2,filingParserVersion:2,textParserVersion:8,filingFallback,stage,reason:e.message,attempts,checkedDate:today,checkedAt:new Date().toISOString(),nextRetryAt:new Date(Date.now()+(transient?Math.min(300000*2**(attempts-1),86400000):86400000)).toISOString()};
    if(e.message==='OFFICIAL_RATE_LIMITED'){rateLimited=true;save('history/financial-pdf-collection.json',state);break;}
    if(e.message==='FINANCIAL_COLLECTION_BUDGET_EXHAUSTED'){save('history/financial-pdf-collection.json',state);break;}
   }
