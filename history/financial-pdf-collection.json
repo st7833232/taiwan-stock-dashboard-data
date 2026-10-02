@@ -3614,16 +3614,23 @@
     "nextRetryAt": "2026-10-02T04:03:05.241Z"
   },
   "7828|2026-06-30": {
-    "status": "UNVERIFIED",
+    "status": "VERIFIED",
     "parserVersion": 2,
-    "filingParserVersion": 2,
-    "textParserVersion": 9,
-    "filingFallback": null,
-    "stage": "PDF_METRICS",
-    "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 3,
     "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T04:38:05.304Z",
-    "nextRetryAt": "2026-10-03T04:38:05.304Z"
+    "checkedAt": "2026-10-02T04:46:47.495Z",
+    "verificationMethod": "PDF_VISUAL_MATCHED_OFFICIAL_PERIOD_TABLE",
+    "lastUnverifiedAttempt": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 2,
+      "textParserVersion": 9,
+      "filingFallback": null,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 3,
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T04:38:05.304Z",
+      "nextRetryAt": "2026-10-03T04:38:05.304Z"
+    }
   }
 }

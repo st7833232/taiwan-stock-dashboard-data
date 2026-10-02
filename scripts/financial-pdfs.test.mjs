@@ -5,7 +5,7 @@ import {execFileSync} from 'node:child_process';
 import {parseMopsCompanyHistoricalIncomeHtml} from './collect-research-evidence.mjs';
 import {filingVersion,verifyPdfText,requestOfficial} from './collect-financial-pdfs.mjs';
 test('readable filed income tables verify Chinese dates, half-year headers and amount-only ownership rows without OCR',()=>{
- for(const code of ['1303','1528','1569','1785','2233','2312','2316','2338','2363','2371','2374','2454','3017']){
+ for(const code of ['1303','1528','1569','1785','2233','2312','2316','2338','2363','2371','2374','2454','3017','6116','8210']){
   const file=fs.readdirSync('history/financial-reports').find(p=>p.startsWith(`202502_${code}_AI1.pdf.`)&&p.endsWith('.pdf'));
   const stem='history/financial-reports/'+file.slice(0,-4),row=parseMopsCompanyHistoricalIncomeHtml(fs.readFileSync(stem+'.income.html','utf8'),{code,year:2025,quarter:2});
   const pages=execFileSync('pdftotext',['-layout',stem+'.pdf','-'],{encoding:'utf8'}).split('\f');
@@ -180,7 +180,7 @@ test('OCR reviews the identified income table and its continuation instead of un
  assert.deepEqual(pdfReviewPages(['目錄','資產負債表','合併綜合損益表 金額\n4000 營業收入','續表','附註'],5),[3,4]);
  assert.deepEqual(pdfReviewPages(['','',''],3),[1,2,3]);
  assert.ok(pdfReviewPages(['目錄\n合併綜合損益表 8\n合併現金流量表','會計師核閱報告提及綜合損益表與現金流量',''],12).includes(8));
- const now=new Date('2026-10-02T01:00:00Z'),state={old:{parserVersion:2,textParserVersion:8,nextRetryAt:'2026-10-03T01:00:00Z'},current:{parserVersion:2,textParserVersion:9,nextRetryAt:'2026-10-03T01:00:00Z'}};
+ const now=new Date('2026-10-02T01:00:00Z'),state={old:{parserVersion:2,textParserVersion:9,nextRetryAt:'2026-10-03T01:00:00Z'},current:{parserVersion:2,textParserVersion:10,nextRetryAt:'2026-10-03T01:00:00Z'}};
  assert.deepEqual(financialQueue([{key:'old',archived:true},{key:'current',archived:true}],state,now,new Set()).map(r=>r.key),['old']);
 });
 
