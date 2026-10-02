@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "targetDate": "2026-10-01",
   "strategyVersion": "entry-dual-track-v2.2",
-  "inputFingerprint": "9c266560f7ce1dbe978dacc5e624484a40d0415b1946d1e81170b7752236104c",
+  "inputFingerprint": "9ef15bd21efe690b31d45e2ba02c765d387c68477c5014f39565d50d7641d867",
   "coverage": {
     "universe": 2303,
     "stocks": 1949,
@@ -59651,7 +59651,7 @@
       "close": 421.5,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 54.3333,
+      "score": 64.3333,
       "scores": {
         "trend": 18,
         "momentum": 4,
@@ -59660,7 +59660,7 @@
         "institutional": 7.5,
         "large_holder": 5.3333,
         "margin_short_lending": 1.5,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -59671,7 +59671,7 @@
         "credit": true,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -59679,7 +59679,6 @@
         "assetProfile": true
       },
       "reasonCodes": [
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -66312,7 +66311,7 @@
       "close": 401.5,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 47.4037,
+      "score": 57.4037,
       "scores": {
         "trend": 10.8,
         "momentum": 8,
@@ -66321,7 +66320,7 @@
         "institutional": 9,
         "large_holder": 2.6667,
         "margin_short_lending": 1.5,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -66332,7 +66331,7 @@
         "credit": true,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -66341,7 +66340,6 @@
       },
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -114791,7 +114789,7 @@
       "close": 371.5,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 48.5455,
+      "score": 58.5455,
       "scores": {
         "trend": 7.2,
         "momentum": 8,
@@ -114800,7 +114798,7 @@
         "institutional": 10.5,
         "large_holder": 2.6667,
         "margin_short_lending": 6,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -114811,7 +114809,7 @@
         "credit": true,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -114820,7 +114818,6 @@
       },
       "reasonCodes": [
         "TREND_NOT_CONFIRMED",
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
