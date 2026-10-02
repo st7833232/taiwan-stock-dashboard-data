@@ -14,6 +14,18 @@ test('readable filed income tables verify Chinese dates, half-year headers and a
   assert.throws(()=>verifyPdfText(pages,{...row,'淨利（淨損）歸屬於母公司業主':row['淨利（淨損）歸屬於母公司業主']+1}),code);
  }
 });
+test('filed subtotals and Gregorian dates verify net revenue and scoped parent profit without accepting component sales or comprehensive income',()=>{
+ for(const code of ['1409','2404','2637','3022','3042','3605','4971','6488','6617']){
+  const file=fs.readdirSync('history/financial-reports').find(p=>p.startsWith(`202502_${code}_AI1.pdf.`)&&p.endsWith('.pdf'));
+  const stem='history/financial-reports/'+file.slice(0,-4),row=parseMopsCompanyHistoricalIncomeHtml(fs.readFileSync(stem+'.income.html','utf8'),{code,year:2025,quarter:2});
+  const pages=execFileSync('pdftotext',['-layout',stem+'.pdf','-'],{encoding:'utf8'}).split('\f');
+  assert.ok(verifyPdfText(pages,row).length,code);
+  assert.throws(()=>verifyPdfText(pages,{...row,'營業收入':row['營業收入']+1}),code);
+  assert.throws(()=>verifyPdfText(pages,{...row,'淨利（淨損）歸屬於母公司業主':row['淨利（淨損）歸屬於母公司業主']+1}),code);
+  if(code==='3605')assert.throws(()=>verifyPdfText(pages,{...row,'營業收入':5131273}),'sales exclude other operating revenue');
+  if(code==='6488')assert.throws(()=>verifyPdfText(pages,{...row,'淨利（淨損）歸屬於母公司業主':-3278121}),'comprehensive income is not net profit');
+ }
+});
 test('file versions use official upload time and never accept a later or corrected filing',()=>{
  const html=fs.readFileSync('history/financial-reports/2409.html','utf8');
  assert.equal(filingVersion(html,'2409',2025,2,'2026-09-30').filename,'202502_2409_AI1.pdf');
@@ -168,7 +180,7 @@ test('OCR reviews the identified income table and its continuation instead of un
  assert.deepEqual(pdfReviewPages(['目錄','資產負債表','合併綜合損益表 金額\n4000 營業收入','續表','附註'],5),[3,4]);
  assert.deepEqual(pdfReviewPages(['','',''],3),[1,2,3]);
  assert.ok(pdfReviewPages(['目錄\n合併綜合損益表 8\n合併現金流量表','會計師核閱報告提及綜合損益表與現金流量',''],12).includes(8));
- const now=new Date('2026-10-02T01:00:00Z'),state={old:{parserVersion:2,textParserVersion:2,nextRetryAt:'2026-10-03T01:00:00Z'},current:{parserVersion:2,textParserVersion:8,nextRetryAt:'2026-10-03T01:00:00Z'}};
+ const now=new Date('2026-10-02T01:00:00Z'),state={old:{parserVersion:2,textParserVersion:8,nextRetryAt:'2026-10-03T01:00:00Z'},current:{parserVersion:2,textParserVersion:9,nextRetryAt:'2026-10-03T01:00:00Z'}};
  assert.deepEqual(financialQueue([{key:'old',archived:true},{key:'current',archived:true}],state,now,new Set()).map(r=>r.key),['old']);
 });
 

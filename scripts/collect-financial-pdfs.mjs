@@ -9,7 +9,7 @@ const read=p=>{try{return JSON.parse(fs.readFileSync(p));}catch{return null;}};
 const save=(p,x)=>fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n');
 export function financialQueue(rows,state,now,admitted){
  const reparsed=r=>state[r.key]?.parserVersion!==2&&/PDF_PERIOD|FILING_VERSION|PROFIT_BASIS/.test(state[r.key]?.reason??'')||state[r.key]?.filingParserVersion!==2&&/FILING_VERSION/.test(state[r.key]?.reason??'');
- return rows.filter(r=>!admitted.has(r.key)&&(!state[r.key]||state[r.key].parserVersion!==2||reparsed(r)||r.archived&&(state[r.key].textParserVersion??0)<8||state[r.key].status==='VERIFIED'||Date.parse(state[r.key].nextRetryAt)<=now.getTime())).sort((a,b)=>Number(b.archived===true)-Number(a.archived===true)||Number(reparsed(b))-Number(reparsed(a))||(state[a.key]?.checkedAt??'').localeCompare(state[b.key]?.checkedAt??''));
+ return rows.filter(r=>!admitted.has(r.key)&&(!state[r.key]||state[r.key].parserVersion!==2||reparsed(r)||r.archived&&(state[r.key].textParserVersion??0)<9||state[r.key].status==='VERIFIED'||Date.parse(state[r.key].nextRetryAt)<=now.getTime())).sort((a,b)=>Number(b.archived===true)-Number(a.archived===true)||Number(reparsed(b))-Number(reparsed(a))||(state[a.key]?.checkedAt??'').localeCompare(state[b.key]?.checkedAt??''));
 }
 export async function filingIndex(source,request){
  let html=new TextDecoder('big5').decode(await request(source));
@@ -65,7 +65,7 @@ export function filingVersion(html,code,year,quarter,target){
 }
 export function verifyPdfText(pages,row,{filingYear=row['年度']}={}){
  if(![row['年度'],row['年度']+1].includes(filingYear))throw Error('PDF_FILING_PERIOD_UNVERIFIED');
- const year=filingYear-1911,end=row['季別']*3,endDay=new Date(Date.UTC(row['年度'],end,0)).getUTCDate();
+ const end=row['季別']*3,endDay=new Date(Date.UTC(row['年度'],end,0)).getUTCDate();
  for(let i=0;i<pages.length;i++){
   if(!pages[i].replace(/\s/g,'').includes('綜合損益表'))continue;
   const page=(pages[i]+(pages[i+1]??'')).replace(/([〇零一二三四五六七八九十]+)(?=[年月日季])/g,s=>{
@@ -73,6 +73,7 @@ export function verifyPdfText(pages,row,{filingYear=row['年度']}={}){
    if(s.includes('十')){const [a,b]=s.split('十');return String((a?digit(a):1)*10+(b?digit(b):0));}
    return [...s].map(c=>c==='〇'?0:digit(c)).join('');
   }).replace(/(\d{3})年上半年度/g,'$1年1月至6月').replace(/(\d{3})\.(\d{1,2})\.(\d{1,2})[~～〜](\d{3})\.(\d{1,2})\.(\d{1,2})/g,(s,y,m,d,y2,m2,d2)=>y===y2?`${y}年${Number(m)}月${Number(d)}日至${Number(m2)}月${Number(d2)}日`:s),c=page.replace(/\s/g,'');
+  const year=new RegExp(`${filingYear}年(?:1月|${(row['季別']-1)*3+1}月)`).test(c)?filingYear:filingYear-1911;
   if(!c.includes('綜合損益表')||!/(新台幣|新臺幣)(千|仟)元/.test(c)||!c.includes(String(year))||!c.includes(String(year-1))||!new RegExp(`(1月至${end}月|1月1日至${end}月${endDay}日)`).test(c))continue;
   const quarterStart=(row['季別']-1)*3+1,headers=[...c.matchAll(new RegExp(`(${year}|${year-1})年(\\d{1,2}月|第${row['季別']}季)`,'g'))].map(m=>`${m[1]}|${m[2]}`);
   const expected=[`${year}|${quarterStart}月`,`${year-1}|${quarterStart}月`,`${year}|1月`,`${year-1}|1月`];
@@ -82,10 +83,13 @@ export function verifyPdfText(pages,row,{filingYear=row['年度']}={}){
   const amount=code=>{
    const lines=page.split('\n');let n=lines.findIndex(l=>new RegExp(`^\\s*${code}\\s`).test(l));
    if(n<0&&code==='4000')n=lines.findIndex(l=>/^\s*4100\s+(營業收入(?:淨額)?|銷貨收入[－-]?淨額)(?:[（(]|\s)/.test(l));
-   if(n<0&&code==='4000')n=lines.findIndex(l=>/^\s*營業收入(?:淨額|合計)?\s{2,}[$(\d-]/.test(l));
+   if(code==='4000'){
+    const subtotal=lines.findIndex(l=>/^\s*(?:4XXX\s+)?(?:營業收入(?:淨額|合計)?|銷貨收入淨額|收入合計|收益合計)(?:[（(][^\n]*?[）)])?\s{2,}[$(\d-]/.test(l));
+    if(subtotal>=0)n=subtotal;
+   }
    if(n<0&&code==='8610'){
-    const start=lines.findIndex(l=>/淨利(?:[（(]淨損[）)])?歸屬於/.test(l));
-    if(start>=0){const end=lines.findIndex((l,j)=>j>start&&/綜合損益.*歸屬於/.test(l));n=lines.findIndex((l,j)=>j>start&&(end<0||j<end)&&/^\s*母公司業主\s/.test(l));}
+    const start=lines.findIndex(l=>/(?:淨[（(]損[）)]利|淨利(?:[（(](?:淨)?損[）)])?)歸屬(?:於)?/.test(l));
+    if(start>=0){const end=lines.findIndex((l,j)=>j>start&&/綜合損益.*歸屬/.test(l));n=lines.findIndex((l,j)=>j>start&&(end<0||j<end)&&/^\s*(?:(?:8615|6810)\s+)?(?:母公司|本公司)業主\s/.test(l));}
    }
    if(n<0)return null;
    let line=lines[n].replace(/^\s*\d{4}\s+/,'');
@@ -179,7 +183,7 @@ export async function collectFinancialPdfs(target){
    state[r.key]={status:'VERIFIED',parserVersion:2,checkedDate:today,checkedAt:new Date().toISOString()};admitted.add(r.key);
   }catch(e){
    const attempts=state[r.key]?.checkedDate===today?(state[r.key]?.attempts??0)+1:1,transient=/fetch failed|timeout|aborted|HTTP_(429|5\d\d)|PDF_OCR_REVIEW_PENDING|FINANCIAL_COLLECTION_BUDGET_EXHAUSTED/i.test(e.message);
-   state[r.key]={status:'UNVERIFIED',parserVersion:2,filingParserVersion:2,textParserVersion:8,filingFallback,stage,reason:e.message,attempts,checkedDate:today,checkedAt:new Date().toISOString(),nextRetryAt:new Date(Date.now()+(transient?Math.min(300000*2**(attempts-1),86400000):86400000)).toISOString()};
+   state[r.key]={status:'UNVERIFIED',parserVersion:2,filingParserVersion:2,textParserVersion:9,filingFallback,stage,reason:e.message,attempts,checkedDate:today,checkedAt:new Date().toISOString(),nextRetryAt:new Date(Date.now()+(transient?Math.min(300000*2**(attempts-1),86400000):86400000)).toISOString()};
    if(e.message==='OFFICIAL_RATE_LIMITED'){rateLimited=true;save('history/financial-pdf-collection.json',state);break;}
    if(e.message==='FINANCIAL_COLLECTION_BUDGET_EXHAUSTED'){save('history/financial-pdf-collection.json',state);break;}
   }
