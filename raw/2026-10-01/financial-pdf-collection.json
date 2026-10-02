@@ -1056,11 +1056,11 @@
       "status": "UNVERIFIED",
       "parserVersion": 2,
       "stage": "PDF_METRICS",
-      "reason": "PDF_OCR_REVIEW_PENDING",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-01",
-      "checkedAt": "2026-10-01T11:01:18.464Z",
-      "nextRetryAt": "2026-10-01T11:06:18.464Z"
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T02:21:20.199Z",
+      "nextRetryAt": "2026-10-03T02:21:20.199Z"
     },
     "2413|2026-06-30": {
       "status": "UNVERIFIED",
@@ -1068,9 +1068,9 @@
       "stage": "PDF_METRICS",
       "reason": "PDF_OCR_REVIEW_PENDING",
       "attempts": 1,
-      "checkedDate": "2026-10-01",
-      "checkedAt": "2026-10-01T11:03:11.757Z",
-      "nextRetryAt": "2026-10-01T11:08:11.757Z"
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T02:22:52.158Z",
+      "nextRetryAt": "2026-10-02T02:27:52.158Z"
     },
     "2388|2026-06-30": {
       "status": "UNVERIFIED",
@@ -1092,11 +1092,11 @@
       "status": "UNVERIFIED",
       "parserVersion": 2,
       "stage": "PDF_METRICS",
-      "reason": "PDF_OCR_REVIEW_PENDING",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-01",
-      "checkedAt": "2026-10-01T11:09:53.064Z",
-      "nextRetryAt": "2026-10-01T11:14:53.064Z"
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T02:23:44.459Z",
+      "nextRetryAt": "2026-10-03T02:23:44.459Z"
     },
     "2385|2026-06-30": {
       "status": "VERIFIED",
@@ -1110,9 +1110,9 @@
       "stage": "PDF_METRICS",
       "reason": "PDF_OCR_REVIEW_PENDING",
       "attempts": 1,
-      "checkedDate": "2026-10-01",
-      "checkedAt": "2026-10-01T11:12:12.535Z",
-      "nextRetryAt": "2026-10-01T11:17:12.535Z"
+      "checkedDate": "2026-10-02",
+      "checkedAt": "2026-10-02T02:24:35.882Z",
+      "nextRetryAt": "2026-10-02T02:29:35.882Z"
     },
     "5340|2026-06-30": {
       "status": "UNVERIFIED",
@@ -3410,7 +3410,7 @@
     }
   },
   "remaining": 433,
-  "ready": 391,
+  "ready": 389,
   "continuationNeeded": true,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [
