@@ -797,10 +797,10 @@
       "filingFallback": null,
       "stage": "PDF_METRICS",
       "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-      "attempts": 3,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T10:29:36.359Z",
-      "nextRetryAt": "2026-10-03T10:29:36.359Z"
+      "attempts": 1,
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:43:44.721Z",
+      "nextRetryAt": "2026-10-04T10:43:44.721Z"
     },
     "8103|2026-06-30": {
       "status": "VERIFIED",
@@ -938,10 +938,10 @@
       "filingFallback": null,
       "stage": "PDF_METRICS",
       "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-      "attempts": 3,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T10:42:36.992Z",
-      "nextRetryAt": "2026-10-03T10:42:36.992Z"
+      "attempts": 1,
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:43:46.430Z",
+      "nextRetryAt": "2026-10-04T10:43:46.430Z"
     },
     "4763|2026-06-30": {
       "status": "VERIFIED",
@@ -982,10 +982,10 @@
       "filingFallback": null,
       "stage": "PDF_METRICS",
       "reason": "PDF_OCR_REVIEW_PENDING",
-      "attempts": 1,
+      "attempts": 2,
       "checkedDate": "2026-10-03",
-      "checkedAt": "2026-10-03T10:36:39.714Z",
-      "nextRetryAt": "2026-10-03T10:41:39.714Z"
+      "checkedAt": "2026-10-03T10:45:20.412Z",
+      "nextRetryAt": "2026-10-03T10:55:20.412Z"
     },
     "5876|2026-06-30": {
       "status": "UNVERIFIED",
@@ -2132,30 +2132,16 @@
       "nextRetryAt": "2026-10-03T12:27:55.548Z"
     },
     "2103|2026-06-30": {
-      "status": "UNVERIFIED",
+      "status": "VERIFIED",
       "parserVersion": 2,
-      "filingParserVersion": 2,
-      "textParserVersion": 10,
-      "filingFallback": null,
-      "stage": "FILING_INDEX",
-      "reason": "fetch failed",
-      "attempts": 1,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T11:15:00.177Z",
-      "nextRetryAt": "2026-10-02T11:20:00.177Z"
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:45:26.872Z"
     },
     "2340|2026-06-30": {
-      "status": "UNVERIFIED",
+      "status": "VERIFIED",
       "parserVersion": 2,
-      "filingParserVersion": 2,
-      "textParserVersion": 10,
-      "filingFallback": null,
-      "stage": "FILING_INDEX",
-      "reason": "fetch failed",
-      "attempts": 1,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T11:15:27.683Z",
-      "nextRetryAt": "2026-10-02T11:20:27.683Z"
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:45:33.061Z"
     },
     "2392|2026-06-30": {
       "status": "VERIFIED",
@@ -2476,12 +2462,12 @@
       "filingParserVersion": 2,
       "textParserVersion": 10,
       "filingFallback": null,
-      "stage": "FILING_INDEX",
-      "reason": "fetch failed",
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
       "attempts": 1,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T11:26:50.419Z",
-      "nextRetryAt": "2026-10-02T11:31:50.419Z"
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:47:11.756Z",
+      "nextRetryAt": "2026-10-03T10:52:11.756Z"
     },
     "1229|2026-06-30": {
       "status": "VERIFIED",
@@ -2567,17 +2553,10 @@
       "nextRetryAt": "2026-10-03T11:27:45.444Z"
     },
     "3289|2026-06-30": {
-      "status": "UNVERIFIED",
+      "status": "VERIFIED",
       "parserVersion": 2,
-      "filingParserVersion": 2,
-      "textParserVersion": 10,
-      "filingFallback": null,
-      "stage": "PDF_LINK",
-      "reason": "fetch failed",
-      "attempts": 1,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T11:28:13.444Z",
-      "nextRetryAt": "2026-10-02T11:33:13.444Z"
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:47:18.202Z"
     },
     "8436|2026-06-30": {
       "status": "VERIFIED",
@@ -2615,17 +2594,10 @@
       "nextRetryAt": "2026-10-03T11:28:16.562Z"
     },
     "5469|2026-06-30": {
-      "status": "UNVERIFIED",
+      "status": "VERIFIED",
       "parserVersion": 2,
-      "filingParserVersion": 2,
-      "textParserVersion": 10,
-      "filingFallback": null,
-      "stage": "FILING_INDEX",
-      "reason": "fetch failed",
-      "attempts": 2,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T11:28:44.060Z",
-      "nextRetryAt": "2026-10-02T11:38:44.060Z"
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:47:30.918Z"
     },
     "5464|2026-06-30": {
       "status": "VERIFIED",
@@ -2663,17 +2635,10 @@
       "nextRetryAt": "2026-10-02T12:50:13.800Z"
     },
     "1608|2026-06-30": {
-      "status": "UNVERIFIED",
+      "status": "VERIFIED",
       "parserVersion": 2,
-      "filingParserVersion": 2,
-      "textParserVersion": 10,
-      "filingFallback": null,
-      "stage": "FILING_INDEX",
-      "reason": "fetch failed",
-      "attempts": 2,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T11:29:35.426Z",
-      "nextRetryAt": "2026-10-02T11:39:35.426Z"
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:47:42.340Z"
     },
     "2328|2026-06-30": {
       "status": "UNVERIFIED",
@@ -2684,12 +2649,12 @@
         "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=2328&year=114&seamon=&mtype=A&check2858=Y",
         "reason": "FILING_VERSION_UNVERIFIED"
       },
-      "stage": "PDF_LINK",
+      "stage": "FILING_INDEX",
       "reason": "fetch failed",
-      "attempts": 2,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T11:30:04.429Z",
-      "nextRetryAt": "2026-10-02T11:40:04.429Z"
+      "attempts": 1,
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:48:10.028Z",
+      "nextRetryAt": "2026-10-03T10:53:10.028Z"
     },
     "2897|2026-06-30": {
       "status": "UNVERIFIED",
@@ -2697,12 +2662,12 @@
       "filingParserVersion": 2,
       "textParserVersion": 10,
       "filingFallback": null,
-      "stage": "PDF_LINK",
+      "stage": "PDF_DOWNLOAD",
       "reason": "fetch failed",
-      "attempts": 2,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T11:30:33.375Z",
-      "nextRetryAt": "2026-10-02T11:40:33.375Z"
+      "attempts": 1,
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:48:33.811Z",
+      "nextRetryAt": "2026-10-03T10:53:33.811Z"
     },
     "9910|2026-06-30": {
       "status": "UNVERIFIED",
@@ -2710,12 +2675,12 @@
       "filingParserVersion": 2,
       "textParserVersion": 10,
       "filingFallback": null,
-      "stage": "PDF_LINK",
-      "reason": "fetch failed",
-      "attempts": 2,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T11:31:01.373Z",
-      "nextRetryAt": "2026-10-02T11:41:01.373Z"
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:50:11.412Z",
+      "nextRetryAt": "2026-10-03T10:55:11.412Z"
     },
     "8050|2026-06-30": {
       "status": "VERIFIED",
@@ -2913,12 +2878,12 @@
       "filingParserVersion": 2,
       "textParserVersion": 10,
       "filingFallback": null,
-      "stage": "PDF_LINK",
-      "reason": "fetch failed",
-      "attempts": 2,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T11:42:11.220Z",
-      "nextRetryAt": "2026-10-02T11:52:11.220Z"
+      "stage": "PDF_METRICS",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 1,
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:50:24.473Z",
+      "nextRetryAt": "2026-10-04T10:50:24.473Z"
     },
     "2820|2026-06-30": {
       "status": "UNVERIFIED",
@@ -2949,17 +2914,10 @@
       "checkedAt": "2026-10-02T11:42:58.230Z"
     },
     "6202|2026-06-30": {
-      "status": "UNVERIFIED",
+      "status": "VERIFIED",
       "parserVersion": 2,
-      "filingParserVersion": 2,
-      "textParserVersion": 10,
-      "filingFallback": null,
-      "stage": "PDF_DOWNLOAD",
-      "reason": "fetch failed",
-      "attempts": 2,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T11:43:16.361Z",
-      "nextRetryAt": "2026-10-02T11:53:16.361Z"
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:50:29.703Z"
     },
     "2330|2026-06-30": {
       "status": "UNVERIFIED",
@@ -2967,12 +2925,12 @@
       "filingParserVersion": 2,
       "textParserVersion": 10,
       "filingFallback": null,
-      "stage": "FILING_INDEX",
-      "reason": "fetch failed",
-      "attempts": 2,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T11:43:43.866Z",
-      "nextRetryAt": "2026-10-02T11:53:43.866Z"
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:52:11.505Z",
+      "nextRetryAt": "2026-10-03T10:57:11.505Z"
     },
     "2454|2026-06-30": {
       "status": "VERIFIED",
@@ -3417,17 +3375,10 @@
       "checkedAt": "2026-10-02T12:02:09.900Z"
     },
     "3450|2026-06-30": {
-      "status": "UNVERIFIED",
+      "status": "VERIFIED",
       "parserVersion": 2,
-      "filingParserVersion": 2,
-      "textParserVersion": 10,
-      "filingFallback": null,
-      "stage": "FILING_INDEX",
-      "reason": "The operation was aborted due to timeout",
-      "attempts": 2,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T12:02:30.319Z",
-      "nextRetryAt": "2026-10-02T12:12:30.319Z"
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:52:17.335Z"
     },
     "3374|2026-06-30": {
       "status": "UNVERIFIED",
@@ -3732,12 +3683,12 @@
       "filingParserVersion": 2,
       "textParserVersion": 10,
       "filingFallback": null,
-      "stage": "FILING_INDEX",
-      "reason": "fetch failed",
-      "attempts": 2,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T12:16:08.641Z",
-      "nextRetryAt": "2026-10-02T12:26:08.641Z"
+      "stage": "PDF_METRICS",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 1,
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:52:31.268Z",
+      "nextRetryAt": "2026-10-04T10:52:31.268Z"
     },
     "4971|2026-06-30": {
       "status": "VERIFIED",
@@ -3781,12 +3732,12 @@
       "filingParserVersion": 2,
       "textParserVersion": 10,
       "filingFallback": null,
-      "stage": "PDF_DOWNLOAD",
-      "reason": "FINANCIAL_COLLECTION_BUDGET_EXHAUSTED",
-      "attempts": 2,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T12:16:42.860Z",
-      "nextRetryAt": "2026-10-02T12:26:42.860Z"
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:53:47.446Z",
+      "nextRetryAt": "2026-10-03T10:58:47.446Z"
     },
     "7828|2026-06-30": {
       "status": "VERIFIED",
@@ -4873,8 +4824,8 @@
       "nextRetryAt": "2026-10-04T10:04:17.315Z"
     }
   },
-  "remaining": 211,
-  "ready": 37,
+  "remaining": 204,
+  "ready": 25,
   "continuationNeeded": true,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [

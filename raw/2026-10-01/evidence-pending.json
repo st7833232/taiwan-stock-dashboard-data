@@ -2,7 +2,7 @@
   "targetDate": "2026-10-01",
   "researchComplete": false,
   "counts": {
-    "fundamental": 215,
+    "fundamental": 208,
     "credit": 3
   },
   "pending": {
@@ -18,7 +18,6 @@
       "1590",
       "1597",
       "1605",
-      "1608",
       "1708",
       "1718",
       "1727",
@@ -26,7 +25,6 @@
       "1808",
       "2009",
       "2030",
-      "2103",
       "2207",
       "2254",
       "2313",
@@ -34,7 +32,6 @@
       "2329",
       "2330",
       "2337",
-      "2340",
       "2342",
       "2345",
       "2368",
@@ -91,7 +88,6 @@
       "3229",
       "3413",
       "3443",
-      "3450",
       "3481",
       "3515",
       "3532",
@@ -109,7 +105,6 @@
       "5243",
       "5269",
       "5285",
-      "5469",
       "5871",
       "5876",
       "5880",
@@ -119,7 +114,6 @@
       "6155",
       "6176",
       "6177",
-      "6202",
       "6209",
       "6226",
       "6257",
@@ -161,7 +155,6 @@
       "3211",
       "3227",
       "3236",
-      "3289",
       "3374",
       "3490",
       "3498",
@@ -378,6 +371,13 @@
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2340",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
       ]
     },
     {
@@ -623,6 +623,13 @@
       ]
     },
     {
+      "code": "3450",
+      "failures": [
+        "PROFIT_DETERIORATION",
+        "OFFICIAL_GOVERNANCE_WARNING"
+      ]
+    },
+    {
       "code": "3504",
       "failures": [
         "PROFIT_QUALITY_FAILED"
@@ -755,6 +762,12 @@
       "code": "5434",
       "failures": [
         "OFFICIAL_GOVERNANCE_WARNING"
+      ]
+    },
+    {
+      "code": "5469",
+      "failures": [
+        "PROFIT_DETERIORATION"
       ]
     },
     {
@@ -992,6 +1005,13 @@
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "3289",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
       ]
     },
     {
