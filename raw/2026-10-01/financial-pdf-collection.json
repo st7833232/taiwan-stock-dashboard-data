@@ -125,11 +125,11 @@
       "textParserVersion": 10,
       "filingFallback": null,
       "stage": "PDF_METRICS",
-      "reason": "PDF_OCR_REVIEW_PENDING",
-      "attempts": 1,
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 2,
       "checkedDate": "2026-10-03",
-      "checkedAt": "2026-10-03T10:11:53.188Z",
-      "nextRetryAt": "2026-10-03T10:16:53.188Z"
+      "checkedAt": "2026-10-03T10:25:05.724Z",
+      "nextRetryAt": "2026-10-04T10:25:05.724Z"
     },
     "1513|2026-06-30": {
       "status": "UNVERIFIED",
@@ -138,11 +138,11 @@
       "textParserVersion": 10,
       "filingFallback": null,
       "stage": "PDF_METRICS",
-      "reason": "PDF_OCR_REVIEW_PENDING",
-      "attempts": 1,
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 2,
       "checkedDate": "2026-10-03",
-      "checkedAt": "2026-10-03T10:12:01.108Z",
-      "nextRetryAt": "2026-10-03T10:17:01.108Z"
+      "checkedAt": "2026-10-03T10:25:48.706Z",
+      "nextRetryAt": "2026-10-04T10:25:48.706Z"
     },
     "2855|2026-06-30": {
       "status": "UNVERIFIED",
@@ -403,11 +403,11 @@
       "textParserVersion": 10,
       "filingFallback": null,
       "stage": "FILING_INDEX",
-      "reason": "fetch failed",
+      "reason": "OFFICIAL_RATE_LIMITED",
       "attempts": 1,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T09:10:20.498Z",
-      "nextRetryAt": "2026-10-02T09:15:20.498Z"
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:26:26.711Z",
+      "nextRetryAt": "2026-10-04T10:26:26.711Z"
     },
     "2464|2026-06-30": {
       "status": "VERIFIED",
@@ -593,11 +593,11 @@
       "textParserVersion": 10,
       "filingFallback": null,
       "stage": "PDF_METRICS",
-      "reason": "PDF_OCR_REVIEW_PENDING",
-      "attempts": 1,
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 2,
       "checkedDate": "2026-10-03",
-      "checkedAt": "2026-10-03T10:17:24.271Z",
-      "nextRetryAt": "2026-10-03T10:22:24.271Z"
+      "checkedAt": "2026-10-03T10:25:57.300Z",
+      "nextRetryAt": "2026-10-04T10:25:57.300Z"
     },
     "2489|2026-06-30": {
       "status": "VERIFIED",
@@ -2647,9 +2647,9 @@
       "stage": "FILING_INDEX",
       "reason": "FILING_VERSION_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T04:55:07.565Z",
-      "nextRetryAt": "2026-10-03T04:55:07.565Z"
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:26:00.277Z",
+      "nextRetryAt": "2026-10-04T10:26:00.277Z"
     },
     "6133|2026-06-30": {
       "status": "UNVERIFIED",
@@ -3538,10 +3538,10 @@
       },
       "stage": "FILING_INDEX",
       "reason": "FILING_VERSION_UNVERIFIED",
-      "attempts": 2,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T05:02:38.698Z",
-      "nextRetryAt": "2026-10-03T05:02:38.698Z"
+      "attempts": 1,
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:26:03.245Z",
+      "nextRetryAt": "2026-10-04T10:26:03.245Z"
     },
     "6239|2026-06-30": {
       "status": "VERIFIED",
@@ -3653,10 +3653,10 @@
       },
       "stage": "FILING_INDEX",
       "reason": "FILING_VERSION_UNVERIFIED",
-      "attempts": 2,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T05:02:42.140Z",
-      "nextRetryAt": "2026-10-03T05:02:42.140Z"
+      "attempts": 1,
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:26:06.436Z",
+      "nextRetryAt": "2026-10-04T10:26:06.436Z"
     },
     "2376|2026-06-30": {
       "status": "VERIFIED",
@@ -3775,10 +3775,10 @@
       },
       "stage": "FILING_INDEX",
       "reason": "FILING_VERSION_UNVERIFIED",
-      "attempts": 2,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T05:04:12.900Z",
-      "nextRetryAt": "2026-10-03T05:04:12.900Z"
+      "attempts": 1,
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:26:09.342Z",
+      "nextRetryAt": "2026-10-04T10:26:09.342Z"
     },
     "3533|2026-06-30": {
       "status": "VERIFIED",
@@ -4427,9 +4427,9 @@
       "stage": "FILING_INDEX",
       "reason": "FILING_VERSION_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T06:28:25.743Z",
-      "nextRetryAt": "2026-10-03T06:28:25.743Z"
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:26:12.534Z",
+      "nextRetryAt": "2026-10-04T10:26:12.534Z"
     },
     "6409|2026-06-30": {
       "status": "UNVERIFIED",
@@ -4545,9 +4545,9 @@
       "stage": "FILING_INDEX",
       "reason": "FILING_VERSION_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T06:48:36.869Z",
-      "nextRetryAt": "2026-10-03T06:48:36.869Z"
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:26:15.592Z",
+      "nextRetryAt": "2026-10-04T10:26:15.592Z"
     },
     "3023|2026-06-30": {
       "status": "VERIFIED",
@@ -4763,9 +4763,9 @@
       "stage": "FILING_INDEX",
       "reason": "FILING_VERSION_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T07:21:34.182Z",
-      "nextRetryAt": "2026-10-03T07:21:34.182Z"
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:26:18.405Z",
+      "nextRetryAt": "2026-10-04T10:26:18.405Z"
     },
     "8454|2026-06-30": {
       "status": "VERIFIED",
@@ -4830,9 +4830,9 @@
       "stage": "FILING_INDEX",
       "reason": "FILING_VERSION_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T07:24:52.913Z",
-      "nextRetryAt": "2026-10-03T07:24:52.913Z"
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:26:21.593Z",
+      "nextRetryAt": "2026-10-04T10:26:21.593Z"
     },
     "6957|2026-06-30": {
       "status": "VERIFIED",
@@ -4915,9 +4915,9 @@
       "stage": "FILING_INDEX",
       "reason": "FILING_VERSION_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-02",
-      "checkedAt": "2026-10-02T07:43:55.940Z",
-      "nextRetryAt": "2026-10-03T07:43:55.940Z"
+      "checkedDate": "2026-10-03",
+      "checkedAt": "2026-10-03T10:26:24.511Z",
+      "nextRetryAt": "2026-10-04T10:26:24.511Z"
     },
     "3592|2026-06-30": {
       "status": "UNVERIFIED",
@@ -4972,7 +4972,7 @@
     }
   },
   "remaining": 225,
-  "ready": 74,
+  "ready": 62,
   "continuationNeeded": false,
   "rateLimited": true,
   "missingCurrentPeriodCodes": [
