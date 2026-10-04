@@ -400,12 +400,12 @@
     "filingParserVersion": 2,
     "textParserVersion": 10,
     "filingFallback": null,
-    "stage": "FILING_INDEX",
-    "reason": "OFFICIAL_RATE_LIMITED",
+    "stage": "MOPS_PERIOD_TABLE",
+    "reason": "MOPS company historical income: required metrics missing",
     "attempts": 1,
-    "checkedDate": "2026-10-03",
-    "checkedAt": "2026-10-03T10:26:26.711Z",
-    "nextRetryAt": "2026-10-04T10:26:26.711Z"
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:30:19.788Z",
+    "nextRetryAt": "2026-10-05T10:30:19.788Z"
   },
   "2464|2026-06-30": {
     "status": "VERIFIED",
@@ -2530,9 +2530,9 @@
     "stage": "FILING_INDEX",
     "reason": "FILING_VERSION_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-03",
-    "checkedAt": "2026-10-03T10:26:00.277Z",
-    "nextRetryAt": "2026-10-04T10:26:00.277Z"
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:29:51.562Z",
+    "nextRetryAt": "2026-10-05T10:29:51.562Z"
   },
   "6133|2026-06-30": {
     "status": "UNVERIFIED",
@@ -3377,9 +3377,9 @@
     "stage": "FILING_INDEX",
     "reason": "FILING_VERSION_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-03",
-    "checkedAt": "2026-10-03T10:26:03.245Z",
-    "nextRetryAt": "2026-10-04T10:26:03.245Z"
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:29:54.361Z",
+    "nextRetryAt": "2026-10-05T10:29:54.361Z"
   },
   "6239|2026-06-30": {
     "status": "VERIFIED",
@@ -3492,9 +3492,9 @@
     "stage": "FILING_INDEX",
     "reason": "FILING_VERSION_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-03",
-    "checkedAt": "2026-10-03T10:26:06.436Z",
-    "nextRetryAt": "2026-10-04T10:26:06.436Z"
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:29:56.981Z",
+    "nextRetryAt": "2026-10-05T10:29:56.981Z"
   },
   "2376|2026-06-30": {
     "status": "VERIFIED",
@@ -3614,9 +3614,9 @@
     "stage": "FILING_INDEX",
     "reason": "FILING_VERSION_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-03",
-    "checkedAt": "2026-10-03T10:26:09.342Z",
-    "nextRetryAt": "2026-10-04T10:26:09.342Z"
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:29:59.604Z",
+    "nextRetryAt": "2026-10-05T10:29:59.604Z"
   },
   "3533|2026-06-30": {
     "status": "VERIFIED",
@@ -4251,9 +4251,9 @@
     "stage": "FILING_INDEX",
     "reason": "FILING_VERSION_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-03",
-    "checkedAt": "2026-10-03T10:26:12.534Z",
-    "nextRetryAt": "2026-10-04T10:26:12.534Z"
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:30:02.097Z",
+    "nextRetryAt": "2026-10-05T10:30:02.097Z"
   },
   "6409|2026-06-30": {
     "status": "UNVERIFIED",
@@ -4362,9 +4362,9 @@
     "stage": "FILING_INDEX",
     "reason": "FILING_VERSION_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-03",
-    "checkedAt": "2026-10-03T10:26:15.592Z",
-    "nextRetryAt": "2026-10-04T10:26:15.592Z"
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:30:05.979Z",
+    "nextRetryAt": "2026-10-05T10:30:05.979Z"
   },
   "3023|2026-06-30": {
     "status": "VERIFIED",
@@ -4552,9 +4552,9 @@
     "stage": "FILING_INDEX",
     "reason": "FILING_VERSION_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-03",
-    "checkedAt": "2026-10-03T10:26:18.405Z",
-    "nextRetryAt": "2026-10-04T10:26:18.405Z"
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:30:08.777Z",
+    "nextRetryAt": "2026-10-05T10:30:08.777Z"
   },
   "8454|2026-06-30": {
     "status": "VERIFIED",
@@ -4612,9 +4612,9 @@
     "stage": "FILING_INDEX",
     "reason": "FILING_VERSION_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-03",
-    "checkedAt": "2026-10-03T10:26:21.593Z",
-    "nextRetryAt": "2026-10-04T10:26:21.593Z"
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:30:11.267Z",
+    "nextRetryAt": "2026-10-05T10:30:11.267Z"
   },
   "6957|2026-06-30": {
     "status": "VERIFIED",
@@ -4697,9 +4697,9 @@
     "stage": "FILING_INDEX",
     "reason": "FILING_VERSION_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-03",
-    "checkedAt": "2026-10-03T10:26:24.511Z",
-    "nextRetryAt": "2026-10-04T10:26:24.511Z"
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:30:13.980Z",
+    "nextRetryAt": "2026-10-05T10:30:13.980Z"
   },
   "3592|2026-06-30": {
     "status": "UNVERIFIED",
