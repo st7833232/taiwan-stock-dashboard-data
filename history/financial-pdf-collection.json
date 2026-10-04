@@ -98,10 +98,10 @@
     },
     "stage": "FILING_INDEX",
     "reason": "FILING_VERSION_UNVERIFIED",
-    "attempts": 2,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T13:34:43.835Z",
-    "nextRetryAt": "2026-10-03T13:34:43.835Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:02:07.205Z",
+    "nextRetryAt": "2026-10-05T10:02:07.205Z"
   },
   "1101|2026-06-30": {
     "status": "UNVERIFIED",
@@ -212,10 +212,10 @@
     "filingFallback": null,
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 2,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T13:48:56.785Z",
-    "nextRetryAt": "2026-10-03T13:48:56.785Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:43.376Z",
+    "nextRetryAt": "2026-10-05T10:01:43.376Z"
   },
   "4912|2026-06-30": {
     "status": "UNVERIFIED",
@@ -459,10 +459,10 @@
     "filingFallback": null,
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 2,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T13:53:51.304Z",
-    "nextRetryAt": "2026-10-03T13:53:51.304Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:45.151Z",
+    "nextRetryAt": "2026-10-05T10:01:45.151Z"
   },
   "2883|2026-06-30": {
     "status": "UNVERIFIED",
@@ -516,10 +516,10 @@
     "filingFallback": null,
     "stage": "MOPS_PERIOD_TABLE",
     "reason": "MOPS company historical income: required metrics missing",
-    "attempts": 2,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T13:54:55.042Z",
-    "nextRetryAt": "2026-10-03T13:54:55.042Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:47.330Z",
+    "nextRetryAt": "2026-10-05T10:01:47.330Z"
   },
   "2892|2026-06-30": {
     "status": "UNVERIFIED",
@@ -670,16 +670,13 @@
     "parserVersion": 2,
     "filingParserVersion": 2,
     "textParserVersion": 10,
-    "filingFallback": {
-      "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=6706&year=114&seamon=&mtype=A&check2858=Y",
-      "reason": "FILING_VERSION_UNVERIFIED"
-    },
+    "filingFallback": null,
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 2,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T12:23:22.951Z",
-    "nextRetryAt": "2026-10-03T12:23:22.951Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:25.725Z",
+    "nextRetryAt": "2026-10-05T10:01:25.725Z"
   },
   "6834|2026-06-30": {
     "status": "VERIFIED",
@@ -1340,10 +1337,10 @@
     },
     "stage": "FILING_INDEX",
     "reason": "FILING_VERSION_UNVERIFIED",
-    "attempts": 2,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T12:24:11.328Z",
-    "nextRetryAt": "2026-10-03T12:24:11.328Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:52.521Z",
+    "nextRetryAt": "2026-10-05T10:01:52.521Z"
   },
   "2889|2026-06-30": {
     "status": "UNVERIFIED",
@@ -1940,10 +1937,10 @@
     "filingFallback": null,
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 3,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T12:51:27.097Z",
-    "nextRetryAt": "2026-10-03T12:51:27.097Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:30.855Z",
+    "nextRetryAt": "2026-10-05T10:01:30.855Z"
   },
   "4540|2026-06-30": {
     "status": "VERIFIED",
@@ -2124,10 +2121,10 @@
     },
     "stage": "FILING_INDEX",
     "reason": "FILING_VERSION_UNVERIFIED",
-    "attempts": 2,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T12:27:55.548Z",
-    "nextRetryAt": "2026-10-03T12:27:55.548Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:56.180Z",
+    "nextRetryAt": "2026-10-05T10:01:56.180Z"
   },
   "2103|2026-06-30": {
     "status": "VERIFIED",
@@ -2196,10 +2193,10 @@
     "filingFallback": null,
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 3,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T11:54:45.208Z",
-    "nextRetryAt": "2026-10-03T11:54:45.208Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:14.707Z",
+    "nextRetryAt": "2026-10-05T10:01:14.707Z"
   },
   "8131|2026-06-30": {
     "status": "UNVERIFIED",
@@ -2212,10 +2209,10 @@
     },
     "stage": "FILING_INDEX",
     "reason": "FILING_VERSION_UNVERIFIED",
-    "attempts": 2,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T12:28:31.069Z",
-    "nextRetryAt": "2026-10-03T12:28:31.069Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:59.500Z",
+    "nextRetryAt": "2026-10-05T10:01:59.500Z"
   },
   "2633|2026-06-30": {
     "status": "UNVERIFIED",
@@ -2504,16 +2501,13 @@
     "parserVersion": 2,
     "filingParserVersion": 2,
     "textParserVersion": 10,
-    "filingFallback": {
-      "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=5243&year=114&seamon=&mtype=A&check2858=Y",
-      "reason": "FILING_VERSION_UNVERIFIED"
-    },
+    "filingFallback": null,
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 2,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T12:29:12.807Z",
-    "nextRetryAt": "2026-10-03T12:29:12.807Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:27.488Z",
+    "nextRetryAt": "2026-10-05T10:01:27.488Z"
   },
   "4739|2026-06-30": {
     "status": "VERIFIED",
@@ -2684,10 +2678,10 @@
     "filingFallback": null,
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 4,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T12:21:15.021Z",
-    "nextRetryAt": "2026-10-03T12:21:15.021Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:20.047Z",
+    "nextRetryAt": "2026-10-05T10:01:20.047Z"
   },
   "1569|2026-06-30": {
     "status": "VERIFIED",
@@ -2709,10 +2703,10 @@
     "filingFallback": null,
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 4,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T13:04:40.771Z",
-    "nextRetryAt": "2026-10-03T13:04:40.771Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:32.526Z",
+    "nextRetryAt": "2026-10-05T10:01:32.526Z"
   },
   "2402|2026-06-30": {
     "status": "UNVERIFIED",
@@ -3050,10 +3044,10 @@
     },
     "stage": "FILING_INDEX",
     "reason": "FILING_VERSION_UNVERIFIED",
-    "attempts": 3,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T12:38:39.521Z",
-    "nextRetryAt": "2026-10-03T12:38:39.521Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:02:01.956Z",
+    "nextRetryAt": "2026-10-05T10:02:01.956Z"
   },
   "6274|2026-06-30": {
     "status": "UNVERIFIED",
@@ -3150,10 +3144,10 @@
     "filingFallback": null,
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 4,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T12:37:00.213Z",
-    "nextRetryAt": "2026-10-03T12:37:00.213Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:29.129Z",
+    "nextRetryAt": "2026-10-05T10:01:29.129Z"
   },
   "3324|2026-06-30": {
     "status": "VERIFIED",
@@ -3287,10 +3281,10 @@
     "filingFallback": null,
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 3,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T12:21:37.947Z",
-    "nextRetryAt": "2026-10-03T12:21:37.947Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:22.227Z",
+    "nextRetryAt": "2026-10-05T10:01:22.227Z"
   },
   "6446|2026-06-30": {
     "status": "VERIFIED",
@@ -3312,10 +3306,10 @@
     "filingFallback": null,
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 3,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T12:22:33.625Z",
-    "nextRetryAt": "2026-10-03T12:22:33.625Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:23.919Z",
+    "nextRetryAt": "2026-10-05T10:01:23.919Z"
   },
   "3532|2026-06-30": {
     "status": "UNVERIFIED",
@@ -3423,10 +3417,10 @@
     "filingFallback": null,
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 4,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T13:05:19.112Z",
-    "nextRetryAt": "2026-10-03T13:05:19.112Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:34.761Z",
+    "nextRetryAt": "2026-10-05T10:01:34.761Z"
   },
   "5483|2026-06-30": {
     "status": "VERIFIED",
@@ -3538,10 +3532,10 @@
     "filingFallback": null,
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 2,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T12:14:02.885Z",
-    "nextRetryAt": "2026-10-03T12:14:02.885Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:16.473Z",
+    "nextRetryAt": "2026-10-05T10:01:16.473Z"
   },
   "5289|2026-06-30": {
     "status": "UNVERIFIED",
@@ -3551,10 +3545,10 @@
     "filingFallback": null,
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 2,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T12:15:02.266Z",
-    "nextRetryAt": "2026-10-03T12:15:02.266Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:18.374Z",
+    "nextRetryAt": "2026-10-05T10:01:18.374Z"
   },
   "2603|2026-06-30": {
     "status": "VERIFIED",
@@ -4007,10 +4001,10 @@
     },
     "stage": "FILING_INDEX",
     "reason": "FILING_VERSION_UNVERIFIED",
-    "attempts": 2,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T12:51:46.854Z",
-    "nextRetryAt": "2026-10-03T12:51:46.854Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:02:04.738Z",
+    "nextRetryAt": "2026-10-05T10:02:04.738Z"
   },
   "7734|2026-06-30": {
     "status": "UNVERIFIED",
@@ -4279,10 +4273,10 @@
     "filingFallback": null,
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 3,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T13:18:36.532Z",
-    "nextRetryAt": "2026-10-03T13:18:36.532Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:38.149Z",
+    "nextRetryAt": "2026-10-05T10:01:38.149Z"
   },
   "2912|2026-06-30": {
     "status": "VERIFIED",
@@ -4335,10 +4329,10 @@
     "filingFallback": null,
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 2,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T13:07:41.660Z",
-    "nextRetryAt": "2026-10-03T13:07:41.660Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:36.483Z",
+    "nextRetryAt": "2026-10-05T10:01:36.483Z"
   },
   "6449|2026-06-30": {
     "status": "UNVERIFIED",
@@ -4513,10 +4507,10 @@
     "filingFallback": null,
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 4,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T14:02:52.263Z",
-    "nextRetryAt": "2026-10-03T14:02:52.263Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:49.717Z",
+    "nextRetryAt": "2026-10-05T10:01:49.717Z"
   },
   "6664|2026-06-30": {
     "status": "VERIFIED",
@@ -4532,10 +4526,10 @@
     "filingFallback": null,
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 3,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T13:34:40.047Z",
-    "nextRetryAt": "2026-10-03T13:34:40.047Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:41.642Z",
+    "nextRetryAt": "2026-10-05T10:01:41.642Z"
   },
   "6491|2026-06-30": {
     "status": "VERIFIED",
@@ -4573,10 +4567,10 @@
     "filingFallback": null,
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-    "attempts": 2,
-    "checkedDate": "2026-10-02",
-    "checkedAt": "2026-10-02T13:22:06.828Z",
-    "nextRetryAt": "2026-10-03T13:22:06.828Z"
+    "attempts": 1,
+    "checkedDate": "2026-10-04",
+    "checkedAt": "2026-10-04T10:01:39.971Z",
+    "nextRetryAt": "2026-10-05T10:01:39.971Z"
   },
   "3587|2026-06-30": {
     "status": "UNVERIFIED",
