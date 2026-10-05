@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "targetDate": "2026-10-01",
   "strategyVersion": "entry-dual-track-v2.2",
-  "inputFingerprint": "82dac4f1f0252f221d5b609e1e8fef35dc3de5aff2683b34bf834fafeeb6216f",
+  "inputFingerprint": "3fae3c19aaff323f060065b2e3df0b9887f1afb537b5296c82d44bdac896b9bc",
   "coverage": {
     "universe": 2303,
     "stocks": 1949,
@@ -33715,7 +33715,7 @@
       "close": 546,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 48.9485,
+      "score": 58.9485,
       "scores": {
         "trend": 18,
         "momentum": 4,
@@ -33724,7 +33724,7 @@
         "institutional": 9,
         "large_holder": 2.6667,
         "margin_short_lending": 6,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -33735,7 +33735,7 @@
         "credit": true,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -33743,7 +33743,6 @@
         "assetProfile": true
       },
       "reasonCodes": [
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -87566,7 +87565,7 @@
       "close": 456,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 41.1963,
+      "score": 51.1963,
       "scores": {
         "trend": 18,
         "momentum": 0,
@@ -87575,7 +87574,7 @@
         "institutional": 6,
         "large_holder": 2.6667,
         "margin_short_lending": 6,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -87586,7 +87585,7 @@
         "credit": true,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -87594,7 +87593,6 @@
         "assetProfile": true
       },
       "reasonCodes": [
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
