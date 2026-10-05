@@ -82,6 +82,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RECOVERY_COUNT: ${{ inputs.recovery_count || inputs.financial_continuation || '0' }}
           CAPTURE_OUTCOME: ${{ steps.capture.outcome }}
+          TARGET_DATE: ${{ inputs.target_date }}
         run: node scripts/continue-pipeline-recovery.mjs
       - name: Save resumable checkpoint and failure details
         if: always()

@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import {pathToFileURL} from 'node:url';
 import {shouldContinueFinancial} from './continue-financial-evidence.mjs';
+import {resolvePipelineTarget} from './run-daily-pipeline.mjs';
 const read=p=>{try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}};
 export function recoveryDecision({report,status,count,max=12,collection,runId}) {
   if(shouldContinueFinancial(collection,report,runId,count))return {dispatch:true,reason:'FINANCIAL_WORK_READY'};
@@ -13,7 +14,7 @@ export function recoveryDecision({report,status,count,max=12,collection,runId}) 
   return {dispatch:false,reason:error?'NON_RECOVERABLE_FAILURE':'NO_ACTIONABLE_STATE'};
 }
 export async function continuePipelineRecovery(){
-  const manifest=read('manifest.json'),research=read(manifest?.researchPath),target=research?.researchDate;
+  const target=resolvePipelineTarget(process.env.TARGET_DATE);
   if(!target)throw Error('Cannot resolve recovery target from manifest');
   const root=`raw/${target}`,report=read(`${root}/daily-report.json`),status=read(`${root}/pipeline-status.json`);
   const collection=read(`${root}/financial-pdf-collection.json`);

@@ -7,7 +7,7 @@ import {completionCurrent,recoveryTargets,isFutureAfterCloseTarget,runPipeline,r
 import {inputFingerprint} from './screen-market.mjs';
 import {discoverEvidenceSources,discoverCoverageSources,archiveUsable} from './collect-research-evidence.mjs';
 import {tdccWeeks,officialDate,evidenceSummary,historyAssessment} from './research-evidence.mjs';
-import {recoveryDecision} from './continue-pipeline-recovery.mjs';
+import {recoveryDecision,continuePipelineRecovery} from './continue-pipeline-recovery.mjs';
 import {captureListingHistory} from './collect-research-evidence.mjs';
 test('daily close advances to new prices even when an older research checkpoint is incomplete',()=>{
  const cwd=process.cwd(),tmp=fs.mkdtempSync(path.join(os.tmpdir(),'pipeline-date-'));
@@ -238,4 +238,17 @@ test('a recovery replacing a queued source run must still execute the full regre
  assert.ok(step,'the publication workflow must test the code it checks out');
  assert.match(step,/run: node --test scripts\/\*\.test\.mjs/);
  assert.doesNotMatch(step,/\n\s*if:/,'recovery inputs must not bypass verification of newly checked-out code');
+});
+
+test('self-healing follows the attempted close date instead of an older published snapshot',async()=>{
+  const original=process.cwd(),fetcher=globalThis.fetch,tmp=fs.mkdtempSync(path.join(os.tmpdir(),'recovery-date-'));
+  const keys=['TARGET_DATE','RECOVERY_COUNT','GITHUB_RUN_ID','GITHUB_REPOSITORY','GITHUB_TOKEN'],env=Object.fromEntries(keys.map(k=>[k,process.env[k]]));
+  try{
+    process.chdir(tmp);fs.mkdirSync('raw/2026-10-05',{recursive:true});fs.mkdirSync('snapshots/old',{recursive:true});
+    fs.writeFileSync('manifest.json',JSON.stringify({researchPath:'snapshots/old/research.json'}));fs.writeFileSync('snapshots/old/research.json',JSON.stringify({researchDate:'2026-10-01'}));
+    fs.writeFileSync('raw/2026-10-05/pipeline-status.json',JSON.stringify({error:'ECONNRESET'}));
+    Object.assign(process.env,{TARGET_DATE:'2026-10-05',RECOVERY_COUNT:'0',GITHUB_RUN_ID:'test',GITHUB_REPOSITORY:'st7833232/taiwan-stock-dashboard-data',GITHUB_TOKEN:'fixture'});
+    let dispatched;globalThis.fetch=async(url,options)=>{dispatched=JSON.parse(options.body);return new Response(null,{status:204});};
+    await continuePipelineRecovery();assert.equal(dispatched.inputs.target_date,'2026-10-05');assert.equal(dispatched.inputs.recovery_count,'1');
+  }finally{globalThis.fetch=fetcher;for(const k of keys)if(env[k]===undefined)delete process.env[k];else process.env[k]=env[k];process.chdir(original);fs.rmSync(tmp,{recursive:true,force:true});}
 });
