@@ -81,6 +81,23 @@ test('wrapped Chinese footnotes beginning with a word preserve the revenue row w
  assert.throws(()=>verifyPdfText(pages,{...row,'淨利（淨損）歸屬於母公司業主':row['淨利（淨損）歸屬於母公司業主']+1}));
  assert.throws(()=>verifyPdfText(pages.map(p=>p.replace(/^.*七\(二\).*$/m,'')),row),'missing revenue must not borrow the following cost account');
 });
+test('parent profit disclosed in the dated equity statement verifies without treating total profit as parent profit',()=>{
+ for(const code of ['1301','4939','6919','3229','6176','6515','7792','6811']){
+  const file=fs.readdirSync('history/financial-reports').find(p=>p.startsWith(`202502_${code}_AI1.pdf.`)&&p.endsWith('.pdf')),stem='history/financial-reports/'+file.slice(0,-4);
+  const row=parseMopsCompanyHistoricalIncomeHtml(fs.readFileSync(stem+'.income.html','utf8'),{code,year:2025,quarter:2}),pages=execFileSync('pdftotext',['-layout',stem+'.pdf','-'],{encoding:'utf8'}).split('\f');
+  assert.ok(verifyPdfText(pages,row).length,code);
+  assert.throws(()=>verifyPdfText(pages,{...row,'淨利（淨損）歸屬於母公司業主':row['淨利（淨損）歸屬於母公司業主']+1}),code);
+  assert.throws(()=>verifyPdfText(pages,{...row,'本期淨利（淨損）':row['本期淨利（淨損）']+1}),code);
+  assert.throws(()=>verifyPdfText(pages.filter(p=>!p.replace(/\s/g,'').includes('權益變動表')),row),'income total alone does not prove parent attribution');
+  assert.throws(()=>verifyPdfText(pages.map(p=>p.replace(/歸屬於(?:母公司|本公司)業主之權益/g,'權益分類')),row),'parent ownership must be explicit in the equity statement');
+  if(code==='6176'){
+   const eq=page=>page.replace(/\s/g,'').includes('權益變動表');
+   assert.throws(()=>verifyPdfText(pages.map(p=>eq(p)?p.replace(/一一四年一月一日/g,'一一四年四月一日'):p),row),'the full current-year January-to-June period must be identified');
+   assert.throws(()=>verifyPdfText(pages.map(p=>eq(p)?p.replace(/新台幣千元/g,'新台幣元'):p),row),'the equity amount must use the same filed thousand-dollar unit');
+   assert.throws(()=>verifyPdfText(pages.map(p=>eq(p)?p+'非控制權益':p),row),'mixed-owner equity requires a separately identified parent column');
+  }
+ }
+});
 test('file versions use official upload time and never accept a later or corrected filing',()=>{
  const html=fs.readFileSync('history/financial-reports/2409.html','utf8');
  assert.equal(filingVersion(html,'2409',2025,2,'2026-09-30').filename,'202502_2409_AI1.pdf');
@@ -235,7 +252,7 @@ test('OCR reviews the identified income table and its continuation instead of un
  assert.deepEqual(pdfReviewPages(['目錄','資產負債表','合併綜合損益表 金額\n4000 營業收入','續表','附註'],5),[3,4]);
  assert.deepEqual(pdfReviewPages(['','',''],3),[1,2,3]);
  assert.ok(pdfReviewPages(['目錄\n合併綜合損益表 8\n合併現金流量表','會計師核閱報告提及綜合損益表與現金流量',''],12).includes(8));
- const now=new Date('2026-10-02T01:00:00Z'),state={old:{parserVersion:2,textParserVersion:17,nextRetryAt:'2026-10-03T01:00:00Z'},current:{parserVersion:2,textParserVersion:18,nextRetryAt:'2026-10-03T01:00:00Z'}};
+ const now=new Date('2026-10-02T01:00:00Z'),state={old:{parserVersion:2,textParserVersion:18,nextRetryAt:'2026-10-03T01:00:00Z'},current:{parserVersion:2,textParserVersion:19,nextRetryAt:'2026-10-03T01:00:00Z'}};
  assert.deepEqual(financialQueue([{key:'old',archived:true},{key:'current',archived:true}],state,now,new Set()).map(r=>r.key),['old']);
 });
 
