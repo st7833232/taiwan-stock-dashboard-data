@@ -1,9 +1,9 @@
 {
   "targetDate": "2026-10-01",
   "timezone": "Asia/Taipei",
-  "generatedAt": "2026-10-04T10:47:59.199Z",
+  "generatedAt": "2026-10-05T01:48:45.377Z",
   "simulatedTodayDate": null,
-  "effectiveTodayDate": "2026-10-04",
+  "effectiveTodayDate": "2026-10-05",
   "overallStatus": "PASS",
   "requiredGates": [
     "twse-daily-close-quotes",
@@ -297,7 +297,7 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/10/01",
       "targetDate": "2026-10-01",
-      "capturedAt": "2026-10-04T10:47:56.798Z",
+      "capturedAt": "2026-10-05T01:48:42.009Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
