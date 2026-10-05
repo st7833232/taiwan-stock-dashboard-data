@@ -214,7 +214,7 @@ test('OCR reviews the identified income table and its continuation instead of un
  assert.deepEqual(pdfReviewPages(['目錄','資產負債表','合併綜合損益表 金額\n4000 營業收入','續表','附註'],5),[3,4]);
  assert.deepEqual(pdfReviewPages(['','',''],3),[1,2,3]);
  assert.ok(pdfReviewPages(['目錄\n合併綜合損益表 8\n合併現金流量表','會計師核閱報告提及綜合損益表與現金流量',''],12).includes(8));
- const now=new Date('2026-10-02T01:00:00Z'),state={old:{parserVersion:2,textParserVersion:14,nextRetryAt:'2026-10-03T01:00:00Z'},current:{parserVersion:2,textParserVersion:15,nextRetryAt:'2026-10-03T01:00:00Z'}};
+ const now=new Date('2026-10-02T01:00:00Z'),state={old:{parserVersion:2,textParserVersion:15,nextRetryAt:'2026-10-03T01:00:00Z'},current:{parserVersion:2,textParserVersion:16,nextRetryAt:'2026-10-03T01:00:00Z'}};
  assert.deepEqual(financialQueue([{key:'old',archived:true},{key:'current',archived:true}],state,now,new Set()).map(r=>r.key),['old']);
 });
 
@@ -276,5 +276,26 @@ test('an official individual filing verifies TOTAL income without manufacturing 
   assert.throws(()=>verifyPdfText(pages,{...report.row,'本期淨利（淨損）':3488966}));assert.throws(()=>verifyPdfText(pages,{...report.row,'淨利（淨損）歸屬於母公司業主':3488965}));
   assert.equal(JSON.parse(fs.readFileSync('raw/2026-10-01/financial-pdf-collection.json')).remaining,0);
   const table='history/financial-reports/'+stem+'.income.html';fs.writeFileSync(table,fs.readFileSync(table,'utf8').replace('個別綜合損益表','合併綜合損益表'));assert.equal(reviewedFinancialReport(report,'2026-10-01'),null);
+ }finally{globalThis.fetch=fetcher;if(spacing===undefined)delete process.env.FINANCIAL_REQUEST_SPACING_MS;else process.env.FINANCIAL_REQUEST_SPACING_MS=spacing;process.chdir(original);fs.rmSync(tmp,{recursive:true,force:true});}
+});
+
+test('dated cached comparative resolves an inconsistent historical table without retrying requests or erasing failed evidence',async()=>{
+ const {collectFinancialPdfs}=await import('./collect-financial-pdfs.mjs'),{reviewedFinancialReport}=await import('./research-evidence.mjs'),{default:os}=await import('node:os'),{default:path}=await import('node:path');
+ const original=process.cwd(),fetcher=globalThis.fetch,spacing=process.env.FINANCIAL_REQUEST_SPACING_MS,tmp=fs.mkdtempSync(path.join(os.tmpdir(),'financial-conflict-')),files=fs.readdirSync('history/financial-reports').filter(f=>/202[56]02_2436_AI1/.test(f)&&f.endsWith('.pdf'));let requests=0;
+ const failed={status:'UNVERIFIED',parserVersion:2,textParserVersion:14,stage:'PDF_METRICS',reason:'PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED',nextRetryAt:'2099-01-01T00:00:00Z'};
+ try{
+  assert.equal(files.length,2);fs.mkdirSync(path.join(tmp,'history/financial-reports'),{recursive:true});
+  for(const file of files)for(const suffix of ['.pdf','.html','.income.html'])fs.copyFileSync('history/financial-reports/'+file.slice(0,-4)+suffix,path.join(tmp,'history/financial-reports/'+file.slice(0,-4)+suffix));
+  process.chdir(tmp);fs.mkdirSync('raw/2026-10-01',{recursive:true});
+  fs.writeFileSync('history/financial-pdf-collection.json',JSON.stringify({'2436|2026-06-30':failed}));
+  fs.writeFileSync('raw/2026-10-01/research-input.json',JSON.stringify({deepDive:[{code:'2436',assetType:'STOCK',current:{market:'TWSE'}}]}));
+  fs.writeFileSync('raw/2026-10-01/financial-evidence-captures.json',JSON.stringify({captures:[{id:'income',kind:'income',status:'CAPTURED'}]}));
+  fs.writeFileSync('raw/2026-10-01/income.raw.txt',JSON.stringify([{'公司代號':'2436','年度':2026,'季別':2,'淨利（淨損）歸屬於母公司業主':100}]));
+  globalThis.fetch=async()=>{requests++;throw Error('OFFICIAL_RATE_LIMITED');};process.env.FINANCIAL_REQUEST_SPACING_MS='0';
+  await collectFinancialPdfs('2026-10-01');assert.equal(JSON.parse(fs.readFileSync('raw/2026-10-01/financial-pdf-collection.json')).remaining,0);
+  const [report]=JSON.parse(fs.readFileSync('history/reviewed-financial-reports.json'));
+  assert.equal(requests,0);assert.equal(report.filingYear,2026);assert.equal(report.row['年度'],2025);assert.equal(report.row['淨利（淨損）歸屬於母公司業主'],50234);assert.equal(reviewedFinancialReport(report,'2026-10-01').profitBasis,'PARENT');assert.equal(reviewedFinancialReport(report,'2026-08-09'),null);
+  assert.deepEqual(JSON.parse(fs.readFileSync('history/financial-pdf-collection.json'))['2436|2026-06-30'].lastUnverifiedAttempt,failed);
+  const old=files.find(f=>f.startsWith('202502'));assert.equal(parseMopsCompanyHistoricalIncomeHtml(fs.readFileSync('history/financial-reports/'+old.slice(0,-4)+'.income.html','utf8'),{code:'2436',year:2025,quarter:2})['淨利（淨損）歸屬於母公司業主'],52234);
  }finally{globalThis.fetch=fetcher;if(spacing===undefined)delete process.env.FINANCIAL_REQUEST_SPACING_MS;else process.env.FINANCIAL_REQUEST_SPACING_MS=spacing;process.chdir(original);fs.rmSync(tmp,{recursive:true,force:true});}
 });
