@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-01",
-  "revision": "2026-10-05-100049",
+  "revision": "2026-10-05-101506",
   "strategyVersion": "entry-dual-track-v2.2",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
   "researchComplete": false,
   "evidencePending": {
-    "fundamental": 185,
+    "fundamental": 177,
     "credit": 3
   },
   "fundamentalQualityRejected": [
@@ -372,6 +372,13 @@
       ]
     },
     {
+      "code": "2646",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
       "code": "2915",
       "failures": [
         "REVENUE_DETERIORATION"
@@ -727,6 +734,12 @@
       ]
     },
     {
+      "code": "8131",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "8422",
       "failures": [
         "PROFIT_DETERIORATION"
@@ -1004,6 +1017,12 @@
     },
     {
       "code": "6693",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "8040",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
@@ -1326,7 +1345,7 @@
     ],
     "eligibleRanked": 1
   },
-  "conclusion": "2026-10-01全市場 2303 檔已完成初步篩選（普通股 1949、ETF 354），深度檢查 615 檔。普通股信用資料已核對 540/543 檔。仍待核對：財務證據 185檔、融資融券等信用資料 3檔。研究尚未完成。財務證據完整但品質未通過 157 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-10-01全市場 2303 檔已完成初步篩選（普通股 1949、ETF 354），深度檢查 615 檔。普通股信用資料已核對 540/543 檔。仍待核對：財務證據 177檔、融資融券等信用資料 3檔。研究尚未完成。財務證據完整但品質未通過 160 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [],
   "core": [
     {
@@ -1468,17 +1487,6 @@
       "officialDateEvidence": "1151001"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-05-100049",
-    "runId": "37252828022",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/37252828022",
-    "validatedCommit": "e35d2687e2d1ac587008086ad9b654108eb2a932"
-  },
-  "inputFingerprint": "b31b124d9a9c95613bc7a7f9bc7a228aa4133eee2ff0bfedd9474933eca67c34"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "5d2e79cf50be06869bcf167722a8cef20f3866e04dccd4c9ab8fcaea41992545"
 }
