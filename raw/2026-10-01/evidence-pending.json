@@ -2,12 +2,11 @@
   "targetDate": "2026-10-01",
   "researchComplete": false,
   "counts": {
-    "fundamental": 162,
+    "fundamental": 153,
     "credit": 3
   },
   "pending": {
     "fundamental": [
-      "1301",
       "1319",
       "1409",
       "1476",
@@ -71,7 +70,6 @@
       "3055",
       "3135",
       "3149",
-      "3229",
       "3443",
       "3532",
       "3583",
@@ -85,7 +83,6 @@
       "4989",
       "5234",
       "5243",
-      "5269",
       "5285",
       "5871",
       "5876",
@@ -94,20 +91,17 @@
       "6133",
       "6141",
       "6155",
-      "6176",
       "6177",
       "6209",
       "6226",
       "6257",
       "6285",
       "6409",
-      "6515",
       "6525",
       "6706",
       "6770",
       "6805",
       "6830",
-      "6919",
       "6944",
       "7711",
       "7750",
@@ -135,7 +129,6 @@
       "3707",
       "4768",
       "4903",
-      "4939",
       "4979",
       "4991",
       "5328",
@@ -160,9 +153,7 @@
       "6716",
       "6727",
       "6739",
-      "6811",
       "7717",
-      "7792",
       "8027",
       "8042",
       "8111",
@@ -194,6 +185,13 @@
       "failures": [
         "REVENUE_DETERIORATION",
         "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1301",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "REVENUE_DETERIORATION"
       ]
     },
     {
@@ -583,6 +581,12 @@
       ]
     },
     {
+      "code": "3229",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "3376",
       "failures": [
         "PROFIT_QUALITY_FAILED",
@@ -766,6 +770,13 @@
       ]
     },
     {
+      "code": "6176",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
       "code": "6191",
       "failures": [
         "PROFIT_DETERIORATION"
@@ -869,6 +880,14 @@
       "code": "6834",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6919",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
       ]
     },
     {
@@ -1063,6 +1082,12 @@
       "failures": [
         "PROFIT_QUALITY_FAILED",
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4939",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
     },
     {
