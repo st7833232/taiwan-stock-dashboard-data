@@ -5,7 +5,7 @@
     "fundamental": 156,
     "tdcc": 6,
     "credit": 4,
-    "history": 2
+    "history": 1
   },
   "pending": {
     "fundamental": [
@@ -181,7 +181,6 @@
       "7828"
     ],
     "history": [
-      "00411A",
       "00998A"
     ]
   },
@@ -1503,6 +1502,26 @@
       "sources": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
         "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00999A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00411A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-08-26",
+      "availableTradingDays": 25,
+      "verifiedTradingDays": 25,
+      "maximumPossibleTradingDays": 27,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://isin.twse.com.tw/isin/C_public.jsp?strMode=4",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00411A&stockname=&isincode="
       ],
       "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
     },
