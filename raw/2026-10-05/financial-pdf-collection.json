@@ -4538,12 +4538,12 @@
       "filingParserVersion": 3,
       "textParserVersion": 19,
       "filingFallback": null,
-      "stage": "PDF_LINK",
-      "reason": "fetch failed",
-      "attempts": 1,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 2,
       "checkedDate": "2026-10-06",
-      "checkedAt": "2026-10-05T16:26:09.323Z",
-      "nextRetryAt": "2026-10-05T16:31:09.323Z"
+      "checkedAt": "2026-10-05T16:36:44.275Z",
+      "nextRetryAt": "2026-10-06T16:36:44.275Z"
     },
     "3031|2026-06-30": {
       "status": "UNVERIFIED",
@@ -4553,10 +4553,10 @@
       "filingFallback": null,
       "stage": "FILING_INDEX",
       "reason": "fetch failed",
-      "attempts": 1,
+      "attempts": 2,
       "checkedDate": "2026-10-06",
-      "checkedAt": "2026-10-05T16:26:36.832Z",
-      "nextRetryAt": "2026-10-05T16:31:36.832Z"
+      "checkedAt": "2026-10-05T16:37:11.792Z",
+      "nextRetryAt": "2026-10-05T16:47:11.792Z"
     },
     "2033|2026-06-30": {
       "status": "UNVERIFIED",
@@ -4565,11 +4565,11 @@
       "textParserVersion": 19,
       "filingFallback": null,
       "stage": "PDF_METRICS",
-      "reason": "PDF_OCR_REVIEW_PENDING",
-      "attempts": 1,
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 2,
       "checkedDate": "2026-10-06",
-      "checkedAt": "2026-10-05T16:28:36.397Z",
-      "nextRetryAt": "2026-10-05T16:33:36.397Z"
+      "checkedAt": "2026-10-05T16:36:04.916Z",
+      "nextRetryAt": "2026-10-06T16:36:04.916Z"
     },
     "3354|2026-06-30": {
       "status": "VERIFIED",
