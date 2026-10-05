@@ -229,3 +229,11 @@ test('an empty auxiliary cache is retried without downgrading official PASS Gate
   assert.equal(result.captures.find(c=>c.source==='tpex-margin-balance').status,'VERIFY_FAILED');
  }finally{process.chdir(original);fs.rmSync(tmp,{recursive:true,force:true});}
 });
+
+test('a recovery replacing a queued source run must still execute the full regression suite',()=>{
+ const workflow=fs.readFileSync('.github/workflows/capture-official-market-data.yml','utf8');
+ const step=workflow.match(/- name: Test recovery and screening rules([\s\S]*?)(?=\n\s*- name:)/)?.[1];
+ assert.ok(step,'the publication workflow must test the code it checks out');
+ assert.match(step,/run: node --test scripts\/\*\.test\.mjs/);
+ assert.doesNotMatch(step,/\n\s*if:/,'recovery inputs must not bypass verification of newly checked-out code');
+});

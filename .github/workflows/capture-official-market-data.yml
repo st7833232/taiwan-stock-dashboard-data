@@ -68,7 +68,6 @@ jobs:
             sudo apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-chi-tra
           }
       - name: Test recovery and screening rules
-        if: ${{ (inputs.recovery_count == '' || inputs.recovery_count == '0') && (inputs.financial_continuation == '' || inputs.financial_continuation == '0') }}
         run: node --test scripts/*.test.mjs
       - name: Autonomous capture, evidence, screening and atomic publication
         id: capture
