@@ -1,23 +1,13 @@
 {
   "targetDate": "2026-10-01",
-  "runId": "37253759199",
-  "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/37253759199",
-  "stage": "VALIDATION_PASS",
+  "runId": "37254701410",
+  "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/37254701410",
+  "stage": "PREPUBLICATION_VALIDATED",
   "researchComplete": false,
-  "revision": "2026-10-05-101506",
+  "revision": "2026-10-05-102900",
   "evidencePending": {
-    "fundamental": 177,
+    "fundamental": 173,
     "credit": 3
   },
-  "retryPolicy": "AUTOMATIC_NEXT_SCHEDULE",
-  "validatedCommit": "efede4531e1e009dbd3589c3e7d83a86751141d1",
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-05-101506"
-  }
+  "retryPolicy": "AUTOMATIC_NEXT_SCHEDULE"
 }
