@@ -35,6 +35,18 @@ test('compatibility date glyphs and dash percentage cells preserve exact parent-
  assert.throws(()=>verifyPdfText(pages,{...row,'淨利（淨損）歸屬於母公司業主':row['本期淨利（淨損）']}),'total profit cannot replace parent profit');
  assert.throws(()=>verifyPdfText(pages,{...row,'年度':2024}),'a different financial period cannot match');
 });
+test('wrapped parenthetical footnotes retain the filed comparative revenue without crossing account rows',()=>{
+ const file=fs.readdirSync('history/financial-reports').find(p=>p.startsWith('202602_1216_AI1.pdf.')&&p.endsWith('.pdf'));
+ const stem='history/financial-reports/'+file.slice(0,-4),row=parseMopsCompanyHistoricalIncomeHtml(fs.readFileSync(stem+'.income.html','utf8'),{code:'1216',year:2025,quarter:2});
+ const index=fs.readFileSync(stem+'.html','utf8');
+ assert.equal(filingVersion(index,'1216',2026,2,'2026-10-01').filename,'202602_1216_AI1.pdf');
+ assert.throws(()=>filingVersion(index,'1216',2026,2,'2026-08-06'),'filing must precede the research cutoff');
+ const pages=execFileSync('pdftotext',['-layout',stem+'.pdf','-'],{encoding:'utf8'}).split('\f');
+ assert.ok(verifyPdfText(pages,row,{filingYear:2026}).length);
+ assert.throws(()=>verifyPdfText(pages,{...row,'營業收入':row['營業收入']+1},{filingYear:2026}));
+ assert.throws(()=>verifyPdfText(pages,{...row,'淨利（淨損）歸屬於母公司業主':row['本期淨利（淨損）']},{filingYear:2026}));
+ assert.throws(()=>verifyPdfText(pages.map(p=>p.replace(/^.*\(二十五\)及七.*$/m,'')),row,{filingYear:2026}),'missing revenue cannot borrow the next account amount');
+});
 test('file versions use official upload time and never accept a later or corrected filing',()=>{
  const html=fs.readFileSync('history/financial-reports/2409.html','utf8');
  assert.equal(filingVersion(html,'2409',2025,2,'2026-09-30').filename,'202502_2409_AI1.pdf');
@@ -189,7 +201,7 @@ test('OCR reviews the identified income table and its continuation instead of un
  assert.deepEqual(pdfReviewPages(['目錄','資產負債表','合併綜合損益表 金額\n4000 營業收入','續表','附註'],5),[3,4]);
  assert.deepEqual(pdfReviewPages(['','',''],3),[1,2,3]);
  assert.ok(pdfReviewPages(['目錄\n合併綜合損益表 8\n合併現金流量表','會計師核閱報告提及綜合損益表與現金流量',''],12).includes(8));
- const now=new Date('2026-10-02T01:00:00Z'),state={old:{parserVersion:2,textParserVersion:12,nextRetryAt:'2026-10-03T01:00:00Z'},current:{parserVersion:2,textParserVersion:13,nextRetryAt:'2026-10-03T01:00:00Z'}};
+ const now=new Date('2026-10-02T01:00:00Z'),state={old:{parserVersion:2,textParserVersion:13,nextRetryAt:'2026-10-03T01:00:00Z'},current:{parserVersion:2,textParserVersion:14,nextRetryAt:'2026-10-03T01:00:00Z'}};
  assert.deepEqual(financialQueue([{key:'old',archived:true},{key:'current',archived:true}],state,now,new Set()).map(r=>r.key),['old']);
 });
 
