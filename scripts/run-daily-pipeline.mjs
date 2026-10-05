@@ -7,8 +7,7 @@ import {inputFingerprint} from './screen-market.mjs';
 const read=p=>{try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}};
 export function resolvePipelineTarget(explicit,now=new Date()){
   if(explicit)return explicit;
-  const ready=resolveCaptureTargetDate({now}),manifest=read('manifest.json'),target=read(manifest?.researchPath)?.researchDate,report=target?read(`raw/${target}/daily-report.json`):null;
-  return target<=ready&&read(manifest?.paperAccountPath)?.asOf===target&&report?.targetDate===target&&report.screeningComplete===true&&report.researchComplete===false&&report.validation?.status==='PASS'?target:ready;
+  return resolveCaptureTargetDate({now});
 }
 export function completionCurrent({target,config,manifest,research,paper,history,input,state}) {
   const paths=[manifest?.researchPath,manifest?.selectionHistoryPath,manifest?.paperAccountPath];
@@ -32,9 +31,9 @@ export function runPipeline(target=resolveCaptureTargetDate(),{execute=execFileS
   fs.readFileSync('DAILY_UPDATE_PROTOCOL.md','utf8');
   const initial=read('manifest.json'),initialPaper=read(initial?.paperAccountPath);
   if(!initialPaper)throw Error('Existing paper account is unreadable');
-  const run=(script,{retry=false,pending=false}={})=>{
+  const run=(script,{retry=false,pending=false,rescreen=false}={})=>{
     let error;
-    for(let attempt=0;attempt<(retry?2:1);attempt++)try{return execute(process.execPath,[script],{stdio:'inherit',timeout:12*60*1000,env:{...process.env,TARGET_DATE:process.env.TARGET_DATE,...(pending?{VALIDATE_PENDING:'1'}:{})}});}catch(e){error=e;console.error(`Stage failed: ${script}; attempt ${attempt+1}`);}
+    for(let attempt=0;attempt<(retry?2:1);attempt++)try{return execute(process.execPath,[script],{stdio:'inherit',timeout:12*60*1000,env:{...process.env,TARGET_DATE:process.env.TARGET_DATE,...(pending?{VALIDATE_PENDING:'1'}:{}),...(rescreen?{RESCREEN_ON_ADMISSION:'1'}:{})}});}catch(e){error=e;console.error(`Stage failed: ${script}; attempt ${attempt+1}`);}
     throw error;
   };
   const validate=pending=>{for(const s of ['validate-data','validate-dashboard-contract','validate-strategy-v2'])run(`scripts/${s}.mjs`,{pending});};
@@ -75,25 +74,31 @@ export function runPipeline(target=resolveCaptureTargetDate(),{execute=execFileS
       // Evidence collectors are incremental. Keep financial/credit retries active while pending;
       // skip TDCC only when the prior checkpoint proves it is already complete.
       run('scripts/collect-research-evidence.mjs',{retry:true});
-      if(!priorPending||Number(priorPending?.counts?.fundamental??0)>0)run('scripts/collect-financial-pdfs.mjs');
       if(!priorPending||Number(priorPending?.counts?.tdcc??0)>0)run('scripts/collect-tdcc-history.mjs',{retry:true});
-      run('scripts/research-evidence.mjs');
-      run('scripts/check-daily-publication.mjs');
-      status.stage='SCREENING';run('scripts/screen-market.mjs');
-      status.stage='PREPUBLICATION_VALIDATION';validate(true);run('scripts/check-daily-publication.mjs');
-      const next=read('manifest.json'),report=read(`${root}/daily-report.json`);
-      status.revision=next.revision;status.researchComplete=report?.researchComplete===true;status.evidencePending=report?.evidencePending??null;status.stage='PREPUBLICATION_VALIDATED';status.retryPolicy=status.researchComplete?'STOP_AFTER_SUCCESS':'AUTOMATIC_NEXT_SCHEDULE';save();
-      run('scripts/publish-data-atomic.mjs');
-      execute('git',['fetch','origin','main'],{stdio:'inherit'});execute('git',['reset','--hard','origin/main'],{stdio:'inherit'});
-      status.stage='POSTPUBLICATION_VALIDATION';validate(false);
-      const live=read('manifest.json');
-      if(live.revision!==next.revision)throw Error('MAIN_HEAD_CHANGED: validate the latest checkpoint on next automatic run');
-      status.stage='VALIDATION_PASS';status.validatedCommit=execute('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();status.validation={status:'PASS',validators:['validate-data','validate-dashboard-contract','validate-strategy-v2'],revision:live.revision};save();
-      const liveReport=read(`${root}/daily-report.json`);if(liveReport){liveReport.validation={...status.validation,runId:status.runId,runUrl:status.runUrl,validatedCommit:status.validatedCommit};fs.writeFileSync(`${root}/daily-report.json`,JSON.stringify(liveReport,null,2)+'\n');}
-      // A raw-only validation receipt follows the atomic snapshot commit; immutable snapshots are never rewritten.
-      run('scripts/publish-data-atomic.mjs');
-      execute('git',['fetch','origin','main'],{stdio:'inherit'});execute('git',['reset','--hard','origin/main'],{stdio:'inherit'});
-      console.log(JSON.stringify(status));
+      const checkpoint=()=>{
+        run('scripts/research-evidence.mjs');
+        run('scripts/check-daily-publication.mjs');
+        status.stage='SCREENING';run('scripts/screen-market.mjs');
+        status.stage='PREPUBLICATION_VALIDATION';validate(true);run('scripts/check-daily-publication.mjs');
+        const next=read('manifest.json'),report=read(`${root}/daily-report.json`);
+        status.revision=next.revision;status.researchComplete=report?.researchComplete===true;status.evidencePending=report?.evidencePending??null;status.stage='PREPUBLICATION_VALIDATED';status.retryPolicy=status.researchComplete?'STOP_AFTER_SUCCESS':'AUTOMATIC_NEXT_SCHEDULE';save();
+        run('scripts/publish-data-atomic.mjs');
+        execute('git',['fetch','origin','main'],{stdio:'inherit'});execute('git',['reset','--hard','origin/main'],{stdio:'inherit'});
+        status.stage='POSTPUBLICATION_VALIDATION';validate(false);
+        const live=read('manifest.json');
+        if(live.revision!==next.revision)throw Error('MAIN_HEAD_CHANGED: validate the latest checkpoint on next automatic run');
+        status.stage='VALIDATION_PASS';status.validatedCommit=execute('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();status.validation={status:'PASS',validators:['validate-data','validate-dashboard-contract','validate-strategy-v2'],revision:live.revision};save();
+        const liveReport=read(`${root}/daily-report.json`);if(liveReport){liveReport.validation={...status.validation,runId:status.runId,runUrl:status.runUrl,validatedCommit:status.validatedCommit};fs.writeFileSync(`${root}/daily-report.json`,JSON.stringify(liveReport,null,2)+'\n');}
+        // A raw-only validation receipt follows the atomic snapshot commit; immutable snapshots are never rewritten.
+        run('scripts/publish-data-atomic.mjs');
+        execute('git',['fetch','origin','main'],{stdio:'inherit'});execute('git',['reset','--hard','origin/main'],{stdio:'inherit'});
+        console.log(JSON.stringify(status));
+      };
+      checkpoint();
+      // Publish the daily close before slow financial backfill. Same-day marking is idempotent.
+      status.stage='FINANCIAL_BACKFILL';save();
+      if(!priorPending||Number(priorPending?.counts?.fundamental??0)>0)run('scripts/collect-financial-pdfs.mjs',{rescreen:true});
+      checkpoint();
     }catch(error){status.failedStage=status.stage;status.stage='RECOVERY_PENDING';status.error=String(error.message);status.retryPolicy='AUTOMATIC_NEXT_SCHEDULE';save();throw error;}
     finally{if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,`\n## ${day}\n\n- Pipeline: ${status.stage}\n- Research complete: ${status.researchComplete}\n- Retry: ${status.retryPolicy}\n- Revision: ${status.revision??'unchanged'}\n- Pending evidence: ${JSON.stringify(status.evidencePending??{})}\n`);}
   }

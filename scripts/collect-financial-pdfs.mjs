@@ -162,7 +162,7 @@ function verifyPdfWithOcr(pdfText,path,row,deadline,filingYear=row['年度']){
  }
  throw Error('PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED');
 }
-export async function collectFinancialPdfs(target){
+export async function collectFinancialPdfs(target,{onVerified}={}){
  const root=`raw/${target}`,input=read(`${root}/research-input.json`),reports=read('history/reviewed-financial-reports.json')??[],state=read('history/financial-pdf-collection.json')??{},periods=new Map();
  if(!input)throw Error('Research input missing');
  for(const c of read(`${root}/financial-evidence-captures.json`)?.captures??[])if(c.kind==='income'&&c.status==='CAPTURED'&&!c.historicalFinancial)for(const row of read(`${root}/${c.id}.raw.txt`)??[]){const n=normalizeFinancial(row,'income',c.url);if(n&&n.periodEnd<=target&&(!periods.has(n.code)||periods.get(n.code).periodEnd<n.periodEnd))periods.set(n.code,n);}
@@ -215,9 +215,12 @@ export async function collectFinancialPdfs(target){
    if(e.message==='OFFICIAL_RATE_LIMITED'){rateLimited=true;save('history/financial-pdf-collection.json',state);break;}
    if(e.message==='FINANCIAL_COLLECTION_BUDGET_EXHAUSTED'){save('history/financial-pdf-collection.json',state);break;}
   }
-  save('history/financial-pdf-collection.json',state);await new Promise(resolve=>setTimeout(resolve,requestSpacingMs));
+  save('history/financial-pdf-collection.json',state);
+  // Downstream screening errors must never turn valid official evidence into a fetch failure.
+  if(admitted.has(r.key)&&onVerified)await onVerified({code,target});
+  await new Promise(resolve=>setTimeout(resolve,requestSpacingMs));
  }
  admit();const ready=financialQueue(rows,state,new Date(),admitted);
  save(`${root}/financial-pdf-collection.json`,{targetDate:target,results:state,remaining:rows.filter(r=>!admitted.has(r.key)).length,ready:ready.length,continuationNeeded:!rateLimited&&ready.length>0,rateLimited,missingCurrentPeriodCodes:stocks.filter(r=>!periods.has(r.code)).map(r=>r.code)});
 }
-if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)await collectFinancialPdfs(process.env.TARGET_DATE);
+if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)await collectFinancialPdfs(process.env.TARGET_DATE,{onVerified:process.env.RESCREEN_ON_ADMISSION==='1'?()=>{for(const script of ['research-evidence','check-daily-publication','screen-market'])execFileSync(process.execPath,[`scripts/${script}.mjs`],{stdio:'inherit',timeout:120000});}:undefined});

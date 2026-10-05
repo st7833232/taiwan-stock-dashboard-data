@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {creditReady,fillPrice,inputFingerprint,evaluateUniverse,markPaper,accountRisk} from './screen-market.mjs';
+import {creditReady,fillPrice,inputFingerprint,evaluateUniverse,markPaper,accountRisk,planSignals} from './screen-market.mjs';
 const config=JSON.parse(fs.readFileSync('strategy-config.json','utf8'));
 test('missing stock credit cannot be supplied by ETFs or by zero substitution',()=>{
   assert.equal(creditReady({marginShortLending:{marginBalance:null,shortBalance:0}},config),false);
@@ -45,4 +45,14 @@ test('existing position concentration cannot be hidden by a high candidate score
   const p={cash:175000,positions:[{code:'1513',shares:150,lastPrice:167}],ledger:[]};
   const input={targetDate:'2026-09-29',deepDive:[{code:'1513',history:[['2026-09-23',0,0,0,166],['2026-09-24',0,0,0,166]]}]};
   const r=accountRisk(p,input,config);assert.equal(r.pass,false);assert.ok(r.reasons.includes('ACCOUNT_RISK_LIMIT'));
+});
+
+test('an unrelated stock with pending evidence cannot freeze qualified candidates or bypass its own gate',()=>{
+  const candidate={code:'3005',name:'test',assetType:'STOCK',score:100,universeRank:1,universePercentile:1,gates:{history:true,fundamental:true,credit:true},reasonCodes:[],setup:{strategy:'BREAKOUT',entry:100,maxEntry:101,stop:95}};
+  const pending={...structuredClone(candidate),code:'9999',gates:{...candidate.gates,fundamental:false}};
+  const paper={cash:200000,positions:[],ledger:[],experiment:{status:'ACTIVE'}};
+  const input={targetDate:'2026-10-05',researchComplete:false,deepDive:[{history:[['2026-09-30'],['2026-10-02']]}]};
+  const plan=planSignals({regime:'BULL',rows:[candidate,pending]},paper,input,config);
+  assert.equal(plan.risk.pass,true);assert.deepEqual(plan.orders.map(o=>o.code),['3005']);
+  assert.equal(candidate.decision,'BUY');assert.notEqual(pending.decision,'BUY');
 });

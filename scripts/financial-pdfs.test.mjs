@@ -282,7 +282,9 @@ test('collection recovers through a cached dated comparative PDF before network 
   fs.writeFileSync('raw/2025-09-30/research-input.json',JSON.stringify({deepDive:[{code:'6239',assetType:'STOCK',current:{market:'TWSE'}}]}));fs.writeFileSync('raw/2025-09-30/financial-evidence-captures.json',JSON.stringify({captures:[{id:'income',kind:'income',status:'CAPTURED'}]}));
   fs.writeFileSync('raw/2025-09-30/income.raw.txt',JSON.stringify([{'公司代號':'6239','年度':2025,'季別':2,'淨利（淨損）歸屬於母公司業主':100}]));
   globalThis.fetch=async url=>{requests++;assert.equal(new URL(url).searchParams.get('year'),'113');return new Response('<html>Filing version unverified</html>');};process.env.FINANCIAL_REQUEST_SPACING_MS='0';
-  await collectFinancialPdfs('2025-09-30');const [report]=JSON.parse(fs.readFileSync('history/reviewed-financial-reports.json'));
+  await assert.rejects(()=>collectFinancialPdfs('2025-09-30',{onVerified:()=>{throw Error('screening failed');}}),/screening failed/);
+  assert.equal(JSON.parse(fs.readFileSync('history/financial-pdf-collection.json'))['6239|2025-06-30'].status,'VERIFIED','downstream failures must preserve official verification');
+  await collectFinancialPdfs('2025-09-30',{onVerified:()=>assert.fail('already admitted evidence must not retrigger')});const [report]=JSON.parse(fs.readFileSync('history/reviewed-financial-reports.json'));
   assert.equal(requests,0);assert.equal(report.filingYear,2025);assert.equal(report.row['年度'],2024);assert.equal(report.row['營業收入'],37915361);assert.equal(report.row['淨利（淨損）歸屬於母公司業主'],3564919);assert.equal(new URL(report.source).searchParams.get('year'),'114');assert.equal(JSON.parse(fs.readFileSync('raw/2025-09-30/financial-pdf-collection.json')).remaining,0);
  }finally{globalThis.fetch=fetcher;if(spacing===undefined)delete process.env.FINANCIAL_REQUEST_SPACING_MS;else process.env.FINANCIAL_REQUEST_SPACING_MS=spacing;process.chdir(original);fs.rmSync(tmp,{recursive:true,force:true});}
 });
@@ -330,7 +332,11 @@ test('dated cached comparative resolves an inconsistent historical table without
   fs.writeFileSync('raw/2026-10-01/financial-evidence-captures.json',JSON.stringify({captures:[{id:'income',kind:'income',status:'CAPTURED'}]}));
   fs.writeFileSync('raw/2026-10-01/income.raw.txt',JSON.stringify([{'公司代號':'2436','年度':2026,'季別':2,'淨利（淨損）歸屬於母公司業主':100}]));
   globalThis.fetch=async()=>{requests++;throw Error('OFFICIAL_RATE_LIMITED');};process.env.FINANCIAL_REQUEST_SPACING_MS='0';
-  await collectFinancialPdfs('2026-10-01');assert.equal(JSON.parse(fs.readFileSync('raw/2026-10-01/financial-pdf-collection.json')).remaining,0);
+  let screenings=0;
+  const onVerified=({code})=>{assert.equal(code,'2436');assert.equal(JSON.parse(fs.readFileSync('history/financial-pdf-collection.json'))['2436|2026-06-30'].status,'VERIFIED');screenings++;};
+  await collectFinancialPdfs('2026-10-01',{onVerified});assert.equal(screenings,1,'each newly verified stock triggers screening after durable evidence');
+  await collectFinancialPdfs('2026-10-01',{onVerified});assert.equal(screenings,1,'reused evidence must not repeatedly trigger screening');
+  assert.equal(JSON.parse(fs.readFileSync('raw/2026-10-01/financial-pdf-collection.json')).remaining,0);
   const [report]=JSON.parse(fs.readFileSync('history/reviewed-financial-reports.json'));
   assert.equal(requests,0);assert.equal(report.filingYear,2026);assert.equal(report.row['年度'],2025);assert.equal(report.row['淨利（淨損）歸屬於母公司業主'],50234);assert.equal(reviewedFinancialReport(report,'2026-10-01').profitBasis,'PARENT');assert.equal(reviewedFinancialReport(report,'2026-08-09'),null);
   assert.deepEqual(JSON.parse(fs.readFileSync('history/financial-pdf-collection.json'))['2436|2026-06-30'].lastUnverifiedAttempt,failed);

@@ -9,13 +9,13 @@ import {discoverEvidenceSources,discoverCoverageSources,archiveUsable} from './c
 import {tdccWeeks,officialDate,evidenceSummary,historyAssessment} from './research-evidence.mjs';
 import {recoveryDecision} from './continue-pipeline-recovery.mjs';
 import {captureListingHistory} from './collect-research-evidence.mjs';
-test('scheduled recovery finishes the published incomplete date before advancing the paper account to a new day',()=>{
+test('daily close advances to new prices even when an older research checkpoint is incomplete',()=>{
  const cwd=process.cwd(),tmp=fs.mkdtempSync(path.join(os.tmpdir(),'pipeline-date-'));
  try{
   process.chdir(tmp);fs.mkdirSync('snapshots/r',{recursive:true});fs.mkdirSync('raw/2026-10-01',{recursive:true});fs.writeFileSync('manifest.json',JSON.stringify({researchPath:'snapshots/r/research.json',paperAccountPath:'snapshots/r/paper.json'}));
   fs.writeFileSync('snapshots/r/research.json',JSON.stringify({researchDate:'2026-10-01'}));fs.writeFileSync('snapshots/r/paper.json',JSON.stringify({asOf:'2026-10-01'}));
   const path='raw/2026-10-01/daily-report.json',report={targetDate:'2026-10-01',screeningComplete:true,researchComplete:false,validation:{status:'PASS'}};fs.writeFileSync(path,JSON.stringify(report));
-  const now=new Date('2026-10-02T11:00:00Z');assert.equal(resolvePipelineTarget(undefined,now),'2026-10-01');assert.equal(resolvePipelineTarget('2026-10-02',now),'2026-10-02');
+  const now=new Date('2026-10-02T11:00:00Z');assert.equal(resolvePipelineTarget(undefined,now),'2026-10-02');assert.equal(resolvePipelineTarget('2026-10-02',now),'2026-10-02');
   fs.writeFileSync(path,JSON.stringify({...report,researchComplete:true}));assert.equal(resolvePipelineTarget(undefined,now),'2026-10-02');
  }finally{process.chdir(cwd);fs.rmSync(tmp,{recursive:true,force:true});}
 });
@@ -157,11 +157,13 @@ test('new-day recovery builds input before history and records validation only a
       if(script.endsWith('fetch-official-market-data.mjs'))fs.writeFileSync(`raw/${day}/gate-matrix.json`,JSON.stringify({targetDate:day,overallStatus:'PASS'}));
       if(script.endsWith('summarize-official-market-data.mjs'))fs.writeFileSync(`raw/${day}/research-input.json`,'{}');
       if(script.endsWith('backfill-v2-market-history.mjs'))assert.ok(fs.existsSync(`raw/${day}/research-input.json`));
+      if(script.endsWith('collect-financial-pdfs.mjs'))assert.equal(options.env.RESCREEN_ON_ADMISSION,'1');
       if(script.endsWith('screen-market.mjs')){fs.writeFileSync('manifest.json',JSON.stringify({...manifest,revision:'new'}));fs.writeFileSync(`raw/${day}/daily-report.json`,JSON.stringify({researchComplete:false,evidencePending:{credit:1}}));}
     };
     runPipeline('2026-09-29',{execute,now:new Date('2026-09-30T01:00:00Z')});
     assert.ok(calls.indexOf('scripts/summarize-official-market-data.mjs')<calls.indexOf('scripts/backfill-v2-market-history.mjs'));
-    assert.equal(calls.filter(c=>c==='scripts/publish-data-atomic.mjs').length,2);
+    assert.equal(calls.filter(c=>c==='scripts/publish-data-atomic.mjs').length,4);
+    assert.ok(calls.indexOf('scripts/publish-data-atomic.mjs')<calls.indexOf('scripts/collect-financial-pdfs.mjs'),'publish existing verified candidates before slow backfill');
     const receipt=JSON.parse(fs.readFileSync('raw/2026-09-29/pipeline-status.json'));
     assert.equal(receipt.stage,'VALIDATION_PASS');assert.equal(receipt.researchComplete,false);assert.equal(receipt.retryPolicy,'AUTOMATIC_NEXT_SCHEDULE');
     assert.equal(JSON.parse(fs.readFileSync('raw/2026-09-29/daily-report.json')).validation.validatedCommit,'published-sha');
