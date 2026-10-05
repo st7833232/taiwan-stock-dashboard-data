@@ -9,7 +9,7 @@ const read=p=>{try{return JSON.parse(fs.readFileSync(p));}catch{return null;}};
 const save=(p,x)=>fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n');
 export function financialQueue(rows,state,now,admitted){
  const reparsed=r=>state[r.key]?.parserVersion!==2&&/PDF_PERIOD|FILING_VERSION|PROFIT_BASIS/.test(state[r.key]?.reason??'')||state[r.key]?.filingParserVersion!==3&&/FILING_VERSION/.test(state[r.key]?.reason??'');
- return rows.filter(r=>!admitted.has(r.key)&&(!state[r.key]||state[r.key].parserVersion!==2||reparsed(r)||r.archived&&(state[r.key].textParserVersion??0)<17||state[r.key].status==='VERIFIED'||Date.parse(state[r.key].nextRetryAt)<=now.getTime())).sort((a,b)=>Number(b.archived===true)-Number(a.archived===true)||Number(reparsed(b))-Number(reparsed(a))||(state[a.key]?.checkedAt??'').localeCompare(state[b.key]?.checkedAt??''));
+ return rows.filter(r=>!admitted.has(r.key)&&(!state[r.key]||state[r.key].parserVersion!==2||reparsed(r)||r.archived&&(state[r.key].textParserVersion??0)<18||state[r.key].status==='VERIFIED'||Date.parse(state[r.key].nextRetryAt)<=now.getTime())).sort((a,b)=>Number(b.archived===true)-Number(a.archived===true)||Number(reparsed(b))-Number(reparsed(a))||(state[a.key]?.checkedAt??'').localeCompare(state[b.key]?.checkedAt??''));
 }
 export async function filingIndex(source,request){
  let html=new TextDecoder('big5').decode(await request(source));
@@ -107,7 +107,7 @@ export function verifyPdfText(pages,row,{filingYear=row['年度']}={}){
     const total=lines.slice(n+1,end<0?lines.length:end).find(l=>/歸屬於母公司業主之本期淨利/.test(l));
     if(total)line=total;
    }
-   if(!/\d/.test(line)&&lines[n+1]&&!/^\s*\d{4}\s/.test(lines[n+1])&&(!/\p{Script=Han}/u.test(lines[n+1])||/^\s*[\p{Script=Han}、]+(?:[）)]|\s{2,}[$(\d])/u.test(lines[n+1])||/^\s*[（(][\p{Script=Han}()（）]+\s{2,}\$\s*\d/u.test(lines[n+1])))line=lines[n+1];
+   if(!/\d/.test(line)&&lines[n+1]&&!/^\s*\d{4}\s/.test(lines[n+1])&&(!/\p{Script=Han}/u.test(lines[n+1])||/^\s*[\p{Script=Han}、]+(?:[）)]|\s{2,}[$(\d])/u.test(lines[n+1])||/^\s*[\p{Script=Han}()（）]+\s{2,}\$\s*\d/u.test(lines[n+1])))line=lines[n+1];
    // Footnote numbers precede a wide column gap; they are never financial amounts.
    line=line.match(/(?:\s{2,}|\s(?=\$|[（(]\s*\$))((?:[$（(]\s*)*-?\d[\d,]*(?:\.\d+)?(?:\s|\)|$)[\s\S]*)$/)?.[1]??line;
    const tokens=[...line.matchAll(/\(?\s*\$?\s*-?\d[\d,]*(?:\.\d+)?\s*\)?|(?<!\S)-(?!\S)/g)].map(m=>m[0]),values=tokens.map(t=>t.trim()==='-'?null:Number(t.replace(/[\s,$()]/g,''))*(t.includes('(')?-1:1));
@@ -194,7 +194,7 @@ export async function collectFinancialPdfs(target){
    state[r.key]={status:'VERIFIED',parserVersion:2,checkedDate:today,checkedAt:new Date().toISOString(),...(state[r.key]?.status==='UNVERIFIED'?{lastUnverifiedAttempt:state[r.key]}:{})};admitted.add(r.key);
   }catch(e){
    const attempts=state[r.key]?.checkedDate===today?(state[r.key]?.attempts??0)+1:1,transient=/fetch failed|timeout|aborted|HTTP_(429|5\d\d)|PDF_OCR_REVIEW_PENDING|FINANCIAL_COLLECTION_BUDGET_EXHAUSTED/i.test(e.message);
-   state[r.key]={status:'UNVERIFIED',parserVersion:2,filingParserVersion:3,textParserVersion:17,filingFallback,stage,reason:e.message,attempts,checkedDate:today,checkedAt:new Date().toISOString(),nextRetryAt:new Date(Date.now()+(transient?Math.min(300000*2**(attempts-1),86400000):86400000)).toISOString()};
+   state[r.key]={status:'UNVERIFIED',parserVersion:2,filingParserVersion:3,textParserVersion:18,filingFallback,stage,reason:e.message,attempts,checkedDate:today,checkedAt:new Date().toISOString(),nextRetryAt:new Date(Date.now()+(transient?Math.min(300000*2**(attempts-1),86400000):86400000)).toISOString()};
    if(e.message==='OFFICIAL_RATE_LIMITED'){rateLimited=true;save('history/financial-pdf-collection.json',state);break;}
    if(e.message==='FINANCIAL_COLLECTION_BUDGET_EXHAUSTED'){save('history/financial-pdf-collection.json',state);break;}
   }
