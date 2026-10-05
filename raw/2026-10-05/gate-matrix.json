@@ -1,7 +1,7 @@
 {
   "targetDate": "2026-10-05",
   "timezone": "Asia/Taipei",
-  "generatedAt": "2026-10-05T19:14:25.535Z",
+  "generatedAt": "2026-10-05T19:24:41.512Z",
   "simulatedTodayDate": null,
   "effectiveTodayDate": "2026-10-06",
   "overallStatus": "PASS",
@@ -297,15 +297,13 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/10/05",
       "targetDate": "2026-10-05",
-      "capturedAt": "2026-10-05T19:14:23.542Z",
+      "capturedAt": "2026-10-05T19:24:29.715Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
-      "httpStatus": 200,
-      "contentType": "text/html",
-      "bytes": 10892,
-      "officialDateEvidence": null,
-      "rowCount": 0,
-      "note": "Auxiliary payload was readable but target-date evidence was not found; do not use it as point-in-time research evidence."
+      "httpStatus": 520,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 960,
+      "error": "HTTP 520"
     },
     {
       "source": "tpex-margin-sbl",
@@ -394,7 +392,7 @@
       "kind": "material-information",
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
       "targetDate": "2026-10-05",
-      "capturedAt": "2026-10-05T19:14:25.315Z",
+      "capturedAt": "2026-10-05T19:24:41.356Z",
       "status": "NOT_CAPTURED_RETROSPECTIVE",
       "simulatedTodayDate": null,
       "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
@@ -406,7 +404,7 @@
       "kind": "material-information",
       "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
       "targetDate": "2026-10-05",
-      "capturedAt": "2026-10-05T19:14:25.315Z",
+      "capturedAt": "2026-10-05T19:24:41.356Z",
       "status": "NOT_CAPTURED_RETROSPECTIVE",
       "simulatedTodayDate": null,
       "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
