@@ -22,16 +22,6 @@
       "rows": 37
     },
     {
-      "id": "twse-income-bd",
-      "market": "TWSE",
-      "kind": "income",
-      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_bd",
-      "summary": "上市公司綜合損益表(證券期貨業)",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-05T01:48:57.436Z",
-      "rows": 3
-    },
-    {
       "id": "twse-suspensions-L",
       "market": "TWSE",
       "kind": "suspensions",
@@ -40,6 +30,16 @@
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T09:53:08.229Z",
       "rows": 1
+    },
+    {
+      "id": "twse-income-bd",
+      "market": "TWSE",
+      "kind": "income",
+      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_bd",
+      "summary": "上市公司綜合損益表(證券期貨業)",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-05T01:48:57.436Z",
+      "rows": 3
     },
     {
       "id": "twse-income-ci",
@@ -407,10 +407,8 @@
       "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/exDailyQ?startDate=2026%2F04%2F08&endDate=2026%2F10%2F05&response=json",
       "summary": "上櫃股票除權除息計算結果表（歷史）",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-05T09:42:48.616Z",
-      "rows": null,
-      "refreshStatus": "VERIFY_FAILED",
-      "refreshError": "HTTP 520"
+      "capturedAt": "2026-10-05T09:56:43.710Z",
+      "rows": null
     },
     {
       "id": "tpex-ca-reduction-reference",
@@ -509,10 +507,8 @@
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_exright_prepost",
       "summary": "上櫃股票除權除息預告表",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-05T09:42:51.516Z",
-      "rows": 76,
-      "refreshStatus": "VERIFY_FAILED",
-      "refreshError": "HTTP 520"
+      "capturedAt": "2026-10-05T09:56:43.900Z",
+      "rows": 76
     },
     {
       "id": "mops-xbrl-bulk-2025Q2",
