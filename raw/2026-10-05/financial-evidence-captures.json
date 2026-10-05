@@ -22,16 +22,6 @@
       "rows": 37
     },
     {
-      "id": "twse-income-bd",
-      "market": "TWSE",
-      "kind": "income",
-      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_bd",
-      "summary": "上市公司綜合損益表(證券期貨業)",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-05T01:48:57.436Z",
-      "rows": 3
-    },
-    {
       "id": "twse-suspensions-L",
       "market": "TWSE",
       "kind": "suspensions",
@@ -40,6 +30,16 @@
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T10:00:09.904Z",
       "rows": 1
+    },
+    {
+      "id": "twse-income-bd",
+      "market": "TWSE",
+      "kind": "income",
+      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_bd",
+      "summary": "上市公司綜合損益表(證券期貨業)",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-05T01:48:57.436Z",
+      "rows": 3
     },
     {
       "id": "twse-income-ci",
@@ -242,11 +242,14 @@
       "rows": null
     },
     {
+      "id": "tpex-events-O",
       "market": "TPEx",
-      "kind": "discovery",
-      "url": "https://www.tpex.org.tw/openapi/swagger.json",
-      "status": "VERIFY_FAILED",
-      "error": "The operation was aborted due to timeout"
+      "kind": "events",
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
+      "summary": "上櫃公司每日重大訊息",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-05T10:00:41.899Z",
+      "rows": 2
     },
     {
       "id": "tpex-suspensions-O",
@@ -257,16 +260,6 @@
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T10:00:41.248Z",
       "rows": 1
-    },
-    {
-      "id": "tpex-events-O",
-      "market": "TPEx",
-      "kind": "events",
-      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
-      "summary": "上櫃公司每日重大訊息",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-05T10:00:41.899Z",
-      "rows": 2
     },
     {
       "id": "tpex-balance-basi",
@@ -389,6 +382,16 @@
       "rows": 1
     },
     {
+      "id": "tpex-governance-O",
+      "market": "TPEx",
+      "kind": "governance",
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap23_O",
+      "summary": "上櫃公司違反資訊申報、重大訊息及說明記者會規定專區",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-05T10:00:44.219Z",
+      "rows": 19
+    },
+    {
       "id": "tpex-ca-exrights-history",
       "market": "TPEx",
       "kind": "coverage",
@@ -404,37 +407,7 @@
       "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/exDailyQ?startDate=2026%2F04%2F08&endDate=2026%2F10%2F05&response=json",
       "summary": "上櫃股票除權除息計算結果表（歷史）",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-05T09:56:43.710Z",
-      "rows": null
-    },
-    {
-      "id": "tpex-governance-O",
-      "market": "TPEx",
-      "kind": "governance",
-      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap23_O",
-      "summary": "上櫃公司違反資訊申報、重大訊息及說明記者會規定專區",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-05T10:00:44.219Z",
-      "rows": 19
-    },
-    {
-      "id": "tpex-ca-parvalue-reference",
-      "market": "TPEx",
-      "kind": "coverage",
-      "coverageTags": [
-        "splitReductionConversion:parValueChange",
-        "historicalPriceAdjustment:parValueChange"
-      ],
-      "coverageOnly": true,
-      "allowEmpty": true,
-      "expectedDateRange": {
-        "start": "2026-04-08",
-        "end": "2026-11-09"
-      },
-      "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/pvChgRslt?startDate=2026%2F04%2F08&endDate=2026%2F11%2F09&response=json",
-      "summary": "上櫃變更股票面額恢復買賣參考價",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-05T10:00:44.422Z",
+      "capturedAt": "2026-10-05T10:04:44.623Z",
       "rows": null
     },
     {
@@ -455,6 +428,26 @@
       "summary": "上櫃減資恢復交易參考價",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T10:00:44.700Z",
+      "rows": null
+    },
+    {
+      "id": "tpex-ca-parvalue-reference",
+      "market": "TPEx",
+      "kind": "coverage",
+      "coverageTags": [
+        "splitReductionConversion:parValueChange",
+        "historicalPriceAdjustment:parValueChange"
+      ],
+      "coverageOnly": true,
+      "allowEmpty": true,
+      "expectedDateRange": {
+        "start": "2026-04-08",
+        "end": "2026-11-09"
+      },
+      "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/pvChgRslt?startDate=2026%2F04%2F08&endDate=2026%2F11%2F09&response=json",
+      "summary": "上櫃變更股票面額恢復買賣參考價",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-05T10:00:44.422Z",
       "rows": null
     },
     {
@@ -488,21 +481,6 @@
       "rows": 362
     },
     {
-      "id": "tpex-coverage-tpex-exright-prepost",
-      "market": "TPEx",
-      "kind": "coverage",
-      "coverageTags": [
-        "exRightsDividends"
-      ],
-      "coverageOnly": true,
-      "allowEmpty": true,
-      "url": "https://www.tpex.org.tw/openapi/v1/tpex_exright_prepost",
-      "summary": "上櫃股票除權除息預告表",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-05T09:56:43.900Z",
-      "rows": 76
-    },
-    {
       "id": "tpex-coverage-mopsfin-t187ap26-O",
       "market": "TPEx",
       "kind": "coverage",
@@ -518,6 +496,21 @@
       "rows": 1
     },
     {
+      "id": "tpex-coverage-tpex-exright-prepost",
+      "market": "TPEx",
+      "kind": "coverage",
+      "coverageTags": [
+        "exRightsDividends"
+      ],
+      "coverageOnly": true,
+      "allowEmpty": true,
+      "url": "https://www.tpex.org.tw/openapi/v1/tpex_exright_prepost",
+      "summary": "上櫃股票除權除息預告表",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-05T10:04:45.855Z",
+      "rows": 76
+    },
+    {
       "id": "mops-xbrl-bulk-2025Q2",
       "market": "ALL",
       "kind": "xbrl-bulk-diagnostic",
@@ -527,11 +520,7 @@
       "attempts": [
         {
           "url": "https://mops.twse.com.tw/nas/ifrs/2025/tifrs-2025Q2.zip",
-          "status": 404,
-          "contentType": "text/html;charset=utf-8",
-          "bytes": 431,
-          "zipMagic": false,
-          "preview": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 404 – Not Found</title><style type=\"text/css\">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;"
+          "error": "fetch failed"
         },
         {
           "url": "https://mops.twse.com.tw/server-java/FileDownLoad?step=9&fileName=tifrs-2025Q2.zip&filePath=/home/html/nas/ifrs/2025/",
@@ -551,7 +540,7 @@
         },
         {
           "url": "https://mopsov.twse.com.tw/server-java/FileDownLoad?step=9&fileName=tifrs-2025Q2.zip&filePath=/home/html/nas/ifrs/2025/",
-          "error": "The operation was aborted due to timeout"
+          "error": "fetch failed"
         },
         {
           "url": "https://mopsov.twse.com.tw/mops/server-java/FileDownLoad?step=9&fileName=tifrs-2025Q2.zip&filePath=/home/html/nas/ifrs/2025/",
