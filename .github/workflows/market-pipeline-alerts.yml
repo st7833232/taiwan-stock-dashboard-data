@@ -1,0 +1,210 @@
+name: Market pipeline alerts
+
+on:
+  workflow_run:
+    workflows:
+      - Capture official market data
+      - Validate dashboard data
+    types: [completed]
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+  issues: write
+
+jobs:
+  completed-alert:
+    if: ${{ github.event_name == 'workflow_run' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify failure or recovery
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const run = context.payload.workflow_run;
+            const { owner, repo } = context.repo;
+            const monitored = new Set(['Capture official market data', 'Validate dashboard data']);
+            if (!run || !monitored.has(run.name)) return;
+
+            const title = `[Market Pipeline Alert] ${run.name}`;
+            const mention = '@st7833232';
+            const bad = new Set(['failure', 'timed_out', 'action_required', 'startup_failure']);
+            const benign = new Set(['cancelled', 'skipped', 'neutral']);
+
+            async function findAlertIssue() {
+              const issues = await github.paginate(github.rest.issues.listForRepo, {
+                owner, repo, state: 'all', per_page: 100, sort: 'updated', direction: 'desc'
+              });
+              return issues.find(i => !i.pull_request && i.title === title) || null;
+            }
+
+            async function openOrComment(body) {
+              let issue = await findAlertIssue();
+              if (!issue) {
+                try {
+                  const created = await github.rest.issues.create({
+                    owner, repo, title, body, assignees: ['st7833232']
+                  });
+                  return created.data;
+                } catch (error) {
+                  if (error.status !== 422) throw error;
+                  const created = await github.rest.issues.create({ owner, repo, title, body });
+                  return created.data;
+                }
+              }
+              if (issue.state !== 'open') {
+                issue = (await github.rest.issues.update({
+                  owner, repo, issue_number: issue.number, state: 'open'
+                })).data;
+              }
+              await github.rest.issues.createComment({
+                owner, repo, issue_number: issue.number, body
+              });
+              return issue;
+            }
+
+            if (bad.has(run.conclusion)) {
+              const jobs = await github.paginate(github.rest.actions.listJobsForWorkflowRun, {
+                owner, repo, run_id: run.id, per_page: 100
+              });
+              const failed = [];
+              for (const job of jobs) {
+                for (const step of job.steps || []) {
+                  if (step.conclusion === 'failure' || step.conclusion === 'timed_out') {
+                    failed.push(`${job.name} → ${step.name}`);
+                  }
+                }
+              }
+              const body = [
+                `${mention} **GitHub Actions 即時異常**`,
+                '',
+                `- Workflow: **${run.name}**`,
+                `- Conclusion: **${run.conclusion}**`,
+                `- Run: [#${run.id}](${run.html_url})`,
+                `- Event: \`${run.event}\``,
+                `- Branch: \`${run.head_branch || 'n/a'}\``,
+                `- SHA: \`${run.head_sha}\``,
+                `- Failed step(s): ${failed.length ? failed.map(x => `\`${x}\``).join(', ') : '未能從 job metadata 定位，請直接開啟 run log'}`,
+                '',
+                `Alert-Key: failure:${run.id}`
+              ].join('\n');
+              await openOrComment(body);
+              core.notice(`Alerted ${run.name} failure #${run.id}`);
+              return;
+            }
+
+            if (run.conclusion === 'success') {
+              const issue = await findAlertIssue();
+              if (issue?.state === 'open') {
+                await github.rest.issues.createComment({
+                  owner, repo, issue_number: issue.number,
+                  body: [
+                    `${mention} ✅ **Workflow 已恢復**`,
+                    '',
+                    `- Workflow: **${run.name}**`,
+                    `- Successful run: [#${run.id}](${run.html_url})`,
+                    `- SHA: \`${run.head_sha}\``,
+                    '',
+                    `Alert-Key: recovery:${run.id}`
+                  ].join('\n')
+                });
+                await github.rest.issues.update({
+                  owner, repo, issue_number: issue.number, state: 'closed', state_reason: 'completed'
+                });
+              }
+              return;
+            }
+
+            if (benign.has(run.conclusion)) {
+              core.info(`Ignoring benign conclusion: ${run.conclusion}`);
+            }
+
+  stuck-watch:
+    if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Detect queued or stuck runs
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const mention = '@st7833232';
+            const monitored = new Set(['Capture official market data', 'Validate dashboard data']);
+            const now = Date.now();
+            const runs = await github.paginate(github.rest.actions.listWorkflowRunsForRepo, {
+              owner, repo, per_page: 100
+            });
+
+            const active = runs.filter(r =>
+              monitored.has(r.name) &&
+              r.head_branch === 'main' &&
+              (r.status === 'queued' || r.status === 'in_progress')
+            );
+
+            async function findIssue(title) {
+              const issues = await github.paginate(github.rest.issues.listForRepo, {
+                owner, repo, state: 'all', per_page: 100, sort: 'updated', direction: 'desc'
+              });
+              return issues.find(i => !i.pull_request && i.title === title) || null;
+            }
+
+            async function alertOnce(run, ageMinutes, threshold) {
+              const title = `[Market Pipeline Alert] ${run.name}`;
+              let issue = await findIssue(title);
+              const key = `Alert-Key: stuck:${run.id}`;
+
+              if (issue) {
+                const comments = await github.paginate(github.rest.issues.listComments, {
+                  owner, repo, issue_number: issue.number, per_page: 100
+                });
+                if ((issue.body || '').includes(key) || comments.some(c => (c.body || '').includes(key))) {
+                  return;
+                }
+                if (issue.state !== 'open') {
+                  issue = (await github.rest.issues.update({
+                    owner, repo, issue_number: issue.number, state: 'open'
+                  })).data;
+                }
+              }
+
+              const body = [
+                `${mention} ⚠️ **Actions 可能卡住**`,
+                '',
+                `- Workflow: **${run.name}**`,
+                `- Status: **${run.status}**`,
+                `- Run: [#${run.id}](${run.html_url})`,
+                `- 已持續：約 **${ageMinutes} 分鐘**（告警門檻 ${threshold} 分鐘）`,
+                `- Event: \`${run.event}\``,
+                `- SHA: \`${run.head_sha}\``,
+                '',
+                key
+              ].join('\n');
+
+              if (!issue) {
+                try {
+                  await github.rest.issues.create({
+                    owner, repo, title, body, assignees: ['st7833232']
+                  });
+                } catch (error) {
+                  if (error.status !== 422) throw error;
+                  await github.rest.issues.create({ owner, repo, title, body });
+                }
+              } else {
+                await github.rest.issues.createComment({
+                  owner, repo, issue_number: issue.number, body
+                });
+              }
+            }
+
+            for (const run of active) {
+              const ageMinutes = Math.floor((now - new Date(run.created_at).getTime()) / 60000);
+              const threshold = run.status === 'queued'
+                ? 10
+                : run.name === 'Validate dashboard data' ? 10 : 15;
+              if (ageMinutes >= threshold) {
+                await alertOnce(run, ageMinutes, threshold);
+              }
+            }
