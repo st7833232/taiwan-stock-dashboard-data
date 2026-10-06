@@ -33,6 +33,8 @@ test('evidence-complete names receive research rank even without a tradable setu
     verifiedEvidence:{eventRisk:true,corporateAction:true},
     etfProfile:{eligibleForBuy:false,historyReady:true,historicalRiskReady:true,liquidityGatePass:true,riskLimitsPass:true}
   }]};
+  const incomplete={...i,deepDive:i.deepDive.map(r=>({...r,verifiedEvidence:{eventRisk:false,corporateAction:true}}))};
+  assert.equal(evaluateUniverse(incomplete,config).rows[0].researchRank,null,'unadmitted evidence cannot rank');
   const [row]=evaluateUniverse(i,config).rows;
   assert.equal(row.researchEvidenceStatus,'COMPLETE');
   assert.equal(row.researchRank,1);assert.equal(row.researchPercentile,100);

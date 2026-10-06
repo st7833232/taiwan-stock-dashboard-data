@@ -29,6 +29,16 @@ on:
         required: false
         default: '0'
         type: string
+      recovery_evidence_signature:
+        description: Internal evidence progress fingerprint
+        required: false
+        default: ''
+        type: string
+      recovery_stagnant_count:
+        description: Internal consecutive unchanged evidence count
+        required: false
+        default: '0'
+        type: string
       recovery_error_signature:
         description: Internal normalized recoverable error signature
         required: false
@@ -78,6 +88,7 @@ jobs:
             sudo apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-chi-tra
           }
       - name: Test recovery and screening rules
+        id: tests
         run: node --test scripts/*.test.mjs
       - name: Autonomous capture, evidence, screening and atomic publication
         id: capture
@@ -93,6 +104,9 @@ jobs:
           RECOVERY_COUNT: ${{ inputs.recovery_count || inputs.financial_continuation || '0' }}
           RECOVERY_ERROR_SIGNATURE: ${{ inputs.recovery_error_signature || '' }}
           RECOVERY_ERROR_COUNT: ${{ inputs.recovery_error_count || '0' }}
+          TEST_OUTCOME: ${{ steps.tests.outcome }}
+          RECOVERY_EVIDENCE_SIGNATURE: ${{ inputs.recovery_evidence_signature || '' }}
+          RECOVERY_STAGNANT_COUNT: ${{ inputs.recovery_stagnant_count || '0' }}
           CAPTURE_OUTCOME: ${{ steps.capture.outcome }}
           TARGET_DATE: ${{ inputs.target_date }}
         run: node scripts/continue-pipeline-recovery.mjs

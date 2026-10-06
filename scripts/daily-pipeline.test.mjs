@@ -298,3 +298,17 @@ test('publication subprocess stderr reaches recovery and dispatches latest main 
   }
  }finally{globalThis.fetch=fetcher;for(const k of keys)if(env[k]===undefined)delete process.env[k];else process.env[k]=env[k];process.chdir(original);fs.rmSync(tmp,{recursive:true,force:true});}
 });
+
+test('a capped chain rolls over only for changed evidence or ready work, and breaks unchanged work',()=>{
+ const report={researchComplete:false,validation:{status:'PASS'},evidencePending:{fundamental:2}};
+ assert.deepEqual(recoveryDecision({report,status:{},count:12,progress:true}),{dispatch:true,reason:'NEW_EVIDENCE_CHAIN',nextCount:0});
+ assert.equal(recoveryDecision({report,status:{},count:12,progress:true,stagnant:3}).dispatch,false);
+ assert.equal(recoveryDecision({report,status:{error:'schema failed'},count:12,progress:true}).dispatch,false);
+ assert.equal(recoveryDecision({report,status:{},count:12,progress:false}).dispatch,false);
+});
+
+test('failed regression preconditions cannot dispatch from stale validated reports',async()=>{
+ const prior=process.env.TEST_OUTCOME,fetcher=globalThis.fetch;
+ try{process.env.TEST_OUTCOME='failure';globalThis.fetch=()=>{throw Error('must not dispatch');};await continuePipelineRecovery();}
+ finally{globalThis.fetch=fetcher;if(prior===undefined)delete process.env.TEST_OUTCOME;else process.env.TEST_OUTCOME=prior;}
+});

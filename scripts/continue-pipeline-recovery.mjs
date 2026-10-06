@@ -22,7 +22,7 @@ export function classifyRecoveryError(error) {
   };
 }
 
-export function recoveryDecision({report,status,count,max=12,collection,runId}) {
+export function recoveryDecision({report,status,count,max=12,collection,runId,progress=false,stagnant=0}) {
   if(report?.researchComplete===true&&report?.validation?.status==='PASS')return {dispatch:false,reason:'COMPLETE'};
   const error=String(status?.error??'').trim();
   if(error){
@@ -31,6 +31,8 @@ export function recoveryDecision({report,status,count,max=12,collection,runId}) 
     if(!Number.isInteger(count)||count<0||count>=max)return {dispatch:false,reason:'RECOVERY_LIMIT'};
     return {dispatch:true,reason:'RECOVERABLE_FAILURE'};
   }
+  if(stagnant>=3)return {dispatch:false,reason:collection?.rateLimited===true||collection?.ready===0&&collection?.remaining>0?'OFFICIAL_EVIDENCE_UNAVAILABLE':'UNCHANGED_EVIDENCE'};
+  if(count>=max&&progress&&report?.validation?.status==='PASS'&&Object.values(report?.evidencePending??{}).some(n=>n>0))return {dispatch:true,reason:'NEW_EVIDENCE_CHAIN',nextCount:0};
   if(shouldContinueFinancial(collection,report,runId,count))return {dispatch:true,reason:'FINANCIAL_WORK_READY'};
   if(!Number.isInteger(count)||count<0||count>=max)return {dispatch:false,reason:'RECOVERY_LIMIT'};
   const pending=report?.validation?.status==='PASS'&&report?.researchComplete!==true;
@@ -38,11 +40,17 @@ export function recoveryDecision({report,status,count,max=12,collection,runId}) 
   return {dispatch:false,reason:'NO_ACTIONABLE_STATE'};
 }
 export async function continuePipelineRecovery(){
+  if(process.env.TEST_OUTCOME==='failure'||process.env.CAPTURE_OUTCOME==='skipped'){console.log(JSON.stringify({selfHealing:'STOP',reason:'PRECONDITION_FAILED'}));return;}
   const target=resolvePipelineTarget(process.env.TARGET_DATE);
   if(!target)throw Error('Cannot resolve recovery target from manifest');
   const root=`raw/${target}`,report=read(`${root}/daily-report.json`),status=read(`${root}/pipeline-status.json`);
   const collection=read(`${root}/financial-pdf-collection.json`);
-  const count=Number(process.env.RECOVERY_COUNT||0),decision=recoveryDecision({report,status,count,collection,runId:process.env.GITHUB_RUN_ID});
+  // Fingerprint admitted/pending evidence, never attempt timestamps or publication revisions.
+  const pending=read(`${root}/evidence-pending.json`);
+  const fingerprint=crypto.createHash('sha256').update(JSON.stringify({target,pending:pending?.pending??report?.evidencePending,ranked:report?.incrementalScreening?.researchRanked})).digest('hex').slice(0,16);
+  const progress=fingerprint!==process.env.RECOVERY_EVIDENCE_SIGNATURE;
+  const stagnant=progress?0:Number(process.env.RECOVERY_STAGNANT_COUNT||0)+1;
+  const count=Number(process.env.RECOVERY_COUNT||0),decision=recoveryDecision({report,status,count,collection,runId:process.env.GITHUB_RUN_ID,progress,stagnant});
   const classified=classifyRecoveryError(status?.error);
   const previousSignature=String(process.env.RECOVERY_ERROR_SIGNATURE||'');
   const previousRepeat=Number(process.env.RECOVERY_ERROR_COUNT||0);
@@ -59,7 +67,9 @@ export async function continuePipelineRecovery(){
   if(!/^[\w.-]+\/[\w.-]+$/.test(repo??'')||!token)throw Error('Self-healing GitHub identity or token missing');
   const body={ref:'main',inputs:{
     target_date:target,
-    recovery_count:String(count+1),
+    recovery_count:String(decision.nextCount??count+1),
+    recovery_evidence_signature:fingerprint,
+    recovery_stagnant_count:String(stagnant),
     recovery_error_signature:decision.reason==='RECOVERABLE_FAILURE'?(classified.signature??''):'',
     recovery_error_count:decision.reason==='RECOVERABLE_FAILURE'?String(repeated):'0'
   }};
@@ -67,7 +77,7 @@ export async function continuePipelineRecovery(){
   for(let attempt=0;attempt<5;attempt++){
     try{
       const res=await fetch(`https://api.github.com/repos/${repo}/actions/workflows/capture-official-market-data.yml/dispatches`,{method:'POST',headers:{accept:'application/vnd.github+json',authorization:`Bearer ${token}`,'content-type':'application/json','x-github-api-version':'2022-11-28'},body:JSON.stringify(body),signal:AbortSignal.timeout(30000)});
-      if(res.ok){console.log(JSON.stringify({selfHealing:'DISPATCHED',reason:decision.reason,errorKind:classified.kind,errorSignature:classified.signature,errorRepeat:repeated,chain:count+1,target}));return;}
+      if(res.ok){console.log(JSON.stringify({selfHealing:'DISPATCHED',reason:decision.reason,errorKind:classified.kind,errorSignature:classified.signature,errorRepeat:repeated,chain:decision.nextCount??count+1,stagnant,target}));return;}
       last=Error(`Self-healing dispatch failed: HTTP_${res.status}`);
       if(![429,500,502,503,504].includes(res.status))throw last;
     }catch(e){last=e;if(attempt===4)break;}
