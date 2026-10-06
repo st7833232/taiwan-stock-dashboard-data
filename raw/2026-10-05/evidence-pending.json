@@ -2,7 +2,7 @@
   "targetDate": "2026-10-05",
   "researchComplete": false,
   "counts": {
-    "fundamental": 109,
+    "fundamental": 108,
     "tdcc": 6,
     "credit": 4,
     "history": 1
@@ -80,7 +80,6 @@
       "8046",
       "8150",
       "9105",
-      "9910",
       "1815",
       "3163",
       "3211",
@@ -1127,6 +1126,13 @@
       "code": "9904",
       "failures": [
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "9910",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
       ]
     },
     {
