@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {creditReady,fillPrice,inputFingerprint,evaluateUniverse,markPaper,accountRisk,planSignals} from './screen-market.mjs';
+import {rowEvidenceState} from './research-evidence.mjs';
 const config=JSON.parse(fs.readFileSync('strategy-config.json','utf8'));
 test('missing stock credit cannot be supplied by ETFs or by zero substitution',()=>{
   assert.equal(creditReady({marginShortLending:{marginBalance:null,shortBalance:0}},config),false);
@@ -24,6 +25,13 @@ test('capture retries with only timestamps changed deduplicate',()=>{
 test('every universe member is recorded; incomplete evidence gets no eligible rank',()=>{
   const i={targetDate:'2026-09-29',gateMatrix:{targetDate:'2026-09-29',overallStatus:'PASS'},universe:[{code:'3005',name:'神基',assetType:'STOCK',close:117},{code:'9999',assetType:'STOCK',close:5}],deepDive:[]};
   const r=evaluateUniverse(i,config);assert.equal(r.rows.length,2);assert.ok(r.rows.every(c=>c.decision==='NO_TRADE' && c.universeRank===null));
+});
+test('per-security evidence readiness does not wait for unrelated symbols',()=>{
+  const gates={history:true,institutional:true,credit:true,tdcc:true,fundamental:true,event:true,corporateAction:true};
+  const complete=rowEvidenceState({financialAssessment:{status:'PASS',verified:true,qualityPass:true,pending:[],failures:[]}}, {gates});
+  const pending=rowEvidenceState({}, {gates:{...gates,fundamental:false}});
+  assert.equal(complete.status,'COMPLETE');assert.deepEqual(complete.pending,[]);
+  assert.equal(pending.status,'PENDING');assert.deepEqual(pending.pending,['fundamental']);
 });
 test('same-day reanalysis never repeats a ledger entry',()=>{
   const p={asOf:'2026-09-29',cash:200000,initialCash:200000,positions:[],ledger:[],nextOrders:[]};
