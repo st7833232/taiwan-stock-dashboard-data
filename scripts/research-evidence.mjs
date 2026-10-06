@@ -49,20 +49,35 @@ export function tdccWeeks(rows,target) {
   }
   return [...groups.values()].filter(g=>Array.from({length:15},(_,i)=>i+1).every(l=>g.levels.has(l))).map(g=>({code:g.code,date:g.date,large400:[12,13,14,15].reduce((s,l)=>s+g.levels.get(l),0),retail50:[1,2,3,4,5,6,7,8].reduce((s,l)=>s+g.levels.get(l),0)}));
 }
+export const EVIDENCE_CHECKS=['history','institutional','credit','tdcc','fundamental','event','corporateAction'];
+
+export function rowEvidenceState(detail,row) {
+  const assessment=detail?.financialAssessment;
+  const fundamentalRejected=assessment?.status==='FAIL'&&assessment.verified===true&&assessment.qualityPass===false&&assessment.pending?.length===0&&assessment.failures?.length>0;
+  const h=detail?.historyAssessment;
+  const historyRejected=h?.verified===true&&h.qualityPass===false&&h.pending?.length===0&&h.failures?.includes('INSUFFICIENT_HISTORY_SINCE_LISTING');
+  const pending=EVIDENCE_CHECKS.filter(key=>row?.gates?.[key]!==true&&!(key==='fundamental'&&fundamentalRejected)&&!(key==='history'&&historyRejected));
+  return {
+    status:pending.length?'PENDING':'COMPLETE',
+    complete:pending.length===0,
+    pending,
+    fundamentalQualityRejected:fundamentalRejected?assessment.failures:[],
+    historyQualityRejected:historyRejected?h:null
+  };
+}
+
 export function evidenceSummary(input,result) {
-  // A rejected strategy is a finished decision. Missing evidence is unfinished research.
-  const checks=['history','institutional','credit','tdcc','fundamental','event','corporateAction'];
-  const detail=new Map(input.deepDive.map(r=>[r.code,r])),pending={},fundamentalQualityRejected=[],historyQualityRejected=[];
+  // A verified quality rejection is a finished per-security decision. Missing evidence is unfinished research.
+  const detail=new Map(input.deepDive.map(r=>[r.code,r])),pending={},fundamentalQualityRejected=[],historyQualityRejected=[],completeCodes=[],pendingCodes=[];
   for(const r of result.rows.filter(r=>detail.has(r.code))) {
-    const assessment=detail.get(r.code).financialAssessment;
-    const rejected=assessment?.status==='FAIL'&&assessment.verified===true&&assessment.qualityPass===false&&assessment.pending?.length===0&&assessment.failures?.length>0;
-    if(rejected)fundamentalQualityRejected.push({code:r.code,failures:assessment.failures});
-    const h=detail.get(r.code).historyAssessment,historyRejected=h?.verified===true&&h.qualityPass===false&&h.pending?.length===0&&h.failures?.includes('INSUFFICIENT_HISTORY_SINCE_LISTING');
-    if(historyRejected)historyQualityRejected.push({code:r.code,...h});
-    for(const key of checks)if(r.gates[key]!==true&&!(key==='fundamental'&&rejected)&&!(key==='history'&&historyRejected))(pending[key]??=[]).push(r.code);
+    const state=rowEvidenceState(detail.get(r.code),r);
+    if(state.fundamentalQualityRejected.length)fundamentalQualityRejected.push({code:r.code,failures:state.fundamentalQualityRejected});
+    if(state.historyQualityRejected)historyQualityRejected.push({code:r.code,...state.historyQualityRejected});
+    if(state.complete)completeCodes.push(r.code);else pendingCodes.push(r.code);
+    for(const key of state.pending)(pending[key]??=[]).push(r.code);
   }
   if(!result.regimeVerified)pending.marketRegime=['MARKET'];
-  return {researchComplete:Object.keys(pending).length===0,pending,counts:Object.fromEntries(Object.entries(pending).map(([key,codes])=>[key,codes.length])),fundamentalQualityRejected,historyQualityRejected};
+  return {researchComplete:Object.keys(pending).length===0,pending,counts:Object.fromEntries(Object.entries(pending).map(([key,codes])=>[key,codes.length])),fundamentalQualityRejected,historyQualityRejected,completeCodes,pendingCodes};
 }
 export function historyAssessment(row,archive,cache,required,target){
  const unverified=reason=>({status:'VERIFY_FAILED',verified:false,qualityPass:false,pending:[reason],failures:[]}),market=row.current?.market??row.market;
