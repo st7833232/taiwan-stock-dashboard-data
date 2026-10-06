@@ -22,9 +22,10 @@ test('daily close advances to new prices even when an older research checkpoint 
 
 test('partial checkpoint never stops automated evidence recovery',()=>{
   const config={version:'v2'},input={targetDate:'2026-09-29',universe:[],deepDive:[]};
-  const fixture={target:input.targetDate,config,input,manifest:{revision:'r',researchPath:'snapshots/r/research.json',selectionHistoryPath:'snapshots/r/selection-history.json',paperAccountPath:'snapshots/r/paper-account.json'},research:{researchDate:input.targetDate,strategyVersion:config.version,inputFingerprint:inputFingerprint(input,config),researchComplete:true,creditEvidenceComplete:true},paper:{asOf:input.targetDate},history:[{date:input.targetDate}],state:{targetDate:input.targetDate,gateStatus:'PASS',publicationComplete:true}};
+  const fixture={target:input.targetDate,config,input,manifest:{revision:'r',researchPath:'snapshots/r/research.json',selectionHistoryPath:'snapshots/r/selection-history.json',paperAccountPath:'snapshots/r/paper-account.json'},research:{researchDate:input.targetDate,strategyVersion:config.version,inputFingerprint:inputFingerprint(input,config),researchComplete:true,creditEvidenceComplete:true,incrementalScreening:{mode:'PER_SECURITY_INCREMENTAL',reScreenOnEvidenceAdmission:true}},paper:{asOf:input.targetDate},history:[{date:input.targetDate}],state:{targetDate:input.targetDate,gateStatus:'PASS',publicationComplete:true}};
   assert.equal(completionCurrent(fixture),true);
   assert.equal(completionCurrent({...fixture,research:{...fixture.research,researchComplete:false}}),false);
+  assert.equal(completionCurrent({...fixture,research:{...fixture.research,incrementalScreening:undefined}}),false);
   assert.equal(completionCurrent({...fixture,config:{version:'v3'}}),false);
   assert.equal(completionCurrent({...fixture,input:{...input,universe:[{code:'3005'}]}}),false);
 });
