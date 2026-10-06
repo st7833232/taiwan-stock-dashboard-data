@@ -9,7 +9,9 @@ export function normalizeFinancial(row,kind,source) {
   const metrics=kind==='income'?{
     revenue:value(row,['營業收入','收入','收益']),grossProfit:value(row,['營業毛利（毛損）淨額','營業毛利（毛損）']),operatingProfit:value(row,['營業利益（損失）','營業利益']),netProfit:value(row,['淨利（淨損）歸屬於母公司業主','淨利（損）歸屬於母公司業主','本期淨利（淨損）','本期稅後淨利（淨損）']),eps:value(row,['基本每股盈餘（元）'])
   }:{assets:value(row,['資產總計','資產總額']),liabilities:value(row,['負債總計','負債總額']),equity:value(row,['權益總計','權益總額']),currentAssets:value(row,['流動資產']),currentLiabilities:value(row,['流動負債'])};
-  return {code,periodEnd,quarter,kind,basis:kind==='income'?'YEAR_TO_DATE':'PERIOD_END',extractDate:officialDate(row['出表日期']??row.Date),source,profitBasis:kind==='income'?(value(row,['淨利（淨損）歸屬於母公司業主','淨利（損）歸屬於母公司業主'])!==null?'PARENT':'TOTAL'):null,metrics};
+  // These official summary formats expose income/expenses or interest income, not the generic gross/operating-profit fields.
+  const officialFormatInsufficiency=kind==='income'&&/^(?:https:\/\/openapi\.twse\.com\.tw\/v1\/opendata\/t187ap06_L_|https:\/\/www\.tpex\.org\.tw\/openapi\/v1\/mopsfin_t187ap06_O_)(?:fh|basi|bd|ins|mim)$/.test(source)&&officialDate(row['出表日期']??row.Date)&&(['營業收入','收入','收益','利息淨收益','淨收益'].some(k=>Object.hasOwn(row,k)))&&!['營業毛利（毛損）淨額','營業毛利（毛損）'].some(k=>Object.hasOwn(row,k))&&metrics.grossProfit===null?{source,extractDate:officialDate(row['出表日期']??row.Date),code,periodEnd,missingMetrics:['grossProfit',...(metrics.operatingProfit===null?['operatingProfit']:[])],observedFields:Object.keys(row)}:null;
+  return {code,periodEnd,quarter,kind,officialFormatInsufficiency,basis:kind==='income'?'YEAR_TO_DATE':'PERIOD_END',extractDate:officialDate(row['出表日期']??row.Date),source,profitBasis:kind==='income'?(value(row,['淨利（淨損）歸屬於母公司業主','淨利（損）歸屬於母公司業主'])!==null?'PARENT':'TOTAL'):null,metrics};
 }
 export function financialAssessment(current,comparative,policy,{governanceVerified=false,negativeGovernance=false}={}) {
   const income=current?.income,balance=current?.balance,prior=comparative?.income,pending=[];
@@ -30,6 +32,8 @@ export function financialAssessment(current,comparative,policy,{governanceVerifi
   if(Number.isFinite(metrics.revenueYoY)&&metrics.revenueYoY<policy.minRevenueYoY)failures.push('REVENUE_DETERIORATION');
   if(Number.isFinite(metrics.netProfitYoY)&&metrics.netProfitYoY<policy.minNetProfitYoY)failures.push('PROFIT_DETERIORATION');
   if(negativeGovernance)failures.push('OFFICIAL_GOVERNANCE_WARNING');
+  const insufficient=income?.officialFormatInsufficiency&&income.code===balance?.code&&income.periodEnd===balance?.periodEnd&&balance.extractDate&&(!policy.requireGovernanceReview||governanceVerified)&&['netProfit','eps','assets','liabilities','equity'].every(k=>Number.isFinite(metrics[k]));
+  if(insufficient)return {status:'VERIFIED_INSUFFICIENT',verified:true,qualityPass:false,pending:[],unresolvedRequirements:pending,failures:[...failures,'OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE'],metrics,periodEnd:income.periodEnd,basis:income.basis,sources:[income.source,balance.source],availabilityEvidence:income.officialFormatInsufficiency};
   return {status:pending.length?'UNVERIFIED':failures.length?'FAIL':'PASS',verified:pending.length===0,qualityPass:pending.length===0&&failures.length===0,pending,failures,metrics,periodEnd:income?.periodEnd??null,basis:income?.basis??null,sources:[income?.source,balance?.source,prior?.source].filter(Boolean)};
 }
 export function normalizeOfficialEvent(row,source) {

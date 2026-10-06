@@ -53,7 +53,7 @@ export const EVIDENCE_CHECKS=['history','institutional','credit','tdcc','fundame
 
 export function rowEvidenceState(detail,row) {
   const assessment=detail?.financialAssessment;
-  const fundamentalRejected=assessment?.status==='FAIL'&&assessment.verified===true&&assessment.qualityPass===false&&assessment.pending?.length===0&&assessment.failures?.length>0;
+  const fundamentalRejected=['FAIL','VERIFIED_INSUFFICIENT'].includes(assessment?.status)&&assessment.verified===true&&assessment.qualityPass===false&&assessment.pending?.length===0&&assessment.failures?.length>0;
   const h=detail?.historyAssessment;
   const historyRejected=h?.verified===true&&h.qualityPass===false&&h.pending?.length===0&&h.failures?.includes('INSUFFICIENT_HISTORY_SINCE_LISTING');
   const pending=EVIDENCE_CHECKS.filter(key=>row?.gates?.[key]!==true&&!(key==='fundamental'&&fundamentalRejected)&&!(key==='history'&&historyRejected));

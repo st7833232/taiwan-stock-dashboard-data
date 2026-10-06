@@ -14,3 +14,9 @@ test('late historical evidence is visible without granting point-in-time trade p
  const text=auditedReasonDescriptions(['TDCC_PERSISTENCE_NOT_VERIFIED','FUNDAMENTAL_QUALITY_NOT_VERIFIED'],a,()=>['fallback']);
  assert.match(text[0],/當時可得性未驗證/);assert.match(text[1],/已有2026-08營收/);
 });
+
+test('verified insufficient format is visible without granting financial quality',()=>{
+ const row={code:'6016',assetType:'STOCK',financialAssessment:{status:'VERIFIED_INSUFFICIENT',verified:true,qualityPass:false}};
+ const audit=buildEvidenceAudit(row,{fundamental:false},'2026-10-05');
+ assert.equal(audit.fundamental.status,'VERIFIED_INSUFFICIENT');assert.equal(audit.fundamental.qualityVerified,false);
+});

@@ -6,7 +6,7 @@ import path from 'node:path';
 import {normalizeFinancial,financialAssessment,normalizeOfficialEvent,eventAssessment,corporateActionAssessment} from './assess-research-evidence.mjs';
 import {availableWeeks,parseTdccHistory} from './collect-tdcc-history.mjs';
 import {captureHistoricalComparativeIncome,shouldReuseTargetArchive,parseMopsHistoricalIncomeHtml,parseMopsCompanyHistoricalIncomeHtml} from './collect-research-evidence.mjs';
-import {enrich,evidenceCoverage,reviewedFinancialReport} from './research-evidence.mjs';
+import {enrich,evidenceCoverage,reviewedFinancialReport,evidenceSummary} from './research-evidence.mjs';
 
 const policy={requirePriorYearSameQuarter:true,requireGovernanceReview:true,requirePositiveProfit:true,minRevenueYoY:0,minNetProfitYoY:0};
 const income=year=>normalizeFinancial({'公司代號':'3005 ','年度':year,'季別':'2','出表日期':'1150930','營業收入':'200','營業毛利（毛損）':'60','營業利益（損失）':'30','淨利（淨損）歸屬於母公司業主':'20','基本每股盈餘（元）':'4'},'income','https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci');
@@ -169,4 +169,27 @@ test('official balance total aliases preserve missing profit fields instead of i
  assert.equal(b.metrics.assets,500);assert.equal(b.metrics.liabilities,200);
  const i=normalizeFinancial({'公司代號':'2855','年度':115,'季別':2,'收益':'100','營業利益':'10'},'income','official');
  assert.equal(i.metrics.revenue,100);assert.equal(i.metrics.operatingProfit,10);assert.equal(i.metrics.grossProfit,null);
+});
+
+test('dated official financial formats lacking the required profit metrics finish as verified insufficient and never pass BUY',()=>{
+ const i=normalizeFinancial({'公司代號':'2207','年度':115,'季別':2,'出表日期':'1151005','收入':'160882752','支出':'143660885','本期淨利（淨損）':'13759770','淨利（淨損）歸屬於母公司業主':'12014548','基本每股盈餘（元）':'21.57'},'income','https://openapi.twse.com.tw/v1/opendata/t187ap06_L_mim');
+ const b=normalizeFinancial({'公司代號':'2207','年度':115,'季別':2,'出表日期':'1151005','資產總計':'554762767','負債總計':'430396951','權益總計':'124365816'},'balance','https://openapi.twse.com.tw/v1/opendata/t187ap07_L_mim');
+ const a=financialAssessment({income:i,balance:b},null,policy,{governanceVerified:true});
+ assert.equal(a.status,'VERIFIED_INSUFFICIENT');assert.equal(a.qualityPass,false);assert.equal(a.metrics.grossProfit,null);assert.deepEqual(a.pending,[]);
+ assert.ok(a.unresolvedRequirements.includes('COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED'));
+ assert.ok(a.failures.includes('OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE'));
+ const {counts}=evidenceSummary({deepDive:[{code:'2207',financialAssessment:a}]},{regimeVerified:true,rows:[{code:'2207',gates:{history:true,institutional:true,credit:true,tdcc:true,fundamental:false,event:true,corporateAction:true}}]});
+ assert.deepEqual(counts,{});
+ for(const current of [{income:{...i,officialFormatInsufficiency:null},balance:b},{income:i,balance:{...b,periodEnd:'2025-06-30'}},{income:i,balance:null}])assert.equal(financialAssessment(current,null,policy).verified,false);
+ const generic=normalizeFinancial({...i,'公司代號':'2207','年度':115,'季別':2,'出表日期':'1151005','收入':'1','支出':'1'},'income','https://example.com/t187ap06_L_mim');
+ assert.equal(generic.officialFormatInsufficiency,null);
+});
+
+test('TPEx broker summaries preserve known operating profit and never manufacture gross profit',()=>{
+ const i=normalizeFinancial({SecuritiesCompanyCode:'6016',Year:115,Season:2,Date:'1151005','收益':'200','營業利益':'50','本期淨利（淨損）':'40','基本每股盈餘（元）':'2'},'income','https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_bd');
+ const b=normalizeFinancial({SecuritiesCompanyCode:'6016',Year:115,Season:2,Date:'1151005','資產總計':'500','負債總計':'200','權益總計':'300'},'balance','https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_bd');
+ assert.equal(financialAssessment({income:i,balance:b},null,policy,{governanceVerified:true}).status,'VERIFIED_INSUFFICIENT');
+ assert.deepEqual(i.officialFormatInsufficiency.missingMetrics,['grossProfit']);assert.equal(i.metrics.operatingProfit,50);
+ const blank=normalizeFinancial({'公司代號':'6016','年度':115,'季別':2,'出表日期':'1151005','收益':'200','營業毛利（毛損）':''},'income','https://openapi.twse.com.tw/v1/opendata/t187ap06_L_bd');
+ assert.equal(blank.officialFormatInsufficiency,null,'a blank reported metric is a verification gap, not proven schema absence');
 });

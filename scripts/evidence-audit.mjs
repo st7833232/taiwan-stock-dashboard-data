@@ -1,5 +1,5 @@
 // Supplementary historical queries never grant a strategy gate or change fills.
-export const EVIDENCE_AUDIT_VERSION = 1;
+export const EVIDENCE_AUDIT_VERSION = 2;
 export function buildEvidenceAudit(row, gates, targetDate, supplement = null) {
   const etf = row?.assetType === 'ETF', latest = row?.tdccEvidence?.latest;
   const records = (supplement?.records || []).filter(r => r.code === row?.code && r.status === 'VERIFIED_HISTORICAL_PAYLOAD' && r.dataDate <= targetDate && r.decisionEligible === false);
@@ -17,7 +17,7 @@ export function buildEvidenceAudit(row, gates, targetDate, supplement = null) {
   return {
     schemaVersion:EVIDENCE_AUDIT_VERSION,targetDate,
     tdcc:{status:etf?'NOT_REQUIRED':gates.tdcc?'VERIFIED':Object.keys(comparisons).length===2?'HISTORICAL_QUERIES_VERIFIED_ASOF_PENDING':'HISTORY_INCOMPLETE',asOfEvidence:row?.tdccEvidence || null,historicalComparisons:comparisons,decisionEligible:gates.tdcc===true,publicationTimingVerified:gates.tdcc===true},
-    fundamental:{status:etf?'NOT_REQUIRED':gates.fundamental?'VERIFIED':'QUALITY_ASSESSMENT_PENDING',monthlyRevenue:revenue,quarterlyReportCaptured:Boolean(row?.financialEvidence),assessment:row?.financialAssessment??null,qualityVerified:gates.fundamental===true},
+    fundamental:{status:etf?'NOT_REQUIRED':gates.fundamental?'VERIFIED':row?.financialAssessment?.status==='VERIFIED_INSUFFICIENT'?'VERIFIED_INSUFFICIENT':'QUALITY_ASSESSMENT_PENDING',monthlyRevenue:revenue,quarterlyReportCaptured:Boolean(row?.financialEvidence),assessment:row?.financialAssessment??null,qualityVerified:gates.fundamental===true},
     eventRisk:{status:gates.event?'VERIFIED':'UNVERIFIED',assessment:row?.eventAssessment??null,historicalQuery:supplement?.eventQuery || null},
     corporateAction:{status:gates.corporateAction?'VERIFIED':'UNVERIFIED',assessment:row?.corporateActionAssessment??null,partialHistoricalQuery:action?{status:action.status,source:action.source,actualDate:action.actualDate,scope:action.scope,otherCorporateActionsVerified:action.otherCorporateActionsVerified}:null},
   };

@@ -312,3 +312,8 @@ test('failed regression preconditions cannot dispatch from stale validated repor
  try{process.env.TEST_OUTCOME='failure';globalThis.fetch=()=>{throw Error('must not dispatch');};await continuePipelineRecovery();}
  finally{globalThis.fetch=fetcher;if(prior===undefined)delete process.env.TEST_OUTCOME;else process.env.TEST_OUTCOME=prior;}
 });
+
+test('a retry cooldown or query limit is never proof that official evidence does not exist',()=>{
+ const report={researchComplete:false,validation:{status:'PASS'}};
+ for(const collection of [{ready:0,remaining:155},{rateLimited:true,remaining:155}])assert.deepEqual(recoveryDecision({report,status:{},count:3,stagnant:3,collection}),{dispatch:false,reason:'EVIDENCE_RETRY_COOLDOWN'});
+});

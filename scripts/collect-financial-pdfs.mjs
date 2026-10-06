@@ -9,7 +9,7 @@ const read=p=>{try{return JSON.parse(fs.readFileSync(p));}catch{return null;}};
 const save=(p,x)=>fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n');
 export function financialQueue(rows,state,now,admitted){
  const reparsed=r=>state[r.key]?.parserVersion!==2&&/PDF_PERIOD|FILING_VERSION|PROFIT_BASIS/.test(state[r.key]?.reason??'')||state[r.key]?.filingParserVersion!==3&&/FILING_VERSION/.test(state[r.key]?.reason??'');
- return rows.filter(r=>!admitted.has(r.key)&&(!state[r.key]||state[r.key].parserVersion!==2||reparsed(r)||r.archived&&(state[r.key].textParserVersion??0)<19||state[r.key].status==='VERIFIED'||Date.parse(state[r.key].nextRetryAt)<=now.getTime())).sort((a,b)=>Number(b.archived===true)-Number(a.archived===true)||Number(reparsed(b))-Number(reparsed(a))||(state[a.key]?.checkedAt??'').localeCompare(state[b.key]?.checkedAt??''));
+ return rows.filter(r=>!admitted.has(r.key)&&(!state[r.key]||state[r.key].parserVersion!==2||reparsed(r)||r.archived&&(state[r.key].textParserVersion??0)<20||state[r.key].status==='VERIFIED'||Date.parse(state[r.key].nextRetryAt)<=now.getTime())).sort((a,b)=>Number(b.archived===true)-Number(a.archived===true)||Number(reparsed(b))-Number(reparsed(a))||(state[a.key]?.checkedAt??'').localeCompare(state[b.key]?.checkedAt??''));
 }
 export async function filingIndex(source,request){
  let html=new TextDecoder('big5').decode(await request(source));
@@ -88,10 +88,19 @@ export function verifyPdfText(pages,row,{filingYear=row['年度']}={}){
  if(![row['年度'],row['年度']+1].includes(filingYear))throw Error('PDF_FILING_PERIOD_UNVERIFIED');
  const end=row['季別']*3,endDay=new Date(Date.UTC(row['年度'],end,0)).getUTCDate();
  for(let i=0;i<pages.length;i++){
-  if(!pages[i].replace(/\s/g,'').includes('綜合損益表'))continue;
+  const codedIncome=/^\s*4000\s*\|?\s*營業收入/m.test(pages[i])&&/^\s*8200\s*\|?\s*本期淨利/m.test(pages[i])&&/^\s*8600\s*\|?\s*淨利歸屬於/m.test(pages[i])&&/^\s*8610\s/m.test(pages[i]);
+  if(!pages[i].replace(/\s/g,'').includes('綜合損益表')&&!codedIncome)continue;
   const page=pages[i]+(pages[i+1]??''),c=page.replace(/\s/g,'');
   const year=new RegExp(`${filingYear}年(?:1月|${(row['季別']-1)*3+1}月)`).test(c)?filingYear:filingYear-1911;
-  if(!c.includes('綜合損益表')||!/(新台幣|新臺幣)(千|仟)元/.test(c)||!c.includes(String(year))||!c.includes(String(year-1))||!new RegExp(`(1月至${end}月|1月1日至${end}月${endDay}日)`).test(c))continue;
+  let splitHeader=false;
+  const splitFour=page.split('\n').some((line,n,lines)=>{
+   const starts=[...line.replace(/\s/g,'').matchAll(new RegExp(`(${year}|${year-1})年(\\d{1,2})月1日至`,'g'))].map(m=>`${m[1]}|${Number(m[2])}`);
+   if(starts.length===4&&!new RegExp(`日至${end}月${endDay}日`).test(line.replace(/\s/g,'')))splitHeader=true;
+   const ends=[...(lines[n+1]??'').replace(/\s/g,'').matchAll(/(\d{1,2})月(\d{1,2})日/g)];
+   return starts.join(',')===`${year}|${(row['季別']-1)*3+1},${year-1}|${(row['季別']-1)*3+1},${year}|1,${year-1}|1`&&ends.length===4&&ends.every(m=>Number(m[1])===end&&Number(m[2])===endDay);
+  });
+  if(splitHeader&&!splitFour)continue;
+  if(!/(新台幣|新臺幣)(千|仟)元/.test(c)||!c.includes(String(year))||!c.includes(String(year-1))||!splitFour&&!new RegExp(`(1月至${end}月|1月1日至${end}月${endDay}日)`).test(c))continue;
   const quarterStart=(row['季別']-1)*3+1,headers=[...c.matchAll(new RegExp(`(${year}|${year-1})年(\\d{1,2}月|第${row['季別']}季)`,'g'))].map(m=>`${m[1]}|${m[2]}`);
   const expected=[`${year}|${quarterStart}月`,`${year-1}|${quarterStart}月`,`${year}|1月`,`${year-1}|1月`];
   const headerLines=page.split(/^\s*[4-9]\d{3}\s/m)[0].split('\n');
@@ -99,7 +108,7 @@ export function verifyPdfText(pages,row,{filingYear=row['年度']}={}){
    const points=headerLines.slice(n,n+2).flatMap(line=>[...line.matchAll(new RegExp(`(${year}|${year-1})\\s*年\\s*(\\d{1,2})\\s*月(?:\\s*\\d{1,2}\\s*日)?\\s*至\\s*${end}\\s*月`,'g'))].map(m=>({x:m.index,value:`${m[1]}|${Number(m[2])}月`}))).sort((a,b)=>a.x-b.x);
    return points.length===4&&expected.every((v,j)=>points[j].value===v&&(j===0||points[j].x>points[j-1].x));
   });
-  const four=spatialFour||headers.some((_,n)=>expected.every((v,j)=>headers[n+j]===v||j<2&&headers[n+j]===`${j===0?year:year-1}|第${row['季別']}季`)),two=headers.length===2&&headers[0]===`${year}|1月`&&headers[1]===`${year-1}|1月`;
+  const four=splitFour||spatialFour||headers.some((_,n)=>expected.every((v,j)=>headers[n+j]===v||j<2&&headers[n+j]===`${j===0?year:year-1}|第${row['季別']}季`)),two=headers.length===2&&headers[0]===`${year}|1月`&&headers[1]===`${year-1}|1月`;
   if(!four&&!two)continue;
   const columns=four?4:2,cumulativeIndex=(four?2:0)+(filingYear-row['年度']);
   const amount=code=>{
@@ -145,17 +154,17 @@ function verifyPdfWithOcr(pdfText,path,row,deadline,filingYear=row['年度']){
  const native=pdfText.split('\f'),count=Number(execFileSync('pdfinfo',[path+'.pdf'],{encoding:'utf8'}).match(/^Pages:\s+(\d+)/m)?.[1]);
  if(!Number.isInteger(count)||count<1)throw Error('PDF_PAGE_COUNT_UNVERIFIED');
  const order=pdfReviewPages(native,count);
- const texts=Array.from({length:count},(_,i)=>{try{return fs.readFileSync(`${path}.ocr-${i+1}.txt`,'utf8');}catch{return '';}});
+ const texts=Array.from({length:count},(_,i)=>{try{return fs.readFileSync(`${path}.ocr-300-psm4-${i+1}.txt`,'utf8');}catch{return '';}});
  try{return verifyPdfText(texts,row,{filingYear});}catch{}
  // ponytail: spend at most 90 seconds per PDF; cached pages let later runs resume the remaining pages.
  const stop=Math.min(deadline,Date.now()+90000);
  for(const page of order){
   if(texts[page-1])continue;
   if(Date.now()>=stop)throw Error('PDF_OCR_REVIEW_PENDING');
-  const output=`${path}.ocr-${page}`;
+  const output=`${path}.ocr-300-psm4-${page}`;
   try{
-   execFileSync('pdftoppm',['-f',String(page),'-singlefile','-r','180','-png',path+'.pdf',output],{timeout:20000,stdio:'ignore'});
-   const text=execFileSync('tesseract',[output+'.png','stdout','-l','chi_tra+eng','--psm','6'],{encoding:'utf8',timeout:20000,stdio:['ignore','pipe','ignore']});
+   execFileSync('pdftoppm',['-f',String(page),'-singlefile','-r','300','-png',path+'.pdf',output],{timeout:20000,stdio:'ignore'});
+   const text=execFileSync('tesseract',[output+'.png','stdout','-l','chi_tra+eng','--psm','4'],{encoding:'utf8',timeout:20000,stdio:['ignore','pipe','ignore']});
    fs.writeFileSync(output+'.txt',text);texts[page-1]=text;
    try{return verifyPdfText(texts,row,{filingYear});}catch{}
   }catch{}finally{fs.rmSync(output+'.png',{force:true});}
@@ -211,7 +220,7 @@ export async function collectFinancialPdfs(target,{onVerified}={}){
    state[r.key]={status:'VERIFIED',parserVersion:2,checkedDate:today,checkedAt:new Date().toISOString(),...(state[r.key]?.status==='UNVERIFIED'?{lastUnverifiedAttempt:state[r.key]}:{})};admitted.add(r.key);
   }catch(e){
    const attempts=state[r.key]?.checkedDate===today?(state[r.key]?.attempts??0)+1:1,transient=/fetch failed|timeout|aborted|HTTP_(429|5\d\d)|PDF_OCR_REVIEW_PENDING|FINANCIAL_COLLECTION_BUDGET_EXHAUSTED/i.test(e.message);
-   state[r.key]={status:'UNVERIFIED',parserVersion:2,filingParserVersion:3,textParserVersion:19,filingFallback,stage,reason:e.message,attempts,checkedDate:today,checkedAt:new Date().toISOString(),nextRetryAt:new Date(Date.now()+(transient?Math.min(300000*2**(attempts-1),86400000):86400000)).toISOString()};
+   state[r.key]={status:'UNVERIFIED',parserVersion:2,filingParserVersion:3,textParserVersion:20,filingFallback,stage,reason:e.message,attempts,checkedDate:today,checkedAt:new Date().toISOString(),nextRetryAt:new Date(Date.now()+(transient?Math.min(300000*2**(attempts-1),86400000):86400000)).toISOString()};
    if(e.message==='OFFICIAL_RATE_LIMITED'){rateLimited=true;save('history/financial-pdf-collection.json',state);break;}
    if(e.message==='FINANCIAL_COLLECTION_BUDGET_EXHAUSTED'){save('history/financial-pdf-collection.json',state);break;}
   }
@@ -221,6 +230,6 @@ export async function collectFinancialPdfs(target,{onVerified}={}){
   await new Promise(resolve=>setTimeout(resolve,requestSpacingMs));
  }
  admit();const ready=financialQueue(rows,state,new Date(),admitted);
- save(`${root}/financial-pdf-collection.json`,{targetDate:target,results:state,remaining:rows.filter(r=>!admitted.has(r.key)).length,ready:ready.length,continuationNeeded:!rateLimited&&ready.length>0,rateLimited,missingCurrentPeriodCodes:stocks.filter(r=>!periods.has(r.code)).map(r=>r.code)});
+ save(`${root}/financial-pdf-collection.json`,{targetDate:target,results:state,ocrProgress:{parserVersion:20,pages:fs.readdirSync('history/financial-reports').filter(name=>/\.ocr-300-psm4-\d+\.txt$/.test(name)).length},remaining:rows.filter(r=>!admitted.has(r.key)).length,ready:ready.length,continuationNeeded:!rateLimited&&ready.length>0,rateLimited,missingCurrentPeriodCodes:stocks.filter(r=>!periods.has(r.code)).map(r=>r.code)});
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)await collectFinancialPdfs(process.env.TARGET_DATE,{onVerified:process.env.RESCREEN_ON_ADMISSION==='1'?()=>{for(const script of ['research-evidence','check-daily-publication','screen-market'])execFileSync(process.execPath,[`scripts/${script}.mjs`],{stdio:'inherit',timeout:120000});}:undefined});

@@ -31,7 +31,7 @@ export function recoveryDecision({report,status,count,max=12,collection,runId,pr
     if(!Number.isInteger(count)||count<0||count>=max)return {dispatch:false,reason:'RECOVERY_LIMIT'};
     return {dispatch:true,reason:'RECOVERABLE_FAILURE'};
   }
-  if(stagnant>=3)return {dispatch:false,reason:collection?.rateLimited===true||collection?.ready===0&&collection?.remaining>0?'OFFICIAL_EVIDENCE_UNAVAILABLE':'UNCHANGED_EVIDENCE'};
+  if(stagnant>=3)return {dispatch:false,reason:collection?.rateLimited===true||collection?.ready===0&&collection?.remaining>0?'EVIDENCE_RETRY_COOLDOWN':'UNCHANGED_EVIDENCE'};
   if(count>=max&&progress&&report?.validation?.status==='PASS'&&Object.values(report?.evidencePending??{}).some(n=>n>0))return {dispatch:true,reason:'NEW_EVIDENCE_CHAIN',nextCount:0};
   if(shouldContinueFinancial(collection,report,runId,count))return {dispatch:true,reason:'FINANCIAL_WORK_READY'};
   if(!Number.isInteger(count)||count<0||count>=max)return {dispatch:false,reason:'RECOVERY_LIMIT'};
@@ -47,7 +47,7 @@ export async function continuePipelineRecovery(){
   const collection=read(`${root}/financial-pdf-collection.json`);
   // Fingerprint admitted/pending evidence, never attempt timestamps or publication revisions.
   const pending=read(`${root}/evidence-pending.json`);
-  const fingerprint=crypto.createHash('sha256').update(JSON.stringify({target,pending:pending?.pending??report?.evidencePending,ranked:report?.incrementalScreening?.researchRanked})).digest('hex').slice(0,16);
+  const fingerprint=crypto.createHash('sha256').update(JSON.stringify({target,pending:pending?.pending??report?.evidencePending,ranked:report?.incrementalScreening?.researchRanked,ocrProgress:collection?.ocrProgress})).digest('hex').slice(0,16);
   const progress=fingerprint!==process.env.RECOVERY_EVIDENCE_SIGNATURE;
   const stagnant=progress?0:Number(process.env.RECOVERY_STAGNANT_COUNT||0)+1;
   const count=Number(process.env.RECOVERY_COUNT||0),decision=recoveryDecision({report,status,count,collection,runId:process.env.GITHUB_RUN_ID,progress,stagnant});
