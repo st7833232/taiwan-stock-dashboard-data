@@ -16,8 +16,8 @@ export function classifyRecoveryError(error) {
   const recoverable=/HTTP[_ ](?:429|5\d\d)|timeout|timed out|ECONNRESET|ETIMEDOUT|EAI_AGAIN|MAIN_HEAD_CHANGED|fetch failed|socket hang up|network/i.test(message);
   const deterministic=/VALIDATION FAILED|validate-[\w-]+\.mjs|AssertionError|SyntaxError|ReferenceError|TypeError|logic invariant|ERR_ASSERTION|schema|contract/i.test(message);
   return {
-    kind:recoverable?'TRANSIENT':deterministic?'CODE_OR_VALIDATION':'UNKNOWN_FATAL',
-    recoverable,
+    kind:deterministic?'CODE_OR_VALIDATION':recoverable?'TRANSIENT':'UNKNOWN_FATAL',
+    recoverable:recoverable&&!deterministic,
     signature:crypto.createHash('sha256').update(normalized).digest('hex').slice(0,16)
   };
 }

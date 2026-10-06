@@ -34,7 +34,7 @@ export function runPipeline(target=resolveCaptureTargetDate(),{execute=execFileS
   if(!initialPaper)throw Error('Existing paper account is unreadable');
   const run=(script,{retry=false,pending=false,rescreen=false}={})=>{
     let error;
-    for(let attempt=0;attempt<(retry?2:1);attempt++)try{return execute(process.execPath,[script],{stdio:'inherit',timeout:12*60*1000,env:{...process.env,TARGET_DATE:process.env.TARGET_DATE,...(pending?{VALIDATE_PENDING:'1'}:{}),...(rescreen?{RESCREEN_ON_ADMISSION:'1'}:{})}});}catch(e){error=e;console.error(`Stage failed: ${script}; attempt ${attempt+1}`);}
+    for(let attempt=0;attempt<(retry?2:1);attempt++)try{return execute(process.execPath,[script],{stdio:['inherit','inherit','pipe'],timeout:12*60*1000,env:{...process.env,TARGET_DATE:process.env.TARGET_DATE,...(pending?{VALIDATE_PENDING:'1'}:{}),...(rescreen?{RESCREEN_ON_ADMISSION:'1'}:{})}});}catch(e){error=e;if(e.stderr?.length)process.stderr.write(e.stderr);console.error(`Stage failed: ${script}; attempt ${attempt+1}`);}
     throw error;
   };
   const validate=pending=>{for(const s of ['validate-data','validate-dashboard-contract','validate-strategy-v2'])run(`scripts/${s}.mjs`,{pending});};

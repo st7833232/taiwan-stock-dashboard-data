@@ -271,3 +271,30 @@ test('self-healing follows the attempted close date instead of an older publishe
     await continuePipelineRecovery();assert.equal(dispatched.inputs.target_date,'2026-10-05');assert.equal(dispatched.inputs.recovery_count,'1');
   }finally{globalThis.fetch=fetcher;for(const k of keys)if(env[k]===undefined)delete process.env[k];else process.env[k]=env[k];process.chdir(original);fs.rmSync(tmp,{recursive:true,force:true});}
 });
+
+test('publication subprocess stderr reaches recovery and dispatches latest main with bounded retries',async()=>{
+ const original=process.cwd(),fetcher=globalThis.fetch,tmp=fs.mkdtempSync(path.join(os.tmpdir(),'publish-recovery-'));
+ const keys=['TARGET_DATE','RECOVERY_COUNT','RECOVERY_ERROR_SIGNATURE','RECOVERY_ERROR_COUNT','GITHUB_REPOSITORY','GITHUB_TOKEN'],env=Object.fromEntries(keys.map(k=>[k,process.env[k]]));
+ try{
+  process.chdir(tmp);fs.writeFileSync('DAILY_UPDATE_PROTOCOL.md','fixture');fs.writeFileSync('manifest.json',JSON.stringify({paperAccountPath:'paper.json'}));fs.writeFileSync('paper.json',JSON.stringify({asOf:'2026-10-05'}));
+  Object.assign(process.env,{TARGET_DATE:'2026-10-05',RECOVERY_COUNT:'0',RECOVERY_ERROR_SIGNATURE:'',RECOVERY_ERROR_COUNT:'0',GITHUB_REPOSITORY:'st7833232/taiwan-stock-dashboard-data',GITHUB_TOKEN:'fixture'});
+  const {execFileSync}=await import('node:child_process');
+  fs.writeFileSync('publication.mjs',"console.error('MAIN_HEAD_CHANGED: retain workflow artifact and rerun on new main');process.exit(1)");
+  const execute=(cmd,args,options)=>{
+   if(args[0].endsWith('publish-data-atomic.mjs'))return execFileSync(process.execPath,['publication.mjs'],options);
+  };
+  assert.throws(()=>runPipeline('2026-10-05',{execute,now:new Date('2026-10-06T01:00:00Z')}));
+  const status=JSON.parse(fs.readFileSync('raw/2026-10-05/pipeline-status.json'));
+  assert.match(status.error,/MAIN_HEAD_CHANGED/);
+  let calls=[];globalThis.fetch=async(url,options)=>{calls.push(JSON.parse(options.body));return new Response(null,{status:204});};
+  await continuePipelineRecovery();assert.equal(calls.length,1);assert.equal(calls[0].ref,'main');assert.equal(calls[0].inputs.recovery_count,'1');
+  Object.assign(process.env,{RECOVERY_COUNT:'2',RECOVERY_ERROR_SIGNATURE:calls[0].inputs.recovery_error_signature,RECOVERY_ERROR_COUNT:'2'});
+  await continuePipelineRecovery();assert.equal(calls.length,1);
+  Object.assign(process.env,{RECOVERY_COUNT:'12',RECOVERY_ERROR_SIGNATURE:'',RECOVERY_ERROR_COUNT:'0'});
+  await continuePipelineRecovery();assert.equal(calls.length,1);
+  for(const error of ['unexpected permanent failure','TypeError: network configuration is invalid','schema contract failed after HTTP 503']){
+   fs.writeFileSync('raw/2026-10-05/pipeline-status.json',JSON.stringify({error}));process.env.RECOVERY_COUNT='0';
+   await continuePipelineRecovery();assert.equal(calls.length,1);
+  }
+ }finally{globalThis.fetch=fetcher;for(const k of keys)if(env[k]===undefined)delete process.env[k];else process.env[k]=env[k];process.chdir(original);fs.rmSync(tmp,{recursive:true,force:true});}
+});
