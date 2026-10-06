@@ -18,20 +18,8 @@
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap23_L",
       "summary": "上市公司違反資訊申報、重大訊息及說明記者會規定專區",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-06T03:51:02.428Z",
-      "rows": 37,
-      "refreshStatus": "VERIFY_FAILED",
-      "refreshError": "fetch failed"
-    },
-    {
-      "id": "twse-income-bd",
-      "market": "TWSE",
-      "kind": "income",
-      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_bd",
-      "summary": "上市公司綜合損益表(證券期貨業)",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-05T16:21:56.458Z",
-      "rows": 3
+      "capturedAt": "2026-10-06T04:03:15.194Z",
+      "rows": 37
     },
     {
       "id": "twse-suspensions-L",
@@ -42,6 +30,16 @@
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T03:59:10.388Z",
       "rows": 1
+    },
+    {
+      "id": "twse-income-bd",
+      "market": "TWSE",
+      "kind": "income",
+      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_bd",
+      "summary": "上市公司綜合損益表(證券期貨業)",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-05T16:21:56.458Z",
+      "rows": 3
     },
     {
       "id": "twse-income-ci",
@@ -413,26 +411,6 @@
       "rows": null
     },
     {
-      "id": "tpex-ca-parvalue-reference",
-      "market": "TPEx",
-      "kind": "coverage",
-      "coverageTags": [
-        "splitReductionConversion:parValueChange",
-        "historicalPriceAdjustment:parValueChange"
-      ],
-      "coverageOnly": true,
-      "allowEmpty": true,
-      "expectedDateRange": {
-        "start": "2026-04-09",
-        "end": "2026-11-10"
-      },
-      "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/pvChgRslt?startDate=2026%2F04%2F09&endDate=2026%2F11%2F10&response=json",
-      "summary": "上櫃變更股票面額恢復買賣參考價",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-06T03:59:34.332Z",
-      "rows": null
-    },
-    {
       "id": "tpex-ca-reduction-reference",
       "market": "TPEx",
       "kind": "coverage",
@@ -450,6 +428,26 @@
       "summary": "上櫃減資恢復交易參考價",
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T03:59:34.556Z",
+      "rows": null
+    },
+    {
+      "id": "tpex-ca-parvalue-reference",
+      "market": "TPEx",
+      "kind": "coverage",
+      "coverageTags": [
+        "splitReductionConversion:parValueChange",
+        "historicalPriceAdjustment:parValueChange"
+      ],
+      "coverageOnly": true,
+      "allowEmpty": true,
+      "expectedDateRange": {
+        "start": "2026-04-09",
+        "end": "2026-11-10"
+      },
+      "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/pvChgRslt?startDate=2026%2F04%2F09&endDate=2026%2F11%2F10&response=json",
+      "summary": "上櫃變更股票面額恢復買賣參考價",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-06T03:59:34.332Z",
       "rows": null
     },
     {
