@@ -28,7 +28,7 @@ test('every universe member is recorded; incomplete evidence gets no research or
 });
 test('evidence-complete names receive research rank even without a tradable setup',()=>{
   const i={targetDate:'2026-09-29',gateMatrix:{targetDate:'2026-09-29',overallStatus:'PASS'},universe:[{code:'0050',name:'元大台灣50',assetType:'ETF',close:100}],deepDive:[{
-    code:'0050',assetType:'ETF',historyCoverageTradingDays:120,history:[],volumeRatio20d:1,liquidityMedianTurnover20d:200000000,
+    code:'0050',assetType:'ETF',current:{market:'TWSE',close:100},historyCoverageTradingDays:120,history:[],volumeRatio20d:1,liquidityMedianTurnover20d:200000000,
     indicators:{ma20:90,ma60:80,ma120:70,ma20Slope5d:1,ma60Slope5d:1,atr14:2,rsi14:55,macdHistogram:1},
     verifiedEvidence:{eventRisk:true,corporateAction:true},
     etfProfile:{eligibleForBuy:false,historyReady:true,historicalRiskReady:true,liquidityGatePass:true,riskLimitsPass:true}
