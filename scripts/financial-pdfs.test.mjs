@@ -252,7 +252,7 @@ test('OCR reviews the identified income table and its continuation instead of un
  assert.deepEqual(pdfReviewPages(['目錄','資產負債表','合併綜合損益表 金額\n4000 營業收入','續表','附註'],5),[3,4]);
  assert.deepEqual(pdfReviewPages(['','',''],3),[1,2,3]);
  assert.ok(pdfReviewPages(['目錄\n合併綜合損益表 8\n合併現金流量表','會計師核閱報告提及綜合損益表與現金流量',''],12).includes(8));
- const now=new Date('2026-10-02T01:00:00Z'),state={old:{parserVersion:2,textParserVersion:19,nextRetryAt:'2026-10-03T01:00:00Z'},current:{parserVersion:2,textParserVersion:21,nextRetryAt:'2026-10-03T01:00:00Z'}};
+ const now=new Date('2026-10-02T01:00:00Z'),state={old:{parserVersion:2,textParserVersion:19,nextRetryAt:'2026-10-03T01:00:00Z'},current:{parserVersion:2,textParserVersion:22,nextRetryAt:'2026-10-03T01:00:00Z'}};
  assert.deepEqual(financialQueue([{key:'old',archived:true},{key:'current',archived:true}],state,now,new Set()).map(r=>r.key),['old']);
 });
 
@@ -356,9 +356,9 @@ test('stamped filed income tables retain split date headers and coded ownership 
  assert.throws(()=>verifyPdfText([page.replace('新台幣仟元','新台幣元')],row));
 });
 
-test('improved OCR reparses version 19 archives before their cooldown while version 21 waits',async()=>{
+test('improved OCR reparses version 19 archives before their cooldown while version 22 waits',async()=>{
  const {financialQueue}=await import('./collect-financial-pdfs.mjs'),rows=[{key:'old',archived:true},{key:'current',archived:true}],now=new Date('2026-10-06T00:00:00Z');
- const state={old:{parserVersion:2,textParserVersion:19,nextRetryAt:'2099-01-01'},current:{parserVersion:2,textParserVersion:21,nextRetryAt:'2099-01-01'}};
+ const state={old:{parserVersion:2,textParserVersion:19,nextRetryAt:'2099-01-01'},current:{parserVersion:2,textParserVersion:22,nextRetryAt:'2099-01-01'}};
  assert.deepEqual(financialQueue(rows,state,now,new Set()).map(r=>r.key),['old']);
 });
 
@@ -376,12 +376,12 @@ test('verified insufficient summaries do not repeatedly queue impossible generic
  }finally{globalThis.fetch=fetcher;process.chdir(original);fs.rmSync(tmp,{recursive:true,force:true});}
 });
 
-test('failed prior-year PDF parsing retries the dated current-year comparative filing instead of the same unreadable version',async()=>{
+test('version 19 prior-year PDF rejection retries the dated current-year comparative filing instead of the same unreadable version',async()=>{
  const {collectFinancialPdfs}=await import('./collect-financial-pdfs.mjs'),{default:os}=await import('node:os'),{default:path}=await import('node:path');
  const original=process.cwd(),fetcher=globalThis.fetch,tmp=fs.mkdtempSync(path.join(os.tmpdir(),'financial-comparative-'));let requestedYear;
  try{
   process.chdir(tmp);fs.mkdirSync('raw/2026-10-05',{recursive:true});fs.mkdirSync('history/financial-reports',{recursive:true});
-  fs.writeFileSync('history/financial-pdf-collection.json',JSON.stringify({'2330|2026-06-30':{status:'UNVERIFIED',parserVersion:2,textParserVersion:20,stage:'PDF_METRICS',reason:'PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED',nextRetryAt:'2026-01-01'}}));
+  fs.writeFileSync('history/financial-pdf-collection.json',JSON.stringify({'2330|2026-06-30':{status:'UNVERIFIED',parserVersion:2,textParserVersion:19,stage:'PDF_METRICS',reason:'PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED',nextRetryAt:'2026-01-01'}}));
   fs.writeFileSync('raw/2026-10-05/research-input.json',JSON.stringify({deepDive:[{code:'2330',assetType:'STOCK',current:{market:'TWSE'}}]}));fs.writeFileSync('raw/2026-10-05/financial-evidence-captures.json',JSON.stringify({captures:[{id:'income',kind:'income',status:'CAPTURED'}]}));fs.writeFileSync('raw/2026-10-05/income.raw.txt',JSON.stringify([{'公司代號':'2330','年度':2026,'季別':2,'淨利（淨損）歸屬於母公司業主':100}]));
   globalThis.fetch=async url=>{requestedYear=new URL(url).searchParams.get('year');throw Error('OFFICIAL_RATE_LIMITED')};
   await collectFinancialPdfs('2026-10-05');assert.equal(requestedYear,'115');assert.equal(JSON.parse(fs.readFileSync('raw/2026-10-05/financial-pdf-collection.json')).remaining,1);

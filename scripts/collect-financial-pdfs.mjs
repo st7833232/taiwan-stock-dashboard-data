@@ -9,7 +9,7 @@ const read=p=>{try{return JSON.parse(fs.readFileSync(p));}catch{return null;}};
 const save=(p,x)=>fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n');
 export function financialQueue(rows,state,now,admitted){
  const reparsed=r=>state[r.key]?.parserVersion!==2&&/PDF_PERIOD|FILING_VERSION|PROFIT_BASIS/.test(state[r.key]?.reason??'')||state[r.key]?.filingParserVersion!==3&&/FILING_VERSION/.test(state[r.key]?.reason??'');
- return rows.filter(r=>!admitted.has(r.key)&&(!state[r.key]||state[r.key].parserVersion!==2||reparsed(r)||r.archived&&(state[r.key].textParserVersion??0)<21||state[r.key].status==='VERIFIED'||Date.parse(state[r.key].nextRetryAt)<=now.getTime())).sort((a,b)=>Number(b.archived===true)-Number(a.archived===true)||Number(reparsed(b))-Number(reparsed(a))||(state[a.key]?.checkedAt??'').localeCompare(state[b.key]?.checkedAt??''));
+ return rows.filter(r=>!admitted.has(r.key)&&(!state[r.key]||state[r.key].parserVersion!==2||reparsed(r)||r.archived&&(state[r.key].textParserVersion??0)<22||state[r.key].status==='VERIFIED'||Date.parse(state[r.key].nextRetryAt)<=now.getTime())).sort((a,b)=>Number(b.archived===true)-Number(a.archived===true)||Number(reparsed(b))-Number(reparsed(a))||(state[a.key]?.checkedAt??'').localeCompare(state[b.key]?.checkedAt??''));
 }
 export async function filingIndex(source,request){
  let html=new TextDecoder('big5').decode(await request(source));
@@ -191,7 +191,7 @@ export async function collectFinancialPdfs(target,{onVerified}={}){
   let stage='FILING_INDEX',filingYear=year,source=`https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=${code}&year=${year-1911}&seamon=&mtype=A&check2858=Y`,filingFallback=null;
   try{
    let index=archivedFilingIndex(code,year+1,quarter,target,filingOptions),version;
-   if(index||state[r.key]?.stage==='PDF_METRICS'&&state[r.key].textParserVersion>=20){filingYear=year+1;source=source.replace(`year=${year-1911}&`,`year=${filingYear-1911}&`);}
+   if(index||state[r.key]?.stage==='PDF_METRICS'&&state[r.key].textParserVersion>=19){filingYear=year+1;source=source.replace(`year=${year-1911}&`,`year=${filingYear-1911}&`);}
    else index=archivedFilingIndex(code,filingYear,quarter,target,filingOptions);
    try{index??=await filingIndex(source,request);version=filingVersion(index,code,filingYear,quarter,target,filingOptions);}
    catch(e){
@@ -221,7 +221,7 @@ export async function collectFinancialPdfs(target,{onVerified}={}){
    state[r.key]={status:'VERIFIED',parserVersion:2,checkedDate:today,checkedAt:new Date().toISOString(),...(state[r.key]?.status==='UNVERIFIED'?{lastUnverifiedAttempt:state[r.key]}:{})};admitted.add(r.key);
   }catch(e){
    const attempts=state[r.key]?.checkedDate===today?(state[r.key]?.attempts??0)+1:1,transient=/fetch failed|timeout|aborted|HTTP_(429|5\d\d)|PDF_OCR_REVIEW_PENDING|FINANCIAL_COLLECTION_BUDGET_EXHAUSTED/i.test(e.message);
-   state[r.key]={status:'UNVERIFIED',parserVersion:2,filingParserVersion:3,textParserVersion:21,filingFallback,stage,reason:e.message,attempts,checkedDate:today,checkedAt:new Date().toISOString(),nextRetryAt:new Date(Date.now()+(transient?Math.min(300000*2**(attempts-1),86400000):86400000)).toISOString()};
+   state[r.key]={status:'UNVERIFIED',parserVersion:2,filingParserVersion:3,textParserVersion:22,filingFallback,stage,reason:e.message,attempts,checkedDate:today,checkedAt:new Date().toISOString(),nextRetryAt:new Date(Date.now()+(transient?Math.min(300000*2**(attempts-1),86400000):86400000)).toISOString()};
    if(e.message==='OFFICIAL_RATE_LIMITED'){rateLimited=true;save('history/financial-pdf-collection.json',state);break;}
    if(e.message==='FINANCIAL_COLLECTION_BUDGET_EXHAUSTED'){save('history/financial-pdf-collection.json',state);break;}
   }
