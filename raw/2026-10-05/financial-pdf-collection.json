@@ -1168,11 +1168,11 @@
       "textParserVersion": 22,
       "filingFallback": null,
       "stage": "PDF_METRICS",
-      "reason": "PDF_OCR_REVIEW_PENDING",
-      "attempts": 2,
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 3,
       "checkedDate": "2026-10-07",
-      "checkedAt": "2026-10-06T17:34:03.761Z",
-      "nextRetryAt": "2026-10-06T17:44:03.761Z"
+      "checkedAt": "2026-10-06T17:48:38.068Z",
+      "nextRetryAt": "2026-10-07T17:48:38.068Z"
     },
     "8096|2026-06-30": {
       "status": "VERIFIED",
@@ -2850,10 +2850,10 @@
       "filingFallback": null,
       "stage": "PDF_METRICS",
       "reason": "PDF_OCR_REVIEW_PENDING",
-      "attempts": 2,
+      "attempts": 3,
       "checkedDate": "2026-10-07",
-      "checkedAt": "2026-10-06T17:36:30.238Z",
-      "nextRetryAt": "2026-10-06T17:46:30.238Z"
+      "checkedAt": "2026-10-06T17:50:10.946Z",
+      "nextRetryAt": "2026-10-06T18:10:10.946Z"
     },
     "2454|2026-06-30": {
       "status": "VERIFIED",
@@ -4701,7 +4701,7 @@
   },
   "ocrProgress": {
     "parserVersion": 20,
-    "pages": 2963
+    "pages": 2988
   },
   "remaining": 107,
   "ready": 0,
