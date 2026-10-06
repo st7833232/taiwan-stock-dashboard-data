@@ -22,9 +22,23 @@ test('capture retries with only timestamps changed deduplicate',()=>{
   assert.equal(inputFingerprint(a,config),inputFingerprint({...a,generatedAt:'b',gateMatrix:{generatedAt:'b'}},config));
   assert.notEqual(inputFingerprint(a,config),inputFingerprint({...a,universe:[{code:'3005'}]},config));
 });
-test('every universe member is recorded; incomplete evidence gets no eligible rank',()=>{
+test('every universe member is recorded; incomplete evidence gets no research or trade rank',()=>{
   const i={targetDate:'2026-09-29',gateMatrix:{targetDate:'2026-09-29',overallStatus:'PASS'},universe:[{code:'3005',name:'神基',assetType:'STOCK',close:117},{code:'9999',assetType:'STOCK',close:5}],deepDive:[]};
-  const r=evaluateUniverse(i,config);assert.equal(r.rows.length,2);assert.ok(r.rows.every(c=>c.decision==='NO_TRADE' && c.universeRank===null));
+  const r=evaluateUniverse(i,config);assert.equal(r.rows.length,2);assert.ok(r.rows.every(c=>c.decision==='NO_TRADE' && c.researchRank===null && c.tradeRank===null && c.universeRank===null));
+});
+test('evidence-complete names receive research rank even without a tradable setup',()=>{
+  const i={targetDate:'2026-09-29',gateMatrix:{targetDate:'2026-09-29',overallStatus:'PASS'},universe:[{code:'0050',name:'元大台灣50',assetType:'ETF',close:100}],deepDive:[{
+    code:'0050',assetType:'ETF',historyCoverageTradingDays:120,history:[],volumeRatio20d:1,liquidityMedianTurnover20d:200000000,
+    indicators:{ma20:90,ma60:80,ma120:70,ma20Slope5d:1,ma60Slope5d:1,atr14:2,rsi14:55,macdHistogram:1},
+    verifiedEvidence:{eventRisk:true,corporateAction:true},
+    etfProfile:{eligibleForBuy:false,historyReady:true,historicalRiskReady:true,liquidityGatePass:true,riskLimitsPass:true}
+  }]};
+  const [row]=evaluateUniverse(i,config).rows;
+  assert.equal(row.researchEvidenceStatus,'COMPLETE');
+  assert.equal(row.researchRank,1);assert.equal(row.researchPercentile,100);
+  assert.equal(row.tradeRank,null);assert.equal(row.tradePercentile,null);
+  assert.equal(row.universeRank,null);assert.equal(row.universePercentile,null);
+  assert.equal(row.decision,'WATCH');
 });
 test('per-security evidence readiness does not wait for unrelated symbols',()=>{
   const gates={history:true,institutional:true,credit:true,tdcc:true,fundamental:true,event:true,corporateAction:true};
