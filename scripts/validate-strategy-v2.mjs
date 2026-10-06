@@ -76,6 +76,16 @@ if (p) {
   }
 }
 
+const incremental = research.incrementalScreening;
+assert(incremental && incremental.mode === 'PER_SECURITY_INCREMENTAL', 'incremental screening mode missing');
+if (incremental) {
+  assert(incremental.reScreenOnEvidenceAdmission === true, 'incremental rescreen-on-admission must be enabled');
+  assert(Number.isInteger(incremental.screenedDeepDive) && incremental.screenedDeepDive === research.coverage?.deepDive, 'incremental screenedDeepDive mismatch');
+  assert(Number.isInteger(incremental.evidenceCompleteDeepDive) && incremental.evidenceCompleteDeepDive >= 0, 'incremental evidenceCompleteDeepDive invalid');
+  assert(Number.isInteger(incremental.evidencePendingDeepDive) && incremental.evidencePendingDeepDive >= 0, 'incremental evidencePendingDeepDive invalid');
+  assert(incremental.evidenceCompleteDeepDive + incremental.evidencePendingDeepDive === incremental.screenedDeepDive, 'incremental evidence partition mismatch');
+}
+
 assert(Array.isArray(research.candidates), 'research.candidates must be an array');
 let buyCount = 0;
 for (const c of research.candidates ?? []) {
@@ -84,6 +94,9 @@ for (const c of research.candidates ?? []) {
   assert(allowedDecision.has(c.decision), `candidate ${code} decision invalid/missing`);
   assert(allowedStrategy.has(c.strategy), `candidate ${code} strategy invalid/missing`);
   assert(finite(c.score) && c.score >= 0 && c.score <= 100, `candidate ${code} score invalid`);
+  assert(['COMPLETE','PENDING','NOT_EVALUATED'].includes(c.researchEvidenceStatus), `candidate ${code} researchEvidenceStatus invalid`);
+  assert(Array.isArray(c.researchEvidencePending), `candidate ${code} researchEvidencePending invalid`);
+  if (c.researchEvidenceStatus === 'COMPLETE') assert(c.researchEvidencePending.length === 0, `candidate ${code} COMPLETE evidence cannot have pending keys`);
 
   const s = c.scores;
   const caps = c.assetType === 'ETF'
@@ -134,6 +147,7 @@ for (const c of research.candidates ?? []) {
 
   if (c.decision === 'BUY') {
     buyCount += 1;
+    assert(c.researchEvidenceStatus === 'COMPLETE', `candidate ${code} BUY requires per-security evidence COMPLETE`);
     assert(allowedEntryStrategy.has(c.strategy), `candidate ${code} BUY strategy is not an allowed entry strategy`);
     assert(p?.marketRegime === 'BULL' || p?.marketRegime === 'NEUTRAL', `candidate ${code} BUY not allowed in ${p?.marketRegime}`);
     const threshold = c.assetType === 'ETF' ? config.assetProfiles.ETF.buyScoreThreshold[p?.marketRegime] : config.buyScoreThreshold[p?.marketRegime];
