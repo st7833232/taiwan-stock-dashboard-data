@@ -280,7 +280,8 @@ export function publishCheckpoint(target) {
   if(input.targetDate!==target || gate.targetDate!==target || gate.overallStatus!=='PASS') throw Error('Target Gate not PASS');
   const fingerprint=inputFingerprint(input,config);
   const supplementPath=`${root}/historical-evidence-supplement.json`, supplement=fs.existsSync(supplementPath)?read(supplementPath):null, auditFingerprint=hash(supplement);
-  if(previousResearch.researchDate===target && previousPaper.asOf===target && previousResearch.inputFingerprint===fingerprint && previousResearch.strategyVersion===config.version && previousResearch.evidenceAuditVersion===EVIDENCE_AUDIT_VERSION && previousResearch.auditFingerprint===auditFingerprint && Array.isArray(previousResearch.fundamentalQualityRejected)) {console.log('NO_CHANGE');return;}
+  const incrementalContractCurrent=previousResearch.incrementalScreening?.mode==='PER_SECURITY_INCREMENTAL' && previousResearch.incrementalScreening?.reScreenOnEvidenceAdmission===true && Array.isArray(previousResearch.candidates) && previousResearch.candidates.every(c=>['COMPLETE','PENDING','NOT_EVALUATED'].includes(c.researchEvidenceStatus) && Array.isArray(c.researchEvidencePending));
+  if(previousResearch.researchDate===target && previousPaper.asOf===target && previousResearch.inputFingerprint===fingerprint && previousResearch.strategyVersion===config.version && previousResearch.evidenceAuditVersion===EVIDENCE_AUDIT_VERSION && previousResearch.auditFingerprint===auditFingerprint && Array.isArray(previousResearch.fundamentalQualityRejected) && incrementalContractCurrent) {console.log('NO_CHANGE');return;}
   const result=evaluateUniverse({...input,gateMatrix:gate},config), paper=markPaper(previousPaper,input,config), now=taipeiTime();
   const evidence=evidenceSummary(input,result);
   updatePaperExperiment(paper,previousPaper,{...input,gateMatrix:gate},config,evidence.researchComplete);
