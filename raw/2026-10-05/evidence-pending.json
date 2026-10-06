@@ -2,7 +2,7 @@
   "targetDate": "2026-10-05",
   "researchComplete": false,
   "counts": {
-    "fundamental": 119,
+    "fundamental": 118,
     "tdcc": 6,
     "credit": 4,
     "history": 1
@@ -92,7 +92,6 @@
       "3081",
       "3163",
       "3211",
-      "3227",
       "3236",
       "3490",
       "3529",
@@ -1196,6 +1195,12 @@
       "code": "3221",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3227",
+      "failures": [
+        "PROFIT_DETERIORATION"
       ]
     },
     {
