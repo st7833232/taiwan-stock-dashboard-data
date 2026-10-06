@@ -2,7 +2,7 @@
   "targetDate": "2026-10-05",
   "researchComplete": false,
   "counts": {
-    "fundamental": 125,
+    "fundamental": 123,
     "tdcc": 6,
     "credit": 4,
     "history": 1
@@ -39,7 +39,6 @@
       "2548",
       "2605",
       "2634",
-      "3006",
       "3013",
       "3016",
       "3033",
@@ -125,7 +124,6 @@
       "6683",
       "6716",
       "6727",
-      "6739",
       "6945",
       "7717",
       "8027",
@@ -679,6 +677,12 @@
       "code": "2915",
       "failures": [
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3006",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
     },
     {
