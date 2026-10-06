@@ -9741,5 +9741,55 @@
     "unit": "TWD_THOUSAND",
     "verificationMethod": "PDF_VISUAL_MATCHED_OFFICIAL_PERIOD_TABLE",
     "reviewNote": "Page 6 independently reviewed: last column 114/01/01-114/06/30, NTD thousands; revenue 428625, total net profit 14823, parent net profit 14094. Table title obscured by seal; original page column headers and account codes are legible."
+  },
+  {
+    "filename": "202602_4768_AI1.pdf",
+    "uploadedAt": "115/08/12 14:21:21",
+    "filingYear": 2026,
+    "filingFallback": null,
+    "archiveKey": "202602_4768_AI1.pdf.73045f348bf091b34df4462544895cee142f6d6928b1583e935a73f666b5867f",
+    "sha256": "73045f348bf091b34df4462544895cee142f6d6928b1583e935a73f666b5867f",
+    "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=4768&year=115&seamon=&mtype=A&check2858=Y",
+    "pdfUrl": "https://doc.twse.com.tw/pdf/202602_4768_AI1_20261006_162533.pdf",
+    "row": {
+      "公司代號": "4768",
+      "年度": 2025,
+      "季別": 2,
+      "營業收入": 340615,
+      "本期淨利（淨損）": -795,
+      "淨利（淨損）歸屬於母公司業主": 370
+    },
+    "reviewedPages": [
+      7,
+      8
+    ],
+    "basis": "YEAR_TO_DATE",
+    "unit": "TWD_THOUSAND",
+    "verificationMethod": "PDF_TEXT_MATCHED_OFFICIAL_PERIOD_TABLE"
+  },
+  {
+    "filename": "202602_9933_AI1.pdf",
+    "uploadedAt": "115/08/11 17:01:20",
+    "filingYear": 2026,
+    "filingFallback": null,
+    "archiveKey": "202602_9933_AI1.pdf.d6db984051b46be5ed549b3fe9636dd1f414bd71dd306e9cf6131c7d874b8885",
+    "sha256": "d6db984051b46be5ed549b3fe9636dd1f414bd71dd306e9cf6131c7d874b8885",
+    "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=9933&year=115&seamon=&mtype=A&check2858=Y",
+    "pdfUrl": "https://doc.twse.com.tw/pdf/202602_9933_AI1_20261006_162808.pdf",
+    "row": {
+      "公司代號": "9933",
+      "年度": 2025,
+      "季別": 2,
+      "營業收入": 46448438,
+      "本期淨利（淨損）": -428086,
+      "淨利（淨損）歸屬於母公司業主": -963178
+    },
+    "reviewedPages": [
+      8,
+      9
+    ],
+    "basis": "YEAR_TO_DATE",
+    "unit": "TWD_THOUSAND",
+    "verificationMethod": "PDF_TEXT_MATCHED_OFFICIAL_PERIOD_TABLE"
   }
 ]

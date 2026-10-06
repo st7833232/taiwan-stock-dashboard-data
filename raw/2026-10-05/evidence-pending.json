@@ -2,7 +2,7 @@
   "targetDate": "2026-10-05",
   "researchComplete": false,
   "counts": {
-    "fundamental": 122,
+    "fundamental": 120,
     "tdcc": 6,
     "credit": 4,
     "history": 1
@@ -89,7 +89,6 @@
       "8150",
       "9105",
       "9910",
-      "9933",
       "1815",
       "3081",
       "3163",
@@ -101,7 +100,6 @@
       "3587",
       "3624",
       "3707",
-      "4768",
       "4903",
       "4979",
       "4991",
@@ -1138,6 +1136,13 @@
       ]
     },
     {
+      "code": "9933",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
       "code": "9941",
       "failures": [
         "REVENUE_DETERIORATION"
@@ -1270,6 +1275,13 @@
       "failures": [
         "PROFIT_QUALITY_FAILED",
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4768",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "PROFIT_DETERIORATION"
       ]
     },
     {
