@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "targetDate": "2026-10-05",
   "strategyVersion": "entry-dual-track-v2.2",
-  "inputFingerprint": "e89c793abcd5429c6c8fc79aae8d2a6d431ced5ce299a6f6011d585843cca784",
+  "inputFingerprint": "89506eb8cdb27118adabbb08d7c92b71296d7c995bf1a18561b298d50035c4be",
   "coverage": {
     "universe": 2313,
     "stocks": 1958,
@@ -11,11 +11,11 @@
     "deepDiveStocks": 549,
     "deepDiveEtfs": 72,
     "screenedDeepDive": 621,
-    "evidenceCompleteDeepDive": 459,
-    "evidencePendingDeepDive": 162,
-    "researchRanked": 459,
+    "evidenceCompleteDeepDive": 488,
+    "evidencePendingDeepDive": 133,
+    "researchRanked": 488,
     "tradeEligibleRanked": 0,
-    "eligibleRanked": 459,
+    "eligibleRanked": 488,
     "eligibleRankedMeaning": "RESEARCH_EVIDENCE_COMPLETE",
     "creditReadyStocks": 545,
     "creditMissingCodes": [
@@ -16863,7 +16863,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 38,
-      "researchPercentile": 9.793814432989691,
+      "researchPercentile": 9.112709832134293,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -16918,8 +16918,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 306,
-      "researchPercentile": 78.8659793814433,
+      "researchRank": 329,
+      "researchPercentile": 78.8968824940048,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -17613,8 +17613,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 386,
-      "researchPercentile": 99.48453608247422,
+      "researchRank": 415,
+      "researchPercentile": 99.52038369304556,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -17668,8 +17668,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 340,
-      "researchPercentile": 87.62886597938144,
+      "researchRank": 364,
+      "researchPercentile": 87.29016786570743,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -18150,8 +18150,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 387,
-      "researchPercentile": 99.74226804123711,
+      "researchRank": 416,
+      "researchPercentile": 99.76019184652279,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -18702,8 +18702,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 77,
-      "researchPercentile": 19.84536082474227,
+      "researchRank": 78,
+      "researchPercentile": 18.705035971223023,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -18757,8 +18757,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 95,
-      "researchPercentile": 24.484536082474225,
+      "researchRank": 97,
+      "researchPercentile": 23.26139088729017,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -19239,8 +19239,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 323,
-      "researchPercentile": 83.24742268041237,
+      "researchRank": 347,
+      "researchPercentile": 83.21342925659472,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -19366,8 +19366,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 207,
-      "researchPercentile": 53.350515463917525,
+      "researchRank": 216,
+      "researchPercentile": 51.798561151079134,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -19564,8 +19564,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 292,
+      "researchPercentile": 70.02398081534773,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -19576,10 +19576,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "1321",
@@ -19905,8 +19903,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 225,
-      "researchPercentile": 57.98969072164948,
+      "researchRank": 236,
+      "researchPercentile": 56.594724220623505,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -20386,8 +20384,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 300,
-      "researchPercentile": 77.31958762886597,
+      "researchRank": 323,
+      "researchPercentile": 77.45803357314149,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -20442,8 +20440,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 267,
+      "researchPercentile": 64.02877697841727,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -20454,10 +20452,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "1410",
@@ -23753,8 +23749,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 231,
-      "researchPercentile": 59.5360824742268,
+      "researchRank": 242,
+      "researchPercentile": 58.03357314148681,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -23808,8 +23804,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 338,
-      "researchPercentile": 87.11340206185567,
+      "researchRank": 362,
+      "researchPercentile": 86.81055155875299,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -24393,8 +24389,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 350,
-      "researchPercentile": 90.20618556701031,
+      "researchRank": 374,
+      "researchPercentile": 89.68824940047962,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -24875,8 +24871,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 264,
-      "researchPercentile": 68.04123711340206,
+      "researchRank": 281,
+      "researchPercentile": 67.38609112709833,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -25853,7 +25849,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 26,
-      "researchPercentile": 6.701030927835052,
+      "researchPercentile": 6.235011990407674,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -26262,8 +26258,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 380,
-      "researchPercentile": 97.9381443298969,
+      "researchRank": 409,
+      "researchPercentile": 98.08153477218225,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -26646,8 +26642,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 301,
-      "researchPercentile": 77.57731958762886,
+      "researchRank": 324,
+      "researchPercentile": 77.6978417266187,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -26701,8 +26697,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 81,
-      "researchPercentile": 20.876288659793815,
+      "researchRank": 82,
+      "researchPercentile": 19.664268585131893,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -27594,8 +27590,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 166,
-      "researchPercentile": 42.78350515463917,
+      "researchRank": 168,
+      "researchPercentile": 40.28776978417266,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -27650,8 +27646,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 148,
-      "researchPercentile": 38.144329896907216,
+      "researchRank": 150,
+      "researchPercentile": 35.97122302158273,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -27706,8 +27702,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 309,
-      "researchPercentile": 79.63917525773196,
+      "researchRank": 332,
+      "researchPercentile": 79.61630695443645,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -27903,8 +27899,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 128,
-      "researchPercentile": 32.98969072164948,
+      "researchRank": 130,
+      "researchPercentile": 31.17505995203837,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -27958,8 +27954,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 113,
-      "researchPercentile": 29.123711340206185,
+      "researchRank": 115,
+      "researchPercentile": 27.577937649880095,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -28014,8 +28010,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 189,
+      "researchPercentile": 45.32374100719424,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -28026,10 +28022,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "1720",
@@ -28214,8 +28208,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 385,
-      "researchPercentile": 99.22680412371135,
+      "researchRank": 414,
+      "researchPercentile": 99.28057553956835,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -29320,8 +29314,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 120,
-      "researchPercentile": 30.927835051546392,
+      "researchRank": 122,
+      "researchPercentile": 29.256594724220623,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -29718,8 +29712,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 290,
-      "researchPercentile": 74.74226804123711,
+      "researchRank": 311,
+      "researchPercentile": 74.58033573141486,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -29973,8 +29967,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 145,
-      "researchPercentile": 37.371134020618555,
+      "researchRank": 147,
+      "researchPercentile": 35.25179856115108,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -30597,8 +30591,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 354,
-      "researchPercentile": 91.23711340206185,
+      "researchRank": 380,
+      "researchPercentile": 91.12709832134293,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -30652,8 +30646,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 158,
-      "researchPercentile": 40.72164948453608,
+      "researchRank": 160,
+      "researchPercentile": 38.36930455635492,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -30850,8 +30844,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 347,
-      "researchPercentile": 89.43298969072166,
+      "researchRank": 371,
+      "researchPercentile": 88.96882494004797,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -31686,8 +31680,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 178,
-      "researchPercentile": 45.876288659793815,
+      "researchRank": 181,
+      "researchPercentile": 43.405275779376495,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -32283,8 +32277,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 134,
-      "researchPercentile": 34.5360824742268,
+      "researchRank": 136,
+      "researchPercentile": 32.61390887290168,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -32338,8 +32332,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 106,
-      "researchPercentile": 27.31958762886598,
+      "researchRank": 108,
+      "researchPercentile": 25.899280575539567,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -32748,8 +32742,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 58,
-      "researchPercentile": 14.948453608247423,
+      "researchRank": 59,
+      "researchPercentile": 14.148681055155876,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -32874,8 +32868,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 288,
-      "researchPercentile": 74.22680412371135,
+      "researchRank": 309,
+      "researchPercentile": 74.10071942446044,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -33356,8 +33350,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 373,
-      "researchPercentile": 96.1340206185567,
+      "researchRank": 402,
+      "researchPercentile": 96.40287769784173,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -33554,8 +33548,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 302,
+      "researchPercentile": 72.4220623501199,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -33566,10 +33560,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2208",
@@ -33967,8 +33959,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 322,
-      "researchPercentile": 82.98969072164948,
+      "researchRank": 346,
+      "researchPercentile": 82.97362110311751,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -34719,8 +34711,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 101,
-      "researchPercentile": 26.030927835051546,
+      "researchRank": 103,
+      "researchPercentile": 24.700239808153476,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -34774,8 +34766,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 91,
-      "researchPercentile": 23.45360824742268,
+      "researchRank": 92,
+      "researchPercentile": 22.062350119904078,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -34830,7 +34822,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 31,
-      "researchPercentile": 7.989690721649485,
+      "researchPercentile": 7.434052757793765,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -34884,8 +34876,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 184,
-      "researchPercentile": 47.422680412371136,
+      "researchRank": 187,
+      "researchPercentile": 44.84412470023981,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -34940,7 +34932,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 22,
-      "researchPercentile": 5.670103092783505,
+      "researchPercentile": 5.275779376498801,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -34995,8 +34987,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 318,
-      "researchPercentile": 81.95876288659794,
+      "researchRank": 342,
+      "researchPercentile": 82.01438848920863,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -35180,8 +35172,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 182,
-      "researchPercentile": 46.90721649484536,
+      "researchRank": 185,
+      "researchPercentile": 44.36450839328537,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -35236,7 +35228,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 4,
-      "researchPercentile": 1.0309278350515463,
+      "researchPercentile": 0.9592326139088729,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -35361,8 +35353,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 237,
-      "researchPercentile": 61.08247422680412,
+      "researchRank": 248,
+      "researchPercentile": 59.47242206235012,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -35416,8 +35408,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 69,
-      "researchPercentile": 17.783505154639176,
+      "researchRank": 70,
+      "researchPercentile": 16.786570743405274,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -35472,8 +35464,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 142,
-      "researchPercentile": 36.597938144329895,
+      "researchRank": 144,
+      "researchPercentile": 34.53237410071942,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -35714,8 +35706,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 235,
-      "researchPercentile": 60.56701030927835,
+      "researchRank": 246,
+      "researchPercentile": 58.992805755395686,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -35828,8 +35820,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 343,
-      "researchPercentile": 88.4020618556701,
+      "researchRank": 367,
+      "researchPercentile": 88.00959232613909,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -35884,8 +35876,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 146,
-      "researchPercentile": 37.628865979381445,
+      "researchRank": 148,
+      "researchPercentile": 35.4916067146283,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -35998,8 +35990,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 199,
-      "researchPercentile": 51.28865979381443,
+      "researchRank": 206,
+      "researchPercentile": 49.40047961630695,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -36053,8 +36045,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 219,
-      "researchPercentile": 56.44329896907217,
+      "researchRank": 228,
+      "researchPercentile": 54.67625899280576,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -36108,7 +36100,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 9,
-      "researchPercentile": 2.3195876288659796,
+      "researchPercentile": 2.158273381294964,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -36304,8 +36296,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 193,
-      "researchPercentile": 49.74226804123711,
+      "researchRank": 199,
+      "researchPercentile": 47.721822541966425,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -36359,8 +36351,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 147,
-      "researchPercentile": 37.88659793814433,
+      "researchRank": 149,
+      "researchPercentile": 35.73141486810552,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -36414,8 +36406,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 144,
-      "researchPercentile": 37.11340206185567,
+      "researchRank": 146,
+      "researchPercentile": 35.01199040767386,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -36470,8 +36462,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 275,
-      "researchPercentile": 70.87628865979381,
+      "researchRank": 294,
+      "researchPercentile": 70.50359712230215,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -36525,8 +36517,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 227,
-      "researchPercentile": 58.50515463917526,
+      "researchRank": 238,
+      "researchPercentile": 57.07434052757794,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -36580,8 +36572,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 353,
-      "researchPercentile": 90.97938144329896,
+      "researchRank": 379,
+      "researchPercentile": 90.88729016786571,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -36636,8 +36628,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 265,
-      "researchPercentile": 68.29896907216495,
+      "researchRank": 282,
+      "researchPercentile": 67.62589928057554,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -36692,8 +36684,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 368,
-      "researchPercentile": 94.84536082474227,
+      "researchRank": 397,
+      "researchPercentile": 95.20383693045564,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -36747,8 +36739,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 80,
-      "researchPercentile": 20.61855670103093,
+      "researchRank": 81,
+      "researchPercentile": 19.424460431654676,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -36874,8 +36866,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 192,
-      "researchPercentile": 49.48453608247423,
+      "researchRank": 198,
+      "researchPercentile": 47.48201438848921,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -37072,8 +37064,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 311,
-      "researchPercentile": 80.15463917525773,
+      "researchRank": 334,
+      "researchPercentile": 80.0959232613909,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -37127,8 +37119,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 121,
-      "researchPercentile": 31.185567010309278,
+      "researchRank": 123,
+      "researchPercentile": 29.496402877697843,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -37240,8 +37232,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 60,
-      "researchPercentile": 15.463917525773196,
+      "researchRank": 61,
+      "researchPercentile": 14.628297362110311,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -37366,8 +37358,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 294,
-      "researchPercentile": 75.77319587628865,
+      "researchRank": 316,
+      "researchPercentile": 75.77937649880096,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -37479,7 +37471,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 2,
-      "researchPercentile": 0.5154639175257731,
+      "researchPercentile": 0.47961630695443647,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -37533,8 +37525,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 57,
-      "researchPercentile": 14.690721649484535,
+      "researchRank": 58,
+      "researchPercentile": 13.908872901678658,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -37589,8 +37581,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 161,
-      "researchPercentile": 41.49484536082474,
+      "researchRank": 163,
+      "researchPercentile": 39.08872901678657,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -37715,8 +37707,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 260,
-      "researchPercentile": 67.01030927835052,
+      "researchRank": 277,
+      "researchPercentile": 66.42685851318944,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -37770,8 +37762,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 210,
-      "researchPercentile": 54.123711340206185,
+      "researchRank": 219,
+      "researchPercentile": 52.51798561151079,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -37826,8 +37818,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 280,
-      "researchPercentile": 72.16494845360825,
+      "researchRank": 299,
+      "researchPercentile": 71.70263788968825,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -37953,8 +37945,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 285,
-      "researchPercentile": 73.45360824742268,
+      "researchRank": 306,
+      "researchPercentile": 73.38129496402878,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -38080,8 +38072,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 321,
-      "researchPercentile": 82.73195876288659,
+      "researchRank": 345,
+      "researchPercentile": 82.73381294964028,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -38135,8 +38127,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 198,
-      "researchPercentile": 51.03092783505155,
+      "researchRank": 204,
+      "researchPercentile": 48.92086330935252,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -38190,7 +38182,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 11,
-      "researchPercentile": 2.8350515463917527,
+      "researchPercentile": 2.6378896882494005,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -38316,8 +38308,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 209,
-      "researchPercentile": 53.865979381443296,
+      "researchRank": 218,
+      "researchPercentile": 52.278177458033575,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -38372,8 +38364,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 277,
-      "researchPercentile": 71.3917525773196,
+      "researchRank": 296,
+      "researchPercentile": 70.9832134292566,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -38486,7 +38478,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 41,
-      "researchPercentile": 10.56701030927835,
+      "researchPercentile": 9.832134292565947,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -38612,8 +38604,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 339,
-      "researchPercentile": 87.37113402061856,
+      "researchRank": 363,
+      "researchPercentile": 87.05035971223022,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -38725,8 +38717,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 63,
-      "researchPercentile": 16.237113402061855,
+      "researchRank": 64,
+      "researchPercentile": 15.347721822541967,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -38780,8 +38772,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 103,
-      "researchPercentile": 26.54639175257732,
+      "researchRank": 105,
+      "researchPercentile": 25.179856115107913,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -38836,8 +38828,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 140,
-      "researchPercentile": 36.08247422680412,
+      "researchRank": 142,
+      "researchPercentile": 34.05275779376499,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -39517,8 +39509,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 99,
-      "researchPercentile": 25.515463917525775,
+      "researchRank": 101,
+      "researchPercentile": 24.22062350119904,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -39643,8 +39635,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 176,
-      "researchPercentile": 45.36082474226804,
+      "researchRank": 179,
+      "researchPercentile": 42.92565947242206,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -40124,8 +40116,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 139,
-      "researchPercentile": 35.824742268041234,
+      "researchRank": 141,
+      "researchPercentile": 33.81294964028777,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -40250,8 +40242,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 335,
-      "researchPercentile": 86.34020618556701,
+      "researchRank": 359,
+      "researchPercentile": 86.09112709832134,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -40376,8 +40368,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 64,
-      "researchPercentile": 16.49484536082474,
+      "researchRank": 65,
+      "researchPercentile": 15.587529976019185,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -40574,8 +40566,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 204,
-      "researchPercentile": 52.577319587628864,
+      "researchRank": 211,
+      "researchPercentile": 50.59952038369305,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -40700,8 +40692,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 83,
-      "researchPercentile": 21.391752577319586,
+      "researchRank": 84,
+      "researchPercentile": 20.14388489208633,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -40826,8 +40818,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 100,
-      "researchPercentile": 25.77319587628866,
+      "researchRank": 102,
+      "researchPercentile": 24.46043165467626,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -40880,8 +40872,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 90,
-      "researchPercentile": 23.195876288659793,
+      "researchRank": 91,
+      "researchPercentile": 21.822541966426858,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -41006,8 +40998,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 169,
-      "researchPercentile": 43.55670103092783,
+      "researchRank": 171,
+      "researchPercentile": 41.007194244604314,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -41346,8 +41338,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 276,
-      "researchPercentile": 71.1340206185567,
+      "researchRank": 295,
+      "researchPercentile": 70.74340527577938,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -41401,8 +41393,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 258,
-      "researchPercentile": 66.49484536082474,
+      "researchRank": 274,
+      "researchPercentile": 65.70743405275779,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -41456,8 +41448,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 200,
-      "researchPercentile": 51.54639175257732,
+      "researchRank": 207,
+      "researchPercentile": 49.64028776978417,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -41511,8 +41503,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 154,
-      "researchPercentile": 39.69072164948454,
+      "researchRank": 156,
+      "researchPercentile": 37.410071942446045,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -41694,8 +41686,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 233,
-      "researchPercentile": 60.05154639175258,
+      "researchRank": 244,
+      "researchPercentile": 58.513189448441246,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -41750,8 +41742,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 281,
-      "researchPercentile": 72.42268041237114,
+      "researchRank": 301,
+      "researchPercentile": 72.18225419664269,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -41805,8 +41797,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 66,
-      "researchPercentile": 17.010309278350515,
+      "researchRank": 67,
+      "researchPercentile": 16.06714628297362,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -42261,8 +42253,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 138,
-      "researchPercentile": 35.56701030927835,
+      "researchRank": 140,
+      "researchPercentile": 33.57314148681055,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -42317,8 +42309,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 244,
-      "researchPercentile": 62.88659793814433,
+      "researchRank": 257,
+      "researchPercentile": 61.63069544364508,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -42373,8 +42365,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 292,
-      "researchPercentile": 75.25773195876289,
+      "researchRank": 313,
+      "researchPercentile": 75.0599520383693,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -42499,8 +42491,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 236,
-      "researchPercentile": 60.824742268041234,
+      "researchRank": 247,
+      "researchPercentile": 59.2326139088729,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -42625,8 +42617,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 129,
-      "researchPercentile": 33.24742268041237,
+      "researchRank": 131,
+      "researchPercentile": 31.414868105515588,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -42680,8 +42672,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 180,
-      "researchPercentile": 46.391752577319586,
+      "researchRank": 183,
+      "researchPercentile": 43.884892086330936,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -44497,8 +44489,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 333,
-      "researchPercentile": 85.82474226804123,
+      "researchRank": 357,
+      "researchPercentile": 85.61151079136691,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -45037,8 +45029,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 157,
-      "researchPercentile": 40.4639175257732,
+      "researchRank": 159,
+      "researchPercentile": 38.1294964028777,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -45150,8 +45142,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 250,
-      "researchPercentile": 64.43298969072166,
+      "researchRank": 263,
+      "researchPercentile": 63.069544364508396,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -45348,8 +45340,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 241,
-      "researchPercentile": 62.11340206185567,
+      "researchRank": 252,
+      "researchPercentile": 60.431654676258994,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -45404,8 +45396,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 305,
-      "researchPercentile": 78.6082474226804,
+      "researchRank": 328,
+      "researchPercentile": 78.65707434052757,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -45743,8 +45735,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 195,
-      "researchPercentile": 50.25773195876289,
+      "researchRank": 201,
+      "researchPercentile": 48.201438848920866,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -45869,8 +45861,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 102,
-      "researchPercentile": 26.288659793814432,
+      "researchRank": 104,
+      "researchPercentile": 24.940047961630697,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -45925,8 +45917,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 240,
-      "researchPercentile": 61.855670103092784,
+      "researchRank": 251,
+      "researchPercentile": 60.19184652278177,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -46051,8 +46043,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 355,
-      "researchPercentile": 91.49484536082474,
+      "researchRank": 382,
+      "researchPercentile": 91.60671462829737,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -46235,8 +46227,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 117,
-      "researchPercentile": 30.15463917525773,
+      "researchRank": 119,
+      "researchPercentile": 28.53717026378897,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -46361,8 +46353,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 287,
-      "researchPercentile": 73.96907216494846,
+      "researchRank": 308,
+      "researchPercentile": 73.86091127098321,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -46417,8 +46409,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 356,
-      "researchPercentile": 91.75257731958763,
+      "researchRank": 383,
+      "researchPercentile": 91.84652278177458,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -47538,8 +47530,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 314,
+      "researchPercentile": 75.29976019184652,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -47550,10 +47542,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2812",
@@ -47596,8 +47586,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 396,
+      "researchPercentile": 94.96402877697842,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -47608,10 +47598,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2816",
@@ -47725,8 +47713,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 375,
+      "researchPercentile": 89.92805755395683,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -47737,10 +47725,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2832",
@@ -47854,8 +47840,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 394,
+      "researchPercentile": 94.48441247002398,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -47866,10 +47852,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2836",
@@ -48054,8 +48038,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 381,
+      "researchPercentile": 91.36690647482014,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -48066,10 +48050,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2849",
@@ -48254,8 +48236,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 213,
+      "researchPercentile": 51.07913669064748,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -48266,10 +48248,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2852",
@@ -48382,8 +48362,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 54,
+      "researchPercentile": 12.949640287769784,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -48394,10 +48374,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2880",
@@ -48440,8 +48418,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 321,
+      "researchPercentile": 76.97841726618705,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -48452,10 +48430,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2881",
@@ -48497,8 +48473,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 94,
+      "researchPercentile": 22.54196642685851,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -48509,10 +48485,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2882",
@@ -48555,8 +48529,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 254,
+      "researchPercentile": 60.91127098321343,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -48567,10 +48541,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2883",
@@ -48613,8 +48585,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 233,
+      "researchPercentile": 55.875299760191844,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -48625,10 +48597,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2884",
@@ -48671,8 +48641,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 285,
+      "researchPercentile": 68.34532374100719,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -48683,10 +48653,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2885",
@@ -48729,8 +48697,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 214,
+      "researchPercentile": 51.3189448441247,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -48741,10 +48709,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2886",
@@ -48787,8 +48753,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 234,
+      "researchPercentile": 56.115107913669064,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -48799,10 +48765,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2887",
@@ -48845,8 +48809,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 271,
+      "researchPercentile": 64.98800959232614,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -48857,10 +48821,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2889",
@@ -48903,8 +48865,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 378,
+      "researchPercentile": 90.64748201438849,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -48915,10 +48877,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2890",
@@ -48961,8 +48921,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 253,
+      "researchPercentile": 60.671462829736214,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -48973,10 +48933,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2891",
@@ -49019,8 +48977,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 300,
+      "researchPercentile": 71.94244604316546,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -49031,10 +48989,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2892",
@@ -49077,8 +49033,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 195,
+      "researchPercentile": 46.76258992805755,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -49089,10 +49045,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2897",
@@ -49135,8 +49089,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 335,
+      "researchPercentile": 80.3357314148681,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -49147,10 +49101,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "2901",
@@ -49760,8 +49712,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 296,
-      "researchPercentile": 76.28865979381443,
+      "researchRank": 318,
+      "researchPercentile": 76.2589928057554,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -49887,8 +49839,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 149,
-      "researchPercentile": 38.402061855670105,
+      "researchRank": 151,
+      "researchPercentile": 36.21103117505995,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -50439,7 +50391,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 18,
-      "researchPercentile": 4.639175257731959,
+      "researchPercentile": 4.316546762589928,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -50551,8 +50503,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 197,
-      "researchPercentile": 50.77319587628866,
+      "researchRank": 203,
+      "researchPercentile": 48.6810551558753,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -50807,8 +50759,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 153,
-      "researchPercentile": 39.43298969072165,
+      "researchRank": 155,
+      "researchPercentile": 37.170263788968825,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -50990,7 +50942,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 28,
-      "researchPercentile": 7.216494845360825,
+      "researchPercentile": 6.71462829736211,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -51116,8 +51068,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 293,
-      "researchPercentile": 75.51546391752578,
+      "researchRank": 315,
+      "researchPercentile": 75.53956834532374,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -51242,8 +51194,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 124,
-      "researchPercentile": 31.95876288659794,
+      "researchRank": 126,
+      "researchPercentile": 30.215827338129497,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -51297,8 +51249,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 119,
-      "researchPercentile": 30.670103092783506,
+      "researchRank": 121,
+      "researchPercentile": 29.016786570743406,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -51494,8 +51446,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 97,
-      "researchPercentile": 25,
+      "researchRank": 99,
+      "researchPercentile": 23.741007194244606,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -51690,8 +51642,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 79,
-      "researchPercentile": 20.36082474226804,
+      "researchRank": 80,
+      "researchPercentile": 19.18465227817746,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -51745,8 +51697,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 266,
-      "researchPercentile": 68.55670103092784,
+      "researchRank": 283,
+      "researchPercentile": 67.86570743405275,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -51989,8 +51941,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 168,
-      "researchPercentile": 43.29896907216495,
+      "researchRank": 170,
+      "researchPercentile": 40.7673860911271,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -52045,8 +51997,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 132,
-      "researchPercentile": 34.02061855670103,
+      "researchRank": 134,
+      "researchPercentile": 32.13429256594724,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -52100,8 +52052,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 245,
-      "researchPercentile": 63.144329896907216,
+      "researchRank": 258,
+      "researchPercentile": 61.8705035971223,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -52155,7 +52107,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 6,
-      "researchPercentile": 1.5463917525773196,
+      "researchPercentile": 1.4388489208633093,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -52423,7 +52375,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 39,
-      "researchPercentile": 10.051546391752577,
+      "researchPercentile": 9.352517985611511,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -52864,8 +52816,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 367,
-      "researchPercentile": 94.58762886597938,
+      "researchRank": 395,
+      "researchPercentile": 94.7242206235012,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -53686,8 +53638,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 130,
-      "researchPercentile": 33.50515463917526,
+      "researchRank": 132,
+      "researchPercentile": 31.654676258992804,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -53812,7 +53764,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 32,
-      "researchPercentile": 8.24742268041237,
+      "researchPercentile": 7.6738609112709835,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -54266,8 +54218,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 82,
-      "researchPercentile": 21.1340206185567,
+      "researchRank": 83,
+      "researchPercentile": 19.904076738609113,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -54392,7 +54344,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 1,
-      "researchPercentile": 0.25773195876288657,
+      "researchPercentile": 0.23980815347721823,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -54518,8 +54470,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 334,
-      "researchPercentile": 86.08247422680412,
+      "researchRank": 358,
+      "researchPercentile": 85.85131894484412,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -54573,7 +54525,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 17,
-      "researchPercentile": 4.381443298969073,
+      "researchPercentile": 4.07673860911271,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -54840,8 +54792,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 221,
-      "researchPercentile": 56.95876288659794,
+      "researchRank": 230,
+      "researchPercentile": 55.15587529976019,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -55393,7 +55345,7 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 388,
+      "researchRank": 417,
       "researchPercentile": 100,
       "tradeRank": null,
       "tradePercentile": null,
@@ -55449,8 +55401,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 286,
-      "researchPercentile": 73.71134020618557,
+      "researchRank": 307,
+      "researchPercentile": 73.621103117506,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -55504,8 +55456,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 133,
-      "researchPercentile": 34.27835051546392,
+      "researchRank": 135,
+      "researchPercentile": 32.37410071942446,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -55560,8 +55512,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 232,
-      "researchPercentile": 59.79381443298969,
+      "researchRank": 243,
+      "researchPercentile": 58.273381294964025,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -56028,8 +55980,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 239,
-      "researchPercentile": 61.597938144329895,
+      "researchRank": 250,
+      "researchPercentile": 59.95203836930455,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -56084,7 +56036,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 42,
-      "researchPercentile": 10.824742268041238,
+      "researchPercentile": 10.071942446043165,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -56281,8 +56233,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 202,
-      "researchPercentile": 52.06185567010309,
+      "researchRank": 209,
+      "researchPercentile": 50.11990407673861,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -56336,8 +56288,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 254,
-      "researchPercentile": 65.4639175257732,
+      "researchRank": 268,
+      "researchPercentile": 64.26858513189448,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -56661,8 +56613,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 112,
-      "researchPercentile": 28.8659793814433,
+      "researchRank": 114,
+      "researchPercentile": 27.33812949640288,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -56717,8 +56669,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 256,
-      "researchPercentile": 65.97938144329896,
+      "researchRank": 272,
+      "researchPercentile": 65.22781774580336,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -56773,8 +56725,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 164,
-      "researchPercentile": 42.2680412371134,
+      "researchRank": 166,
+      "researchPercentile": 39.80815347721823,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -57042,7 +56994,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 40,
-      "researchPercentile": 10.309278350515465,
+      "researchPercentile": 9.59232613908873,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -57097,8 +57049,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 98,
-      "researchPercentile": 25.257731958762886,
+      "researchRank": 100,
+      "researchPercentile": 23.980815347721823,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -57481,8 +57433,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 298,
-      "researchPercentile": 76.80412371134021,
+      "researchRank": 320,
+      "researchPercentile": 76.73860911270984,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -57536,7 +57488,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 3,
-      "researchPercentile": 0.7731958762886598,
+      "researchPercentile": 0.7194244604316546,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -57661,8 +57613,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 114,
-      "researchPercentile": 29.38144329896907,
+      "researchRank": 116,
+      "researchPercentile": 27.817745803357315,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -57787,8 +57739,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 70,
-      "researchPercentile": 18.04123711340206,
+      "researchRank": 71,
+      "researchPercentile": 17.026378896882495,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -57971,8 +57923,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 223,
-      "researchPercentile": 57.47422680412371,
+      "researchRank": 232,
+      "researchPercentile": 55.63549160671463,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -58027,7 +57979,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 16,
-      "researchPercentile": 4.123711340206185,
+      "researchPercentile": 3.8369304556354917,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -58153,8 +58105,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 284,
-      "researchPercentile": 73.19587628865979,
+      "researchRank": 305,
+      "researchPercentile": 73.14148681055156,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -58493,7 +58445,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 14,
-      "researchPercentile": 3.6082474226804124,
+      "researchPercentile": 3.357314148681055,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -58619,8 +58571,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 363,
-      "researchPercentile": 93.55670103092784,
+      "researchRank": 390,
+      "researchPercentile": 93.5251798561151,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -58745,8 +58697,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 307,
-      "researchPercentile": 79.12371134020619,
+      "researchRank": 330,
+      "researchPercentile": 79.13669064748201,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -59000,8 +58952,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 189,
-      "researchPercentile": 48.71134020618557,
+      "researchRank": 194,
+      "researchPercentile": 46.52278177458034,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -59056,8 +59008,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 229,
-      "researchPercentile": 59.02061855670103,
+      "researchRank": 240,
+      "researchPercentile": 57.55395683453237,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -60733,8 +60685,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 224,
-      "researchPercentile": 57.7319587628866,
+      "researchRank": 235,
+      "researchPercentile": 56.354916067146284,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -60931,8 +60883,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 218,
-      "researchPercentile": 56.18556701030928,
+      "researchRank": 227,
+      "researchPercentile": 54.436450839328536,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -61057,8 +61009,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 111,
-      "researchPercentile": 28.608247422680414,
+      "researchRank": 113,
+      "researchPercentile": 27.098321342925658,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -61822,8 +61774,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 211,
-      "researchPercentile": 54.381443298969074,
+      "researchRank": 220,
+      "researchPercentile": 52.75779376498801,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -62361,8 +62313,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 248,
-      "researchPercentile": 63.91752577319588,
+      "researchRank": 261,
+      "researchPercentile": 62.589928057553955,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -62559,8 +62511,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 364,
-      "researchPercentile": 93.81443298969072,
+      "researchRank": 391,
+      "researchPercentile": 93.76498800959233,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -62757,8 +62709,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 382,
-      "researchPercentile": 98.45360824742268,
+      "researchRank": 411,
+      "researchPercentile": 98.56115107913669,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -62812,8 +62764,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 358,
-      "researchPercentile": 92.26804123711341,
+      "researchRank": 385,
+      "researchPercentile": 92.32613908872902,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -63138,7 +63090,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 24,
-      "researchPercentile": 6.185567010309279,
+      "researchPercentile": 5.755395683453237,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -63193,8 +63145,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 208,
-      "researchPercentile": 53.608247422680414,
+      "researchRank": 217,
+      "researchPercentile": 52.038369304556355,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -63249,7 +63201,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 7,
-      "researchPercentile": 1.8041237113402062,
+      "researchPercentile": 1.6786570743405276,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -63304,8 +63256,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 188,
-      "researchPercentile": 48.45360824742268,
+      "researchRank": 193,
+      "researchPercentile": 46.28297362110312,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -63360,7 +63312,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 49,
-      "researchPercentile": 12.628865979381443,
+      "researchPercentile": 11.750599520383693,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -63473,8 +63425,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 105,
-      "researchPercentile": 27.061855670103093,
+      "researchRank": 107,
+      "researchPercentile": 25.65947242206235,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -63742,8 +63694,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 252,
-      "researchPercentile": 64.94845360824742,
+      "researchRank": 265,
+      "researchPercentile": 63.54916067146283,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -64140,7 +64092,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 35,
-      "researchPercentile": 9.02061855670103,
+      "researchPercentile": 8.393285371702637,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -64254,7 +64206,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 27,
-      "researchPercentile": 6.958762886597938,
+      "researchPercentile": 6.474820143884892,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -64308,8 +64260,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 302,
-      "researchPercentile": 77.83505154639175,
+      "researchRank": 325,
+      "researchPercentile": 77.93764988009592,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -64506,8 +64458,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 274,
-      "researchPercentile": 70.61855670103093,
+      "researchRank": 293,
+      "researchPercentile": 70.26378896882494,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -65446,7 +65398,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 8,
-      "researchPercentile": 2.0618556701030926,
+      "researchPercentile": 1.9184652278177459,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -65571,8 +65523,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 320,
-      "researchPercentile": 82.47422680412372,
+      "researchRank": 344,
+      "researchPercentile": 82.49400479616307,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -65897,8 +65849,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 342,
-      "researchPercentile": 88.14432989690722,
+      "researchRank": 366,
+      "researchPercentile": 87.76978417266187,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -65952,8 +65904,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 136,
-      "researchPercentile": 35.05154639175258,
+      "researchRank": 138,
+      "researchPercentile": 33.093525179856115,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -66008,8 +65960,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 272,
-      "researchPercentile": 70.10309278350516,
+      "researchRank": 290,
+      "researchPercentile": 69.54436450839329,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -67187,8 +67139,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 205,
+      "researchPercentile": 49.16067146282974,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -67199,10 +67151,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "5880",
@@ -67245,8 +67195,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 270,
+      "researchPercentile": 64.74820143884892,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -67257,10 +67207,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "5906",
@@ -67445,8 +67393,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 190,
+      "researchPercentile": 45.563549160671464,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -67457,10 +67405,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 138,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "6024",
@@ -67644,8 +67590,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 116,
-      "researchPercentile": 29.896907216494846,
+      "researchRank": 118,
+      "researchPercentile": 28.297362110311752,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -67771,8 +67717,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 152,
-      "researchPercentile": 39.175257731958766,
+      "researchRank": 154,
+      "researchPercentile": 36.930455635491604,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -68167,8 +68113,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 230,
-      "researchPercentile": 59.27835051546392,
+      "researchRank": 241,
+      "researchPercentile": 57.79376498800959,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -68693,8 +68639,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 179,
-      "researchPercentile": 46.134020618556704,
+      "researchRank": 182,
+      "researchPercentile": 43.645083932853716,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -68748,8 +68694,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 84,
-      "researchPercentile": 21.649484536082475,
+      "researchRank": 85,
+      "researchPercentile": 20.38369304556355,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -68804,8 +68750,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 319,
-      "researchPercentile": 82.21649484536083,
+      "researchRank": 343,
+      "researchPercentile": 82.25419664268586,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -69131,8 +69077,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 186,
-      "researchPercentile": 47.93814432989691,
+      "researchRank": 191,
+      "researchPercentile": 45.803357314148684,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -69256,8 +69202,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 74,
-      "researchPercentile": 19.072164948453608,
+      "researchRank": 75,
+      "researchPercentile": 17.985611510791365,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -69311,8 +69257,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 76,
-      "researchPercentile": 19.587628865979383,
+      "researchRank": 77,
+      "researchPercentile": 18.465227817745802,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -69437,8 +69383,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 71,
-      "researchPercentile": 18.298969072164947,
+      "researchRank": 72,
+      "researchPercentile": 17.26618705035971,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -69563,8 +69509,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 89,
-      "researchPercentile": 22.938144329896907,
+      "researchRank": 90,
+      "researchPercentile": 21.58273381294964,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -69676,7 +69622,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 20,
-      "researchPercentile": 5.154639175257732,
+      "researchPercentile": 4.796163069544365,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -69730,8 +69676,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 86,
-      "researchPercentile": 22.164948453608247,
+      "researchRank": 87,
+      "researchPercentile": 20.863309352517987,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -69928,8 +69874,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 331,
-      "researchPercentile": 85.30927835051547,
+      "researchRank": 355,
+      "researchPercentile": 85.13189448441247,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -70254,7 +70200,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 45,
-      "researchPercentile": 11.597938144329897,
+      "researchPercentile": 10.79136690647482,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -70438,8 +70384,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 375,
-      "researchPercentile": 96.64948453608247,
+      "researchRank": 404,
+      "researchPercentile": 96.88249400479616,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -70493,8 +70439,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 54,
-      "researchPercentile": 13.917525773195877,
+      "researchRank": 55,
+      "researchPercentile": 13.189448441247002,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -70691,7 +70637,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 23,
-      "researchPercentile": 5.927835051546392,
+      "researchPercentile": 5.5155875299760195,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -70817,8 +70763,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 349,
-      "researchPercentile": 89.94845360824742,
+      "researchRank": 373,
+      "researchPercentile": 89.44844124700239,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -71201,8 +71147,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 61,
-      "researchPercentile": 15.721649484536082,
+      "researchRank": 62,
+      "researchPercentile": 14.86810551558753,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -71256,8 +71202,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 228,
-      "researchPercentile": 58.76288659793814,
+      "researchRank": 239,
+      "researchPercentile": 57.31414868105516,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -71310,8 +71256,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 68,
-      "researchPercentile": 17.52577319587629,
+      "researchRank": 69,
+      "researchPercentile": 16.546762589928058,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -71365,8 +71311,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 220,
-      "researchPercentile": 56.70103092783505,
+      "researchRank": 229,
+      "researchPercentile": 54.91606714628298,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -71562,8 +71508,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 310,
-      "researchPercentile": 79.89690721649484,
+      "researchRank": 333,
+      "researchPercentile": 79.85611510791367,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -71618,8 +71564,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 313,
-      "researchPercentile": 80.6701030927835,
+      "researchRank": 337,
+      "researchPercentile": 80.81534772182255,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -71673,8 +71619,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 317,
-      "researchPercentile": 81.70103092783505,
+      "researchRank": 341,
+      "researchPercentile": 81.77458033573141,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -71728,8 +71674,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 226,
-      "researchPercentile": 58.24742268041237,
+      "researchRank": 237,
+      "researchPercentile": 56.83453237410072,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -71784,8 +71730,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 304,
-      "researchPercentile": 78.35051546391753,
+      "researchRank": 327,
+      "researchPercentile": 78.41726618705036,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -71840,8 +71786,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 165,
-      "researchPercentile": 42.52577319587629,
+      "researchRank": 167,
+      "researchPercentile": 40.04796163069545,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -71967,8 +71913,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 215,
-      "researchPercentile": 55.41237113402062,
+      "researchRank": 224,
+      "researchPercentile": 53.71702637889688,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -72093,7 +72039,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 10,
-      "researchPercentile": 2.577319587628866,
+      "researchPercentile": 2.3980815347721824,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -72218,8 +72164,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 109,
-      "researchPercentile": 28.09278350515464,
+      "researchRank": 111,
+      "researchPercentile": 26.618705035971225,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -72273,8 +72219,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 345,
-      "researchPercentile": 88.91752577319588,
+      "researchRank": 369,
+      "researchPercentile": 88.48920863309353,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -72387,7 +72333,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 19,
-      "researchPercentile": 4.896907216494846,
+      "researchPercentile": 4.556354916067146,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -72442,8 +72388,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 143,
-      "researchPercentile": 36.855670103092784,
+      "researchRank": 145,
+      "researchPercentile": 34.77218225419664,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -72498,7 +72444,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 33,
-      "researchPercentile": 8.505154639175258,
+      "researchPercentile": 7.913669064748201,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -74256,8 +74202,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 191,
-      "researchPercentile": 49.22680412371134,
+      "researchRank": 197,
+      "researchPercentile": 47.24220623501199,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -74311,8 +74257,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 344,
-      "researchPercentile": 88.65979381443299,
+      "researchRank": 368,
+      "researchPercentile": 88.24940047961631,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -74508,7 +74454,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 13,
-      "researchPercentile": 3.350515463917526,
+      "researchPercentile": 3.117505995203837,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -74704,8 +74650,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 88,
-      "researchPercentile": 22.68041237113402,
+      "researchRank": 89,
+      "researchPercentile": 21.34292565947242,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -74960,8 +74906,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 196,
-      "researchPercentile": 50.51546391752577,
+      "researchRank": 202,
+      "researchPercentile": 48.44124700239808,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -75016,8 +74962,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 271,
-      "researchPercentile": 69.84536082474227,
+      "researchRank": 289,
+      "researchPercentile": 69.30455635491607,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -75284,8 +75230,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 327,
-      "researchPercentile": 84.27835051546391,
+      "researchRank": 351,
+      "researchPercentile": 84.1726618705036,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -75822,8 +75768,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 187,
-      "researchPercentile": 48.1958762886598,
+      "researchRank": 192,
+      "researchPercentile": 46.0431654676259,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -75877,8 +75823,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 155,
-      "researchPercentile": 39.94845360824742,
+      "researchRank": 157,
+      "researchPercentile": 37.64988009592326,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -75933,7 +75879,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 53,
-      "researchPercentile": 13.65979381443299,
+      "researchPercentile": 12.709832134292565,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -76528,8 +76474,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 372,
-      "researchPercentile": 95.87628865979381,
+      "researchRank": 401,
+      "researchPercentile": 96.1630695443645,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -76584,8 +76530,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 127,
-      "researchPercentile": 32.7319587628866,
+      "researchRank": 129,
+      "researchPercentile": 30.93525179856115,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -76852,8 +76798,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 206,
-      "researchPercentile": 53.09278350515464,
+      "researchRank": 215,
+      "researchPercentile": 51.55875299760192,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -77973,8 +77919,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 384,
-      "researchPercentile": 98.96907216494846,
+      "researchRank": 413,
+      "researchPercentile": 99.04076738609113,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -78382,8 +78328,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 59,
-      "researchPercentile": 15.206185567010309,
+      "researchRank": 60,
+      "researchPercentile": 14.388489208633093,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -78580,7 +78526,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 46,
-      "researchPercentile": 11.855670103092784,
+      "researchPercentile": 11.031175059952039,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -78764,8 +78710,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 348,
-      "researchPercentile": 89.69072164948453,
+      "researchRank": 372,
+      "researchPercentile": 89.20863309352518,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -79031,8 +78977,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 96,
-      "researchPercentile": 24.742268041237114,
+      "researchRank": 98,
+      "researchPercentile": 23.501199040767386,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -80267,7 +80213,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 51,
-      "researchPercentile": 13.144329896907216,
+      "researchPercentile": 12.23021582733813,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -80592,8 +80538,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 370,
-      "researchPercentile": 95.36082474226804,
+      "researchRank": 399,
+      "researchPercentile": 95.68345323741008,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -80789,8 +80735,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 72,
-      "researchPercentile": 18.556701030927837,
+      "researchRank": 73,
+      "researchPercentile": 17.50599520383693,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -80973,8 +80919,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 104,
-      "researchPercentile": 26.804123711340207,
+      "researchRank": 106,
+      "researchPercentile": 25.41966426858513,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -81727,8 +81673,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 75,
-      "researchPercentile": 19.329896907216494,
+      "researchRank": 76,
+      "researchPercentile": 18.225419664268586,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -81783,7 +81729,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 12,
-      "researchPercentile": 3.0927835051546393,
+      "researchPercentile": 2.8776978417266186,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -82141,7 +82087,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 21,
-      "researchPercentile": 5.412371134020619,
+      "researchPercentile": 5.0359712230215825,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -82395,8 +82341,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 108,
-      "researchPercentile": 27.835051546391753,
+      "researchRank": 110,
+      "researchPercentile": 26.378896882494004,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -82593,8 +82539,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 330,
-      "researchPercentile": 85.05154639175258,
+      "researchRank": 354,
+      "researchPercentile": 84.89208633093526,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -82648,8 +82594,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 282,
-      "researchPercentile": 72.68041237113403,
+      "researchRank": 303,
+      "researchPercentile": 72.66187050359713,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -82704,8 +82650,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 369,
-      "researchPercentile": 95.10309278350516,
+      "researchRank": 398,
+      "researchPercentile": 95.44364508393285,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -82760,8 +82706,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 352,
-      "researchPercentile": 90.72164948453609,
+      "researchRank": 377,
+      "researchPercentile": 90.40767386091127,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -83085,8 +83031,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 332,
-      "researchPercentile": 85.56701030927834,
+      "researchRank": 356,
+      "researchPercentile": 85.37170263788968,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -83425,7 +83371,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 29,
-      "researchPercentile": 7.474226804123711,
+      "researchPercentile": 6.954436450839329,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -83479,8 +83425,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 366,
-      "researchPercentile": 94.3298969072165,
+      "researchRank": 393,
+      "researchPercentile": 94.24460431654676,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -83890,8 +83836,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 381,
-      "researchPercentile": 98.19587628865979,
+      "researchRank": 410,
+      "researchPercentile": 98.32134292565948,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -84230,8 +84176,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 361,
-      "researchPercentile": 93.04123711340206,
+      "researchRank": 388,
+      "researchPercentile": 93.04556354916068,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -84427,8 +84373,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 261,
-      "researchPercentile": 67.26804123711341,
+      "researchRank": 278,
+      "researchPercentile": 66.66666666666667,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -85192,8 +85138,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 126,
-      "researchPercentile": 32.47422680412371,
+      "researchRank": 128,
+      "researchPercentile": 30.695443645083934,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -85319,7 +85265,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 48,
-      "researchPercentile": 12.371134020618557,
+      "researchPercentile": 11.510791366906474,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -85787,8 +85733,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 238,
-      "researchPercentile": 61.34020618556701,
+      "researchRank": 249,
+      "researchPercentile": 59.71223021582734,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -86327,8 +86273,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 379,
-      "researchPercentile": 97.68041237113403,
+      "researchRank": 408,
+      "researchPercentile": 97.84172661870504,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -86596,8 +86542,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 374,
-      "researchPercentile": 96.3917525773196,
+      "researchRank": 403,
+      "researchPercentile": 96.64268585131894,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -87560,8 +87506,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 183,
-      "researchPercentile": 47.16494845360825,
+      "researchRank": 186,
+      "researchPercentile": 44.60431654676259,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -87687,8 +87633,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 365,
-      "researchPercentile": 94.0721649484536,
+      "researchRank": 392,
+      "researchPercentile": 94.00479616306954,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -87955,7 +87901,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 15,
-      "researchPercentile": 3.865979381443299,
+      "researchPercentile": 3.597122302158273,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -88151,8 +88097,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 160,
-      "researchPercentile": 41.23711340206186,
+      "researchRank": 162,
+      "researchPercentile": 38.84892086330935,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -96676,8 +96622,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 201,
-      "researchPercentile": 51.8041237113402,
+      "researchRank": 208,
+      "researchPercentile": 49.88009592326139,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -97655,8 +97601,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 291,
-      "researchPercentile": 75,
+      "researchRank": 312,
+      "researchPercentile": 74.82014388489209,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -98053,8 +97999,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 326,
-      "researchPercentile": 84.02061855670104,
+      "researchRank": 350,
+      "researchPercentile": 83.93285371702638,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -98604,8 +98550,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 190,
-      "researchPercentile": 48.96907216494845,
+      "researchRank": 196,
+      "researchPercentile": 47.00239808153477,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -101344,8 +101290,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 115,
-      "researchPercentile": 29.63917525773196,
+      "researchRank": 117,
+      "researchPercentile": 28.057553956834532,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -101543,7 +101489,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 44,
-      "researchPercentile": 11.34020618556701,
+      "researchPercentile": 10.551558752997602,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -101952,8 +101898,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 216,
-      "researchPercentile": 55.670103092783506,
+      "researchRank": 225,
+      "researchPercentile": 53.9568345323741,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -102008,8 +101954,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 351,
-      "researchPercentile": 90.4639175257732,
+      "researchRank": 376,
+      "researchPercentile": 90.16786570743405,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -102062,8 +102008,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 150,
-      "researchPercentile": 38.65979381443299,
+      "researchRank": 152,
+      "researchPercentile": 36.45083932853717,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -102260,8 +102206,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 125,
-      "researchPercentile": 32.21649484536083,
+      "researchRank": 127,
+      "researchPercentile": 30.455635491606714,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -103282,8 +103228,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 56,
-      "researchPercentile": 14.43298969072165,
+      "researchRank": 57,
+      "researchPercentile": 13.66906474820144,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -103338,8 +103284,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 167,
-      "researchPercentile": 43.04123711340206,
+      "researchRank": 169,
+      "researchPercentile": 40.52757793764988,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -103807,8 +103753,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 314,
-      "researchPercentile": 80.9278350515464,
+      "researchRank": 338,
+      "researchPercentile": 81.05515587529976,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -104062,8 +104008,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 346,
-      "researchPercentile": 89.17525773195877,
+      "researchRank": 370,
+      "researchPercentile": 88.72901678657074,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -104116,8 +104062,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 118,
-      "researchPercentile": 30.412371134020617,
+      "researchRank": 120,
+      "researchPercentile": 28.776978417266186,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -104172,7 +104118,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 50,
-      "researchPercentile": 12.88659793814433,
+      "researchPercentile": 11.990407673860911,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -104724,8 +104670,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 259,
-      "researchPercentile": 66.75257731958763,
+      "researchRank": 276,
+      "researchPercentile": 66.18705035971223,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -104850,8 +104796,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 93,
-      "researchPercentile": 23.969072164948454,
+      "researchRank": 95,
+      "researchPercentile": 22.781774580335732,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -105544,7 +105490,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 30,
-      "researchPercentile": 7.731958762886598,
+      "researchPercentile": 7.194244604316546,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -105741,8 +105687,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 337,
-      "researchPercentile": 86.85567010309278,
+      "researchRank": 361,
+      "researchPercentile": 86.57074340527578,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -105926,8 +105872,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 174,
-      "researchPercentile": 44.845360824742265,
+      "researchRank": 177,
+      "researchPercentile": 42.44604316546763,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -106053,8 +105999,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 269,
-      "researchPercentile": 69.3298969072165,
+      "researchRank": 287,
+      "researchPercentile": 68.82494004796163,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -106109,8 +106055,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 376,
-      "researchPercentile": 96.90721649484536,
+      "researchRank": 405,
+      "researchPercentile": 97.12230215827338,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -106305,8 +106251,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 107,
-      "researchPercentile": 27.577319587628867,
+      "researchRank": 109,
+      "researchPercentile": 26.139088729016787,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -106857,8 +106803,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 267,
-      "researchPercentile": 68.81443298969072,
+      "researchRank": 284,
+      "researchPercentile": 68.10551558752998,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -106984,8 +106930,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 156,
-      "researchPercentile": 40.20618556701031,
+      "researchRank": 158,
+      "researchPercentile": 37.88968824940048,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -107252,8 +107198,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 162,
-      "researchPercentile": 41.75257731958763,
+      "researchRank": 164,
+      "researchPercentile": 39.328537170263786,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -107650,7 +107596,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 5,
-      "researchPercentile": 1.288659793814433,
+      "researchPercentile": 1.1990407673860912,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -107775,8 +107721,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 194,
-      "researchPercentile": 50,
+      "researchRank": 200,
+      "researchPercentile": 47.961630695443645,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -109095,8 +109041,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 159,
-      "researchPercentile": 40.97938144329897,
+      "researchRank": 161,
+      "researchPercentile": 38.60911270983213,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -109719,8 +109665,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 175,
-      "researchPercentile": 45.103092783505154,
+      "researchRank": 178,
+      "researchPercentile": 42.68585131894484,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -111168,8 +111114,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 67,
-      "researchPercentile": 17.2680412371134,
+      "researchRank": 68,
+      "researchPercentile": 16.30695443645084,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -111224,7 +111170,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 52,
-      "researchPercentile": 13.402061855670103,
+      "researchPercentile": 12.470023980815348,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -111491,8 +111437,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 122,
-      "researchPercentile": 31.443298969072163,
+      "researchRank": 124,
+      "researchPercentile": 29.73621103117506,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -111618,8 +111564,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 303,
-      "researchPercentile": 78.09278350515464,
+      "researchRank": 326,
+      "researchPercentile": 78.17745803357315,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -116701,8 +116647,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 151,
-      "researchPercentile": 38.91752577319588,
+      "researchRank": 153,
+      "researchPercentile": 36.69064748201439,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -116756,8 +116702,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 212,
-      "researchPercentile": 54.63917525773196,
+      "researchRank": 221,
+      "researchPercentile": 52.99760191846523,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -117095,8 +117041,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 92,
-      "researchPercentile": 23.711340206185568,
+      "researchRank": 93,
+      "researchPercentile": 22.302158273381295,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -117790,8 +117736,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 262,
-      "researchPercentile": 67.52577319587628,
+      "researchRank": 279,
+      "researchPercentile": 66.90647482014388,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -118768,8 +118714,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 257,
-      "researchPercentile": 66.23711340206185,
+      "researchRank": 273,
+      "researchPercentile": 65.46762589928058,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -118894,8 +118840,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 172,
-      "researchPercentile": 44.329896907216494,
+      "researchRank": 175,
+      "researchPercentile": 41.96642685851319,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -119078,8 +119024,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 62,
-      "researchPercentile": 15.97938144329897,
+      "researchRank": 63,
+      "researchPercentile": 15.107913669064748,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -119404,8 +119350,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 251,
-      "researchPercentile": 64.69072164948453,
+      "researchRank": 264,
+      "researchPercentile": 63.30935251798561,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -119743,8 +119689,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 249,
-      "researchPercentile": 64.17525773195877,
+      "researchRank": 262,
+      "researchPercentile": 62.829736211031175,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -119870,8 +119816,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 371,
-      "researchPercentile": 95.61855670103093,
+      "researchRank": 400,
+      "researchPercentile": 95.92326139088729,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -120139,8 +120085,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 289,
-      "researchPercentile": 74.48453608247422,
+      "researchRank": 310,
+      "researchPercentile": 74.34052757793765,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -120195,8 +120141,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 360,
-      "researchPercentile": 92.78350515463917,
+      "researchRank": 387,
+      "researchPercentile": 92.80575539568345,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -120322,8 +120268,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 378,
-      "researchPercentile": 97.42268041237114,
+      "researchRank": 407,
+      "researchPercentile": 97.60191846522781,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -122339,8 +122285,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 85,
-      "researchPercentile": 21.90721649484536,
+      "researchRank": 86,
+      "researchPercentile": 20.623501199040767,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -122607,8 +122553,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 357,
-      "researchPercentile": 92.01030927835052,
+      "researchRank": 384,
+      "researchPercentile": 92.0863309352518,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -123089,8 +123035,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 383,
-      "researchPercentile": 98.71134020618557,
+      "researchRank": 412,
+      "researchPercentile": 98.8009592326139,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -123415,8 +123361,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 278,
-      "researchPercentile": 71.64948453608247,
+      "researchRank": 297,
+      "researchPercentile": 71.22302158273381,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -123612,8 +123558,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 55,
-      "researchPercentile": 14.175257731958762,
+      "researchRank": 56,
+      "researchPercentile": 13.42925659472422,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -124493,8 +124439,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 78,
-      "researchPercentile": 20.103092783505154,
+      "researchRank": 79,
+      "researchPercentile": 18.94484412470024,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -124761,8 +124707,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 131,
-      "researchPercentile": 33.76288659793814,
+      "researchRank": 133,
+      "researchPercentile": 31.894484412470025,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -124817,8 +124763,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 316,
-      "researchPercentile": 81.44329896907216,
+      "researchRank": 340,
+      "researchPercentile": 81.5347721822542,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -125228,8 +125174,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 181,
-      "researchPercentile": 46.649484536082475,
+      "researchRank": 184,
+      "researchPercentile": 44.124700239808156,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -125497,8 +125443,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 324,
-      "researchPercentile": 83.50515463917526,
+      "researchRank": 348,
+      "researchPercentile": 83.45323741007195,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -125695,7 +125641,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 37,
-      "researchPercentile": 9.536082474226804,
+      "researchPercentile": 8.872901678657074,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -126105,8 +126051,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 283,
-      "researchPercentile": 72.9381443298969,
+      "researchRank": 304,
+      "researchPercentile": 72.90167865707434,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -127426,8 +127372,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 275,
+      "researchPercentile": 65.94724220623502,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -127438,10 +127384,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 137,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "5878",
@@ -127696,8 +127640,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 263,
-      "researchPercentile": 67.78350515463917,
+      "researchRank": 280,
+      "researchPercentile": 67.1462829736211,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -127894,8 +127838,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 173,
+      "researchPercentile": 41.486810551558754,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -127906,10 +127850,8 @@
       "setup": null,
       "etfProfile": null,
       "historyCoverageTradingDays": 137,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "fundamental"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "6020",
@@ -128874,8 +128816,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 255,
-      "researchPercentile": 65.72164948453609,
+      "researchRank": 269,
+      "researchPercentile": 64.5083932853717,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -129285,8 +129227,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 247,
-      "researchPercentile": 63.65979381443299,
+      "researchRank": 260,
+      "researchPercentile": 62.35011990407674,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -131004,8 +130946,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 222,
-      "researchPercentile": 57.21649484536083,
+      "researchRank": 231,
+      "researchPercentile": 55.39568345323741,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -131131,8 +131073,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 185,
-      "researchPercentile": 47.68041237113402,
+      "researchRank": 188,
+      "researchPercentile": 45.08393285371702,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -131329,8 +131271,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 246,
-      "researchPercentile": 63.402061855670105,
+      "researchRank": 259,
+      "researchPercentile": 62.11031175059952,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -131455,8 +131397,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 135,
-      "researchPercentile": 34.79381443298969,
+      "researchRank": 137,
+      "researchPercentile": 32.853717026378895,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -131922,8 +131864,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 141,
-      "researchPercentile": 36.34020618556701,
+      "researchRank": 143,
+      "researchPercentile": 34.29256594724221,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -132191,8 +132133,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 328,
-      "researchPercentile": 84.5360824742268,
+      "researchRank": 352,
+      "researchPercentile": 84.41247002398082,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -132645,7 +132587,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 25,
-      "researchPercentile": 6.443298969072165,
+      "researchPercentile": 5.995203836930456,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -133881,8 +133823,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 377,
-      "researchPercentile": 97.16494845360825,
+      "researchRank": 406,
+      "researchPercentile": 97.3621103117506,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -134078,8 +134020,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 87,
-      "researchPercentile": 22.422680412371133,
+      "researchRank": 88,
+      "researchPercentile": 21.103117505995204,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -134347,8 +134289,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 297,
-      "researchPercentile": 76.54639175257732,
+      "researchRank": 319,
+      "researchPercentile": 76.49880095923261,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -134403,7 +134345,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 34,
-      "researchPercentile": 8.762886597938145,
+      "researchPercentile": 8.15347721822542,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -134457,8 +134399,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 270,
-      "researchPercentile": 69.58762886597938,
+      "researchRank": 288,
+      "researchPercentile": 69.06474820143885,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -135920,8 +135862,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 234,
-      "researchPercentile": 60.30927835051546,
+      "researchRank": 245,
+      "researchPercentile": 58.752997601918466,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -136543,8 +136485,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 308,
-      "researchPercentile": 79.38144329896907,
+      "researchRank": 331,
+      "researchPercentile": 79.37649880095923,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -136953,8 +136895,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 243,
-      "researchPercentile": 62.628865979381445,
+      "researchRank": 256,
+      "researchPercentile": 61.39088729016787,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -137138,8 +137080,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 213,
-      "researchPercentile": 54.896907216494846,
+      "researchRank": 222,
+      "researchPercentile": 53.23741007194245,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -137336,8 +137278,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 295,
-      "researchPercentile": 76.03092783505154,
+      "researchRank": 317,
+      "researchPercentile": 76.01918465227818,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -137391,8 +137333,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 171,
-      "researchPercentile": 44.07216494845361,
+      "researchRank": 174,
+      "researchPercentile": 41.726618705035975,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -138156,8 +138098,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 359,
-      "researchPercentile": 92.52577319587628,
+      "researchRank": 386,
+      "researchPercentile": 92.56594724220624,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -138212,8 +138154,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 336,
-      "researchPercentile": 86.5979381443299,
+      "researchRank": 360,
+      "researchPercentile": 86.33093525179856,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -138764,8 +138706,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 94,
-      "researchPercentile": 24.22680412371134,
+      "researchRank": 96,
+      "researchPercentile": 23.02158273381295,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -138962,8 +138904,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 341,
-      "researchPercentile": 87.88659793814433,
+      "researchRank": 365,
+      "researchPercentile": 87.52997601918466,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -139287,8 +139229,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 214,
-      "researchPercentile": 55.154639175257735,
+      "researchRank": 223,
+      "researchPercentile": 53.47721822541966,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -139756,7 +139698,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 36,
-      "researchPercentile": 9.278350515463918,
+      "researchPercentile": 8.633093525179856,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -139810,8 +139752,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 123,
-      "researchPercentile": 31.701030927835053,
+      "researchRank": 125,
+      "researchPercentile": 29.976019184652277,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -140279,8 +140221,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 173,
-      "researchPercentile": 44.58762886597938,
+      "researchRank": 176,
+      "researchPercentile": 42.20623501199041,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -141857,8 +141799,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 205,
-      "researchPercentile": 52.83505154639175,
+      "researchRank": 212,
+      "researchPercentile": 50.83932853717026,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -142124,8 +142066,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 110,
-      "researchPercentile": 28.350515463917525,
+      "researchRank": 112,
+      "researchPercentile": 26.85851318944844,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -142321,8 +142263,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 325,
-      "researchPercentile": 83.76288659793815,
+      "researchRank": 349,
+      "researchPercentile": 83.69304556354916,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -143725,8 +143667,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 170,
-      "researchPercentile": 43.81443298969072,
+      "researchRank": 172,
+      "researchPercentile": 41.247002398081534,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -143851,8 +143793,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 65,
-      "researchPercentile": 16.75257731958763,
+      "researchRank": 66,
+      "researchPercentile": 15.827338129496402,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -146228,8 +146170,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 253,
-      "researchPercentile": 65.20618556701031,
+      "researchRank": 266,
+      "researchPercentile": 63.78896882494005,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -146567,8 +146509,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 163,
-      "researchPercentile": 42.01030927835052,
+      "researchRank": 165,
+      "researchPercentile": 39.568345323741006,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -147119,8 +147061,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 137,
-      "researchPercentile": 35.30927835051546,
+      "researchRank": 139,
+      "researchPercentile": 33.333333333333336,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -148357,8 +148299,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 315,
-      "researchPercentile": 81.18556701030928,
+      "researchRank": 339,
+      "researchPercentile": 81.29496402877697,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -148471,8 +148413,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 203,
-      "researchPercentile": 52.31958762886598,
+      "researchRank": 210,
+      "researchPercentile": 50.35971223021583,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -148811,7 +148753,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 43,
-      "researchPercentile": 11.082474226804123,
+      "researchPercentile": 10.311750599520384,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -148866,8 +148808,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 299,
-      "researchPercentile": 77.0618556701031,
+      "researchRank": 322,
+      "researchPercentile": 77.21822541966426,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -148993,8 +148935,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 242,
-      "researchPercentile": 62.371134020618555,
+      "researchRank": 255,
+      "researchPercentile": 61.15107913669065,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -149261,8 +149203,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 329,
-      "researchPercentile": 84.79381443298969,
+      "researchRank": 353,
+      "researchPercentile": 84.65227817745803,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -149884,8 +149826,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 273,
-      "researchPercentile": 70.36082474226804,
+      "researchRank": 291,
+      "researchPercentile": 69.7841726618705,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -150152,8 +150094,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 279,
-      "researchPercentile": 71.90721649484536,
+      "researchRank": 298,
+      "researchPercentile": 71.46282973621103,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -150349,8 +150291,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 312,
-      "researchPercentile": 80.41237113402062,
+      "researchRank": 336,
+      "researchPercentile": 80.57553956834532,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -151358,8 +151300,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 177,
-      "researchPercentile": 45.618556701030926,
+      "researchRank": 180,
+      "researchPercentile": 43.16546762589928,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -151910,8 +151852,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 73,
-      "researchPercentile": 18.814432989690722,
+      "researchRank": 74,
+      "researchPercentile": 17.74580335731415,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -152237,7 +152179,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 47,
-      "researchPercentile": 12.11340206185567,
+      "researchPercentile": 11.270983213429256,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -153073,8 +153015,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 268,
-      "researchPercentile": 69.0721649484536,
+      "researchRank": 286,
+      "researchPercentile": 68.58513189448442,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -153342,8 +153284,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 362,
-      "researchPercentile": 93.29896907216495,
+      "researchRank": 389,
+      "researchPercentile": 93.28537170263789,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -154746,8 +154688,8 @@
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
-      "researchRank": 217,
-      "researchPercentile": 55.92783505154639,
+      "researchRank": 226,
+      "researchPercentile": 54.196642685851316,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
