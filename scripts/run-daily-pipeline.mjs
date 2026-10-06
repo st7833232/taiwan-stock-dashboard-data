@@ -16,6 +16,7 @@ export function completionCurrent({target,config,manifest,research,paper,history
     && Array.isArray(history)&&history.filter(h=>h.date===target).length===1
     && state?.targetDate===target&&state?.gateStatus==='PASS'&&state?.publicationComplete===true
     && research?.researchComplete===true&&research?.creditEvidenceComplete===true
+    && research?.incrementalScreening?.mode==='PER_SECURITY_INCREMENTAL'&&research?.incrementalScreening?.reScreenOnEvidenceAdmission===true
     && input?.targetDate===target&&research.inputFingerprint===inputFingerprint(input,config));
 }
 export function recoveryTargets(target,paper) {
