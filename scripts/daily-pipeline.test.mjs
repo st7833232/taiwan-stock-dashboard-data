@@ -7,7 +7,7 @@ import {completionCurrent,recoveryTargets,isFutureAfterCloseTarget,runPipeline,r
 import {inputFingerprint} from './screen-market.mjs';
 import {discoverEvidenceSources,discoverCoverageSources,archiveUsable} from './collect-research-evidence.mjs';
 import {tdccWeeks,officialDate,evidenceSummary,historyAssessment} from './research-evidence.mjs';
-import {recoveryDecision,continuePipelineRecovery} from './continue-pipeline-recovery.mjs';
+import {classifyRecoveryError,recoveryDecision,continuePipelineRecovery} from './continue-pipeline-recovery.mjs';
 import {captureListingHistory} from './collect-research-evidence.mjs';
 test('daily close advances to new prices even when an older research checkpoint is incomplete',()=>{
  const cwd=process.cwd(),tmp=fs.mkdtempSync(path.join(os.tmpdir(),'pipeline-date-'));
@@ -194,12 +194,16 @@ test('pending-only recovery reuses PASS daily capture and skips completed histor
   }finally{process.chdir(original);if(targetEnv===undefined)delete process.env.TARGET_DATE;else process.env.TARGET_DATE=targetEnv;fs.rmSync(tmp,{recursive:true,force:true});}
 });
 
-test('self-healing retries pending evidence and transient failures but stops on completion or breaker',()=>{
+test('self-healing retries pending evidence and transient failures but stops on code errors or limits',()=>{
   assert.deepEqual(recoveryDecision({report:{researchComplete:false,validation:{status:'PASS'}},status:{},count:0}),{dispatch:true,reason:'EVIDENCE_PENDING'});
   assert.deepEqual(recoveryDecision({report:{researchComplete:false},status:{error:'GitHub POST git/blobs: HTTP 502'},count:3}),{dispatch:true,reason:'RECOVERABLE_FAILURE'});
   assert.deepEqual(recoveryDecision({report:{researchComplete:true,validation:{status:'PASS'}},status:{},count:3}),{dispatch:false,reason:'COMPLETE'});
   assert.deepEqual(recoveryDecision({report:{researchComplete:false},status:{error:'logic invariant violated'},count:3}),{dispatch:false,reason:'NON_RECOVERABLE_FAILURE'});
+  assert.deepEqual(recoveryDecision({report:{researchComplete:false,validation:{status:'PASS'}},status:{error:'Command failed: node scripts/validate-strategy-v2.mjs'},count:0}),{dispatch:false,reason:'NON_RECOVERABLE_FAILURE'});
   assert.deepEqual(recoveryDecision({report:{researchComplete:false,validation:{status:'PASS'}},status:{},count:12}),{dispatch:false,reason:'RECOVERY_LIMIT'});
+  assert.equal(classifyRecoveryError('HTTP 503 from official endpoint').kind,'TRANSIENT');
+  assert.equal(classifyRecoveryError('STRATEGY V2 VALIDATION FAILED').kind,'CODE_OR_VALIDATION');
+  assert.equal(classifyRecoveryError('unexpected permanent failure').kind,'UNKNOWN_FATAL');
 });
 
 test('TPEx balances use official named columns, never repayments or trades',async()=>{
@@ -239,6 +243,19 @@ test('a recovery replacing a queued source run must still execute the full regre
  assert.ok(step,'the publication workflow must test the code it checks out');
  assert.match(step,/run: node --test scripts\/\*\.test\.mjs/);
  assert.doesNotMatch(step,/\n\s*if:/,'recovery inputs must not bypass verification of newly checked-out code');
+});
+
+test('self-healing circuit breaker stops the third identical recoverable failure without another dispatch',async()=>{
+  const original=process.cwd(),fetcher=globalThis.fetch,tmp=fs.mkdtempSync(path.join(os.tmpdir(),'recovery-breaker-'));
+  const keys=['TARGET_DATE','RECOVERY_COUNT','RECOVERY_ERROR_SIGNATURE','RECOVERY_ERROR_COUNT','GITHUB_RUN_ID','GITHUB_REPOSITORY','GITHUB_TOKEN'],env=Object.fromEntries(keys.map(k=>[k,process.env[k]]));
+  try{
+    process.chdir(tmp);fs.mkdirSync('raw/2026-10-05',{recursive:true});
+    fs.writeFileSync('raw/2026-10-05/pipeline-status.json',JSON.stringify({error:'official request timeout'}));
+    const signature=classifyRecoveryError('official request timeout').signature;
+    Object.assign(process.env,{TARGET_DATE:'2026-10-05',RECOVERY_COUNT:'2',RECOVERY_ERROR_SIGNATURE:signature,RECOVERY_ERROR_COUNT:'2',GITHUB_RUN_ID:'test',GITHUB_REPOSITORY:'st7833232/taiwan-stock-dashboard-data',GITHUB_TOKEN:'fixture'});
+    let calls=0;globalThis.fetch=async()=>{calls++;return new Response(null,{status:204});};
+    await continuePipelineRecovery();assert.equal(calls,0);
+  }finally{globalThis.fetch=fetcher;for(const k of keys)if(env[k]===undefined)delete process.env[k];else process.env[k]=env[k];process.chdir(original);fs.rmSync(tmp,{recursive:true,force:true});}
 });
 
 test('self-healing follows the attempted close date instead of an older published snapshot',async()=>{
