@@ -242,7 +242,9 @@ Positive News + Price Weak + Institutional Selling 應標記為正面新聞背�
 - `strategy = BREAKOUT | TREND_PULLBACK | CHIP_ACCUMULATION_BREAKOUT | EXIT | NONE`
 - `score`
 - `scores`，其子項加總必須等於 score 且不得超過各權重上限
-- `universeRank`、`universePercentile`（無法可靠取得時可為 null，但不得因此虛構）
+- `researchRank`、`researchPercentile`：只要該標的必要研究 Evidence 已完成即可產生，代表已分析標的中的研究排序；不得把「尚未出現交易 setup」誤解為「尚未分析」。
+- `tradeRank`、`tradePercentile`：只有全部交易前置 Hard Gate（含 strategy、riskReward 等）通過才產生。
+- `universeRank`、`universePercentile`：為既有 BUY 契約的相容欄位，必須與 `tradeRank`、`tradePercentile` 相同；無法可靠取得時可為 null，但不得因此虛構。
 - `liquidityMedianTurnover20d`
 - `volumeRatio20d`
 - `riskReward`
@@ -256,7 +258,7 @@ Positive News + Price Weak + Institutional Selling 應標記為正面新聞背�
 - riskReward >=2。
 - strategy 必須是三個允許的進場策略之一。
 - BREAKOUT 的 volumeRatio20d >=1.5。
-- universeRank 若非 null 必須 <=50；universePercentile 若非 null 必須 <=10。
+- tradeRank / universeRank 必須有實際可驗證數值且 <=50；tradePercentile / universePercentile 必須 <=10。研究排名本身不得取代這個 BUY Cross-Sectional Ranking Hard Gate。
 - 必須存在可執行的 entry / maxChase / stop / invalidation 資訊；不得只輸出自然語言推薦。
 
 新聞欄位不得把 SOURCE_C 當成 BUY 的正面依據。若重大事件風險尚未確認，candidate 必須 WATCH/NO_TRADE，不得 BUY。
@@ -283,7 +285,7 @@ ETF 不得套用普通股的法人、TDCC、融資融券、月營收或 EPS 權�
 - `research-input.json` 必須保留每個 deep-dive candidate 的 `historyCoverageTradingDays`、`liquidityMedianTurnover20d`、`volumeMA20`、`volumeRatio20d`、`ma120Ready`。
 - 歷史覆蓋不足 20 個交易日時，不得宣稱通過 20 日流動性 Gate；不足 120 個交易日時，不得虛構 MA120 或依賴 MA120 的 BUY 判斷。
 - TDCC 使用官方 OpenAPI `/v1/opendata/1-5` 作為週頻輔助來源；對歷史 targetDate 重跑時不得抓取「現在最新」TDCC 再倒灌歷史研究，避免前視偏誤。
-- V2 BUY 的 `universeRank` 與 `universePercentile` 必須有實際可驗證數值；不得以 null 繞過 Cross-Sectional Ranking Gate。
+- V2 BUY 的 `tradeRank` / `tradePercentile`（以及相容欄位 `universeRank` / `universePercentile`）必須有實際可驗證數值；不得以 `researchRank` 取代，也不得以 null 繞過 Cross-Sectional Ranking Gate。
 - 歷史資料或 ranking 尚未 ready 時，研究可以輸出 WATCH / NO_TRADE，但不得以估計值補齊 BUY Hard Gate。
 
 ### 3.5 Official rolling history cache
