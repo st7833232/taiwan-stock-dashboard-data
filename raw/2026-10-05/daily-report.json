@@ -1,15 +1,19 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-05",
-  "revision": "2026-10-06-100944",
+  "revision": "2026-10-06-111712",
   "strategyVersion": "entry-dual-track-v2.2",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
   "incrementalScreening": {
     "mode": "PER_SECURITY_INCREMENTAL",
+    "rankContractVersion": 2,
+    "rankingMode": "RESEARCH_AND_TRADE_SPLIT",
     "screenedDeepDive": 621,
     "evidenceCompleteDeepDive": 459,
     "evidencePendingDeepDive": 162,
+    "researchRanked": 459,
+    "tradeEligibleRanked": 0,
     "reScreenOnEvidenceAdmission": true,
     "globalResearchComplete": false
   },
@@ -1419,16 +1423,330 @@
     "screenedDeepDive": 621,
     "evidenceCompleteDeepDive": 459,
     "evidencePendingDeepDive": 162,
+    "researchRanked": 459,
+    "tradeEligibleRanked": 0,
+    "eligibleRanked": 459,
+    "eligibleRankedMeaning": "RESEARCH_EVIDENCE_COMPLETE",
     "creditReadyStocks": 545,
     "creditMissingCodes": [
       "6945",
       "7610",
       "7828",
       "7822"
-    ],
-    "eligibleRanked": 0
+    ]
   },
-  "conclusion": "2026-10-05全市場 2313 檔已完成初步篩選（普通股 1958、ETF 355），深度檢查 621 檔；其中 459 檔必要證據已齊並完成逐檔篩選，162 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：財務證據 155檔、大戶與散戶多週持股 6檔、融資融券等信用資料 4檔、歷史行情 1檔。全市場研究尚未完成。普通股信用資料已核對 545/549 檔。財務證據完整但品質未通過 170 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "researchLeaders": {
+    "STOCK": [
+      {
+        "code": "3189",
+        "name": "景碩",
+        "score": 78.9004,
+        "researchRank": 1,
+        "researchPercentile": 0.25773195876288657,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "2376",
+        "name": "技嘉",
+        "score": 76,
+        "researchRank": 2,
+        "researchPercentile": 0.5154639175257731,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "3605",
+        "name": "宏致",
+        "score": 74.9394,
+        "researchRank": 3,
+        "researchPercentile": 0.7731958762886598,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "2317",
+        "name": "鴻海",
+        "score": 74.9,
+        "researchRank": 4,
+        "researchPercentile": 1.0309278350515463,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "TREND_NOT_CONFIRMED",
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "3491",
+        "name": "昇達科",
+        "score": 74.9,
+        "researchRank": 5,
+        "researchPercentile": 1.288659793814433,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "TREND_NOT_CONFIRMED",
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "3037",
+        "name": "欣興",
+        "score": 74.4188,
+        "researchRank": 6,
+        "researchPercentile": 1.5463917525773196,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "4912",
+        "name": "聯德控股-KY",
+        "score": 73.9,
+        "researchRank": 7,
+        "researchPercentile": 1.8041237113402062,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "TREND_NOT_CONFIRMED",
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "5269",
+        "name": "祥碩",
+        "score": 73.8381,
+        "researchRank": 8,
+        "researchPercentile": 2.0618556701030926,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "TREND_NOT_CONFIRMED",
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "2347",
+        "name": "聯強",
+        "score": 73.6322,
+        "researchRank": 9,
+        "researchPercentile": 2.3195876288659796,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "6491",
+        "name": "晶碩",
+        "score": 72.8333,
+        "researchRank": 10,
+        "researchPercentile": 2.577319587628866,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      }
+    ],
+    "ETF": [
+      {
+        "code": "00947",
+        "name": "台新臺灣IC設計",
+        "score": 88,
+        "researchRank": 1,
+        "researchPercentile": 1.408450704225352,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "00400A",
+        "name": "主動國泰動能高息",
+        "score": 83,
+        "researchRank": 2,
+        "researchPercentile": 2.816901408450704,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "0052",
+        "name": "富邦科技",
+        "score": 83,
+        "researchRank": 3,
+        "researchPercentile": 4.225352112676056,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "0056",
+        "name": "元大高股息",
+        "score": 83,
+        "researchRank": 4,
+        "researchPercentile": 5.633802816901408,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "006208",
+        "name": "富邦台50",
+        "score": 83,
+        "researchRank": 5,
+        "researchPercentile": 7.042253521126761,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "00922",
+        "name": "國泰台灣領袖50",
+        "score": 83,
+        "researchRank": 6,
+        "researchPercentile": 8.450704225352112,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "00980A",
+        "name": "主動野村臺灣優選",
+        "score": 83,
+        "researchRank": 7,
+        "researchPercentile": 9.859154929577464,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "0050",
+        "name": "元大台灣50",
+        "score": 81.4598,
+        "researchRank": 8,
+        "researchPercentile": 11.267605633802816,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "00735",
+        "name": "國泰臺韓科技",
+        "score": 80.4541,
+        "researchRank": 9,
+        "researchPercentile": 12.67605633802817,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "TREND_NOT_CONFIRMED",
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "009816",
+        "name": "凱基台灣TOP50",
+        "score": 79.9259,
+        "researchRank": 10,
+        "researchPercentile": 14.084507042253522,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      }
+    ]
+  },
+  "conclusion": "2026-10-05全市場 2313 檔已完成初步篩選（普通股 1958、ETF 355），深度檢查 621 檔；其中 459 檔必要證據已齊並完成逐檔篩選，已有 459 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；162 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：財務證據 155檔、大戶與散戶多週持股 6檔、融資融券等信用資料 4檔、歷史行情 1檔。全市場研究尚未完成。普通股信用資料已核對 545/549 檔。財務證據完整但品質未通過 170 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [],
   "core": [
     {
@@ -1578,17 +1896,6 @@
       "officialDateEvidence": "1151005"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-06-100944",
-    "runId": "37406828005",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/37406828005",
-    "validatedCommit": "b461a542ca9a1493de76ae680f1dba0ec9344790"
-  },
+  "validation": "AWAITING_CI",
   "inputFingerprint": "e89c793abcd5429c6c8fc79aae8d2a6d431ced5ce299a6f6011d585843cca784"
 }
