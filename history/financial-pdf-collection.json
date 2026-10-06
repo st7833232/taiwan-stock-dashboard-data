@@ -1611,17 +1611,24 @@
     "checkedAt": "2026-10-01T12:12:37.537Z"
   },
   "5328|2026-06-30": {
-    "status": "UNVERIFIED",
+    "status": "VERIFIED",
     "parserVersion": 2,
-    "filingParserVersion": 3,
-    "textParserVersion": 22,
-    "filingFallback": null,
-    "stage": "PDF_METRICS",
-    "reason": "PDF_OCR_REVIEW_PENDING",
-    "attempts": 1,
     "checkedDate": "2026-10-06",
-    "checkedAt": "2026-10-06T07:51:09.815Z",
-    "nextRetryAt": "2026-10-06T07:56:09.815Z"
+    "checkedAt": "2026-10-06T08:16:18.993432+00:00",
+    "verificationMethod": "PDF_VISUAL_MATCHED_OFFICIAL_PERIOD_TABLE",
+    "lastUnverifiedAttempt": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 3,
+      "textParserVersion": 22,
+      "filingFallback": null,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-06",
+      "checkedAt": "2026-10-06T07:51:09.815Z",
+      "nextRetryAt": "2026-10-06T07:56:09.815Z"
+    }
   },
   "2645|2026-06-30": {
     "status": "VERIFIED",
