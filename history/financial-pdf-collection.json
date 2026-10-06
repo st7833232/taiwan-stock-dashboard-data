@@ -693,17 +693,23 @@
     "checkedAt": "2026-10-02T03:20:05.589Z"
   },
   "5871|2026-06-30": {
-    "status": "UNVERIFIED",
+    "status": "VERIFIED",
     "parserVersion": 2,
-    "filingParserVersion": 3,
-    "textParserVersion": 19,
-    "filingFallback": null,
-    "stage": "MOPS_PERIOD_TABLE",
-    "reason": "MOPS company historical income: required metrics missing",
-    "attempts": 8,
-    "checkedDate": "2026-10-05",
-    "checkedAt": "2026-10-05T09:24:52.537Z",
-    "nextRetryAt": "2026-10-06T09:24:52.537Z"
+    "checkedDate": "2026-10-06",
+    "checkedAt": "2026-10-06T06:59:05.451Z",
+    "lastUnverifiedAttempt": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 3,
+      "textParserVersion": 19,
+      "filingFallback": null,
+      "stage": "MOPS_PERIOD_TABLE",
+      "reason": "MOPS company historical income: required metrics missing",
+      "attempts": 8,
+      "checkedDate": "2026-10-05",
+      "checkedAt": "2026-10-05T09:24:52.537Z",
+      "nextRetryAt": "2026-10-06T09:24:52.537Z"
+    }
   },
   "6209|2026-06-30": {
     "status": "UNVERIFIED",

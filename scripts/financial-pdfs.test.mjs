@@ -361,3 +361,17 @@ test('improved OCR reparses version 19 archives before their cooldown while vers
  const state={old:{parserVersion:2,textParserVersion:19,nextRetryAt:'2099-01-01'},current:{parserVersion:2,textParserVersion:20,nextRetryAt:'2099-01-01'}};
  assert.deepEqual(financialQueue(rows,state,now,new Set()).map(r=>r.key),['old']);
 });
+
+test('verified insufficient summaries do not repeatedly queue impossible generic-metric research',async()=>{
+ const {collectFinancialPdfs}=await import('./collect-financial-pdfs.mjs'),{default:os}=await import('node:os'),{default:path}=await import('node:path');
+ const original=process.cwd(),fetcher=globalThis.fetch,tmp=fs.mkdtempSync(path.join(os.tmpdir(),'financial-insufficient-'));
+ try{
+  process.chdir(tmp);fs.mkdirSync('raw/2026-10-05',{recursive:true});fs.mkdirSync('history/financial-reports',{recursive:true});
+  fs.writeFileSync('raw/2026-10-05/research-input.json',JSON.stringify({deepDive:[{code:'6016',assetType:'STOCK',financialAssessment:{status:'VERIFIED_INSUFFICIENT',verified:true,qualityPass:false,pending:[],failures:['OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE']}}]}));
+  fs.writeFileSync('raw/2026-10-05/financial-evidence-captures.json',JSON.stringify({captures:[{id:'income',kind:'income',status:'CAPTURED'}]}));
+  fs.writeFileSync('raw/2026-10-05/income.raw.txt',JSON.stringify([{'公司代號':'6016','年度':2026,'季別':2,'本期淨利（淨損）':10}]));
+  let requests=0;globalThis.fetch=async()=>{requests++;throw Error('OFFICIAL_RATE_LIMITED')};
+  await collectFinancialPdfs('2026-10-05');assert.equal(requests,0);
+  const collection=JSON.parse(fs.readFileSync('raw/2026-10-05/financial-pdf-collection.json'));assert.equal(collection.remaining,0);assert.equal(collection.ready,0);
+ }finally{globalThis.fetch=fetcher;process.chdir(original);fs.rmSync(tmp,{recursive:true,force:true});}
+});

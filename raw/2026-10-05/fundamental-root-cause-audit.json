@@ -5,15 +5,15 @@
   "categoryCounts": {
     "PDF_PERIOD_OR_METRICS_PARSER": 124,
     "OFFICIAL_SUMMARY_FORMAT_INSUFFICIENT": 28,
-    "HTML_PARSER": 1,
-    "COLLECTOR_CURRENT_PERIOD_MISSING": 1,
+    "COLLECTOR_MOPS_SELECTOR_RESOLVED": 1,
+    "COLLECTOR_CURRENT_PERIOD_MISSING_ASSET_MAPPING_REVIEW": 1,
     "VERIFIED_OFFICIAL_COMPARATIVE_ADMITTED": 1
   },
   "records": [
     {
       "code": "6770",
       "market": "TWSE",
-      "name": null,
+      "name": "力積電",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -93,7 +93,7 @@
     {
       "code": "2481",
       "market": "TWSE",
-      "name": null,
+      "name": "強茂",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -173,7 +173,7 @@
     {
       "code": "1815",
       "market": "TPEx",
-      "name": null,
+      "name": "富喬",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -253,7 +253,7 @@
     {
       "code": "2337",
       "market": "TWSE",
-      "name": null,
+      "name": "旺宏",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -333,7 +333,7 @@
     {
       "code": "8150",
       "market": "TWSE",
-      "name": null,
+      "name": "南茂",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -416,7 +416,7 @@
     {
       "code": "3624",
       "market": "TPEx",
-      "name": null,
+      "name": "光頡",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -496,7 +496,7 @@
     {
       "code": "2881",
       "market": "TWSE",
-      "name": null,
+      "name": "富邦金",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -618,7 +618,7 @@
     {
       "code": "2882",
       "market": "TWSE",
-      "name": null,
+      "name": "國泰金",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -740,7 +740,7 @@
     {
       "code": "2887",
       "market": "TWSE",
-      "name": null,
+      "name": "台新新光金",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -862,7 +862,7 @@
     {
       "code": "2884",
       "market": "TWSE",
-      "name": null,
+      "name": "玉山金",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -984,7 +984,7 @@
     {
       "code": "2891",
       "market": "TWSE",
-      "name": null,
+      "name": "中信金",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -1106,7 +1106,7 @@
     {
       "code": "3016",
       "market": "TWSE",
-      "name": null,
+      "name": "嘉晶",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -1186,7 +1186,7 @@
     {
       "code": "2883",
       "market": "TWSE",
-      "name": null,
+      "name": "凱基金",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -1308,7 +1308,7 @@
     {
       "code": "2885",
       "market": "TWSE",
-      "name": null,
+      "name": "元大金",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -1430,7 +1430,7 @@
     {
       "code": "2892",
       "market": "TWSE",
-      "name": null,
+      "name": "第一金",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -1552,7 +1552,7 @@
     {
       "code": "2886",
       "market": "TWSE",
-      "name": null,
+      "name": "兆豐金",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -1674,7 +1674,7 @@
     {
       "code": "2890",
       "market": "TWSE",
-      "name": null,
+      "name": "永豐金",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -1796,7 +1796,7 @@
     {
       "code": "5351",
       "market": "TPEx",
-      "name": null,
+      "name": "鈺創",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -1876,7 +1876,7 @@
     {
       "code": "8111",
       "market": "TPEx",
-      "name": null,
+      "name": "立碁",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -1956,7 +1956,7 @@
     {
       "code": "3045",
       "market": "TWSE",
-      "name": null,
+      "name": "台灣大",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -2036,7 +2036,7 @@
     {
       "code": "2801",
       "market": "TWSE",
-      "name": null,
+      "name": "彰銀",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -2158,7 +2158,7 @@
     {
       "code": "1727",
       "market": "TWSE",
-      "name": null,
+      "name": "中華化",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -2238,7 +2238,7 @@
     {
       "code": "2834",
       "market": "TWSE",
-      "name": null,
+      "name": "臺企銀",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -2360,7 +2360,7 @@
     {
       "code": "6706",
       "market": "TWSE",
-      "name": null,
+      "name": "惠特",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -2442,7 +2442,7 @@
     {
       "code": "6209",
       "market": "TWSE",
-      "name": null,
+      "name": "今國光",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -2522,11 +2522,11 @@
     {
       "code": "5871",
       "market": "TWSE",
-      "name": null,
+      "name": "中租-KY",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
-      "category": "HTML_PARSER",
+      "category": "COLLECTOR_MOPS_SELECTOR_RESOLVED",
       "collector": {
         "status": "UNVERIFIED",
         "parserVersion": 2,
@@ -2565,13 +2565,13 @@
         "sourceQuality": "SOURCE_A"
       },
       "afterAssessment": {
-        "status": "UNVERIFIED",
-        "verified": false,
+        "status": "FAIL",
+        "verified": true,
         "qualityPass": false,
-        "pending": [
-          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
+        "pending": [],
+        "failures": [
+          "REVENUE_DETERIORATION"
         ],
-        "failures": [],
         "metrics": {
           "revenue": 48294600,
           "grossProfit": 32060808,
@@ -2587,22 +2587,24 @@
           "operatingMargin": 0.31237117607351544,
           "liabilityAssetRatio": 0.7997048160474987,
           "currentRatio": 1.1035038460652775,
-          "revenueYoY": null,
-          "netProfitYoY": null
+          "revenueYoY": -0.020012725431406975,
+          "netProfitYoY": 0.03132764683670519
         },
         "periodEnd": "2026-06-30",
         "basis": "YEAR_TO_DATE",
         "sources": [
           "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-          "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+          "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+          "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=5871&year=114&seamon=&mtype=A&check2858=Y"
         ]
       },
-      "officialAbsenceVerified": false
+      "officialAbsenceVerified": false,
+      "resolution": "Follow verified native step=2 form; official period table independently matches filed PDF revenue and parent profit on pages 7-8."
     },
     {
       "code": "2880",
       "market": "TWSE",
-      "name": null,
+      "name": "華南金",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -2724,7 +2726,7 @@
     {
       "code": "1605",
       "market": "TWSE",
-      "name": null,
+      "name": "華新",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -2804,7 +2806,7 @@
     {
       "code": "2634",
       "market": "TWSE",
-      "name": null,
+      "name": "漢翔",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -2884,7 +2886,7 @@
     {
       "code": "8042",
       "market": "TPEx",
-      "name": null,
+      "name": "金山電",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -2964,7 +2966,7 @@
     {
       "code": "5880",
       "market": "TWSE",
-      "name": null,
+      "name": "合庫金",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -3086,7 +3088,7 @@
     {
       "code": "2421",
       "market": "TWSE",
-      "name": null,
+      "name": "建準",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -3166,7 +3168,7 @@
     {
       "code": "6620",
       "market": "TPEx",
-      "name": null,
+      "name": "漢達",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -3246,7 +3248,7 @@
     {
       "code": "4919",
       "market": "TWSE",
-      "name": null,
+      "name": "新唐",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -3328,7 +3330,7 @@
     {
       "code": "3149",
       "market": "TWSE",
-      "name": null,
+      "name": "正達",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -3410,7 +3412,7 @@
     {
       "code": "2605",
       "market": "TWSE",
-      "name": null,
+      "name": "新興",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -3490,7 +3492,7 @@
     {
       "code": "8033",
       "market": "TWSE",
-      "name": null,
+      "name": "雷虎",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -3572,7 +3574,7 @@
     {
       "code": "5876",
       "market": "TWSE",
-      "name": null,
+      "name": "上海商銀",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -3694,7 +3696,7 @@
     {
       "code": "6199",
       "market": "TPEx",
-      "name": null,
+      "name": "天品",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -3774,7 +3776,7 @@
     {
       "code": "1504",
       "market": "TWSE",
-      "name": null,
+      "name": "東元",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -3854,7 +3856,7 @@
     {
       "code": "3707",
       "market": "TPEx",
-      "name": null,
+      "name": "漢磊",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -3936,7 +3938,7 @@
     {
       "code": "4956",
       "market": "TWSE",
-      "name": null,
+      "name": "光鋐",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -4016,7 +4018,7 @@
     {
       "code": "6226",
       "market": "TWSE",
-      "name": null,
+      "name": "光鼎",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -4098,7 +4100,7 @@
     {
       "code": "2855",
       "market": "TWSE",
-      "name": null,
+      "name": "統一證",
       "baselinePendingReasons": [
         "FINANCIAL_METRICS_INCOMPLETE"
       ],
@@ -4217,7 +4219,7 @@
     {
       "code": "2812",
       "market": "TWSE",
-      "name": null,
+      "name": "台中銀",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -4339,7 +4341,7 @@
     {
       "code": "1513",
       "market": "TWSE",
-      "name": null,
+      "name": "中興電",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -4419,7 +4421,7 @@
     {
       "code": "1597",
       "market": "TWSE",
-      "name": null,
+      "name": "直得",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -4499,7 +4501,7 @@
     {
       "code": "2375",
       "market": "TWSE",
-      "name": null,
+      "name": "凱美",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -4579,7 +4581,7 @@
     {
       "code": "1409",
       "market": "TWSE",
-      "name": null,
+      "name": "新纖",
       "baselinePendingReasons": [
         "FINANCIAL_METRICS_INCOMPLETE"
       ],
@@ -4688,7 +4690,7 @@
     {
       "code": "2889",
       "market": "TWSE",
-      "name": null,
+      "name": "國票金",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -4810,7 +4812,7 @@
     {
       "code": "2478",
       "market": "TWSE",
-      "name": null,
+      "name": "大毅",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -4890,7 +4892,7 @@
     {
       "code": "6005",
       "market": "TWSE",
-      "name": null,
+      "name": "群益證",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -5011,7 +5013,7 @@
     {
       "code": "2498",
       "market": "TWSE",
-      "name": null,
+      "name": "宏達電",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -5093,7 +5095,7 @@
     {
       "code": "5328",
       "market": "TPEx",
-      "name": null,
+      "name": "華容",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -5173,7 +5175,7 @@
     {
       "code": "3490",
       "market": "TPEx",
-      "name": null,
+      "name": "單井",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -5255,7 +5257,7 @@
     {
       "code": "4989",
       "market": "TWSE",
-      "name": null,
+      "name": "榮科",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -5338,7 +5340,7 @@
     {
       "code": "6218",
       "market": "TPEx",
-      "name": null,
+      "name": "豪勉",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -5418,7 +5420,7 @@
     {
       "code": "5285",
       "market": "TWSE",
-      "name": null,
+      "name": "界霖",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -5498,7 +5500,7 @@
     {
       "code": "2342",
       "market": "TWSE",
-      "name": null,
+      "name": "茂矽",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -5580,13 +5582,13 @@
     {
       "code": "9105",
       "market": "TWSE",
-      "name": null,
+      "name": "泰金寶-DR",
       "baselinePendingReasons": [
         "QUARTERLY_INCOME_OR_BALANCE_NOT_ARCHIVED_ASOF",
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
       ],
-      "category": "COLLECTOR_CURRENT_PERIOD_MISSING",
+      "category": "COLLECTOR_CURRENT_PERIOD_MISSING_ASSET_MAPPING_REVIEW",
       "collector": {},
       "currentIncome": null,
       "currentBalance": null,
@@ -5625,12 +5627,13 @@
         "basis": null,
         "sources": []
       },
-      "officialAbsenceVerified": false
+      "officialAbsenceVerified": false,
+      "mappingObservation": "Code-only four-digit classification labels this quoted 泰金寶-DR instrument STOCK; no admissible quarterly evidence found. Historical official product/issuer mapping not yet verified."
     },
     {
       "code": "6016",
       "market": "TPEx",
-      "name": null,
+      "name": "康和證",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -5751,7 +5754,7 @@
     {
       "code": "2254",
       "market": "TWSE",
-      "name": null,
+      "name": "巨鎧精密-創",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -5833,7 +5836,7 @@
     {
       "code": "2845",
       "market": "TWSE",
-      "name": null,
+      "name": "遠東銀",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -5955,7 +5958,7 @@
     {
       "code": "1795",
       "market": "TWSE",
-      "name": null,
+      "name": "美時",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -6035,7 +6038,7 @@
     {
       "code": "2851",
       "market": "TWSE",
-      "name": null,
+      "name": "中再保",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -6157,7 +6160,7 @@
     {
       "code": "1718",
       "market": "TWSE",
-      "name": null,
+      "name": "中纖",
       "baselinePendingReasons": [
         "FINANCIAL_METRICS_INCOMPLETE"
       ],
@@ -6268,7 +6271,7 @@
     {
       "code": "2369",
       "market": "TWSE",
-      "name": null,
+      "name": "菱生",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -6348,7 +6351,7 @@
     {
       "code": "3227",
       "market": "TPEx",
-      "name": null,
+      "name": "原相",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -6428,7 +6431,7 @@
     {
       "code": "1708",
       "market": "TWSE",
-      "name": null,
+      "name": "東鹼",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -6508,7 +6511,7 @@
     {
       "code": "6525",
       "market": "TWSE",
-      "name": null,
+      "name": "捷敏-KY",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -6588,7 +6591,7 @@
     {
       "code": "3033",
       "market": "TWSE",
-      "name": null,
+      "name": "威健",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -6668,7 +6671,7 @@
     {
       "code": "6141",
       "market": "TWSE",
-      "name": null,
+      "name": "柏承",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -6750,7 +6753,7 @@
     {
       "code": "5864",
       "market": "TPEx",
-      "name": null,
+      "name": "致和證",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -6871,7 +6874,7 @@
     {
       "code": "1514",
       "market": "TWSE",
-      "name": null,
+      "name": "亞力",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -6951,7 +6954,7 @@
     {
       "code": "3135",
       "market": "TWSE",
-      "name": null,
+      "name": "凌航",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -7031,7 +7034,7 @@
     {
       "code": "1319",
       "market": "TWSE",
-      "name": null,
+      "name": "東陽",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -7113,7 +7116,7 @@
     {
       "code": "9933",
       "market": "TWSE",
-      "name": null,
+      "name": "中鼎",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -7193,7 +7196,7 @@
     {
       "code": "2329",
       "market": "TWSE",
-      "name": null,
+      "name": "華泰",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -7273,7 +7276,7 @@
     {
       "code": "2468",
       "market": "TWSE",
-      "name": null,
+      "name": "華經",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -7353,7 +7356,7 @@
     {
       "code": "3013",
       "market": "TWSE",
-      "name": null,
+      "name": "晟銘電",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -7433,7 +7436,7 @@
     {
       "code": "6133",
       "market": "TWSE",
-      "name": null,
+      "name": "金橋",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -7513,7 +7516,7 @@
     {
       "code": "6532",
       "market": "TPEx",
-      "name": null,
+      "name": "瑞耘",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -7593,7 +7596,7 @@
     {
       "code": "4903",
       "market": "TPEx",
-      "name": null,
+      "name": "聯光通",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -7673,7 +7676,7 @@
     {
       "code": "2030",
       "market": "TWSE",
-      "name": null,
+      "name": "彰源",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -7753,7 +7756,7 @@
     {
       "code": "2548",
       "market": "TWSE",
-      "name": null,
+      "name": "華固",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -7833,7 +7836,7 @@
     {
       "code": "5243",
       "market": "TWSE",
-      "name": null,
+      "name": "乙盛-KY",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -7913,7 +7916,7 @@
     {
       "code": "6245",
       "market": "TPEx",
-      "name": null,
+      "name": "立端",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -7993,7 +7996,7 @@
     {
       "code": "1808",
       "market": "TWSE",
-      "name": null,
+      "name": "潤隆",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -8073,7 +8076,7 @@
     {
       "code": "3236",
       "market": "TPEx",
-      "name": null,
+      "name": "千如",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -8153,7 +8156,7 @@
     {
       "code": "6177",
       "market": "TWSE",
-      "name": null,
+      "name": "達麗",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -8233,7 +8236,7 @@
     {
       "code": "6716",
       "market": "TPEx",
-      "name": null,
+      "name": "應廣",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -8313,7 +8316,7 @@
     {
       "code": "9910",
       "market": "TWSE",
-      "name": null,
+      "name": "豐泰",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -8393,7 +8396,7 @@
     {
       "code": "6155",
       "market": "TWSE",
-      "name": null,
+      "name": "鈞寶",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -8473,7 +8476,7 @@
     {
       "code": "2402",
       "market": "TWSE",
-      "name": null,
+      "name": "毅嘉",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -8553,7 +8556,7 @@
     {
       "code": "6945",
       "market": "TPEx",
-      "name": null,
+      "name": "圓祥生技",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -8636,7 +8639,7 @@
     {
       "code": "3048",
       "market": "TWSE",
-      "name": null,
+      "name": "益登",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -8716,7 +8719,7 @@
     {
       "code": "2897",
       "market": "TWSE",
-      "name": null,
+      "name": "王道銀行",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -8838,7 +8841,7 @@
     {
       "code": "2033",
       "market": "TWSE",
-      "name": null,
+      "name": "佳大",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -8918,7 +8921,7 @@
     {
       "code": "2820",
       "market": "TWSE",
-      "name": null,
+      "name": "華票",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED",
         "FINANCIAL_METRICS_INCOMPLETE"
@@ -9040,7 +9043,7 @@
     {
       "code": "2330",
       "market": "TWSE",
-      "name": null,
+      "name": "台積電",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -9120,7 +9123,7 @@
     {
       "code": "2408",
       "market": "TWSE",
-      "name": null,
+      "name": "南亞科",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -9200,7 +9203,7 @@
     {
       "code": "8046",
       "market": "TWSE",
-      "name": null,
+      "name": "南電",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -9280,7 +9283,7 @@
     {
       "code": "3711",
       "market": "TWSE",
-      "name": null,
+      "name": "日月光投控",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -9360,7 +9363,7 @@
     {
       "code": "3081",
       "market": "TPEx",
-      "name": null,
+      "name": "聯亞",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -9440,7 +9443,7 @@
     {
       "code": "6147",
       "market": "TPEx",
-      "name": null,
+      "name": "頎邦",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -9520,7 +9523,7 @@
     {
       "code": "3443",
       "market": "TWSE",
-      "name": null,
+      "name": "創意",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -9600,7 +9603,7 @@
     {
       "code": "8039",
       "market": "TWSE",
-      "name": null,
+      "name": "台虹",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -9680,7 +9683,7 @@
     {
       "code": "3653",
       "market": "TWSE",
-      "name": null,
+      "name": "健策",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -9760,7 +9763,7 @@
     {
       "code": "6223",
       "market": "TPEx",
-      "name": null,
+      "name": "旺矽",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -9840,7 +9843,7 @@
     {
       "code": "6173",
       "market": "TPEx",
-      "name": null,
+      "name": "信昌電",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -9920,7 +9923,7 @@
     {
       "code": "2313",
       "market": "TWSE",
-      "name": null,
+      "name": "華通",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -10000,7 +10003,7 @@
     {
       "code": "3006",
       "market": "TWSE",
-      "name": null,
+      "name": "晶豪科",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -10080,7 +10083,7 @@
     {
       "code": "3529",
       "market": "TPEx",
-      "name": null,
+      "name": "力旺",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -10160,7 +10163,7 @@
     {
       "code": "3532",
       "market": "TWSE",
-      "name": null,
+      "name": "台勝科",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -10242,7 +10245,7 @@
     {
       "code": "8358",
       "market": "TPEx",
-      "name": null,
+      "name": "金居",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -10322,7 +10325,7 @@
     {
       "code": "6805",
       "market": "TWSE",
-      "name": null,
+      "name": "富世達",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -10402,7 +10405,7 @@
     {
       "code": "6257",
       "market": "TWSE",
-      "name": null,
+      "name": "矽格",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -10482,7 +10485,7 @@
     {
       "code": "4991",
       "market": "TPEx",
-      "name": null,
+      "name": "環宇-KY",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -10562,7 +10565,7 @@
     {
       "code": "6683",
       "market": "TPEx",
-      "name": null,
+      "name": "雍智科技",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -10642,7 +10645,7 @@
     {
       "code": "4979",
       "market": "TPEx",
-      "name": null,
+      "name": "華星光",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -10722,7 +10725,7 @@
     {
       "code": "8028",
       "market": "TWSE",
-      "name": null,
+      "name": "昇陽半導體",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -10802,7 +10805,7 @@
     {
       "code": "3044",
       "market": "TWSE",
-      "name": null,
+      "name": "健鼎",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -10882,7 +10885,7 @@
     {
       "code": "3211",
       "market": "TPEx",
-      "name": null,
+      "name": "順達",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -10962,7 +10965,7 @@
     {
       "code": "3163",
       "market": "TPEx",
-      "name": null,
+      "name": "波若威",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -11042,7 +11045,7 @@
     {
       "code": "3055",
       "market": "TWSE",
-      "name": null,
+      "name": "蔚華科",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -11125,7 +11128,7 @@
     {
       "code": "6830",
       "market": "TWSE",
-      "name": null,
+      "name": "汎銓",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -11208,7 +11211,7 @@
     {
       "code": "7711",
       "market": "TWSE",
-      "name": null,
+      "name": "永擎",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -11288,7 +11291,7 @@
     {
       "code": "6285",
       "market": "TWSE",
-      "name": null,
+      "name": "啟碁",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -11368,7 +11371,7 @@
     {
       "code": "6727",
       "market": "TPEx",
-      "name": null,
+      "name": "亞泰金屬",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -11448,7 +11451,7 @@
     {
       "code": "7717",
       "market": "TPEx",
-      "name": null,
+      "name": "萊德光電-KY",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -11528,7 +11531,7 @@
     {
       "code": "5536",
       "market": "TPEx",
-      "name": null,
+      "name": "聖暉*",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -11608,7 +11611,7 @@
     {
       "code": "7795",
       "market": "TWSE",
-      "name": null,
+      "name": "長廣",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -11688,7 +11691,7 @@
     {
       "code": "3583",
       "market": "TWSE",
-      "name": null,
+      "name": "辛耘",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -11768,7 +11771,7 @@
     {
       "code": "8227",
       "market": "TPEx",
-      "name": null,
+      "name": "巨有科技",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -11848,7 +11851,7 @@
     {
       "code": "8027",
       "market": "TPEx",
-      "name": null,
+      "name": "鈦昇",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -11930,7 +11933,7 @@
     {
       "code": "1476",
       "market": "TWSE",
-      "name": null,
+      "name": "儒鴻",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -12010,7 +12013,7 @@
     {
       "code": "7750",
       "market": "TWSE",
-      "name": null,
+      "name": "新代",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -12090,7 +12093,7 @@
     {
       "code": "6739",
       "market": "TPEx",
-      "name": null,
+      "name": "竹陞科技",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -12170,7 +12173,7 @@
     {
       "code": "6409",
       "market": "TWSE",
-      "name": null,
+      "name": "旭隼",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -12250,7 +12253,7 @@
     {
       "code": "6643",
       "market": "TPEx",
-      "name": null,
+      "name": "M31",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -12332,7 +12335,7 @@
     {
       "code": "4770",
       "market": "TWSE",
-      "name": null,
+      "name": "上品",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -12412,7 +12415,7 @@
     {
       "code": "5386",
       "market": "TPEx",
-      "name": null,
+      "name": "青雲",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -12494,7 +12497,7 @@
     {
       "code": "6944",
       "market": "TWSE",
-      "name": null,
+      "name": "兆聯實業",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -12574,7 +12577,7 @@
     {
       "code": "8155",
       "market": "TPEx",
-      "name": null,
+      "name": "博智",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -12654,7 +12657,7 @@
     {
       "code": "7822",
       "market": "TWSE",
-      "name": null,
+      "name": "倍利科",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -12734,7 +12737,7 @@
     {
       "code": "4768",
       "market": "TPEx",
-      "name": null,
+      "name": "晶呈科技",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -12816,7 +12819,7 @@
     {
       "code": "2207",
       "market": "TWSE",
-      "name": null,
+      "name": "和泰車",
       "baselinePendingReasons": [
         "FINANCIAL_METRICS_INCOMPLETE"
       ],
@@ -12925,7 +12928,7 @@
     {
       "code": "6138",
       "market": "TPEx",
-      "name": null,
+      "name": "茂達",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -13005,7 +13008,7 @@
     {
       "code": "3587",
       "market": "TPEx",
-      "name": null,
+      "name": "閎康",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -13085,7 +13088,7 @@
     {
       "code": "6435",
       "market": "TPEx",
-      "name": null,
+      "name": "大中",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -13165,7 +13168,7 @@
     {
       "code": "6231",
       "market": "TPEx",
-      "name": null,
+      "name": "系微",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -13245,7 +13248,7 @@
     {
       "code": "8081",
       "market": "TWSE",
-      "name": null,
+      "name": "致新",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -13325,7 +13328,7 @@
     {
       "code": "5234",
       "market": "TWSE",
-      "name": null,
+      "name": "達興材料",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -13405,7 +13408,7 @@
     {
       "code": "3592",
       "market": "TWSE",
-      "name": null,
+      "name": "瑞鼎",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -13485,7 +13488,7 @@
     {
       "code": "4585",
       "market": "TWSE",
-      "name": null,
+      "name": "達明",
       "baselinePendingReasons": [
         "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
       ],
@@ -13561,6 +13564,24 @@
         ]
       },
       "officialAbsenceVerified": false
+    }
+  ],
+  "officialSampleProbes": [
+    {
+      "code": "1319",
+      "market": "TWSE",
+      "period": "2025Q2",
+      "uploadedAt": "114/08/12 15:52:27",
+      "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=1319&year=114&seamon=&mtype=A&check2858=Y",
+      "probePurpose": "Confirms filed document existence and publication date; PDF version separately hash checked."
+    },
+    {
+      "code": "3163",
+      "market": "TPEx",
+      "period": "2025Q2",
+      "uploadedAt": "114/08/11 16:17:48",
+      "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=3163&year=114&seamon=&mtype=A&check2858=Y",
+      "probePurpose": "Confirms filing existence only; no new admissible amounts claimed."
     }
   ]
 }

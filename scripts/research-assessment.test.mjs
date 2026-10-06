@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {normalizeFinancial,financialAssessment,normalizeOfficialEvent,eventAssessment,corporateActionAssessment} from './assess-research-evidence.mjs';
 import {availableWeeks,parseTdccHistory} from './collect-tdcc-history.mjs';
-import {captureHistoricalComparativeIncome,shouldReuseTargetArchive,parseMopsHistoricalIncomeHtml,parseMopsCompanyHistoricalIncomeHtml} from './collect-research-evidence.mjs';
+import {captureHistoricalComparativeIncome,followMopsCompanySelection,shouldReuseTargetArchive,parseMopsHistoricalIncomeHtml,parseMopsCompanyHistoricalIncomeHtml} from './collect-research-evidence.mjs';
 import {enrich,evidenceCoverage,reviewedFinancialReport,evidenceSummary} from './research-evidence.mjs';
 
 const policy={requirePriorYearSameQuarter:true,requireGovernanceReview:true,requirePositiveProfit:true,minRevenueYoY:0,minNetProfitYoY:0};
@@ -192,4 +192,24 @@ test('TPEx broker summaries preserve known operating profit and never manufactur
  assert.deepEqual(i.officialFormatInsufficiency.missingMetrics,['grossProfit']);assert.equal(i.metrics.operatingProfit,50);
  const blank=normalizeFinancial({'公司代號':'6016','年度':115,'季別':2,'出表日期':'1151005','收益':'200','營業毛利（毛損）':''},'income','https://openapi.twse.com.tw/v1/opendata/t187ap06_L_bd');
  assert.equal(blank.officialFormatInsufficiency,null,'a blank reported metric is a verification gap, not proven schema absence');
+});
+
+test('MOPS company selector follows the verified second-step form instead of retrying the selector as a financial table',async()=>{
+ const original=process.cwd(),fetcher=globalThis.fetch,tmp=fs.mkdtempSync(path.join(os.tmpdir(),'mops-selector-')),selector=fs.readFileSync('scripts/fixtures/5871-company-selector.html','utf8');
+ const detail='<tr><th>項目</th><th>114年01月01日至114年06月30日</th></tr><tr><td>營業收入</td><td>49280844</td></tr><tr><td>本期淨利（淨損）</td><td>10991188</td></tr>';
+ let requests=0;
+ try{
+  process.chdir(tmp);fs.mkdirSync('raw/2026-10-05',{recursive:true});fs.writeFileSync('raw/2026-10-05/research-input.json',JSON.stringify({deepDive:[{code:'5871',assetType:'STOCK',current:{market:'TWSE'}}]}));fs.writeFileSync('raw/2026-10-05/current.raw.txt',JSON.stringify([{'公司代號':'5871','年度':115,'季別':2}]));
+  globalThis.fetch=async(url,options)=>{requests++;const body=new URLSearchParams(options.body);assert.equal(body.get('co_id'),'5871');assert.equal(body.get('TYPEK'),'sii');assert.equal(body.get('year'),'114');return new Response(body.get('step')==='2'?detail:selector);};
+  const captures=await captureHistoricalComparativeIncome('raw/2026-10-05',[{id:'current',kind:'income',status:'CAPTURED'}],null,'2026-10-05',new Date('2026-10-05T10:00:00Z'));
+  assert.equal(captures.find(c=>c.market==='TWSE').status,'CAPTURED');assert.equal(requests,2);
+ }finally{globalThis.fetch=fetcher;process.chdir(original);fs.rmSync(tmp,{recursive:true,force:true});}
+});
+
+test('MOPS detail requests never follow another company, market, period or action',async()=>{
+ // The captured selector is represented exactly by its required native form fields.
+ const html=`<form action='/mops/web/ajax_t164sb04'><input name="step" value="2"><input name="TYPEK" value="sii"><input name="year" value="114"><input name="season" value="2"><input onclick='document.fm1.co_id.value="5871";'></form>`;
+ const identity={code:'5871',market:'TWSE',year:2025,quarter:2};
+ for(const changed of [{...identity,code:'2330'},{...identity,market:'TPEx'},{...identity,market:'UNKNOWN'},{...identity,year:2026},{...identity,quarter:3}])assert.equal(await followMopsCompanySelection(html,changed,()=>assert.fail('unverified detail request')),html);
+ const external=html.replace('/mops/web/ajax_t164sb04','https://example.com/');assert.equal(await followMopsCompanySelection(external,identity,()=>assert.fail('external request')),external);
 });

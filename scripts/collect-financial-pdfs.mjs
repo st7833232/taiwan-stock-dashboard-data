@@ -4,7 +4,7 @@ import {createHash} from 'node:crypto';
 import {pathToFileURL} from 'node:url';
 import {normalizeFinancial} from './assess-research-evidence.mjs';
 import {reviewedFinancialReport} from './research-evidence.mjs';
-import {parseMopsCompanyHistoricalIncomeHtml} from './collect-research-evidence.mjs';
+import {parseMopsCompanyHistoricalIncomeHtml,followMopsCompanySelection} from './collect-research-evidence.mjs';
 const read=p=>{try{return JSON.parse(fs.readFileSync(p));}catch{return null;}};
 const save=(p,x)=>fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n');
 export function financialQueue(rows,state,now,admitted){
@@ -177,7 +177,7 @@ export async function collectFinancialPdfs(target,{onVerified}={}){
  for(const c of read(`${root}/financial-evidence-captures.json`)?.captures??[])if(c.kind==='income'&&c.status==='CAPTURED'&&!c.historicalFinancial)for(const row of read(`${root}/${c.id}.raw.txt`)??[]){const n=normalizeFinancial(row,'income',c.url);if(n&&n.periodEnd<=target&&(!periods.has(n.code)||periods.get(n.code).periodEnd<n.periodEnd))periods.set(n.code,n);}
  const now=new Date(),today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei'}).format(now),deadline=Date.now()+10*60*1000,requestSpacingMs=Number(process.env.FINANCIAL_REQUEST_SPACING_MS||1500);
  const archiveNames=fs.existsSync('history/financial-reports')?fs.readdirSync('history/financial-reports'):[];
- const stocks=input.deepDive.filter(r=>(r.assetType??r.current?.assetType)==='STOCK'),rows=stocks.filter(r=>periods.has(r.code)).map(r=>({...r,key:`${r.code}|${periods.get(r.code).periodEnd}`,archived:archiveNames.some(name=>[0,1].some(offset=>['AI1',...(periods.get(r.code).profitBasis==='TOTAL'?['AI2']:[])].some(type=>name.startsWith(`${Number(periods.get(r.code).periodEnd.slice(0,4))-offset}${String(periods.get(r.code).quarter).padStart(2,'0')}_${r.code}_${type}.pdf.`)))&&name.endsWith('.pdf'))})),admitted=new Set();
+ const stocks=input.deepDive.filter(r=>(r.assetType??r.current?.assetType)==='STOCK'&&!(r.financialAssessment?.status==='VERIFIED_INSUFFICIENT'&&r.financialAssessment.verified===true&&r.financialAssessment.qualityPass===false&&r.financialAssessment.pending?.length===0&&r.financialAssessment.failures?.includes('OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE'))),rows=stocks.filter(r=>periods.has(r.code)).map(r=>({...r,key:`${r.code}|${periods.get(r.code).periodEnd}`,archived:archiveNames.some(name=>[0,1].some(offset=>['AI1',...(periods.get(r.code).profitBasis==='TOTAL'?['AI2']:[])].some(type=>name.startsWith(`${Number(periods.get(r.code).periodEnd.slice(0,4))-offset}${String(periods.get(r.code).quarter).padStart(2,'0')}_${r.code}_${type}.pdf.`)))&&name.endsWith('.pdf'))})),admitted=new Set();
  const admit=()=>{
   const verified=new Set(reports.map(p=>reviewedFinancialReport(p,target)).filter(Boolean).map(n=>`${n.code}|${n.periodEnd}|${n.profitBasis}`));
   for(const r of rows){const current=periods.get(r.code);if(state[r.key]?.parserVersion===2&&verified.has(`${r.code}|${Number(current.periodEnd.slice(0,4))-1}${current.periodEnd.slice(4)}|${current.profitBasis}`))admitted.add(r.key);}
@@ -211,6 +211,7 @@ export async function collectFinancialPdfs(target,{onVerified}={}){
     stage='MOPS_PERIOD_TABLE';
     const tablePath=path+'.income.html';let html;
     try{html=fs.readFileSync(tablePath,'utf8');parseMopsCompanyHistoricalIncomeHtml(html,{code,year,quarter});}catch{html=new TextDecoder('utf-8').decode(await request('https://mopsov.twse.com.tw/mops/web/ajax_t164sb04',new URLSearchParams({encodeURIComponent:'1',step:'1',firstin:'1',off:'1',queryName:'co_id',inpuType:'co_id',TYPEK:r.current?.market==='TPEx'?'otc':'sii',isnew:'false',co_id:code,year:String(filingYear-1911),season:String(quarter).padStart(2,'0')})));fs.writeFileSync(tablePath,html);}
+    html=await followMopsCompanySelection(html,{code,year:filingYear,quarter,market:r.current?.market??r.market},async body=>new TextDecoder('utf-8').decode(await request('https://mopsov.twse.com.tw/mops/web/ajax_t164sb04',body)));fs.writeFileSync(tablePath,html);
     const row=parseMopsCompanyHistoricalIncomeHtml(html,{code,year,quarter});
     if(normalizeFinancial(row,'income',source)?.profitBasis!==current.profitBasis)throw Error('PROFIT_BASIS_UNVERIFIED');
     stage='PDF_METRICS';

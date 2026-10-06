@@ -34,6 +34,13 @@ export async function captureListingHistory(target,input,requests){
  }
  write(path,archive);
 }
+export async function followMopsCompanySelection(html,{code,year,quarter,market},request) {
+  const form=html.match(/<form\b[^>]*action=['"]\/mops\/web\/ajax_t164sb04['"][^>]*>([\s\S]*?)<\/form>/i)?.[1];
+  if(!form||!/^\d{4}$/.test(code)||!['TWSE','TPEx'].includes(market))return html;
+  const inputs=Object.fromEntries([...form.matchAll(/<input\b[^>]*>/gi)].map(m=>[m[0].match(/name=['"]([^'"]+)['"]/i)?.[1],m[0].match(/value=['"]([^'"]*)['"]/i)?.[1]]).filter(([name])=>name));
+  if(inputs.step!=='2'||inputs.TYPEK!==(market==='TPEx'?'otc':'sii')||inputs.year!==String(year-1911)||Number(inputs.season)!==quarter||!form.includes(`co_id.value="${code}"`))return html;
+  return request(new URLSearchParams({id:'',key:'',TYPEK:inputs.TYPEK,step:'2',year:inputs.year,season:inputs.season,co_id:code,firstin:'1'}).toString());
+}
 export function parseMopsCompanyHistoricalIncomeHtml(html,{code,year,quarter}) {
   const labelKey=x=>x.replace(/\s+/g,'').replace(/[（]/g,'(').replace(/[）]/g,')').replace(/[∕／]/g,'/');
   const cumulativePattern=new RegExp(`^(?:${year-1911}|${year})年0?1月0?1日至(?:(?:${year-1911}|${year})年)?0?${quarter*3}月0?${new Date(Date.UTC(year,quarter*3,0)).getUTCDate()}日$`);
@@ -139,6 +146,10 @@ export async function captureHistoricalComparativeIncome(root,captures,old,targe
           const response=await fetch(url,{method:'POST',redirect:'follow',headers:{'content-type':'application/x-www-form-urlencoded','user-agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36','referer':'https://mopsov.twse.com.tw/mops/web/t164sb04','accept':'text/html,*/*'},body,signal:AbortSignal.timeout(15000)});
           if(!response.ok)throw Error(`HTTP ${response.status}${response.headers.get('location')?` -> ${response.headers.get('location')}`:''}`);
           html=await response.text();
+          html=await followMopsCompanySelection(html,{code,year,quarter,market},async detail=>{
+            const response=await fetch(url,{method:'POST',headers:{'content-type':'application/x-www-form-urlencoded','user-agent':'Mozilla/5.0'},body:detail,signal:AbortSignal.timeout(15000)});
+            if(!response.ok)throw Error(`HTTP ${response.status}`);return response.text();
+          });
           const row=parseMopsCompanyHistoricalIncomeHtml(html,{code,year,quarter});existing.set(code,row);return true;
         }catch(error){
           lastError=error;
