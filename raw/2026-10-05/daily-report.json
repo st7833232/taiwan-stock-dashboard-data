@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-05",
-  "revision": "2026-10-06-192105",
+  "revision": "2026-10-06-194737",
   "strategyVersion": "entry-dual-track-v2.2",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
@@ -10,16 +10,16 @@
     "rankContractVersion": 2,
     "rankingMode": "RESEARCH_AND_TRADE_SPLIT",
     "screenedDeepDive": 621,
-    "evidenceCompleteDeepDive": 502,
-    "evidencePendingDeepDive": 119,
-    "researchRanked": 502,
+    "evidenceCompleteDeepDive": 503,
+    "evidencePendingDeepDive": 118,
+    "researchRanked": 503,
     "tradeEligibleRanked": 0,
     "reScreenOnEvidenceAdmission": true,
     "globalResearchComplete": false
   },
   "researchComplete": false,
   "evidencePending": {
-    "fundamental": 112,
+    "fundamental": 111,
     "tdcc": 6,
     "credit": 4,
     "history": 1
@@ -1637,11 +1637,11 @@
     "deepDiveStocks": 549,
     "deepDiveEtfs": 72,
     "screenedDeepDive": 621,
-    "evidenceCompleteDeepDive": 502,
-    "evidencePendingDeepDive": 119,
-    "researchRanked": 502,
+    "evidenceCompleteDeepDive": 503,
+    "evidencePendingDeepDive": 118,
+    "researchRanked": 503,
     "tradeEligibleRanked": 0,
-    "eligibleRanked": 502,
+    "eligibleRanked": 503,
     "eligibleRankedMeaning": "RESEARCH_EVIDENCE_COMPLETE",
     "creditReadyStocks": 545,
     "creditMissingCodes": [
@@ -1658,7 +1658,7 @@
         "name": "景碩",
         "score": 78.9004,
         "researchRank": 1,
-        "researchPercentile": 0.23201856148491878,
+        "researchPercentile": 0.23148148148148148,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1673,7 +1673,7 @@
         "name": "技嘉",
         "score": 76,
         "researchRank": 2,
-        "researchPercentile": 0.46403712296983757,
+        "researchPercentile": 0.46296296296296297,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1688,7 +1688,7 @@
         "name": "宏致",
         "score": 74.9394,
         "researchRank": 3,
-        "researchPercentile": 0.6960556844547564,
+        "researchPercentile": 0.6944444444444444,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1703,7 +1703,7 @@
         "name": "鴻海",
         "score": 74.9,
         "researchRank": 4,
-        "researchPercentile": 0.9280742459396751,
+        "researchPercentile": 0.9259259259259259,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1719,7 +1719,7 @@
         "name": "昇達科",
         "score": 74.9,
         "researchRank": 5,
-        "researchPercentile": 1.160092807424594,
+        "researchPercentile": 1.1574074074074074,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1735,7 +1735,7 @@
         "name": "欣興",
         "score": 74.4188,
         "researchRank": 6,
-        "researchPercentile": 1.3921113689095128,
+        "researchPercentile": 1.3888888888888888,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1750,7 +1750,7 @@
         "name": "聯德控股-KY",
         "score": 73.9,
         "researchRank": 7,
-        "researchPercentile": 1.6241299303944317,
+        "researchPercentile": 1.6203703703703705,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1766,7 +1766,7 @@
         "name": "祥碩",
         "score": 73.8381,
         "researchRank": 8,
-        "researchPercentile": 1.8561484918793503,
+        "researchPercentile": 1.8518518518518519,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1782,7 +1782,7 @@
         "name": "聯強",
         "score": 73.6322,
         "researchRank": 9,
-        "researchPercentile": 2.0881670533642693,
+        "researchPercentile": 2.0833333333333335,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1797,7 +1797,7 @@
         "name": "晶碩",
         "score": 72.8333,
         "researchRank": 10,
-        "researchPercentile": 2.320185614849188,
+        "researchPercentile": 2.314814814814815,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1962,7 +1962,7 @@
       }
     ]
   },
-  "conclusion": "2026-10-05全市場 2313 檔已完成初步篩選（普通股 1958、ETF 355），深度檢查 621 檔；其中 502 檔必要證據已齊並完成逐檔篩選，已有 502 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；119 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：財務證據 112檔、大戶與散戶多週持股 6檔、融資融券等信用資料 4檔、歷史行情 1檔。全市場研究尚未完成。普通股信用資料已核對 545/549 檔。財務證據完整但品質未通過 205 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-10-05全市場 2313 檔已完成初步篩選（普通股 1958、ETF 355），深度檢查 621 檔；其中 503 檔必要證據已齊並完成逐檔篩選，已有 503 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；118 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：財務證據 111檔、大戶與散戶多週持股 6檔、融資融券等信用資料 4檔、歷史行情 1檔。全市場研究尚未完成。普通股信用資料已核對 545/549 檔。財務證據完整但品質未通過 205 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [],
   "core": [
     {
@@ -2112,17 +2112,6 @@
       "officialDateEvidence": "1151005"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-06-192105",
-    "runId": "37457674192",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/37457674192",
-    "validatedCommit": "a8a1b45a669feaa67217ff69247213c54fcf8493"
-  },
-  "inputFingerprint": "98fef5e640173173779561f152bc763b292e2fd19aedbfa126bf1c1c6ff633a4"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "18ed70de9f9e5438cf34bbb509faf03c926af7a3ca3c29eba609cfadc4772728"
 }
