@@ -2,7 +2,7 @@
   "targetDate": "2026-10-05",
   "researchComplete": false,
   "counts": {
-    "fundamental": 110,
+    "fundamental": 109,
     "tdcc": 6,
     "credit": 4,
     "history": 1
@@ -78,7 +78,6 @@
       "8033",
       "8039",
       "8046",
-      "8081",
       "8150",
       "9105",
       "9910",
@@ -1085,6 +1084,12 @@
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "8081",
+      "failures": [
+        "REVENUE_DETERIORATION"
       ]
     },
     {
