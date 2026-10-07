@@ -1,7 +1,7 @@
 {
   "targetDate": "2026-10-07",
   "timezone": "Asia/Taipei",
-  "generatedAt": "2026-10-07T17:59:26.783Z",
+  "generatedAt": "2026-10-07T18:05:49.135Z",
   "simulatedTodayDate": null,
   "effectiveTodayDate": "2026-10-08",
   "overallStatus": "PASS",
@@ -297,7 +297,7 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/10/07",
       "targetDate": "2026-10-07",
-      "capturedAt": "2026-10-07T17:59:24.653Z",
+      "capturedAt": "2026-10-07T18:05:48.183Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -394,7 +394,7 @@
       "kind": "material-information",
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
       "targetDate": "2026-10-07",
-      "capturedAt": "2026-10-07T17:59:26.564Z",
+      "capturedAt": "2026-10-07T18:05:48.901Z",
       "status": "NOT_CAPTURED_RETROSPECTIVE",
       "simulatedTodayDate": null,
       "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
@@ -406,7 +406,7 @@
       "kind": "material-information",
       "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
       "targetDate": "2026-10-07",
-      "capturedAt": "2026-10-07T17:59:26.564Z",
+      "capturedAt": "2026-10-07T18:05:48.901Z",
       "status": "NOT_CAPTURED_RETROSPECTIVE",
       "simulatedTodayDate": null,
       "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
