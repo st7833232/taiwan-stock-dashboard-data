@@ -9,7 +9,8 @@
       "summary": "上市公司每日重大訊息",
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T15:58:50.339Z",
-      "rows": 66
+      "rows": 66,
+      "preservedTargetArchive": true
     },
     {
       "id": "twse-governance-L",
@@ -19,17 +20,8 @@
       "summary": "上市公司違反資訊申報、重大訊息及說明記者會規定專區",
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T15:58:50.424Z",
-      "rows": 37
-    },
-    {
-      "id": "twse-income-bd",
-      "market": "TWSE",
-      "kind": "income",
-      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_bd",
-      "summary": "上市公司綜合損益表(證券期貨業)",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-05T16:21:56.458Z",
-      "rows": 3
+      "rows": 37,
+      "preservedTargetArchive": true
     },
     {
       "id": "twse-suspensions-L",
@@ -39,7 +31,19 @@
       "summary": "上市公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T15:58:50.621Z",
-      "rows": 1
+      "rows": 1,
+      "preservedTargetArchive": true
+    },
+    {
+      "id": "twse-income-bd",
+      "market": "TWSE",
+      "kind": "income",
+      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_bd",
+      "summary": "上市公司綜合損益表(證券期貨業)",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-05T16:21:56.458Z",
+      "rows": 3,
+      "preservedTargetArchive": true
     },
     {
       "id": "twse-income-ci",
@@ -49,7 +53,8 @@
       "summary": "上市公司綜合損益表(一般業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:21:57.555Z",
-      "rows": 1049
+      "rows": 1049,
+      "preservedTargetArchive": true
     },
     {
       "id": "twse-income-fh",
@@ -59,7 +64,8 @@
       "summary": "上市公司綜合損益表(金控業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:21:56.601Z",
-      "rows": 13
+      "rows": 13,
+      "preservedTargetArchive": true
     },
     {
       "id": "twse-income-ins",
@@ -69,7 +75,8 @@
       "summary": "上市公司綜合損益表(保險業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:21:57.689Z",
-      "rows": 5
+      "rows": 5,
+      "preservedTargetArchive": true
     },
     {
       "id": "twse-income-mim",
@@ -79,7 +86,8 @@
       "summary": "上市公司綜合損益表(異業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:21:57.689Z",
-      "rows": 4
+      "rows": 4,
+      "preservedTargetArchive": true
     },
     {
       "id": "twse-balance-bd",
@@ -89,7 +97,8 @@
       "summary": "上市公司資產負債表(證券期貨業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:21:57.823Z",
-      "rows": 3
+      "rows": 3,
+      "preservedTargetArchive": true
     },
     {
       "id": "twse-balance-ci",
@@ -99,7 +108,8 @@
       "summary": "上市公司資產負債表(一般業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:21:58.224Z",
-      "rows": 1049
+      "rows": 1049,
+      "preservedTargetArchive": true
     },
     {
       "id": "twse-balance-fh",
@@ -109,7 +119,8 @@
       "summary": "上市公司資產負債表(金控業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:21:58.359Z",
-      "rows": 13
+      "rows": 13,
+      "preservedTargetArchive": true
     },
     {
       "id": "twse-balance-ins",
@@ -119,7 +130,8 @@
       "summary": "上市公司資產負債表(保險業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:21:58.359Z",
-      "rows": 5
+      "rows": 5,
+      "preservedTargetArchive": true
     },
     {
       "id": "twse-balance-mim",
@@ -129,7 +141,8 @@
       "summary": "上市公司資產負債表(異業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:21:58.494Z",
-      "rows": 4
+      "rows": 4,
+      "preservedTargetArchive": true
     },
     {
       "id": "twse-income-basi",
@@ -139,7 +152,8 @@
       "summary": "上市公司綜合損益表(金融業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:21:58.494Z",
-      "rows": 10
+      "rows": 10,
+      "preservedTargetArchive": true
     },
     {
       "id": "twse-balance-basi",
@@ -149,7 +163,8 @@
       "summary": "上市公司資產負債表(金融業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:21:58.628Z",
-      "rows": 10
+      "rows": 10,
+      "preservedTargetArchive": true
     },
     {
       "id": "twse-ca-exrights-preview",
@@ -163,7 +178,8 @@
       "summary": "上市股票除權除息預告表",
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T15:58:50.814Z",
-      "rows": 62
+      "rows": 62,
+      "preservedTargetArchive": true
     },
     {
       "id": "twse-ca-trading-halts",
@@ -178,7 +194,8 @@
       "summary": "集中市場暫停交易證券",
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T15:58:51.006Z",
-      "rows": 1
+      "rows": 1,
+      "preservedTargetArchive": true
     },
     {
       "id": "twse-ca-exrights-history",
@@ -193,7 +210,8 @@
       "summary": "上市股票除權除息計算結果表",
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T15:58:59.550Z",
-      "rows": null
+      "rows": null,
+      "preservedTargetArchive": true
     },
     {
       "id": "twse-ca-reduction-reference",
@@ -209,7 +227,8 @@
       "summary": "股票減資恢復買賣參考價格",
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T15:59:00.052Z",
-      "rows": null
+      "rows": null,
+      "preservedTargetArchive": true
     },
     {
       "id": "twse-ca-parvalue-preview",
@@ -224,7 +243,8 @@
       "summary": "變更股票面額預告表",
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T15:59:00.461Z",
-      "rows": null
+      "rows": null,
+      "preservedTargetArchive": true
     },
     {
       "id": "twse-ca-parvalue-history",
@@ -239,7 +259,8 @@
       "summary": "變更股票面額恢復買賣參考價格",
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T15:59:00.959Z",
-      "rows": null
+      "rows": null,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-events-O",
@@ -249,7 +270,8 @@
       "summary": "上櫃公司每日重大訊息",
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T15:59:04.038Z",
-      "rows": 29
+      "rows": 29,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-suspensions-O",
@@ -259,7 +281,8 @@
       "summary": "上櫃公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T15:59:06.383Z",
-      "rows": 1
+      "rows": 1,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-balance-basi",
@@ -269,7 +292,8 @@
       "summary": "上櫃公司資產負債表(金融業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:22:08.816Z",
-      "rows": 1
+      "rows": 1,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-balance-bd",
@@ -279,7 +303,8 @@
       "summary": "上櫃公司資產負債表(證券期貨業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:22:08.474Z",
-      "rows": 7
+      "rows": 7,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-balance-ci",
@@ -289,7 +314,8 @@
       "summary": "上櫃公司資產負債表(一般業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:22:09.428Z",
-      "rows": 884
+      "rows": 884,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-balance-fh",
@@ -299,7 +325,8 @@
       "summary": "上櫃公司資產負債表(金控業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:22:08.984Z",
-      "rows": 1
+      "rows": 1,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-balance-ins",
@@ -309,7 +336,8 @@
       "summary": "上櫃公司資產負債表(保險業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:22:09.587Z",
-      "rows": 1
+      "rows": 1,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-balance-mim",
@@ -319,7 +347,8 @@
       "summary": "上櫃公司資產負債表(異業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:22:09.592Z",
-      "rows": 1
+      "rows": 1,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-income-basi",
@@ -329,7 +358,8 @@
       "summary": "上櫃公司綜合損益表(金融業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:22:09.754Z",
-      "rows": 1
+      "rows": 1,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-income-bd",
@@ -339,7 +369,8 @@
       "summary": "上櫃公司綜合損益表(證券期貨業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:22:09.755Z",
-      "rows": 7
+      "rows": 7,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-income-ci",
@@ -349,7 +380,8 @@
       "summary": "上櫃公司綜合損益表(一般業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:22:11.230Z",
-      "rows": 884
+      "rows": 884,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-income-fh",
@@ -359,7 +391,8 @@
       "summary": "上櫃公司綜合損益表(金控業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:22:09.914Z",
-      "rows": 1
+      "rows": 1,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-income-ins",
@@ -369,7 +402,8 @@
       "summary": "上櫃公司綜合損益表(保險業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:22:11.393Z",
-      "rows": 1
+      "rows": 1,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-income-mim",
@@ -379,7 +413,8 @@
       "summary": "上櫃公司綜合損益表(異業)",
       "status": "CAPTURED",
       "capturedAt": "2026-10-05T16:22:11.392Z",
-      "rows": 1
+      "rows": 1,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-governance-O",
@@ -389,7 +424,8 @@
       "summary": "上櫃公司違反資訊申報、重大訊息及說明記者會規定專區",
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T15:59:06.600Z",
-      "rows": 19
+      "rows": 19,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-ca-exrights-history",
@@ -408,27 +444,8 @@
       "summary": "上櫃股票除權除息計算結果表（歷史）",
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T15:59:09.461Z",
-      "rows": null
-    },
-    {
-      "id": "tpex-ca-parvalue-reference",
-      "market": "TPEx",
-      "kind": "coverage",
-      "coverageTags": [
-        "splitReductionConversion:parValueChange",
-        "historicalPriceAdjustment:parValueChange"
-      ],
-      "coverageOnly": true,
-      "allowEmpty": true,
-      "expectedDateRange": {
-        "start": "2026-04-09",
-        "end": "2026-11-10"
-      },
-      "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/pvChgRslt?startDate=2026%2F04%2F09&endDate=2026%2F11%2F10&response=json",
-      "summary": "上櫃變更股票面額恢復買賣參考價",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-06T15:59:09.708Z",
-      "rows": null
+      "rows": null,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-ca-reduction-reference",
@@ -448,7 +465,29 @@
       "summary": "上櫃減資恢復交易參考價",
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T15:59:09.932Z",
-      "rows": null
+      "rows": null,
+      "preservedTargetArchive": true
+    },
+    {
+      "id": "tpex-ca-parvalue-reference",
+      "market": "TPEx",
+      "kind": "coverage",
+      "coverageTags": [
+        "splitReductionConversion:parValueChange",
+        "historicalPriceAdjustment:parValueChange"
+      ],
+      "coverageOnly": true,
+      "allowEmpty": true,
+      "expectedDateRange": {
+        "start": "2026-04-09",
+        "end": "2026-11-10"
+      },
+      "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/pvChgRslt?startDate=2026%2F04%2F09&endDate=2026%2F11%2F10&response=json",
+      "summary": "上櫃變更股票面額恢復買賣參考價",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-06T15:59:09.708Z",
+      "rows": null,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-coverage-tpex-spendi-today",
@@ -463,7 +502,8 @@
       "summary": "上櫃當日公布暫停/恢復交易股票",
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T15:59:10.149Z",
-      "rows": 1
+      "rows": 1,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-coverage-tpex-spendi-history",
@@ -478,7 +518,8 @@
       "summary": "上櫃歷史公布暫停/恢復交易股票",
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T15:59:10.478Z",
-      "rows": 362
+      "rows": 362,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-coverage-mopsfin-t187ap26-O",
@@ -493,7 +534,8 @@
       "summary": "上櫃公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T15:59:10.694Z",
-      "rows": 1
+      "rows": 1,
+      "preservedTargetArchive": true
     },
     {
       "id": "tpex-coverage-tpex-exright-prepost",
@@ -508,49 +550,8 @@
       "summary": "上櫃股票除權除息預告表",
       "status": "CAPTURED",
       "capturedAt": "2026-10-06T15:59:12.625Z",
-      "rows": 76
-    },
-    {
-      "id": "mops-xbrl-bulk-2025Q2",
-      "market": "ALL",
-      "kind": "xbrl-bulk-diagnostic",
-      "historicalFinancial": true,
-      "status": "VERIFY_FAILED",
-      "error": "No official XBRL ZIP candidate succeeded",
-      "attempts": [
-        {
-          "url": "https://mops.twse.com.tw/nas/ifrs/2025/tifrs-2025Q2.zip",
-          "status": 404,
-          "contentType": "text/html;charset=utf-8",
-          "bytes": 431,
-          "zipMagic": false,
-          "preview": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 404 – Not Found</title><style type=\"text/css\">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;"
-        },
-        {
-          "url": "https://mops.twse.com.tw/server-java/FileDownLoad?step=9&fileName=tifrs-2025Q2.zip&filePath=/home/html/nas/ifrs/2025/",
-          "status": 404,
-          "contentType": "text/html;charset=utf-8",
-          "bytes": 431,
-          "zipMagic": false,
-          "preview": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 404 – Not Found</title><style type=\"text/css\">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;"
-        },
-        {
-          "url": "https://mops.twse.com.tw/mops/server-java/FileDownLoad?step=9&fileName=tifrs-2025Q2.zip&filePath=/home/html/nas/ifrs/2025/",
-          "status": 200,
-          "contentType": "text/html;charset=UTF-8",
-          "bytes": 65,
-          "zipMagic": false,
-          "preview": "<script> location.href = location.origin + \"/mops\"; </script>"
-        },
-        {
-          "url": "https://mopsov.twse.com.tw/server-java/FileDownLoad?step=9&fileName=tifrs-2025Q2.zip&filePath=/home/html/nas/ifrs/2025/",
-          "error": "The operation was aborted due to timeout"
-        },
-        {
-          "url": "https://mopsov.twse.com.tw/mops/server-java/FileDownLoad?step=9&fileName=tifrs-2025Q2.zip&filePath=/home/html/nas/ifrs/2025/",
-          "error": "fetch failed"
-        }
-      ]
+      "rows": 76,
+      "preservedTargetArchive": true
     }
   ]
 }
