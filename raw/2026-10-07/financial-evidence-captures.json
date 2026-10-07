@@ -8,7 +8,7 @@
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap23_L",
       "summary": "上市公司違反資訊申報、重大訊息及說明記者會規定專區",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-07T06:12:59.971Z",
+      "capturedAt": "2026-10-07T06:18:12.861Z",
       "rows": 37
     },
     {
@@ -18,7 +18,7 @@
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
       "summary": "上市公司每日重大訊息",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-07T06:13:01.784Z",
+      "capturedAt": "2026-10-07T06:18:14.597Z",
       "rows": 54
     },
     {
@@ -38,7 +38,7 @@
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap26_L",
       "summary": "上市公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-07T06:13:01.988Z",
+      "capturedAt": "2026-10-07T06:18:14.769Z",
       "rows": 1
     },
     {
@@ -162,23 +162,8 @@
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL",
       "summary": "上市股票除權除息預告表",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-07T06:13:02.176Z",
+      "capturedAt": "2026-10-07T06:18:14.948Z",
       "rows": 62
-    },
-    {
-      "id": "twse-ca-trading-halts",
-      "market": "TWSE",
-      "kind": "coverage",
-      "coverageTags": [
-        "tradingHalts"
-      ],
-      "coverageOnly": true,
-      "allowEmpty": true,
-      "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWTAWU",
-      "summary": "集中市場暫停交易證券",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-07T06:13:03.668Z",
-      "rows": 1
     },
     {
       "id": "twse-ca-exrights-history",
@@ -196,19 +181,19 @@
       "rows": null
     },
     {
-      "id": "twse-ca-parvalue-preview",
+      "id": "twse-ca-trading-halts",
       "market": "TWSE",
       "kind": "coverage",
       "coverageTags": [
-        "splitReductionConversion:parValueChange"
+        "tradingHalts"
       ],
       "coverageOnly": true,
       "allowEmpty": true,
-      "url": "https://www.twse.com.tw/exchangeReport/TWTB7U?response=json",
-      "summary": "變更股票面額預告表",
+      "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWTAWU",
+      "summary": "集中市場暫停交易證券",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-07T06:13:17.208Z",
-      "rows": null
+      "capturedAt": "2026-10-07T06:18:15.120Z",
+      "rows": 1
     },
     {
       "id": "twse-ca-reduction-reference",
@@ -224,6 +209,21 @@
       "summary": "股票減資恢復買賣參考價格",
       "status": "CAPTURED",
       "capturedAt": "2026-10-07T06:13:17.988Z",
+      "rows": null
+    },
+    {
+      "id": "twse-ca-parvalue-preview",
+      "market": "TWSE",
+      "kind": "coverage",
+      "coverageTags": [
+        "splitReductionConversion:parValueChange"
+      ],
+      "coverageOnly": true,
+      "allowEmpty": true,
+      "url": "https://www.twse.com.tw/exchangeReport/TWTB7U?response=json",
+      "summary": "變更股票面額預告表",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-07T06:13:17.208Z",
       "rows": null
     },
     {
@@ -411,26 +411,6 @@
       "rows": null
     },
     {
-      "id": "tpex-ca-parvalue-reference",
-      "market": "TPEx",
-      "kind": "coverage",
-      "coverageTags": [
-        "splitReductionConversion:parValueChange",
-        "historicalPriceAdjustment:parValueChange"
-      ],
-      "coverageOnly": true,
-      "allowEmpty": true,
-      "expectedDateRange": {
-        "start": "2026-04-10",
-        "end": "2026-11-11"
-      },
-      "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/pvChgRslt?startDate=2026%2F04%2F10&endDate=2026%2F11%2F11&response=json",
-      "summary": "上櫃變更股票面額恢復買賣參考價",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-07T06:13:26.096Z",
-      "rows": null
-    },
-    {
       "id": "tpex-ca-reduction-reference",
       "market": "TPEx",
       "kind": "coverage",
@@ -451,19 +431,24 @@
       "rows": null
     },
     {
-      "id": "tpex-coverage-tpex-spendi-history",
+      "id": "tpex-ca-parvalue-reference",
       "market": "TPEx",
       "kind": "coverage",
       "coverageTags": [
-        "tradingHalts"
+        "splitReductionConversion:parValueChange",
+        "historicalPriceAdjustment:parValueChange"
       ],
       "coverageOnly": true,
       "allowEmpty": true,
-      "url": "https://www.tpex.org.tw/openapi/v1/tpex_spendi_history",
-      "summary": "上櫃歷史公布暫停/恢復交易股票",
+      "expectedDateRange": {
+        "start": "2026-04-10",
+        "end": "2026-11-11"
+      },
+      "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/pvChgRslt?startDate=2026%2F04%2F10&endDate=2026%2F11%2F11&response=json",
+      "summary": "上櫃變更股票面額恢復買賣參考價",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-07T06:13:26.499Z",
-      "rows": 362
+      "capturedAt": "2026-10-07T06:13:26.096Z",
+      "rows": null
     },
     {
       "id": "tpex-coverage-tpex-spendi-today",
@@ -481,19 +466,19 @@
       "rows": 1
     },
     {
-      "id": "tpex-coverage-tpex-exright-prepost",
+      "id": "tpex-coverage-tpex-spendi-history",
       "market": "TPEx",
       "kind": "coverage",
       "coverageTags": [
-        "exRightsDividends"
+        "tradingHalts"
       ],
       "coverageOnly": true,
       "allowEmpty": true,
-      "url": "https://www.tpex.org.tw/openapi/v1/tpex_exright_prepost",
-      "summary": "上櫃股票除權除息預告表",
+      "url": "https://www.tpex.org.tw/openapi/v1/tpex_spendi_history",
+      "summary": "上櫃歷史公布暫停/恢復交易股票",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-07T06:13:26.719Z",
-      "rows": 76
+      "capturedAt": "2026-10-07T06:13:26.499Z",
+      "rows": 362
     },
     {
       "id": "tpex-coverage-mopsfin-t187ap26-O",
@@ -509,6 +494,21 @@
       "status": "CAPTURED",
       "capturedAt": "2026-10-07T06:13:26.732Z",
       "rows": 1
+    },
+    {
+      "id": "tpex-coverage-tpex-exright-prepost",
+      "market": "TPEx",
+      "kind": "coverage",
+      "coverageTags": [
+        "exRightsDividends"
+      ],
+      "coverageOnly": true,
+      "allowEmpty": true,
+      "url": "https://www.tpex.org.tw/openapi/v1/tpex_exright_prepost",
+      "summary": "上櫃股票除權除息預告表",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-07T06:13:26.719Z",
+      "rows": 76
     },
     {
       "id": "mops-xbrl-bulk-2025Q2",
