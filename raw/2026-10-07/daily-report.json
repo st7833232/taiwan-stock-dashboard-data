@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-07",
-  "revision": "2026-10-08-013038",
+  "revision": "2026-10-08-014046",
   "strategyVersion": "entry-dual-track-v2.2",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
@@ -10,16 +10,16 @@
     "rankContractVersion": 2,
     "rankingMode": "RESEARCH_AND_TRADE_SPLIT",
     "screenedDeepDive": 624,
-    "evidenceCompleteDeepDive": 507,
-    "evidencePendingDeepDive": 117,
-    "researchRanked": 507,
+    "evidenceCompleteDeepDive": 508,
+    "evidencePendingDeepDive": 116,
+    "researchRanked": 508,
     "tradeEligibleRanked": 0,
     "reScreenOnEvidenceAdmission": true,
     "globalResearchComplete": false
   },
   "researchComplete": false,
   "evidencePending": {
-    "fundamental": 114,
+    "fundamental": 109,
     "tdcc": 7,
     "credit": 3,
     "history": 2
@@ -699,6 +699,12 @@
       ]
     },
     {
+      "code": "4566",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "4739",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
@@ -1320,6 +1326,13 @@
       ]
     },
     {
+      "code": "6603",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
       "code": "6617",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
@@ -1643,11 +1656,11 @@
     "deepDiveStocks": 552,
     "deepDiveEtfs": 72,
     "screenedDeepDive": 624,
-    "evidenceCompleteDeepDive": 507,
-    "evidencePendingDeepDive": 117,
-    "researchRanked": 507,
+    "evidenceCompleteDeepDive": 508,
+    "evidencePendingDeepDive": 116,
+    "researchRanked": 508,
     "tradeEligibleRanked": 0,
-    "eligibleRanked": 507,
+    "eligibleRanked": 508,
     "eligibleRankedMeaning": "RESEARCH_EVIDENCE_COMPLETE",
     "creditReadyStocks": 549,
     "creditMissingCodes": [
@@ -1663,7 +1676,7 @@
         "name": "晶碩",
         "score": 76.3333,
         "researchRank": 1,
-        "researchPercentile": 0.22935779816513763,
+        "researchPercentile": 0.2288329519450801,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1678,7 +1691,7 @@
         "name": "中美晶",
         "score": 75.4,
         "researchRank": 2,
-        "researchPercentile": 0.45871559633027525,
+        "researchPercentile": 0.4576659038901602,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1694,7 +1707,7 @@
         "name": "景碩",
         "score": 73.6237,
         "researchRank": 3,
-        "researchPercentile": 0.6880733944954128,
+        "researchPercentile": 0.6864988558352403,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1709,7 +1722,7 @@
         "name": "雷科",
         "score": 73.0641,
         "researchRank": 4,
-        "researchPercentile": 0.9174311926605505,
+        "researchPercentile": 0.9153318077803204,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1724,7 +1737,7 @@
         "name": "世界",
         "score": 72.5824,
         "researchRank": 5,
-        "researchPercentile": 1.146788990825688,
+        "researchPercentile": 1.1441647597254005,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1740,7 +1753,7 @@
         "name": "佳必琪",
         "score": 72.4,
         "researchRank": 6,
-        "researchPercentile": 1.3761467889908257,
+        "researchPercentile": 1.3729977116704806,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1756,7 +1769,7 @@
         "name": "華邦電",
         "score": 72.0311,
         "researchRank": 7,
-        "researchPercentile": 1.6055045871559632,
+        "researchPercentile": 1.6018306636155606,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1770,7 +1783,7 @@
         "name": "潤泰新",
         "score": 71.8112,
         "researchRank": 8,
-        "researchPercentile": 1.834862385321101,
+        "researchPercentile": 1.8306636155606408,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1785,7 +1798,7 @@
         "name": "達發",
         "score": 70.5907,
         "researchRank": 9,
-        "researchPercentile": 2.0642201834862384,
+        "researchPercentile": 2.059496567505721,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1801,7 +1814,7 @@
         "name": "華新科",
         "score": 70.3,
         "researchRank": 10,
-        "researchPercentile": 2.293577981651376,
+        "researchPercentile": 2.288329519450801,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1968,7 +1981,7 @@
       }
     ]
   },
-  "conclusion": "2026-10-07全市場 2305 檔已完成初步篩選（普通股 1954、ETF 351），深度檢查 624 檔；其中 507 檔必要證據已齊並完成逐檔篩選，已有 507 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；117 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：財務證據 114檔、大戶與散戶多週持股 7檔、融資融券等信用資料 3檔、歷史行情 2檔。全市場研究尚未完成。普通股信用資料已核對 549/552 檔。財務證據完整但品質未通過 206 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-10-07全市場 2305 檔已完成初步篩選（普通股 1954、ETF 351），深度檢查 624 檔；其中 508 檔必要證據已齊並完成逐檔篩選，已有 508 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；116 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：財務證據 109檔、大戶與散戶多週持股 7檔、融資融券等信用資料 3檔、歷史行情 2檔。全市場研究尚未完成。普通股信用資料已核對 549/552 檔。財務證據完整但品質未通過 208 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [],
   "core": [
     {
@@ -2134,17 +2147,6 @@
       "officialDateEvidence": "1151007"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-08-013038",
-    "runId": "37658536737",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/37658536737",
-    "validatedCommit": "7660d49fc8afb213eae59301f943e08cd42c8eee"
-  },
-  "inputFingerprint": "4ae1cd7fab0b46a25b55d95da0df3c63702c39552cc8c438c2496ed715fa9bc7"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "30f92a4d81d4eef2f526c47c14d6b81a14b9b5e4ea273585ac696329e4a5679c"
 }

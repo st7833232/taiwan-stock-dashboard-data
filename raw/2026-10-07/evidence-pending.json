@@ -2,7 +2,7 @@
   "targetDate": "2026-10-07",
   "researchComplete": false,
   "counts": {
-    "fundamental": 114,
+    "fundamental": 109,
     "tdcc": 7,
     "credit": 3,
     "history": 2
@@ -37,7 +37,6 @@
       "2481",
       "2498",
       "2634",
-      "3010",
       "3013",
       "3016",
       "3033",
@@ -51,7 +50,6 @@
       "3592",
       "3653",
       "3711",
-      "4566",
       "4770",
       "4919",
       "4956",
@@ -76,7 +74,6 @@
       "7711",
       "7750",
       "7795",
-      "7822",
       "8028",
       "8033",
       "8039",
@@ -87,7 +84,6 @@
       "3163",
       "3211",
       "3236",
-      "3467",
       "3490",
       "3529",
       "3587",
@@ -110,7 +106,6 @@
       "6425",
       "6435",
       "6532",
-      "6603",
       "6620",
       "6643",
       "6683",
@@ -818,6 +813,12 @@
       ]
     },
     {
+      "code": "4566",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "4739",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
@@ -1436,6 +1437,13 @@
       "code": "6588",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6603",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "REVENUE_DETERIORATION"
       ]
     },
     {
