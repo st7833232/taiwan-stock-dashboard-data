@@ -624,22 +624,6 @@
       "capturedAt": "2026-10-07T17:09:16.799Z"
     },
     {
-      "code": "00411A",
-      "sources": [
-        {
-          "url": "https://isin.twse.com.tw/isin/C_public.jsp?strMode=4",
-          "status": "VERIFY_FAILED",
-          "error": "The operation was aborted due to timeout"
-        },
-        {
-          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00411A&stockname=&isincode=",
-          "status": "CAPTURED",
-          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW00000411A0</td>\n        <td align=center bgcolor=#FAFAD2>00411A</td>\n        <td bgcolor=#FAFAD2>主動統一前沿科技</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/08/26</td>\n        <td bgcolor=#FAFAD2>CEOIEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
-        }
-      ],
-      "capturedAt": "2026-10-07T17:09:36.945Z"
-    },
-    {
       "code": "00404A",
       "sources": [
         {
@@ -684,22 +668,6 @@
         }
       ],
       "capturedAt": "2026-10-07T17:09:38.369Z"
-    },
-    {
-      "code": "00998A",
-      "sources": [
-        {
-          "url": "https://isin.twse.com.tw/isin/C_public.jsp?strMode=4",
-          "status": "VERIFY_FAILED",
-          "error": "The operation was aborted due to timeout"
-        },
-        {
-          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00998A&stockname=&isincode=",
-          "status": "CAPTURED",
-          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW00000998A6</td>\n        <td align=center bgcolor=#FAFAD2>00998A</td>\n        <td bgcolor=#FAFAD2>主動復華金融股息</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/04/15</td>\n        <td bgcolor=#FAFAD2>CEOIEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
-        }
-      ],
-      "capturedAt": "2026-10-07T17:09:38.529Z"
     },
     {
       "code": "009826",
@@ -792,6 +760,38 @@
         }
       ],
       "capturedAt": "2026-10-07T17:09:38.837Z"
+    },
+    {
+      "code": "00411A",
+      "sources": [
+        {
+          "url": "https://isin.twse.com.tw/isin/C_public.jsp?strMode=4",
+          "status": "CAPTURED",
+          "recordHtml": "<tr><td bgcolor=#FAFAD2>00411A　主動統一前沿科技</td><td bgcolor=#FAFAD2>TW00000411A0</td><td bgcolor=#FAFAD2>2026/08/26</td><td bgcolor=#FAFAD2>上櫃</td><td bgcolor=#FAFAD2></td><td bgcolor=#FAFAD2>CEOIEU</td><td bgcolor=#FAFAD2></td></tr>"
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00411A&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW00000411A0</td>\n        <td align=center bgcolor=#FAFAD2>00411A</td>\n        <td bgcolor=#FAFAD2>主動統一前沿科技</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/08/26</td>\n        <td bgcolor=#FAFAD2>CEOIEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-07T17:30:29.706Z"
+    },
+    {
+      "code": "00998A",
+      "sources": [
+        {
+          "url": "https://isin.twse.com.tw/isin/C_public.jsp?strMode=4",
+          "status": "CAPTURED",
+          "recordHtml": "<tr><td bgcolor=#FAFAD2>00998A　主動復華金融股息</td><td bgcolor=#FAFAD2>TW00000998A6</td><td bgcolor=#FAFAD2>2026/04/15</td><td bgcolor=#FAFAD2>上櫃</td><td bgcolor=#FAFAD2></td><td bgcolor=#FAFAD2>CEOIEU</td><td bgcolor=#FAFAD2></td></tr>"
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00998A&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW00000998A6</td>\n        <td align=center bgcolor=#FAFAD2>00998A</td>\n        <td bgcolor=#FAFAD2>主動復華金融股息</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/04/15</td>\n        <td bgcolor=#FAFAD2>CEOIEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-07T17:30:29.926Z"
     }
   ]
 }

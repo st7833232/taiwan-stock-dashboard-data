@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "targetDate": "2026-10-07",
   "strategyVersion": "entry-dual-track-v2.2",
-  "inputFingerprint": "10ca47da72e6392011e72d0ce4773f234c38b78de11c4d4093756882a2335b9f",
+  "inputFingerprint": "4ae1cd7fab0b46a25b55d95da0df3c63702c39552cc8c438c2496ed715fa9bc7",
   "coverage": {
     "universe": 2305,
     "stocks": 1954,
@@ -11,11 +11,11 @@
     "deepDiveStocks": 552,
     "deepDiveEtfs": 72,
     "screenedDeepDive": 624,
-    "evidenceCompleteDeepDive": 506,
-    "evidencePendingDeepDive": 118,
-    "researchRanked": 506,
+    "evidenceCompleteDeepDive": 507,
+    "evidencePendingDeepDive": 117,
+    "researchRanked": 507,
     "tradeEligibleRanked": 0,
-    "eligibleRanked": 506,
+    "eligibleRanked": 507,
     "eligibleRankedMeaning": "RESEARCH_EVIDENCE_COMPLETE",
     "creditReadyStocks": 549,
     "creditMissingCodes": [
@@ -64,7 +64,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 1,
-      "researchPercentile": 1.4285714285714286,
+      "researchPercentile": 1.408450704225352,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -282,7 +282,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 61,
-      "researchPercentile": 87.14285714285714,
+      "researchPercentile": 85.91549295774648,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -368,7 +368,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 62,
-      "researchPercentile": 88.57142857142857,
+      "researchPercentile": 87.32394366197182,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -454,7 +454,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 63,
-      "researchPercentile": 90,
+      "researchPercentile": 88.73239436619718,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -540,7 +540,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 64,
-      "researchPercentile": 91.42857142857143,
+      "researchPercentile": 90.14084507042253,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -626,7 +626,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 65,
-      "researchPercentile": 92.85714285714286,
+      "researchPercentile": 91.54929577464789,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -778,7 +778,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 66,
-      "researchPercentile": 94.28571428571429,
+      "researchPercentile": 92.95774647887323,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -927,7 +927,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 16,
-      "researchPercentile": 22.857142857142858,
+      "researchPercentile": 22.535211267605632,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -1076,7 +1076,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 3,
-      "researchPercentile": 4.285714285714286,
+      "researchPercentile": 4.225352112676056,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -1291,7 +1291,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 10,
-      "researchPercentile": 14.285714285714286,
+      "researchPercentile": 14.084507042253522,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -1836,7 +1836,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 19,
-      "researchPercentile": 27.142857142857142,
+      "researchPercentile": 26.760563380281692,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -1920,7 +1920,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 31,
-      "researchPercentile": 44.285714285714285,
+      "researchPercentile": 43.66197183098591,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -2005,7 +2005,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 58,
-      "researchPercentile": 82.85714285714286,
+      "researchPercentile": 81.69014084507042,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -2222,7 +2222,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 56,
-      "researchPercentile": 80,
+      "researchPercentile": 78.87323943661971,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -2439,7 +2439,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 52,
-      "researchPercentile": 74.28571428571429,
+      "researchPercentile": 73.2394366197183,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -2986,7 +2986,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 27,
-      "researchPercentile": 38.57142857142857,
+      "researchPercentile": 38.028169014084504,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -3928,7 +3928,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 21,
-      "researchPercentile": 30,
+      "researchPercentile": 29.577464788732396,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -4012,7 +4012,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 32,
-      "researchPercentile": 45.714285714285715,
+      "researchPercentile": 45.070422535211264,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -4625,7 +4625,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 55,
-      "researchPercentile": 78.57142857142857,
+      "researchPercentile": 77.46478873239437,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -4775,7 +4775,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 37,
-      "researchPercentile": 52.857142857142854,
+      "researchPercentile": 52.11267605633803,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -5256,7 +5256,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 35,
-      "researchPercentile": 50,
+      "researchPercentile": 49.29577464788732,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -6067,7 +6067,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 57,
-      "researchPercentile": 81.42857142857143,
+      "researchPercentile": 80.28169014084507,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -6350,7 +6350,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 60,
-      "researchPercentile": 85.71428571428571,
+      "researchPercentile": 84.50704225352112,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -6434,7 +6434,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 24,
-      "researchPercentile": 34.285714285714285,
+      "researchPercentile": 33.80281690140845,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -6584,7 +6584,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 45,
-      "researchPercentile": 64.28571428571429,
+      "researchPercentile": 63.38028169014085,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -6998,7 +6998,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 18,
-      "researchPercentile": 25.714285714285715,
+      "researchPercentile": 25.35211267605634,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -7940,7 +7940,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 12,
-      "researchPercentile": 17.142857142857142,
+      "researchPercentile": 16.901408450704224,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -8289,7 +8289,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 30,
-      "researchPercentile": 42.857142857142854,
+      "researchPercentile": 42.25352112676056,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -8504,7 +8504,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 25,
-      "researchPercentile": 35.714285714285715,
+      "researchPercentile": 35.2112676056338,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -8588,7 +8588,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 26,
-      "researchPercentile": 37.142857142857146,
+      "researchPercentile": 36.61971830985915,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -8803,7 +8803,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 13,
-      "researchPercentile": 18.571428571428573,
+      "researchPercentile": 18.309859154929576,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -8887,7 +8887,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 15,
-      "researchPercentile": 21.428571428571427,
+      "researchPercentile": 21.12676056338028,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -9169,7 +9169,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 28,
-      "researchPercentile": 40,
+      "researchPercentile": 39.436619718309856,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -10508,7 +10508,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 41,
-      "researchPercentile": 58.57142857142857,
+      "researchPercentile": 57.74647887323944,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -10592,7 +10592,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 34,
-      "researchPercentile": 48.57142857142857,
+      "researchPercentile": 47.88732394366197,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -10807,7 +10807,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 6,
-      "researchPercentile": 8.571428571428571,
+      "researchPercentile": 8.450704225352112,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -10891,7 +10891,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 23,
-      "researchPercentile": 32.857142857142854,
+      "researchPercentile": 32.394366197183096,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -11107,7 +11107,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 7,
-      "researchPercentile": 10,
+      "researchPercentile": 9.859154929577464,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -11191,7 +11191,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 22,
-      "researchPercentile": 31.428571428571427,
+      "researchPercentile": 30.985915492957748,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -11472,7 +11472,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 4,
-      "researchPercentile": 5.714285714285714,
+      "researchPercentile": 5.633802816901408,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -11753,7 +11753,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 9,
-      "researchPercentile": 12.857142857142858,
+      "researchPercentile": 12.67605633802817,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -12166,7 +12166,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 2,
-      "researchPercentile": 2.857142857142857,
+      "researchPercentile": 2.816901408450704,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -12449,7 +12449,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 46,
-      "researchPercentile": 65.71428571428571,
+      "researchPercentile": 64.78873239436619,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -12731,7 +12731,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 33,
-      "researchPercentile": 47.142857142857146,
+      "researchPercentile": 46.478873239436616,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -13408,7 +13408,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 5,
-      "researchPercentile": 7.142857142857143,
+      "researchPercentile": 7.042253521126761,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -13755,7 +13755,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 17,
-      "researchPercentile": 24.285714285714285,
+      "researchPercentile": 23.943661971830984,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -14102,7 +14102,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 11,
-      "researchPercentile": 15.714285714285714,
+      "researchPercentile": 15.492957746478874,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -14384,7 +14384,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 14,
-      "researchPercentile": 20,
+      "researchPercentile": 19.718309859154928,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -14733,8 +14733,8 @@
         "STRUCTURAL_RR_NOT_VERIFIED",
         "ETF_PROFILE_GATE_FAILED"
       ],
-      "researchRank": 67,
-      "researchPercentile": 95.71428571428571,
+      "researchRank": 68,
+      "researchPercentile": 95.77464788732394,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -14885,8 +14885,8 @@
         "STRUCTURAL_RR_NOT_VERIFIED",
         "ETF_PROFILE_GATE_FAILED"
       ],
-      "researchRank": 68,
-      "researchPercentile": 97.14285714285714,
+      "researchRank": 69,
+      "researchPercentile": 97.1830985915493,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -14971,8 +14971,8 @@
         "STRUCTURAL_RR_NOT_VERIFIED",
         "ETF_PROFILE_GATE_FAILED"
       ],
-      "researchRank": 69,
-      "researchPercentile": 98.57142857142857,
+      "researchRank": 70,
+      "researchPercentile": 98.59154929577464,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -15056,7 +15056,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 29,
-      "researchPercentile": 41.42857142857143,
+      "researchPercentile": 40.84507042253521,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -15471,7 +15471,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 51,
-      "researchPercentile": 72.85714285714286,
+      "researchPercentile": 71.83098591549296,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -15820,7 +15820,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 47,
-      "researchPercentile": 67.14285714285714,
+      "researchPercentile": 66.19718309859155,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -15971,7 +15971,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 36,
-      "researchPercentile": 51.42857142857143,
+      "researchPercentile": 50.70422535211268,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -16056,7 +16056,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 42,
-      "researchPercentile": 60,
+      "researchPercentile": 59.15492957746479,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -16206,7 +16206,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 8,
-      "researchPercentile": 11.428571428571429,
+      "researchPercentile": 11.267605633802816,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -16621,7 +16621,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED",
         "ETF_PROFILE_GATE_FAILED"
       ],
-      "researchRank": 70,
+      "researchRank": 71,
       "researchPercentile": 100,
       "tradeRank": null,
       "tradePercentile": null,
@@ -87534,8 +87534,8 @@
         "STRUCTURAL_RR_NOT_VERIFIED",
         "ETF_PROFILE_GATE_FAILED"
       ],
-      "researchRank": null,
-      "researchPercentile": null,
+      "researchRank": 67,
+      "researchPercentile": 94.36619718309859,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -87577,10 +87577,8 @@
         }
       },
       "historyCoverageTradingDays": 27,
-      "researchEvidenceStatus": "PENDING",
-      "researchEvidencePending": [
-        "history"
-      ]
+      "researchEvidenceStatus": "COMPLETE",
+      "researchEvidencePending": []
     },
     {
       "code": "006201",
@@ -87688,7 +87686,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 49,
-      "researchPercentile": 70,
+      "researchPercentile": 69.01408450704226,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -87773,7 +87771,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 43,
-      "researchPercentile": 61.42857142857143,
+      "researchPercentile": 60.563380281690144,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -88254,7 +88252,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 39,
-      "researchPercentile": 55.714285714285715,
+      "researchPercentile": 54.929577464788736,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -88471,7 +88469,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 48,
-      "researchPercentile": 68.57142857142857,
+      "researchPercentile": 67.6056338028169,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -89084,7 +89082,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 54,
-      "researchPercentile": 77.14285714285714,
+      "researchPercentile": 76.05633802816901,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -89631,7 +89629,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 59,
-      "researchPercentile": 84.28571428571429,
+      "researchPercentile": 83.09859154929578,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -90772,7 +90770,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 40,
-      "researchPercentile": 57.142857142857146,
+      "researchPercentile": 56.33802816901409,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -91781,7 +91779,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 38,
-      "researchPercentile": 54.285714285714285,
+      "researchPercentile": 53.521126760563384,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -92525,7 +92523,7 @@
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
       "researchRank": 20,
-      "researchPercentile": 28.571428571428573,
+      "researchPercentile": 28.169014084507044,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -92808,7 +92806,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 50,
-      "researchPercentile": 71.42857142857143,
+      "researchPercentile": 70.4225352112676,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -92893,7 +92891,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 44,
-      "researchPercentile": 62.857142857142854,
+      "researchPercentile": 61.971830985915496,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
@@ -94232,7 +94230,7 @@
         "ETF_PROFILE_GATE_FAILED"
       ],
       "researchRank": 53,
-      "researchPercentile": 75.71428571428571,
+      "researchPercentile": 74.64788732394366,
       "tradeRank": null,
       "tradePercentile": null,
       "universeRank": null,
