@@ -1,10 +1,10 @@
 {
   "targetDate": "2026-10-08",
   "timezone": "Asia/Taipei",
-  "checkedAt": "2026-10-08T12:46:10.738Z",
+  "checkedAt": "2026-10-08T12:50:41.160Z",
   "stage": "SCREENING_UPDATED_EVIDENCE_PENDING",
   "gateStatus": "PASS",
-  "manifestRevision": "2026-10-08-204335",
+  "manifestRevision": "2026-10-08-205038",
   "requiredStrategyVersion": "entry-dual-track-v2.2",
   "currentStrategyVersion": "entry-dual-track-v2.2",
   "strategyMatch": true,
@@ -14,12 +14,12 @@
   "reason": "Snapshot and full-universe screening are current; required per-stock credit or research evidence is unfinished. This is not a completed research publication. Retry only changed evidence.",
   "creditEvidence": {
     "stockCount": 555,
-    "marginShortReadyCount": 0,
-    "securitiesLendingReadyCount": 0,
+    "marginShortReadyCount": 551,
+    "securitiesLendingReadyCount": 164,
     "requireMargin": true,
     "requireLending": false
   },
   "screeningComplete": true,
   "researchComplete": false,
-  "publishedCreditFieldsReady": false
+  "publishedCreditFieldsReady": true
 }

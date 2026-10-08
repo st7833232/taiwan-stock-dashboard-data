@@ -736,8 +736,41 @@
       "sources": [
         {
           "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
-          "status": "VERIFY_FAILED",
-          "error": "terminated"
+          "status": "CAPTURED",
+          "record": {
+            "Date": "1151008",
+            "SecuritiesCompanyCode": "7772",
+            "CompanyName": "耀穎光電股份有限公司",
+            "CompanyAbbreviation": "耀穎",
+            "Registration": "－ ",
+            "SecuritiesIndustryCode": "24",
+            "Address": "No. 812, Daxin Rd.Luzhu Dist., Taoyuan City , Taiwan",
+            "UnifiedBusinessNo.": "80516134",
+            "Chairman": "鄭偉民",
+            "GeneralManager": "郭晉辰",
+            "Spokesman": "甘炎恩",
+            "TitleOfSpokesman": "總經理特別助理",
+            "DeputySpokesperson": "郭晉辰",
+            "Telephone": "(03)323-8118",
+            "DateOfIncorporation": "20030905",
+            "DateOfListing": "20260508",
+            "ParValueOfCommonStock": "新台幣                 10.0000元",
+            "Paidin.Capital.NTDollars": "264986000",
+            "PrivateStock.shares": "0",
+            "PreferredStock.shares": "0",
+            "PreparationOfFinancialReportType": "2",
+            "StockTransferAgent": "兆豐證券股份有限公司股務代理部",
+            "StockTransferAgentTelephone": "(02)3393-0898",
+            "StockTransferAgentAddress": "台北市中正區忠孝東路二段九十五號一樓",
+            "AccountingFirm": "資誠聯合會計師事務所",
+            "CPA.CharteredPublicAccountant.First": "葉翠苗",
+            "CPA.CharteredPublicAccountant.Second": "于智帆",
+            "Symbol": "MOE",
+            "Fax": "(03)323-8211",
+            "EmailAddress": "moe@moe.com.tw",
+            "WebAddress": "http://www.moe.com.tw",
+            "IssueShares": "26498600"
+          }
         },
         {
           "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=7772&stockname=&isincode=",
@@ -745,7 +778,7 @@
           "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW0007772006</td>\n        <td align=center bgcolor=#FAFAD2>7772</td>\n        <td bgcolor=#FAFAD2>耀穎</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>股票</td>\n        <td bgcolor=#FAFAD2>半導體業</td>\n        \n        <td bgcolor=#FAFAD2>2026/05/08</td>\n        <td bgcolor=#FAFAD2>ESVUFR</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
         }
       ],
-      "capturedAt": "2026-10-08T12:41:59.174Z"
+      "capturedAt": "2026-10-08T12:50:08.133Z"
     },
     {
       "code": "00411A",
@@ -761,7 +794,7 @@
           "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW00000411A0</td>\n        <td align=center bgcolor=#FAFAD2>00411A</td>\n        <td bgcolor=#FAFAD2>主動統一前沿科技</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/08/26</td>\n        <td bgcolor=#FAFAD2>CEOIEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
         }
       ],
-      "capturedAt": "2026-10-08T12:42:19.353Z"
+      "capturedAt": "2026-10-08T12:50:28.346Z"
     }
   ]
 }
