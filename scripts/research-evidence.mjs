@@ -68,9 +68,18 @@ export function rowEvidenceState(detail,row) {
 
 export function evidenceSummary(input,result) {
   // A verified quality rejection is a finished per-security decision. Missing evidence is unfinished research.
-  const detail=new Map(input.deepDive.map(r=>[r.code,r])),pending={},fundamentalQualityRejected=[],historyQualityRejected=[],completeCodes=[],pendingCodes=[];
-  for(const r of result.rows.filter(r=>detail.has(r.code))) {
-    const state=rowEvidenceState(detail.get(r.code),r);
+  const detail=new Map(input.deepDive.map(r=>[r.code,r])),evaluated=new Map(result.rows.map(r=>[r.code,r])),pending={},fundamentalQualityRejected=[],historyQualityRejected=[],completeCodes=[],pendingCodes=[];
+  // Prior tracked names can be in deepDive even when the current official daily
+  // universe has no quote for them. Keep them pending, never silently drop them
+  // from the evidence partition or grant a research/trade rank.
+  for(const [code,source] of detail) {
+    const r=evaluated.get(code);
+    if(!r) {
+      pendingCodes.push(code);
+      (pending.history??=[]).push(code);
+      continue;
+    }
+    const state=rowEvidenceState(source,r);
     if(state.fundamentalQualityRejected.length)fundamentalQualityRejected.push({code:r.code,failures:state.fundamentalQualityRejected});
     if(state.historyQualityRejected)historyQualityRejected.push({code:r.code,...state.historyQualityRejected});
     if(state.complete)completeCodes.push(r.code);else pendingCodes.push(r.code);

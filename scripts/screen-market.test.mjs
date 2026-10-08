@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {creditReady,fillPrice,inputFingerprint,evaluateUniverse,markPaper,accountRisk,planSignals} from './screen-market.mjs';
-import {rowEvidenceState} from './research-evidence.mjs';
+import {rowEvidenceState,evidenceSummary} from './research-evidence.mjs';
 const config=JSON.parse(fs.readFileSync('strategy-config.json','utf8'));
 test('missing stock credit cannot be supplied by ETFs or by zero substitution',()=>{
   assert.equal(creditReady({marginShortLending:{marginBalance:null,shortBalance:0}},config),false);
@@ -48,6 +48,21 @@ test('per-security evidence readiness does not wait for unrelated symbols',()=>{
   const pending=rowEvidenceState({}, {gates:{...gates,fundamental:false}});
   assert.equal(complete.status,'COMPLETE');assert.deepEqual(complete.pending,[]);
   assert.equal(pending.status,'PENDING');assert.deepEqual(pending.pending,['fundamental']);
+});
+test('prior deep-dive name absent from current official universe remains pending',()=>{
+  const input={
+    targetDate:'2026-10-08',
+    gateMatrix:{targetDate:'2026-10-08',overallStatus:'PASS'},
+    universe:[{code:'3005',name:'神基',assetType:'STOCK',close:117}],
+    deepDive:[{code:'9999',assetType:'STOCK',current:null}]
+  };
+  const result=evaluateUniverse(input,config), evidence=evidenceSummary(input,result);
+  assert.equal(result.rows.some(r=>r.code==='9999'),false,'no unverified quote may enter ranking');
+  assert.equal(result.rows.filter(r=>r.researchRank!==null||r.tradeRank!==null).length,0);
+  assert.equal(evidence.completeCodes.length+evidence.pendingCodes.length,input.deepDive.length);
+  assert.deepEqual(evidence.pendingCodes,['9999']);
+  assert.deepEqual(evidence.pending.history,['9999']);
+  assert.equal(evidence.researchComplete,false);
 });
 test('same-day reanalysis never repeats a ledger entry',()=>{
   const p={asOf:'2026-09-29',cash:200000,initialCash:200000,positions:[],ledger:[],nextOrders:[]};
