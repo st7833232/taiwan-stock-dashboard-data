@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-08",
-  "generatedAt": "2026-10-08T12:36:02.843Z",
+  "generatedAt": "2026-10-08T12:41:08.132Z",
   "strategyVersion": "entry-dual-track-v2.2",
   "researchInputPath": "raw/2026-10-08/research-input.json",
-  "researchInputBytes": 19604872,
+  "researchInputBytes": 19717701,
   "universeSummary": {
     "total": 2304,
     "stocks": 1950,
@@ -13,23 +13,23 @@
     "liquidityHistoryRequiredDays": 20,
     "liquidityEvaluatedStocks": 1945,
     "liquidityEvaluatedEtfs": 353,
-    "liquidMedian20dStocks": 552,
+    "liquidMedian20dStocks": 555,
     "liquidMedian20dEtfs": 70,
-    "preferredPriceAndLiquidMedian20dStocks": 339,
+    "preferredPriceAndLiquidMedian20dStocks": 342,
     "currentDayTurnoverAboveThresholdStocks": 616,
     "currentDayTurnoverAboveThresholdEtfs": 77,
     "deepDiveScope": "ALL_LIQUID_STOCKS",
     "deepDiveConfiguredLimit": null,
-    "deepDiveCount": 622,
-    "deepDiveStocks": 552,
+    "deepDiveCount": 625,
+    "deepDiveStocks": 555,
     "deepDiveEtfs": 70,
-    "trackedPriorCodes": 54
+    "trackedPriorCodes": 55
   },
   "historyCache": {
     "asOf": "2026-10-08",
     "verifiedTradingDays": 130,
     "codesWith20Days": 2342,
-    "codesWith120Days": 2233,
+    "codesWith120Days": 2238,
     "codesWith20InstitutionDays": 13712
   },
   "v2Readiness": {
@@ -38,14 +38,14 @@
     "fixedTenCodeListRemoved": true,
     "historicalFoldersAvailable": 20,
     "historicalCacheTradingDays": 130,
-    "buyHistoryReadyCount": 608,
-    "institutional20dReadyCount": 622,
+    "buyHistoryReadyCount": 611,
+    "institutional20dReadyCount": 625,
     "marginShortLendingReadyCount": 0,
     "securitiesLendingReadyCount": 0,
-    "fundamentalReadyCount": 552,
-    "sourceAEventCoverageCount": 622,
-    "tdccReadyCount": 622,
-    "etfProfileReadyCount": 27,
+    "fundamentalReadyCount": 555,
+    "sourceAEventCoverageCount": 625,
+    "tdccReadyCount": 625,
+    "etfProfileReadyCount": 28,
     "etfCoreEligibleCount": 2,
     "note": "BUY remains fail-closed for any required evidence that is not point-in-time verifiable. Stocks and ETFs use separate machine-readable profiles; ETF readiness is derived only from official exchange security identity and official rolling OHLCV history."
   }

@@ -716,22 +716,6 @@
       "capturedAt": "2026-10-08T12:37:08.503Z"
     },
     {
-      "code": "00411A",
-      "sources": [
-        {
-          "url": "https://isin.twse.com.tw/isin/C_public.jsp?strMode=4",
-          "status": "VERIFY_FAILED",
-          "error": "The operation was aborted due to timeout"
-        },
-        {
-          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00411A&stockname=&isincode=",
-          "status": "CAPTURED",
-          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW00000411A0</td>\n        <td align=center bgcolor=#FAFAD2>00411A</td>\n        <td bgcolor=#FAFAD2>主動統一前沿科技</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/08/26</td>\n        <td bgcolor=#FAFAD2>CEOIEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
-        }
-      ],
-      "capturedAt": "2026-10-08T12:37:28.721Z"
-    },
-    {
       "code": "00998A",
       "sources": [
         {
@@ -746,6 +730,38 @@
         }
       ],
       "capturedAt": "2026-10-08T12:37:29.424Z"
+    },
+    {
+      "code": "7772",
+      "sources": [
+        {
+          "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+          "status": "VERIFY_FAILED",
+          "error": "terminated"
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=7772&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW0007772006</td>\n        <td align=center bgcolor=#FAFAD2>7772</td>\n        <td bgcolor=#FAFAD2>耀穎</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>股票</td>\n        <td bgcolor=#FAFAD2>半導體業</td>\n        \n        <td bgcolor=#FAFAD2>2026/05/08</td>\n        <td bgcolor=#FAFAD2>ESVUFR</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-08T12:41:59.174Z"
+    },
+    {
+      "code": "00411A",
+      "sources": [
+        {
+          "url": "https://isin.twse.com.tw/isin/C_public.jsp?strMode=4",
+          "status": "VERIFY_FAILED",
+          "error": "The operation was aborted due to timeout"
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00411A&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW00000411A0</td>\n        <td align=center bgcolor=#FAFAD2>00411A</td>\n        <td bgcolor=#FAFAD2>主動統一前沿科技</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/08/26</td>\n        <td bgcolor=#FAFAD2>CEOIEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-08T12:42:19.353Z"
     }
   ]
 }
