@@ -127,12 +127,12 @@
       "filingParserVersion": 3,
       "textParserVersion": 22,
       "filingFallback": null,
-      "stage": "PDF_METRICS",
-      "reason": "PDF_OCR_REVIEW_PENDING",
-      "attempts": 1,
+      "stage": "FILING_INDEX",
+      "reason": "FILING_VERSION_UNVERIFIED",
+      "attempts": 2,
       "checkedDate": "2026-10-09",
-      "checkedAt": "2026-10-08T17:40:15.245Z",
-      "nextRetryAt": "2026-10-08T17:45:15.245Z"
+      "checkedAt": "2026-10-08T17:45:42.802Z",
+      "nextRetryAt": "2026-10-09T17:45:42.802Z"
     },
     "1513|2026-06-30": {
       "status": "UNVERIFIED",
