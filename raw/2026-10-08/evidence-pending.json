@@ -3,7 +3,7 @@
   "researchComplete": false,
   "counts": {
     "credit": 555,
-    "fundamental": 112,
+    "fundamental": 110,
     "history": 3,
     "tdcc": 4
   },
@@ -621,9 +621,7 @@
       "5243",
       "3236",
       "3311",
-      "3317",
       "6245",
-      "7772",
       "6155",
       "6742",
       "2033",
@@ -1677,6 +1675,13 @@
       "code": "3704",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "7772",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
       ]
     },
     {

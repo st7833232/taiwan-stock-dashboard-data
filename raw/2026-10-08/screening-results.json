@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "targetDate": "2026-10-08",
   "strategyVersion": "entry-dual-track-v2.2",
-  "inputFingerprint": "163e84bf4100e789df798b649d999f92900f555104f085bc622d7dbfca65dcb1",
+  "inputFingerprint": "fa7d7151caee1d7c4f7827e60e989c2f146857d66b311c2a3307175de4d3f0a5",
   "coverage": {
     "universe": 2304,
     "stocks": 1950,
@@ -106559,7 +106559,7 @@
       "close": 71.5,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 29.2,
+      "score": 39.2,
       "scores": {
         "trend": 7.2,
         "momentum": 4,
@@ -106568,7 +106568,7 @@
         "institutional": 0,
         "large_holder": 0,
         "margin_short_lending": 0,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -106579,7 +106579,7 @@
         "credit": false,
         "institutional": true,
         "tdcc": false,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -106590,7 +106590,6 @@
         "TREND_NOT_CONFIRMED",
         "CREDIT_EVIDENCE_INCOMPLETE",
         "TDCC_PERSISTENCE_NOT_VERIFIED",
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -106609,8 +106608,7 @@
       "researchEvidenceStatus": "PENDING",
       "researchEvidencePending": [
         "credit",
-        "tdcc",
-        "fundamental"
+        "tdcc"
       ]
     },
     {
@@ -148048,8 +148046,7 @@
       "researchEvidencePending": [
         "history",
         "credit",
-        "tdcc",
-        "fundamental"
+        "tdcc"
       ]
     },
     {

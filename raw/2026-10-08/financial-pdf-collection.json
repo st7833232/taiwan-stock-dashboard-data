@@ -4848,13 +4848,51 @@
       "checkedDate": "2026-10-08",
       "checkedAt": "2026-10-08T12:23:33.117Z",
       "nextRetryAt": "2026-10-09T12:23:33.117Z"
+    },
+    "3317|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-08",
+      "checkedAt": "2026-10-08T12:43:16.798Z"
+    },
+    "7772|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-08",
+      "checkedAt": "2026-10-08T12:43:31.725Z"
+    },
+    "4743|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 3,
+      "textParserVersion": 22,
+      "filingFallback": null,
+      "stage": "PDF_DOWNLOAD",
+      "reason": "fetch failed",
+      "attempts": 1,
+      "checkedDate": "2026-10-08",
+      "checkedAt": "2026-10-08T12:44:05.205Z",
+      "nextRetryAt": "2026-10-08T12:49:05.205Z"
+    },
+    "3228|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 3,
+      "textParserVersion": 22,
+      "filingFallback": null,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 1,
+      "checkedDate": "2026-10-08",
+      "checkedAt": "2026-10-08T12:46:04.504Z",
+      "nextRetryAt": "2026-10-08T12:51:04.504Z"
     }
   },
   "ocrProgress": {
     "parserVersion": 20,
-    "pages": 3235
+    "pages": 3272
   },
-  "remaining": 106,
+  "remaining": 108,
   "ready": 0,
   "continuationNeeded": false,
   "rateLimited": false,
