@@ -1075,9 +1075,9 @@
       "stage": "PDF_METRICS",
       "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-07",
-      "checkedAt": "2026-10-07T10:00:52.346Z",
-      "nextRetryAt": "2026-10-08T10:00:52.346Z"
+      "checkedDate": "2026-10-08",
+      "checkedAt": "2026-10-08T12:38:12.295Z",
+      "nextRetryAt": "2026-10-09T12:38:12.295Z"
     },
     "1785|2026-06-30": {
       "status": "VERIFIED",
@@ -1701,9 +1701,9 @@
       "stage": "PDF_METRICS",
       "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-07",
-      "checkedAt": "2026-10-07T10:01:01.086Z",
-      "nextRetryAt": "2026-10-08T10:01:01.086Z"
+      "checkedDate": "2026-10-08",
+      "checkedAt": "2026-10-08T12:38:14.048Z",
+      "nextRetryAt": "2026-10-09T12:38:14.048Z"
     },
     "4916|2026-06-30": {
       "status": "VERIFIED",
@@ -2366,9 +2366,9 @@
       "stage": "PDF_METRICS",
       "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-07",
-      "checkedAt": "2026-10-07T10:00:36.620Z",
-      "nextRetryAt": "2026-10-08T10:00:36.620Z"
+      "checkedDate": "2026-10-08",
+      "checkedAt": "2026-10-08T12:38:03.545Z",
+      "nextRetryAt": "2026-10-09T12:38:03.545Z"
     },
     "3305|2026-06-30": {
       "status": "VERIFIED",
@@ -2665,9 +2665,9 @@
       "stage": "PDF_METRICS",
       "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-07",
-      "checkedAt": "2026-10-07T10:00:29.842Z",
-      "nextRetryAt": "2026-10-08T10:00:29.842Z"
+      "checkedDate": "2026-10-08",
+      "checkedAt": "2026-10-08T12:38:01.844Z",
+      "nextRetryAt": "2026-10-09T12:38:01.844Z"
     },
     "2402|2026-06-30": {
       "status": "UNVERIFIED",
@@ -2963,9 +2963,9 @@
       "stage": "PDF_METRICS",
       "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-07",
-      "checkedAt": "2026-10-07T10:00:41.917Z",
-      "nextRetryAt": "2026-10-08T10:00:41.917Z"
+      "checkedDate": "2026-10-08",
+      "checkedAt": "2026-10-08T12:38:05.291Z",
+      "nextRetryAt": "2026-10-09T12:38:05.291Z"
     },
     "3443|2026-06-30": {
       "status": "UNVERIFIED",
@@ -3287,9 +3287,9 @@
       "stage": "PDF_METRICS",
       "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-07",
-      "checkedAt": "2026-10-07T10:00:48.942Z",
-      "nextRetryAt": "2026-10-08T10:00:48.942Z"
+      "checkedDate": "2026-10-08",
+      "checkedAt": "2026-10-08T12:38:10.550Z",
+      "nextRetryAt": "2026-10-09T12:38:10.550Z"
     },
     "6531|2026-06-30": {
       "status": "VERIFIED",
@@ -3447,9 +3447,9 @@
       "stage": "PDF_METRICS",
       "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-07",
-      "checkedAt": "2026-10-07T10:00:43.662Z",
-      "nextRetryAt": "2026-10-08T10:00:43.662Z"
+      "checkedDate": "2026-10-08",
+      "checkedAt": "2026-10-08T12:38:07.032Z",
+      "nextRetryAt": "2026-10-09T12:38:07.032Z"
     },
     "6672|2026-06-30": {
       "status": "VERIFIED",
@@ -3578,9 +3578,9 @@
       "stage": "PDF_METRICS",
       "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-07",
-      "checkedAt": "2026-10-07T10:00:45.445Z",
-      "nextRetryAt": "2026-10-08T10:00:45.445Z"
+      "checkedDate": "2026-10-08",
+      "checkedAt": "2026-10-08T12:38:08.818Z",
+      "nextRetryAt": "2026-10-09T12:38:08.818Z"
     },
     "1590|2026-06-30": {
       "status": "VERIFIED",
@@ -4854,11 +4854,12 @@
     "parserVersion": 20,
     "pages": 3235
   },
-  "remaining": 70,
+  "remaining": 106,
   "ready": 0,
   "continuationNeeded": false,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [
+    "3718",
     "9105"
   ]
 }
