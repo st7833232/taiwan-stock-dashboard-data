@@ -1,4 +1,19 @@
+import {readFileSync} from 'node:fs';
+
 const TIME_ZONE = 'Asia/Taipei';
+// Use the checked-in official TWSE calendar snapshot, not a guessed weekday
+// calendar. Trading-day rows in the official holiday schedule are excluded.
+// Only 2026 is covered by this verified snapshot; do not infer other years.
+const officialCalendar2026 = JSON.parse(readFileSync(
+  new URL('../raw/calendars/2026-09-30/twse-holidays-2026.json', import.meta.url),
+  'utf8'
+));
+const officialHolidays2026 = new Set(officialCalendar2026.payload.data
+  .filter(([date, name]) => /^2026-\\d{2}-\\d{2}$/.test(date) && !/開始交易日|最後交易日/.test(name))
+  .map(([date]) => date));
+export function isOfficialExchangeHoliday(date) {
+  return officialHolidays2026.has(date);
+}
 const DEFAULT_CLOSE_READY_HOUR = 18;
 
 function taipeiParts(instant) {

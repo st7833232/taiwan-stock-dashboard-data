@@ -3,6 +3,7 @@ import crypto from 'node:crypto';
 import {pathToFileURL} from 'node:url';
 import {shouldContinueFinancial} from './continue-financial-evidence.mjs';
 import {resolvePipelineTarget} from './run-daily-pipeline.mjs';
+import {isOfficialExchangeHoliday} from './resolve-capture-target-date.mjs';
 const read=p=>{try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}};
 export function classifyRecoveryError(error) {
   const message=String(error??'').trim();
@@ -42,6 +43,10 @@ export function recoveryDecision({report,status,count,max=12,collection,runId,pr
 export async function continuePipelineRecovery(){
   if(process.env.TEST_OUTCOME==='failure'||process.env.CAPTURE_OUTCOME==='skipped'){console.log(JSON.stringify({selfHealing:'STOP',reason:'PRECONDITION_FAILED'}));return;}
   const target=resolvePipelineTarget(process.env.TARGET_DATE);
+  if (isOfficialExchangeHoliday(target)) {
+    console.log(JSON.stringify({selfHealing:'STOP',reason:'OFFICIAL_EXCHANGE_HOLIDAY',target}));
+    return;
+  }
   if(!target)throw Error('Cannot resolve recovery target from manifest');
   const root=`raw/${target}`,report=read(`${root}/daily-report.json`),status=read(`${root}/pipeline-status.json`);
   const collection=read(`${root}/financial-pdf-collection.json`);

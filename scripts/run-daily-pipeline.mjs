@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {pathToFileURL} from 'node:url';
-import {resolveCaptureTargetDate} from './resolve-capture-target-date.mjs';
+import {resolveCaptureTargetDate,isOfficialExchangeHoliday} from './resolve-capture-target-date.mjs';
 import {inputFingerprint} from './screen-market.mjs';
 
 const read=p=>{try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}};
@@ -28,6 +28,12 @@ export function isFutureAfterCloseTarget(target,now=new Date()) {
   return target>ready;
 }
 export function runPipeline(target=resolveCaptureTargetDate(),{execute=execFileSync,now=new Date()}={}) {
+  // A holiday is not an incomplete trading day. Do not backdate and rewrite
+  // the already published manifest, immutable snapshots or paper account.
+  if (isOfficialExchangeHoliday(target)) {
+    console.log(`NO_CHANGE ${target}: official TWSE market holiday; preserve latest formal publication`);
+    return;
+  }
   if(!/^\d{4}-\d{2}-\d{2}$/.test(target)||Number.isNaN(Date.parse(target))||new Date(target).toISOString().slice(0,10)!==target||isFutureAfterCloseTarget(target,now))throw Error('Target must be a closed Taipei market weekday, never an unfinished daily candle');
   fs.readFileSync('DAILY_UPDATE_PROTOCOL.md','utf8');
   const initial=read('manifest.json'),initialPaper=read(initial?.paperAccountPath);
