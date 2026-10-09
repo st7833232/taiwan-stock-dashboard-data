@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {creditReady,fillPrice,inputFingerprint,evaluateUniverse,markPaper,accountRisk,planSignals,marketTrendAssessment,entrySetup} from './screen-market.mjs';
 import {rowEvidenceState,evidenceSummary} from './research-evidence.mjs';
+import {tickSize,alignPrice,isTickPrice,alignStockSetup,displayPrice} from './price-ticks.mjs';
 const config=JSON.parse(fs.readFileSync('strategy-config.json','utf8'));
 test('missing stock credit cannot be supplied by ETFs or by zero substitution',()=>{
   assert.equal(creditReady({marginShortLending:{marginBalance:null,shortBalance:0}},config),false);
@@ -155,4 +156,29 @@ test('alpha planner processes the best verified trade rank before lower-ranked n
   const input={targetDate:'2026-10-08',verifiedCalendar:{sourceQuality:'SOURCE_A',asOf:'2026-10-08',nextTradingDate:'2026-10-12'},deepDive:[{history:[['2026-10-02'],['2026-10-07']]}]};
   const plan=planSignals({regime:'BULL',marketTrend:{verified:false},rows:[make('RANK2',2),make('RANK1',1)]},paper,input,config);
   assert.equal(plan.orders[0].code,'RANK1');
+});
+
+test('Taiwan stock and ETF price ticks are aligned without widening entry',()=>{
+  assert.equal(tickSize(29.8,'STOCK'),0.05);
+  assert.equal(tickSize(114.95,'ETF'),0.05);
+  assert.equal(alignPrice(29.460714,'STOCK','UP'),29.50);
+  assert.equal(alignPrice(29.886904,'STOCK','DOWN'),29.85);
+  assert.equal(alignPrice(28.951785,'STOCK','UP'),29.00);
+  assert.equal(alignPrice(31.757142,'STOCK','DOWN'),31.75);
+  assert.equal(alignPrice(113.403571,'ETF','UP'),113.45);
+  assert.equal(alignPrice(111.857142,'ETF','UP'),111.90);
+  assert.equal(alignPrice(49.99,'STOCK','UP'),50.00);
+  assert.equal(alignPrice(99.99,'STOCK','UP'),100.00);
+  assert.equal(alignPrice(999.99,'STOCK','UP'),1000.00);
+  assert.equal(alignPrice(9.996,'STOCK','UP'),10.00);
+  assert.equal(alignPrice(49.999,'ETF','UP'),50.00);
+  for(const p of [29.50,29.85,29,31.75])assert.equal(isTickPrice(p,'STOCK'),true);
+  assert.equal(isTickPrice(29.8869,'STOCK'),false);
+  assert.equal(displayPrice(29.5),'29.50');
+});
+test('rounded price bands require at least 2R even at the upper entry limit',()=>{
+ const valid=alignStockSetup({strategy:'TREND_CONTINUATION',entry:29.8,zoneLow:29.460714,maxEntry:29.886904,stop:28.951785,target:31.757142},'STOCK',2);
+ assert.ok(valid);assert.deepEqual([valid.zoneLow,valid.maxEntry,valid.stop,valid.target],[29.50,29.85,29.00,31.75]);
+ assert.ok(valid.worstEntryRR>=2);
+ assert.equal(alignStockSetup({entry:29.8,zoneLow:29.5,maxEntry:29.8869,stop:28.9518,target:30.5},'STOCK',2),null);
 });

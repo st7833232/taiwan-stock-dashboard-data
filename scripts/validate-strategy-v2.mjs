@@ -1,8 +1,10 @@
 import fs from 'node:fs';
+import {isTickPrice,displayPrice} from './price-ticks.mjs';
 
 const manifest = JSON.parse(fs.readFileSync('manifest.json', 'utf8'));
 const research = JSON.parse(fs.readFileSync(manifest.researchPath, 'utf8'));
 const config = JSON.parse(fs.readFileSync('strategy-config.json', 'utf8'));
+const publishedPaper = JSON.parse(fs.readFileSync(manifest.paperAccountPath, 'utf8'));
 const errors = [];
 
 const fail = (message) => errors.push(message);
@@ -36,6 +38,40 @@ if(config.paperExperiment?.enabled){
 if (research.strategyVersion !== config.version) {
   console.log(`STRATEGY V2 VALIDATION SKIPPED: current strategyVersion=${research.strategyVersion ?? 'missing'}`);
   process.exit(0);
+}
+
+for(const order of publishedPaper.nextOrders??[]){
+  if(order.side!=='buy')continue;
+  const match=(research.candidates||[]).find(c=>c.code===order.code);
+  const asset=match?.assetType;
+  assert(['STOCK','ETF'].includes(asset),`order ${order.code} asset type missing`);
+  if(!['STOCK','ETF'].includes(asset))continue;
+  const r=order.mechanicalRule||{};
+  for(const key of ['zoneLow','zoneHigh','maxEntry','stop']){
+    assert(isTickPrice(r[key],asset),`order ${order.code} ${key} not on legal price tick`);
+  }
+  if(r.type==='STOP_ENTRY')assert(isTickPrice(r.trigger,asset),`order ${order.code} trigger invalid tick`);
+  assert(r.zoneLow<=r.zoneHigh&&r.zoneHigh===r.maxEntry&&r.stop<r.zoneLow,`order ${order.code} buy limits invalid`);
+  assert(order.buyPriceLow===r.zoneLow&&order.buyPriceHigh===r.zoneHigh&&order.stopPrice===r.stop,
+    `order ${order.code} display prices differ from execution prices`);
+  assert(order.priceUnit==='TWD_PER_SHARE',`order ${order.code} price unit invalid`);
+  assert(order.executionRule.includes(displayPrice(r.zoneLow))&&order.executionRule.includes(displayPrice(r.zoneHigh)),
+    `order ${order.code} execution text must state exact numeric buy prices`);
+  if(order.targetPrice!==undefined){
+    assert(isTickPrice(order.targetPrice,asset),`order ${order.code} target invalid tick`);
+    assert((order.targetPrice-r.maxEntry)/(r.maxEntry-r.stop)+1e-9>=config.minRiskReward,
+      `order ${order.code} rounded risk/reward below 2R`);
+  }
+}
+for(const candidate of research.candidates??[])if(candidate.decision==='BUY'){
+  assert(isTickPrice(candidate.buyPriceLow,candidate.assetType)&&isTickPrice(candidate.buyPriceHigh,candidate.assetType),
+    `candidate ${candidate.code} missing tradable price range`);
+  assert(candidate.entry.includes(displayPrice(candidate.buyPriceLow))&&candidate.entry.includes(displayPrice(candidate.buyPriceHigh)),
+    `candidate ${candidate.code} must display price range in text`);
+  for(const route of candidate.entryRoutes??[]){
+    assert(route.zone_low===candidate.buyPriceLow&&route.zone_high===candidate.buyPriceHigh,
+      `candidate ${candidate.code} entry route price mismatch`);
+  }
 }
 
 const p = research.strategyProfile;

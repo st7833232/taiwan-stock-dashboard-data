@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {alignPrice,alignStockSetup,displayPrice} from './price-ticks.mjs';
 import crypto from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 import {EVIDENCE_CHECKS,evidenceSummary,rowEvidenceState} from './research-evidence.mjs';
@@ -51,7 +52,7 @@ export function candidateDisplayFields(row, held, audit=null) {
   return {
     thesis:`${row.name}已納入全市場篩選，已驗證項目得分 ${row.score}。${pending?`目前先觀察：${pending}。`:'目前列出的檢查項目均已通過，仍須遵守進場價格與帳戶風控。'}${held?'目前為既有模擬持倉。':''}`,
     avoid:pending?`在以下項目確認前，不新增買單：${pending}。`:'開盤或實際進場價格超過上限、停損或帳戶曝險不符規則時，取消買單。',
-    entry:row.decision==='BUY'?`僅供下一交易日條件單：進場價 ${row.entryPrice??row.setup?.entry} 元，最高可接受價格 ${row.maxChase??row.setup?.maxEntry} 元，停損 ${row.stop??row.setup?.stop} 元；超價即取消。`:'目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。',
+    entry:row.decision==='BUY'?`下一交易日條件式買進：買進下限 ${displayPrice(row.setup.zoneLow)} 元，上限 ${displayPrice(row.setup.maxEntry)} 元，參考進場價 ${displayPrice(row.setup.entry)} 元；停損 ${displayPrice(row.setup.stop)} 元，目標價 ${displayPrice(row.setup.target)} 元。價格已依合法升降單位調整，符合進場條件及風控才模擬成交。`:'目前不新增買單。先完成必要資料核對，再確認回測或突破買點、停損與目標價，並通過排名及帳戶風控。',
   };
 }
 
@@ -96,7 +97,7 @@ export function entrySetup(row, config) {
   if(!strategy || !finite(target) || target<=entry || stop<=0 || stop>=entry) return null;
   const rr=(target-entry)/(entry-stop), maxEntry=Math.min(entry+t.atr14*rules.maxChaseAtrMultiplier, (target+config.minRiskReward*stop)/(1+config.minRiskReward));
   if(maxEntry<entry || rr<config.minRiskReward) return null;
-  return {strategy,entry,stop,target,riskReward:rr,maxEntry,resistance,support,zoneLow};
+  return alignStockSetup({strategy,entry,stop,target,riskReward:rr,maxEntry,resistance,support,zoneLow},row.assetType||'STOCK',config.minRiskReward);
 }
 
 export function marketTrendAssessment(input, config) {
@@ -248,14 +249,14 @@ export function planMarketBeta(result,paper,input,config,risk,nextDate,plannedOr
     paper.cash
   ].map(x=>Math.max(0,x));
   const rawMaxEntry=trend.close+trend.atr14*rule.maxEntryAtrMultiplier;
-  const maxEntry=trend.overextended?trend.close:rawMaxEntry;
-  const zoneLow=Math.max(trend.ma20,trend.close-trend.atr14*(trend.overextended?1:0.5));
-  const stop=Math.max(trend.ma60,trend.close-trend.atr14*rule.stopAtrMultiplier);
+  const maxEntry=alignPrice(trend.overextended?trend.close:rawMaxEntry,'ETF','DOWN');
+  const zoneLow=alignPrice(Math.max(trend.ma20,trend.close-trend.atr14*(trend.overextended?1:0.5)),'ETF','UP');
+  const stop=alignPrice(Math.max(trend.ma60,trend.close-trend.atr14*rule.stopAtrMultiplier),'ETF','UP');
   const budget=Math.min(...capacities);
   const shares=Math.floor(budget/(maxEntry*(1+feeRate)));
-  if(shares<=0||!finite(stop)||stop<=0||stop>=trend.close||zoneLow>maxEntry)return null;
+  if(shares<=0||!finite(stop)||stop<=0||stop>=zoneLow||zoneLow>maxEntry)return null;
   const signalId=`${input.targetDate}-MARKET_BETA-${trend.proxyCode}`;
-  return {code:row.code,name:row.name,side:'buy',shares,tradingDate:nextDate,createdFromDate:input.targetDate,signalId,mutualExclusionGroup:signalId,signalClass:'MARKET_BETA_TREND',trendPhase:trend.phase,overextended:trend.overextended,targetExposurePct:targetPct,mechanicalRule:{type:'OPEN_RANGE',zoneLow,zoneHigh:maxEntry,maxEntry,stop,feeRate,taxRate:config.execution.etfTaxRate},executionRule:trend.overextended?'強多但過熱：只接受不高於訊號日收盤的官方Open，且不得跌破回檔區下緣；否則取消。':'僅在官方Open位於趨勢區間且未超過maxEntry時依Open成交；跌破zoneLow、超價或風控不符則取消。',cancelCondition:'趨勢代理資料未驗證、Open低於zoneLow或高於maxEntry、風控超限、現金不足或到期則取消。'};
+  return {code:row.code,name:row.name,side:'buy',shares,tradingDate:nextDate,createdFromDate:input.targetDate,signalId,mutualExclusionGroup:signalId,signalClass:'MARKET_BETA_TREND',trendPhase:trend.phase,overextended:trend.overextended,targetExposurePct:targetPct,mechanicalRule:{type:'OPEN_RANGE',zoneLow,zoneHigh:maxEntry,maxEntry,stop,feeRate,taxRate:config.execution.etfTaxRate},buyPriceLow:zoneLow,buyPriceHigh:maxEntry,stopPrice:stop,priceUnit:'TWD_PER_SHARE',executionRule:`僅當下一交易日官方開盤價介於 ${displayPrice(zoneLow)}～${displayPrice(maxEntry)} 元（含端點）時，按實際官方開盤價模擬買進 ${shares} 股；停損參考價 ${displayPrice(stop)} 元。${trend.overextended?'RSI 過熱，不追高。':''}`,cancelCondition:`開盤價低於 ${displayPrice(zoneLow)} 元或高於 ${displayPrice(maxEntry)} 元就取消；官方報價、帳戶風控或現金不足亦取消。`};
 }
 
 export function planSignals(result,paper,input,config) {
@@ -282,7 +283,10 @@ export function planSignals(result,paper,input,config) {
     if(orders.filter(o=>o.signalClass!=='MARKET_BETA_TREND').length>=config.priority.maxCandidates){r.reasonCodes.push('PRIORITY_COUNT_LIMIT');continue;}
     const route=s.strategy==='BREAKOUT'?'STOP_ENTRY':'OPEN_RANGE', mutualExclusionGroup=`${input.targetDate}-${r.code}`, zoneLow=s.strategy==='TREND_CONTINUATION'?(s.zoneLow??s.entry):s.entry;
     r.decision='BUY';r.candidatePositionSize=shares;
-    orders.push({code:r.code,name:r.name,side:'buy',shares,tradingDate:nextDate,createdFromDate:input.targetDate,signalId:mutualExclusionGroup,mutualExclusionGroup,mechanicalRule:{type:route,trigger:s.entry,zoneLow,zoneHigh:s.maxEntry,maxEntry:s.maxEntry,stop:s.stop,feeRate,taxRate:r.assetType==='ETF'?config.execution.etfTaxRate:config.execution.stockTaxRate},executionRule:route==='STOP_ENTRY'?'Open > maxEntry取消；Open>=trigger且未超價依Open；否則High>=trigger依trigger；未觸發到期取消。':'只在官方Open位於zoneLow至zoneHigh含端點時依Open成交；区間外取消。',cancelCondition:'超maxEntry、官方OHLC未驗證、風控超限、現金不足、互斥路徑已成交或到期則整筆取消。'});
+    const executionRule=route==='STOP_ENTRY'
+      ?`下一交易日開盤價高於 ${displayPrice(s.maxEntry)} 元即取消；開盤價介於 ${displayPrice(s.entry)}～${displayPrice(s.maxEntry)} 元時按官方開盤價模擬買進，若開盤低於 ${displayPrice(s.entry)} 元而盤中最高價觸及 ${displayPrice(s.entry)} 元，才按觸發價模擬買進；仍須通過風控。`
+      :`下一交易日官方開盤價在 ${displayPrice(zoneLow)}～${displayPrice(s.maxEntry)} 元（含端點）才按實際開盤價模擬買進 ${shares} 股；否則取消。停損參考價 ${displayPrice(s.stop)} 元，目標價 ${displayPrice(s.target)} 元。`;
+    orders.push({code:r.code,name:r.name,side:'buy',shares,tradingDate:nextDate,createdFromDate:input.targetDate,signalId:mutualExclusionGroup,mutualExclusionGroup,buyPriceLow:zoneLow,buyPriceHigh:s.maxEntry,stopPrice:s.stop,targetPrice:s.target,priceUnit:'TWD_PER_SHARE',mechanicalRule:{type:route,trigger:s.entry,zoneLow,zoneHigh:s.maxEntry,maxEntry:s.maxEntry,stop:s.stop,feeRate,taxRate:r.assetType==='ETF'?config.execution.etfTaxRate:config.execution.stockTaxRate},executionRule,cancelCondition:`開盤價高於 ${displayPrice(s.maxEntry)} 元${route==='OPEN_RANGE'?`或低於 ${displayPrice(zoneLow)} 元`:''}、官方OHLC未驗證、風控超限、現金不足或到期則取消。`});
   }
   const betaOrder=planMarketBeta(result,paper,input,config,risk,nextDate,orders);if(betaOrder)orders.push(betaOrder);
   return {risk,orders,nextDate};
@@ -380,8 +384,8 @@ export function publishCheckpoint(target) {
       technical:finite(t.ma20)?`MA20/60/120=${round(t.ma20)}/${round(t.ma60)}/${round(t.ma120)}；RSI14=${round(t.rsi14)}；量比=${round(r.volumeRatio20d)}。`:'尚無足夠官方歷史可计算MA/ATR。',
       chips:r.assetType==='ETF'?'使用ETF專用評估，不套用普通股的營收、大戶持股與法人評分權重。':`外資1/3/5/10/20日=${[1,3,5,10,20].map(n=>d?.institutionalTrend?.[`foreign_${n}d`]??'未驗證').join('/')}股；投信1/3/5/10/20日=${[1,3,5,10,20].map(n=>d?.institutionalTrend?.[`investment_trust_${n}d`]??'未驗證').join('/')}股。${auditChipSummary(evidenceAudit)}`,
       invalid,invalidCondition:invalid,
-      pullbackEntry:{status:r.decision==='BUY'&&r.strategy==='TREND_PULLBACK'?'available':'unavailable',reason:r.reasonCodes.join(',')||'PULLBACK_CONFIRMATION_NOT_PRESENT'},breakoutTrigger:{status:r.decision==='BUY'&&r.strategy==='BREAKOUT'?'available':'unavailable',reason:r.reasonCodes.join(',')||'BREAKOUT_CONFIRMATION_NOT_PRESENT'},trendContinuationEntry:{status:r.decision==='BUY'&&r.strategy==='TREND_CONTINUATION'?'available':'unavailable',reason:r.reasonCodes.join(',')||'TREND_CONTINUATION_NOT_PRESENT'},entryPrice:r.decision==='BUY'?r.setup.entry:null,maxChase:r.decision==='BUY'?r.setup.maxEntry:null,stop:r.decision==='BUY'?r.setup.stop:null,target:r.decision==='BUY'?r.setup.target:null,
-      entryRoutes:r.decision==='BUY'?[{route_id:`${target}-${r.code}-${r.strategy}`,route_type:r.strategy==='BREAKOUT'?'BREAKOUT_ROUTE':r.strategy==='TREND_CONTINUATION'?'TREND_CONTINUATION_ROUTE':'PULLBACK_ROUTE',trigger_price:r.setup.entry,zone_low:r.setup.entry,zone_high:r.setup.maxEntry,max_entry_price:r.setup.maxEntry,stop_loss:r.setup.stop,candidate_position_size:r.candidatePositionSize,expires_at:plan.nextDate,route_status:'PLANNED',mutual_exclusion_group:`${target}-${r.code}`}]:[],allocationMax:r.decision==='BUY'?`${config.risk.singleStockExposureMaxPct}%上限`:'0%',candidatePositionSize:r.candidatePositionSize||0,positionSize:0,executionReady:false,executionStatus:'NOT_SUBMITTED',hardGatesPassed:r.decision==='BUY',
+      pullbackEntry:{status:r.decision==='BUY'&&r.strategy==='TREND_PULLBACK'?'available':'unavailable',reason:r.reasonCodes.join(',')||'PULLBACK_CONFIRMATION_NOT_PRESENT'},breakoutTrigger:{status:r.decision==='BUY'&&r.strategy==='BREAKOUT'?'available':'unavailable',reason:r.reasonCodes.join(',')||'BREAKOUT_CONFIRMATION_NOT_PRESENT'},trendContinuationEntry:{status:r.decision==='BUY'&&r.strategy==='TREND_CONTINUATION'?'available':'unavailable',reason:r.reasonCodes.join(',')||'TREND_CONTINUATION_NOT_PRESENT'},entryPrice:r.decision==='BUY'?r.setup.entry:null,buyPriceLow:r.decision==='BUY'?r.setup.zoneLow:null,buyPriceHigh:r.decision==='BUY'?r.setup.maxEntry:null,maxChase:r.decision==='BUY'?r.setup.maxEntry:null,stop:r.decision==='BUY'?r.setup.stop:null,target:r.decision==='BUY'?r.setup.target:null,
+      entryRoutes:r.decision==='BUY'?[{route_id:`${target}-${r.code}-${r.strategy}`,route_type:r.strategy==='BREAKOUT'?'BREAKOUT_ROUTE':r.strategy==='TREND_CONTINUATION'?'TREND_CONTINUATION_ROUTE':'PULLBACK_ROUTE',trigger_price:r.setup.entry,zone_low:r.setup.zoneLow,zone_high:r.setup.maxEntry,max_entry_price:r.setup.maxEntry,stop_loss:r.setup.stop,candidate_position_size:r.candidatePositionSize,expires_at:plan.nextDate,route_status:'PLANNED',mutual_exclusion_group:`${target}-${r.code}`}]:[],allocationMax:r.decision==='BUY'?`${config.risk.singleStockExposureMaxPct}%上限`:'0%',candidatePositionSize:r.candidatePositionSize||0,positionSize:0,executionReady:false,executionStatus:'NOT_SUBMITTED',hardGatesPassed:r.decision==='BUY',
       financialAssessment:d?.financialAssessment??null,eventAssessment:d?.eventAssessment??null,corporateActionAssessment:d?.corporateActionAssessment??null,
       newsEvent:d?.eventAssessment?.newsEvent??{sourceQuality:'NONE',eventType:'EVENT_COVERAGE_NOT_VERIFIED',direction:'UNCERTAIN',eventTimestamp:null,catalystStatus:'UNVERIFIED'},
       dataQuality:{price:'VALID',ohlcv:r.gates.history?'VALID':'MISSING',institutional:r.assetType==='ETF'?'NOT_REQUIRED':r.gates.institutional?'VALID':'MISSING',margin:r.assetType==='ETF'?'NOT_REQUIRED':r.gates.credit?'VALID':'MISSING',tdcc:r.assetType==='ETF'?'NOT_REQUIRED':r.gates.tdcc?'VALID':'MISSING',fundamental:r.assetType==='ETF'?'NOT_REQUIRED':r.gates.fundamental?'VALID':'MISSING',news:r.gates.event?'VALID':'MISSING',securitiesLending:r.assetType==='ETF'?'NOT_REQUIRED':finite(d?.marginShortLending?.lendingBalance)?'VALID':config.creditEvidence.requireSecuritiesLending?'MISSING':'NOT_REQUIRED'}};
