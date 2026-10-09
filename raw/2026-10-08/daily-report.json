@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-08",
-  "revision": "2026-10-09-091915",
-  "strategyVersion": "entry-dual-track-v2.4",
+  "revision": "2026-10-09-092735",
+  "strategyVersion": "entry-dual-track-v2.5",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
   "incrementalScreening": {
@@ -1691,12 +1691,10 @@
         "researchRank": 1,
         "researchPercentile": 0.22573363431151242,
         "tradeRank": 1,
-        "tradePercentile": 20,
-        "decision": "WATCH",
+        "tradePercentile": 0.22573363431151242,
+        "decision": "BUY",
         "strategy": "TREND_CONTINUATION",
-        "reasonCodes": [
-          "RANKING_THRESHOLD_NOT_MET"
-        ]
+        "reasonCodes": []
       },
       {
         "code": "3702",
@@ -1705,11 +1703,11 @@
         "researchRank": 2,
         "researchPercentile": 0.45146726862302483,
         "tradeRank": 2,
-        "tradePercentile": 40,
+        "tradePercentile": 0.45146726862302483,
         "decision": "WATCH",
         "strategy": "TREND_CONTINUATION",
         "reasonCodes": [
-          "RANKING_THRESHOLD_NOT_MET"
+          "POSITION_SIZE_INVALID"
         ]
       },
       {
@@ -1734,7 +1732,7 @@
         "researchRank": 4,
         "researchPercentile": 0.9029345372460497,
         "tradeRank": 3,
-        "tradePercentile": 60,
+        "tradePercentile": 0.6772009029345373,
         "decision": "WATCH",
         "strategy": "TREND_CONTINUATION",
         "reasonCodes": [
@@ -1779,7 +1777,7 @@
         "researchRank": 7,
         "researchPercentile": 1.580135440180587,
         "tradeRank": 4,
-        "tradePercentile": 80,
+        "tradePercentile": 0.9029345372460497,
         "decision": "WATCH",
         "strategy": "TREND_CONTINUATION",
         "reasonCodes": [
@@ -2006,8 +2004,15 @@
     "macdHistogram": 0.4087719963486234,
     "atr14": 1.5464285714285728
   },
-  "conclusion": "2026-10-08全市場 2304 檔已完成初步篩選（普通股 1950、ETF 354），深度檢查 625 檔；其中 513 檔必要證據已齊並完成逐檔篩選，已有 513 檔進入研究排名、5 檔通過全部交易前置Gate進入可交易排名；112 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：財務證據 109檔、歷史行情 1檔、融資融券等信用資料 4檔。全市場研究尚未完成。普通股信用資料已核對 551/555 檔。財務證據完整但品質未通過 210 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 1 筆；ETF專用評估條件通過，也不代表已出現買點。",
-  "priority": [],
+  "conclusion": "2026-10-08全市場 2304 檔已完成初步篩選（普通股 1950、ETF 354），深度檢查 625 檔；其中 513 檔必要證據已齊並完成逐檔篩選，已有 513 檔進入研究排名、5 檔通過全部交易前置Gate進入可交易排名；112 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：財務證據 109檔、歷史行情 1檔、融資融券等信用資料 4檔。全市場研究尚未完成。普通股信用資料已核對 551/555 檔。財務證據完整但品質未通過 210 檔，仍不符合買進條件。本次優先買進標的 1 檔，下一交易日委託 1 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "priority": [
+    {
+      "code": "9945",
+      "name": "潤泰新",
+      "decision": "BUY",
+      "score": 95
+    }
+  ],
   "core": [
     {
       "code": "0050",
@@ -2063,29 +2068,26 @@
     },
     "nextOrders": [
       {
-        "code": "0050",
-        "name": "元大台灣50",
+        "code": "9945",
+        "name": "潤泰新",
         "side": "buy",
-        "shares": 52,
+        "shares": 201,
         "tradingDate": "2026-10-12",
         "createdFromDate": "2026-10-08",
-        "signalId": "2026-10-08-MARKET_BETA-0050",
-        "mutualExclusionGroup": "2026-10-08-MARKET_BETA-0050",
-        "signalClass": "MARKET_BETA_TREND",
-        "trendPhase": "STRONG_UPTREND",
-        "overextended": true,
-        "targetExposurePct": 5,
+        "signalId": "2026-10-08-9945",
+        "mutualExclusionGroup": "2026-10-08-9945",
         "mechanicalRule": {
           "type": "OPEN_RANGE",
-          "zoneLow": 113.40357142857142,
-          "zoneHigh": 114.95,
-          "maxEntry": 114.95,
-          "stop": 111.85714285714286,
+          "trigger": 29.8,
+          "zoneLow": 29.460714285714285,
+          "zoneHigh": 29.886904761904763,
+          "maxEntry": 29.886904761904763,
+          "stop": 28.951785714285716,
           "feeRate": 0.001425,
-          "taxRate": 0.001
+          "taxRate": 0.003
         },
-        "executionRule": "強多但過熱：只接受不高於訊號日收盤的官方Open，且不得跌破回檔區下緣；否則取消。",
-        "cancelCondition": "趨勢代理資料未驗證、Open低於zoneLow或高於maxEntry、風控超限、現金不足或到期則取消。"
+        "executionRule": "只在官方Open位於zoneLow至zoneHigh含端點時依Open成交；区間外取消。",
+        "cancelCondition": "超maxEntry、官方OHLC未驗證、風控超限、現金不足、互斥路徑已成交或到期則整筆取消。"
       }
     ],
     "experiment": {
@@ -2215,17 +2217,6 @@
       "officialDateEvidence": "1151008"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-09-091915",
-    "runId": "37868941049",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/37868941049",
-    "validatedCommit": "37fada97f0ab66d8d751b223d000c8ad203fa077"
-  },
-  "inputFingerprint": "05972a52b5652465eee75f5370e4000ce909747f41907b8e2901268912d6d6df"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "ccfd8b09adc19b2076c6e3c83575ed400210e6d9caa520b985323ef088177720"
 }

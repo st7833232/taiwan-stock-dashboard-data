@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-08",
-  "strategyVersion": "entry-dual-track-v2.4",
-  "inputFingerprint": "05972a52b5652465eee75f5370e4000ce909747f41907b8e2901268912d6d6df",
+  "strategyVersion": "entry-dual-track-v2.5",
+  "inputFingerprint": "ccfd8b09adc19b2076c6e3c83575ed400210e6d9caa520b985323ef088177720",
   "coverage": {
     "universe": 2304,
     "stocks": 1950,
@@ -16671,9 +16671,9 @@
       "researchRank": 4,
       "researchPercentile": 0.9029345372460497,
       "tradeRank": 3,
-      "tradePercentile": 60,
+      "tradePercentile": 0.6772009029345373,
       "universeRank": 3,
-      "universePercentile": 60,
+      "universePercentile": 0.6772009029345373,
       "liquidityMedianTurnover20d": 698806725,
       "volumeRatio20d": 0.9073996168327885,
       "riskReward": 2.7789473684210564,
@@ -58207,14 +58207,14 @@
         "assetProfile": true
       },
       "reasonCodes": [
-        "RANKING_THRESHOLD_NOT_MET"
+        "POSITION_SIZE_INVALID"
       ],
       "researchRank": 2,
       "researchPercentile": 0.45146726862302483,
       "tradeRank": 2,
-      "tradePercentile": 40,
+      "tradePercentile": 0.45146726862302483,
       "universeRank": 2,
-      "universePercentile": 40,
+      "universePercentile": 0.45146726862302483,
       "liquidityMedianTurnover20d": 890088562.5,
       "volumeRatio20d": 1.2139245424170146,
       "riskReward": 2.8549019607843125,
@@ -80298,9 +80298,9 @@
       "researchRank": 15,
       "researchPercentile": 3.386004514672686,
       "tradeRank": 5,
-      "tradePercentile": 100,
+      "tradePercentile": 1.1286681715575622,
       "universeRank": 5,
-      "universePercentile": 100,
+      "universePercentile": 1.1286681715575622,
       "liquidityMedianTurnover20d": 501218879.5,
       "volumeRatio20d": 1.4888229748565787,
       "riskReward": 10.661493695441294,
@@ -87353,7 +87353,7 @@
       "market": "TWSE",
       "assetType": "STOCK",
       "close": 29.8,
-      "decision": "WATCH",
+      "decision": "BUY",
       "strategy": "TREND_CONTINUATION",
       "score": 95,
       "scores": {
@@ -87382,15 +87382,13 @@
         "riskReward": true,
         "assetProfile": true
       },
-      "reasonCodes": [
-        "RANKING_THRESHOLD_NOT_MET"
-      ],
+      "reasonCodes": [],
       "researchRank": 1,
       "researchPercentile": 0.22573363431151242,
       "tradeRank": 1,
-      "tradePercentile": 20,
+      "tradePercentile": 0.22573363431151242,
       "universeRank": 1,
-      "universePercentile": 20,
+      "universePercentile": 0.22573363431151242,
       "liquidityMedianTurnover20d": 130930061,
       "volumeRatio20d": 1.7288675192062473,
       "riskReward": 2.3073684210526326,
@@ -87408,7 +87406,8 @@
       "etfProfile": null,
       "historyCoverageTradingDays": 140,
       "researchEvidenceStatus": "COMPLETE",
-      "researchEvidencePending": []
+      "researchEvidencePending": [],
+      "candidatePositionSize": 201
     },
     {
       "code": "9946",
@@ -105792,9 +105791,9 @@
       "researchRank": 7,
       "researchPercentile": 1.580135440180587,
       "tradeRank": 4,
-      "tradePercentile": 80,
+      "tradePercentile": 0.9029345372460497,
       "universeRank": 4,
-      "universePercentile": 80,
+      "universePercentile": 0.9029345372460497,
       "liquidityMedianTurnover20d": 4242764314.5,
       "volumeRatio20d": 0.9858426931580009,
       "riskReward": 2.5333333333333345,

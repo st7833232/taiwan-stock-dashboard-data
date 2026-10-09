@@ -1,7 +1,7 @@
 {
   "targetDate": "2026-10-08",
   "timezone": "Asia/Taipei",
-  "generatedAt": "2026-10-09T01:17:50.046Z",
+  "generatedAt": "2026-10-09T01:26:23.931Z",
   "simulatedTodayDate": null,
   "effectiveTodayDate": "2026-10-09",
   "overallStatus": "PASS",
@@ -297,13 +297,15 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/10/08",
       "targetDate": "2026-10-08",
-      "capturedAt": "2026-10-09T01:17:44.097Z",
+      "capturedAt": "2026-10-09T01:26:21.502Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
-      "httpStatus": 520,
-      "contentType": "application/json; charset=utf-8",
-      "bytes": 960,
-      "error": "HTTP 520"
+      "httpStatus": 200,
+      "contentType": "text/html",
+      "bytes": 9954,
+      "officialDateEvidence": null,
+      "rowCount": 0,
+      "note": "Auxiliary payload was readable but target-date evidence was not found; do not use it as point-in-time research evidence."
     },
     {
       "source": "tpex-margin-sbl",
