@@ -126,7 +126,7 @@ test('trend continuation admits a verified mid-trend setup without lowering 2R',
     const base=90+i*0.07;
     return [d,base,Math.min(102,base+2),Math.max(88,base-2),base+0.5,1000];
   });
-  const row={current:c,history,volumeRatio20d:1.15,indicators:{ma20:98.8,ma60:96,ma120:92,ma20Slope5d:0.3,ma60Slope5d:0.2,atr14:1.2,rsi14:64,macdHistogram:0.4}};
+  const row={current:c,history,volumeRatio20d:1.15,indicators:{ma20:99.5,ma60:96,ma120:92,ma20Slope5d:0.3,ma60Slope5d:0.2,atr14:1.2,rsi14:64,macdHistogram:0.4}};
   const local=structuredClone(config);local.screening={...local.screening,targetDate:'2026-10-08'};
   const setup=entrySetup(row,local);
   assert.equal(setup?.strategy,'TREND_CONTINUATION');assert.ok(setup.riskReward>=local.minRiskReward);assert.ok(setup.target>setup.entry);assert.ok(setup.zoneLow<setup.entry);
