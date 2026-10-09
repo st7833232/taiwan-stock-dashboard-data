@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-08",
-  "revision": "2026-10-09-085009",
-  "strategyVersion": "entry-dual-track-v2.3",
+  "revision": "2026-10-09-091915",
+  "strategyVersion": "entry-dual-track-v2.4",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
   "incrementalScreening": {
@@ -13,7 +13,7 @@
     "evidenceCompleteDeepDive": 513,
     "evidencePendingDeepDive": 112,
     "researchRanked": 513,
-    "tradeEligibleRanked": 0,
+    "tradeEligibleRanked": 5,
     "reScreenOnEvidenceAdmission": true,
     "globalResearchComplete": false
   },
@@ -1671,7 +1671,7 @@
     "evidenceCompleteDeepDive": 513,
     "evidencePendingDeepDive": 112,
     "researchRanked": 513,
-    "tradeEligibleRanked": 0,
+    "tradeEligibleRanked": 5,
     "eligibleRanked": 513,
     "eligibleRankedMeaning": "RESEARCH_EVIDENCE_COMPLETE",
     "creditReadyStocks": 551,
@@ -1687,31 +1687,29 @@
       {
         "code": "9945",
         "name": "潤泰新",
-        "score": 83,
+        "score": 95,
         "researchRank": 1,
         "researchPercentile": 0.22573363431151242,
-        "tradeRank": null,
-        "tradePercentile": null,
+        "tradeRank": 1,
+        "tradePercentile": 20,
         "decision": "WATCH",
-        "strategy": "NONE",
+        "strategy": "TREND_CONTINUATION",
         "reasonCodes": [
-          "ENTRY_SETUP_NOT_CONFIRMED",
-          "STRUCTURAL_RR_NOT_VERIFIED"
+          "RANKING_THRESHOLD_NOT_MET"
         ]
       },
       {
         "code": "3702",
         "name": "大聯大",
-        "score": 81.0928,
+        "score": 93.0928,
         "researchRank": 2,
         "researchPercentile": 0.45146726862302483,
-        "tradeRank": null,
-        "tradePercentile": null,
+        "tradeRank": 2,
+        "tradePercentile": 40,
         "decision": "WATCH",
-        "strategy": "NONE",
+        "strategy": "TREND_CONTINUATION",
         "reasonCodes": [
-          "ENTRY_SETUP_NOT_CONFIRMED",
-          "STRUCTURAL_RR_NOT_VERIFIED"
+          "RANKING_THRESHOLD_NOT_MET"
         ]
       },
       {
@@ -1730,11 +1728,25 @@
         ]
       },
       {
+        "code": "1101",
+        "name": "台泥",
+        "score": 75.5493,
+        "researchRank": 4,
+        "researchPercentile": 0.9029345372460497,
+        "tradeRank": 3,
+        "tradePercentile": 60,
+        "decision": "WATCH",
+        "strategy": "TREND_CONTINUATION",
+        "reasonCodes": [
+          "SCORE_THRESHOLD_NOT_MET"
+        ]
+      },
+      {
         "code": "3026",
         "name": "禾伸堂",
         "score": 74.5916,
-        "researchRank": 4,
-        "researchPercentile": 0.9029345372460497,
+        "researchRank": 5,
+        "researchPercentile": 1.1286681715575622,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1749,8 +1761,8 @@
         "code": "2412",
         "name": "中華電",
         "score": 73.8464,
-        "researchRank": 5,
-        "researchPercentile": 1.1286681715575622,
+        "researchRank": 6,
+        "researchPercentile": 1.3544018058690745,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1761,11 +1773,25 @@
         ]
       },
       {
+        "code": "3374",
+        "name": "精材",
+        "score": 73.0723,
+        "researchRank": 7,
+        "researchPercentile": 1.580135440180587,
+        "tradeRank": 4,
+        "tradePercentile": 80,
+        "decision": "WATCH",
+        "strategy": "TREND_CONTINUATION",
+        "reasonCodes": [
+          "SCORE_THRESHOLD_NOT_MET"
+        ]
+      },
+      {
         "code": "6672",
         "name": "騰輝電子-KY",
         "score": 72.6991,
-        "researchRank": 6,
-        "researchPercentile": 1.3544018058690745,
+        "researchRank": 8,
+        "researchPercentile": 1.8058690744920993,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1779,8 +1805,8 @@
         "code": "3042",
         "name": "晶技",
         "score": 72.4897,
-        "researchRank": 7,
-        "researchPercentile": 1.580135440180587,
+        "researchRank": 9,
+        "researchPercentile": 2.0316027088036117,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1795,37 +1821,6 @@
         "code": "6664",
         "name": "群翊",
         "score": 71.2491,
-        "researchRank": 8,
-        "researchPercentile": 1.8058690744920993,
-        "tradeRank": null,
-        "tradePercentile": null,
-        "decision": "WATCH",
-        "strategy": "NONE",
-        "reasonCodes": [
-          "TREND_NOT_CONFIRMED",
-          "ENTRY_SETUP_NOT_CONFIRMED",
-          "STRUCTURAL_RR_NOT_VERIFIED"
-        ]
-      },
-      {
-        "code": "2103",
-        "name": "台橡",
-        "score": 70.9689,
-        "researchRank": 9,
-        "researchPercentile": 2.0316027088036117,
-        "tradeRank": null,
-        "tradePercentile": null,
-        "decision": "WATCH",
-        "strategy": "NONE",
-        "reasonCodes": [
-          "ENTRY_SETUP_NOT_CONFIRMED",
-          "STRUCTURAL_RR_NOT_VERIFIED"
-        ]
-      },
-      {
-        "code": "6278",
-        "name": "台表科",
-        "score": 70.9,
         "researchRank": 10,
         "researchPercentile": 2.2573363431151243,
         "tradeRank": null,
@@ -2011,7 +2006,7 @@
     "macdHistogram": 0.4087719963486234,
     "atr14": 1.5464285714285728
   },
-  "conclusion": "2026-10-08全市場 2304 檔已完成初步篩選（普通股 1950、ETF 354），深度檢查 625 檔；其中 513 檔必要證據已齊並完成逐檔篩選，已有 513 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；112 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：財務證據 109檔、歷史行情 1檔、融資融券等信用資料 4檔。全市場研究尚未完成。普通股信用資料已核對 551/555 檔。財務證據完整但品質未通過 210 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 1 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-10-08全市場 2304 檔已完成初步篩選（普通股 1950、ETF 354），深度檢查 625 檔；其中 513 檔必要證據已齊並完成逐檔篩選，已有 513 檔進入研究排名、5 檔通過全部交易前置Gate進入可交易排名；112 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：財務證據 109檔、歷史行情 1檔、融資融券等信用資料 4檔。全市場研究尚未完成。普通股信用資料已核對 551/555 檔。財務證據完整但品質未通過 210 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 1 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [],
   "core": [
     {
@@ -2220,17 +2215,6 @@
       "officialDateEvidence": "1151008"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-09-085009",
-    "runId": "37867539694",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/37867539694",
-    "validatedCommit": "de9aea3db5bccd2bcb6426e69548b623c0daeeb6"
-  },
-  "inputFingerprint": "8cf80b9d9342439654b900838da49a0d409d643851f9984aef3deab7ca030883"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "05972a52b5652465eee75f5370e4000ce909747f41907b8e2901268912d6d6df"
 }
