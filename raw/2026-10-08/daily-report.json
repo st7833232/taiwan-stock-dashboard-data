@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-08",
-  "revision": "2026-10-08-214652",
-  "strategyVersion": "entry-dual-track-v2.2",
+  "revision": "2026-10-09-085009",
+  "strategyVersion": "entry-dual-track-v2.3",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
   "incrementalScreening": {
@@ -1995,7 +1995,23 @@
       }
     ]
   },
-  "conclusion": "2026-10-08全市場 2304 檔已完成初步篩選（普通股 1950、ETF 354），深度檢查 625 檔；其中 513 檔必要證據已齊並完成逐檔篩選，已有 513 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；112 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：財務證據 109檔、歷史行情 1檔、融資融券等信用資料 4檔。全市場研究尚未完成。普通股信用資料已核對 551/555 檔。財務證據完整但品質未通過 210 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "marketTrendForecast": {
+    "verified": true,
+    "proxyCode": "0050",
+    "phase": "STRONG_UPTREND",
+    "targetExposurePct": 5,
+    "overextended": true,
+    "close": 114.95,
+    "ma20": 111.0925,
+    "ma60": 106.23583333333332,
+    "ma120": 102.96541666666664,
+    "ma20Slope5d": 0.3710000000000008,
+    "ma60Slope5d": 0.1468333333333362,
+    "rsi14": 80.85106382978722,
+    "macdHistogram": 0.4087719963486234,
+    "atr14": 1.5464285714285728
+  },
+  "conclusion": "2026-10-08全市場 2304 檔已完成初步篩選（普通股 1950、ETF 354），深度檢查 625 檔；其中 513 檔必要證據已齊並完成逐檔篩選，已有 513 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；112 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：財務證據 109檔、歷史行情 1檔、融資融券等信用資料 4檔。全市場研究尚未完成。普通股信用資料已核對 551/555 檔。財務證據完整但品質未通過 210 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 1 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [],
   "core": [
     {
@@ -2050,7 +2066,33 @@
       "method": "Account percent return since previous published valuation; cumulative return from initial cash; ETF daily percent return from verified official OHLCV.",
       "taiexReturn": -0.99
     },
-    "nextOrders": [],
+    "nextOrders": [
+      {
+        "code": "0050",
+        "name": "元大台灣50",
+        "side": "buy",
+        "shares": 52,
+        "tradingDate": "2026-10-12",
+        "createdFromDate": "2026-10-08",
+        "signalId": "2026-10-08-MARKET_BETA-0050",
+        "mutualExclusionGroup": "2026-10-08-MARKET_BETA-0050",
+        "signalClass": "MARKET_BETA_TREND",
+        "trendPhase": "STRONG_UPTREND",
+        "overextended": true,
+        "targetExposurePct": 5,
+        "mechanicalRule": {
+          "type": "OPEN_RANGE",
+          "zoneLow": 113.40357142857142,
+          "zoneHigh": 114.95,
+          "maxEntry": 114.95,
+          "stop": 111.85714285714286,
+          "feeRate": 0.001425,
+          "taxRate": 0.001
+        },
+        "executionRule": "強多但過熱：只接受不高於訊號日收盤的官方Open，且不得跌破回檔區下緣；否則取消。",
+        "cancelCondition": "趨勢代理資料未驗證、Open低於zoneLow或高於maxEntry、風控超限、現金不足或到期則取消。"
+      }
+    ],
     "experiment": {
       "id": "paper-20td-2026-10-01",
       "status": "ACTIVE",
@@ -2101,7 +2143,7 @@
           "date": "2026-10-08",
           "equity": 199886.528625,
           "researchComplete": false,
-          "plannedOrders": 0,
+          "plannedOrders": 1,
           "filledTrades": 0
         }
       ],
@@ -2178,17 +2220,6 @@
       "officialDateEvidence": "1151008"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-08-214652",
-    "runId": "37823299142",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/37823299142",
-    "validatedCommit": "ea601a6b7fbb53e98e793bebb940f0e6d81798d0"
-  },
-  "inputFingerprint": "caead45bc6ba927d52d665643f4dd4f6921d607c73835f24f20a95ead4188a2f"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "8cf80b9d9342439654b900838da49a0d409d643851f9984aef3deab7ca030883"
 }
