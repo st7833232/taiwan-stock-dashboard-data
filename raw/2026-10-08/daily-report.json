@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-08",
-  "revision": "2026-10-09-092735",
-  "strategyVersion": "entry-dual-track-v2.5",
+  "revision": "2026-10-09-094106",
+  "strategyVersion": "entry-dual-track-v2.6",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
   "incrementalScreening": {
@@ -2076,18 +2076,23 @@
         "createdFromDate": "2026-10-08",
         "signalId": "2026-10-08-9945",
         "mutualExclusionGroup": "2026-10-08-9945",
+        "buyPriceLow": 29.5,
+        "buyPriceHigh": 29.85,
+        "stopPrice": 29,
+        "targetPrice": 31.75,
+        "priceUnit": "TWD_PER_SHARE",
         "mechanicalRule": {
           "type": "OPEN_RANGE",
           "trigger": 29.8,
-          "zoneLow": 29.460714285714285,
-          "zoneHigh": 29.886904761904763,
-          "maxEntry": 29.886904761904763,
-          "stop": 28.951785714285716,
+          "zoneLow": 29.5,
+          "zoneHigh": 29.85,
+          "maxEntry": 29.85,
+          "stop": 29,
           "feeRate": 0.001425,
           "taxRate": 0.003
         },
-        "executionRule": "只在官方Open位於zoneLow至zoneHigh含端點時依Open成交；区間外取消。",
-        "cancelCondition": "超maxEntry、官方OHLC未驗證、風控超限、現金不足、互斥路徑已成交或到期則整筆取消。"
+        "executionRule": "下一交易日官方開盤價在 29.50～29.85 元（含端點）才按實際開盤價模擬買進 201 股；否則取消。停損參考價 29.00 元，目標價 31.75 元。",
+        "cancelCondition": "開盤價高於 29.85 元或低於 29.50 元、官方OHLC未驗證、風控超限、現金不足或到期則取消。"
       }
     ],
     "experiment": {
@@ -2217,17 +2222,6 @@
       "officialDateEvidence": "1151008"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-09-092735",
-    "runId": "37869940452",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/37869940452",
-    "validatedCommit": "b81e68b66c83c1fb70e8e87221aad0c1e3204631"
-  },
-  "inputFingerprint": "ccfd8b09adc19b2076c6e3c83575ed400210e6d9caa520b985323ef088177720"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "26b8a604463426ef8739e034de09d9079346a3eb4aef6db7e7ffbe18941b513f"
 }
