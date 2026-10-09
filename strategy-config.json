@@ -1,5 +1,5 @@
 {
-  "version": "entry-dual-track-v2.2",
+  "version": "entry-dual-track-v2.3",
   "signalMode": "EOD",
   "liquidityMedianTurnover20dMin": 50000000,
   "buyScoreThreshold": {
@@ -186,5 +186,21 @@
       "qualityWeightFraction": 0.6666666666666666
     },
     "sourceRefreshIntervalMs": 300000
+  },
+  "marketBeta": {
+    "enabled": true,
+    "proxyCode": "0050",
+    "targetExposurePct": {
+      "STRONG_UPTREND": 10,
+      "UPTREND": 5,
+      "NEUTRAL": 0,
+      "DOWNTREND": 0,
+      "UNVERIFIED": 0
+    },
+    "overextendedRsi": 72,
+    "overextendedTargetExposurePct": 5,
+    "minRsi": 50,
+    "maxEntryAtrMultiplier": 0.25,
+    "stopAtrMultiplier": 2
   }
 }

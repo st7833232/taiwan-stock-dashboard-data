@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {creditReady,fillPrice,inputFingerprint,evaluateUniverse,markPaper,accountRisk,planSignals} from './screen-market.mjs';
+import {creditReady,fillPrice,inputFingerprint,evaluateUniverse,markPaper,accountRisk,planSignals,marketTrendAssessment} from './screen-market.mjs';
 import {rowEvidenceState,evidenceSummary} from './research-evidence.mjs';
 const config=JSON.parse(fs.readFileSync('strategy-config.json','utf8'));
 test('missing stock credit cannot be supplied by ETFs or by zero substitution',()=>{
@@ -80,10 +80,10 @@ test('no-order valuation preserves the Dashboard ledger and benchmark contract',
   assert.equal(result.benchmark.etfReturn,(111.29/112.39-1)*100);
   assert.throws(()=>markPaper(previous,{...input,deepDive:[]},config),/benchmark.*unavailable/);
 });
-test('existing position concentration cannot be hidden by a high candidate score',()=>{
+test('legacy concentration is reported but does not freeze unrelated diversification',()=>{
   const p={cash:175000,positions:[{code:'1513',shares:150,lastPrice:167}],ledger:[]};
   const input={targetDate:'2026-09-29',deepDive:[{code:'1513',history:[['2026-09-23',0,0,0,166],['2026-09-24',0,0,0,166]]}]};
-  const r=accountRisk(p,input,config);assert.equal(r.pass,false);assert.ok(r.reasons.includes('ACCOUNT_RISK_LIMIT'));
+  const r=accountRisk(p,input,config);assert.equal(r.pass,true);assert.ok(r.warnings.includes('EXISTING_POSITION_CONCENTRATION'));assert.equal(r.concentrationWarnings[0].code,'1513');
 });
 
 test('an unrelated stock with pending evidence cannot freeze qualified candidates or bypass its own gate',()=>{
@@ -94,4 +94,27 @@ test('an unrelated stock with pending evidence cannot freeze qualified candidate
   const plan=planSignals({regime:'BULL',rows:[candidate,pending]},paper,input,config);
   assert.equal(plan.risk.pass,true);assert.deepEqual(plan.orders.map(o=>o.code),['3005']);
   assert.equal(candidate.decision,'BUY');assert.notEqual(pending.decision,'BUY');
+});
+
+test('verified strong uptrend creates a bounded 0050 market-beta order without lowering alpha gates',()=>{
+  const input={targetDate:'2026-10-05',deepDive:[{code:'0050',assetType:'ETF',current:{close:100},historyCoverageTradingDays:140,history:[['2026-09-30'],['2026-10-02']],indicators:{ma20:95,ma60:90,ma120:80,ma20Slope5d:1,ma60Slope5d:0.5,atr14:2,rsi14:60,macdHistogram:1}}]};
+  const trend=marketTrendAssessment(input,config);assert.equal(trend.phase,'STRONG_UPTREND');assert.equal(trend.targetExposurePct,10);assert.equal(trend.overextended,false);
+  const proxy={code:'0050',name:'元大台灣50',assetType:'ETF',score:0,universeRank:null,universePercentile:null,reasonCodes:[],gates:{history:true,liquidity:true,assetProfile:true,event:true,corporateAction:true}};
+  const paper={cash:200000,positions:[],ledger:[],experiment:{status:'ACTIVE'}};
+  const plan=planSignals({regime:'BULL',marketTrend:trend,rows:[proxy]},paper,input,config);
+  assert.equal(plan.risk.pass,true);assert.equal(plan.orders.length,1);assert.equal(plan.orders[0].signalClass,'MARKET_BETA_TREND');assert.equal(plan.orders[0].code,'0050');
+  assert.ok(plan.orders[0].shares*plan.orders[0].mechanicalRule.maxEntry<=plan.risk.equity*config.risk.singleStockExposureMaxPct/100);
+});
+test('overextended strong uptrend cuts beta target and forbids chasing above the signal close',()=>{
+  const input={targetDate:'2026-10-05',deepDive:[{code:'0050',assetType:'ETF',current:{close:100},historyCoverageTradingDays:140,history:[['2026-09-30'],['2026-10-02']],indicators:{ma20:95,ma60:90,ma120:80,ma20Slope5d:1,ma60Slope5d:0.5,atr14:2,rsi14:81,macdHistogram:1}}]};
+  const trend=marketTrendAssessment(input,config);assert.equal(trend.phase,'STRONG_UPTREND');assert.equal(trend.overextended,true);assert.equal(trend.targetExposurePct,5);
+  const proxy={code:'0050',name:'元大台灣50',assetType:'ETF',score:0,universeRank:null,universePercentile:null,reasonCodes:[],gates:{history:true,liquidity:true,assetProfile:true,event:true,corporateAction:true}};
+  const plan=planSignals({regime:'BULL',marketTrend:trend,rows:[proxy]},{cash:200000,positions:[],ledger:[],experiment:{status:'ACTIVE'}},input,config);
+  assert.equal(plan.orders.length,1);assert.equal(plan.orders[0].mechanicalRule.maxEntry,100);
+});
+test('market-beta sleeve stays off when the proxy trend is defensive',()=>{
+  const input={targetDate:'2026-10-05',deepDive:[{code:'0050',assetType:'ETF',current:{close:80},historyCoverageTradingDays:140,history:[['2026-09-30'],['2026-10-02']],indicators:{ma20:90,ma60:95,ma120:100,ma20Slope5d:-1,ma60Slope5d:-1,atr14:2,rsi14:40,macdHistogram:-1}}]};
+  const trend=marketTrendAssessment(input,config);assert.equal(trend.phase,'DOWNTREND');assert.equal(trend.targetExposurePct,0);
+  const paper={cash:200000,positions:[],ledger:[],experiment:{status:'ACTIVE'}};
+  const plan=planSignals({regime:'BEAR',marketTrend:trend,rows:[]},paper,input,config);assert.deepEqual(plan.orders,[]);
 });

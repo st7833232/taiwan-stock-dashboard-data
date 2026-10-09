@@ -12,6 +12,7 @@ const allowedDecision = new Set(['BUY','SELL','REDUCE','HOLD','WATCH','NO_TRADE'
 const allowedStrategy = new Set(['BREAKOUT','TREND_PULLBACK','CHIP_ACCUMULATION_BREAKOUT','EXIT','NONE']);
 const allowedEntryStrategy = new Set(['BREAKOUT','TREND_PULLBACK','CHIP_ACCUMULATION_BREAKOUT']);
 const allowedRegime = new Set(['BULL','NEUTRAL','BEAR','HIGH_RISK']);
+const allowedTrendPhase = new Set(['STRONG_UPTREND','UPTREND','NEUTRAL','DOWNTREND','UNVERIFIED']);
 const allowedAsset = new Set(['STOCK','ETF']);
 const allowedSource = new Set(['SOURCE_A','SOURCE_B','SOURCE_C','NONE']);
 const allowedCatalyst = new Set(['CONFIRMED','DIVERGENCE','STALE','UNVERIFIED','NONE']);
@@ -74,6 +75,18 @@ if (p) {
     assert(actualEtf.historyTradingDaysMin === expectedEtf.historyTradingDaysMin, 'ETF history threshold mismatch');
     assert(JSON.stringify(actualEtf.scoreWeights) === JSON.stringify(expectedEtf.scoreWeights), 'ETF scoreWeights mismatch');
   }
+  assert(JSON.stringify(p.marketBeta) === JSON.stringify(config.marketBeta), 'strategyProfile.marketBeta mismatch');
+}
+
+const mt=research.marketTrendForecast;
+assert(mt && typeof mt==='object' && !Array.isArray(mt), 'marketTrendForecast is required');
+if(mt){
+  assert(typeof mt.verified==='boolean','marketTrendForecast.verified invalid');
+  assert(allowedTrendPhase.has(mt.phase),'marketTrendForecast.phase invalid');
+  assert(mt.proxyCode===config.marketBeta.proxyCode,'marketTrendForecast.proxyCode mismatch');
+  assert(finite(mt.targetExposurePct)&&mt.targetExposurePct>=0&&mt.targetExposurePct<=config.risk.singleStockExposureMaxPct,'marketTrendForecast target exposure exceeds single-stock cap');
+  if(mt.phase==='STRONG_UPTREND'||mt.phase==='UPTREND')assert(mt.verified===true&&mt.targetExposurePct>0,'uptrend market beta requires verified positive exposure');
+  if(['NEUTRAL','DOWNTREND','UNVERIFIED'].includes(mt.phase))assert(mt.targetExposurePct===0,'non-uptrend market beta exposure must be zero');
 }
 
 const incremental = research.incrementalScreening;
