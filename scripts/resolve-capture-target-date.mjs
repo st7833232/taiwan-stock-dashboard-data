@@ -9,7 +9,7 @@ const officialCalendar2026 = JSON.parse(readFileSync(
   'utf8'
 ));
 const officialHolidays2026 = new Set(officialCalendar2026.payload.data
-  .filter(([date, name]) => /^2026-\\d{2}-\\d{2}$/.test(date) && !/開始交易日|最後交易日/.test(name))
+  .filter(([date, name]) => /^2026-[0-9]{2}-[0-9]{2}$/.test(date) && !/開始交易日|最後交易日/.test(name))
   .map(([date]) => date));
 export function isOfficialExchangeHoliday(date) {
   return officialHolidays2026.has(date);
