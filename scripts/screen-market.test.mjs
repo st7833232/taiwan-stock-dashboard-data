@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {creditReady,fillPrice,inputFingerprint,evaluateUniverse,markPaper,accountRisk,planSignals,marketTrendAssessment} from './screen-market.mjs';
+import {creditReady,fillPrice,inputFingerprint,evaluateUniverse,markPaper,accountRisk,planSignals,marketTrendAssessment,entrySetup} from './screen-market.mjs';
 import {rowEvidenceState,evidenceSummary} from './research-evidence.mjs';
 const config=JSON.parse(fs.readFileSync('strategy-config.json','utf8'));
 test('missing stock credit cannot be supplied by ETFs or by zero substitution',()=>{
@@ -117,4 +117,34 @@ test('market-beta sleeve stays off when the proxy trend is defensive',()=>{
   const trend=marketTrendAssessment(input,config);assert.equal(trend.phase,'DOWNTREND');assert.equal(trend.targetExposurePct,0);
   const paper={cash:200000,positions:[],ledger:[],experiment:{status:'ACTIVE'}};
   const plan=planSignals({regime:'BEAR',marketTrend:trend,rows:[]},paper,input,config);assert.deepEqual(plan.orders,[]);
+});
+
+test('trend continuation admits a verified mid-trend setup without lowering 2R',()=>{
+  const c={close:100,low:99.5};
+  const history=Array.from({length:120},(_,i)=>{
+    const d=`2026-05-${String((i%28)+1).padStart(2,'0')}`;
+    const base=90+i*0.07;
+    return [d,base,Math.min(102,base+2),Math.max(88,base-2),base+0.5,1000];
+  });
+  const row={current:c,history,volumeRatio20d:1.15,indicators:{ma20:98.8,ma60:96,ma120:92,ma20Slope5d:0.3,ma60Slope5d:0.2,atr14:1.2,rsi14:64,macdHistogram:0.4}};
+  const local=structuredClone(config);local.screening={...local.screening,targetDate:'2026-10-08'};
+  const setup=entrySetup(row,local);
+  assert.equal(setup?.strategy,'TREND_CONTINUATION');assert.ok(setup.riskReward>=local.minRiskReward);assert.ok(setup.target>setup.entry);assert.ok(setup.zoneLow<setup.entry);
+});
+test('trend continuation rejects an overextended or weak-volume stock',()=>{
+  const history=Array.from({length:120},(_,i)=>[`2026-05-${String((i%28)+1).padStart(2,'0')}`,95,102,90,96,1000]);
+  const base={current:{close:100,low:99.5},history,volumeRatio20d:1.15,indicators:{ma20:98.8,ma60:96,ma120:92,ma20Slope5d:0.3,ma60Slope5d:0.2,atr14:1.2,rsi14:64,macdHistogram:0.4}};
+  const local=structuredClone(config);local.screening={...local.screening,targetDate:'2026-10-08'};
+  assert.equal(entrySetup({...base,indicators:{...base.indicators,rsi14:80}},local),null);
+  assert.equal(entrySetup({...base,volumeRatio20d:0.4},local),null);
+});
+test('alpha order consumes exposure before the market-beta sleeve',()=>{
+  const candidate={code:'9945',name:'alpha',assetType:'STOCK',score:100,universeRank:1,universePercentile:1,reasonCodes:[],gates:{history:true,liquidity:true,market:true,trend:true,credit:true,institutional:true,tdcc:true,fundamental:true,event:true,corporateAction:true,strategy:true,riskReward:true,assetProfile:true},setup:{strategy:'TREND_CONTINUATION',entry:100,maxEntry:101,zoneLow:99,stop:95}};
+  const proxy={code:'0050',name:'元大台灣50',assetType:'ETF',score:0,universeRank:null,universePercentile:null,reasonCodes:[],gates:{history:true,liquidity:true,assetProfile:true,event:true,corporateAction:true}};
+  const paper={cash:200000,positions:[],ledger:[],experiment:{status:'ACTIVE'}};
+  const input={targetDate:'2026-10-08',verifiedCalendar:{sourceQuality:'SOURCE_A',asOf:'2026-10-08',nextTradingDate:'2026-10-12'},deepDive:[{code:'0050',assetType:'ETF',history:[['2026-10-07']],indicators:{},current:{close:100}},{code:'9945',history:[['2026-10-07']]}]};
+  const result={regime:'BULL',marketTrend:{verified:true,proxyCode:'0050',phase:'STRONG_UPTREND',targetExposurePct:10,overextended:false,close:100,ma20:98,ma60:95,atr14:2},rows:[candidate,proxy]};
+  const plan=planSignals(result,paper,input,config);
+  assert.equal(plan.orders[0].code,'9945');assert.equal(plan.orders[0].signalClass,undefined);
+  assert.ok(plan.orders.length>=1);
 });

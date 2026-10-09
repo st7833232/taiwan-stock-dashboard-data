@@ -70,17 +70,33 @@ export function entrySetup(row, config) {
   const previous=prior.at(-1), ceiling=Math.max(...(row.history||[]).filter(r=>r[0]<rules.targetDate).slice(-rules.targetLookback).map(r=>r[2]));
   const trend=c.close>t.ma20 && t.ma20>t.ma60 && t.ma60>t.ma120 && t.ma20Slope5d>0 && t.ma60Slope5d>0;
   if (!trend || t.rsi14>rules.maxEntryRsi || t.macdHistogram<0) return null;
-  let strategy=null, entry=null, stop=null;
+  let strategy=null, entry=null, stop=null, target=ceiling, zoneLow=null;
   if(c.close>resistance && row.volumeRatio20d>=config.breakout.minVolumeRatio20d) {
     strategy='BREAKOUT'; entry=c.close; stop=Math.max(support,resistance-t.atr14*rules.stopAtrMultiplier);
   } else if(c.low<=t.ma20 && c.close>t.ma20 && c.close>previous[4] && row.volumeRatio20d<rules.pullbackVolumeRatioMax) {
     strategy='TREND_PULLBACK'; entry=c.close; stop=Math.min(c.low,t.ma20)-t.atr14*rules.stopAtrMultiplier;
+  } else {
+    const tc=config.trendContinuation||{}, distanceAtr=(c.close-t.ma20)/t.atr14;
+    const continuation=tc.enabled===true
+      && t.rsi14>=tc.minRsi && t.rsi14<=tc.maxRsi && t.macdHistogram>0
+      && row.volumeRatio20d>=tc.minVolumeRatio20d
+      && distanceAtr>=0 && distanceAtr<=tc.maxCloseAboveMa20Atr
+      && c.close<=resistance+t.atr14*tc.maxAboveResistanceAtr;
+    if(continuation) {
+      strategy='TREND_CONTINUATION'; entry=c.close;
+      stop=Math.max(t.ma20-t.atr14*tc.stopBelowMa20Atr,c.close-t.atr14*tc.maxStopDistanceAtr);
+      zoneLow=Math.max(t.ma20,c.close-t.atr14*0.5);
+      const measuredRange=Math.min(Math.max(0,resistance-support),t.atr14*tc.projectionRangeAtrCap);
+      const measuredTarget=resistance+measuredRange*tc.projectionRangeFraction;
+      target=Math.max(ceiling,measuredTarget);
+    }
   }
-  // A historic structural target is required; never manufacture a 2R target.
-  if(!strategy || !finite(ceiling) || ceiling<=entry || stop<=0 || stop>=entry) return null;
-  const rr=(ceiling-entry)/(entry-stop), maxEntry=Math.min(entry+t.atr14*rules.maxChaseAtrMultiplier, (ceiling+config.minRiskReward*stop)/(1+config.minRiskReward));
+  // Breakout/pullback use verified historic resistance; continuation may extend that verified range
+  // with a measured-move projection. The target is never set merely to force a 2R result.
+  if(!strategy || !finite(target) || target<=entry || stop<=0 || stop>=entry) return null;
+  const rr=(target-entry)/(entry-stop), maxEntry=Math.min(entry+t.atr14*rules.maxChaseAtrMultiplier, (target+config.minRiskReward*stop)/(1+config.minRiskReward));
   if(maxEntry<entry || rr<config.minRiskReward) return null;
-  return {strategy,entry,stop,target:ceiling,riskReward:rr,maxEntry,resistance,support};
+  return {strategy,entry,stop,target,riskReward:rr,maxEntry,resistance,support,zoneLow};
 }
 
 export function marketTrendAssessment(input, config) {
@@ -208,9 +224,9 @@ export function accountRisk(paper,input,config) {
   return {pass:reasons.length===0,reasons:[...new Set(reasons)],warnings:concentrationWarnings.length?['EXISTING_POSITION_CONCENTRATION']:[],concentrationWarnings,equity,exposurePct:exposure/equity*100,sectorMethod:'ALL_HOLDINGS_ONE_CORRELATED_BUCKET'};
 }
 
-export function planMarketBeta(result,paper,input,config,risk,nextDate) {
+export function planMarketBeta(result,paper,input,config,risk,nextDate,plannedOrders=[]) {
   const rule=config.marketBeta, trend=result.marketTrend;
-  if(!rule?.enabled||!trend?.verified||!risk.pass||!nextDate||!experimentAllowsOrder(paper.experiment,nextDate,config))return null;
+  if(!rule?.enabled||!trend?.verified||!risk.pass||!nextDate||!experimentAllowsOrder(paper.experiment,nextDate,config)||plannedOrders.some(o=>o.code===trend.proxyCode))return null;
   const targetPct=trend.targetExposurePct;
   if(!finite(targetPct)||targetPct<=0)return null;
   const row=result.rows.find(r=>r.code===trend.proxyCode), detail=(input.deepDive||[]).find(r=>r.code===trend.proxyCode);
@@ -219,7 +235,7 @@ export function planMarketBeta(result,paper,input,config,risk,nextDate) {
   const targetValue=risk.equity*Math.min(targetPct,config.risk.singleStockExposureMaxPct)/100;
   const desired=Math.max(0,targetValue-existingValue);
   if(desired<=0)return null;
-  const currentExposure=risk.equity-paper.cash, feeRate=config.execution.feeRate;
+  const feeRate=config.execution.feeRate, reserved=plannedOrders.reduce((sum,o)=>sum+o.shares*o.mechanicalRule.maxEntry*(1+feeRate),0), currentExposure=risk.equity-paper.cash+reserved;
   const capacities=[
     desired,
     risk.equity*config.risk.singleStockExposureMaxPct/100-existingValue,
@@ -243,7 +259,6 @@ export function planSignals(result,paper,input,config) {
   const calendar=input.verifiedCalendar;
   const periodCalendar=config.paperExperiment;
   const nextDate=calendar?.sourceQuality==='SOURCE_A' && calendar?.asOf<=input.targetDate && calendar?.nextTradingDate>input.targetDate?calendar.nextTradingDate:periodCalendar?.calendarAsOf<=input.targetDate?periodCalendar.plannedTradingDates.find(d=>d>input.targetDate)??null:null;
-  const betaOrder=planMarketBeta(result,paper,input,config,risk,nextDate);if(betaOrder)orders.push(betaOrder);
   for(const r of result.rows) {
     if(!Object.values(r.gates).every(Boolean))continue;
     const threshold=r.assetType==='ETF'?config.assetProfiles.ETF.buyScoreThreshold[result.regime]:config.buyScoreThreshold[result.regime];
@@ -260,10 +275,11 @@ export function planSignals(result,paper,input,config) {
     const shares=Math.floor(Math.min(capital/(s.maxEntry-s.stop+s.maxEntry*feeRate+s.stop*(feeRate+config.execution.stockTaxRate)),(paper.cash-reserved)/(s.maxEntry*(1+feeRate)),(exposureBudget-reserved)/s.maxEntry));
     if(shares<=0){r.reasonCodes.push('POSITION_SIZE_INVALID');continue;}
     if(orders.filter(o=>o.signalClass!=='MARKET_BETA_TREND').length>=config.priority.maxCandidates){r.reasonCodes.push('PRIORITY_COUNT_LIMIT');continue;}
-    const route=s.strategy==='BREAKOUT'?'STOP_ENTRY':'OPEN_RANGE', mutualExclusionGroup=`${input.targetDate}-${r.code}`;
+    const route=s.strategy==='BREAKOUT'?'STOP_ENTRY':'OPEN_RANGE', mutualExclusionGroup=`${input.targetDate}-${r.code}`, zoneLow=s.strategy==='TREND_CONTINUATION'?(s.zoneLow??s.entry):s.entry;
     r.decision='BUY';r.candidatePositionSize=shares;
-    orders.push({code:r.code,name:r.name,side:'buy',shares,tradingDate:nextDate,createdFromDate:input.targetDate,signalId:mutualExclusionGroup,mutualExclusionGroup,mechanicalRule:{type:route,trigger:s.entry,zoneLow:s.entry,zoneHigh:s.maxEntry,maxEntry:s.maxEntry,stop:s.stop,feeRate,taxRate:r.assetType==='ETF'?config.execution.etfTaxRate:config.execution.stockTaxRate},executionRule:route==='STOP_ENTRY'?'Open > maxEntry取消；Open>=trigger且未超價依Open；否則High>=trigger依trigger；未觸發到期取消。':'只在官方Open位於zoneLow至zoneHigh含端點時依Open成交；区間外取消。',cancelCondition:'超maxEntry、官方OHLC未驗證、風控超限、現金不足、互斥路徑已成交或到期則整筆取消。'});
+    orders.push({code:r.code,name:r.name,side:'buy',shares,tradingDate:nextDate,createdFromDate:input.targetDate,signalId:mutualExclusionGroup,mutualExclusionGroup,mechanicalRule:{type:route,trigger:s.entry,zoneLow,zoneHigh:s.maxEntry,maxEntry:s.maxEntry,stop:s.stop,feeRate,taxRate:r.assetType==='ETF'?config.execution.etfTaxRate:config.execution.stockTaxRate},executionRule:route==='STOP_ENTRY'?'Open > maxEntry取消；Open>=trigger且未超價依Open；否則High>=trigger依trigger；未觸發到期取消。':'只在官方Open位於zoneLow至zoneHigh含端點時依Open成交；区間外取消。',cancelCondition:'超maxEntry、官方OHLC未驗證、風控超限、現金不足、互斥路徑已成交或到期則整筆取消。'});
   }
+  const betaOrder=planMarketBeta(result,paper,input,config,risk,nextDate,orders);if(betaOrder)orders.push(betaOrder);
   return {risk,orders,nextDate};
 }
 export function markPaper(previous, input, config) {
@@ -359,8 +375,8 @@ export function publishCheckpoint(target) {
       technical:finite(t.ma20)?`MA20/60/120=${round(t.ma20)}/${round(t.ma60)}/${round(t.ma120)}；RSI14=${round(t.rsi14)}；量比=${round(r.volumeRatio20d)}。`:'尚無足夠官方歷史可计算MA/ATR。',
       chips:r.assetType==='ETF'?'使用ETF專用評估，不套用普通股的營收、大戶持股與法人評分權重。':`外資1/3/5/10/20日=${[1,3,5,10,20].map(n=>d?.institutionalTrend?.[`foreign_${n}d`]??'未驗證').join('/')}股；投信1/3/5/10/20日=${[1,3,5,10,20].map(n=>d?.institutionalTrend?.[`investment_trust_${n}d`]??'未驗證').join('/')}股。${auditChipSummary(evidenceAudit)}`,
       invalid,invalidCondition:invalid,
-      pullbackEntry:{status:r.decision==='BUY'&&r.strategy==='TREND_PULLBACK'?'available':'unavailable',reason:r.reasonCodes.join(',')||'PULLBACK_CONFIRMATION_NOT_PRESENT'},breakoutTrigger:{status:r.decision==='BUY'&&r.strategy==='BREAKOUT'?'available':'unavailable',reason:r.reasonCodes.join(',')||'BREAKOUT_CONFIRMATION_NOT_PRESENT'},entryPrice:r.decision==='BUY'?r.setup.entry:null,maxChase:r.decision==='BUY'?r.setup.maxEntry:null,stop:r.decision==='BUY'?r.setup.stop:null,target:r.decision==='BUY'?r.setup.target:null,
-      entryRoutes:r.decision==='BUY'?[{route_id:`${target}-${r.code}-${r.strategy}`,route_type:r.strategy==='BREAKOUT'?'BREAKOUT_ROUTE':'PULLBACK_ROUTE',trigger_price:r.setup.entry,zone_low:r.setup.entry,zone_high:r.setup.maxEntry,max_entry_price:r.setup.maxEntry,stop_loss:r.setup.stop,candidate_position_size:r.candidatePositionSize,expires_at:plan.nextDate,route_status:'PLANNED',mutual_exclusion_group:`${target}-${r.code}`}]:[],allocationMax:r.decision==='BUY'?`${config.risk.singleStockExposureMaxPct}%上限`:'0%',candidatePositionSize:r.candidatePositionSize||0,positionSize:0,executionReady:false,executionStatus:'NOT_SUBMITTED',hardGatesPassed:r.decision==='BUY',
+      pullbackEntry:{status:r.decision==='BUY'&&r.strategy==='TREND_PULLBACK'?'available':'unavailable',reason:r.reasonCodes.join(',')||'PULLBACK_CONFIRMATION_NOT_PRESENT'},breakoutTrigger:{status:r.decision==='BUY'&&r.strategy==='BREAKOUT'?'available':'unavailable',reason:r.reasonCodes.join(',')||'BREAKOUT_CONFIRMATION_NOT_PRESENT'},trendContinuationEntry:{status:r.decision==='BUY'&&r.strategy==='TREND_CONTINUATION'?'available':'unavailable',reason:r.reasonCodes.join(',')||'TREND_CONTINUATION_NOT_PRESENT'},entryPrice:r.decision==='BUY'?r.setup.entry:null,maxChase:r.decision==='BUY'?r.setup.maxEntry:null,stop:r.decision==='BUY'?r.setup.stop:null,target:r.decision==='BUY'?r.setup.target:null,
+      entryRoutes:r.decision==='BUY'?[{route_id:`${target}-${r.code}-${r.strategy}`,route_type:r.strategy==='BREAKOUT'?'BREAKOUT_ROUTE':r.strategy==='TREND_CONTINUATION'?'TREND_CONTINUATION_ROUTE':'PULLBACK_ROUTE',trigger_price:r.setup.entry,zone_low:r.setup.entry,zone_high:r.setup.maxEntry,max_entry_price:r.setup.maxEntry,stop_loss:r.setup.stop,candidate_position_size:r.candidatePositionSize,expires_at:plan.nextDate,route_status:'PLANNED',mutual_exclusion_group:`${target}-${r.code}`}]:[],allocationMax:r.decision==='BUY'?`${config.risk.singleStockExposureMaxPct}%上限`:'0%',candidatePositionSize:r.candidatePositionSize||0,positionSize:0,executionReady:false,executionStatus:'NOT_SUBMITTED',hardGatesPassed:r.decision==='BUY',
       financialAssessment:d?.financialAssessment??null,eventAssessment:d?.eventAssessment??null,corporateActionAssessment:d?.corporateActionAssessment??null,
       newsEvent:d?.eventAssessment?.newsEvent??{sourceQuality:'NONE',eventType:'EVENT_COVERAGE_NOT_VERIFIED',direction:'UNCERTAIN',eventTimestamp:null,catalystStatus:'UNVERIFIED'},
       dataQuality:{price:'VALID',ohlcv:r.gates.history?'VALID':'MISSING',institutional:r.assetType==='ETF'?'NOT_REQUIRED':r.gates.institutional?'VALID':'MISSING',margin:r.assetType==='ETF'?'NOT_REQUIRED':r.gates.credit?'VALID':'MISSING',tdcc:r.assetType==='ETF'?'NOT_REQUIRED':r.gates.tdcc?'VALID':'MISSING',fundamental:r.assetType==='ETF'?'NOT_REQUIRED':r.gates.fundamental?'VALID':'MISSING',news:r.gates.event?'VALID':'MISSING',securitiesLending:r.assetType==='ETF'?'NOT_REQUIRED':finite(d?.marginShortLending?.lendingBalance)?'VALID':config.creditEvidence.requireSecuritiesLending?'MISSING':'NOT_REQUIRED'}};
@@ -372,7 +388,7 @@ export function publishCheckpoint(target) {
   const complete=evidence.researchComplete,publicationStatus=complete?'DATA_UPDATED':'SNAPSHOT_UPDATED_EVIDENCE_PENDING';
   const incrementalScreening={mode:'PER_SECURITY_INCREMENTAL',rankContractVersion:2,rankingMode:'RESEARCH_AND_TRADE_SPLIT',screenedDeepDive:coverage.screenedDeepDive,evidenceCompleteDeepDive:coverage.evidenceCompleteDeepDive,evidencePendingDeepDive:coverage.evidencePendingDeepDive,researchRanked:coverage.researchRanked,tradeEligibleRanked:coverage.tradeEligibleRanked,reScreenOnEvidenceAdmission:true,globalResearchComplete:complete};
   const conclusion=`${target}全市場 ${coverage.universe} 檔已完成初步篩選（普通股 ${coverage.stocks}、ETF ${coverage.etfs}），深度檢查 ${coverage.deepDive} 檔；其中 ${coverage.evidenceCompleteDeepDive} 檔必要證據已齊並完成逐檔篩選，已有 ${coverage.researchRanked} 檔進入研究排名、${coverage.tradeEligibleRanked} 檔通過全部交易前置Gate進入可交易排名；${coverage.evidencePendingDeepDive} 檔仍待補證據且不阻塞已完整標的。${complete?'必要研究資料均已核對；沒有合適買點也可以是完整研究結果。':`後續每批證據補齊即重新篩選；目前仍待核對：${Object.entries(evidence.counts).filter(([,n])=>n>0).map(([k,n])=>`${evidenceLabels[k]||'其他必要資料'} ${n}檔`).join('、')}。全市場研究尚未完成。`}普通股信用資料已核對 ${coverage.creditReadyStocks}/${coverage.deepDiveStocks} 檔。財務證據完整但品質未通過 ${evidence.fundamentalQualityRejected.length} 檔，仍不符合買進條件。本次優先買進標的 ${candidates.filter(c=>c.group==='priority'&&c.decision==='BUY').length} 檔，下一交易日委託 ${paper.nextOrders.length} 筆；ETF專用評估條件通過，也不代表已出現買點。`;
-  const p={version:config.version,signalMode:'EOD',marketRegime:result.regime,buyScoreThreshold:config.buyScoreThreshold[result.regime],liquidityMedianTurnover20dMin:config.liquidityMedianTurnover20dMin,priorityMaxCandidates:config.priority.maxCandidates,priorityPercentileMax:config.priority.percentileMax,priorityRankMax:config.priority.rankMax,minRiskReward:config.minRiskReward,...config.risk,scoreWeights:config.scoreWeights,assetProfiles:config.assetProfiles,marketBeta:config.marketBeta};
+  const p={version:config.version,signalMode:'EOD',marketRegime:result.regime,buyScoreThreshold:config.buyScoreThreshold[result.regime],liquidityMedianTurnover20dMin:config.liquidityMedianTurnover20dMin,priorityMaxCandidates:config.priority.maxCandidates,priorityPercentileMax:config.priority.percentileMax,priorityRankMax:config.priority.rankMax,minRiskReward:config.minRiskReward,...config.risk,scoreWeights:config.scoreWeights,assetProfiles:config.assetProfiles,marketBeta:config.marketBeta,trendContinuation:config.trendContinuation};
   const research={researchDate:target,latestTradingDate:target,strategyVersion:config.version,strategyProfile:p,conclusion,decision:{summary:conclusion},candidates,coverage,researchLeaders,incrementalScreening,researchStatus:complete?'COMPLETE':'EVIDENCE_PENDING',researchComplete:complete,evidencePending:evidence.counts,fundamentalQualityRejected:evidence.fundamentalQualityRejected,historyQualityRejected:evidence.historyQualityRejected,screeningComplete:true,creditEvidenceComplete:missingCredit.length===0,inputFingerprint:fingerprint,inputGeneratedAt:input.generatedAt,researchInputGeneratedAt:input.generatedAt,simulationMode:false,liquiditySelectionBasis:'MEDIAN_TURNOVER_20D',sourceNote:`使用raw/${target}已PASS官方證據與本版inputFingerprint；未把後續資料回填為當時已知資訊。`,engineVersion:config.screening.engineVersion,marketOverview,marketTrendForecast:result.marketTrend,marketRegimeEvidence:{source:'OFFICIAL_BROAD_MARKET_ETF_PROXY',code:result.marketProxyCode,verified:result.regimeVerified},screeningPath:`${root}/screening-results.json`,sourceGate:gate.gates};
   research.evidenceAuditVersion=EVIDENCE_AUDIT_VERSION;research.auditFingerprint=auditFingerprint;
   const selected=candidates.filter(c=>c.group==='priority'&&c.decision==='BUY').map(c=>c.code), before=history.at(-1)?.selected||[];

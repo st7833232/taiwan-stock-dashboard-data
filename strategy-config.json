@@ -1,5 +1,5 @@
 {
-  "version": "entry-dual-track-v2.3",
+  "version": "entry-dual-track-v2.4",
   "signalMode": "EOD",
   "liquidityMedianTurnover20dMin": 50000000,
   "buyScoreThreshold": {
@@ -202,5 +202,17 @@
     "minRsi": 50,
     "maxEntryAtrMultiplier": 0.25,
     "stopAtrMultiplier": 2
+  },
+  "trendContinuation": {
+    "enabled": true,
+    "minRsi": 55,
+    "maxRsi": 72,
+    "minVolumeRatio20d": 0.8,
+    "maxCloseAboveMa20Atr": 2,
+    "maxAboveResistanceAtr": 0.5,
+    "stopBelowMa20Atr": 0.25,
+    "maxStopDistanceAtr": 1.25,
+    "projectionRangeFraction": 0.5,
+    "projectionRangeAtrCap": 4
   }
 }

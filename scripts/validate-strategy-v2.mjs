@@ -9,8 +9,8 @@ const fail = (message) => errors.push(message);
 const assert = (condition, message) => { if (!condition) fail(message); };
 const finite = (value) => typeof value === 'number' && Number.isFinite(value);
 const allowedDecision = new Set(['BUY','SELL','REDUCE','HOLD','WATCH','NO_TRADE']);
-const allowedStrategy = new Set(['BREAKOUT','TREND_PULLBACK','CHIP_ACCUMULATION_BREAKOUT','EXIT','NONE']);
-const allowedEntryStrategy = new Set(['BREAKOUT','TREND_PULLBACK','CHIP_ACCUMULATION_BREAKOUT']);
+const allowedStrategy = new Set(['BREAKOUT','TREND_PULLBACK','TREND_CONTINUATION','CHIP_ACCUMULATION_BREAKOUT','EXIT','NONE']);
+const allowedEntryStrategy = new Set(['BREAKOUT','TREND_PULLBACK','TREND_CONTINUATION','CHIP_ACCUMULATION_BREAKOUT']);
 const allowedRegime = new Set(['BULL','NEUTRAL','BEAR','HIGH_RISK']);
 const allowedTrendPhase = new Set(['STRONG_UPTREND','UPTREND','NEUTRAL','DOWNTREND','UNVERIFIED']);
 const allowedAsset = new Set(['STOCK','ETF']);
@@ -76,6 +76,7 @@ if (p) {
     assert(JSON.stringify(actualEtf.scoreWeights) === JSON.stringify(expectedEtf.scoreWeights), 'ETF scoreWeights mismatch');
   }
   assert(JSON.stringify(p.marketBeta) === JSON.stringify(config.marketBeta), 'strategyProfile.marketBeta mismatch');
+  assert(JSON.stringify(p.trendContinuation) === JSON.stringify(config.trendContinuation), 'strategyProfile.trendContinuation mismatch');
 }
 
 const mt=research.marketTrendForecast;
