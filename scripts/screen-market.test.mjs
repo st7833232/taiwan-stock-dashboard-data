@@ -148,3 +148,11 @@ test('alpha order consumes exposure before the market-beta sleeve',()=>{
   assert.equal(plan.orders[0].code,'9945');assert.equal(plan.orders[0].signalClass,undefined);
   assert.ok(plan.orders.length>=1);
 });
+
+test('alpha planner processes the best verified trade rank before lower-ranked names',()=>{
+  const make=(code,rank)=>({code,name:code,assetType:'STOCK',score:100,tradeRank:rank,tradePercentile:rank,universeRank:rank,universePercentile:rank,reasonCodes:[],gates:{history:true,liquidity:true,market:true,trend:true,credit:true,institutional:true,tdcc:true,fundamental:true,event:true,corporateAction:true,strategy:true,riskReward:true,assetProfile:true},setup:{strategy:'TREND_CONTINUATION',entry:100,maxEntry:101,zoneLow:99,stop:95}});
+  const paper={cash:200000,positions:[],ledger:[],experiment:{status:'ACTIVE'}};
+  const input={targetDate:'2026-10-08',verifiedCalendar:{sourceQuality:'SOURCE_A',asOf:'2026-10-08',nextTradingDate:'2026-10-12'},deepDive:[{history:[['2026-10-02'],['2026-10-07']]}]};
+  const plan=planSignals({regime:'BULL',marketTrend:{verified:false},rows:[make('RANK2',2),make('RANK1',1)]},paper,input,config);
+  assert.equal(plan.orders[0].code,'RANK1');
+});

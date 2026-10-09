@@ -174,7 +174,11 @@ export function evaluateUniverse(input, config) {
     researched.forEach((r,i)=>{r.researchRank=i+1;r.researchPercentile=(i+1)*100/researched.length;});
     const tradeEligible=rows.filter(r=>r.assetType===asset && Object.values(r.gates).every(Boolean)).sort((a,b)=>b.score-a.score || a.code.localeCompare(b.code));
     tradeEligible.forEach((r,i)=>{
-      r.tradeRank=i+1;r.tradePercentile=(i+1)*100/tradeEligible.length;
+      r.tradeRank=i+1;
+      // Priority percentile is measured against the fully researched cohort, not only the
+      // already-trade-eligible subset. Otherwise a small high-quality pool makes rank #1
+      // fail a top-10% gate (e.g. 1/5 = 20%) even when it leads the researched universe.
+      r.tradePercentile=researched.length?(i+1)*100/researched.length:null;
       // Compatibility aliases used by the existing BUY validator and execution planner.
       r.universeRank=r.tradeRank;r.universePercentile=r.tradePercentile;
     });
@@ -259,7 +263,8 @@ export function planSignals(result,paper,input,config) {
   const calendar=input.verifiedCalendar;
   const periodCalendar=config.paperExperiment;
   const nextDate=calendar?.sourceQuality==='SOURCE_A' && calendar?.asOf<=input.targetDate && calendar?.nextTradingDate>input.targetDate?calendar.nextTradingDate:periodCalendar?.calendarAsOf<=input.targetDate?periodCalendar.plannedTradingDates.find(d=>d>input.targetDate)??null:null;
-  for(const r of result.rows) {
+  const rankedRows=result.rows.slice().sort((a,b)=>(a.tradeRank??Number.MAX_SAFE_INTEGER)-(b.tradeRank??Number.MAX_SAFE_INTEGER) || b.score-a.score || a.code.localeCompare(b.code));
+  for(const r of rankedRows) {
     if(!Object.values(r.gates).every(Boolean))continue;
     const threshold=r.assetType==='ETF'?config.assetProfiles.ETF.buyScoreThreshold[result.regime]:config.buyScoreThreshold[result.regime];
     if(!finite(threshold)||r.score<threshold){r.reasonCodes.push('SCORE_THRESHOLD_NOT_MET');continue;}
