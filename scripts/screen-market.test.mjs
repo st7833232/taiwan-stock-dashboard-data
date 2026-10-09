@@ -142,7 +142,7 @@ test('alpha order consumes exposure before the market-beta sleeve',()=>{
   const candidate={code:'9945',name:'alpha',assetType:'STOCK',score:100,universeRank:1,universePercentile:1,reasonCodes:[],gates:{history:true,liquidity:true,market:true,trend:true,credit:true,institutional:true,tdcc:true,fundamental:true,event:true,corporateAction:true,strategy:true,riskReward:true,assetProfile:true},setup:{strategy:'TREND_CONTINUATION',entry:100,maxEntry:101,zoneLow:99,stop:95}};
   const proxy={code:'0050',name:'元大台灣50',assetType:'ETF',score:0,universeRank:null,universePercentile:null,reasonCodes:[],gates:{history:true,liquidity:true,assetProfile:true,event:true,corporateAction:true}};
   const paper={cash:200000,positions:[],ledger:[],experiment:{status:'ACTIVE'}};
-  const input={targetDate:'2026-10-08',verifiedCalendar:{sourceQuality:'SOURCE_A',asOf:'2026-10-08',nextTradingDate:'2026-10-12'},deepDive:[{code:'0050',assetType:'ETF',history:[['2026-10-07']],indicators:{},current:{close:100}},{code:'9945',history:[['2026-10-07']]}]};
+  const input={targetDate:'2026-10-08',verifiedCalendar:{sourceQuality:'SOURCE_A',asOf:'2026-10-08',nextTradingDate:'2026-10-12'},deepDive:[{code:'0050',assetType:'ETF',history:[['2026-10-02'],['2026-10-07']],indicators:{},current:{close:100}},{code:'9945',history:[['2026-10-02'],['2026-10-07']]}]};
   const result={regime:'BULL',marketTrend:{verified:true,proxyCode:'0050',phase:'STRONG_UPTREND',targetExposurePct:10,overextended:false,close:100,ma20:98,ma60:95,atr14:2},rows:[candidate,proxy]};
   const plan=planSignals(result,paper,input,config);
   assert.equal(plan.orders[0].code,'9945');assert.equal(plan.orders[0].signalClass,undefined);
