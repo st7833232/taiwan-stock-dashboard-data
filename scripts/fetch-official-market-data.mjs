@@ -102,6 +102,33 @@ async function readPreviousMatrix() {
   }
 }
 
+const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+async function fetchOfficialWithRetry(source) {
+  const maxAttempts = source.id === 'tpex-daily-trading-index' ? 3 : 1;
+  const timeoutMs = source.id === 'tpex-daily-trading-index' ? 90000 : 30000;
+  let lastError;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      const response = await fetch(source.url, {
+        headers: { accept: 'application/json,text/plain,*/*', 'user-agent': 'taiwan-stock-dashboard-data/official-market-capture' },
+        redirect: 'follow',
+        signal: AbortSignal.timeout(timeoutMs),
+      });
+      if ((response.status === 429 || response.status >= 500) && attempt < maxAttempts) {
+        await response.body?.cancel();
+        await pause(1500 * 2 ** (attempt - 1));
+        continue;
+      }
+      return response;
+    } catch (error) {
+      lastError = error;
+      if (attempt === maxAttempts) throw error;
+      await pause(1500 * 2 ** (attempt - 1));
+    }
+  }
+  throw lastError;
+}
+
 async function capture(source) {
   const capturedAt = new Date().toISOString();
   const result = { source: source.id, gate: source.gate, institution: source.institution, kind: source.kind, url: source.url, targetDate, capturedAt, status: 'VERIFY_FAILED', simulatedTodayDate };
@@ -109,11 +136,7 @@ async function capture(source) {
     return { ...result, status: 'NOT_CAPTURED_RETROSPECTIVE', note: 'Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage.' };
   }
   try {
-    const response = await fetch(source.url, {
-      headers: { accept: 'application/json,text/plain,*/*', 'user-agent': 'taiwan-stock-dashboard-data/official-market-capture' },
-      redirect: 'follow',
-      signal: AbortSignal.timeout(source.id === 'tpex-daily-trading-index' ? 90000 : 30000),
-    });
+    const response = await fetchOfficialWithRetry(source);
     result.httpStatus = response.status;
     result.contentType = response.headers.get('content-type');
     const text = await response.text();
