@@ -112,7 +112,7 @@ async function capture(source) {
     const response = await fetch(source.url, {
       headers: { accept: 'application/json,text/plain,*/*', 'user-agent': 'taiwan-stock-dashboard-data/official-market-capture' },
       redirect: 'follow',
-      signal: AbortSignal.timeout(30000),
+      signal: AbortSignal.timeout(source.id === 'tpex-daily-trading-index' ? 90000 : 30000),
     });
     result.httpStatus = response.status;
     result.contentType = response.headers.get('content-type');
