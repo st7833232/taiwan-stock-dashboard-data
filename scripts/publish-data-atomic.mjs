@@ -35,26 +35,33 @@ export async function publish() {
   if(!paths.length){console.log('NO_CHANGE');return;}
   // Compare-and-stop before creating objects; no rebase or overwriting new data.
   const ref=await api('git/ref/heads/main');if(ref.object.sha!==base) throw Error('MAIN_HEAD_CHANGED: retain workflow artifact and rerun on new main');
-  const commit=await api(`git/commits/${base}`), entries=[];
+  // Stage only authorized data outputs and publish through native Git transport.
+  // GitHub's REST git/blobs endpoint rejects large valid blobs with HTTP 422.
+  // Git object transfer via git push avoids that REST request-size restriction.
   for(const p of paths) {
     if(!fs.existsSync(p)) throw Error(`Deletion forbidden: ${p}`);
     if(p.startsWith('snapshots/') && git('ls-files',p)) throw Error(`Immutable snapshot modification: ${p}`);
     const size=fs.statSync(p).size;
-    if(size>100*1024*1024) throw Error(`GITHUB_BLOB_SIZE_LIMIT: ${p} (${size} bytes) exceeds GitHub's 100 MiB single-file limit; retain checkpoint and use an explicit evidence-preserving storage strategy.`);
-    let blob;
-    try { blob=await api('git/blobs',{content:fs.readFileSync(p).toString('base64'),encoding:'base64'}); }
-    catch(error) { throw Error(`BLOB_PUBLICATION_FAILED: path=${p} bytes=${size}; ${error.message}`,{cause:error}); }
-    entries.push({path:p,mode:'100644',type:'blob',sha:blob.sha});
+    if(size>100*1024*1024) throw Error(`GITHUB_BLOB_SIZE_LIMIT: ${p} (${size} bytes) exceeds GitHub's 100 MiB single-file limit`);
   }
-  const tree=await api('git/trees',{base_tree:commit.tree.sha,tree:entries});
-  const created=await api('git/commits',{message:`data: official screening checkpoint ${process.env.TARGET_DATE}`,tree:tree.sha,parents:[base]});
-  const again=await api('git/ref/heads/main');if(again.object.sha!==base) throw Error('MAIN_HEAD_CHANGED: not updating ref');
-  // The pre-PATCH compare-and-stop above is the ownership gate. Once this fast-forward
-  // succeeds, another workflow may legitimately advance main immediately afterward.
-  // Requiring HEAD to remain equal to created.sha would turn that valid successor
-  // publication into a false failure for this run.
-  await api('git/refs/heads/main',{sha:created.sha,force:false},'PATCH');
-  if(process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,`\nAtomic data commit: ${created.sha}\n`);
-  console.log(`PUBLISHED_COMMIT=${created.sha}`);
+  execFileSync('git',['add','--',...paths],{stdio:'pipe'});
+  git('diff','--cached','--check');
+  if(!git('diff','--cached','--name-only')){console.log('NO_CHANGE');return;}
+  const tree=git('write-tree');
+  const commit=git('commit-tree',tree,'-p',base,'-m',`data: official screening checkpoint ${process.env.TARGET_DATE}`);
+  const again=await api('git/ref/heads/main');
+  if(again.object.sha!==base) throw Error('MAIN_HEAD_CHANGED: retain workflow artifact and rerun on new main');
+  // Push an explicit fast-forward update. Never force-push or rebase data.
+  const remote=`https://x-access-token:${encodeURIComponent(token)}@github.com/${repo}.git`;
+  try {
+    execFileSync('git',['-c','credential.helper=','push',remote,`${commit}:refs/heads/main`],{
+      encoding:'utf8',stdio:['ignore','pipe','pipe'],timeout:180000,
+    });
+  } catch(error) {
+    const diagnostic=String(error.stderr??'').replaceAll(token,'[REDACTED]').slice(-1800);
+    throw Error(`NATIVE_GIT_PUBLICATION_FAILED: ${diagnostic}`,{cause:error});
+  }
+  if(process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,`\nAtomic data commit: ${commit}\n`);
+  console.log(`PUBLISHED_COMMIT=${commit}`);
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href) await publish();
