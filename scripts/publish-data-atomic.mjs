@@ -45,7 +45,10 @@ export async function publish() {
     if(size>100*1024*1024) throw Error(`GITHUB_BLOB_SIZE_LIMIT: ${p} (${size} bytes) exceeds GitHub's 100 MiB single-file limit`);
   }
   execFileSync('git',['add','--',...paths],{stdio:'pipe'});
-  git('diff','--cached','--check');
+  // Official raw HTML/OCR evidence is immutable source material: CRLF and trailing whitespace are valid bytes.
+  // Schema, provenance, evidence and trading validation run upstream; Git whitespace lint is not a publication gate.
+  // Keep the staged-change check and immutable-snapshot protection below.
+
   if(!git('diff','--cached','--name-only')){console.log('NO_CHANGE');return;}
   const tree=git('write-tree');
   const gitIdentity={...process.env,
