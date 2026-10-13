@@ -26,9 +26,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-09T03:00:19.837Z",
-    "nextRetryAt": "2026-10-10T03:00:19.837Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:18:15.199Z",
+    "nextRetryAt": "2026-10-14T08:18:15.199Z"
   },
   "3016|2026-06-30": {
     "status": "UNVERIFIED",
@@ -39,9 +39,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:38:19.320Z",
-    "nextRetryAt": "2026-10-09T17:38:19.320Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:16:13.918Z",
+    "nextRetryAt": "2026-10-14T08:16:13.918Z"
   },
   "2609|2026-06-30": {
     "status": "VERIFIED",
@@ -102,9 +102,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:38:27.052Z",
-    "nextRetryAt": "2026-10-09T17:38:27.052Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:16:18.272Z",
+    "nextRetryAt": "2026-10-14T08:16:18.272Z"
   },
   "1101|2026-06-30": {
     "status": "UNVERIFIED",
@@ -125,12 +125,12 @@
     "filingParserVersion": 3,
     "textParserVersion": 22,
     "filingFallback": null,
-    "stage": "FILING_INDEX",
-    "reason": "FILING_VERSION_UNVERIFIED",
-    "attempts": 2,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:45:42.802Z",
-    "nextRetryAt": "2026-10-09T17:45:42.802Z"
+    "stage": "PDF_METRICS",
+    "reason": "PDF_OCR_REVIEW_PENDING",
+    "attempts": 1,
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:18:05.991Z",
+    "nextRetryAt": "2026-10-13T08:23:05.991Z"
   },
   "1513|2026-06-30": {
     "status": "UNVERIFIED",
@@ -141,9 +141,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:38:23.618Z",
-    "nextRetryAt": "2026-10-09T17:38:23.618Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:16:16.576Z",
+    "nextRetryAt": "2026-10-14T08:16:16.576Z"
   },
   "2855|2026-06-30": {
     "status": "UNVERIFIED",
@@ -216,9 +216,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-08",
-    "checkedAt": "2026-10-08T12:22:37.453Z",
-    "nextRetryAt": "2026-10-09T12:22:37.453Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:09:25.088Z",
+    "nextRetryAt": "2026-10-14T08:09:25.088Z"
   },
   "4912|2026-06-30": {
     "status": "UNVERIFIED",
@@ -284,9 +284,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:20:58.218Z",
-    "nextRetryAt": "2026-10-09T17:20:58.218Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:39.541Z",
+    "nextRetryAt": "2026-10-14T08:15:39.541Z"
   },
   "3231|2026-06-30": {
     "status": "VERIFIED",
@@ -322,9 +322,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-09T03:00:23.281Z",
-    "nextRetryAt": "2026-10-10T03:00:23.281Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:18:18.661Z",
+    "nextRetryAt": "2026-10-14T08:18:18.661Z"
   },
   "6182|2026-06-30": {
     "status": "VERIFIED",
@@ -347,9 +347,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:37:52.317Z",
-    "nextRetryAt": "2026-10-09T17:37:52.317Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:56.596Z",
+    "nextRetryAt": "2026-10-14T08:15:56.596Z"
   },
   "2881|2026-06-30": {
     "status": "UNVERIFIED",
@@ -676,9 +676,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-08",
-    "checkedAt": "2026-10-08T12:22:33.928Z",
-    "nextRetryAt": "2026-10-09T12:22:33.928Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:09:21.564Z",
+    "nextRetryAt": "2026-10-14T08:09:21.564Z"
   },
   "6834|2026-06-30": {
     "status": "VERIFIED",
@@ -726,9 +726,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:37:54.024Z",
-    "nextRetryAt": "2026-10-09T17:37:54.024Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:58.325Z",
+    "nextRetryAt": "2026-10-14T08:15:58.325Z"
   },
   "4977|2026-06-30": {
     "status": "VERIFIED",
@@ -794,9 +794,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:38:09.978Z",
-    "nextRetryAt": "2026-10-09T17:38:09.978Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:16:06.919Z",
+    "nextRetryAt": "2026-10-14T08:16:06.919Z"
   },
   "8103|2026-06-30": {
     "status": "VERIFIED",
@@ -941,9 +941,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:38:11.742Z",
-    "nextRetryAt": "2026-10-09T17:38:11.742Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:16:08.716Z",
+    "nextRetryAt": "2026-10-14T08:16:08.716Z"
   },
   "4763|2026-06-30": {
     "status": "VERIFIED",
@@ -991,9 +991,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:20:53.003Z",
-    "nextRetryAt": "2026-10-09T17:20:53.003Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:36.013Z",
+    "nextRetryAt": "2026-10-14T08:15:36.013Z"
   },
   "5876|2026-06-30": {
     "status": "UNVERIFIED",
@@ -1123,9 +1123,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-08",
-    "checkedAt": "2026-10-08T12:22:49.534Z",
-    "nextRetryAt": "2026-10-09T12:22:49.534Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:09:37.179Z",
+    "nextRetryAt": "2026-10-14T08:09:37.179Z"
   },
   "1504|2026-06-30": {
     "status": "VERIFIED",
@@ -1155,9 +1155,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:20:39.204Z",
-    "nextRetryAt": "2026-10-09T17:20:39.204Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:27.211Z",
+    "nextRetryAt": "2026-10-14T08:15:27.211Z"
   },
   "6199|2026-06-30": {
     "status": "UNVERIFIED",
@@ -1261,9 +1261,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-08",
-    "checkedAt": "2026-10-08T12:22:51.265Z",
-    "nextRetryAt": "2026-10-09T12:22:51.265Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:09:38.910Z",
+    "nextRetryAt": "2026-10-14T08:09:38.910Z"
   },
   "2385|2026-06-30": {
     "status": "VERIFIED",
@@ -1317,9 +1317,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-08",
-    "checkedAt": "2026-10-08T12:22:52.946Z",
-    "nextRetryAt": "2026-10-09T12:22:52.946Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:09:40.591Z",
+    "nextRetryAt": "2026-10-14T08:09:40.591Z"
   },
   "6530|2026-06-30": {
     "status": "VERIFIED",
@@ -1367,9 +1367,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-08",
-    "checkedAt": "2026-10-08T12:22:54.704Z",
-    "nextRetryAt": "2026-10-09T12:22:54.704Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:09:42.345Z",
+    "nextRetryAt": "2026-10-14T08:09:42.345Z"
   },
   "2338|2026-06-30": {
     "status": "VERIFIED",
@@ -1452,9 +1452,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:38:06.623Z",
-    "nextRetryAt": "2026-10-09T17:38:06.623Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:16:03.514Z",
+    "nextRetryAt": "2026-10-14T08:16:03.514Z"
   },
   "9904|2026-06-30": {
     "status": "VERIFIED",
@@ -1501,9 +1501,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:20:41.106Z",
-    "nextRetryAt": "2026-10-09T17:20:41.106Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:29.115Z",
+    "nextRetryAt": "2026-10-14T08:15:29.115Z"
   },
   "6005|2026-06-30": {
     "status": "UNVERIFIED",
@@ -1724,9 +1724,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-08",
-    "checkedAt": "2026-10-08T12:22:56.468Z",
-    "nextRetryAt": "2026-10-09T12:22:56.468Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:09:44.099Z",
+    "nextRetryAt": "2026-10-14T08:09:44.099Z"
   },
   "6190|2026-06-30": {
     "status": "VERIFIED",
@@ -1756,9 +1756,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:38:08.258Z",
-    "nextRetryAt": "2026-10-09T17:38:08.258Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:16:05.163Z",
+    "nextRetryAt": "2026-10-14T08:16:05.163Z"
   },
   "6224|2026-06-30": {
     "status": "VERIFIED",
@@ -1825,9 +1825,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-08",
-    "checkedAt": "2026-10-08T12:22:58.107Z",
-    "nextRetryAt": "2026-10-09T12:22:58.107Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:09:45.737Z",
+    "nextRetryAt": "2026-10-14T08:09:45.737Z"
   },
   "1795|2026-06-30": {
     "status": "UNVERIFIED",
@@ -1838,9 +1838,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:20:21.787Z",
-    "nextRetryAt": "2026-10-09T17:20:21.787Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:16.836Z",
+    "nextRetryAt": "2026-10-14T08:15:16.836Z"
   },
   "1714|2026-06-30": {
     "status": "VERIFIED",
@@ -1924,9 +1924,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:38:01.401Z",
-    "nextRetryAt": "2026-10-09T17:38:01.401Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:16:01.764Z",
+    "nextRetryAt": "2026-10-14T08:16:01.764Z"
   },
   "4540|2026-06-30": {
     "status": "VERIFIED",
@@ -1967,9 +1967,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:38:40.709Z",
-    "nextRetryAt": "2026-10-09T17:38:40.709Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:16:26.975Z",
+    "nextRetryAt": "2026-10-14T08:16:26.975Z"
   },
   "1708|2026-06-30": {
     "status": "UNVERIFIED",
@@ -1980,9 +1980,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:20:42.773Z",
-    "nextRetryAt": "2026-10-09T17:20:42.773Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:30.779Z",
+    "nextRetryAt": "2026-10-14T08:15:30.779Z"
   },
   "6525|2026-06-30": {
     "status": "UNVERIFIED",
@@ -1993,9 +1993,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:52:18.059Z",
-    "nextRetryAt": "2026-10-09T17:52:18.059Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:18:13.414Z",
+    "nextRetryAt": "2026-10-14T08:18:13.414Z"
   },
   "9921|2026-06-30": {
     "status": "VERIFIED",
@@ -2037,9 +2037,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-08",
-    "checkedAt": "2026-10-08T12:22:39.117Z",
-    "nextRetryAt": "2026-10-09T12:22:39.117Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:09:26.754Z",
+    "nextRetryAt": "2026-10-14T08:09:26.754Z"
   },
   "3576|2026-06-30": {
     "status": "VERIFIED",
@@ -2086,9 +2086,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:37:57.480Z",
-    "nextRetryAt": "2026-10-09T17:37:57.480Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:16:00.027Z",
+    "nextRetryAt": "2026-10-14T08:16:00.027Z"
   },
   "6265|2026-06-30": {
     "status": "VERIFIED",
@@ -2111,9 +2111,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:20:47.849Z",
-    "nextRetryAt": "2026-10-09T17:20:47.849Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:32.537Z",
+    "nextRetryAt": "2026-10-14T08:15:32.537Z"
   },
   "2103|2026-06-30": {
     "status": "VERIFIED",
@@ -2161,9 +2161,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:38:30.536Z",
-    "nextRetryAt": "2026-10-09T17:38:30.536Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:16:20.054Z",
+    "nextRetryAt": "2026-10-14T08:16:20.054Z"
   },
   "2201|2026-06-30": {
     "status": "VERIFIED",
@@ -2284,9 +2284,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:20:56.415Z",
-    "nextRetryAt": "2026-10-09T17:20:56.415Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:37.740Z",
+    "nextRetryAt": "2026-10-14T08:15:37.740Z"
   },
   "8422|2026-06-30": {
     "status": "VERIFIED",
@@ -2315,9 +2315,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-08",
-    "checkedAt": "2026-10-08T12:22:40.772Z",
-    "nextRetryAt": "2026-10-09T12:22:40.772Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:09:28.409Z",
+    "nextRetryAt": "2026-10-14T08:09:28.409Z"
   },
   "3088|2026-06-30": {
     "status": "VERIFIED",
@@ -2456,9 +2456,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:20:59.875Z",
-    "nextRetryAt": "2026-10-09T17:20:59.875Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:41.199Z",
+    "nextRetryAt": "2026-10-14T08:15:41.199Z"
   },
   "6245|2026-06-30": {
     "status": "UNVERIFIED",
@@ -2482,9 +2482,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-08",
-    "checkedAt": "2026-10-08T12:22:35.699Z",
-    "nextRetryAt": "2026-10-09T12:22:35.699Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:09:23.338Z",
+    "nextRetryAt": "2026-10-14T08:09:23.338Z"
   },
   "4739|2026-06-30": {
     "status": "VERIFIED",
@@ -2507,9 +2507,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:21:03.207Z",
-    "nextRetryAt": "2026-10-09T17:21:03.207Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:42.866Z",
+    "nextRetryAt": "2026-10-14T08:15:42.866Z"
   },
   "3289|2026-06-30": {
     "status": "VERIFIED",
@@ -2532,9 +2532,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-08",
-    "checkedAt": "2026-10-08T12:22:42.487Z",
-    "nextRetryAt": "2026-10-09T12:22:42.487Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:09:30.123Z",
+    "nextRetryAt": "2026-10-14T08:09:30.123Z"
   },
   "2009|2026-06-30": {
     "status": "VERIFIED",
@@ -2676,9 +2676,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-08",
-    "checkedAt": "2026-10-08T12:22:32.112Z",
-    "nextRetryAt": "2026-10-09T12:22:32.112Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:09:19.747Z",
+    "nextRetryAt": "2026-10-14T08:09:19.747Z"
   },
   "4707|2026-06-30": {
     "status": "VERIFIED",
@@ -2756,9 +2756,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-08",
-    "checkedAt": "2026-10-08T12:22:44.316Z",
-    "nextRetryAt": "2026-10-09T12:22:44.316Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:09:31.957Z",
+    "nextRetryAt": "2026-10-14T08:09:31.957Z"
   },
   "8383|2026-06-30": {
     "status": "VERIFIED",
@@ -2805,9 +2805,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:20:51.265Z",
-    "nextRetryAt": "2026-10-09T17:20:51.265Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:34.265Z",
+    "nextRetryAt": "2026-10-14T08:15:34.265Z"
   },
   "2820|2026-06-30": {
     "status": "UNVERIFIED",
@@ -2849,9 +2849,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-09T03:00:21.592Z",
-    "nextRetryAt": "2026-10-10T03:00:21.592Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:18:16.958Z",
+    "nextRetryAt": "2026-10-14T08:18:16.959Z"
   },
   "2454|2026-06-30": {
     "status": "VERIFIED",
@@ -2929,9 +2929,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:21:10.134Z",
-    "nextRetryAt": "2026-10-09T17:21:10.134Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:46.279Z",
+    "nextRetryAt": "2026-10-14T08:15:46.279Z"
   },
   "3711|2026-06-30": {
     "status": "UNVERIFIED",
@@ -2942,9 +2942,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:50:34.382Z",
-    "nextRetryAt": "2026-10-09T17:50:34.382Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:18:09.864Z",
+    "nextRetryAt": "2026-10-14T08:18:09.864Z"
   },
   "3017|2026-06-30": {
     "status": "VERIFIED",
@@ -2974,9 +2974,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:21:11.917Z",
-    "nextRetryAt": "2026-10-09T17:21:11.917Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:48.062Z",
+    "nextRetryAt": "2026-10-14T08:15:48.062Z"
   },
   "3081|2026-06-30": {
     "status": "VERIFIED",
@@ -3072,9 +3072,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:38:32.170Z",
-    "nextRetryAt": "2026-10-09T17:38:32.170Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:16:21.708Z",
+    "nextRetryAt": "2026-10-14T08:16:21.708Z"
   },
   "3324|2026-06-30": {
     "status": "VERIFIED",
@@ -3097,9 +3097,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:50:36.092Z",
-    "nextRetryAt": "2026-10-09T17:50:36.092Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:18:11.652Z",
+    "nextRetryAt": "2026-10-14T08:18:11.652Z"
   },
   "6223|2026-06-30": {
     "status": "UNVERIFIED",
@@ -3184,9 +3184,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:38:35.576Z",
-    "nextRetryAt": "2026-10-09T17:38:35.576Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:16:23.484Z",
+    "nextRetryAt": "2026-10-14T08:16:23.484Z"
   },
   "3167|2026-06-30": {
     "status": "VERIFIED",
@@ -3253,9 +3253,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-08",
-    "checkedAt": "2026-10-08T12:22:46.075Z",
-    "nextRetryAt": "2026-10-09T12:22:46.075Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:09:33.721Z",
+    "nextRetryAt": "2026-10-14T08:09:33.721Z"
   },
   "6515|2026-06-30": {
     "status": "VERIFIED",
@@ -3322,9 +3322,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-08",
-    "checkedAt": "2026-10-08T12:22:47.728Z",
-    "nextRetryAt": "2026-10-09T12:22:47.728Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:09:35.376Z",
+    "nextRetryAt": "2026-10-14T08:09:35.376Z"
   },
   "2357|2026-06-30": {
     "status": "VERIFIED",
@@ -3347,9 +3347,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:50:32.671Z",
-    "nextRetryAt": "2026-10-09T17:50:32.671Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:18:08.076Z",
+    "nextRetryAt": "2026-10-14T08:18:08.076Z"
   },
   "5483|2026-06-30": {
     "status": "VERIFIED",
@@ -3532,9 +3532,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-09T03:00:24.979Z",
-    "nextRetryAt": "2026-10-10T03:00:24.979Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:18:20.375Z",
+    "nextRetryAt": "2026-10-14T08:18:20.375Z"
   },
   "3533|2026-06-30": {
     "status": "VERIFIED",
@@ -3551,9 +3551,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:38:39.027Z",
-    "nextRetryAt": "2026-10-09T17:38:39.027Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:16:25.271Z",
+    "nextRetryAt": "2026-10-14T08:16:25.271Z"
   },
   "1560|2026-06-30": {
     "status": "VERIFIED",
@@ -3631,9 +3631,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:38:17.507Z",
-    "nextRetryAt": "2026-10-09T17:38:17.507Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:16:12.083Z",
+    "nextRetryAt": "2026-10-14T08:16:12.083Z"
   },
   "7828|2026-06-30": {
     "status": "VERIFIED",
@@ -3677,9 +3677,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:20:23.578Z",
-    "nextRetryAt": "2026-10-09T17:20:23.578Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:18.641Z",
+    "nextRetryAt": "2026-10-14T08:15:18.641Z"
   },
   "4931|2026-06-30": {
     "status": "VERIFIED",
@@ -3750,9 +3750,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:20:28.728Z",
-    "nextRetryAt": "2026-10-09T17:20:28.728Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:22.045Z",
+    "nextRetryAt": "2026-10-14T08:15:22.045Z"
   },
   "6271|2026-06-30": {
     "status": "VERIFIED",
@@ -3794,9 +3794,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:20:25.254Z",
-    "nextRetryAt": "2026-10-09T17:20:25.254Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:20.326Z",
+    "nextRetryAt": "2026-10-14T08:15:20.326Z"
   },
   "6727|2026-06-30": {
     "status": "UNVERIFIED",
@@ -3858,9 +3858,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:40:29.688Z",
-    "nextRetryAt": "2026-10-09T17:40:29.688Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:16:28.716Z",
+    "nextRetryAt": "2026-10-14T08:16:28.716Z"
   },
   "6861|2026-06-30": {
     "status": "VERIFIED",
@@ -4092,9 +4092,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:20:32.141Z",
-    "nextRetryAt": "2026-10-09T17:20:32.141Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:23.737Z",
+    "nextRetryAt": "2026-10-14T08:15:23.737Z"
   },
   "3563|2026-06-30": {
     "status": "VERIFIED",
@@ -4117,9 +4117,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:37:43.881Z",
-    "nextRetryAt": "2026-10-09T17:37:43.881Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:49.712Z",
+    "nextRetryAt": "2026-10-14T08:15:49.712Z"
   },
   "7751|2026-06-30": {
     "status": "VERIFIED",
@@ -4155,9 +4155,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:37:45.659Z",
-    "nextRetryAt": "2026-10-09T17:37:45.659Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:51.529Z",
+    "nextRetryAt": "2026-10-14T08:15:51.529Z"
   },
   "6739|2026-06-30": {
     "status": "VERIFIED",
@@ -4217,9 +4217,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:20:33.895Z",
-    "nextRetryAt": "2026-10-09T17:20:33.895Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:25.490Z",
+    "nextRetryAt": "2026-10-14T08:15:25.490Z"
   },
   "6944|2026-06-30": {
     "status": "UNVERIFIED",
@@ -4230,9 +4230,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:21:06.726Z",
-    "nextRetryAt": "2026-10-09T17:21:06.726Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:44.626Z",
+    "nextRetryAt": "2026-10-14T08:15:44.626Z"
   },
   "6449|2026-06-30": {
     "status": "VERIFIED",
@@ -4565,9 +4565,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:37:47.313Z",
-    "nextRetryAt": "2026-10-09T17:37:47.313Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:53.205Z",
+    "nextRetryAt": "2026-10-14T08:15:53.205Z"
   },
   "6231|2026-06-30": {
     "status": "UNVERIFIED",
@@ -4603,9 +4603,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:37:48.946Z",
-    "nextRetryAt": "2026-10-09T17:37:48.946Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:54.856Z",
+    "nextRetryAt": "2026-10-14T08:15:54.856Z"
   },
   "4585|2026-06-30": {
     "status": "UNVERIFIED",
@@ -4704,9 +4704,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:38:13.377Z",
-    "nextRetryAt": "2026-10-09T17:38:13.377Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:16:10.368Z",
+    "nextRetryAt": "2026-10-14T08:16:10.368Z"
   },
   "3354|2026-06-30": {
     "status": "VERIFIED",
@@ -4736,9 +4736,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-09",
-    "checkedAt": "2026-10-08T17:40:53.080Z",
-    "nextRetryAt": "2026-10-09T17:40:53.080Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:16:30.419Z",
+    "nextRetryAt": "2026-10-14T08:16:30.419Z"
   },
   "4566|2026-06-30": {
     "status": "VERIFIED",
@@ -4827,12 +4827,12 @@
     "filingParserVersion": 3,
     "textParserVersion": 22,
     "filingFallback": null,
-    "stage": "PDF_METRICS",
-    "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+    "stage": "PDF_DOWNLOAD",
+    "reason": "HTTP_502",
     "attempts": 1,
-    "checkedDate": "2026-10-08",
-    "checkedAt": "2026-10-08T12:23:15.693Z",
-    "nextRetryAt": "2026-10-09T12:23:15.693Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:12:04.019Z",
+    "nextRetryAt": "2026-10-13T08:17:04.019Z"
   },
   "2034|2026-06-30": {
     "status": "UNVERIFIED",
@@ -4843,9 +4843,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-08",
-    "checkedAt": "2026-10-08T12:23:33.117Z",
-    "nextRetryAt": "2026-10-09T12:23:33.117Z"
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:15:15.120Z",
+    "nextRetryAt": "2026-10-14T08:15:15.120Z"
   },
   "3317|2026-06-30": {
     "status": "VERIFIED",
@@ -4890,5 +4890,18 @@
     "checkedDate": "2026-10-08",
     "checkedAt": "2026-10-08T13:11:12.668Z",
     "nextRetryAt": "2026-10-09T13:11:12.668Z"
+  },
+  "1721|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "filingParserVersion": 3,
+    "textParserVersion": 22,
+    "filingFallback": null,
+    "stage": "PDF_METRICS",
+    "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+    "attempts": 1,
+    "checkedDate": "2026-10-13",
+    "checkedAt": "2026-10-13T08:18:59.722Z",
+    "nextRetryAt": "2026-10-14T08:18:59.722Z"
   }
 }
