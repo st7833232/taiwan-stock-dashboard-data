@@ -1,7 +1,7 @@
 {
   "targetDate": "2026-10-12",
   "timezone": "Asia/Taipei",
-  "generatedAt": "2026-10-13T08:26:42.144Z",
+  "generatedAt": "2026-10-13T08:30:54.770Z",
   "simulatedTodayDate": null,
   "effectiveTodayDate": "2026-10-13",
   "overallStatus": "PASS",
@@ -141,12 +141,12 @@
       "kind": "daily-close-quotes",
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes",
       "targetDate": "2026-10-12",
-      "capturedAt": "2026-10-13T08:26:39.474Z",
+      "capturedAt": "2026-10-13T08:30:23.897Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
       "contentType": "application/json",
-      "error": "terminated"
+      "error": "The operation was aborted due to timeout"
     },
     {
       "source": "tpex-mainboard-daily-close-quotes-legacy",
@@ -294,7 +294,7 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/10/12",
       "targetDate": "2026-10-12",
-      "capturedAt": "2026-10-13T08:26:41.319Z",
+      "capturedAt": "2026-10-13T08:30:53.918Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
