@@ -127,12 +127,12 @@
       "filingParserVersion": 3,
       "textParserVersion": 22,
       "filingFallback": null,
-      "stage": "PDF_METRICS",
-      "reason": "PDF_OCR_REVIEW_PENDING",
-      "attempts": 1,
+      "stage": "FILING_INDEX",
+      "reason": "FILING_VERSION_UNVERIFIED",
+      "attempts": 2,
       "checkedDate": "2026-10-13",
-      "checkedAt": "2026-10-13T08:18:05.991Z",
-      "nextRetryAt": "2026-10-13T08:23:05.991Z"
+      "checkedAt": "2026-10-13T08:24:09.936Z",
+      "nextRetryAt": "2026-10-14T08:24:09.936Z"
     },
     "1513|2026-06-30": {
       "status": "UNVERIFIED",
@@ -4829,12 +4829,12 @@
       "filingParserVersion": 3,
       "textParserVersion": 22,
       "filingFallback": null,
-      "stage": "PDF_DOWNLOAD",
-      "reason": "HTTP_502",
-      "attempts": 1,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 2,
       "checkedDate": "2026-10-13",
-      "checkedAt": "2026-10-13T08:12:04.019Z",
-      "nextRetryAt": "2026-10-13T08:17:04.019Z"
+      "checkedAt": "2026-10-13T08:24:07.530Z",
+      "nextRetryAt": "2026-10-14T08:24:07.530Z"
     },
     "2034|2026-06-30": {
       "status": "UNVERIFIED",
@@ -4912,8 +4912,8 @@
     "pages": 3369
   },
   "remaining": 71,
-  "ready": 1,
-  "continuationNeeded": true,
+  "ready": 0,
+  "continuationNeeded": false,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [
     "9105"
