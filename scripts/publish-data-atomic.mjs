@@ -48,7 +48,13 @@ export async function publish() {
   git('diff','--cached','--check');
   if(!git('diff','--cached','--name-only')){console.log('NO_CHANGE');return;}
   const tree=git('write-tree');
-  const commit=git('commit-tree',tree,'-p',base,'-m',`data: official screening checkpoint ${process.env.TARGET_DATE}`);
+  const gitIdentity={...process.env,
+    GIT_AUTHOR_NAME:'github-actions[bot]',
+    GIT_AUTHOR_EMAIL:'41898282+github-actions[bot]@users.noreply.github.com',
+    GIT_COMMITTER_NAME:'github-actions[bot]',
+    GIT_COMMITTER_EMAIL:'41898282+github-actions[bot]@users.noreply.github.com',
+  };
+  const commit=execFileSync('git',['commit-tree',tree,'-p',base,'-m',`data: official screening checkpoint ${process.env.TARGET_DATE}`],{encoding:'utf8',env:gitIdentity}).trim();
   const again=await api('git/ref/heads/main');
   if(again.object.sha!==base) throw Error('MAIN_HEAD_CHANGED: retain workflow artifact and rerun on new main');
   // Push an explicit fast-forward update. Never force-push or rebase data.
