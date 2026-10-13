@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-12",
-  "revision": "2026-10-13-114547",
+  "revision": "2026-10-13-145726",
   "strategyVersion": "entry-dual-track-v2.6",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
@@ -9,9 +9,9 @@
     "mode": "PER_SECURITY_INCREMENTAL",
     "rankContractVersion": 2,
     "rankingMode": "RESEARCH_AND_TRADE_SPLIT",
-    "screenedDeepDive": 452,
+    "screenedDeepDive": 449,
     "evidenceCompleteDeepDive": 58,
-    "evidencePendingDeepDive": 394,
+    "evidencePendingDeepDive": 391,
     "researchRanked": 58,
     "tradeEligibleRanked": 0,
     "reScreenOnEvidenceAdmission": true,
@@ -21,8 +21,7 @@
   "evidencePending": {
     "tdcc": 391,
     "fundamental": 72,
-    "credit": 1,
-    "history": 3
+    "credit": 1
   },
   "fundamentalQualityRejected": [
     {
@@ -1230,17 +1229,17 @@
     "universe": 1322,
     "stocks": 1084,
     "etfs": 238,
-    "deepDive": 452,
-    "deepDiveStocks": 394,
+    "deepDive": 449,
+    "deepDiveStocks": 391,
     "deepDiveEtfs": 58,
-    "screenedDeepDive": 452,
+    "screenedDeepDive": 449,
     "evidenceCompleteDeepDive": 58,
-    "evidencePendingDeepDive": 394,
+    "evidencePendingDeepDive": 391,
     "researchRanked": 58,
     "tradeEligibleRanked": 0,
     "eligibleRanked": 58,
     "eligibleRankedMeaning": "RESEARCH_EVIDENCE_COMPLETE",
-    "creditReadyStocks": 393,
+    "creditReadyStocks": 390,
     "creditMissingCodes": [
       "7610"
     ]
@@ -1418,7 +1417,7 @@
     "macdHistogram": 0.28497941912329594,
     "atr14": 1.5678571428571442
   },
-  "conclusion": "2026-10-12全市場 1322 檔已完成初步篩選（普通股 1084、ETF 238），深度檢查 452 檔；其中 58 檔必要證據已齊並完成逐檔篩選，已有 58 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；394 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：大戶與散戶多週持股 391檔、財務證據 72檔、融資融券等信用資料 1檔、歷史行情 3檔。全市場研究尚未完成。普通股信用資料已核對 393/394 檔。財務證據完整但品質未通過 156 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-10-12全市場 1322 檔已完成初步篩選（普通股 1084、ETF 238），深度檢查 449 檔；其中 58 檔必要證據已齊並完成逐檔篩選，已有 58 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；391 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：大戶與散戶多週持股 391檔、財務證據 72檔、融資融券等信用資料 1檔。全市場研究尚未完成。普通股信用資料已核對 390/391 檔。財務證據完整但品質未通過 156 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [],
   "core": [
     {
@@ -1616,17 +1615,6 @@
       "officialDateEvidence": "1151012"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-13-114547",
-    "runId": "38342921588",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/38342921588",
-    "validatedCommit": "6c71f52c2030d7f42bc1f51048533249ef28ec79"
-  },
-  "inputFingerprint": "c8e1278990ffda7a2b16f6cfd767307542628f7f0dc6f3b1a568ac2d5d85e6b5"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "93393b5683c3cc76759d6a0811424eb8417df95c35fa35f9d15436df5acbf9d6"
 }
