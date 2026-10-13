@@ -15,13 +15,14 @@ export async function publish() {
       try{
         const response=await fetch(`https://api.github.com/repos/${repo}/${p}`,{method,headers:{accept:'application/vnd.github+json',authorization:`Bearer ${token}`,'content-type':'application/json','X-GitHub-Api-Version':'2022-11-28'},body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(60000)});
         if(response.ok)return response.json();
-        lastError=Error(`GitHub ${method} ${p}: HTTP ${response.status}`);
+        const detail=(await response.text()).slice(0,1500);
+        lastError=Error(`GitHub ${method} ${p}: HTTP ${response.status}; detail=${detail}`);
         if(!retryable.has(response.status)||attempt===5)throw lastError;
         const retryAfter=Number(response.headers.get('retry-after'));
         await sleep(Number.isFinite(retryAfter)&&retryAfter>0?retryAfter*1000:Math.min(1000*2**attempt,16000));
       }catch(error){
         lastError=error;
-        if(attempt===5||/^GitHub /.test(String(error?.message??''))&&!/HTTP (429|500|502|503|504)$/.test(String(error.message)))throw error;
+        if(attempt===5||/^GitHub /.test(String(error?.message??''))&&!/HTTP (429|500|502|503|504)(?:;|$)/.test(String(error.message)))throw error;
         await sleep(Math.min(1000*2**attempt,16000));
       }
     }
@@ -38,7 +39,11 @@ export async function publish() {
   for(const p of paths) {
     if(!fs.existsSync(p)) throw Error(`Deletion forbidden: ${p}`);
     if(p.startsWith('snapshots/') && git('ls-files',p)) throw Error(`Immutable snapshot modification: ${p}`);
-    const blob=await api('git/blobs',{content:fs.readFileSync(p).toString('base64'),encoding:'base64'});
+    const size=fs.statSync(p).size;
+    if(size>100*1024*1024) throw Error(`GITHUB_BLOB_SIZE_LIMIT: ${p} (${size} bytes) exceeds GitHub's 100 MiB single-file limit; retain checkpoint and use an explicit evidence-preserving storage strategy.`);
+    let blob;
+    try { blob=await api('git/blobs',{content:fs.readFileSync(p).toString('base64'),encoding:'base64'}); }
+    catch(error) { throw Error(`BLOB_PUBLICATION_FAILED: path=${p} bytes=${size}; ${error.message}`,{cause:error}); }
     entries.push({path:p,mode:'100644',type:'blob',sha:blob.sha});
   }
   const tree=await api('git/trees',{base_tree:commit.tree.sha,tree:entries});
