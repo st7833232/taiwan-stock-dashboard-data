@@ -4925,12 +4925,12 @@
       "filingParserVersion": 3,
       "textParserVersion": 22,
       "filingFallback": null,
-      "stage": "PDF_DOWNLOAD",
-      "reason": "The operation was aborted due to timeout",
-      "attempts": 1,
+      "stage": "FILING_INDEX",
+      "reason": "fetch failed",
+      "attempts": 2,
       "checkedDate": "2026-10-14",
-      "checkedAt": "2026-10-14T05:18:17.566Z",
-      "nextRetryAt": "2026-10-14T05:23:17.566Z"
+      "checkedAt": "2026-10-14T05:38:57.600Z",
+      "nextRetryAt": "2026-10-14T05:48:57.600Z"
     },
     "2236|2026-06-30": {
       "status": "UNVERIFIED",
@@ -4938,12 +4938,12 @@
       "filingParserVersion": 3,
       "textParserVersion": 22,
       "filingFallback": null,
-      "stage": "PDF_DOWNLOAD",
-      "reason": "FINANCIAL_COLLECTION_BUDGET_EXHAUSTED",
-      "attempts": 1,
+      "stage": "FILING_INDEX",
+      "reason": "fetch failed",
+      "attempts": 2,
       "checkedDate": "2026-10-14",
-      "checkedAt": "2026-10-14T05:18:53.805Z",
-      "nextRetryAt": "2026-10-14T05:23:53.805Z"
+      "checkedAt": "2026-10-14T05:39:25.111Z",
+      "nextRetryAt": "2026-10-14T05:49:25.111Z"
     },
     "6244|2026-06-30": {
       "status": "VERIFIED",
@@ -5014,14 +5014,46 @@
       "checkedDate": "2026-10-14",
       "checkedAt": "2026-10-14T05:33:48.800Z",
       "nextRetryAt": "2026-10-14T05:38:48.800Z"
+    },
+    "6108|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-14",
+      "checkedAt": "2026-10-14T05:38:05.670Z"
+    },
+    "4923|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 3,
+      "textParserVersion": 22,
+      "filingFallback": null,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 1,
+      "checkedDate": "2026-10-14",
+      "checkedAt": "2026-10-14T05:38:33.605Z",
+      "nextRetryAt": "2026-10-15T05:38:33.605Z"
+    },
+    "6670|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 3,
+      "textParserVersion": 22,
+      "filingFallback": null,
+      "stage": "FILING_INDEX",
+      "reason": "fetch failed",
+      "attempts": 1,
+      "checkedDate": "2026-10-14",
+      "checkedAt": "2026-10-14T05:38:40.388Z",
+      "nextRetryAt": "2026-10-14T05:43:40.388Z"
     }
   },
   "ocrProgress": {
     "parserVersion": 20,
-    "pages": 3375
+    "pages": 3377
   },
-  "remaining": 117,
-  "ready": 5,
+  "remaining": 116,
+  "ready": 2,
   "continuationNeeded": true,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [
