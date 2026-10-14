@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-13",
-  "revision": "2026-10-14-132334",
+  "revision": "2026-10-14-132959",
   "strategyVersion": "entry-dual-track-v2.6",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
@@ -10,16 +10,16 @@
     "rankContractVersion": 2,
     "rankingMode": "RESEARCH_AND_TRADE_SPLIT",
     "screenedDeepDive": 639,
-    "evidenceCompleteDeepDive": 514,
-    "evidencePendingDeepDive": 125,
-    "researchRanked": 514,
+    "evidenceCompleteDeepDive": 517,
+    "evidencePendingDeepDive": 122,
+    "researchRanked": 517,
     "tradeEligibleRanked": 12,
     "reScreenOnEvidenceAdmission": true,
     "globalResearchComplete": false
   },
   "researchComplete": false,
   "evidencePending": {
-    "fundamental": 122,
+    "fundamental": 119,
     "history": 2,
     "credit": 4
   },
@@ -1114,6 +1114,12 @@
       ]
     },
     {
+      "code": "1210",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
       "code": "6284",
       "failures": [
         "REVENUE_DETERIORATION",
@@ -1636,11 +1642,11 @@
     "deepDiveStocks": 566,
     "deepDiveEtfs": 73,
     "screenedDeepDive": 639,
-    "evidenceCompleteDeepDive": 514,
-    "evidencePendingDeepDive": 125,
-    "researchRanked": 514,
+    "evidenceCompleteDeepDive": 517,
+    "evidencePendingDeepDive": 122,
+    "researchRanked": 517,
     "tradeEligibleRanked": 12,
-    "eligibleRanked": 514,
+    "eligibleRanked": 517,
     "eligibleRankedMeaning": "RESEARCH_EVIDENCE_COMPLETE",
     "creditReadyStocks": 562,
     "creditMissingCodes": [
@@ -1657,9 +1663,9 @@
         "name": "大聯大",
         "score": 95,
         "researchRank": 1,
-        "researchPercentile": 0.22675736961451248,
+        "researchPercentile": 0.22522522522522523,
         "tradeRank": 1,
-        "tradePercentile": 0.22675736961451248,
+        "tradePercentile": 0.22522522522522523,
         "decision": "WATCH",
         "strategy": "TREND_CONTINUATION",
         "reasonCodes": [
@@ -1671,9 +1677,9 @@
         "name": "神基",
         "score": 84.851,
         "researchRank": 2,
-        "researchPercentile": 0.45351473922902497,
+        "researchPercentile": 0.45045045045045046,
         "tradeRank": 2,
-        "tradePercentile": 0.45351473922902497,
+        "tradePercentile": 0.45045045045045046,
         "decision": "WATCH",
         "strategy": "TREND_CONTINUATION",
         "reasonCodes": [
@@ -1685,9 +1691,9 @@
         "name": "台泥",
         "score": 82.5265,
         "researchRank": 3,
-        "researchPercentile": 0.6802721088435374,
+        "researchPercentile": 0.6756756756756757,
         "tradeRank": 3,
-        "tradePercentile": 0.6802721088435374,
+        "tradePercentile": 0.6756756756756757,
         "decision": "WATCH",
         "strategy": "TREND_CONTINUATION",
         "reasonCodes": [
@@ -1699,7 +1705,7 @@
         "name": "佳必琪",
         "score": 80.3333,
         "researchRank": 4,
-        "researchPercentile": 0.9070294784580499,
+        "researchPercentile": 0.9009009009009009,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1714,9 +1720,9 @@
         "name": "欣銓",
         "score": 80.2526,
         "researchRank": 5,
-        "researchPercentile": 1.1337868480725624,
+        "researchPercentile": 1.1261261261261262,
         "tradeRank": 4,
-        "tradePercentile": 0.9070294784580499,
+        "tradePercentile": 0.9009009009009009,
         "decision": "WATCH",
         "strategy": "TREND_CONTINUATION",
         "reasonCodes": [
@@ -1728,9 +1734,9 @@
         "name": "欣興",
         "score": 78.9668,
         "researchRank": 6,
-        "researchPercentile": 1.3605442176870748,
+        "researchPercentile": 1.3513513513513513,
         "tradeRank": 5,
-        "tradePercentile": 1.1337868480725624,
+        "tradePercentile": 1.1261261261261262,
         "decision": "WATCH",
         "strategy": "TREND_CONTINUATION",
         "reasonCodes": [
@@ -1742,7 +1748,7 @@
         "name": "潤泰新",
         "score": 78.2595,
         "researchRank": 7,
-        "researchPercentile": 1.5873015873015872,
+        "researchPercentile": 1.5765765765765767,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1757,7 +1763,7 @@
         "name": "遠傳",
         "score": 77.6667,
         "researchRank": 8,
-        "researchPercentile": 1.8140589569160999,
+        "researchPercentile": 1.8018018018018018,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1772,7 +1778,7 @@
         "name": "同欣電",
         "score": 76.7333,
         "researchRank": 9,
-        "researchPercentile": 2.0408163265306123,
+        "researchPercentile": 2.027027027027027,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1788,7 +1794,7 @@
         "name": "中美晶",
         "score": 76.5636,
         "researchRank": 10,
-        "researchPercentile": 2.2675736961451247,
+        "researchPercentile": 2.2522522522522523,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1962,7 +1968,7 @@
     "macdHistogram": 0.020470164276798375,
     "atr14": 1.6107142857142864
   },
-  "conclusion": "2026-10-13全市場 2307 檔已完成初步篩選（普通股 1953、ETF 354），深度檢查 639 檔；其中 514 檔必要證據已齊並完成逐檔篩選，已有 514 檔進入研究排名、12 檔通過全部交易前置Gate進入可交易排名；125 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：財務證據 122檔、歷史行情 2檔、融資融券等信用資料 4檔。全市場研究尚未完成。普通股信用資料已核對 562/566 檔。財務證據完整但品質未通過 208 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-10-13全市場 2307 檔已完成初步篩選（普通股 1953、ETF 354），深度檢查 639 檔；其中 517 檔必要證據已齊並完成逐檔篩選，已有 517 檔進入研究排名、12 檔通過全部交易前置Gate進入可交易排名；122 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：財務證據 119檔、歷史行情 2檔、融資融券等信用資料 4檔。全市場研究尚未完成。普通股信用資料已核對 562/566 檔。財務證據完整但品質未通過 209 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [],
   "core": [
     {
@@ -2166,17 +2172,6 @@
       "officialDateEvidence": "1151013"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-14-132334",
-    "runId": "38515983928",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/38515983928",
-    "validatedCommit": "20e35ca6710006fdb0d7d8180156bcc9833d6f74"
-  },
-  "inputFingerprint": "bc2d98870a0b79405b121a6c4b8976dc031557e105362ce2ed3940b8d78da8a9"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "4cc818412632bfb058ed77305bbb8abda116311c268a4298247570cbbdd8dfcd"
 }
