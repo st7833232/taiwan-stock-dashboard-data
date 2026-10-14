@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-10-14",
+  "generatedAt": "2026-10-14T14:47:55.697Z",
+  "strategyVersion": "entry-dual-track-v2.6",
+  "researchInputPath": "raw/2026-10-14/research-input.json",
+  "researchInputBytes": 20439373,
+  "universeSummary": {
+    "total": 2306,
+    "stocks": 1952,
+    "etfs": 354,
+    "liquiditySelectionBasis": "MEDIAN_TURNOVER_20D",
+    "liquidityHistoryRequiredDays": 20,
+    "liquidityEvaluatedStocks": 1947,
+    "liquidityEvaluatedEtfs": 352,
+    "liquidMedian20dStocks": 567,
+    "liquidMedian20dEtfs": 75,
+    "preferredPriceAndLiquidMedian20dStocks": 352,
+    "currentDayTurnoverAboveThresholdStocks": 621,
+    "currentDayTurnoverAboveThresholdEtfs": 79,
+    "deepDiveScope": "ALL_LIQUID_STOCKS",
+    "deepDiveConfiguredLimit": null,
+    "deepDiveCount": 643,
+    "deepDiveStocks": 568,
+    "deepDiveEtfs": 75,
+    "trackedPriorCodes": 63
+  },
+  "historyCache": {
+    "asOf": "2026-10-14",
+    "verifiedTradingDays": 130,
+    "codesWith20Days": 2342,
+    "codesWith120Days": 2234,
+    "codesWith20InstitutionDays": 15261
+  },
+  "v2Readiness": {
+    "fullMarketCurrentSnapshot": true,
+    "dynamicUniverse": true,
+    "fixedTenCodeListRemoved": true,
+    "historicalFoldersAvailable": 24,
+    "historicalCacheTradingDays": 130,
+    "buyHistoryReadyCount": 629,
+    "institutional20dReadyCount": 643,
+    "marginShortLendingReadyCount": 639,
+    "securitiesLendingReadyCount": 181,
+    "fundamentalReadyCount": 556,
+    "sourceAEventCoverageCount": 643,
+    "tdccReadyCount": 643,
+    "etfProfileReadyCount": 29,
+    "etfCoreEligibleCount": 2,
+    "note": "BUY remains fail-closed for any required evidence that is not point-in-time verifiable. Stocks and ETFs use separate machine-readable profiles; ETF readiness is derived only from official exchange security identity and official rolling OHLCV history."
+  }
+}
