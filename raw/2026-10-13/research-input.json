@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "targetDate": "2026-10-13",
-  "generatedAt": "2026-10-14T05:21:56.258Z",
+  "generatedAt": "2026-10-14T05:36:26.231Z",
   "strategyVersion": "entry-dual-track-v2.6",
   "simulation": {
     "simulatedTodayDate": null
@@ -9,7 +9,7 @@
   "gateMatrix": {
     "targetDate": "2026-10-13",
     "timezone": "Asia/Taipei",
-    "generatedAt": "2026-10-14T05:21:37.259Z",
+    "generatedAt": "2026-10-14T05:36:14.933Z",
     "simulatedTodayDate": null,
     "effectiveTodayDate": "2026-10-14",
     "overallStatus": "PASS",
@@ -305,7 +305,7 @@
         "kind": "margin-short",
         "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/10/13",
         "targetDate": "2026-10-13",
-        "capturedAt": "2026-10-14T05:21:36.501Z",
+        "capturedAt": "2026-10-14T05:36:13.511Z",
         "status": "VERIFY_FAILED",
         "simulatedTodayDate": null,
         "httpStatus": 200,
@@ -402,7 +402,7 @@
         "kind": "material-information",
         "url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
         "targetDate": "2026-10-13",
-        "capturedAt": "2026-10-14T05:21:37.076Z",
+        "capturedAt": "2026-10-14T05:36:14.805Z",
         "status": "NOT_CAPTURED_RETROSPECTIVE",
         "simulatedTodayDate": null,
         "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
@@ -414,7 +414,7 @@
         "kind": "material-information",
         "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
         "targetDate": "2026-10-13",
-        "capturedAt": "2026-10-14T05:21:37.076Z",
+        "capturedAt": "2026-10-14T05:36:14.805Z",
         "status": "NOT_CAPTURED_RETROSPECTIVE",
         "simulatedTodayDate": null,
         "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
