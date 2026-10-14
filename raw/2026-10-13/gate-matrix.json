@@ -1,10 +1,10 @@
 {
   "targetDate": "2026-10-13",
   "timezone": "Asia/Taipei",
-  "generatedAt": "2026-10-14T01:56:57.486Z",
+  "generatedAt": "2026-10-14T05:05:29.955Z",
   "simulatedTodayDate": null,
   "effectiveTodayDate": "2026-10-14",
-  "overallStatus": "VERIFY_FAILED",
+  "overallStatus": "PASS",
   "requiredGates": [
     "twse-daily-close-quotes",
     "twse-market-close-statistics",
@@ -36,11 +36,9 @@
     },
     {
       "gate": "twse-individual-institutional",
-      "status": "VERIFY_FAILED",
-      "sources": [
-        "twse-t86"
-      ],
-      "note": "No official source produced affirmative target-date evidence in this run or a preserved prior PASS."
+      "status": "PASS",
+      "source": "twse-t86",
+      "officialDateEvidence": "20261013"
     },
     {
       "gate": "tpex-daily-close-quotes",
@@ -126,12 +124,14 @@
       "kind": "individual-institutional",
       "url": "https://www.twse.com.tw/rwd/zh/fund/T86?date=20261013&selectType=ALL&response=json",
       "targetDate": "2026-10-13",
-      "capturedAt": "2026-10-14T01:56:23.613Z",
-      "status": "VERIFY_FAILED",
+      "capturedAt": "2026-10-14T05:05:17.513Z",
+      "status": "PASS",
       "simulatedTodayDate": null,
       "httpStatus": 200,
       "contentType": "application/json;charset=UTF-8",
-      "error": "The operation was aborted due to timeout"
+      "bytes": 2582292,
+      "officialDateEvidence": "20261013",
+      "rowCount": 20039
     },
     {
       "source": "tpex-mainboard-daily-close-quotes",
@@ -250,7 +250,8 @@
       "bytes": 129408,
       "officialDateEvidence": "20261013",
       "rowCount": 1299,
-      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+      "preservedCapture": true
     },
     {
       "source": "twse-margin-trading-legacy",
@@ -267,7 +268,8 @@
       "bytes": 129408,
       "officialDateEvidence": "20261013",
       "rowCount": 1299,
-      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+      "preservedCapture": true
     },
     {
       "source": "tpex-margin-balance",
@@ -294,7 +296,7 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/10/13",
       "targetDate": "2026-10-13",
-      "capturedAt": "2026-10-14T01:56:56.735Z",
+      "capturedAt": "2026-10-14T05:05:27.401Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -391,7 +393,7 @@
       "kind": "material-information",
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
       "targetDate": "2026-10-13",
-      "capturedAt": "2026-10-14T01:56:57.287Z",
+      "capturedAt": "2026-10-14T05:05:29.765Z",
       "status": "NOT_CAPTURED_RETROSPECTIVE",
       "simulatedTodayDate": null,
       "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
@@ -403,7 +405,7 @@
       "kind": "material-information",
       "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
       "targetDate": "2026-10-13",
-      "capturedAt": "2026-10-14T01:56:57.287Z",
+      "capturedAt": "2026-10-14T05:05:29.765Z",
       "status": "NOT_CAPTURED_RETROSPECTIVE",
       "simulatedTodayDate": null,
       "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
