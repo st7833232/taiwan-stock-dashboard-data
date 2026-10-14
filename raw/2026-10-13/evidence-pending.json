@@ -2,7 +2,7 @@
   "targetDate": "2026-10-13",
   "researchComplete": false,
   "counts": {
-    "fundamental": 117,
+    "fundamental": 115,
     "history": 2,
     "credit": 4
   },
@@ -75,7 +75,6 @@
       "2033",
       "3518",
       "6716",
-      "2236",
       "2402",
       "3048",
       "4147",
@@ -123,8 +122,7 @@
       "3587",
       "6435",
       "6231",
-      "3592",
-      "6670"
+      "3592"
     ],
     "history": [
       "3718",
@@ -1185,6 +1183,12 @@
       "code": "2401",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2236",
+      "failures": [
+        "PROFIT_DETERIORATION"
       ]
     },
     {

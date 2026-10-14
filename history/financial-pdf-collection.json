@@ -4923,25 +4923,31 @@
     "filingParserVersion": 3,
     "textParserVersion": 22,
     "filingFallback": null,
-    "stage": "FILING_INDEX",
-    "reason": "fetch failed",
-    "attempts": 2,
+    "stage": "PDF_METRICS",
+    "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+    "attempts": 3,
     "checkedDate": "2026-10-14",
-    "checkedAt": "2026-10-14T05:38:57.600Z",
-    "nextRetryAt": "2026-10-14T05:48:57.600Z"
+    "checkedAt": "2026-10-14T05:58:47.931Z",
+    "nextRetryAt": "2026-10-15T05:58:47.931Z"
   },
   "2236|2026-06-30": {
-    "status": "UNVERIFIED",
+    "status": "VERIFIED",
     "parserVersion": 2,
-    "filingParserVersion": 3,
-    "textParserVersion": 22,
-    "filingFallback": null,
-    "stage": "FILING_INDEX",
-    "reason": "fetch failed",
-    "attempts": 2,
     "checkedDate": "2026-10-14",
-    "checkedAt": "2026-10-14T05:39:25.111Z",
-    "nextRetryAt": "2026-10-14T05:49:25.111Z"
+    "checkedAt": "2026-10-14T05:59:41.336Z",
+    "lastUnverifiedAttempt": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 3,
+      "textParserVersion": 22,
+      "filingFallback": null,
+      "stage": "FILING_INDEX",
+      "reason": "fetch failed",
+      "attempts": 2,
+      "checkedDate": "2026-10-14",
+      "checkedAt": "2026-10-14T05:39:25.111Z",
+      "nextRetryAt": "2026-10-14T05:49:25.111Z"
+    }
   },
   "6244|2026-06-30": {
     "status": "VERIFIED",
@@ -5039,16 +5045,22 @@
     "nextRetryAt": "2026-10-15T05:38:33.605Z"
   },
   "6670|2026-06-30": {
-    "status": "UNVERIFIED",
+    "status": "VERIFIED",
     "parserVersion": 2,
-    "filingParserVersion": 3,
-    "textParserVersion": 22,
-    "filingFallback": null,
-    "stage": "FILING_INDEX",
-    "reason": "fetch failed",
-    "attempts": 1,
     "checkedDate": "2026-10-14",
-    "checkedAt": "2026-10-14T05:38:40.388Z",
-    "nextRetryAt": "2026-10-14T05:43:40.388Z"
+    "checkedAt": "2026-10-14T05:57:23.965Z",
+    "lastUnverifiedAttempt": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 3,
+      "textParserVersion": 22,
+      "filingFallback": null,
+      "stage": "FILING_INDEX",
+      "reason": "fetch failed",
+      "attempts": 1,
+      "checkedDate": "2026-10-14",
+      "checkedAt": "2026-10-14T05:38:40.388Z",
+      "nextRetryAt": "2026-10-14T05:43:40.388Z"
+    }
   }
 }
