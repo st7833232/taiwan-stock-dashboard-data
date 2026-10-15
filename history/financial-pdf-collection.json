@@ -125,12 +125,12 @@
     "filingParserVersion": 3,
     "textParserVersion": 22,
     "filingFallback": null,
-    "stage": "PDF_METRICS",
-    "reason": "PDF_OCR_REVIEW_PENDING",
-    "attempts": 1,
+    "stage": "FILING_INDEX",
+    "reason": "fetch failed",
+    "attempts": 2,
     "checkedDate": "2026-10-15",
-    "checkedAt": "2026-10-15T14:52:42.801Z",
-    "nextRetryAt": "2026-10-15T14:57:42.801Z"
+    "checkedAt": "2026-10-15T15:02:13.226Z",
+    "nextRetryAt": "2026-10-15T15:12:13.226Z"
   },
   "1513|2026-06-30": {
     "status": "UNVERIFIED",
@@ -5112,17 +5112,23 @@
     "checkedAt": "2026-10-15T14:38:23.572Z"
   },
   "2515|2026-06-30": {
-    "status": "UNVERIFIED",
+    "status": "VERIFIED",
     "parserVersion": 2,
-    "filingParserVersion": 3,
-    "textParserVersion": 22,
-    "filingFallback": null,
-    "stage": "PDF_METRICS",
-    "reason": "PDF_OCR_REVIEW_PENDING",
-    "attempts": 2,
     "checkedDate": "2026-10-15",
-    "checkedAt": "2026-10-15T14:46:01.297Z",
-    "nextRetryAt": "2026-10-15T14:56:01.297Z"
+    "checkedAt": "2026-10-15T15:01:37.269Z",
+    "lastUnverifiedAttempt": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 3,
+      "textParserVersion": 22,
+      "filingFallback": null,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 2,
+      "checkedDate": "2026-10-15",
+      "checkedAt": "2026-10-15T14:46:01.297Z",
+      "nextRetryAt": "2026-10-15T14:56:01.297Z"
+    }
   },
   "6234|2026-06-30": {
     "status": "UNVERIFIED",
