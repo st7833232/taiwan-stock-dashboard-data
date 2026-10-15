@@ -5139,16 +5139,16 @@
       "textParserVersion": 22,
       "filingFallback": null,
       "stage": "PDF_METRICS",
-      "reason": "PDF_OCR_REVIEW_PENDING",
-      "attempts": 3,
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 4,
       "checkedDate": "2026-10-15",
-      "checkedAt": "2026-10-15T15:08:34.712Z",
-      "nextRetryAt": "2026-10-15T15:28:34.712Z"
+      "checkedAt": "2026-10-15T15:29:19.183Z",
+      "nextRetryAt": "2026-10-16T15:29:19.183Z"
     }
   },
   "ocrProgress": {
     "parserVersion": 20,
-    "pages": 3584
+    "pages": 3598
   },
   "remaining": 111,
   "ready": 0,
