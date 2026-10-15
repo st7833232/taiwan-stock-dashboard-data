@@ -690087,14 +690087,14 @@
         }
       },
       "financialAssessment": {
-        "status": "UNVERIFIED",
-        "verified": false,
+        "status": "FAIL",
+        "verified": true,
         "qualityPass": false,
-        "pending": [
-          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
-        ],
+        "pending": [],
         "failures": [
-          "PROFIT_QUALITY_FAILED"
+          "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+          "PROFIT_QUALITY_FAILED",
+          "REVENUE_DETERIORATION"
         ],
         "metrics": {
           "revenue": 6759902,
@@ -690111,14 +690111,15 @@
           "operatingMargin": -0.20421627414125235,
           "liabilityAssetRatio": 0.4993213734241842,
           "currentRatio": 1.2587696440313654,
-          "revenueYoY": null,
+          "revenueYoY": -0.1809783089380067,
           "netProfitYoY": null
         },
         "periodEnd": "2026-06-30",
         "basis": "YEAR_TO_DATE",
         "sources": [
           "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-          "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+          "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+          "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=2104&year=114&seamon=&mtype=A&check2858=Y"
         ]
       },
       "eventAssessment": {
@@ -691865,13 +691866,13 @@
         }
       },
       "financialAssessment": {
-        "status": "UNVERIFIED",
-        "verified": false,
+        "status": "FAIL",
+        "verified": true,
         "qualityPass": false,
-        "pending": [
-          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
+        "pending": [],
+        "failures": [
+          "COMPARATIVE_GROWTH_NOT_APPLICABLE"
         ],
-        "failures": [],
         "metrics": {
           "revenue": 5149797,
           "grossProfit": 738489,
@@ -691887,14 +691888,15 @@
           "operatingMargin": 0.05049344663488677,
           "liabilityAssetRatio": 0.461635232791976,
           "currentRatio": 2.4597772177840307,
-          "revenueYoY": null,
+          "revenueYoY": 1.4180697502105915,
           "netProfitYoY": null
         },
         "periodEnd": "2026-06-30",
         "basis": "YEAR_TO_DATE",
         "sources": [
           "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_ci",
-          "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci"
+          "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci",
+          "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=3691&year=114&seamon=&mtype=A&check2858=Y"
         ]
       },
       "eventAssessment": {
@@ -693701,12 +693703,10 @@
         }
       },
       "financialAssessment": {
-        "status": "UNVERIFIED",
-        "verified": false,
-        "qualityPass": false,
-        "pending": [
-          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
-        ],
+        "status": "PASS",
+        "verified": true,
+        "qualityPass": true,
+        "pending": [],
         "failures": [],
         "metrics": {
           "revenue": 2534861,
@@ -693723,14 +693723,15 @@
           "operatingMargin": 0.13923564250663054,
           "liabilityAssetRatio": 0.2483613538302713,
           "currentRatio": 2.519235157334761,
-          "revenueYoY": null,
-          "netProfitYoY": null
+          "revenueYoY": 0.16113497892206863,
+          "netProfitYoY": 0.37901784263381977
         },
         "periodEnd": "2026-06-30",
         "basis": "YEAR_TO_DATE",
         "sources": [
           "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_ci",
-          "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci"
+          "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci",
+          "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=6175&year=114&seamon=&mtype=A&check2858=Y"
         ]
       },
       "eventAssessment": {
@@ -693780,8 +693781,8 @@
       "verifiedEvidence": {
         "tdcc": true,
         "tdccScoreFraction": 0,
-        "fundamental": false,
-        "fundamentalScoreFraction": 0,
+        "fundamental": true,
+        "fundamentalScoreFraction": 0.6666666666666666,
         "eventRisk": true,
         "corporateAction": true
       }
