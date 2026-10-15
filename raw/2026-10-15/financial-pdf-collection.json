@@ -5119,12 +5119,12 @@
       "filingParserVersion": 3,
       "textParserVersion": 22,
       "filingFallback": null,
-      "stage": "FILING_INDEX",
-      "reason": "fetch failed",
-      "attempts": 1,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_OCR_REVIEW_PENDING",
+      "attempts": 2,
       "checkedDate": "2026-10-15",
-      "checkedAt": "2026-10-15T14:38:38.759Z",
-      "nextRetryAt": "2026-10-15T14:43:38.759Z"
+      "checkedAt": "2026-10-15T14:46:01.297Z",
+      "nextRetryAt": "2026-10-15T14:56:01.297Z"
     },
     "6234|2026-06-30": {
       "status": "UNVERIFIED",
@@ -5142,11 +5142,11 @@
   },
   "ocrProgress": {
     "parserVersion": 20,
-    "pages": 3493
+    "pages": 3513
   },
   "remaining": 112,
-  "ready": 0,
-  "continuationNeeded": false,
+  "ready": 1,
+  "continuationNeeded": true,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [
     "9105",
