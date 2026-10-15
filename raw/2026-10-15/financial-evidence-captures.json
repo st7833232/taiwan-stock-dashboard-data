@@ -2,13 +2,6 @@
   "targetDate": "2026-10-15",
   "captures": [
     {
-      "market": "TWSE",
-      "kind": "discovery",
-      "url": "https://openapi.twse.com.tw/v1/swagger.json",
-      "status": "VERIFY_FAILED",
-      "error": "fetch failed"
-    },
-    {
       "id": "twse-events-L",
       "market": "TWSE",
       "kind": "events",
