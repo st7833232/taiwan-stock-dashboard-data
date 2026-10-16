@@ -1,0 +1,461 @@
+{
+  "asOf": "2026-10-16",
+  "experimentTitle": "20 萬虛擬操作實驗｜20個交易日",
+  "statusLabel": "20日試驗進度10/20；研究資料未核對完成10天，這些天不算「市場沒有買點」。資料流程已達檢討門檻，須優先修復。",
+  "description": "與真實庫存完全分開。只以決策當下可取得的資料形成紀錄，並以事先寫明的成交規則進行模擬。",
+  "initialCash": 200000,
+  "cash": 159938.19316,
+  "currency": "TWD",
+  "rule": "現股／ETF、無槓桿；新單依strategy-config風控：單股10%、產業20%、總曝險50%；既有持倉超限不事後改寫成交。個股賣出稅0.3%、ETF 0.1%，買賣手續費沿用0.1425%。",
+  "positions": [
+    {
+      "code": "1513",
+      "name": "中興電",
+      "shares": 150,
+      "averageCost": 166.06964583333334,
+      "lastPrice": 165
+    },
+    {
+      "code": "4961",
+      "name": "天鈺",
+      "shares": 50,
+      "averageCost": 183.06049,
+      "lastPrice": 190
+    },
+    {
+      "code": "9945",
+      "name": "潤泰新",
+      "shares": 201,
+      "averageCost": 29.842465,
+      "lastPrice": 29.7
+    }
+  ],
+  "ledger": [
+    {
+      "date": "2026-09-02",
+      "status": "買進成交",
+      "code": "1513",
+      "name": "中興電",
+      "side": "buy",
+      "shares": 100,
+      "price": 166.5,
+      "fee": 23.72625,
+      "tax": 0,
+      "rationale": "9/1既有委託依官方開盤價成交。"
+    },
+    {
+      "date": "2026-09-09",
+      "status": "買進成交",
+      "code": "1513",
+      "name": "中興電",
+      "side": "buy",
+      "shares": 50,
+      "price": 164.5,
+      "fee": 11.720625,
+      "tax": 0,
+      "rationale": "9/8既有委託依官方開盤價成交。"
+    },
+    {
+      "date": "2026-09-16",
+      "status": "買進成交",
+      "code": "4961",
+      "name": "天鈺",
+      "side": "buy",
+      "shares": 30,
+      "route": "breakout",
+      "price": 181,
+      "fee": 7.73775,
+      "tax": 0,
+      "rationale": "9/15既有breakout stop-entry條件成立。"
+    },
+    {
+      "date": "2026-09-17",
+      "status": "買進成交",
+      "code": "4961",
+      "name": "天鈺",
+      "side": "buy",
+      "shares": 20,
+      "route": "breakout",
+      "price": 185.5,
+      "fee": 5.28675,
+      "tax": 0,
+      "rationale": "9/16既有breakout stop-entry條件成立。"
+    },
+    {
+      "date": "2026-09-18",
+      "status": "條件未成立／取消",
+      "code": "2303",
+      "name": "聯電",
+      "side": "buy",
+      "shares": 30,
+      "route": "pullback",
+      "fee": 0,
+      "tax": 0,
+      "rationale": "9/17既有pullback要求官方開盤144–146元；9/18官方開盤155元，高於上限146元，因此取消。"
+    },
+    {
+      "date": "2026-09-18",
+      "status": "條件未成立／取消",
+      "code": "2303",
+      "name": "聯電",
+      "side": "buy",
+      "shares": 20,
+      "route": "breakout",
+      "fee": 0,
+      "tax": 0,
+      "rationale": "9/17既有breakout的maxChase為153元；9/18官方開盤155元高於maxChase，依規則取消且不得追價。"
+    },
+    {
+      "date": "2026-09-18",
+      "status": "條件未成立／取消",
+      "code": "4961",
+      "name": "天鈺",
+      "side": "buy",
+      "shares": 30,
+      "route": "pullback",
+      "fee": 0,
+      "tax": 0,
+      "rationale": "9/17既有pullback要求官方開盤179–181元；9/18官方開盤184元，高於181元，因此取消。"
+    },
+    {
+      "date": "2026-09-18",
+      "status": "條件未觸發／取消",
+      "code": "4961",
+      "name": "天鈺",
+      "side": "buy",
+      "shares": 20,
+      "route": "breakout",
+      "fee": 0,
+      "tax": 0,
+      "rationale": "pullback未成交；9/18官方開盤184元低於186.5元trigger，最高184元亦未達186.5元，因此breakout未觸發。"
+    },
+    {
+      "date": "2026-09-21",
+      "status": "條件未成立／取消",
+      "code": "2441",
+      "name": "超豐",
+      "side": "buy",
+      "shares": 160,
+      "route": "breakout",
+      "fee": 0,
+      "tax": 0,
+      "rationale": "9/18既有BREAKOUT委託maxChase為124.4214285714元；9/21官方開盤125元高於maxChase，依規則整筆取消且不得追價。"
+    },
+    {
+      "date": "2026-09-29",
+      "status": "無既有委託",
+      "fee": 0,
+      "tax": 0,
+      "rationale": "前一正式帳戶 2026-09-24 的 nextOrders=[]；當日沒有可執行委託。僅按官方收盤評價持倉。",
+      "shares": 0
+    },
+    {
+      "date": "2026-09-30",
+      "status": "無既有委託",
+      "shares": 0,
+      "fee": 0,
+      "tax": 0,
+      "rationale": "前一正式帳戶 2026-09-29 的 nextOrders=[]；當日沒有可執行委託。僅按官方收盤評價持倉。"
+    },
+    {
+      "date": "2026-10-01",
+      "status": "無既有委託",
+      "shares": 0,
+      "fee": 0,
+      "tax": 0,
+      "rationale": "前一正式帳戶 2026-09-30 的 nextOrders=[]；當日沒有可執行委託。僅按官方收盤評價持倉。"
+    },
+    {
+      "date": "2026-10-05",
+      "status": "無既有委託",
+      "shares": 0,
+      "fee": 0,
+      "tax": 0,
+      "rationale": "前一正式帳戶 2026-10-01 的 nextOrders=[]；當日沒有可執行委託。僅按官方收盤評價持倉。"
+    },
+    {
+      "date": "2026-10-06",
+      "status": "無既有委託",
+      "shares": 0,
+      "fee": 0,
+      "tax": 0,
+      "rationale": "前一正式帳戶 2026-10-05 的 nextOrders=[]；當日沒有可執行委託。僅按官方收盤評價持倉。"
+    },
+    {
+      "date": "2026-10-07",
+      "status": "無既有委託",
+      "shares": 0,
+      "fee": 0,
+      "tax": 0,
+      "rationale": "前一正式帳戶 2026-10-06 的 nextOrders=[]；當日沒有可執行委託。僅按官方收盤評價持倉。"
+    },
+    {
+      "date": "2026-10-08",
+      "status": "無既有委託",
+      "shares": 0,
+      "fee": 0,
+      "tax": 0,
+      "rationale": "前一正式帳戶 2026-10-07 的 nextOrders=[]；當日沒有可執行委託。僅按官方收盤評價持倉。"
+    },
+    {
+      "date": "2026-10-12",
+      "status": "模擬買進成交",
+      "code": "9945",
+      "name": "潤泰新",
+      "side": "buy",
+      "shares": 201,
+      "price": 29.8,
+      "fee": 8.535465,
+      "tax": 0,
+      "mutualExclusionGroup": "2026-10-08-9945",
+      "rationale": "依 2026-10-08 已提交機械委託與正式OHLC，Open風控重算通過；僅為paper成交。"
+    },
+    {
+      "date": "2026-10-13",
+      "status": "無既有委託",
+      "shares": 0,
+      "fee": 0,
+      "tax": 0,
+      "rationale": "前一正式帳戶 2026-10-12 的 nextOrders=[]；當日沒有可執行委託。僅按官方收盤評價持倉。"
+    },
+    {
+      "date": "2026-10-14",
+      "status": "無既有委託",
+      "shares": 0,
+      "fee": 0,
+      "tax": 0,
+      "rationale": "前一正式帳戶 2026-10-13 的 nextOrders=[]；當日沒有可執行委託。僅按官方收盤評價持倉。"
+    },
+    {
+      "date": "2026-10-15",
+      "status": "無既有委託",
+      "shares": 0,
+      "fee": 0,
+      "tax": 0,
+      "rationale": "前一正式帳戶 2026-10-14 的 nextOrders=[]；當日沒有可執行委託。僅按官方收盤評價持倉。"
+    },
+    {
+      "date": "2026-10-16",
+      "status": "無既有委託",
+      "shares": 0,
+      "fee": 0,
+      "tax": 0,
+      "rationale": "前一正式帳戶 2026-10-15 的 nextOrders=[]；當日沒有可執行委託。僅按官方收盤評價持倉。"
+    }
+  ],
+  "rationale": [
+    {
+      "title": "無前視偏誤",
+      "detail": "僅讀前一正式帳戶 2026-10-15 的 nextOrders；今日新研究不產生今日成交。"
+    },
+    {
+      "title": "逐檔信用與研究證據",
+      "detail": "未驗證欄位保留缺項；ETF與普通股分流，不以ETF覆蓋普通股信用證據。"
+    },
+    {
+      "title": "固定期間驗收",
+      "detail": "20日試驗進度10/20；研究資料未核對完成10天，這些天不算「市場沒有買點」。資料流程已達檢討門檻，須優先修復。"
+    },
+    {
+      "title": "期間驗收指標",
+      "detail": "試驗期間成交1筆；研究未完成10天；研究完成但無新委託0天。期間報酬-0.014%；最大回撤0.244%。"
+    },
+    {
+      "title": "第5個交易日檢查",
+      "detail": "截至2026-10-08，成交0筆，研究資料未完成5天；期間報酬-0.150%。"
+    },
+    {
+      "title": "第10個交易日檢查",
+      "detail": "截至2026-10-16，成交1筆，研究資料未完成10天；期間報酬-0.014%。"
+    }
+  ],
+  "nextOrders": [],
+  "benchmark": {
+    "date": "2026-10-16",
+    "accountReturn": 0.10763083991660594,
+    "cumulativeAccountReturn": 0.07894657999998334,
+    "etfCode": "0050",
+    "etfReturn": 0.09182736455464191,
+    "accountBaseDate": "2026-10-15",
+    "accountBaseEquity": 199942.69316,
+    "method": "Account percent return since previous published valuation; cumulative return from initial cash; ETF daily percent return from verified official OHLCV.",
+    "taiexReturn": 0.3
+  },
+  "monitorCodes": [
+    "3016",
+    "9945",
+    "1609",
+    "1727",
+    "2030",
+    "3045",
+    "1513",
+    "4961",
+    "0050",
+    "006208",
+    "00981A"
+  ],
+  "sourceNote": "2026-10-16官方Gate PASS；維持既有帳簿費率與成本；當日無委託，未新增任何真實或模擬交易。",
+  "note": "本區用於檢驗研究流程，不代表保證報酬或真實下單。任何新交易都必須先存在於上一版nextOrders。",
+  "equity": 200157.89315999998,
+  "marketValue": 40219.69999999998,
+  "riskCheck": {
+    "pass": false,
+    "reasons": [
+      "SECTOR_EXPOSURE_LIMIT",
+      "ACCOUNT_EQUITY_HISTORY_UNVERIFIED"
+    ],
+    "warnings": [
+      "EXISTING_POSITION_CONCENTRATION"
+    ],
+    "concentrationWarnings": [
+      {
+        "code": "1513",
+        "exposurePct": 12.365238067436902,
+        "limitPct": 10
+      }
+    ],
+    "equity": 200157.89315999998,
+    "exposurePct": 20.09398648488452,
+    "sectorMethod": "ALL_HOLDINGS_ONE_CORRELATED_BUCKET"
+  },
+  "experiment": {
+    "id": "paper-20td-2026-10-01",
+    "status": "ACTIVE",
+    "startDate": "2026-10-01",
+    "plannedEndDate": "2026-10-30",
+    "durationTradingDays": 20,
+    "reviewEveryTradingDays": 5,
+    "completedTradingDays": 10,
+    "tradingDates": [
+      "2026-10-01",
+      "2026-10-05",
+      "2026-10-06",
+      "2026-10-07",
+      "2026-10-08",
+      "2026-10-12",
+      "2026-10-13",
+      "2026-10-14",
+      "2026-10-15",
+      "2026-10-16"
+    ],
+    "baselineDate": "2026-09-30",
+    "baselineEquity": 200186.528625,
+    "dailyMarks": [
+      {
+        "date": "2026-10-01",
+        "equity": 200211.528625,
+        "researchComplete": false,
+        "plannedOrders": 0,
+        "filledTrades": 0
+      },
+      {
+        "date": "2026-10-05",
+        "equity": 200111.528625,
+        "researchComplete": false,
+        "plannedOrders": 0,
+        "filledTrades": 0
+      },
+      {
+        "date": "2026-10-06",
+        "equity": 200261.528625,
+        "researchComplete": false,
+        "plannedOrders": 0,
+        "filledTrades": 0
+      },
+      {
+        "date": "2026-10-07",
+        "equity": 200086.528625,
+        "researchComplete": false,
+        "plannedOrders": 0,
+        "filledTrades": 0
+      },
+      {
+        "date": "2026-10-08",
+        "equity": 199886.528625,
+        "researchComplete": false,
+        "plannedOrders": 1,
+        "filledTrades": 0
+      },
+      {
+        "date": "2026-10-12",
+        "equity": 200033.14315999998,
+        "researchComplete": false,
+        "plannedOrders": 0,
+        "filledTrades": 1
+      },
+      {
+        "date": "2026-10-13",
+        "equity": 199772.34316,
+        "researchComplete": false,
+        "plannedOrders": 0,
+        "filledTrades": 0
+      },
+      {
+        "date": "2026-10-14",
+        "equity": 200262.54316,
+        "researchComplete": false,
+        "plannedOrders": 0,
+        "filledTrades": 0
+      },
+      {
+        "date": "2026-10-15",
+        "equity": 199942.69316,
+        "researchComplete": false,
+        "plannedOrders": 0,
+        "filledTrades": 0
+      },
+      {
+        "date": "2026-10-16",
+        "equity": 200157.89315999998,
+        "researchComplete": false,
+        "plannedOrders": 0,
+        "filledTrades": 0
+      }
+    ],
+    "reviews": [
+      {
+        "tradingDay": 5,
+        "date": "2026-10-08",
+        "valuedDays": 5,
+        "evidenceBlockedDays": 5,
+        "filledTrades": 0,
+        "returnPct": -0.14986023388315894
+      },
+      {
+        "tradingDay": 10,
+        "date": "2026-10-16",
+        "valuedDays": 10,
+        "evidenceBlockedDays": 10,
+        "filledTrades": 1,
+        "returnPct": -0.014304391607522504
+      }
+    ],
+    "metrics": {
+      "filledTrades": 1,
+      "evidenceBlockedDays": 10,
+      "noNewOrderDays": 0,
+      "returnPct": -0.014304391607522504,
+      "maxDrawdownPct": 0.24427331018532358,
+      "valuationCoverageComplete": true,
+      "missingValuationDates": []
+    },
+    "processReviewRequired": true,
+    "summary": "20日試驗進度10/20；研究資料未核對完成10天，這些天不算「市場沒有買點」。資料流程已達檢討門檻，須優先修復。"
+  },
+  "marketTrendForecast": {
+    "verified": true,
+    "proxyCode": "0050",
+    "phase": "NEUTRAL",
+    "targetExposurePct": 0,
+    "overextended": false,
+    "close": 109,
+    "ma20": 111.845,
+    "ma60": 106.93,
+    "ma120": 104.06583333333329,
+    "ma20Slope5d": 0.15049999999999955,
+    "ma60Slope5d": 0.1388333333333378,
+    "rsi14": 41.0094637223975,
+    "macdHistogram": -0.7074459412022032,
+    "atr14": 1.6607142857142847
+  }
+}

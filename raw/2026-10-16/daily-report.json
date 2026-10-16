@@ -1,0 +1,1842 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-10-16",
+  "revision": "2026-10-16-222732",
+  "strategyVersion": "entry-dual-track-v2.6",
+  "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
+  "screeningComplete": true,
+  "incrementalScreening": {
+    "mode": "PER_SECURITY_INCREMENTAL",
+    "rankContractVersion": 2,
+    "rankingMode": "RESEARCH_AND_TRADE_SPLIT",
+    "screenedDeepDive": 467,
+    "evidenceCompleteDeepDive": 388,
+    "evidencePendingDeepDive": 79,
+    "researchRanked": 388,
+    "tradeEligibleRanked": 4,
+    "reScreenOnEvidenceAdmission": true,
+    "globalResearchComplete": false
+  },
+  "researchComplete": false,
+  "evidencePending": {
+    "fundamental": 75,
+    "credit": 1,
+    "history": 3
+  },
+  "fundamentalQualityRejected": [
+    {
+      "code": "2409",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2344",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6505",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2426",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2881",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2882",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2887",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2891",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "1326",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "1301",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6456",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2883",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2484",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2464",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2885",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "1802",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2609",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2884",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2340",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "2886",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "3035",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2890",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "6834",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2377",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2892",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2618",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2305",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "4938",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3715",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "5871",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3714",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "2880",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2801",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2002",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4977",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "5880",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "6116",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "2834",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "6226",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "2354",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1314",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6168",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "2363",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3673",
+      "failures": [
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "3376",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4906",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3717",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "OFFICIAL_GOVERNANCE_WARNING"
+      ]
+    },
+    {
+      "code": "4763",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "9904",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3014",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2610",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2474",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3019",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "5876",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2399",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "2316",
+      "failures": [
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "6668",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "6919",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1409",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "1102",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2812",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2855",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2385",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4927",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2312",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3576",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "8110",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "4961",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1312",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "2367",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6005",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2413",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6282",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2359",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "1718",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "OFFICIAL_GOVERNANCE_WARNING",
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "1711",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2388",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "2338",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2241",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "1528",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "4566",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2889",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "6269",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "2006",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6949",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4915",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "9933",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6191",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2332",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "2485",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "5469",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6443",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "8131",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6176",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4960",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2851",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2406",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3701",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3543",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3504",
+      "failures": [
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "3031",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4540",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "1722",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1710",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1319",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "9914",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "9921",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "8422",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4739",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2845",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2915",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6719",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2392",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2328",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1229",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "9910",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3704",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6224",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3535",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3229",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "9941",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2236",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1215",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2201",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3380",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "2646",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2401",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "1210",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2233",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4526",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6108",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "2504",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3138",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "8114",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2104",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2454",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1303",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2408",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3661",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2449",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3450",
+      "failures": [
+        "PROFIT_DETERIORATION",
+        "OFFICIAL_GOVERNANCE_WARNING"
+      ]
+    },
+    {
+      "code": "6531",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3006",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2357",
+      "failures": [
+        "OFFICIAL_GOVERNANCE_WARNING"
+      ]
+    },
+    {
+      "code": "2379",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2603",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3034",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6715",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6426",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "1519",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2486",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6451",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6533",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "7799",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "5434",
+      "failures": [
+        "OFFICIAL_GOVERNANCE_WARNING"
+      ]
+    },
+    {
+      "code": "1477",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2466",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "OFFICIAL_GOVERNANCE_WARNING"
+      ]
+    },
+    {
+      "code": "6472",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3413",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2207",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "8081",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "8454",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    }
+  ],
+  "historyQualityRejected": [
+    {
+      "code": "00406A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-06-11",
+      "availableTradingDays": 86,
+      "verifiedTradingDays": 86,
+      "maximumPossibleTradingDays": 89,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00406A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00403A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-05-12",
+      "availableTradingDays": 108,
+      "verifiedTradingDays": 108,
+      "maximumPossibleTradingDays": 111,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00403A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "009828",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-09-02",
+      "availableTradingDays": 29,
+      "verifiedTradingDays": 29,
+      "maximumPossibleTradingDays": 31,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=009828&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00405A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-06-09",
+      "availableTradingDays": 88,
+      "verifiedTradingDays": 88,
+      "maximumPossibleTradingDays": 91,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00405A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00407A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-06-24",
+      "availableTradingDays": 78,
+      "verifiedTradingDays": 78,
+      "maximumPossibleTradingDays": 81,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00407A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00409A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-09-02",
+      "availableTradingDays": 29,
+      "verifiedTradingDays": 29,
+      "maximumPossibleTradingDays": 31,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00409A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "009829",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-08-21",
+      "availableTradingDays": 37,
+      "verifiedTradingDays": 37,
+      "maximumPossibleTradingDays": 39,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=009829&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "009826",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-08-03",
+      "availableTradingDays": 51,
+      "verifiedTradingDays": 51,
+      "maximumPossibleTradingDays": 53,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=009826&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    }
+  ],
+  "creditEvidenceComplete": false,
+  "coverage": {
+    "universe": 1322,
+    "stocks": 1081,
+    "etfs": 241,
+    "deepDive": 467,
+    "deepDiveStocks": 407,
+    "deepDiveEtfs": 60,
+    "screenedDeepDive": 467,
+    "evidenceCompleteDeepDive": 388,
+    "evidencePendingDeepDive": 79,
+    "researchRanked": 388,
+    "tradeEligibleRanked": 4,
+    "eligibleRanked": 388,
+    "eligibleRankedMeaning": "RESEARCH_EVIDENCE_COMPLETE",
+    "creditReadyStocks": 406,
+    "creditMissingCodes": [
+      "7610"
+    ]
+  },
+  "researchLeaders": {
+    "STOCK": [
+      {
+        "code": "1326",
+        "name": "台化",
+        "score": 79.8621,
+        "researchRank": 1,
+        "researchPercentile": 0.3048780487804878,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "TREND_CONTINUATION",
+        "reasonCodes": [
+          "FUNDAMENTAL_QUALITY_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "2851",
+        "name": "中再保",
+        "score": 78,
+        "researchRank": 2,
+        "researchPercentile": 0.6097560975609756,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "TREND_CONTINUATION",
+        "reasonCodes": [
+          "FUNDAMENTAL_QUALITY_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "1714",
+        "name": "和桐",
+        "score": 76.0914,
+        "researchRank": 3,
+        "researchPercentile": 0.9146341463414634,
+        "tradeRank": 1,
+        "tradePercentile": 0.3048780487804878,
+        "decision": "WATCH",
+        "strategy": "TREND_CONTINUATION",
+        "reasonCodes": [
+          "SCORE_THRESHOLD_NOT_MET"
+        ]
+      },
+      {
+        "code": "2379",
+        "name": "瑞昱",
+        "score": 75.0963,
+        "researchRank": 4,
+        "researchPercentile": 1.2195121951219512,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "TREND_CONTINUATION",
+        "reasonCodes": [
+          "FUNDAMENTAL_QUALITY_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "2615",
+        "name": "萬海",
+        "score": 73.9578,
+        "researchRank": 5,
+        "researchPercentile": 1.524390243902439,
+        "tradeRank": 2,
+        "tradePercentile": 0.6097560975609756,
+        "decision": "WATCH",
+        "strategy": "TREND_CONTINUATION",
+        "reasonCodes": [
+          "SCORE_THRESHOLD_NOT_MET"
+        ]
+      },
+      {
+        "code": "2377",
+        "name": "微星",
+        "score": 73.5,
+        "researchRank": 6,
+        "researchPercentile": 1.829268292682927,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "BREAKOUT",
+        "reasonCodes": [
+          "FUNDAMENTAL_QUALITY_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "3005",
+        "name": "神基",
+        "score": 73.3333,
+        "researchRank": 7,
+        "researchPercentile": 2.1341463414634148,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "2027",
+        "name": "大成鋼",
+        "score": 72.3333,
+        "researchRank": 8,
+        "researchPercentile": 2.4390243902439024,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "1312",
+        "name": "國喬",
+        "score": 72,
+        "researchRank": 9,
+        "researchPercentile": 2.7439024390243905,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "TREND_CONTINUATION",
+        "reasonCodes": [
+          "FUNDAMENTAL_QUALITY_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "9945",
+        "name": "潤泰新",
+        "score": 71.9173,
+        "researchRank": 10,
+        "researchPercentile": 3.048780487804878,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      }
+    ],
+    "ETF": [
+      {
+        "code": "00929",
+        "name": "復華台灣科技優息",
+        "score": 91.0965,
+        "researchRank": 1,
+        "researchPercentile": 1.6666666666666667,
+        "tradeRank": 1,
+        "tradePercentile": 1.6666666666666667,
+        "decision": "WATCH",
+        "strategy": "TREND_CONTINUATION",
+        "reasonCodes": [
+          "SECTOR_EXPOSURE_LIMIT",
+          "ACCOUNT_EQUITY_HISTORY_UNVERIFIED"
+        ]
+      },
+      {
+        "code": "0056",
+        "name": "元大高股息",
+        "score": 89.331,
+        "researchRank": 2,
+        "researchPercentile": 3.3333333333333335,
+        "tradeRank": 2,
+        "tradePercentile": 3.3333333333333335,
+        "decision": "WATCH",
+        "strategy": "TREND_CONTINUATION",
+        "reasonCodes": [
+          "SECTOR_EXPOSURE_LIMIT",
+          "ACCOUNT_EQUITY_HISTORY_UNVERIFIED"
+        ]
+      },
+      {
+        "code": "00900",
+        "name": "富邦特選高股息30",
+        "score": 81.1858,
+        "researchRank": 3,
+        "researchPercentile": 5,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "00713",
+        "name": "元大台灣高息低波",
+        "score": 77,
+        "researchRank": 4,
+        "researchPercentile": 6.666666666666667,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "00940",
+        "name": "元大台灣價值高息",
+        "score": 75.065,
+        "researchRank": 5,
+        "researchPercentile": 8.333333333333334,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "00919",
+        "name": "群益台灣精選高息",
+        "score": 74.0216,
+        "researchRank": 6,
+        "researchPercentile": 10,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "TREND_NOT_CONFIRMED",
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "00961",
+        "name": "FT臺灣永續高息",
+        "score": 70.112,
+        "researchRank": 7,
+        "researchPercentile": 11.666666666666666,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "00878",
+        "name": "國泰永續高股息",
+        "score": 69.0383,
+        "researchRank": 8,
+        "researchPercentile": 13.333333333333334,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "00985A",
+        "name": "主動野村台灣50",
+        "score": 67.6,
+        "researchRank": 9,
+        "researchPercentile": 15,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "TREND_NOT_CONFIRMED",
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      },
+      {
+        "code": "00922",
+        "name": "國泰台灣領袖50",
+        "score": 65.1837,
+        "researchRank": 10,
+        "researchPercentile": 16.666666666666668,
+        "tradeRank": null,
+        "tradePercentile": null,
+        "decision": "WATCH",
+        "strategy": "NONE",
+        "reasonCodes": [
+          "TREND_NOT_CONFIRMED",
+          "ENTRY_SETUP_NOT_CONFIRMED",
+          "STRUCTURAL_RR_NOT_VERIFIED"
+        ]
+      }
+    ]
+  },
+  "marketTrendForecast": {
+    "verified": true,
+    "proxyCode": "0050",
+    "phase": "NEUTRAL",
+    "targetExposurePct": 0,
+    "overextended": false,
+    "close": 109,
+    "ma20": 111.845,
+    "ma60": 106.93,
+    "ma120": 104.06583333333329,
+    "ma20Slope5d": 0.15049999999999955,
+    "ma60Slope5d": 0.1388333333333378,
+    "rsi14": 41.0094637223975,
+    "macdHistogram": -0.7074459412022032,
+    "atr14": 1.6607142857142847
+  },
+  "conclusion": "2026-10-16全市場 1322 檔已完成初步篩選（普通股 1081、ETF 241），深度檢查 467 檔；其中 388 檔必要證據已齊並完成逐檔篩選，已有 388 檔進入研究排名、4 檔通過全部交易前置Gate進入可交易排名；79 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：財務證據 75檔、融資融券等信用資料 1檔、歷史行情 3檔。全市場研究尚未完成。普通股信用資料已核對 406/407 檔。財務證據完整但品質未通過 162 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "priority": [],
+  "core": [
+    {
+      "code": "00985A",
+      "name": "主動野村台灣50",
+      "decision": "WATCH",
+      "score": 67.6,
+      "reasonCodes": [
+        "TREND_NOT_CONFIRMED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ]
+    },
+    {
+      "code": "0050",
+      "name": "元大台灣50",
+      "decision": "WATCH",
+      "score": 63.2038,
+      "reasonCodes": [
+        "TREND_NOT_CONFIRMED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ]
+    },
+    {
+      "code": "006208",
+      "name": "富邦台50",
+      "decision": "WATCH",
+      "score": 60.1513,
+      "reasonCodes": [
+        "TREND_NOT_CONFIRMED",
+        "ENTRY_SETUP_NOT_CONFIRMED",
+        "STRUCTURAL_RR_NOT_VERIFIED"
+      ]
+    }
+  ],
+  "paperAccount": {
+    "asOf": "2026-10-16",
+    "cash": 159938.19316,
+    "positions": [
+      {
+        "code": "1513",
+        "name": "中興電",
+        "shares": 150,
+        "averageCost": 166.06964583333334,
+        "lastPrice": 165
+      },
+      {
+        "code": "4961",
+        "name": "天鈺",
+        "shares": 50,
+        "averageCost": 183.06049,
+        "lastPrice": 190
+      },
+      {
+        "code": "9945",
+        "name": "潤泰新",
+        "shares": 201,
+        "averageCost": 29.842465,
+        "lastPrice": 29.7
+      }
+    ],
+    "equity": 200157.89315999998,
+    "benchmark": {
+      "date": "2026-10-16",
+      "accountReturn": 0.10763083991660594,
+      "cumulativeAccountReturn": 0.07894657999998334,
+      "etfCode": "0050",
+      "etfReturn": 0.09182736455464191,
+      "accountBaseDate": "2026-10-15",
+      "accountBaseEquity": 199942.69316,
+      "method": "Account percent return since previous published valuation; cumulative return from initial cash; ETF daily percent return from verified official OHLCV.",
+      "taiexReturn": 0.3
+    },
+    "nextOrders": [],
+    "experiment": {
+      "id": "paper-20td-2026-10-01",
+      "status": "ACTIVE",
+      "startDate": "2026-10-01",
+      "plannedEndDate": "2026-10-30",
+      "durationTradingDays": 20,
+      "reviewEveryTradingDays": 5,
+      "completedTradingDays": 10,
+      "tradingDates": [
+        "2026-10-01",
+        "2026-10-05",
+        "2026-10-06",
+        "2026-10-07",
+        "2026-10-08",
+        "2026-10-12",
+        "2026-10-13",
+        "2026-10-14",
+        "2026-10-15",
+        "2026-10-16"
+      ],
+      "baselineDate": "2026-09-30",
+      "baselineEquity": 200186.528625,
+      "dailyMarks": [
+        {
+          "date": "2026-10-01",
+          "equity": 200211.528625,
+          "researchComplete": false,
+          "plannedOrders": 0,
+          "filledTrades": 0
+        },
+        {
+          "date": "2026-10-05",
+          "equity": 200111.528625,
+          "researchComplete": false,
+          "plannedOrders": 0,
+          "filledTrades": 0
+        },
+        {
+          "date": "2026-10-06",
+          "equity": 200261.528625,
+          "researchComplete": false,
+          "plannedOrders": 0,
+          "filledTrades": 0
+        },
+        {
+          "date": "2026-10-07",
+          "equity": 200086.528625,
+          "researchComplete": false,
+          "plannedOrders": 0,
+          "filledTrades": 0
+        },
+        {
+          "date": "2026-10-08",
+          "equity": 199886.528625,
+          "researchComplete": false,
+          "plannedOrders": 1,
+          "filledTrades": 0
+        },
+        {
+          "date": "2026-10-12",
+          "equity": 200033.14315999998,
+          "researchComplete": false,
+          "plannedOrders": 0,
+          "filledTrades": 1
+        },
+        {
+          "date": "2026-10-13",
+          "equity": 199772.34316,
+          "researchComplete": false,
+          "plannedOrders": 0,
+          "filledTrades": 0
+        },
+        {
+          "date": "2026-10-14",
+          "equity": 200262.54316,
+          "researchComplete": false,
+          "plannedOrders": 0,
+          "filledTrades": 0
+        },
+        {
+          "date": "2026-10-15",
+          "equity": 199942.69316,
+          "researchComplete": false,
+          "plannedOrders": 0,
+          "filledTrades": 0
+        },
+        {
+          "date": "2026-10-16",
+          "equity": 200157.89315999998,
+          "researchComplete": false,
+          "plannedOrders": 0,
+          "filledTrades": 0
+        }
+      ],
+      "reviews": [
+        {
+          "tradingDay": 5,
+          "date": "2026-10-08",
+          "valuedDays": 5,
+          "evidenceBlockedDays": 5,
+          "filledTrades": 0,
+          "returnPct": -0.14986023388315894
+        },
+        {
+          "tradingDay": 10,
+          "date": "2026-10-16",
+          "valuedDays": 10,
+          "evidenceBlockedDays": 10,
+          "filledTrades": 1,
+          "returnPct": -0.014304391607522504
+        }
+      ],
+      "metrics": {
+        "filledTrades": 1,
+        "evidenceBlockedDays": 10,
+        "noNewOrderDays": 0,
+        "returnPct": -0.014304391607522504,
+        "maxDrawdownPct": 0.24427331018532358,
+        "valuationCoverageComplete": true,
+        "missingValuationDates": []
+      },
+      "processReviewRequired": true,
+      "summary": "20日試驗進度10/20；研究資料未核對完成10天，這些天不算「市場沒有買點」。資料流程已達檢討門檻，須優先修復。"
+    }
+  },
+  "gate": [
+    {
+      "gate": "twse-daily-close-quotes",
+      "status": "PASS",
+      "source": "twse-mi-index-daily-close",
+      "officialDateEvidence": "20261016"
+    },
+    {
+      "gate": "twse-market-close-statistics",
+      "status": "PASS",
+      "source": "twse-mi-index",
+      "officialDateEvidence": "20261016"
+    },
+    {
+      "gate": "twse-market-turnover",
+      "status": "PASS",
+      "source": "twse-fmtqik",
+      "officialDateEvidence": "20261016"
+    },
+    {
+      "gate": "twse-individual-institutional",
+      "status": "PASS",
+      "source": "twse-t86",
+      "officialDateEvidence": "20261016"
+    },
+    {
+      "gate": "tpex-daily-close-quotes",
+      "status": "PASS",
+      "source": "tpex-mainboard-daily-close-quotes-legacy",
+      "officialDateEvidence": "20261016"
+    },
+    {
+      "gate": "tpex-market-turnover-index",
+      "status": "PASS",
+      "source": "tpex-daily-trading-index",
+      "officialDateEvidence": "1151016"
+    },
+    {
+      "gate": "tpex-individual-institutional",
+      "status": "PASS",
+      "source": "tpex-3insti-daily-trading",
+      "officialDateEvidence": "1151016"
+    },
+    {
+      "gate": "tpex-institutional-summary",
+      "status": "PASS",
+      "source": "tpex-3insti-summary",
+      "officialDateEvidence": "1151016"
+    }
+  ],
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "99c881432c1252deadcc1342db00dbff38c7e5b94b965ec16e37f08717f52acf"
+}
