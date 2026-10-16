@@ -127,12 +127,12 @@
       "filingParserVersion": 3,
       "textParserVersion": 22,
       "filingFallback": null,
-      "stage": "PDF_METRICS",
-      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-      "attempts": 3,
-      "checkedDate": "2026-10-15",
-      "checkedAt": "2026-10-15T15:15:24.838Z",
-      "nextRetryAt": "2026-10-16T15:15:24.838Z"
+      "stage": "FILING_INDEX",
+      "reason": "FILING_VERSION_UNVERIFIED",
+      "attempts": 1,
+      "checkedDate": "2026-10-16",
+      "checkedAt": "2026-10-16T15:21:05.881Z",
+      "nextRetryAt": "2026-10-17T15:21:05.881Z"
     },
     "1513|2026-06-30": {
       "status": "UNVERIFIED",
