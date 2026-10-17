@@ -263,6 +263,13 @@
       "preservedTargetArchive": true
     },
     {
+      "market": "TPEx",
+      "kind": "discovery",
+      "url": "https://www.tpex.org.tw/openapi/swagger.json",
+      "status": "VERIFY_FAILED",
+      "error": "terminated"
+    },
+    {
       "id": "tpex-events-O",
       "market": "TPEx",
       "kind": "events",
