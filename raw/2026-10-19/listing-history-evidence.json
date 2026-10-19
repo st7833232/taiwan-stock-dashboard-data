@@ -523,38 +523,6 @@
       "capturedAt": "2026-10-19T10:15:48.533Z"
     },
     {
-      "code": "3718",
-      "sources": [
-        {
-          "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
-          "status": "VERIFY_FAILED",
-          "error": "terminated"
-        },
-        {
-          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=3718&stockname=&isincode=",
-          "status": "CAPTURED",
-          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW0003718003</td>\n        <td align=center bgcolor=#FAFAD2>3718</td>\n        <td bgcolor=#FAFAD2>中光電投控</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>股票</td>\n        <td bgcolor=#FAFAD2>光電業</td>\n        \n        <td bgcolor=#FAFAD2>1999/01/20</td>\n        <td bgcolor=#FAFAD2>ESVUFR</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
-        }
-      ],
-      "capturedAt": "2026-10-19T10:42:12.174Z"
-    },
-    {
-      "code": "6945",
-      "sources": [
-        {
-          "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
-          "status": "VERIFY_FAILED",
-          "error": "terminated"
-        },
-        {
-          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=6945&stockname=&isincode=",
-          "status": "CAPTURED",
-          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW0006945009</td>\n        <td align=center bgcolor=#FAFAD2>6945</td>\n        <td bgcolor=#FAFAD2>圓祥生技</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>股票</td>\n        <td bgcolor=#FAFAD2>生技醫療業</td>\n        \n        <td bgcolor=#FAFAD2>2026/06/05</td>\n        <td bgcolor=#FAFAD2>ESVUFR</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
-        }
-      ],
-      "capturedAt": "2026-10-19T10:42:14.683Z"
-    },
-    {
       "code": "7828",
       "sources": [
         {
@@ -571,6 +539,104 @@
       "capturedAt": "2026-10-19T10:42:14.827Z"
     },
     {
+      "code": "3718",
+      "sources": [
+        {
+          "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+          "status": "CAPTURED",
+          "record": {
+            "Date": "1151018",
+            "SecuritiesCompanyCode": "3718",
+            "CompanyName": "中光電投資控股股份有限公司",
+            "CompanyAbbreviation": "中光電投控",
+            "Registration": "－ ",
+            "SecuritiesIndustryCode": "26",
+            "Address": "4th Floor, No. 153, Minquan Rd., Xindian District, New Taipei CityNew Taipei City, Taiwan",
+            "UnifiedBusinessNo.": "62067997",
+            "Chairman": "張威儀",
+            "GeneralManager": "何新斌&#160;",
+            "Spokesman": "溫慧萍",
+            "TitleOfSpokesman": "法人關係室特別助理",
+            "DeputySpokesperson": "何新斌",
+            "Telephone": "03-5772000",
+            "DateOfIncorporation": "20260903",
+            "DateOfListing": "20260903",
+            "ParValueOfCommonStock": "新台幣                 10.0000元",
+            "Paidin.Capital.NTDollars": "3909811100",
+            "PrivateStock.shares": "0",
+            "PreferredStock.shares": "0",
+            "PreparationOfFinancialReportType": "1",
+            "StockTransferAgent": "台新綜合證券(股)公司股務代理部",
+            "StockTransferAgentTelephone": "(02)2504-8125",
+            "StockTransferAgentAddress": "台北市建國北路一段96號地下一樓",
+            "AccountingFirm": "安永聯合會計師事務所",
+            "CPA.CharteredPublicAccountant.First": "黃敏如",
+            "CPA.CharteredPublicAccountant.Second": "郭紹彬",
+            "Symbol": "CiHC",
+            "Fax": "03-5772530",
+            "EmailAddress": "ssd@coreintelligence.com.tw",
+            "WebAddress": "www.coreintelligence.com.tw",
+            "IssueShares": "390981110"
+          }
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=3718&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW0003718003</td>\n        <td align=center bgcolor=#FAFAD2>3718</td>\n        <td bgcolor=#FAFAD2>中光電投控</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>股票</td>\n        <td bgcolor=#FAFAD2>光電業</td>\n        \n        <td bgcolor=#FAFAD2>1999/01/20</td>\n        <td bgcolor=#FAFAD2>ESVUFR</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-19T10:49:20.731Z"
+    },
+    {
+      "code": "6945",
+      "sources": [
+        {
+          "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+          "status": "CAPTURED",
+          "record": {
+            "Date": "1151018",
+            "SecuritiesCompanyCode": "6945",
+            "CompanyName": "圓祥生技股份有限公司",
+            "CompanyAbbreviation": "圓祥生技",
+            "Registration": "－ ",
+            "SecuritiesIndustryCode": "22",
+            "Address": "11F-2，No508，Sec7，Zhongxao E RdTaipei, Taiwan",
+            "UnifiedBusinessNo.": "54326052",
+            "Chairman": "陳志全",
+            "GeneralManager": "何正宏",
+            "Spokesman": "欒君儀",
+            "TitleOfSpokesman": "總經理室特助",
+            "DeputySpokesperson": "游忠哲",
+            "Telephone": "02-26532886",
+            "DateOfIncorporation": "20130527",
+            "DateOfListing": "20260605",
+            "ParValueOfCommonStock": "新台幣                 10.0000元",
+            "Paidin.Capital.NTDollars": "975311600",
+            "PrivateStock.shares": "0",
+            "PreferredStock.shares": "0",
+            "PreparationOfFinancialReportType": "1",
+            "StockTransferAgent": "台新綜合證券(股)公司股務代理部",
+            "StockTransferAgentTelephone": "02-25048125",
+            "StockTransferAgentAddress": "台北市中山區建國北路1段96號地下1樓",
+            "AccountingFirm": "資誠聯合會計師事務所",
+            "CPA.CharteredPublicAccountant.First": "王銘義",
+            "CPA.CharteredPublicAccountant.Second": "黃珮娟",
+            "Symbol": "APBio",
+            "Fax": "02-26532893",
+            "EmailAddress": "service@apbioinc.com",
+            "WebAddress": "www.apbioinc.com",
+            "IssueShares": "97531160"
+          }
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=6945&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW0006945009</td>\n        <td align=center bgcolor=#FAFAD2>6945</td>\n        <td bgcolor=#FAFAD2>圓祥生技</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>股票</td>\n        <td bgcolor=#FAFAD2>生技醫療業</td>\n        \n        <td bgcolor=#FAFAD2>2026/06/05</td>\n        <td bgcolor=#FAFAD2>ESVUFR</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-19T10:49:22.253Z"
+    },
+    {
       "code": "00411A",
       "sources": [
         {
@@ -584,7 +650,7 @@
           "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW00000411A0</td>\n        <td align=center bgcolor=#FAFAD2>00411A</td>\n        <td bgcolor=#FAFAD2>主動統一前沿科技</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/08/26</td>\n        <td bgcolor=#FAFAD2>CEOIEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
         }
       ],
-      "capturedAt": "2026-10-19T10:42:34.993Z"
+      "capturedAt": "2026-10-19T10:49:42.996Z"
     }
   ]
 }
