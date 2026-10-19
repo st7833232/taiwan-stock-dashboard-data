@@ -521,6 +521,70 @@
         }
       ],
       "capturedAt": "2026-10-19T10:15:48.533Z"
+    },
+    {
+      "code": "3718",
+      "sources": [
+        {
+          "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+          "status": "VERIFY_FAILED",
+          "error": "terminated"
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=3718&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW0003718003</td>\n        <td align=center bgcolor=#FAFAD2>3718</td>\n        <td bgcolor=#FAFAD2>中光電投控</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>股票</td>\n        <td bgcolor=#FAFAD2>光電業</td>\n        \n        <td bgcolor=#FAFAD2>1999/01/20</td>\n        <td bgcolor=#FAFAD2>ESVUFR</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-19T10:42:12.174Z"
+    },
+    {
+      "code": "6945",
+      "sources": [
+        {
+          "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+          "status": "VERIFY_FAILED",
+          "error": "terminated"
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=6945&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW0006945009</td>\n        <td align=center bgcolor=#FAFAD2>6945</td>\n        <td bgcolor=#FAFAD2>圓祥生技</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>股票</td>\n        <td bgcolor=#FAFAD2>生技醫療業</td>\n        \n        <td bgcolor=#FAFAD2>2026/06/05</td>\n        <td bgcolor=#FAFAD2>ESVUFR</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-19T10:42:14.683Z"
+    },
+    {
+      "code": "7828",
+      "sources": [
+        {
+          "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+          "status": "VERIFY_FAILED",
+          "error": "terminated"
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=7828&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW0007828006</td>\n        <td align=center bgcolor=#FAFAD2>7828</td>\n        <td bgcolor=#FAFAD2>創新服務</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>股票</td>\n        <td bgcolor=#FAFAD2>半導體業</td>\n        \n        <td bgcolor=#FAFAD2>2026/04/22</td>\n        <td bgcolor=#FAFAD2>ESVUFR</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-19T10:42:14.827Z"
+    },
+    {
+      "code": "00411A",
+      "sources": [
+        {
+          "url": "https://isin.twse.com.tw/isin/C_public.jsp?strMode=4",
+          "status": "VERIFY_FAILED",
+          "error": "The operation was aborted due to timeout"
+        },
+        {
+          "url": "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00411A&stockname=&isincode=",
+          "status": "CAPTURED",
+          "recordHtml": "<tr>\n        <td align=center bgcolor=#FAFAD2>1</td>\n        <td bgcolor=#FAFAD2>TW00000411A0</td>\n        <td align=center bgcolor=#FAFAD2>00411A</td>\n        <td bgcolor=#FAFAD2>主動統一前沿科技</td>\n        \n        <td bgcolor=#FAFAD2>上櫃</td>\n        <td bgcolor=#FAFAD2>ETF</td>\n        <td bgcolor=#FAFAD2></td>\n        \n        <td bgcolor=#FAFAD2>2026/08/26</td>\n        <td bgcolor=#FAFAD2>CEOIEU</td>\n        \n        <td bgcolor=#FAFAD2></td>\n      </tr>"
+        }
+      ],
+      "capturedAt": "2026-10-19T10:42:34.993Z"
     }
   ]
 }
