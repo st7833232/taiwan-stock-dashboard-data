@@ -3,7 +3,7 @@
   "researchComplete": false,
   "counts": {
     "credit": 407,
-    "fundamental": 77
+    "fundamental": 76
   },
   "pending": {
     "credit": [
@@ -469,7 +469,6 @@
       "2101",
       "4949",
       "6153",
-      "4720",
       "2330",
       "3443",
       "8046",
@@ -1388,6 +1387,12 @@
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED",
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4720",
+      "failures": [
+        "PROFIT_DETERIORATION"
       ]
     },
     {

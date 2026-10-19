@@ -5213,20 +5213,26 @@
     "nextRetryAt": "2026-10-20T10:17:27.203Z"
   },
   "4720|2026-06-30": {
-    "status": "UNVERIFIED",
+    "status": "VERIFIED",
     "parserVersion": 2,
-    "filingParserVersion": 3,
-    "textParserVersion": 22,
-    "filingFallback": {
-      "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=4720&year=114&seamon=&mtype=A&check2858=Y",
-      "reason": "FILING_VERSION_UNVERIFIED"
-    },
-    "stage": "PDF_LINK",
-    "reason": "fetch failed",
-    "attempts": 2,
     "checkedDate": "2026-10-19",
-    "checkedAt": "2026-10-19T10:17:57.175Z",
-    "nextRetryAt": "2026-10-19T10:27:57.175Z"
+    "checkedAt": "2026-10-19T10:33:39.019Z",
+    "lastUnverifiedAttempt": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 3,
+      "textParserVersion": 22,
+      "filingFallback": {
+        "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=4720&year=114&seamon=&mtype=A&check2858=Y",
+        "reason": "FILING_VERSION_UNVERIFIED"
+      },
+      "stage": "PDF_LINK",
+      "reason": "fetch failed",
+      "attempts": 2,
+      "checkedDate": "2026-10-19",
+      "checkedAt": "2026-10-19T10:17:57.175Z",
+      "nextRetryAt": "2026-10-19T10:27:57.175Z"
+    }
   },
   "2727|2026-06-30": {
     "status": "VERIFIED",
