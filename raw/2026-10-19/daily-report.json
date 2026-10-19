@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-19",
-  "revision": "2026-10-19-181007",
+  "revision": "2026-10-19-181556",
   "strategyVersion": "entry-dual-track-v2.6",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
@@ -9,10 +9,10 @@
     "mode": "PER_SECURITY_INCREMENTAL",
     "rankContractVersion": 2,
     "rankingMode": "RESEARCH_AND_TRADE_SPLIT",
-    "screenedDeepDive": 472,
-    "evidenceCompleteDeepDive": 54,
-    "evidencePendingDeepDive": 418,
-    "researchRanked": 54,
+    "screenedDeepDive": 469,
+    "evidenceCompleteDeepDive": 62,
+    "evidencePendingDeepDive": 407,
+    "researchRanked": 62,
     "tradeEligibleRanked": 1,
     "reScreenOnEvidenceAdmission": true,
     "globalResearchComplete": false
@@ -20,8 +20,7 @@
   "researchComplete": false,
   "evidencePending": {
     "credit": 407,
-    "fundamental": 77,
-    "history": 11
+    "fundamental": 77
   },
   "fundamentalQualityRejected": [
     {
@@ -1092,21 +1091,182 @@
       ]
     }
   ],
-  "historyQualityRejected": [],
+  "historyQualityRejected": [
+    {
+      "code": "00406A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-06-11",
+      "availableTradingDays": 87,
+      "verifiedTradingDays": 87,
+      "maximumPossibleTradingDays": 90,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00406A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00403A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-05-12",
+      "availableTradingDays": 109,
+      "verifiedTradingDays": 109,
+      "maximumPossibleTradingDays": 112,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00403A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "009828",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-09-02",
+      "availableTradingDays": 30,
+      "verifiedTradingDays": 30,
+      "maximumPossibleTradingDays": 32,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=009828&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00405A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-06-09",
+      "availableTradingDays": 89,
+      "verifiedTradingDays": 89,
+      "maximumPossibleTradingDays": 92,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00405A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00407A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-06-24",
+      "availableTradingDays": 79,
+      "verifiedTradingDays": 79,
+      "maximumPossibleTradingDays": 82,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00407A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "009829",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-08-21",
+      "availableTradingDays": 38,
+      "verifiedTradingDays": 38,
+      "maximumPossibleTradingDays": 40,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=009829&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00409A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-09-02",
+      "availableTradingDays": 30,
+      "verifiedTradingDays": 30,
+      "maximumPossibleTradingDays": 32,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00409A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "009826",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-08-03",
+      "availableTradingDays": 52,
+      "verifiedTradingDays": 52,
+      "maximumPossibleTradingDays": 54,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=009826&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    }
+  ],
   "creditEvidenceComplete": false,
   "coverage": {
     "universe": 1320,
     "stocks": 1082,
     "etfs": 238,
-    "deepDive": 472,
-    "deepDiveStocks": 410,
+    "deepDive": 469,
+    "deepDiveStocks": 407,
     "deepDiveEtfs": 62,
-    "screenedDeepDive": 472,
-    "evidenceCompleteDeepDive": 54,
-    "evidencePendingDeepDive": 418,
-    "researchRanked": 54,
+    "screenedDeepDive": 469,
+    "evidenceCompleteDeepDive": 62,
+    "evidencePendingDeepDive": 407,
+    "researchRanked": 62,
     "tradeEligibleRanked": 1,
-    "eligibleRanked": 54,
+    "eligibleRanked": 62,
     "eligibleRankedMeaning": "RESEARCH_EVIDENCE_COMPLETE",
     "creditReadyStocks": 0,
     "creditMissingCodes": [
@@ -1516,9 +1676,6 @@
       "6782",
       "6670",
       "2727",
-      "6548",
-      "8050",
-      "6187",
       "4912"
     ]
   },
@@ -1530,9 +1687,9 @@
         "name": "元大台灣價值高息",
         "score": 87.9733,
         "researchRank": 1,
-        "researchPercentile": 1.8518518518518519,
+        "researchPercentile": 1.6129032258064515,
         "tradeRank": 1,
-        "tradePercentile": 1.8518518518518519,
+        "tradePercentile": 1.6129032258064515,
         "decision": "BUY",
         "strategy": "TREND_CONTINUATION",
         "reasonCodes": []
@@ -1542,7 +1699,7 @@
         "name": "元大高股息",
         "score": 77,
         "researchRank": 2,
-        "researchPercentile": 3.7037037037037037,
+        "researchPercentile": 3.225806451612903,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1557,7 +1714,7 @@
         "name": "國泰永續高股息",
         "score": 77,
         "researchRank": 3,
-        "researchPercentile": 5.555555555555555,
+        "researchPercentile": 4.838709677419355,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1572,7 +1729,7 @@
         "name": "元大台灣高息低波",
         "score": 73.1068,
         "researchRank": 4,
-        "researchPercentile": 7.407407407407407,
+        "researchPercentile": 6.451612903225806,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1587,7 +1744,7 @@
         "name": "復華台灣科技優息",
         "score": 72.6,
         "researchRank": 5,
-        "researchPercentile": 9.25925925925926,
+        "researchPercentile": 8.064516129032258,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1603,7 +1760,7 @@
         "name": "FT臺灣永續高息",
         "score": 72.2438,
         "researchRank": 6,
-        "researchPercentile": 11.11111111111111,
+        "researchPercentile": 9.67741935483871,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1618,7 +1775,7 @@
         "name": "群益台灣精選高息",
         "score": 70.9901,
         "researchRank": 7,
-        "researchPercentile": 12.962962962962964,
+        "researchPercentile": 11.290322580645162,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1634,7 +1791,7 @@
         "name": "富邦特選高股息30",
         "score": 68.04,
         "researchRank": 8,
-        "researchPercentile": 14.814814814814815,
+        "researchPercentile": 12.903225806451612,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1649,7 +1806,7 @@
         "name": "富邦台50",
         "score": 67.6,
         "researchRank": 9,
-        "researchPercentile": 16.666666666666668,
+        "researchPercentile": 14.516129032258064,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1665,7 +1822,7 @@
         "name": "中信關鍵半導體",
         "score": 67.6,
         "researchRank": 10,
-        "researchPercentile": 18.51851851851852,
+        "researchPercentile": 16.129032258064516,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1694,7 +1851,7 @@
     "macdHistogram": -0.8748885721740898,
     "atr14": 1.7035714285714272
   },
-  "conclusion": "2026-10-19全市場 1320 檔已完成初步篩選（普通股 1082、ETF 238），深度檢查 472 檔；其中 54 檔必要證據已齊並完成逐檔篩選，已有 54 檔進入研究排名、1 檔通過全部交易前置Gate進入可交易排名；418 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：融資融券等信用資料 407檔、財務證據 77檔、歷史行情 11檔。全市場研究尚未完成。普通股信用資料已核對 0/410 檔。財務證據完整但品質未通過 163 檔，仍不符合買進條件。本次優先買進標的 1 檔，下一交易日委託 1 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-10-19全市場 1320 檔已完成初步篩選（普通股 1082、ETF 238），深度檢查 469 檔；其中 62 檔必要證據已齊並完成逐檔篩選，已有 62 檔進入研究排名、1 檔通過全部交易前置Gate進入可交易排名；407 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：融資融券等信用資料 407檔、財務證據 77檔。全市場研究尚未完成。普通股信用資料已核對 0/407 檔。財務證據完整但品質未通過 163 檔，仍不符合買進條件。本次優先買進標的 1 檔，下一交易日委託 1 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [
     {
       "code": "00940",
@@ -1977,17 +2134,6 @@
       "officialDateEvidence": "1151019"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-19-181007",
-    "runId": "39234572223",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/39234572223",
-    "validatedCommit": "fc16af5ea15b3fbebee867b8843daa2349175559"
-  },
-  "inputFingerprint": "5b0ccce025d2e17ed1d7d7c0fd55472060a4c7d3850c6a08b2d236af4a2e1fd7"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "ffb97a2f5587d890d9abb019913b96414ee73c2f91c08b0c9bd7fa982e9351dd"
 }
