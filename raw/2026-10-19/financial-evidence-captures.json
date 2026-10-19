@@ -8,7 +8,7 @@
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
       "summary": "上市公司每日重大訊息",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-19T10:53:30.858Z",
+      "capturedAt": "2026-10-19T11:03:26.028Z",
       "rows": 4
     },
     {
@@ -18,18 +18,8 @@
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap23_L",
       "summary": "上市公司違反資訊申報、重大訊息及說明記者會規定專區",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-19T10:53:31.781Z",
+      "capturedAt": "2026-10-19T11:03:26.777Z",
       "rows": 38
-    },
-    {
-      "id": "twse-suspensions-L",
-      "market": "TWSE",
-      "kind": "suspensions",
-      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap26_L",
-      "summary": "上市公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-19T10:53:31.948Z",
-      "rows": 1
     },
     {
       "id": "twse-income-bd",
@@ -40,6 +30,16 @@
       "status": "CAPTURED",
       "capturedAt": "2026-10-19T01:19:01.840Z",
       "rows": 3
+    },
+    {
+      "id": "twse-suspensions-L",
+      "market": "TWSE",
+      "kind": "suspensions",
+      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap26_L",
+      "summary": "上市公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-19T11:03:27.205Z",
+      "rows": 1
     },
     {
       "id": "twse-income-ci",
@@ -162,7 +162,7 @@
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL",
       "summary": "上市股票除權除息預告表",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-19T10:53:32.115Z",
+      "capturedAt": "2026-10-19T11:03:27.380Z",
       "rows": 55
     },
     {
@@ -177,7 +177,7 @@
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWTAWU",
       "summary": "集中市場暫停交易證券",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-19T10:53:32.282Z",
+      "capturedAt": "2026-10-19T11:03:27.556Z",
       "rows": 1
     },
     {
@@ -192,7 +192,7 @@
       "url": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260422&endDate=20261019",
       "summary": "上市股票除權除息計算結果表",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-19T10:53:33.800Z",
+      "capturedAt": "2026-10-19T11:03:33.276Z",
       "rows": null
     },
     {
@@ -208,7 +208,7 @@
       "url": "https://www.twse.com.tw/exchangeReport/TWTAUU?response=json&startDate=20260422&endDate=20261123",
       "summary": "股票減資恢復買賣參考價格",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-19T10:53:34.212Z",
+      "capturedAt": "2026-10-19T11:03:33.757Z",
       "rows": null
     },
     {
@@ -223,7 +223,7 @@
       "url": "https://www.twse.com.tw/exchangeReport/TWTB7U?response=json",
       "summary": "變更股票面額預告表",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-19T10:58:12.345Z",
+      "capturedAt": "2026-10-19T11:03:34.279Z",
       "rows": null
     },
     {
@@ -238,18 +238,8 @@
       "url": "https://www.twse.com.tw/exchangeReport/TWTB8U?response=json&startDate=20260422&endDate=20261019",
       "summary": "變更股票面額恢復買賣參考價格",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-19T10:58:12.531Z",
+      "capturedAt": "2026-10-19T11:03:34.816Z",
       "rows": null
-    },
-    {
-      "id": "tpex-events-O",
-      "market": "TPEx",
-      "kind": "events",
-      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
-      "summary": "上櫃公司每日重大訊息",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-19T10:58:17.335Z",
-      "rows": 2
     },
     {
       "id": "tpex-suspensions-O",
@@ -258,8 +248,18 @@
       "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap26_O",
       "summary": "上櫃公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-19T10:58:17.482Z",
+      "capturedAt": "2026-10-19T11:03:39.474Z",
       "rows": 1
+    },
+    {
+      "id": "tpex-events-O",
+      "market": "TPEx",
+      "kind": "events",
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
+      "summary": "上櫃公司每日重大訊息",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-19T11:03:39.660Z",
+      "rows": 2
     },
     {
       "id": "tpex-balance-basi",
@@ -382,6 +382,16 @@
       "rows": 1
     },
     {
+      "id": "tpex-governance-O",
+      "market": "TPEx",
+      "kind": "governance",
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap23_O",
+      "summary": "上櫃公司違反資訊申報、重大訊息及說明記者會規定專區",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-19T11:03:40.028Z",
+      "rows": 19
+    },
+    {
       "id": "tpex-ca-exrights-history",
       "market": "TPEx",
       "kind": "coverage",
@@ -397,18 +407,8 @@
       "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/exDailyQ?startDate=2026%2F04%2F22&endDate=2026%2F10%2F19&response=json",
       "summary": "上櫃股票除權除息計算結果表（歷史）",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-19T10:58:18.183Z",
+      "capturedAt": "2026-10-19T11:03:40.374Z",
       "rows": null
-    },
-    {
-      "id": "tpex-governance-O",
-      "market": "TPEx",
-      "kind": "governance",
-      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap23_O",
-      "summary": "上櫃公司違反資訊申報、重大訊息及說明記者會規定專區",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-19T10:58:20.724Z",
-      "rows": 19
     },
     {
       "id": "tpex-ca-parvalue-reference",
@@ -427,7 +427,7 @@
       "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/pvChgRslt?startDate=2026%2F04%2F22&endDate=2026%2F11%2F23&response=json",
       "summary": "上櫃變更股票面額恢復買賣參考價",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-19T10:58:20.953Z",
+      "capturedAt": "2026-10-19T11:03:40.585Z",
       "rows": null
     },
     {
@@ -447,7 +447,7 @@
       "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/revivt?startDate=2026%2F04%2F22&endDate=2026%2F11%2F23&response=json",
       "summary": "上櫃減資恢復交易參考價",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-19T10:58:21.226Z",
+      "capturedAt": "2026-10-19T11:03:40.968Z",
       "rows": null
     },
     {
@@ -462,7 +462,7 @@
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_spendi_today",
       "summary": "上櫃當日公布暫停/恢復交易股票",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-19T10:58:21.455Z",
+      "capturedAt": "2026-10-19T11:03:41.378Z",
       "rows": 1
     },
     {
@@ -477,7 +477,7 @@
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_spendi_history",
       "summary": "上櫃歷史公布暫停/恢復交易股票",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-19T10:58:21.918Z",
+      "capturedAt": "2026-10-19T11:03:43.615Z",
       "rows": 362
     },
     {
@@ -492,7 +492,7 @@
       "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap26_O",
       "summary": "上櫃公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-19T10:58:22.135Z",
+      "capturedAt": "2026-10-19T11:03:43.938Z",
       "rows": 1
     },
     {
@@ -507,7 +507,7 @@
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_exright_prepost",
       "summary": "上櫃股票除權除息預告表",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-19T10:58:22.153Z",
+      "capturedAt": "2026-10-19T11:03:45.019Z",
       "rows": 71
     },
     {
