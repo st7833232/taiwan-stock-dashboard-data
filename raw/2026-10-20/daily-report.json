@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-20",
-  "revision": "2026-10-20-223704",
+  "revision": "2026-10-20-224149",
   "strategyVersion": "entry-dual-track-v2.6",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
@@ -10,16 +10,16 @@
     "rankContractVersion": 2,
     "rankingMode": "RESEARCH_AND_TRADE_SPLIT",
     "screenedDeepDive": 658,
-    "evidenceCompleteDeepDive": 538,
-    "evidencePendingDeepDive": 120,
-    "researchRanked": 538,
+    "evidenceCompleteDeepDive": 539,
+    "evidencePendingDeepDive": 119,
+    "researchRanked": 539,
     "tradeEligibleRanked": 2,
     "reScreenOnEvidenceAdmission": true,
     "globalResearchComplete": false
   },
   "researchComplete": false,
   "evidencePending": {
-    "fundamental": 117,
+    "fundamental": 116,
     "history": 2,
     "credit": 3
   },
@@ -1144,6 +1144,12 @@
       ]
     },
     {
+      "code": "5432",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
       "code": "2504",
       "failures": [
         "REVENUE_DETERIORATION",
@@ -1653,11 +1659,11 @@
     "deepDiveStocks": 581,
     "deepDiveEtfs": 77,
     "screenedDeepDive": 658,
-    "evidenceCompleteDeepDive": 538,
-    "evidencePendingDeepDive": 120,
-    "researchRanked": 538,
+    "evidenceCompleteDeepDive": 539,
+    "evidencePendingDeepDive": 119,
+    "researchRanked": 539,
     "tradeEligibleRanked": 2,
-    "eligibleRanked": 538,
+    "eligibleRanked": 539,
     "eligibleRankedMeaning": "RESEARCH_EVIDENCE_COMPLETE",
     "creditReadyStocks": 578,
     "creditMissingCodes": [
@@ -1673,9 +1679,9 @@
         "name": "碩天",
         "score": 86.1131,
         "researchRank": 1,
-        "researchPercentile": 0.21645021645021645,
+        "researchPercentile": 0.2159827213822894,
         "tradeRank": 1,
-        "tradePercentile": 0.21645021645021645,
+        "tradePercentile": 0.2159827213822894,
         "decision": "BUY",
         "strategy": "TREND_CONTINUATION",
         "reasonCodes": []
@@ -1685,9 +1691,9 @@
         "name": "聯強",
         "score": 77.4596,
         "researchRank": 2,
-        "researchPercentile": 0.4329004329004329,
+        "researchPercentile": 0.4319654427645788,
         "tradeRank": 2,
-        "tradePercentile": 0.4329004329004329,
+        "tradePercentile": 0.4319654427645788,
         "decision": "WATCH",
         "strategy": "TREND_CONTINUATION",
         "reasonCodes": [
@@ -1699,7 +1705,7 @@
         "name": "台灣大",
         "score": 73.3636,
         "researchRank": 3,
-        "researchPercentile": 0.6493506493506493,
+        "researchPercentile": 0.6479481641468683,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1714,7 +1720,7 @@
         "name": "遠傳",
         "score": 73.1738,
         "researchRank": 4,
-        "researchPercentile": 0.8658008658008658,
+        "researchPercentile": 0.8639308855291576,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1729,7 +1735,7 @@
         "name": "聯詠",
         "score": 71.2518,
         "researchRank": 5,
-        "researchPercentile": 1.0822510822510822,
+        "researchPercentile": 1.079913606911447,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1743,7 +1749,7 @@
         "name": "東和鋼鐵",
         "score": 70.812,
         "researchRank": 6,
-        "researchPercentile": 1.2987012987012987,
+        "researchPercentile": 1.2958963282937366,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1757,7 +1763,7 @@
         "name": "中信金",
         "score": 70.5204,
         "researchRank": 7,
-        "researchPercentile": 1.5151515151515151,
+        "researchPercentile": 1.511879049676026,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1771,7 +1777,7 @@
         "name": "和泰車",
         "score": 69.4382,
         "researchRank": 8,
-        "researchPercentile": 1.7316017316017316,
+        "researchPercentile": 1.7278617710583153,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1785,7 +1791,7 @@
         "name": "台塑化",
         "score": 69.3852,
         "researchRank": 9,
-        "researchPercentile": 1.948051948051948,
+        "researchPercentile": 1.9438444924406046,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1799,7 +1805,7 @@
         "name": "遠東新",
         "score": 69.1323,
         "researchRank": 10,
-        "researchPercentile": 2.1645021645021645,
+        "researchPercentile": 2.159827213822894,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1987,7 +1993,7 @@
     "macdHistogram": -1.0052466980039343,
     "atr14": 1.7428571428571413
   },
-  "conclusion": "2026-10-20全市場 2311 檔已完成初步篩選（普通股 1954、ETF 357），深度檢查 658 檔；其中 538 檔必要證據已齊並完成逐檔篩選，已有 538 檔進入研究排名、2 檔通過全部交易前置Gate進入可交易排名；120 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：財務證據 117檔、歷史行情 2檔、融資融券等信用資料 3檔。全市場研究尚未完成。普通股信用資料已核對 578/581 檔。財務證據完整但品質未通過 222 檔，仍不符合買進條件。本次優先買進標的 1 檔，下一交易日委託 1 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-10-20全市場 2311 檔已完成初步篩選（普通股 1954、ETF 357），深度檢查 658 檔；其中 539 檔必要證據已齊並完成逐檔篩選，已有 539 檔進入研究排名、2 檔通過全部交易前置Gate進入可交易排名；119 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：財務證據 116檔、歷史行情 2檔、融資融券等信用資料 3檔。全市場研究尚未完成。普通股信用資料已核對 578/581 檔。財務證據完整但品質未通過 223 檔，仍不符合買進條件。本次優先買進標的 1 檔，下一交易日委託 1 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [
     {
       "code": "3617",
@@ -2278,17 +2284,6 @@
       "officialDateEvidence": "1151020"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-20-223704",
-    "runId": "39440291666",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/39440291666",
-    "validatedCommit": "8037d9a3a3b2ed5a3fbdc14842f1c906f5137b7a"
-  },
-  "inputFingerprint": "6e389233d800e94dd3e89f3ab01a0c17e0721f4e2c7e693ba6f95defc61374c9"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "8b487be63da767ca71c8d82e84e8330c98841c93ef076cfdb5d1e4f4f2e5ef1f"
 }
