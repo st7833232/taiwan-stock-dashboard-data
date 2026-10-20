@@ -3,7 +3,7 @@
   "researchComplete": false,
   "counts": {
     "fundamental": 116,
-    "history": 2,
+    "history": 1,
     "credit": 3
   },
   "pending": {
@@ -126,8 +126,7 @@
       "6231"
     ],
     "history": [
-      "3718",
-      "00411A"
+      "3718"
     ],
     "credit": [
       "6945",
@@ -1758,6 +1757,26 @@
       "sources": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
         "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00409A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00411A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-08-26",
+      "availableTradingDays": 34,
+      "verifiedTradingDays": 34,
+      "maximumPossibleTradingDays": 38,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://isin.twse.com.tw/isin/C_public.jsp?strMode=4",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00411A&stockname=&isincode="
       ],
       "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
     }
