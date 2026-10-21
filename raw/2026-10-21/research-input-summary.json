@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-21",
-  "generatedAt": "2026-10-21T11:10:18.415Z",
+  "generatedAt": "2026-10-21T14:46:24.814Z",
   "strategyVersion": "entry-dual-track-v2.6",
   "researchInputPath": "raw/2026-10-21/research-input.json",
-  "researchInputBytes": 20901130,
+  "researchInputBytes": 21110708,
   "universeSummary": {
     "total": 2313,
     "stocks": 1956,
@@ -40,8 +40,8 @@
     "historicalCacheTradingDays": 130,
     "buyHistoryReadyCount": 653,
     "institutional20dReadyCount": 663,
-    "marginShortLendingReadyCount": 0,
-    "securitiesLendingReadyCount": 0,
+    "marginShortLendingReadyCount": 660,
+    "securitiesLendingReadyCount": 192,
     "fundamentalReadyCount": 586,
     "sourceAEventCoverageCount": 663,
     "tdccReadyCount": 663,
