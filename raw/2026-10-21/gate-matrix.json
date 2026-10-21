@@ -1,7 +1,7 @@
 {
   "targetDate": "2026-10-21",
   "timezone": "Asia/Taipei",
-  "generatedAt": "2026-10-21T14:46:08.855Z",
+  "generatedAt": "2026-10-21T14:57:57.575Z",
   "simulatedTodayDate": null,
   "effectiveTodayDate": "2026-10-21",
   "overallStatus": "PASS",
@@ -251,7 +251,8 @@
       "bytes": 129028,
       "officialDateEvidence": "20261021",
       "rowCount": 1302,
-      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+      "preservedCapture": true
     },
     {
       "source": "twse-margin-trading-legacy",
@@ -268,7 +269,8 @@
       "bytes": 129028,
       "officialDateEvidence": "20261021",
       "rowCount": 1302,
-      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+      "preservedCapture": true
     },
     {
       "source": "tpex-margin-balance",
@@ -285,7 +287,8 @@
       "bytes": 107207,
       "officialDateEvidence": "20261021",
       "rowCount": 918,
-      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+      "preservedCapture": true
     },
     {
       "source": "tpex-margin-balance-legacy",
@@ -294,15 +297,10 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/10/21",
       "targetDate": "2026-10-21",
-      "capturedAt": "2026-10-21T14:46:06.546Z",
+      "capturedAt": "2026-10-21T14:57:27.371Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
-      "httpStatus": 200,
-      "contentType": "text/html",
-      "bytes": 10892,
-      "officialDateEvidence": null,
-      "rowCount": 0,
-      "note": "Auxiliary payload was readable but target-date evidence was not found; do not use it as point-in-time research evidence."
+      "error": "The operation was aborted due to timeout"
     },
     {
       "source": "tpex-margin-sbl",
@@ -319,7 +317,8 @@
       "bytes": 99528,
       "officialDateEvidence": "20261021",
       "rowCount": 931,
-      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+      "preservedCapture": true
     },
     {
       "source": "twse-monthly-revenue",
