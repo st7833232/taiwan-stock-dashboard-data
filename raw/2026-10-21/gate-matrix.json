@@ -1,7 +1,7 @@
 {
   "targetDate": "2026-10-21",
   "timezone": "Asia/Taipei",
-  "generatedAt": "2026-10-21T10:12:17.283Z",
+  "generatedAt": "2026-10-21T10:18:09.109Z",
   "simulatedTodayDate": null,
   "effectiveTodayDate": "2026-10-21",
   "overallStatus": "PASS",
@@ -55,8 +55,8 @@
     {
       "gate": "tpex-individual-institutional",
       "status": "PASS",
-      "source": "tpex-3insti-daily-trading-www",
-      "officialDateEvidence": "20261021"
+      "source": "tpex-3insti-daily-trading",
+      "officialDateEvidence": "1151021"
     },
     {
       "gate": "tpex-institutional-summary",
@@ -141,12 +141,12 @@
       "kind": "daily-close-quotes",
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes",
       "targetDate": "2026-10-21",
-      "capturedAt": "2026-10-21T10:12:04.105Z",
+      "capturedAt": "2026-10-21T10:17:36.504Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
       "contentType": "application/json",
-      "error": "terminated"
+      "error": "The operation was aborted due to timeout"
     },
     {
       "source": "tpex-mainboard-daily-close-quotes-legacy",
@@ -189,12 +189,14 @@
       "kind": "individual-institutional",
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_3insti_daily_trading",
       "targetDate": "2026-10-21",
-      "capturedAt": "2026-10-21T10:12:04.147Z",
-      "status": "VERIFY_FAILED",
+      "capturedAt": "2026-10-21T10:17:36.545Z",
+      "status": "PASS",
       "simulatedTodayDate": null,
       "httpStatus": 200,
       "contentType": "application/json",
-      "error": "terminated"
+      "bytes": 853566,
+      "officialDateEvidence": "1151021",
+      "rowCount": 903
     },
     {
       "source": "tpex-3insti-daily-trading-www",
@@ -237,7 +239,7 @@
       "kind": "margin-short",
       "url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20261021&response=json&selectType=ALL",
       "targetDate": "2026-10-21",
-      "capturedAt": "2026-10-21T10:12:13.403Z",
+      "capturedAt": "2026-10-21T10:18:06.507Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -254,7 +256,7 @@
       "kind": "margin-short",
       "url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261021&response=json&selectType=ALL",
       "targetDate": "2026-10-21",
-      "capturedAt": "2026-10-21T10:12:13.405Z",
+      "capturedAt": "2026-10-21T10:18:06.508Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -271,7 +273,7 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/www/zh-tw/margin/balance?date=2026/10/21&id=&response=json",
       "targetDate": "2026-10-21",
-      "capturedAt": "2026-10-21T10:12:15.092Z",
+      "capturedAt": "2026-10-21T10:18:07.445Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -288,7 +290,7 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/10/21",
       "targetDate": "2026-10-21",
-      "capturedAt": "2026-10-21T10:12:15.093Z",
+      "capturedAt": "2026-10-21T10:18:07.446Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -305,7 +307,7 @@
       "kind": "securities-lending",
       "url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl?date=2026/10/21&id=&response=json",
       "targetDate": "2026-10-21",
-      "capturedAt": "2026-10-21T10:12:15.094Z",
+      "capturedAt": "2026-10-21T10:18:07.447Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
