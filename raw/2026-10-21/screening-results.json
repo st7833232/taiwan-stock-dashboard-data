@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "targetDate": "2026-10-21",
   "strategyVersion": "entry-dual-track-v2.6",
-  "inputFingerprint": "31456d6e4c8e2d67c832d8ded600c60bd34155e1475e43061f6021384b0c4097",
+  "inputFingerprint": "00bfbe3cf0305c1d99c5657dd5d624702d6b9cfac225d94bf39417f85e307df7",
   "coverage": {
     "universe": 1326,
     "stocks": 1087,
@@ -42753,7 +42753,7 @@
       "close": 183.5,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 47.3402,
+      "score": 57.3402,
       "scores": {
         "trend": 18,
         "momentum": 4,
@@ -42762,7 +42762,7 @@
         "institutional": 7.5,
         "large_holder": 8,
         "margin_short_lending": 0,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -42773,7 +42773,7 @@
         "credit": false,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -42782,7 +42782,6 @@
       },
       "reasonCodes": [
         "CREDIT_EVIDENCE_INCOMPLETE",
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -42800,8 +42799,7 @@
       "historyCoverageTradingDays": 140,
       "researchEvidenceStatus": "PENDING",
       "researchEvidencePending": [
-        "credit",
-        "fundamental"
+        "credit"
       ]
     },
     {
@@ -54592,8 +54590,7 @@
       "historyCoverageTradingDays": 140,
       "researchEvidenceStatus": "PENDING",
       "researchEvidencePending": [
-        "credit",
-        "fundamental"
+        "credit"
       ]
     },
     {
@@ -65521,8 +65518,7 @@
       "historyCoverageTradingDays": 140,
       "researchEvidenceStatus": "PENDING",
       "researchEvidencePending": [
-        "credit",
-        "fundamental"
+        "credit"
       ]
     },
     {
@@ -69383,8 +69379,7 @@
       "historyCoverageTradingDays": 140,
       "researchEvidenceStatus": "PENDING",
       "researchEvidencePending": [
-        "credit",
-        "fundamental"
+        "credit"
       ]
     },
     {
