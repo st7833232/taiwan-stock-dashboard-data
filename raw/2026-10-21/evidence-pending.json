@@ -2,22 +2,28 @@
   "targetDate": "2026-10-21",
   "researchComplete": false,
   "counts": {
-    "credit": 408,
-    "fundamental": 75
+    "credit": 582,
+    "fundamental": 115,
+    "history": 3
   },
   "pending": {
     "credit": [
       "2303",
       "2409",
       "2344",
+      "1815",
+      "6182",
       "6770",
       "3231",
       "3481",
       "8150",
       "6505",
       "1301",
+      "5483",
       "2481",
+      "5347",
       "2337",
+      "3624",
       "3605",
       "2881",
       "2426",
@@ -45,30 +51,46 @@
       "2324",
       "3702",
       "2886",
+      "3707",
       "1605",
       "3035",
       "4938",
+      "8069",
       "2890",
       "1101",
       "3045",
+      "8111",
       "2377",
+      "6199",
+      "5425",
       "3090",
       "1727",
       "1216",
+      "5351",
       "3715",
       "2618",
       "2892",
+      "6207",
       "2356",
       "2489",
       "2305",
+      "8064",
+      "8042",
       "5871",
       "4977",
+      "5314",
       "2478",
       "2002",
       "4927",
       "4904",
+      "8086",
       "2880",
+      "4939",
       "3714",
+      "1785",
+      "6217",
+      "3362",
+      "5309",
       "2801",
       "1717",
       "2027",
@@ -77,6 +99,7 @@
       "3149",
       "3706",
       "8261",
+      "6620",
       "6116",
       "3673",
       "2375",
@@ -84,7 +107,10 @@
       "5880",
       "6668",
       "1711",
+      "8027",
       "2542",
+      "1569",
+      "3234",
       "8112",
       "4989",
       "1314",
@@ -100,21 +126,28 @@
       "1504",
       "1714",
       "2834",
+      "6548",
       "8103",
       "2371",
+      "5904",
       "3014",
       "1513",
       "5876",
       "2316",
       "2610",
+      "5340",
+      "2221",
       "3019",
       "6168",
       "2254",
       "2634",
       "2474",
       "1312",
+      "4903",
+      "6179",
       "2421",
       "8033",
+      "6127",
       "2385",
       "3013",
       "1102",
@@ -128,6 +161,7 @@
       "6919",
       "2030",
       "4566",
+      "8096",
       "1409",
       "6214",
       "3576",
@@ -138,14 +172,17 @@
       "2605",
       "4916",
       "2812",
+      "8043",
       "8110",
       "2355",
       "6005",
+      "6693",
       "6282",
       "9105",
       "6269",
       "3005",
       "4551",
+      "6218",
       "2458",
       "4764",
       "2241",
@@ -161,13 +198,20 @@
       "6191",
       "2342",
       "2606",
+      "6547",
+      "6532",
       "1402",
       "2413",
       "6438",
       "2388",
+      "3219",
       "2302",
+      "3141",
+      "8431",
+      "3580",
       "1503",
       "1708",
+      "6148",
       "2006",
       "9933",
       "6443",
@@ -179,15 +223,20 @@
       "2402",
       "2332",
       "5243",
+      "5328",
       "2889",
       "2338",
       "4915",
       "1809",
+      "5443",
+      "6530",
       "2485",
       "5285",
+      "6190",
       "3311",
       "2406",
       "2645",
+      "3236",
       "1609",
       "5388",
       "4720",
@@ -197,32 +246,48 @@
       "4960",
       "2033",
       "8131",
+      "2061",
       "2369",
       "6176",
       "6742",
       "2352",
+      "3490",
       "3543",
+      "3718",
+      "3162",
       "3504",
       "2476",
+      "5864",
+      "6227",
+      "3227",
+      "6907",
       "1795",
+      "6016",
       "2105",
+      "8932",
       "8926",
       "6141",
+      "4556",
       "2465",
       "2851",
       "2439",
       "1514",
       "2329",
+      "3551",
       "8422",
       "3518",
       "2393",
       "1722",
       "1319",
+      "6122",
+      "6588",
       "1710",
       "9914",
+      "8040",
       "2633",
       "6658",
       "1773",
+      "6617",
       "3033",
       "9921",
       "2328",
@@ -231,6 +296,7 @@
       "2915",
       "2845",
       "4739",
+      "8050",
       "8070",
       "3535",
       "6719",
@@ -238,46 +304,78 @@
       "9958",
       "3048",
       "3305",
+      "3221",
       "6416",
       "6202",
+      "3317",
       "6133",
+      "6945",
       "3380",
       "1229",
       "3010",
+      "5498",
+      "3354",
       "9910",
       "2548",
+      "1595",
       "6206",
+      "6245",
       "2392",
       "2103",
+      "6603",
       "3135",
+      "3088",
       "4526",
+      "4973",
       "3022",
+      "8054",
+      "3689",
       "6902",
       "2236",
       "2034",
+      "6244",
       "9939",
       "6152",
+      "6716",
       "9941",
       "1215",
+      "6234",
+      "3289",
       "2480",
       "6224",
       "2201",
       "2323",
+      "6174",
       "2646",
       "4949",
       "2401",
+      "6485",
       "6153",
+      "4743",
       "1210",
+      "4707",
       "1608",
+      "3339",
+      "5432",
       "2504",
+      "3479",
       "2233",
       "6108",
       "3704",
+      "6265",
+      "6221",
       "6112",
+      "4174",
+      "6175",
+      "3691",
+      "6284",
       "2104",
       "3062",
+      "6425",
       "4976",
       "2101",
+      "3467",
+      "8383",
       "8114",
       "3138",
       "2330",
@@ -288,9 +386,12 @@
       "2408",
       "3037",
       "4958",
+      "6274",
+      "6488",
       "3008",
       "3189",
       "2368",
+      "3105",
       "3443",
       "8046",
       "2383",
@@ -300,11 +401,14 @@
       "3026",
       "6213",
       "2345",
+      "3081",
       "2449",
+      "6147",
       "3665",
       "3653",
       "6669",
       "3661",
+      "8358",
       "2492",
       "8039",
       "2313",
@@ -312,6 +416,13 @@
       "3406",
       "2360",
       "2059",
+      "3324",
+      "6223",
+      "8299",
+      "5274",
+      "6173",
+      "3374",
+      "3264",
       "7769",
       "3167",
       "6257",
@@ -319,47 +430,74 @@
       "6805",
       "6278",
       "6239",
+      "6187",
       "2382",
       "6531",
       "3450",
       "2455",
+      "4979",
       "6515",
       "3532",
+      "3529",
       "3533",
+      "6510",
       "8021",
       "6139",
       "6442",
       "2379",
       "6446",
+      "3491",
       "2603",
       "2357",
       "2404",
       "3006",
+      "4991",
       "3034",
       "2376",
+      "6683",
       "3044",
+      "3363",
       "2395",
       "6672",
+      "3260",
       "6285",
       "6526",
+      "5289",
       "8028",
       "1560",
+      "3293",
       "3036",
+      "3693",
       "6415",
+      "3163",
       "6715",
       "8210",
       "7610",
       "1590",
+      "3211",
+      "5536",
       "6196",
+      "6290",
       "6933",
       "6426",
+      "6538",
+      "4908",
       "6533",
       "1519",
       "2351",
+      "3131",
       "6197",
+      "4931",
+      "4971",
+      "3498",
+      "5475",
       "2486",
       "6271",
+      "3680",
       "2472",
+      "3455",
+      "6727",
+      "8227",
       "2049",
       "6451",
       "2451",
@@ -367,73 +505,120 @@
       "2493",
       "5269",
       "3563",
+      "4749",
       "6830",
       "6691",
       "2467",
+      "3265",
+      "7734",
+      "3675",
+      "7717",
       "7788",
+      "3441",
       "1476",
       "7795",
       "6789",
       "3030",
       "2912",
+      "6640",
       "6861",
       "3583",
       "7799",
+      "6291",
       "6449",
+      "7828",
       "6944",
       "6831",
       "4967",
+      "5439",
+      "6643",
       "4576",
+      "4542",
       "6414",
       "5434",
       "4770",
       "2466",
       "6781",
       "1477",
+      "4966",
       "2428",
+      "3147",
+      "3357",
+      "6739",
       "6409",
       "7750",
       "6472",
       "3023",
+      "7792",
+      "7751",
       "6957",
+      "4768",
+      "6121",
       "7822",
+      "5386",
+      "4760",
       "8464",
+      "8155",
       "3413",
+      "6584",
+      "4772",
       "6491",
       "8016",
       "5234",
       "2207",
+      "6811",
+      "6667",
       "6937",
+      "6829",
+      "6138",
       "8081",
       "3592",
+      "6903",
+      "6664",
+      "6788",
       "7749",
       "5284",
+      "6435",
       "3617",
       "8454",
       "3515",
       "6782",
+      "8091",
       "2727",
+      "3587",
+      "6231",
+      "6613",
       "6670",
       "4912"
     ],
     "fundamental": [
+      "1815",
       "6770",
       "8150",
       "2481",
       "2337",
+      "3624",
       "4919",
       "6209",
       "3016",
+      "3707",
       "1605",
+      "8111",
+      "6199",
       "1727",
+      "5351",
+      "8042",
       "2478",
       "3149",
+      "6620",
       "2375",
+      "8027",
       "4989",
       "6706",
       "1513",
       "2254",
       "2634",
+      "4903",
       "2421",
       "8033",
       "3013",
@@ -443,18 +628,24 @@
       "2468",
       "6155",
       "9105",
+      "6218",
       "2498",
       "2342",
+      "6532",
       "6438",
       "1708",
+      "6148",
       "1597",
       "2402",
       "5243",
       "5285",
       "3311",
+      "3236",
       "2033",
       "2369",
       "6742",
+      "3490",
+      "3718",
       "1795",
       "6141",
       "1514",
@@ -464,34 +655,63 @@
       "6525",
       "3048",
       "6133",
+      "6945",
+      "6245",
       "3135",
       "2034",
+      "6716",
+      "6234",
       "4949",
       "6153",
+      "6221",
       "2101",
       "2330",
       "3443",
       "8046",
       "3711",
+      "6147",
       "3653",
+      "8358",
       "8039",
       "2313",
+      "6223",
+      "6173",
       "6257",
       "6805",
+      "4979",
       "3532",
+      "3529",
+      "6683",
       "3044",
       "6285",
       "8028",
+      "3163",
+      "3211",
+      "5536",
+      "6727",
+      "8227",
       "7711",
       "6830",
+      "7717",
       "1476",
       "7795",
       "6944",
+      "6643",
       "4770",
       "6409",
       "7750",
+      "5386",
       "5234",
-      "3592"
+      "6138",
+      "3592",
+      "6435",
+      "3587",
+      "6231"
+    ],
+    "history": [
+      "3718",
+      "6945",
+      "00411A"
     ]
   },
   "fundamentalQualityRejected": [
@@ -505,6 +725,12 @@
     },
     {
       "code": "2344",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6182",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
@@ -679,6 +905,12 @@
       ]
     },
     {
+      "code": "8064",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "5871",
       "failures": [
         "REVENUE_DETERIORATION"
@@ -689,6 +921,12 @@
       "failures": [
         "PROFIT_QUALITY_FAILED",
         "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "5314",
+      "failures": [
         "PROFIT_DETERIORATION"
       ]
     },
@@ -715,10 +953,44 @@
       ]
     },
     {
+      "code": "4939",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "3714",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "1785",
+      "failures": [
+        "OFFICIAL_GOVERNANCE_WARNING"
+      ]
+    },
+    {
+      "code": "6217",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "3362",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "5309",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "PROFIT_DETERIORATION"
       ]
     },
     {
@@ -772,6 +1044,21 @@
       "code": "1711",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "1569",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3234",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
       ]
     },
     {
@@ -872,6 +1159,14 @@
       ]
     },
     {
+      "code": "6127",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
       "code": "2385",
       "failures": [
         "REVENUE_DETERIORATION",
@@ -954,6 +1249,12 @@
       ]
     },
     {
+      "code": "8043",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "8110",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
@@ -963,6 +1264,12 @@
       "code": "6005",
       "failures": [
         "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "6693",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
     },
     {
@@ -1020,6 +1327,14 @@
       ]
     },
     {
+      "code": "6547",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
       "code": "2413",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
@@ -1030,6 +1345,27 @@
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "3141",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "8431",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3580",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
       ]
     },
     {
@@ -1101,6 +1437,12 @@
       ]
     },
     {
+      "code": "5443",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
       "code": "2485",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
@@ -1139,6 +1481,12 @@
       ]
     },
     {
+      "code": "2061",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "6176",
       "failures": [
         "REVENUE_DETERIORATION",
@@ -1154,9 +1502,33 @@
       ]
     },
     {
+      "code": "3162",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
       "code": "3504",
       "failures": [
         "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "5864",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "3227",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6016",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
       ]
     },
     {
@@ -1185,6 +1557,19 @@
       ]
     },
     {
+      "code": "6122",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6588",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "1710",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
@@ -1197,6 +1582,19 @@
       "failures": [
         "REVENUE_DETERIORATION",
         "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "8040",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6617",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
       ]
     },
     {
@@ -1251,6 +1649,12 @@
       ]
     },
     {
+      "code": "3221",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "3380",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
@@ -1265,6 +1669,19 @@
       ]
     },
     {
+      "code": "5498",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3354",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
       "code": "9910",
       "failures": [
         "REVENUE_DETERIORATION",
@@ -1272,7 +1689,21 @@
       ]
     },
     {
+      "code": "1595",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
       "code": "2392",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6603",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "REVENUE_DETERIORATION"
@@ -1284,6 +1715,19 @@
         "PROFIT_QUALITY_FAILED",
         "REVENUE_DETERIORATION",
         "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4973",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "8054",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
       ]
     },
     {
@@ -1309,6 +1753,13 @@
       "code": "1215",
       "failures": [
         "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3289",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
       ]
     },
     {
@@ -1344,9 +1795,44 @@
       ]
     },
     {
+      "code": "6485",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4743",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
       "code": "1210",
       "failures": [
         "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4707",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3339",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "5432",
+      "failures": [
+        "REVENUE_DETERIORATION"
       ]
     },
     {
@@ -1376,6 +1862,33 @@
       ]
     },
     {
+      "code": "6265",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "4174",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3691",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6284",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
       "code": "2104",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
@@ -1389,6 +1902,12 @@
         "PROFIT_QUALITY_FAILED",
         "REVENUE_DETERIORATION",
         "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6425",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
     },
     {
@@ -1432,6 +1951,18 @@
       ]
     },
     {
+      "code": "6488",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3105",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "2449",
       "failures": [
         "PROFIT_DETERIORATION"
@@ -1441,6 +1972,12 @@
       "code": "3661",
       "failures": [
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6187",
+      "failures": [
+        "OFFICIAL_GOVERNANCE_WARNING"
       ]
     },
     {
@@ -1482,9 +2019,30 @@
       ]
     },
     {
+      "code": "4991",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "3034",
       "failures": [
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3363",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3693",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
       ]
     },
     {
@@ -1501,6 +2059,12 @@
       ]
     },
     {
+      "code": "6538",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
       "code": "6533",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
@@ -1514,9 +2078,35 @@
       ]
     },
     {
+      "code": "4971",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3498",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "5475",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "2486",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3455",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
       ]
     },
     {
@@ -1525,6 +2115,12 @@
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED",
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3441",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
     },
     {
@@ -1556,8 +2152,22 @@
       ]
     },
     {
+      "code": "4966",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
       "code": "6472",
       "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4768",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
         "PROFIT_DETERIORATION"
       ]
     },
