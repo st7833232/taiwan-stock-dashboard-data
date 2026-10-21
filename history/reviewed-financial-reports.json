@@ -11121,5 +11121,30 @@
     "basis": "YEAR_TO_DATE",
     "unit": "TWD_THOUSAND",
     "verificationMethod": "PDF_TEXT_MATCHED_OFFICIAL_PERIOD_TABLE"
+  },
+  {
+    "filename": "202502_6146_AI1.pdf",
+    "uploadedAt": "114/07/30 17:15:58",
+    "filingYear": 2025,
+    "filingFallback": null,
+    "archiveKey": "202502_6146_AI1.pdf.7217bb812af2f4183b2fbf0e840e24216c9fed5a4359f5667b14b0ed6c724692",
+    "sha256": "7217bb812af2f4183b2fbf0e840e24216c9fed5a4359f5667b14b0ed6c724692",
+    "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=6146&year=114&seamon=&mtype=A&check2858=Y",
+    "pdfUrl": "https://doc.twse.com.tw/pdf/202502_6146_AI1_20261021_185509.pdf",
+    "row": {
+      "公司代號": "6146",
+      "年度": 2025,
+      "季別": 2,
+      "營業收入": 2229611,
+      "本期淨利（淨損）": 577694,
+      "淨利（淨損）歸屬於母公司業主": 549494
+    },
+    "reviewedPages": [
+      6,
+      7
+    ],
+    "basis": "YEAR_TO_DATE",
+    "unit": "TWD_THOUSAND",
+    "verificationMethod": "PDF_TEXT_MATCHED_OFFICIAL_PERIOD_TABLE"
   }
 ]
