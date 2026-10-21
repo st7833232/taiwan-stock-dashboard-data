@@ -5289,12 +5289,12 @@
     "filingParserVersion": 3,
     "textParserVersion": 22,
     "filingFallback": null,
-    "stage": "FILING_INDEX",
-    "reason": "fetch failed",
-    "attempts": 3,
+    "stage": "PDF_DOWNLOAD",
+    "reason": "The operation was aborted due to timeout",
+    "attempts": 4,
     "checkedDate": "2026-10-21",
-    "checkedAt": "2026-10-21T10:46:58.233Z",
-    "nextRetryAt": "2026-10-21T11:06:58.233Z"
+    "checkedAt": "2026-10-21T11:15:58.902Z",
+    "nextRetryAt": "2026-10-21T11:55:58.902Z"
   },
   "6204|2026-06-30": {
     "status": "UNVERIFIED",
