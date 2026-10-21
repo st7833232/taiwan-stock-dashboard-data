@@ -5276,12 +5276,12 @@
     "filingParserVersion": 3,
     "textParserVersion": 22,
     "filingFallback": null,
-    "stage": "PDF_LINK",
-    "reason": "fetch failed",
-    "attempts": 2,
+    "stage": "PDF_METRICS",
+    "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+    "attempts": 3,
     "checkedDate": "2026-10-21",
-    "checkedAt": "2026-10-21T10:35:22.735Z",
-    "nextRetryAt": "2026-10-21T10:45:22.735Z"
+    "checkedAt": "2026-10-21T10:46:30.711Z",
+    "nextRetryAt": "2026-10-22T10:46:30.711Z"
   },
   "8936|2026-06-30": {
     "status": "UNVERIFIED",
@@ -5291,10 +5291,10 @@
     "filingFallback": null,
     "stage": "FILING_INDEX",
     "reason": "fetch failed",
-    "attempts": 2,
+    "attempts": 3,
     "checkedDate": "2026-10-21",
-    "checkedAt": "2026-10-21T10:35:30.491Z",
-    "nextRetryAt": "2026-10-21T10:45:30.491Z"
+    "checkedAt": "2026-10-21T10:46:58.233Z",
+    "nextRetryAt": "2026-10-21T11:06:58.233Z"
   },
   "6204|2026-06-30": {
     "status": "UNVERIFIED",
