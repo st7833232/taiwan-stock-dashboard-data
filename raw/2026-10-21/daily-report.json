@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-21",
-  "revision": "2026-10-21-184036",
+  "revision": "2026-10-21-184530",
   "strategyVersion": "entry-dual-track-v2.6",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
@@ -2712,17 +2712,6 @@
       "officialDateEvidence": "1151021"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-21-184036",
-    "runId": "39585787804",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/39585787804",
-    "validatedCommit": "bded867617dba512378f73e5dbee492f689ef523"
-  },
-  "inputFingerprint": "d3f18df7f660e8325259a236b9f8cdc47c67080f8f013fc91913b931e39e09dc"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "e8c1f215abe9cf1c81d4840dc26746d221b13eba31151bde81948981796b72e2"
 }
