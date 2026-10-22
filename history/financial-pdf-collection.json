@@ -5366,16 +5366,22 @@
     "checkedAt": "2026-10-22T10:12:46.072Z"
   },
   "3416|2026-06-30": {
-    "status": "UNVERIFIED",
+    "status": "VERIFIED",
     "parserVersion": 2,
-    "filingParserVersion": 3,
-    "textParserVersion": 22,
-    "filingFallback": null,
-    "stage": "FILING_INDEX",
-    "reason": "fetch failed",
-    "attempts": 1,
     "checkedDate": "2026-10-22",
-    "checkedAt": "2026-10-22T10:13:10.201Z",
-    "nextRetryAt": "2026-10-22T10:18:10.201Z"
+    "checkedAt": "2026-10-22T10:19:45.089Z",
+    "lastUnverifiedAttempt": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 3,
+      "textParserVersion": 22,
+      "filingFallback": null,
+      "stage": "FILING_INDEX",
+      "reason": "fetch failed",
+      "attempts": 1,
+      "checkedDate": "2026-10-22",
+      "checkedAt": "2026-10-22T10:13:10.201Z",
+      "nextRetryAt": "2026-10-22T10:18:10.201Z"
+    }
   }
 }
