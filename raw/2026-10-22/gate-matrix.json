@@ -1,7 +1,7 @@
 {
   "targetDate": "2026-10-22",
   "timezone": "Asia/Taipei",
-  "generatedAt": "2026-10-22T14:46:59.845Z",
+  "generatedAt": "2026-10-22T14:54:35.926Z",
   "simulatedTodayDate": null,
   "effectiveTodayDate": "2026-10-22",
   "overallStatus": "PASS",
@@ -251,7 +251,8 @@
       "bytes": 129326,
       "officialDateEvidence": "20261022",
       "rowCount": 1302,
-      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+      "preservedCapture": true
     },
     {
       "source": "twse-margin-trading-legacy",
@@ -268,7 +269,8 @@
       "bytes": 129326,
       "officialDateEvidence": "20261022",
       "rowCount": 1302,
-      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+      "preservedCapture": true
     },
     {
       "source": "tpex-margin-balance",
@@ -285,7 +287,8 @@
       "bytes": 107526,
       "officialDateEvidence": "20261022",
       "rowCount": 919,
-      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+      "preservedCapture": true
     },
     {
       "source": "tpex-margin-balance-legacy",
@@ -294,7 +297,7 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/10/22",
       "targetDate": "2026-10-22",
-      "capturedAt": "2026-10-22T14:46:56.513Z",
+      "capturedAt": "2026-10-22T14:54:34.470Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -319,7 +322,8 @@
       "bytes": 99887,
       "officialDateEvidence": "20261022",
       "rowCount": 932,
-      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+      "preservedCapture": true
     },
     {
       "source": "twse-monthly-revenue",
