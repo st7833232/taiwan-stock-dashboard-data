@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-22",
-  "revision": "2026-10-22-181252",
+  "revision": "2026-10-22-181810",
   "strategyVersion": "entry-dual-track-v2.6",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
@@ -21,7 +21,7 @@
   "evidencePending": {
     "credit": 590,
     "fundamental": 120,
-    "history": 3
+    "history": 2
   },
   "fundamentalQualityRejected": [
     {
@@ -1520,6 +1520,26 @@
   ],
   "historyQualityRejected": [
     {
+      "code": "6945",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-06-05",
+      "availableTradingDays": 92,
+      "verifiedTradingDays": 92,
+      "maximumPossibleTradingDays": 97,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=6945&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
       "code": "00406A",
       "status": "FAIL",
       "verified": true,
@@ -2455,7 +2475,7 @@
     "macdHistogram": -1.0150082830710714,
     "atr14": 1.8321428571428555
   },
-  "conclusion": "2026-10-22全市場 2305 檔已完成初步篩選（普通股 1949、ETF 356），深度檢查 669 檔；其中 78 檔必要證據已齊並完成逐檔篩選，已有 78 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；591 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：融資融券等信用資料 590檔、財務證據 120檔、歷史行情 3檔。全市場研究尚未完成。普通股信用資料已核對 0/590 檔。財務證據完整但品質未通過 227 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-10-22全市場 2305 檔已完成初步篩選（普通股 1949、ETF 356），深度檢查 669 檔；其中 78 檔必要證據已齊並完成逐檔篩選，已有 78 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；591 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：融資融券等信用資料 590檔、財務證據 120檔、歷史行情 2檔。全市場研究尚未完成。普通股信用資料已核對 0/590 檔。財務證據完整但品質未通過 227 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [],
   "core": [
     {
@@ -2729,17 +2749,6 @@
       "officialDateEvidence": "1151022"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-22-181252",
-    "runId": "39760359810",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/39760359810",
-    "validatedCommit": "89a0c1c47d06c73ed3d4d9655c3e72450226b7fe"
-  },
-  "inputFingerprint": "5b25011bcefacade40dcc9812c548a8f24f394ee3a3cfe1cc1b6be816c4064bf"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "839cf829664998bafa515cf83f3af880fd32ba4453a6c639fc13b7f91a647d08"
 }
