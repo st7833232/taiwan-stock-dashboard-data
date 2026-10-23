@@ -1,7 +1,7 @@
 {
   "targetDate": "2026-10-23",
   "timezone": "Asia/Taipei",
-  "generatedAt": "2026-10-23T10:07:28.054Z",
+  "generatedAt": "2026-10-23T14:33:38.459Z",
   "simulatedTodayDate": null,
   "effectiveTodayDate": "2026-10-23",
   "overallStatus": "VERIFY_FAILED",
@@ -89,7 +89,7 @@
       "kind": "daily-close-quotes",
       "url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20261023&type=ALL&response=json",
       "targetDate": "2026-10-23",
-      "capturedAt": "2026-10-23T10:07:11.700Z",
+      "capturedAt": "2026-10-23T14:33:25.912Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -106,7 +106,7 @@
       "kind": "market-close-statistics",
       "url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20261023&type=ALL&response=json",
       "targetDate": "2026-10-23",
-      "capturedAt": "2026-10-23T10:07:11.753Z",
+      "capturedAt": "2026-10-23T14:33:25.952Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -130,7 +130,8 @@
       "contentType": "application/json;charset=UTF-8",
       "bytes": 1787,
       "officialDateEvidence": "20261023",
-      "rowCount": 15
+      "rowCount": 15,
+      "preservedPass": true
     },
     {
       "source": "twse-t86",
@@ -139,7 +140,7 @@
       "kind": "individual-institutional",
       "url": "https://www.twse.com.tw/rwd/zh/fund/T86?date=20261023&selectType=ALL&response=json",
       "targetDate": "2026-10-23",
-      "capturedAt": "2026-10-23T10:07:11.755Z",
+      "capturedAt": "2026-10-23T14:33:25.953Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -156,7 +157,7 @@
       "kind": "daily-close-quotes",
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes",
       "targetDate": "2026-10-23",
-      "capturedAt": "2026-10-23T10:07:12.814Z",
+      "capturedAt": "2026-10-23T14:33:27.025Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -173,7 +174,7 @@
       "kind": "daily-close-quotes",
       "url": "https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&d=115/10/23&se=EW&o=json",
       "targetDate": "2026-10-23",
-      "capturedAt": "2026-10-23T10:07:12.815Z",
+      "capturedAt": "2026-10-23T14:33:27.026Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -189,7 +190,7 @@
       "kind": "market-turnover-index",
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_daily_trading_index",
       "targetDate": "2026-10-23",
-      "capturedAt": "2026-10-23T10:07:12.816Z",
+      "capturedAt": "2026-10-23T14:33:27.028Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -206,7 +207,7 @@
       "kind": "individual-institutional",
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_3insti_daily_trading",
       "targetDate": "2026-10-23",
-      "capturedAt": "2026-10-23T10:07:12.816Z",
+      "capturedAt": "2026-10-23T14:33:27.029Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -223,7 +224,7 @@
       "kind": "individual-institutional",
       "url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=115/10/23&id=&response=json",
       "targetDate": "2026-10-23",
-      "capturedAt": "2026-10-23T10:07:23.282Z",
+      "capturedAt": "2026-10-23T14:33:34.372Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -239,7 +240,7 @@
       "kind": "institutional-summary",
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_3insti_summary",
       "targetDate": "2026-10-23",
-      "capturedAt": "2026-10-23T10:07:23.283Z",
+      "capturedAt": "2026-10-23T14:33:34.373Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -256,7 +257,7 @@
       "kind": "margin-short",
       "url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20261023&response=json&selectType=ALL",
       "targetDate": "2026-10-23",
-      "capturedAt": "2026-10-23T10:07:23.284Z",
+      "capturedAt": "2026-10-23T14:33:34.375Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -273,7 +274,7 @@
       "kind": "margin-short",
       "url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261023&response=json&selectType=ALL",
       "targetDate": "2026-10-23",
-      "capturedAt": "2026-10-23T10:07:23.285Z",
+      "capturedAt": "2026-10-23T14:33:34.376Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -290,7 +291,7 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/www/zh-tw/margin/balance?date=2026/10/23&id=&response=json",
       "targetDate": "2026-10-23",
-      "capturedAt": "2026-10-23T10:07:24.186Z",
+      "capturedAt": "2026-10-23T14:33:35.353Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -307,7 +308,7 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/10/23",
       "targetDate": "2026-10-23",
-      "capturedAt": "2026-10-23T10:07:24.187Z",
+      "capturedAt": "2026-10-23T14:33:35.353Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -324,7 +325,7 @@
       "kind": "securities-lending",
       "url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl?date=2026/10/23&id=&response=json",
       "targetDate": "2026-10-23",
-      "capturedAt": "2026-10-23T10:07:24.187Z",
+      "capturedAt": "2026-10-23T14:33:35.353Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -347,7 +348,8 @@
       "httpStatus": 200,
       "contentType": "application/json",
       "bytes": 607634,
-      "note": "Auxiliary source captured at this run time; it is not part of the daily publication Gate."
+      "note": "Auxiliary source captured at this run time; it is not part of the daily publication Gate.",
+      "preservedCapture": true
     },
     {
       "source": "tpex-monthly-revenue",
@@ -362,7 +364,8 @@
       "httpStatus": 200,
       "contentType": "application/json",
       "bytes": 496597,
-      "note": "Auxiliary source captured at this run time; it is not part of the daily publication Gate."
+      "note": "Auxiliary source captured at this run time; it is not part of the daily publication Gate.",
+      "preservedCapture": true
     },
     {
       "source": "twse-material-information",
@@ -377,7 +380,8 @@
       "httpStatus": 200,
       "contentType": "application/json",
       "bytes": 232694,
-      "note": "Auxiliary source captured at this run time; it is not part of the daily publication Gate."
+      "note": "Auxiliary source captured at this run time; it is not part of the daily publication Gate.",
+      "preservedCapture": true
     },
     {
       "source": "tpex-material-information",
@@ -392,7 +396,8 @@
       "httpStatus": 200,
       "contentType": "application/json",
       "bytes": 100086,
-      "note": "Auxiliary source captured at this run time; it is not part of the daily publication Gate."
+      "note": "Auxiliary source captured at this run time; it is not part of the daily publication Gate.",
+      "preservedCapture": true
     },
     {
       "source": "tdcc-shareholding-distribution",
@@ -407,7 +412,8 @@
       "httpStatus": 200,
       "contentType": "application/json",
       "bytes": 9816777,
-      "note": "Auxiliary source captured at this run time; it is not part of the daily publication Gate."
+      "note": "Auxiliary source captured at this run time; it is not part of the daily publication Gate.",
+      "preservedCapture": true
     }
   ]
 }
