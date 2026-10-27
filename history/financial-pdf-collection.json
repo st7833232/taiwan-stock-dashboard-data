@@ -5415,16 +5415,22 @@
     "checkedAt": "2026-10-27T15:47:44.283Z"
   },
   "4766|2026-06-30": {
-    "status": "UNVERIFIED",
+    "status": "VERIFIED",
     "parserVersion": 2,
-    "filingParserVersion": 3,
-    "textParserVersion": 22,
-    "filingFallback": null,
-    "stage": "FILING_INDEX",
-    "reason": "fetch failed",
-    "attempts": 1,
     "checkedDate": "2026-10-27",
-    "checkedAt": "2026-10-27T15:48:23.754Z",
-    "nextRetryAt": "2026-10-27T15:53:23.754Z"
+    "checkedAt": "2026-10-27T15:55:48.509Z",
+    "lastUnverifiedAttempt": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 3,
+      "textParserVersion": 22,
+      "filingFallback": null,
+      "stage": "FILING_INDEX",
+      "reason": "fetch failed",
+      "attempts": 1,
+      "checkedDate": "2026-10-27",
+      "checkedAt": "2026-10-27T15:48:23.754Z",
+      "nextRetryAt": "2026-10-27T15:53:23.754Z"
+    }
   }
 }

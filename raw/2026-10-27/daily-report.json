@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-27",
-  "revision": "2026-10-27-235521",
+  "revision": "2026-10-27-235559",
   "strategyVersion": "entry-dual-track-v2.6",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
@@ -10,16 +10,16 @@
     "rankContractVersion": 2,
     "rankingMode": "RESEARCH_AND_TRADE_SPLIT",
     "screenedDeepDive": 669,
-    "evidenceCompleteDeepDive": 550,
-    "evidencePendingDeepDive": 119,
-    "researchRanked": 550,
+    "evidenceCompleteDeepDive": 551,
+    "evidencePendingDeepDive": 118,
+    "researchRanked": 551,
     "tradeEligibleRanked": 0,
     "reScreenOnEvidenceAdmission": true,
     "globalResearchComplete": false
   },
   "researchComplete": false,
   "evidencePending": {
-    "fundamental": 117,
+    "fundamental": 116,
     "history": 1,
     "credit": 3
   },
@@ -1520,6 +1520,12 @@
       "failures": [
         "PROFIT_DETERIORATION"
       ]
+    },
+    {
+      "code": "4766",
+      "failures": [
+        "OFFICIAL_GOVERNANCE_WARNING"
+      ]
     }
   ],
   "historyQualityRejected": [
@@ -1713,11 +1719,11 @@
     "deepDiveStocks": 590,
     "deepDiveEtfs": 79,
     "screenedDeepDive": 669,
-    "evidenceCompleteDeepDive": 550,
-    "evidencePendingDeepDive": 119,
-    "researchRanked": 550,
+    "evidenceCompleteDeepDive": 551,
+    "evidencePendingDeepDive": 118,
+    "researchRanked": 551,
     "tradeEligibleRanked": 0,
-    "eligibleRanked": 550,
+    "eligibleRanked": 551,
     "eligibleRankedMeaning": "RESEARCH_EVIDENCE_COMPLETE",
     "creditReadyStocks": 587,
     "creditMissingCodes": [
@@ -1733,7 +1739,7 @@
         "name": "台表科",
         "score": 83.0854,
         "researchRank": 1,
-        "researchPercentile": 0.21231422505307856,
+        "researchPercentile": 0.211864406779661,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1747,7 +1753,7 @@
         "name": "視陽",
         "score": 82.1711,
         "researchRank": 2,
-        "researchPercentile": 0.42462845010615713,
+        "researchPercentile": 0.423728813559322,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1761,7 +1767,7 @@
         "name": "遠東新",
         "score": 78.3333,
         "researchRank": 3,
-        "researchPercentile": 0.6369426751592356,
+        "researchPercentile": 0.635593220338983,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1775,7 +1781,7 @@
         "name": "GOGOLOOK",
         "score": 76.9183,
         "researchRank": 4,
-        "researchPercentile": 0.8492569002123143,
+        "researchPercentile": 0.847457627118644,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1789,7 +1795,7 @@
         "name": "瑞昱",
         "score": 72.5,
         "researchRank": 5,
-        "researchPercentile": 1.0615711252653928,
+        "researchPercentile": 1.0593220338983051,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1804,7 +1810,7 @@
         "name": "長榮",
         "score": 70.9256,
         "researchRank": 6,
-        "researchPercentile": 1.2738853503184713,
+        "researchPercentile": 1.271186440677966,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1819,7 +1825,7 @@
         "name": "時碩工業",
         "score": 69.5,
         "researchRank": 7,
-        "researchPercentile": 1.4861995753715498,
+        "researchPercentile": 1.4830508474576272,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1834,7 +1840,7 @@
         "name": "中華電",
         "score": 69.2023,
         "researchRank": 8,
-        "researchPercentile": 1.6985138004246285,
+        "researchPercentile": 1.694915254237288,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1850,7 +1856,7 @@
         "name": "華擎",
         "score": 68.4,
         "researchRank": 9,
-        "researchPercentile": 1.910828025477707,
+        "researchPercentile": 1.9067796610169492,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1867,7 +1873,7 @@
         "name": "中鼎",
         "score": 68,
         "researchRank": 10,
-        "researchPercentile": 2.1231422505307855,
+        "researchPercentile": 2.1186440677966103,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -2062,7 +2068,7 @@
     "macdHistogram": -1.004622666288586,
     "atr14": 1.8714285714285697
   },
-  "conclusion": "2026-10-27全市場 2317 檔已完成初步篩選（普通股 1961、ETF 356），深度檢查 669 檔；其中 550 檔必要證據已齊並完成逐檔篩選，已有 550 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；119 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：財務證據 117檔、歷史行情 1檔、融資融券等信用資料 3檔。全市場研究尚未完成。普通股信用資料已核對 587/590 檔。財務證據完整但品質未通過 228 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-10-27全市場 2317 檔已完成初步篩選（普通股 1961、ETF 356），深度檢查 669 檔；其中 551 檔必要證據已齊並完成逐檔篩選，已有 551 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；118 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：財務證據 116檔、歷史行情 1檔、融資融券等信用資料 3檔。全市場研究尚未完成。普通股信用資料已核對 587/590 檔。財務證據完整但品質未通過 229 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [],
   "core": [
     {
@@ -2352,17 +2358,6 @@
       "officialDateEvidence": "1151027"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-27-235521",
-    "runId": "40534711989",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/40534711989",
-    "validatedCommit": "1ed4968a226eea0d7d7185f5e9327636b5d5cb87"
-  },
-  "inputFingerprint": "09d06950c13a9ab0690641bb20beaee9f2d16bf02ab4c62e1bfecb2d76c3962d"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "6847e6899b4e63174f4512309b35ecf31926af23a03f6dbbdbbab398535c37db"
 }
