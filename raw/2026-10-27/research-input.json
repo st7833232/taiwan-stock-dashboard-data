@@ -656124,13 +656124,13 @@
         }
       },
       "financialAssessment": {
-        "status": "UNVERIFIED",
-        "verified": false,
+        "status": "FAIL",
+        "verified": true,
         "qualityPass": false,
-        "pending": [
-          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
+        "pending": [],
+        "failures": [
+          "PROFIT_DETERIORATION"
         ],
-        "failures": [],
         "metrics": {
           "revenue": 98441,
           "grossProfit": 75018,
@@ -656146,14 +656146,15 @@
           "operatingMargin": 0.23004642374620332,
           "liabilityAssetRatio": 0.23221833278740928,
           "currentRatio": 6.1918912797282,
-          "revenueYoY": null,
-          "netProfitYoY": null
+          "revenueYoY": 0.056335912266205934,
+          "netProfitYoY": -0.05133722717491551
         },
         "periodEnd": "2026-06-30",
         "basis": "YEAR_TO_DATE",
         "sources": [
           "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_ci",
-          "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci"
+          "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci",
+          "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=6925&year=115&seamon=&mtype=A&check2858=Y"
         ]
       },
       "eventAssessment": {
@@ -671973,13 +671974,13 @@
         }
       },
       "financialAssessment": {
-        "status": "UNVERIFIED",
-        "verified": false,
+        "status": "FAIL",
+        "verified": true,
         "qualityPass": false,
-        "pending": [
-          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
+        "pending": [],
+        "failures": [
+          "PROFIT_DETERIORATION"
         ],
-        "failures": [],
         "metrics": {
           "revenue": 10149114,
           "grossProfit": 1117553,
@@ -671995,14 +671996,15 @@
           "operatingMargin": 0.03544604977340879,
           "liabilityAssetRatio": 0.47819348180909127,
           "currentRatio": 1.7728279971044671,
-          "revenueYoY": null,
-          "netProfitYoY": null
+          "revenueYoY": 0.10637485617233922,
+          "netProfitYoY": -0.24312852167934595
         },
         "periodEnd": "2026-06-30",
         "basis": "YEAR_TO_DATE",
         "sources": [
           "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-          "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+          "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+          "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=8213&year=114&seamon=&mtype=A&check2858=Y"
         ]
       },
       "eventAssessment": {
@@ -690993,13 +690995,14 @@
         }
       },
       "financialAssessment": {
-        "status": "UNVERIFIED",
-        "verified": false,
+        "status": "FAIL",
+        "verified": true,
         "qualityPass": false,
-        "pending": [
-          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
+        "pending": [],
+        "failures": [
+          "REVENUE_DETERIORATION",
+          "PROFIT_DETERIORATION"
         ],
-        "failures": [],
         "metrics": {
           "revenue": 4240984,
           "grossProfit": 700007,
@@ -691015,14 +691018,15 @@
           "operatingMargin": 0.004447552737760859,
           "liabilityAssetRatio": 0.487999258602512,
           "currentRatio": 1.669241313770801,
-          "revenueYoY": null,
-          "netProfitYoY": null
+          "revenueYoY": -0.011572637915386985,
+          "netProfitYoY": -0.5464038136989249
         },
         "periodEnd": "2026-06-30",
         "basis": "YEAR_TO_DATE",
         "sources": [
           "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_ci",
-          "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci"
+          "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci",
+          "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=3483&year=114&seamon=&mtype=A&check2858=Y"
         ]
       },
       "eventAssessment": {
@@ -730728,13 +730732,13 @@
         }
       },
       "financialAssessment": {
-        "status": "UNVERIFIED",
-        "verified": false,
+        "status": "FAIL",
+        "verified": true,
         "qualityPass": false,
-        "pending": [
-          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
+        "pending": [],
+        "failures": [
+          "COMPARATIVE_GROWTH_NOT_APPLICABLE"
         ],
-        "failures": [],
         "metrics": {
           "revenue": 381734,
           "grossProfit": 131019,
@@ -730750,14 +730754,15 @@
           "operatingMargin": 0.17671205603902193,
           "liabilityAssetRatio": 0.5354461664176504,
           "currentRatio": 1.6342953882923825,
-          "revenueYoY": null,
+          "revenueYoY": 0.48774869926145326,
           "netProfitYoY": null
         },
         "periodEnd": "2026-06-30",
         "basis": "YEAR_TO_DATE",
         "sources": [
           "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_ci",
-          "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci"
+          "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci",
+          "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=5228&year=114&seamon=&mtype=A&check2858=Y"
         ]
       },
       "eventAssessment": {
@@ -741550,12 +741555,10 @@
         }
       },
       "financialAssessment": {
-        "status": "UNVERIFIED",
-        "verified": false,
-        "qualityPass": false,
-        "pending": [
-          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
-        ],
+        "status": "PASS",
+        "verified": true,
+        "qualityPass": true,
+        "pending": [],
         "failures": [],
         "metrics": {
           "revenue": 3172151,
@@ -741572,14 +741575,15 @@
           "operatingMargin": 0.30784600102580234,
           "liabilityAssetRatio": 0.3447562708008067,
           "currentRatio": 2.1315403565623003,
-          "revenueYoY": null,
-          "netProfitYoY": null
+          "revenueYoY": 0.06774075196068541,
+          "netProfitYoY": 0.2570928387929299
         },
         "periodEnd": "2026-06-30",
         "basis": "YEAR_TO_DATE",
         "sources": [
           "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_ci",
-          "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci"
+          "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci",
+          "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=4105&year=114&seamon=&mtype=A&check2858=Y"
         ]
       },
       "eventAssessment": {
@@ -741629,8 +741633,8 @@
       "verifiedEvidence": {
         "tdcc": true,
         "tdccScoreFraction": 1,
-        "fundamental": false,
-        "fundamentalScoreFraction": 0,
+        "fundamental": true,
+        "fundamentalScoreFraction": 0.6666666666666666,
         "eventRisk": true,
         "corporateAction": true
       }
