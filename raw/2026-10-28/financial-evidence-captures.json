@@ -8,7 +8,7 @@
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
       "summary": "上市公司每日重大訊息",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-28T10:22:24.720Z",
+      "capturedAt": "2026-10-28T10:27:45.418Z",
       "rows": 137
     },
     {
@@ -18,7 +18,7 @@
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap23_L",
       "summary": "上市公司違反資訊申報、重大訊息及說明記者會規定專區",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-28T10:22:25.139Z",
+      "capturedAt": "2026-10-28T10:27:46.395Z",
       "rows": 38
     },
     {
@@ -38,7 +38,7 @@
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap26_L",
       "summary": "上市公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-28T10:22:25.314Z",
+      "capturedAt": "2026-10-28T10:27:46.559Z",
       "rows": 1
     },
     {
@@ -162,7 +162,7 @@
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL",
       "summary": "上市股票除權除息預告表",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-28T10:22:25.489Z",
+      "capturedAt": "2026-10-28T10:27:46.724Z",
       "rows": 22
     },
     {
@@ -177,7 +177,7 @@
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWTAWU",
       "summary": "集中市場暫停交易證券",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-28T10:22:25.665Z",
+      "capturedAt": "2026-10-28T10:27:47.143Z",
       "rows": 1
     },
     {
@@ -192,7 +192,7 @@
       "url": "https://www.twse.com.tw/exchangeReport/TWT49U?response=json&startDate=20260501&endDate=20261028",
       "summary": "上市股票除權除息計算結果表",
       "status": "CAPTURED",
-      "capturedAt": "2026-10-28T10:22:40.972Z",
+      "capturedAt": "2026-10-28T10:27:47.806Z",
       "rows": null
     },
     {
@@ -451,21 +451,6 @@
       "rows": null
     },
     {
-      "id": "tpex-coverage-tpex-spendi-history",
-      "market": "TPEx",
-      "kind": "coverage",
-      "coverageTags": [
-        "tradingHalts"
-      ],
-      "coverageOnly": true,
-      "allowEmpty": true,
-      "url": "https://www.tpex.org.tw/openapi/v1/tpex_spendi_history",
-      "summary": "上櫃歷史公布暫停/恢復交易股票",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-28T10:22:50.288Z",
-      "rows": 362
-    },
-    {
       "id": "tpex-coverage-tpex-spendi-today",
       "market": "TPEx",
       "kind": "coverage",
@@ -479,6 +464,21 @@
       "status": "CAPTURED",
       "capturedAt": "2026-10-28T10:22:50.568Z",
       "rows": 1
+    },
+    {
+      "id": "tpex-coverage-tpex-spendi-history",
+      "market": "TPEx",
+      "kind": "coverage",
+      "coverageTags": [
+        "tradingHalts"
+      ],
+      "coverageOnly": true,
+      "allowEmpty": true,
+      "url": "https://www.tpex.org.tw/openapi/v1/tpex_spendi_history",
+      "summary": "上櫃歷史公布暫停/恢復交易股票",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-28T10:22:50.288Z",
+      "rows": 362
     },
     {
       "id": "tpex-coverage-mopsfin-t187ap26-O",
