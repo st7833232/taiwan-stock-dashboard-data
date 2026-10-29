@@ -5440,16 +5440,13 @@
       "parserVersion": 2,
       "filingParserVersion": 3,
       "textParserVersion": 22,
-      "filingFallback": {
-        "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=5465&year=114&seamon=&mtype=A&check2858=Y",
-        "reason": "FILING_VERSION_UNVERIFIED"
-      },
+      "filingFallback": null,
       "stage": "PDF_METRICS",
       "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-10-28",
-      "checkedAt": "2026-10-28T10:11:47.030Z",
-      "nextRetryAt": "2026-10-29T10:11:47.030Z"
+      "checkedDate": "2026-10-29",
+      "checkedAt": "2026-10-29T10:16:08.404Z",
+      "nextRetryAt": "2026-10-30T10:16:08.404Z"
     },
     "5534|2026-06-30": {
       "status": "VERIFIED",
@@ -5475,17 +5472,31 @@
       "parserVersion": 2,
       "checkedDate": "2026-10-29",
       "checkedAt": "2026-10-29T10:10:13.811Z"
+    },
+    "7856|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 3,
+      "textParserVersion": 22,
+      "filingFallback": null,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 1,
+      "checkedDate": "2026-10-29",
+      "checkedAt": "2026-10-29T10:17:27.342Z",
+      "nextRetryAt": "2026-10-30T10:17:27.342Z"
     }
   },
   "ocrProgress": {
     "parserVersion": 20,
-    "pages": 3696
+    "pages": 3700
   },
-  "remaining": 76,
+  "remaining": 114,
   "ready": 0,
   "continuationNeeded": false,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [
-    "9105"
+    "9105",
+    "3718"
   ]
 }
