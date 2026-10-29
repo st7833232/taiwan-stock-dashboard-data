@@ -22,16 +22,6 @@
       "rows": 38
     },
     {
-      "id": "twse-income-bd",
-      "market": "TWSE",
-      "kind": "income",
-      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_bd",
-      "summary": "上市公司綜合損益表(證券期貨業)",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-28T16:28:03.785Z",
-      "rows": 3
-    },
-    {
       "id": "twse-suspensions-L",
       "market": "TWSE",
       "kind": "suspensions",
@@ -40,6 +30,16 @@
       "status": "CAPTURED",
       "capturedAt": "2026-10-29T06:09:48.031Z",
       "rows": 1
+    },
+    {
+      "id": "twse-income-bd",
+      "market": "TWSE",
+      "kind": "income",
+      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_bd",
+      "summary": "上市公司綜合損益表(證券期貨業)",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-28T16:28:03.785Z",
+      "rows": 3
     },
     {
       "id": "twse-income-ci",
@@ -481,21 +481,6 @@
       "rows": 362
     },
     {
-      "id": "tpex-coverage-tpex-exright-prepost",
-      "market": "TPEx",
-      "kind": "coverage",
-      "coverageTags": [
-        "exRightsDividends"
-      ],
-      "coverageOnly": true,
-      "allowEmpty": true,
-      "url": "https://www.tpex.org.tw/openapi/v1/tpex_exright_prepost",
-      "summary": "上櫃股票除權除息預告表",
-      "status": "CAPTURED",
-      "capturedAt": "2026-10-29T06:09:57.058Z",
-      "rows": 32
-    },
-    {
       "id": "tpex-coverage-mopsfin-t187ap26-O",
       "market": "TPEx",
       "kind": "coverage",
@@ -509,6 +494,21 @@
       "status": "CAPTURED",
       "capturedAt": "2026-10-29T06:09:57.077Z",
       "rows": 1
+    },
+    {
+      "id": "tpex-coverage-tpex-exright-prepost",
+      "market": "TPEx",
+      "kind": "coverage",
+      "coverageTags": [
+        "exRightsDividends"
+      ],
+      "coverageOnly": true,
+      "allowEmpty": true,
+      "url": "https://www.tpex.org.tw/openapi/v1/tpex_exright_prepost",
+      "summary": "上櫃股票除權除息預告表",
+      "status": "CAPTURED",
+      "capturedAt": "2026-10-29T06:09:57.058Z",
+      "rows": 32
     },
     {
       "id": "mops-xbrl-bulk-2025Q2",
