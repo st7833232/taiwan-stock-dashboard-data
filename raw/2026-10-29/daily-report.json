@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-29",
-  "revision": "2026-10-29-180849",
+  "revision": "2026-10-29-181023",
   "strategyVersion": "entry-dual-track-v2.6",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
@@ -20,7 +20,7 @@
   "researchComplete": false,
   "evidencePending": {
     "credit": 405,
-    "fundamental": 75,
+    "fundamental": 74,
     "history": 6
   },
   "fundamentalQualityRejected": [
@@ -1080,6 +1080,12 @@
       "failures": [
         "OFFICIAL_GOVERNANCE_WARNING"
       ]
+    },
+    {
+      "code": "7730",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
     }
   ],
   "historyQualityRejected": [
@@ -1819,7 +1825,7 @@
     "macdHistogram": -0.7523106478713382,
     "atr14": 1.8678571428571433
   },
-  "conclusion": "2026-10-29全市場 1324 檔已完成初步篩選（普通股 1084、ETF 240），深度檢查 472 檔；其中 61 檔必要證據已齊並完成逐檔篩選，已有 61 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；411 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：融資融券等信用資料 405檔、財務證據 75檔、歷史行情 6檔。全市場研究尚未完成。普通股信用資料已核對 0/410 檔。財務證據完整但品質未通過 161 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-10-29全市場 1324 檔已完成初步篩選（普通股 1084、ETF 240），深度檢查 472 檔；其中 61 檔必要證據已齊並完成逐檔篩選，已有 61 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；411 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：融資融券等信用資料 405檔、財務證據 74檔、歷史行情 6檔。全市場研究尚未完成。普通股信用資料已核對 0/410 檔。財務證據完整但品質未通過 162 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [],
   "core": [
     {
@@ -2125,17 +2131,6 @@
       "officialDateEvidence": "1151029"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-29-180849",
-    "runId": "40854452883",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/40854452883",
-    "validatedCommit": "2837647ea2a713c1790f75d9e700fde8f74c850b"
-  },
-  "inputFingerprint": "647aaa5fd69ca29501cfc62b06767d3981945f15c2498e5ebcce5d8275a4f378"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "596b834bfe9dcd3c1ded1d64211748ba3f7fcdea4d6510ae5eba908f049ce557"
 }

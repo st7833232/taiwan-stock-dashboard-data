@@ -3,7 +3,7 @@
   "researchComplete": false,
   "counts": {
     "credit": 405,
-    "fundamental": 75,
+    "fundamental": 74,
     "history": 6
   },
   "pending": {
@@ -488,8 +488,7 @@
       "7750",
       "6409",
       "5234",
-      "3592",
-      "7730"
+      "3592"
     ],
     "history": [
       "00403A",
@@ -1556,6 +1555,12 @@
       "code": "4766",
       "failures": [
         "OFFICIAL_GOVERNANCE_WARNING"
+      ]
+    },
+    {
+      "code": "7730",
+      "failures": [
+        "REVENUE_DETERIORATION"
       ]
     }
   ],
