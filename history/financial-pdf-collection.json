@@ -5021,9 +5021,9 @@
     "stage": "PDF_METRICS",
     "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
     "attempts": 1,
-    "checkedDate": "2026-10-22",
-    "checkedAt": "2026-10-22T14:57:25.930Z",
-    "nextRetryAt": "2026-10-23T14:57:25.930Z"
+    "checkedDate": "2026-10-30",
+    "checkedAt": "2026-10-30T10:04:59.590Z",
+    "nextRetryAt": "2026-10-31T10:04:59.590Z"
   },
   "6108|2026-06-30": {
     "status": "VERIFIED",
@@ -5483,5 +5483,18 @@
     "checkedDate": "2026-10-29",
     "checkedAt": "2026-10-29T10:17:27.342Z",
     "nextRetryAt": "2026-10-30T10:17:27.342Z"
+  },
+  "3209|2026-06-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "filingParserVersion": 3,
+    "textParserVersion": 22,
+    "filingFallback": null,
+    "stage": "FILING_INDEX",
+    "reason": "fetch failed",
+    "attempts": 1,
+    "checkedDate": "2026-10-30",
+    "checkedAt": "2026-10-30T10:05:07.236Z",
+    "nextRetryAt": "2026-10-30T10:10:07.236Z"
   }
 }
