@@ -3,7 +3,7 @@
   "researchComplete": false,
   "counts": {
     "credit": 589,
-    "fundamental": 121,
+    "fundamental": 119,
     "history": 3
   },
   "pending": {
@@ -665,7 +665,6 @@
       "3564",
       "6245",
       "3135",
-      "4577",
       "6221",
       "6153",
       "3490",
@@ -674,7 +673,6 @@
       "6133",
       "6716",
       "5465",
-      "3209",
       "6163",
       "2101",
       "2330",
@@ -1765,6 +1763,13 @@
       "failures": [
         "REVENUE_DETERIORATION",
         "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4577",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
       ]
     },
     {

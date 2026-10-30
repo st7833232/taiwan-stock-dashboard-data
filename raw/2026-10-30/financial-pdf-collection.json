@@ -5487,28 +5487,67 @@
       "nextRetryAt": "2026-10-30T10:17:27.342Z"
     },
     "3209|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-30",
+      "checkedAt": "2026-10-30T10:15:04.592Z",
+      "lastUnverifiedAttempt": {
+        "status": "UNVERIFIED",
+        "parserVersion": 2,
+        "filingParserVersion": 3,
+        "textParserVersion": 22,
+        "filingFallback": null,
+        "stage": "FILING_INDEX",
+        "reason": "fetch failed",
+        "attempts": 1,
+        "checkedDate": "2026-10-30",
+        "checkedAt": "2026-10-30T10:05:07.236Z",
+        "nextRetryAt": "2026-10-30T10:10:07.236Z"
+      }
+    },
+    "4577|2026-06-30": {
+      "status": "VERIFIED",
+      "parserVersion": 2,
+      "checkedDate": "2026-10-30",
+      "checkedAt": "2026-10-30T10:12:57.946Z"
+    },
+    "6163|2026-06-30": {
       "status": "UNVERIFIED",
       "parserVersion": 2,
       "filingParserVersion": 3,
       "textParserVersion": 22,
       "filingFallback": null,
-      "stage": "FILING_INDEX",
+      "stage": "PDF_METRICS",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 1,
+      "checkedDate": "2026-10-30",
+      "checkedAt": "2026-10-30T10:13:50.165Z",
+      "nextRetryAt": "2026-10-31T10:13:50.165Z"
+    },
+    "3526|2026-06-30": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 3,
+      "textParserVersion": 22,
+      "filingFallback": null,
+      "stage": "PDF_LINK",
       "reason": "fetch failed",
       "attempts": 1,
       "checkedDate": "2026-10-30",
-      "checkedAt": "2026-10-30T10:05:07.236Z",
-      "nextRetryAt": "2026-10-30T10:10:07.236Z"
+      "checkedAt": "2026-10-30T10:14:18.185Z",
+      "nextRetryAt": "2026-10-30T10:19:18.185Z"
     }
   },
   "ocrProgress": {
     "parserVersion": 20,
-    "pages": 3700
+    "pages": 3702
   },
-  "remaining": 75,
+  "remaining": 117,
   "ready": 0,
   "continuationNeeded": false,
   "rateLimited": false,
   "missingCurrentPeriodCodes": [
-    "9105"
+    "9105",
+    "3718"
   ]
 }
