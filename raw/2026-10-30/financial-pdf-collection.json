@@ -5536,17 +5536,17 @@
       "filingParserVersion": 3,
       "textParserVersion": 22,
       "filingFallback": null,
-      "stage": "PDF_DOWNLOAD",
-      "reason": "fetch failed",
-      "attempts": 2,
+      "stage": "PDF_METRICS",
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 3,
       "checkedDate": "2026-10-30",
-      "checkedAt": "2026-10-30T10:22:19.652Z",
-      "nextRetryAt": "2026-10-30T10:32:19.652Z"
+      "checkedAt": "2026-10-30T10:33:54.315Z",
+      "nextRetryAt": "2026-10-31T10:33:54.315Z"
     }
   },
   "ocrProgress": {
     "parserVersion": 20,
-    "pages": 3702
+    "pages": 3704
   },
   "remaining": 116,
   "ready": 0,
