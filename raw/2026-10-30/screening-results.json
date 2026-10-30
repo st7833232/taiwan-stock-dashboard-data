@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "targetDate": "2026-10-30",
   "strategyVersion": "entry-dual-track-v2.6",
-  "inputFingerprint": "f05e02350c9df0c77a28aaa7cb35cf6eed3a0d738d06ed6d4ec2c8fdb621d97e",
+  "inputFingerprint": "00bf35dfe576aa7622426e581f5550336a23479de1223b151aecf99387050af5",
   "coverage": {
     "universe": 2321,
     "stocks": 1961,
@@ -152519,7 +152519,7 @@
         "credit": false,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -152531,7 +152531,6 @@
         "MARKET_REGIME_BLOCK",
         "TREND_NOT_CONFIRMED",
         "CREDIT_EVIDENCE_INCOMPLETE",
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -152549,8 +152548,7 @@
       "historyCoverageTradingDays": 21,
       "researchEvidenceStatus": "PENDING",
       "researchEvidencePending": [
-        "credit",
-        "fundamental"
+        "credit"
       ]
     },
     {
