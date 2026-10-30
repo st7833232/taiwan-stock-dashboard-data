@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-30",
-  "revision": "2026-10-30-183221",
+  "revision": "2026-10-30-183954",
   "strategyVersion": "entry-dual-track-v2.6",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
@@ -10,9 +10,9 @@
     "rankContractVersion": 2,
     "rankingMode": "RESEARCH_AND_TRADE_SPLIT",
     "screenedDeepDive": 667,
-    "evidenceCompleteDeepDive": 76,
-    "evidencePendingDeepDive": 591,
-    "researchRanked": 76,
+    "evidenceCompleteDeepDive": 77,
+    "evidencePendingDeepDive": 590,
+    "researchRanked": 77,
     "tradeEligibleRanked": 0,
     "reScreenOnEvidenceAdmission": true,
     "globalResearchComplete": false
@@ -21,7 +21,7 @@
   "evidencePending": {
     "credit": 589,
     "fundamental": 118,
-    "history": 3
+    "history": 2
   },
   "fundamentalQualityRejected": [
     {
@@ -1627,6 +1627,26 @@
         "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00409A&stockname=&isincode="
       ],
       "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00411A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-08-26",
+      "availableTradingDays": 40,
+      "verifiedTradingDays": 40,
+      "maximumPossibleTradingDays": 46,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://isin.twse.com.tw/isin/C_public.jsp?strMode=4",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00411A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
     }
   ],
   "creditEvidenceComplete": false,
@@ -1638,11 +1658,11 @@
     "deepDiveStocks": 589,
     "deepDiveEtfs": 78,
     "screenedDeepDive": 667,
-    "evidenceCompleteDeepDive": 76,
-    "evidencePendingDeepDive": 591,
-    "researchRanked": 76,
+    "evidenceCompleteDeepDive": 77,
+    "evidencePendingDeepDive": 590,
+    "researchRanked": 77,
     "tradeEligibleRanked": 0,
-    "eligibleRanked": 76,
+    "eligibleRanked": 77,
     "eligibleRankedMeaning": "RESEARCH_EVIDENCE_COMPLETE",
     "creditReadyStocks": 0,
     "creditMissingCodes": [
@@ -2245,7 +2265,7 @@
         "name": "元大台灣高息低波",
         "score": 84.1556,
         "researchRank": 1,
-        "researchPercentile": 1.3157894736842106,
+        "researchPercentile": 1.2987012987012987,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -2259,7 +2279,7 @@
         "name": "群益台灣精選高息",
         "score": 83.2709,
         "researchRank": 2,
-        "researchPercentile": 2.6315789473684212,
+        "researchPercentile": 2.5974025974025974,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -2273,7 +2293,7 @@
         "name": "FT臺灣永續高息",
         "score": 63.339,
         "researchRank": 3,
-        "researchPercentile": 3.9473684210526314,
+        "researchPercentile": 3.896103896103896,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -2289,7 +2309,7 @@
         "name": "國泰永續高股息",
         "score": 61.6,
         "researchRank": 4,
-        "researchPercentile": 5.2631578947368425,
+        "researchPercentile": 5.194805194805195,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -2306,7 +2326,7 @@
         "name": "期街口布蘭特正2",
         "score": 59,
         "researchRank": 5,
-        "researchPercentile": 6.578947368421052,
+        "researchPercentile": 6.4935064935064934,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -2323,7 +2343,7 @@
         "name": "國泰US短期公債",
         "score": 59,
         "researchRank": 6,
-        "researchPercentile": 7.894736842105263,
+        "researchPercentile": 7.792207792207792,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -2340,7 +2360,7 @@
         "name": "元大台灣50",
         "score": 57.2,
         "researchRank": 7,
-        "researchPercentile": 9.210526315789474,
+        "researchPercentile": 9.090909090909092,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -2357,7 +2377,7 @@
         "name": "富邦台50",
         "score": 57.2,
         "researchRank": 8,
-        "researchPercentile": 10.526315789473685,
+        "researchPercentile": 10.38961038961039,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -2374,7 +2394,7 @@
         "name": "中信關鍵半導體",
         "score": 57.2,
         "researchRank": 9,
-        "researchPercentile": 11.842105263157896,
+        "researchPercentile": 11.688311688311689,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -2391,7 +2411,7 @@
         "name": "復華台灣科技優息",
         "score": 57.2,
         "researchRank": 10,
-        "researchPercentile": 13.157894736842104,
+        "researchPercentile": 12.987012987012987,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -2421,7 +2441,7 @@
     "macdHistogram": -0.8187620160796197,
     "atr14": 2.067857142857144
   },
-  "conclusion": "2026-10-30全市場 2321 檔已完成初步篩選（普通股 1961、ETF 360），深度檢查 667 檔；其中 76 檔必要證據已齊並完成逐檔篩選，已有 76 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；591 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：融資融券等信用資料 589檔、財務證據 118檔、歷史行情 3檔。全市場研究尚未完成。普通股信用資料已核對 0/589 檔。財務證據完整但品質未通過 223 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-10-30全市場 2321 檔已完成初步篩選（普通股 1961、ETF 360），深度檢查 667 檔；其中 77 檔必要證據已齊並完成逐檔篩選，已有 77 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；590 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：融資融券等信用資料 589檔、財務證據 118檔、歷史行情 2檔。全市場研究尚未完成。普通股信用資料已核對 0/589 檔。財務證據完整但品質未通過 223 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [],
   "core": [
     {
@@ -2735,17 +2755,6 @@
       "officialDateEvidence": "1151030"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-30-183221",
-    "runId": "41040843122",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/41040843122",
-    "validatedCommit": "e1b42e431a1a99906c0de33a94b0a045f83c8041"
-  },
-  "inputFingerprint": "3df118b7a571283a6c8f3ff231658a515a5b1afc788f904664e59db7ff9f2ef4"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "be353d9cbe60ee4caf4d7d0485e53e18326977cd36d54728e3833ca2e961c228"
 }
