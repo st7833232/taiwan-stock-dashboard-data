@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-30",
-  "revision": "2026-10-30-180441",
+  "revision": "2026-10-30-181105",
   "strategyVersion": "entry-dual-track-v2.6",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
@@ -9,19 +9,19 @@
     "mode": "PER_SECURITY_INCREMENTAL",
     "rankContractVersion": 2,
     "rankingMode": "RESEARCH_AND_TRADE_SPLIT",
-    "screenedDeepDive": 472,
-    "evidenceCompleteDeepDive": 61,
-    "evidencePendingDeepDive": 411,
-    "researchRanked": 61,
+    "screenedDeepDive": 667,
+    "evidenceCompleteDeepDive": 76,
+    "evidencePendingDeepDive": 591,
+    "researchRanked": 76,
     "tradeEligibleRanked": 0,
     "reScreenOnEvidenceAdmission": true,
     "globalResearchComplete": false
   },
   "researchComplete": false,
   "evidencePending": {
-    "credit": 409,
-    "fundamental": 76,
-    "history": 2
+    "credit": 589,
+    "fundamental": 121,
+    "history": 3
   },
   "fundamentalQualityRejected": [
     {
@@ -55,6 +55,12 @@
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6182",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
     },
     {
@@ -232,7 +238,21 @@
       ]
     },
     {
+      "code": "1569",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
       "code": "2305",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "5475",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
@@ -256,9 +276,41 @@
       ]
     },
     {
+      "code": "1785",
+      "failures": [
+        "OFFICIAL_GOVERNANCE_WARNING"
+      ]
+    },
+    {
+      "code": "6217",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "5309",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "8064",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "2801",
       "failures": [
         "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "5314",
+      "failures": [
+        "PROFIT_DETERIORATION"
       ]
     },
     {
@@ -271,6 +323,33 @@
     {
       "code": "2312",
       "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4939",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3234",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "3441",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3362",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
         "REVENUE_DETERIORATION"
       ]
     },
@@ -354,6 +433,12 @@
       ]
     },
     {
+      "code": "8043",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "1312",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
@@ -369,6 +454,14 @@
     },
     {
       "code": "2367",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6127",
       "failures": [
         "PROFIT_QUALITY_FAILED",
         "REVENUE_DETERIORATION",
@@ -556,9 +649,22 @@
       ]
     },
     {
+      "code": "5498",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "8110",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3580",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
       ]
     },
     {
@@ -616,7 +722,19 @@
       ]
     },
     {
+      "code": "6693",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "2413",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2061",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
@@ -626,6 +744,20 @@
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "6547",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "5443",
+      "failures": [
+        "PROFIT_DETERIORATION"
       ]
     },
     {
@@ -652,6 +784,12 @@
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "6925",
+      "failures": [
+        "PROFIT_DETERIORATION"
       ]
     },
     {
@@ -697,11 +835,24 @@
       ]
     },
     {
+      "code": "3227",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
       "code": "6443",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED",
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1595",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
       ]
     },
     {
@@ -736,6 +887,20 @@
       ]
     },
     {
+      "code": "6122",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3354",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
       "code": "4739",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
@@ -749,10 +914,30 @@
       ]
     },
     {
+      "code": "3691",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "8431",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
       "code": "9921",
       "failures": [
         "REVENUE_DETERIORATION",
         "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "5864",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
       ]
     },
     {
@@ -780,6 +965,12 @@
       ]
     },
     {
+      "code": "3162",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
       "code": "4976",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
@@ -788,10 +979,29 @@
       ]
     },
     {
+      "code": "4973",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "6152",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "3483",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3141",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
     },
     {
@@ -841,10 +1051,41 @@
       ]
     },
     {
+      "code": "5228",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "1229",
       "failures": [
         "REVENUE_DETERIORATION",
         "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "8040",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6016",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "3221",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3289",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
       ]
     },
     {
@@ -875,6 +1116,13 @@
       ]
     },
     {
+      "code": "5009",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
       "code": "2504",
       "failures": [
         "REVENUE_DETERIORATION",
@@ -888,9 +1136,62 @@
       ]
     },
     {
+      "code": "6425",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "4707",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6284",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
       "code": "1215",
       "failures": [
         "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "8054",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "3685",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6617",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "4743",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "5432",
+      "failures": [
+        "REVENUE_DETERIORATION"
       ]
     },
     {
@@ -903,6 +1204,14 @@
       "code": "2401",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "4174",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
       ]
     },
     {
@@ -925,6 +1234,18 @@
       ]
     },
     {
+      "code": "6488",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3105",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "2449",
       "failures": [
         "PROFIT_DETERIORATION"
@@ -934,6 +1255,12 @@
       "code": "3661",
       "failures": [
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6187",
+      "failures": [
+        "OFFICIAL_GOVERNANCE_WARNING"
       ]
     },
     {
@@ -981,6 +1308,33 @@
       ]
     },
     {
+      "code": "4991",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3693",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3363",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3498",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "3035",
       "failures": [
         "REVENUE_DETERIORATION",
@@ -1001,6 +1355,12 @@
       ]
     },
     {
+      "code": "6538",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
       "code": "6533",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
@@ -1011,6 +1371,20 @@
       "code": "6426",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "4971",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3455",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
       ]
     },
     {
@@ -1040,6 +1414,20 @@
       "code": "1477",
       "failures": [
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4966",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4768",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "PROFIT_DETERIORATION"
       ]
     },
     {
@@ -1093,6 +1481,26 @@
     }
   ],
   "historyQualityRejected": [
+    {
+      "code": "7856",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-09-22",
+      "availableTradingDays": 21,
+      "verifiedTradingDays": 21,
+      "maximumPossibleTradingDays": 27,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=7856&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
     {
       "code": "00406A",
       "status": "FAIL",
@@ -1216,36 +1624,42 @@
   ],
   "creditEvidenceComplete": false,
   "coverage": {
-    "universe": 1330,
-    "stocks": 1087,
-    "etfs": 243,
-    "deepDive": 472,
-    "deepDiveStocks": 410,
-    "deepDiveEtfs": 62,
-    "screenedDeepDive": 472,
-    "evidenceCompleteDeepDive": 61,
-    "evidencePendingDeepDive": 411,
-    "researchRanked": 61,
+    "universe": 2321,
+    "stocks": 1961,
+    "etfs": 360,
+    "deepDive": 667,
+    "deepDiveStocks": 589,
+    "deepDiveEtfs": 78,
+    "screenedDeepDive": 667,
+    "evidenceCompleteDeepDive": 76,
+    "evidencePendingDeepDive": 591,
+    "researchRanked": 76,
     "tradeEligibleRanked": 0,
-    "eligibleRanked": 61,
+    "eligibleRanked": 76,
     "eligibleRankedMeaning": "RESEARCH_EVIDENCE_COMPLETE",
     "creditReadyStocks": 0,
     "creditMissingCodes": [
       "2303",
       "2409",
       "2344",
+      "1815",
       "6770",
       "1802",
       "3231",
+      "6147",
       "3481",
       "6505",
       "1301",
+      "6182",
       "8150",
       "2337",
+      "5347",
       "2891",
       "2881",
+      "5483",
       "6456",
       "2882",
+      "3624",
       "2481",
       "1326",
       "6209",
@@ -1261,6 +1675,7 @@
       "4919",
       "2884",
       "2340",
+      "8042",
       "6834",
       "4938",
       "2615",
@@ -1271,6 +1686,8 @@
       "1101",
       "2609",
       "3045",
+      "8069",
+      "6199",
       "2890",
       "2886",
       "1605",
@@ -1279,44 +1696,68 @@
       "3090",
       "2892",
       "1216",
+      "3707",
+      "5351",
       "2356",
       "3715",
       "4977",
       "2002",
+      "6207",
       "2478",
       "3673",
+      "8086",
       "4927",
       "4904",
       "2618",
+      "1569",
       "6271",
       "2305",
+      "5475",
       "2472",
       "2489",
       "2880",
       "5871",
+      "5425",
       "2486",
       "1717",
+      "1785",
+      "6217",
+      "5309",
       "4989",
+      "8064",
       "2801",
+      "5314",
+      "3265",
+      "8111",
       "2351",
+      "4908",
       "2027",
       "6226",
       "3706",
+      "5340",
       "2353",
       "2312",
       "2375",
+      "4939",
       "1727",
+      "3234",
+      "3441",
+      "3362",
       "1711",
       "2355",
       "3149",
       "5880",
+      "4903",
       "4906",
+      "8027",
       "6449",
       "2441",
       "3376",
+      "6620",
       "3714",
       "2347",
       "9904",
+      "4931",
       "2493",
       "1504",
       "4566",
@@ -1329,17 +1770,22 @@
       "2542",
       "2316",
       "6668",
+      "6548",
+      "8043",
       "1312",
       "2254",
       "2385",
       "2367",
       "2371",
+      "6127",
       "3019",
+      "5439",
       "2634",
       "2354",
       "6706",
       "2610",
       "1513",
+      "5904",
       "6155",
       "2474",
       "8033",
@@ -1350,12 +1796,14 @@
       "1102",
       "1409",
       "3005",
+      "6179",
       "6191",
       "3014",
       "3701",
       "4720",
       "8261",
       "2363",
+      "3236",
       "1597",
       "5469",
       "6919",
@@ -1363,9 +1811,11 @@
       "8103",
       "2855",
       "4763",
+      "3357",
       "9105",
       "3094",
       "4916",
+      "6532",
       "2030",
       "4961",
       "6282",
@@ -1383,25 +1833,31 @@
       "4551",
       "6005",
       "4526",
+      "5498",
       "1809",
       "4764",
       "8110",
       "1503",
       "8271",
+      "8096",
+      "3580",
       "6438",
       "2241",
       "3311",
       "5243",
       "4722",
+      "6234",
       "2006",
       "1708",
       "2606",
+      "3219",
       "2498",
       "1528",
       "4915",
       "2485",
       "2359",
       "2436",
+      "6148",
       "2033",
       "2402",
       "6166",
@@ -1409,12 +1865,17 @@
       "2302",
       "2105",
       "6949",
+      "6693",
       "2413",
+      "2061",
       "2332",
       "2352",
       "1609",
       "5388",
       "2439",
+      "6547",
+      "2221",
+      "5443",
       "2406",
       "3596",
       "2465",
@@ -1422,41 +1883,58 @@
       "6176",
       "3504",
       "2399",
+      "6925",
       "2476",
       "2338",
+      "5328",
       "2645",
       "8213",
       "3543",
       "2328",
       "2388",
       "8422",
+      "6218",
+      "3227",
       "6443",
       "1795",
+      "1595",
       "3031",
       "2889",
       "3010",
       "8131",
       "8926",
       "4540",
+      "3718",
       "3305",
+      "6907",
       "2393",
+      "4556",
       "3645",
       "2374",
       "1773",
       "1319",
       "2633",
+      "8932",
       "4956",
       "6658",
       "1514",
       "8070",
+      "6122",
       "2329",
       "3518",
+      "6190",
+      "3354",
       "2342",
       "4739",
       "6141",
       "6742",
       "9914",
+      "3691",
+      "8431",
+      "3689",
       "9921",
+      "8050",
+      "5864",
       "2845",
       "3048",
       "9939",
@@ -1465,47 +1943,87 @@
       "6719",
       "2915",
       "5285",
+      "3162",
       "4976",
       "6525",
+      "4973",
       "6152",
+      "3483",
+      "3141",
       "3033",
       "3535",
       "2236",
       "9910",
+      "3564",
       "3380",
       "1722",
       "9958",
       "6416",
       "1710",
       "2323",
+      "6245",
       "3135",
       "2548",
       "6206",
+      "5228",
+      "6174",
       "1229",
+      "3551",
+      "4577",
       "2103",
       "2480",
+      "8040",
+      "6016",
+      "6221",
+      "3221",
       "6153",
+      "8091",
+      "6829",
       "6202",
+      "3490",
+      "3317",
+      "8936",
+      "3289",
+      "6530",
+      "6244",
       "6902",
       "3022",
       "4949",
       "2201",
       "2646",
+      "3088",
       "1210",
       "2392",
+      "6227",
+      "5009",
       "2034",
       "2504",
       "9941",
+      "6425",
       "1608",
+      "4707",
+      "6284",
       "3416",
       "1215",
+      "4105",
       "1736",
+      "8054",
+      "3685",
+      "6617",
+      "4743",
       "6112",
       "6133",
+      "5432",
       "5534",
+      "6716",
+      "5465",
       "2233",
       "3209",
       "2401",
+      "4174",
+      "6163",
+      "6175",
+      "3479",
       "2101",
       "2330",
       "2454",
@@ -1515,18 +2033,22 @@
       "2408",
       "3037",
       "4958",
+      "6274",
       "3189",
       "3008",
       "2383",
       "3443",
+      "6488",
       "6213",
       "2368",
+      "3105",
       "8046",
       "3711",
       "2492",
       "3017",
       "2317",
       "2345",
+      "3081",
       "3653",
       "3026",
       "6669",
@@ -1538,19 +2060,30 @@
       "8996",
       "3665",
       "2360",
+      "8358",
       "2059",
+      "3374",
+      "6223",
       "6278",
+      "5274",
+      "8299",
+      "3324",
+      "3264",
       "7769",
       "2301",
+      "6173",
       "2382",
       "6805",
+      "6187",
       "6239",
       "6531",
       "2455",
       "6257",
       "3533",
       "6672",
+      "3529",
       "6515",
+      "6510",
       "3167",
       "3532",
       "3450",
@@ -1559,8 +2092,10 @@
       "2603",
       "8021",
       "6442",
+      "4979",
       "6446",
       "3006",
+      "3491",
       "2379",
       "6285",
       "3034",
@@ -1568,28 +2103,49 @@
       "2376",
       "3044",
       "2395",
+      "7856",
+      "5289",
+      "3260",
+      "4991",
+      "3293",
+      "3693",
       "3036",
       "1560",
       "8210",
       "2404",
+      "5536",
+      "3363",
+      "3498",
+      "3163",
       "6526",
       "7610",
       "6933",
       "1590",
       "8028",
+      "3211",
       "3035",
       "6715",
+      "6683",
       "1519",
+      "6538",
+      "3131",
+      "6290",
       "6196",
+      "8227",
       "2049",
       "6533",
       "2451",
+      "6727",
       "6197",
       "6426",
       "5269",
       "2467",
+      "4971",
+      "4749",
+      "3455",
       "7711",
       "3030",
+      "3680",
       "6789",
       "3563",
       "2912",
@@ -1597,18 +2153,26 @@
       "6451",
       "1476",
       "3583",
+      "3147",
       "6691",
+      "7734",
       "4967",
       "2466",
       "7788",
+      "4542",
       "6944",
+      "3675",
       "6831",
       "6414",
       "5434",
       "4770",
+      "4760",
       "7795",
+      "7828",
       "4576",
       "3023",
+      "6640",
+      "7717",
       "7750",
       "6781",
       "6957",
@@ -1616,30 +2180,53 @@
       "2428",
       "1477",
       "6861",
+      "4966",
+      "7751",
       "6214",
+      "6291",
+      "6643",
       "8464",
+      "4768",
       "6472",
+      "6121",
       "7799",
+      "4772",
       "3413",
       "7822",
+      "8155",
+      "6739",
+      "7792",
       "6491",
+      "6584",
       "8016",
       "5234",
+      "5386",
       "2207",
       "3592",
+      "6811",
       "8081",
+      "6788",
+      "6903",
+      "6138",
       "6937",
+      "6667",
       "6782",
+      "6664",
       "5284",
       "3515",
       "3617",
+      "6146",
+      "6231",
+      "6435",
       "8454",
       "2727",
+      "3587",
       "4766",
       "7749",
       "6670",
+      "3526",
       "7730",
-      "3147",
+      "6613",
       "4912"
     ]
   },
@@ -1651,7 +2238,7 @@
         "name": "元大台灣高息低波",
         "score": 84.1556,
         "researchRank": 1,
-        "researchPercentile": 1.639344262295082,
+        "researchPercentile": 1.3157894736842106,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1665,7 +2252,7 @@
         "name": "群益台灣精選高息",
         "score": 83.2709,
         "researchRank": 2,
-        "researchPercentile": 3.278688524590164,
+        "researchPercentile": 2.6315789473684212,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1679,7 +2266,7 @@
         "name": "FT臺灣永續高息",
         "score": 63.339,
         "researchRank": 3,
-        "researchPercentile": 4.918032786885246,
+        "researchPercentile": 3.9473684210526314,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1695,7 +2282,7 @@
         "name": "國泰永續高股息",
         "score": 61.6,
         "researchRank": 4,
-        "researchPercentile": 6.557377049180328,
+        "researchPercentile": 5.2631578947368425,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1712,7 +2299,7 @@
         "name": "期街口布蘭特正2",
         "score": 59,
         "researchRank": 5,
-        "researchPercentile": 8.19672131147541,
+        "researchPercentile": 6.578947368421052,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1729,7 +2316,7 @@
         "name": "國泰US短期公債",
         "score": 59,
         "researchRank": 6,
-        "researchPercentile": 9.836065573770492,
+        "researchPercentile": 7.894736842105263,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1746,7 +2333,7 @@
         "name": "元大台灣50",
         "score": 57.2,
         "researchRank": 7,
-        "researchPercentile": 11.475409836065573,
+        "researchPercentile": 9.210526315789474,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1763,7 +2350,7 @@
         "name": "富邦台50",
         "score": 57.2,
         "researchRank": 8,
-        "researchPercentile": 13.114754098360656,
+        "researchPercentile": 10.526315789473685,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1780,7 +2367,7 @@
         "name": "中信關鍵半導體",
         "score": 57.2,
         "researchRank": 9,
-        "researchPercentile": 14.754098360655737,
+        "researchPercentile": 11.842105263157896,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1797,7 +2384,7 @@
         "name": "復華台灣科技優息",
         "score": 57.2,
         "researchRank": 10,
-        "researchPercentile": 16.39344262295082,
+        "researchPercentile": 13.157894736842104,
         "tradeRank": null,
         "tradePercentile": null,
         "decision": "WATCH",
@@ -1827,7 +2414,7 @@
     "macdHistogram": -0.8187620160796197,
     "atr14": 2.067857142857144
   },
-  "conclusion": "2026-10-30全市場 1330 檔已完成初步篩選（普通股 1087、ETF 243），深度檢查 472 檔；其中 61 檔必要證據已齊並完成逐檔篩選，已有 61 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；411 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：融資融券等信用資料 409檔、財務證據 76檔、歷史行情 2檔。全市場研究尚未完成。普通股信用資料已核對 0/410 檔。財務證據完整但品質未通過 163 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
+  "conclusion": "2026-10-30全市場 2321 檔已完成初步篩選（普通股 1961、ETF 360），深度檢查 667 檔；其中 76 檔必要證據已齊並完成逐檔篩選，已有 76 檔進入研究排名、0 檔通過全部交易前置Gate進入可交易排名；591 檔仍待補證據且不阻塞已完整標的。後續每批證據補齊即重新篩選；目前仍待核對：融資融券等信用資料 589檔、財務證據 121檔、歷史行情 3檔。全市場研究尚未完成。普通股信用資料已核對 0/589 檔。財務證據完整但品質未通過 222 檔，仍不符合買進條件。本次優先買進標的 0 檔，下一交易日委託 0 筆；ETF專用評估條件通過，也不代表已出現買點。",
   "priority": [],
   "core": [
     {
@@ -2119,8 +2706,8 @@
     {
       "gate": "tpex-daily-close-quotes",
       "status": "PASS",
-      "source": "tpex-mainboard-daily-close-quotes-legacy",
-      "officialDateEvidence": "20261030"
+      "source": "tpex-mainboard-daily-close-quotes",
+      "officialDateEvidence": "1151030"
     },
     {
       "gate": "tpex-market-turnover-index",
@@ -2141,17 +2728,6 @@
       "officialDateEvidence": "1151030"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-10-30-180441",
-    "runId": "41037426542",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/41037426542",
-    "validatedCommit": "adb44bb8cf18b309140c4348446539ef69ebeba3"
-  },
-  "inputFingerprint": "eed15553e684707d0c3b6e459bcf68d8c1a37bb0fcf8b5bac41829175a9405a6"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "a011302beaf6db5a92d7c1da796f0e2f8774a8d2e3f39bf012849e0f3c87d248"
 }
