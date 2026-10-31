@@ -5518,17 +5518,23 @@
       "checkedAt": "2026-10-30T10:12:57.946Z"
     },
     "6163|2026-06-30": {
-      "status": "UNVERIFIED",
+      "status": "VERIFIED",
       "parserVersion": 2,
-      "filingParserVersion": 3,
-      "textParserVersion": 22,
-      "filingFallback": null,
-      "stage": "PDF_METRICS",
-      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-      "attempts": 1,
-      "checkedDate": "2026-10-30",
-      "checkedAt": "2026-10-30T10:13:50.165Z",
-      "nextRetryAt": "2026-10-31T10:13:50.165Z"
+      "checkedDate": "2026-10-31",
+      "checkedAt": "2026-10-31T10:15:22.334Z",
+      "lastUnverifiedAttempt": {
+        "status": "UNVERIFIED",
+        "parserVersion": 2,
+        "filingParserVersion": 3,
+        "textParserVersion": 22,
+        "filingFallback": null,
+        "stage": "PDF_METRICS",
+        "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+        "attempts": 1,
+        "checkedDate": "2026-10-30",
+        "checkedAt": "2026-10-30T10:13:50.165Z",
+        "nextRetryAt": "2026-10-31T10:13:50.165Z"
+      }
     },
     "3526|2026-06-30": {
       "status": "UNVERIFIED",
@@ -5548,7 +5554,7 @@
     "parserVersion": 20,
     "pages": 3704
   },
-  "remaining": 116,
+  "remaining": 115,
   "ready": 0,
   "continuationNeeded": false,
   "rateLimited": false,

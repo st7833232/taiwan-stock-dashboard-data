@@ -2,7 +2,7 @@
   "targetDate": "2026-10-30",
   "researchComplete": false,
   "counts": {
-    "fundamental": 118,
+    "fundamental": 117,
     "history": 2,
     "credit": 3
   },
@@ -82,7 +82,6 @@
       "6133",
       "6716",
       "5465",
-      "6163",
       "2101",
       "2330",
       "3443",
@@ -1333,6 +1332,13 @@
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED",
         "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6163",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
       ]
     },
     {
