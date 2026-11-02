@@ -1,0 +1,1744 @@
+{
+  "targetDate": "2026-11-02",
+  "researchComplete": false,
+  "counts": {
+    "fundamental": 158,
+    "history": 2,
+    "credit": 3
+  },
+  "pending": {
+    "fundamental": [
+      "2303",
+      "1815",
+      "6770",
+      "6147",
+      "2337",
+      "8150",
+      "3624",
+      "6209",
+      "2481",
+      "4919",
+      "8042",
+      "3016",
+      "6199",
+      "1605",
+      "5351",
+      "2478",
+      "3707",
+      "4989",
+      "8111",
+      "2375",
+      "4903",
+      "3149",
+      "2441",
+      "1727",
+      "8027",
+      "6620",
+      "2468",
+      "2254",
+      "2634",
+      "6155",
+      "1513",
+      "8033",
+      "2421",
+      "3013",
+      "5904",
+      "6706",
+      "8261",
+      "6532",
+      "3236",
+      "9105",
+      "6234",
+      "2030",
+      "3055",
+      "1597",
+      "8271",
+      "6148",
+      "6438",
+      "2006",
+      "3311",
+      "5243",
+      "2033",
+      "2402",
+      "2498",
+      "2439",
+      "1708",
+      "3504",
+      "5443",
+      "1795",
+      "3718",
+      "6907",
+      "4956",
+      "6218",
+      "2329",
+      "1773",
+      "6141",
+      "6742",
+      "1514",
+      "2342",
+      "3564",
+      "3518",
+      "3048",
+      "5285",
+      "2369",
+      "6525",
+      "6245",
+      "3141",
+      "6221",
+      "3135",
+      "3033",
+      "2480",
+      "3380",
+      "6153",
+      "6202",
+      "6756",
+      "3490",
+      "4949",
+      "3088",
+      "2034",
+      "6716",
+      "6277",
+      "5230",
+      "2101",
+      "2330",
+      "2308",
+      "3037",
+      "6274",
+      "2383",
+      "3443",
+      "3711",
+      "8046",
+      "3653",
+      "3081",
+      "8039",
+      "2313",
+      "8358",
+      "6223",
+      "3264",
+      "2301",
+      "6173",
+      "6805",
+      "2455",
+      "6257",
+      "3529",
+      "6510",
+      "3532",
+      "4979",
+      "3006",
+      "6285",
+      "3044",
+      "2395",
+      "3163",
+      "3211",
+      "5536",
+      "8028",
+      "3035",
+      "8227",
+      "6683",
+      "6271",
+      "6727",
+      "2467",
+      "7711",
+      "4967",
+      "2912",
+      "1476",
+      "6830",
+      "3563",
+      "5434",
+      "7750",
+      "7795",
+      "4770",
+      "6944",
+      "3023",
+      "6409",
+      "6640",
+      "1477",
+      "4966",
+      "7717",
+      "6643",
+      "7822",
+      "5386",
+      "5234",
+      "3592",
+      "6138",
+      "6231",
+      "3587",
+      "6435",
+      "3526",
+      "6133"
+    ],
+    "history": [
+      "3718",
+      "00403A"
+    ],
+    "credit": [
+      "7856",
+      "7610",
+      "7828"
+    ]
+  },
+  "fundamentalQualityRejected": [
+    {
+      "code": "2409",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2344",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "1802",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6505",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "1301",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6182",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2881",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2891",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "6456",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2882",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "1326",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2887",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2484",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2885",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2426",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6269",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "2883",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2884",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2340",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "2464",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6834",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "4938",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2886",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2609",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2890",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2377",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2892",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "4977",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3715",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2002",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4927",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1569",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2618",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2305",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3673",
+      "failures": [
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "5871",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "5475",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2880",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "2486",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "1785",
+      "failures": [
+        "OFFICIAL_GOVERNANCE_WARNING"
+      ]
+    },
+    {
+      "code": "6217",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "5309",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2801",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "5314",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6226",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "8064",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2312",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4939",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3234",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "3441",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3362",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1711",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "5880",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "3376",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "5876",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "9904",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3714",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "4906",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2316",
+      "failures": [
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "2834",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "6668",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "8043",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "1312",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "6116",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "4566",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2385",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2610",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2367",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6127",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3019",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2474",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3701",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2354",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4960",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1718",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "OFFICIAL_GOVERNANCE_WARNING",
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "1409",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "6191",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4720",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1102",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3717",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "OFFICIAL_GOVERNANCE_WARNING"
+      ]
+    },
+    {
+      "code": "4526",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "5469",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "9933",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6919",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2363",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2855",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "4763",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1314",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6282",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3014",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6168",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "4961",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2812",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "6005",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "5498",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "1528",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "3576",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3580",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2241",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "4915",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2485",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2359",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "8110",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6108",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "2413",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2061",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "8213",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2332",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "6693",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6176",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6949",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2328",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3227",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6925",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2338",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3543",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2388",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "8422",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6547",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2406",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6443",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3031",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "8131",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "4540",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2399",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "2889",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "1319",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4577",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "3162",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1595",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "3354",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "3691",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "8431",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2851",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "9921",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "5864",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "9914",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2845",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "4739",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6719",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6152",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "6122",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2323",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "4976",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3483",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2915",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2236",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "5228",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "9910",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4973",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "1710",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1722",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3535",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "8240",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6016",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "1229",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3221",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "8040",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3289",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1210",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2646",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2201",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "5009",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6425",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "9941",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4707",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6284",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3287",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3685",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "1215",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2504",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4743",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "5432",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2392",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6617",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "6163",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "4174",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2454",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1303",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2408",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3105",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6488",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2449",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3661",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6187",
+      "failures": [
+        "OFFICIAL_GOVERNANCE_WARNING"
+      ]
+    },
+    {
+      "code": "6531",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "2603",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3450",
+      "failures": [
+        "PROFIT_DETERIORATION",
+        "OFFICIAL_GOVERNANCE_WARNING"
+      ]
+    },
+    {
+      "code": "2357",
+      "failures": [
+        "OFFICIAL_GOVERNANCE_WARNING"
+      ]
+    },
+    {
+      "code": "3034",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2379",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3693",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4991",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "3363",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "3498",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6715",
+      "failures": [
+        "REVENUE_DETERIORATION",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "1519",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6538",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6533",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "3455",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6426",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "4971",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
+      "code": "6451",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2466",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
+        "REVENUE_DETERIORATION",
+        "OFFICIAL_GOVERNANCE_WARNING"
+      ]
+    },
+    {
+      "code": "6472",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4768",
+      "failures": [
+        "PROFIT_QUALITY_FAILED",
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "7799",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "3413",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "2207",
+      "failures": [
+        "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
+      ]
+    },
+    {
+      "code": "8081",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "8454",
+      "failures": [
+        "PROFIT_DETERIORATION"
+      ]
+    },
+    {
+      "code": "4766",
+      "failures": [
+        "OFFICIAL_GOVERNANCE_WARNING"
+      ]
+    },
+    {
+      "code": "7730",
+      "failures": [
+        "REVENUE_DETERIORATION"
+      ]
+    }
+  ],
+  "historyQualityRejected": [
+    {
+      "code": "7856",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-09-22",
+      "availableTradingDays": 22,
+      "verifiedTradingDays": 22,
+      "maximumPossibleTradingDays": 28,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=7856&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00406A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-06-11",
+      "availableTradingDays": 95,
+      "verifiedTradingDays": 95,
+      "maximumPossibleTradingDays": 100,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00406A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "009828",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-09-02",
+      "availableTradingDays": 38,
+      "verifiedTradingDays": 38,
+      "maximumPossibleTradingDays": 42,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=009828&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00405A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-06-09",
+      "availableTradingDays": 97,
+      "verifiedTradingDays": 97,
+      "maximumPossibleTradingDays": 102,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00405A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "009829",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-08-21",
+      "availableTradingDays": 46,
+      "verifiedTradingDays": 46,
+      "maximumPossibleTradingDays": 50,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=009829&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00407A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-06-24",
+      "availableTradingDays": 87,
+      "verifiedTradingDays": 87,
+      "maximumPossibleTradingDays": 92,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00407A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00409A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-09-02",
+      "availableTradingDays": 38,
+      "verifiedTradingDays": 38,
+      "maximumPossibleTradingDays": 42,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://openapi.twse.com.tw/v1/opendata/t187ap47_L",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00409A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    },
+    {
+      "code": "00411A",
+      "status": "FAIL",
+      "verified": true,
+      "qualityPass": false,
+      "pending": [],
+      "failures": [
+        "INSUFFICIENT_HISTORY_SINCE_LISTING"
+      ],
+      "listingDate": "2026-08-26",
+      "availableTradingDays": 41,
+      "verifiedTradingDays": 41,
+      "maximumPossibleTradingDays": 47,
+      "requiredTradingDays": 120,
+      "sources": [
+        "https://isin.twse.com.tw/isin/C_public.jsp?strMode=4",
+        "https://isin.twse.com.tw/isin/single_main.jsp?owncode=00411A&stockname=&isincode="
+      ],
+      "calendarSource": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&queryYear=115"
+    }
+  ],
+  "retryPolicy": "AUTOMATIC_NEXT_SCHEDULE"
+}
