@@ -774335,12 +774335,10 @@
         }
       },
       "financialAssessment": {
-        "status": "UNVERIFIED",
-        "verified": false,
-        "qualityPass": false,
-        "pending": [
-          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
-        ],
+        "status": "PASS",
+        "verified": true,
+        "qualityPass": true,
+        "pending": [],
         "failures": [],
         "metrics": {
           "revenue": 141226994,
@@ -774357,14 +774355,15 @@
           "operatingMargin": 0.2729557282795384,
           "liabilityAssetRatio": 0.6209194676369694,
           "currentRatio": 1.5200251811658854,
-          "revenueYoY": null,
-          "netProfitYoY": null
+          "revenueYoY": 1.0369258394943852,
+          "netProfitYoY": 1.7230047305465335
         },
         "periodEnd": "2026-09-30",
         "basis": "YEAR_TO_DATE",
         "sources": [
           "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-          "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+          "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+          "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=2383&year=114&seamon=&mtype=A&check2858=Y"
         ]
       },
       "eventAssessment": {
@@ -774564,8 +774563,8 @@
       "verifiedEvidence": {
         "tdcc": true,
         "tdccScoreFraction": 0,
-        "fundamental": false,
-        "fundamentalScoreFraction": 0,
+        "fundamental": true,
+        "fundamentalScoreFraction": 0.6666666666666666,
         "eventRisk": true,
         "corporateAction": true
       }
@@ -1027125,12 +1027124,10 @@
         }
       },
       "financialAssessment": {
-        "status": "UNVERIFIED",
-        "verified": false,
-        "qualityPass": false,
-        "pending": [
-          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
-        ],
+        "status": "PASS",
+        "verified": true,
+        "qualityPass": true,
+        "pending": [],
         "failures": [],
         "metrics": {
           "revenue": 27007617,
@@ -1027147,14 +1027144,15 @@
           "operatingMargin": 0.1051488548582424,
           "liabilityAssetRatio": 0.5292615481169135,
           "currentRatio": 1.6122116631808696,
-          "revenueYoY": null,
-          "netProfitYoY": null
+          "revenueYoY": 0.1518992254724152,
+          "netProfitYoY": 0.109169902512678
         },
         "periodEnd": "2026-09-30",
         "basis": "YEAR_TO_DATE",
         "sources": [
           "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-          "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+          "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+          "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=3023&year=114&seamon=&mtype=A&check2858=Y"
         ]
       },
       "eventAssessment": {
@@ -1027249,8 +1027247,8 @@
       "verifiedEvidence": {
         "tdcc": true,
         "tdccScoreFraction": 0.3333333333333333,
-        "fundamental": false,
-        "fundamentalScoreFraction": 0,
+        "fundamental": true,
+        "fundamentalScoreFraction": 0.6666666666666666,
         "eventRisk": true,
         "corporateAction": true
       }
@@ -1039792,12 +1039790,10 @@
         }
       },
       "financialAssessment": {
-        "status": "UNVERIFIED",
-        "verified": false,
-        "qualityPass": false,
-        "pending": [
-          "COMPARATIVE_FINANCIAL_PERIOD_NOT_VERIFIED"
-        ],
+        "status": "PASS",
+        "verified": true,
+        "qualityPass": true,
+        "pending": [],
         "failures": [],
         "metrics": {
           "revenue": 26546755,
@@ -1039814,14 +1039810,15 @@
           "operatingMargin": 0.14128909540921292,
           "liabilityAssetRatio": 0.4214397455898288,
           "currentRatio": 1.7837588577191539,
-          "revenueYoY": null,
-          "netProfitYoY": null
+          "revenueYoY": 0.0016902145467649898,
+          "netProfitYoY": 0.04477303074409189
         },
         "periodEnd": "2026-09-30",
         "basis": "YEAR_TO_DATE",
         "sources": [
           "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-          "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+          "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+          "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=1477&year=114&seamon=&mtype=A&check2858=Y"
         ]
       },
       "eventAssessment": {
@@ -1039886,8 +1039883,8 @@
       "verifiedEvidence": {
         "tdcc": true,
         "tdccScoreFraction": 1,
-        "fundamental": false,
-        "fundamentalScoreFraction": 0,
+        "fundamental": true,
+        "fundamentalScoreFraction": 0.6666666666666666,
         "eventRisk": true,
         "corporateAction": true
       }
