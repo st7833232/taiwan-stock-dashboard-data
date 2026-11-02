@@ -5546,5 +5546,183 @@
     "checkedDate": "2026-11-01",
     "checkedAt": "2026-11-01T10:08:23.395Z",
     "nextRetryAt": "2026-11-02T10:08:23.395Z"
+  },
+  "2303|2026-09-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T19:57:38.134Z"
+  },
+  "6147|2026-09-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "filingParserVersion": 3,
+    "textParserVersion": 22,
+    "filingFallback": null,
+    "stage": "PDF_METRICS",
+    "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+    "attempts": 1,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T19:58:10.149Z",
+    "nextRetryAt": "2026-11-03T19:58:10.149Z"
+  },
+  "2337|2026-09-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "filingParserVersion": 3,
+    "textParserVersion": 22,
+    "filingFallback": null,
+    "stage": "PDF_LINK",
+    "reason": "fetch failed",
+    "attempts": 1,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T19:58:18.022Z",
+    "nextRetryAt": "2026-11-02T20:03:18.022Z"
+  },
+  "2441|2026-09-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T19:58:34.121Z"
+  },
+  "5904|2026-09-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T19:58:53.358Z"
+  },
+  "8261|2026-09-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "filingParserVersion": 3,
+    "textParserVersion": 22,
+    "filingFallback": null,
+    "stage": "PDF_LINK",
+    "reason": "fetch failed",
+    "attempts": 1,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T19:59:50.638Z",
+    "nextRetryAt": "2026-11-02T20:04:50.638Z"
+  },
+  "8271|2026-09-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T19:59:57.864Z"
+  },
+  "2006|2026-09-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T20:00:19.036Z"
+  },
+  "2439|2026-09-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T20:00:45.425Z"
+  },
+  "3504|2026-09-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T20:01:09.078Z"
+  },
+  "5443|2026-09-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T20:02:16.157Z"
+  },
+  "3718|2026-09-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "filingParserVersion": 3,
+    "textParserVersion": 22,
+    "filingFallback": {
+      "source": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=3718&year=114&seamon=&mtype=A&check2858=Y",
+      "reason": "FILING_VERSION_UNVERIFIED"
+    },
+    "stage": "PDF_METRICS",
+    "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+    "attempts": 1,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T20:03:03.302Z",
+    "nextRetryAt": "2026-11-03T20:03:03.302Z"
+  },
+  "6907|2026-09-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T20:03:09.122Z"
+  },
+  "2329|2026-09-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "filingParserVersion": 3,
+    "textParserVersion": 22,
+    "filingFallback": null,
+    "stage": "PDF_METRICS",
+    "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+    "attempts": 1,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T20:03:54.751Z",
+    "nextRetryAt": "2026-11-03T20:03:54.751Z"
+  },
+  "1773|2026-09-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T20:04:18.528Z"
+  },
+  "3564|2026-09-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "filingParserVersion": 3,
+    "textParserVersion": 22,
+    "filingFallback": null,
+    "stage": "PDF_METRICS",
+    "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+    "attempts": 1,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T20:05:03.655Z",
+    "nextRetryAt": "2026-11-03T20:05:03.655Z"
+  },
+  "3141|2026-09-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T20:05:22.135Z"
+  },
+  "2480|2026-09-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T20:05:42.316Z"
+  },
+  "3380|2026-09-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T20:06:35.241Z"
+  },
+  "6202|2026-09-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T20:06:57.037Z"
+  },
+  "3088|2026-09-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "filingParserVersion": 3,
+    "textParserVersion": 22,
+    "filingFallback": null,
+    "stage": "PDF_DOWNLOAD",
+    "reason": "FINANCIAL_COLLECTION_BUDGET_EXHAUSTED",
+    "attempts": 1,
+    "checkedDate": "2026-11-03",
+    "checkedAt": "2026-11-02T20:07:32.718Z",
+    "nextRetryAt": "2026-11-02T20:12:32.718Z"
   }
 }
