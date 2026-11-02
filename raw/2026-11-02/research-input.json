@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "targetDate": "2026-11-02",
-  "generatedAt": "2026-11-02T20:55:24.160Z",
+  "generatedAt": "2026-11-02T21:03:13.064Z",
   "strategyVersion": "entry-dual-track-v2.6",
   "simulation": {
     "simulatedTodayDate": null
@@ -9,7 +9,7 @@
   "gateMatrix": {
     "targetDate": "2026-11-02",
     "timezone": "Asia/Taipei",
-    "generatedAt": "2026-11-02T20:54:52.422Z",
+    "generatedAt": "2026-11-02T21:02:47.339Z",
     "simulatedTodayDate": null,
     "effectiveTodayDate": "2026-11-03",
     "overallStatus": "PASS",
@@ -305,12 +305,12 @@
         "kind": "margin-short",
         "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/11/02",
         "targetDate": "2026-11-02",
-        "capturedAt": "2026-11-02T20:54:49.656Z",
+        "capturedAt": "2026-11-02T21:02:43.340Z",
         "status": "VERIFY_FAILED",
         "simulatedTodayDate": null,
         "httpStatus": 200,
         "contentType": "text/html",
-        "bytes": 9954,
+        "bytes": 11068,
         "officialDateEvidence": null,
         "rowCount": 0,
         "note": "Auxiliary payload was readable but target-date evidence was not found; do not use it as point-in-time research evidence."
@@ -402,7 +402,7 @@
         "kind": "material-information",
         "url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
         "targetDate": "2026-11-02",
-        "capturedAt": "2026-11-02T20:54:52.208Z",
+        "capturedAt": "2026-11-02T21:02:47.171Z",
         "status": "NOT_CAPTURED_RETROSPECTIVE",
         "simulatedTodayDate": null,
         "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
@@ -414,7 +414,7 @@
         "kind": "material-information",
         "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
         "targetDate": "2026-11-02",
-        "capturedAt": "2026-11-02T20:54:52.208Z",
+        "capturedAt": "2026-11-02T21:02:47.171Z",
         "status": "NOT_CAPTURED_RETROSPECTIVE",
         "simulatedTodayDate": null,
         "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
