@@ -22,16 +22,6 @@
       "rows": 38
     },
     {
-      "id": "twse-income-bd",
-      "market": "TWSE",
-      "kind": "income",
-      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_bd",
-      "summary": "上市公司綜合損益表(證券期貨業)",
-      "status": "CAPTURED",
-      "capturedAt": "2026-11-02T19:55:26.436Z",
-      "rows": 1
-    },
-    {
       "id": "twse-suspensions-L",
       "market": "TWSE",
       "kind": "suspensions",
@@ -39,6 +29,16 @@
       "summary": "上市公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
       "status": "CAPTURED",
       "capturedAt": "2026-11-02T21:27:14.372Z",
+      "rows": 1
+    },
+    {
+      "id": "twse-income-bd",
+      "market": "TWSE",
+      "kind": "income",
+      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_bd",
+      "summary": "上市公司綜合損益表(證券期貨業)",
+      "status": "CAPTURED",
+      "capturedAt": "2026-11-02T19:55:26.436Z",
       "rows": 1
     },
     {
@@ -411,26 +411,6 @@
       "rows": null
     },
     {
-      "id": "tpex-ca-parvalue-reference",
-      "market": "TPEx",
-      "kind": "coverage",
-      "coverageTags": [
-        "splitReductionConversion:parValueChange",
-        "historicalPriceAdjustment:parValueChange"
-      ],
-      "coverageOnly": true,
-      "allowEmpty": true,
-      "expectedDateRange": {
-        "start": "2026-05-07",
-        "end": "2026-12-08"
-      },
-      "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/pvChgRslt?startDate=2026%2F05%2F07&endDate=2026%2F12%2F08&response=json",
-      "summary": "上櫃變更股票面額恢復買賣參考價",
-      "status": "CAPTURED",
-      "capturedAt": "2026-11-02T21:27:24.421Z",
-      "rows": null
-    },
-    {
       "id": "tpex-ca-reduction-reference",
       "market": "TPEx",
       "kind": "coverage",
@@ -448,6 +428,26 @@
       "summary": "上櫃減資恢復交易參考價",
       "status": "CAPTURED",
       "capturedAt": "2026-11-02T21:27:24.724Z",
+      "rows": null
+    },
+    {
+      "id": "tpex-ca-parvalue-reference",
+      "market": "TPEx",
+      "kind": "coverage",
+      "coverageTags": [
+        "splitReductionConversion:parValueChange",
+        "historicalPriceAdjustment:parValueChange"
+      ],
+      "coverageOnly": true,
+      "allowEmpty": true,
+      "expectedDateRange": {
+        "start": "2026-05-07",
+        "end": "2026-12-08"
+      },
+      "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/pvChgRslt?startDate=2026%2F05%2F07&endDate=2026%2F12%2F08&response=json",
+      "summary": "上櫃變更股票面額恢復買賣參考價",
+      "status": "CAPTURED",
+      "capturedAt": "2026-11-02T21:27:24.421Z",
       "rows": null
     },
     {
@@ -481,21 +481,6 @@
       "rows": 362
     },
     {
-      "id": "tpex-coverage-tpex-exright-prepost",
-      "market": "TPEx",
-      "kind": "coverage",
-      "coverageTags": [
-        "exRightsDividends"
-      ],
-      "coverageOnly": true,
-      "allowEmpty": true,
-      "url": "https://www.tpex.org.tw/openapi/v1/tpex_exright_prepost",
-      "summary": "上櫃股票除權除息預告表",
-      "status": "CAPTURED",
-      "capturedAt": "2026-11-02T21:27:25.620Z",
-      "rows": 17
-    },
-    {
       "id": "tpex-coverage-mopsfin-t187ap26-O",
       "market": "TPEx",
       "kind": "coverage",
@@ -511,6 +496,21 @@
       "rows": 1
     },
     {
+      "id": "tpex-coverage-tpex-exright-prepost",
+      "market": "TPEx",
+      "kind": "coverage",
+      "coverageTags": [
+        "exRightsDividends"
+      ],
+      "coverageOnly": true,
+      "allowEmpty": true,
+      "url": "https://www.tpex.org.tw/openapi/v1/tpex_exright_prepost",
+      "summary": "上櫃股票除權除息預告表",
+      "status": "CAPTURED",
+      "capturedAt": "2026-11-02T21:27:25.620Z",
+      "rows": 17
+    },
+    {
       "id": "mops-xbrl-bulk-2025Q3",
       "market": "ALL",
       "kind": "xbrl-bulk-diagnostic",
@@ -518,7 +518,7 @@
       "periodEnd": "2025-09-30",
       "url": "https://mopsov.twse.com.tw/server-java/FileDownLoad?step=9&fileName=tifrs-2025Q3.zip&filePath=/home/html/nas/ifrs/2025/",
       "status": "CAPTURED",
-      "capturedAt": "2026-11-02T21:27:11.626Z",
+      "capturedAt": "2026-11-02T21:31:14.872Z",
       "bytes": 87854145,
       "entryCount": 2020,
       "sampleEntry": "tifrs-fr1-m1-ci-ir-4205-2025Q3.html",
