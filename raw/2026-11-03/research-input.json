@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "targetDate": "2026-11-03",
-  "generatedAt": "2026-11-03T17:39:21.243Z",
+  "generatedAt": "2026-11-03T18:18:21.472Z",
   "strategyVersion": "entry-dual-track-v2.6",
   "simulation": {
     "simulatedTodayDate": null
@@ -9,7 +9,7 @@
   "gateMatrix": {
     "targetDate": "2026-11-03",
     "timezone": "Asia/Taipei",
-    "generatedAt": "2026-11-03T17:38:49.606Z",
+    "generatedAt": "2026-11-03T18:17:48.937Z",
     "simulatedTodayDate": null,
     "effectiveTodayDate": "2026-11-04",
     "overallStatus": "PASS",
@@ -259,7 +259,8 @@
         "bytes": 130205,
         "officialDateEvidence": "20261103",
         "rowCount": 1306,
-        "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+        "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+        "preservedCapture": true
       },
       {
         "source": "twse-margin-trading-legacy",
@@ -276,7 +277,8 @@
         "bytes": 130205,
         "officialDateEvidence": "20261103",
         "rowCount": 1306,
-        "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+        "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+        "preservedCapture": true
       },
       {
         "source": "tpex-margin-balance",
@@ -293,7 +295,8 @@
         "bytes": 107839,
         "officialDateEvidence": "20261103",
         "rowCount": 919,
-        "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+        "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+        "preservedCapture": true
       },
       {
         "source": "tpex-margin-balance-legacy",
@@ -302,7 +305,7 @@
         "kind": "margin-short",
         "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/11/03",
         "targetDate": "2026-11-03",
-        "capturedAt": "2026-11-03T17:38:48.488Z",
+        "capturedAt": "2026-11-03T18:17:47.888Z",
         "status": "VERIFY_FAILED",
         "simulatedTodayDate": null,
         "httpStatus": 200,
@@ -327,7 +330,8 @@
         "bytes": 100836,
         "officialDateEvidence": "20261103",
         "rowCount": 932,
-        "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+        "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+        "preservedCapture": true
       },
       {
         "source": "twse-monthly-revenue",
