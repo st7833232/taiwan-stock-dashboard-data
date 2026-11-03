@@ -1,7 +1,7 @@
 {
   "targetDate": "2026-11-03",
   "timezone": "Asia/Taipei",
-  "generatedAt": "2026-11-03T10:09:05.422Z",
+  "generatedAt": "2026-11-03T10:14:53.027Z",
   "simulatedTodayDate": null,
   "effectiveTodayDate": "2026-11-03",
   "overallStatus": "PASS",
@@ -148,7 +148,8 @@
       "contentType": "application/json",
       "bytes": 5295907,
       "officialDateEvidence": "1151103",
-      "rowCount": 13569
+      "rowCount": 13569,
+      "preservedPass": true
     },
     {
       "source": "tpex-mainboard-daily-close-quotes-legacy",
@@ -198,7 +199,8 @@
       "contentType": "application/json",
       "bytes": 868995,
       "officialDateEvidence": "1151103",
-      "rowCount": 917
+      "rowCount": 917,
+      "preservedPass": true
     },
     {
       "source": "tpex-3insti-daily-trading-www",
@@ -241,7 +243,7 @@
       "kind": "margin-short",
       "url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20261103&response=json&selectType=ALL",
       "targetDate": "2026-11-03",
-      "capturedAt": "2026-11-03T10:09:00.942Z",
+      "capturedAt": "2026-11-03T10:14:49.938Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -258,7 +260,7 @@
       "kind": "margin-short",
       "url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261103&response=json&selectType=ALL",
       "targetDate": "2026-11-03",
-      "capturedAt": "2026-11-03T10:09:00.944Z",
+      "capturedAt": "2026-11-03T10:14:49.963Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -275,7 +277,7 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/www/zh-tw/margin/balance?date=2026/11/03&id=&response=json",
       "targetDate": "2026-11-03",
-      "capturedAt": "2026-11-03T10:09:02.341Z",
+      "capturedAt": "2026-11-03T10:14:51.786Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -292,7 +294,7 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/11/03",
       "targetDate": "2026-11-03",
-      "capturedAt": "2026-11-03T10:09:02.342Z",
+      "capturedAt": "2026-11-03T10:14:51.787Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -309,7 +311,7 @@
       "kind": "securities-lending",
       "url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl?date=2026/11/03&id=&response=json",
       "targetDate": "2026-11-03",
-      "capturedAt": "2026-11-03T10:09:02.343Z",
+      "capturedAt": "2026-11-03T10:14:51.788Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
