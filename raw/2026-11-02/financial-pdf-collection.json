@@ -5575,11 +5575,11 @@
       "textParserVersion": 22,
       "filingFallback": null,
       "stage": "PDF_METRICS",
-      "reason": "PDF_OCR_REVIEW_PENDING",
-      "attempts": 4,
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 5,
       "checkedDate": "2026-11-03",
-      "checkedAt": "2026-11-02T21:23:30.165Z",
-      "nextRetryAt": "2026-11-02T22:03:30.165Z"
+      "checkedAt": "2026-11-03T04:01:51.975Z",
+      "nextRetryAt": "2026-11-04T04:01:51.975Z"
     },
     "2441|2026-09-30": {
       "status": "VERIFIED",
@@ -6010,7 +6010,7 @@
   },
   "ocrProgress": {
     "parserVersion": 20,
-    "pages": 3876
+    "pages": 3887
   },
   "remaining": 9,
   "ready": 0,
