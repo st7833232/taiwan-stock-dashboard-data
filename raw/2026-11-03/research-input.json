@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "targetDate": "2026-11-03",
-  "generatedAt": "2026-11-04T06:44:45.268Z",
+  "generatedAt": "2026-11-04T06:50:29.979Z",
   "strategyVersion": "entry-dual-track-v2.6",
   "simulation": {
     "simulatedTodayDate": null
@@ -9,7 +9,7 @@
   "gateMatrix": {
     "targetDate": "2026-11-03",
     "timezone": "Asia/Taipei",
-    "generatedAt": "2026-11-04T06:44:13.398Z",
+    "generatedAt": "2026-11-04T06:50:02.925Z",
     "simulatedTodayDate": null,
     "effectiveTodayDate": "2026-11-04",
     "overallStatus": "PASS",
@@ -305,7 +305,7 @@
         "kind": "margin-short",
         "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/11/03",
         "targetDate": "2026-11-03",
-        "capturedAt": "2026-11-04T06:44:10.635Z",
+        "capturedAt": "2026-11-04T06:50:01.786Z",
         "status": "VERIFY_FAILED",
         "simulatedTodayDate": null,
         "httpStatus": 200,
