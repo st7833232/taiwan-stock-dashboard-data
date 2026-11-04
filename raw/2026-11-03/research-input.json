@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "targetDate": "2026-11-03",
-  "generatedAt": "2026-11-04T03:15:35.916Z",
+  "generatedAt": "2026-11-04T03:20:36.539Z",
   "strategyVersion": "entry-dual-track-v2.6",
   "simulation": {
     "simulatedTodayDate": null
@@ -9,7 +9,7 @@
   "gateMatrix": {
     "targetDate": "2026-11-03",
     "timezone": "Asia/Taipei",
-    "generatedAt": "2026-11-04T03:15:03.821Z",
+    "generatedAt": "2026-11-04T03:20:17.323Z",
     "simulatedTodayDate": null,
     "effectiveTodayDate": "2026-11-04",
     "overallStatus": "PASS",
@@ -305,12 +305,12 @@
         "kind": "margin-short",
         "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/11/03",
         "targetDate": "2026-11-03",
-        "capturedAt": "2026-11-04T03:15:00.317Z",
+        "capturedAt": "2026-11-04T03:20:15.280Z",
         "status": "VERIFY_FAILED",
         "simulatedTodayDate": null,
         "httpStatus": 200,
         "contentType": "text/html",
-        "bytes": 9954,
+        "bytes": 11068,
         "officialDateEvidence": null,
         "rowCount": 0,
         "note": "Auxiliary payload was readable but target-date evidence was not found; do not use it as point-in-time research evidence."
