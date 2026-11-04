@@ -8,7 +8,7 @@
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
       "summary": "上市公司每日重大訊息",
       "status": "CAPTURED",
-      "capturedAt": "2026-11-04T06:55:34.762Z",
+      "capturedAt": "2026-11-04T07:00:37.115Z",
       "rows": 166
     },
     {
@@ -18,7 +18,7 @@
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap23_L",
       "summary": "上市公司違反資訊申報、重大訊息及說明記者會規定專區",
       "status": "CAPTURED",
-      "capturedAt": "2026-11-04T06:55:35.299Z",
+      "capturedAt": "2026-11-04T07:00:37.530Z",
       "rows": 38
     },
     {
@@ -38,7 +38,7 @@
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap26_L",
       "summary": "上市公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
       "status": "CAPTURED",
-      "capturedAt": "2026-11-04T06:55:35.464Z",
+      "capturedAt": "2026-11-04T07:00:37.979Z",
       "rows": 1
     },
     {
@@ -177,7 +177,7 @@
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWTAWU",
       "summary": "集中市場暫停交易證券",
       "status": "CAPTURED",
-      "capturedAt": "2026-11-04T06:50:33.615Z",
+      "capturedAt": "2026-11-04T07:00:38.166Z",
       "rows": 1
     },
     {
@@ -193,6 +193,23 @@
       "summary": "上市股票除權除息計算結果表",
       "status": "CAPTURED",
       "capturedAt": "2026-11-04T06:50:35.421Z",
+      "rows": null,
+      "refreshStatus": "VERIFY_FAILED",
+      "refreshError": "HTTP 307"
+    },
+    {
+      "id": "twse-ca-parvalue-preview",
+      "market": "TWSE",
+      "kind": "coverage",
+      "coverageTags": [
+        "splitReductionConversion:parValueChange"
+      ],
+      "coverageOnly": true,
+      "allowEmpty": true,
+      "url": "https://www.twse.com.tw/exchangeReport/TWTB7U?response=json",
+      "summary": "變更股票面額預告表",
+      "status": "CAPTURED",
+      "capturedAt": "2026-11-04T07:00:40.418Z",
       "rows": null
     },
     {
@@ -209,22 +226,9 @@
       "summary": "股票減資恢復買賣參考價格",
       "status": "CAPTURED",
       "capturedAt": "2026-11-04T06:50:35.862Z",
-      "rows": null
-    },
-    {
-      "id": "twse-ca-parvalue-preview",
-      "market": "TWSE",
-      "kind": "coverage",
-      "coverageTags": [
-        "splitReductionConversion:parValueChange"
-      ],
-      "coverageOnly": true,
-      "allowEmpty": true,
-      "url": "https://www.twse.com.tw/exchangeReport/TWTB7U?response=json",
-      "summary": "變更股票面額預告表",
-      "status": "CAPTURED",
-      "capturedAt": "2026-11-04T06:50:36.366Z",
-      "rows": null
+      "rows": null,
+      "refreshStatus": "VERIFY_FAILED",
+      "refreshError": "HTTP 307"
     },
     {
       "id": "twse-ca-parvalue-history",
@@ -239,17 +243,9 @@
       "summary": "變更股票面額恢復買賣參考價格",
       "status": "CAPTURED",
       "capturedAt": "2026-11-04T06:50:36.687Z",
-      "rows": null
-    },
-    {
-      "id": "tpex-events-O",
-      "market": "TPEx",
-      "kind": "events",
-      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
-      "summary": "上櫃公司每日重大訊息",
-      "status": "CAPTURED",
-      "capturedAt": "2026-11-04T06:50:39.026Z",
-      "rows": 111
+      "rows": null,
+      "refreshStatus": "VERIFY_FAILED",
+      "refreshError": "HTTP 307"
     },
     {
       "id": "tpex-suspensions-O",
@@ -258,8 +254,18 @@
       "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap26_O",
       "summary": "上櫃公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
       "status": "CAPTURED",
-      "capturedAt": "2026-11-04T06:50:38.877Z",
+      "capturedAt": "2026-11-04T07:00:56.529Z",
       "rows": 1
+    },
+    {
+      "id": "tpex-events-O",
+      "market": "TPEx",
+      "kind": "events",
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
+      "summary": "上櫃公司每日重大訊息",
+      "status": "CAPTURED",
+      "capturedAt": "2026-11-04T07:00:58.283Z",
+      "rows": 111
     },
     {
       "id": "tpex-balance-basi",
@@ -388,7 +394,7 @@
       "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap23_O",
       "summary": "上櫃公司違反資訊申報、重大訊息及說明記者會規定專區",
       "status": "CAPTURED",
-      "capturedAt": "2026-11-04T06:50:39.242Z",
+      "capturedAt": "2026-11-04T07:00:58.502Z",
       "rows": 19
     },
     {
@@ -408,7 +414,9 @@
       "summary": "上櫃股票除權除息計算結果表（歷史）",
       "status": "CAPTURED",
       "capturedAt": "2026-11-04T06:50:39.837Z",
-      "rows": null
+      "rows": null,
+      "refreshStatus": "VERIFY_FAILED",
+      "refreshError": "The operation was aborted due to timeout"
     },
     {
       "id": "tpex-ca-reduction-reference",
@@ -427,7 +435,7 @@
       "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/revivt?startDate=2026%2F05%2F08&endDate=2026%2F12%2F09&response=json",
       "summary": "上櫃減資恢復交易參考價",
       "status": "CAPTURED",
-      "capturedAt": "2026-11-04T06:50:40.289Z",
+      "capturedAt": "2026-11-04T07:01:18.751Z",
       "rows": null
     },
     {
@@ -447,7 +455,7 @@
       "url": "https://www.tpex.org.tw/www/zh-tw/bulletin/pvChgRslt?startDate=2026%2F05%2F08&endDate=2026%2F12%2F09&response=json",
       "summary": "上櫃變更股票面額恢復買賣參考價",
       "status": "CAPTURED",
-      "capturedAt": "2026-11-04T06:50:40.540Z",
+      "capturedAt": "2026-11-04T07:01:22.500Z",
       "rows": null
     },
     {
@@ -462,7 +470,7 @@
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_spendi_today",
       "summary": "上櫃當日公布暫停/恢復交易股票",
       "status": "CAPTURED",
-      "capturedAt": "2026-11-04T06:50:40.762Z",
+      "capturedAt": "2026-11-04T07:01:22.715Z",
       "rows": 1
     },
     {
@@ -477,7 +485,7 @@
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_spendi_history",
       "summary": "上櫃歷史公布暫停/恢復交易股票",
       "status": "CAPTURED",
-      "capturedAt": "2026-11-04T06:50:40.963Z",
+      "capturedAt": "2026-11-04T07:01:29.728Z",
       "rows": 362
     },
     {
@@ -492,7 +500,7 @@
       "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap26_O",
       "summary": "上櫃公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
       "status": "CAPTURED",
-      "capturedAt": "2026-11-04T06:50:41.178Z",
+      "capturedAt": "2026-11-04T07:01:30.439Z",
       "rows": 1
     },
     {
@@ -507,7 +515,7 @@
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_exright_prepost",
       "summary": "上櫃股票除權除息預告表",
       "status": "CAPTURED",
-      "capturedAt": "2026-11-04T06:50:41.680Z",
+      "capturedAt": "2026-11-04T07:01:34.727Z",
       "rows": 69
     },
     {
@@ -520,35 +528,43 @@
       "attempts": [
         {
           "url": "https://mops.twse.com.tw/nas/ifrs/2025/tifrs-2025Q3.zip",
-          "status": 404,
-          "contentType": "text/html;charset=utf-8",
-          "bytes": 431,
+          "status": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "bytes": 947,
           "zipMagic": false,
-          "preview": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 404 – Not Found</title><style type=\"text/css\">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;"
+          "preview": "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"> <script type=\"application/javascript\"> var contactPhone = \"(02)8101-5921, (02)8101-5836\"; </script> </head> <body> 因為安全性考量，您所執行的頁面無法呈現。<BR> FOR SECURITY REASONS, THIS PAGE"
         },
         {
           "url": "https://mops.twse.com.tw/server-java/FileDownLoad?step=9&fileName=tifrs-2025Q3.zip&filePath=/home/html/nas/ifrs/2025/",
-          "status": 404,
-          "contentType": "text/html;charset=utf-8",
-          "bytes": 431,
+          "status": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "bytes": 947,
           "zipMagic": false,
-          "preview": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 404 – Not Found</title><style type=\"text/css\">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;"
+          "preview": "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"> <script type=\"application/javascript\"> var contactPhone = \"(02)8101-5921, (02)8101-5836\"; </script> </head> <body> 因為安全性考量，您所執行的頁面無法呈現。<BR> FOR SECURITY REASONS, THIS PAGE"
         },
         {
           "url": "https://mops.twse.com.tw/mops/server-java/FileDownLoad?step=9&fileName=tifrs-2025Q3.zip&filePath=/home/html/nas/ifrs/2025/",
           "status": 200,
-          "contentType": "text/html;charset=UTF-8",
-          "bytes": 65,
+          "contentType": "text/html; charset=UTF-8",
+          "bytes": 947,
           "zipMagic": false,
-          "preview": "<script> location.href = location.origin + \"/mops\"; </script>"
+          "preview": "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"> <script type=\"application/javascript\"> var contactPhone = \"(02)8101-5921, (02)8101-5836\"; </script> </head> <body> 因為安全性考量，您所執行的頁面無法呈現。<BR> FOR SECURITY REASONS, THIS PAGE"
         },
         {
           "url": "https://mopsov.twse.com.tw/server-java/FileDownLoad?step=9&fileName=tifrs-2025Q3.zip&filePath=/home/html/nas/ifrs/2025/",
-          "error": "The operation was aborted due to timeout"
+          "status": 307,
+          "contentType": "text/html; charset=UTF-8",
+          "bytes": 947,
+          "zipMagic": false,
+          "preview": "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"> <script type=\"application/javascript\"> var contactPhone = \"(02)8101-5921, (02)8101-5836\"; </script> </head> <body> 因為安全性考量，您所執行的頁面無法呈現。<BR> FOR SECURITY REASONS, THIS PAGE"
         },
         {
           "url": "https://mopsov.twse.com.tw/mops/server-java/FileDownLoad?step=9&fileName=tifrs-2025Q3.zip&filePath=/home/html/nas/ifrs/2025/",
-          "error": "fetch failed"
+          "status": 307,
+          "contentType": "text/html; charset=UTF-8",
+          "bytes": 947,
+          "zipMagic": false,
+          "preview": "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"> <script type=\"application/javascript\"> var contactPhone = \"(02)8101-5921, (02)8101-5836\"; </script> </head> <body> 因為安全性考量，您所執行的頁面無法呈現。<BR> FOR SECURITY REASONS, THIS PAGE"
         }
       ]
     }
