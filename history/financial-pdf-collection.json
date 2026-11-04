@@ -6022,16 +6022,22 @@
     "checkedAt": "2026-11-04T17:43:32.935Z"
   },
   "6278|2026-09-30": {
-    "status": "UNVERIFIED",
+    "status": "VERIFIED",
     "parserVersion": 2,
-    "filingParserVersion": 3,
-    "textParserVersion": 22,
-    "filingFallback": null,
-    "stage": "PDF_LINK",
-    "reason": "fetch failed",
-    "attempts": 1,
     "checkedDate": "2026-11-05",
-    "checkedAt": "2026-11-04T17:43:54.464Z",
-    "nextRetryAt": "2026-11-04T17:48:54.464Z"
+    "checkedAt": "2026-11-04T17:54:48.391Z",
+    "lastUnverifiedAttempt": {
+      "status": "UNVERIFIED",
+      "parserVersion": 2,
+      "filingParserVersion": 3,
+      "textParserVersion": 22,
+      "filingFallback": null,
+      "stage": "PDF_LINK",
+      "reason": "fetch failed",
+      "attempts": 1,
+      "checkedDate": "2026-11-05",
+      "checkedAt": "2026-11-04T17:43:54.464Z",
+      "nextRetryAt": "2026-11-04T17:48:54.464Z"
+    }
   }
 }
