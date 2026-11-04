@@ -6001,5 +6001,37 @@
     "parserVersion": 2,
     "checkedDate": "2026-11-03",
     "checkedAt": "2026-11-02T20:39:34.210Z"
+  },
+  "2498|2026-09-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "filingParserVersion": 3,
+    "textParserVersion": 22,
+    "filingFallback": null,
+    "stage": "PDF_METRICS",
+    "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+    "attempts": 1,
+    "checkedDate": "2026-11-05",
+    "checkedAt": "2026-11-04T17:43:25.395Z",
+    "nextRetryAt": "2026-11-05T17:43:25.395Z"
+  },
+  "6112|2026-09-30": {
+    "status": "VERIFIED",
+    "parserVersion": 2,
+    "checkedDate": "2026-11-05",
+    "checkedAt": "2026-11-04T17:43:32.935Z"
+  },
+  "6278|2026-09-30": {
+    "status": "UNVERIFIED",
+    "parserVersion": 2,
+    "filingParserVersion": 3,
+    "textParserVersion": 22,
+    "filingFallback": null,
+    "stage": "PDF_LINK",
+    "reason": "fetch failed",
+    "attempts": 1,
+    "checkedDate": "2026-11-05",
+    "checkedAt": "2026-11-04T17:43:54.464Z",
+    "nextRetryAt": "2026-11-04T17:48:54.464Z"
   }
 }
