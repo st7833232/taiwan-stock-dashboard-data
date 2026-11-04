@@ -1,7 +1,7 @@
 {
   "targetDate": "2026-11-04",
   "timezone": "Asia/Taipei",
-  "generatedAt": "2026-11-04T17:40:41.610Z",
+  "generatedAt": "2026-11-04T17:52:39.666Z",
   "simulatedTodayDate": null,
   "effectiveTodayDate": "2026-11-05",
   "overallStatus": "PASS",
@@ -43,8 +43,8 @@
     {
       "gate": "tpex-daily-close-quotes",
       "status": "PASS",
-      "source": "tpex-mainboard-daily-close-quotes-legacy",
-      "officialDateEvidence": "20261104"
+      "source": "tpex-mainboard-daily-close-quotes",
+      "officialDateEvidence": "1151104"
     },
     {
       "gate": "tpex-market-turnover-index",
@@ -55,8 +55,8 @@
     {
       "gate": "tpex-individual-institutional",
       "status": "PASS",
-      "source": "tpex-3insti-daily-trading-www",
-      "officialDateEvidence": "20261104"
+      "source": "tpex-3insti-daily-trading",
+      "officialDateEvidence": "1151104"
     },
     {
       "gate": "tpex-institutional-summary",
@@ -80,7 +80,8 @@
       "contentType": "application/json;charset=UTF-8",
       "bytes": 5599529,
       "officialDateEvidence": "20261104",
-      "rowCount": 40871
+      "rowCount": 40871,
+      "preservedPass": true
     },
     {
       "source": "twse-mi-index",
@@ -96,7 +97,8 @@
       "contentType": "application/json;charset=UTF-8",
       "bytes": 5599529,
       "officialDateEvidence": "20261104",
-      "rowCount": 40871
+      "rowCount": 40871,
+      "preservedPass": true
     },
     {
       "source": "twse-fmtqik",
@@ -112,7 +114,8 @@
       "contentType": "application/json;charset=UTF-8",
       "bytes": 794,
       "officialDateEvidence": "20261104",
-      "rowCount": 3
+      "rowCount": 3,
+      "preservedPass": true
     },
     {
       "source": "twse-t86",
@@ -128,7 +131,8 @@
       "contentType": "application/json;charset=UTF-8",
       "bytes": 2377582,
       "officialDateEvidence": "20261104",
-      "rowCount": 18417
+      "rowCount": 18417,
+      "preservedPass": true
     },
     {
       "source": "tpex-mainboard-daily-close-quotes",
@@ -137,12 +141,14 @@
       "kind": "daily-close-quotes",
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes",
       "targetDate": "2026-11-04",
-      "capturedAt": "2026-11-04T17:40:33.091Z",
-      "status": "VERIFY_FAILED",
+      "capturedAt": "2026-11-04T17:52:18.557Z",
+      "status": "PASS",
       "simulatedTodayDate": null,
       "httpStatus": 200,
       "contentType": "application/json",
-      "error": "terminated"
+      "bytes": 5313751,
+      "officialDateEvidence": "1151104",
+      "rowCount": 13626
     },
     {
       "source": "tpex-mainboard-daily-close-quotes-legacy",
@@ -158,7 +164,8 @@
       "contentType": "application/json;charset=UTF-8",
       "bytes": 147423,
       "officialDateEvidence": "20261104",
-      "rowCount": 1018
+      "rowCount": 1018,
+      "preservedPass": true
     },
     {
       "source": "tpex-daily-trading-index",
@@ -174,7 +181,8 @@
       "contentType": "application/json",
       "bytes": 442,
       "officialDateEvidence": "1151104",
-      "rowCount": 3
+      "rowCount": 3,
+      "preservedPass": true
     },
     {
       "source": "tpex-3insti-daily-trading",
@@ -183,12 +191,14 @@
       "kind": "individual-institutional",
       "url": "https://www.tpex.org.tw/openapi/v1/tpex_3insti_daily_trading",
       "targetDate": "2026-11-04",
-      "capturedAt": "2026-11-04T17:40:33.095Z",
-      "status": "VERIFY_FAILED",
+      "capturedAt": "2026-11-04T17:52:18.599Z",
+      "status": "PASS",
       "simulatedTodayDate": null,
       "httpStatus": 200,
       "contentType": "application/json",
-      "error": "terminated"
+      "bytes": 870061,
+      "officialDateEvidence": "1151104",
+      "rowCount": 918
     },
     {
       "source": "tpex-3insti-daily-trading-www",
@@ -204,7 +214,8 @@
       "contentType": "application/json;charset=UTF-8",
       "bytes": 149133,
       "officialDateEvidence": "20261104",
-      "rowCount": 918
+      "rowCount": 918,
+      "preservedPass": true
     },
     {
       "source": "tpex-3insti-summary",
@@ -220,7 +231,8 @@
       "contentType": "application/json",
       "bytes": 1018,
       "officialDateEvidence": "1151104",
-      "rowCount": 8
+      "rowCount": 8,
+      "preservedPass": true
     },
     {
       "source": "twse-margin-trading",
@@ -237,7 +249,8 @@
       "bytes": 130141,
       "officialDateEvidence": "20261104",
       "rowCount": 1306,
-      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+      "preservedCapture": true
     },
     {
       "source": "twse-margin-trading-legacy",
@@ -254,7 +267,8 @@
       "bytes": 130141,
       "officialDateEvidence": "20261104",
       "rowCount": 1306,
-      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+      "preservedCapture": true
     },
     {
       "source": "tpex-margin-balance",
@@ -271,7 +285,8 @@
       "bytes": 107765,
       "officialDateEvidence": "20261104",
       "rowCount": 919,
-      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+      "preservedCapture": true
     },
     {
       "source": "tpex-margin-balance-legacy",
@@ -280,7 +295,7 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/11/04",
       "targetDate": "2026-11-04",
-      "capturedAt": "2026-11-04T17:40:39.860Z",
+      "capturedAt": "2026-11-04T17:52:37.809Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -305,7 +320,8 @@
       "bytes": 100752,
       "officialDateEvidence": "20261104",
       "rowCount": 932,
-      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+      "preservedCapture": true
     },
     {
       "source": "twse-monthly-revenue",
@@ -376,7 +392,7 @@
       "kind": "material-information",
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
       "targetDate": "2026-11-04",
-      "capturedAt": "2026-11-04T17:40:41.606Z",
+      "capturedAt": "2026-11-04T17:52:39.471Z",
       "status": "NOT_CAPTURED_RETROSPECTIVE",
       "simulatedTodayDate": null,
       "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
@@ -388,7 +404,7 @@
       "kind": "material-information",
       "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap04_O",
       "targetDate": "2026-11-04",
-      "capturedAt": "2026-11-04T17:40:41.606Z",
+      "capturedAt": "2026-11-04T17:52:39.471Z",
       "status": "NOT_CAPTURED_RETROSPECTIVE",
       "simulatedTodayDate": null,
       "note": "Latest-only auxiliary source skipped for a historical target date to prevent hindsight leakage."
