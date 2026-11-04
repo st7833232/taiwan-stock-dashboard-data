@@ -8,7 +8,7 @@
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
       "summary": "上市公司每日重大訊息",
       "status": "CAPTURED",
-      "capturedAt": "2026-11-04T06:50:32.190Z",
+      "capturedAt": "2026-11-04T06:55:34.762Z",
       "rows": 166
     },
     {
@@ -18,7 +18,7 @@
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap23_L",
       "summary": "上市公司違反資訊申報、重大訊息及說明記者會規定專區",
       "status": "CAPTURED",
-      "capturedAt": "2026-11-04T06:50:32.768Z",
+      "capturedAt": "2026-11-04T06:55:35.299Z",
       "rows": 38
     },
     {
@@ -38,7 +38,7 @@
       "url": "https://openapi.twse.com.tw/v1/opendata/t187ap26_L",
       "summary": "上市公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
       "status": "CAPTURED",
-      "capturedAt": "2026-11-04T06:50:33.218Z",
+      "capturedAt": "2026-11-04T06:55:35.464Z",
       "rows": 1
     },
     {
@@ -162,7 +162,7 @@
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL",
       "summary": "上市股票除權除息預告表",
       "status": "CAPTURED",
-      "capturedAt": "2026-11-04T06:50:33.418Z",
+      "capturedAt": "2026-11-04T06:55:35.629Z",
       "rows": 53
     },
     {
@@ -242,16 +242,6 @@
       "rows": null
     },
     {
-      "id": "tpex-suspensions-O",
-      "market": "TPEx",
-      "kind": "suspensions",
-      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap26_O",
-      "summary": "上櫃公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
-      "status": "CAPTURED",
-      "capturedAt": "2026-11-04T06:50:38.877Z",
-      "rows": 1
-    },
-    {
       "id": "tpex-events-O",
       "market": "TPEx",
       "kind": "events",
@@ -260,6 +250,16 @@
       "status": "CAPTURED",
       "capturedAt": "2026-11-04T06:50:39.026Z",
       "rows": 111
+    },
+    {
+      "id": "tpex-suspensions-O",
+      "market": "TPEx",
+      "kind": "suspensions",
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap26_O",
+      "summary": "上櫃公司經營權及營業範圍異(變)動專區-經營權異動且營業範圍重大變更停止買賣公司",
+      "status": "CAPTURED",
+      "capturedAt": "2026-11-04T06:50:38.877Z",
+      "rows": 1
     },
     {
       "id": "tpex-balance-basi",
