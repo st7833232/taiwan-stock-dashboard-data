@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "targetDate": "2026-11-05",
   "strategyVersion": "entry-dual-track-v2.6",
-  "inputFingerprint": "35fa56cea007020dcb685cdfe3ed4720178fdc719deab8aaed7b9439f06e480c",
+  "inputFingerprint": "44ae4dd92a10bbd8f4265da343e16894f2128747ccb3372cbd3fb2e52645cf6f",
   "coverage": {
     "universe": 2333,
     "stocks": 1971,
@@ -37743,7 +37743,7 @@
       "close": 127.5,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 22.2145,
+      "score": 32.2145,
       "scores": {
         "trend": 7.2,
         "momentum": 0,
@@ -37752,7 +37752,7 @@
         "institutional": 1.5,
         "large_holder": 5.3333,
         "margin_short_lending": 0,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -37763,7 +37763,7 @@
         "credit": false,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -37774,7 +37774,6 @@
         "MARKET_REGIME_BLOCK",
         "TREND_NOT_CONFIRMED",
         "CREDIT_EVIDENCE_INCOMPLETE",
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -37792,8 +37791,7 @@
       "historyCoverageTradingDays": 140,
       "researchEvidenceStatus": "PENDING",
       "researchEvidencePending": [
-        "credit",
-        "fundamental"
+        "credit"
       ]
     },
     {
@@ -85923,8 +85921,7 @@
       "historyCoverageTradingDays": 140,
       "researchEvidenceStatus": "PENDING",
       "researchEvidencePending": [
-        "credit",
-        "fundamental"
+        "credit"
       ]
     },
     {
@@ -123350,7 +123347,7 @@
       "close": 207.5,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 17.3615,
+      "score": 27.3615,
       "scores": {
         "trend": 3.6,
         "momentum": 0,
@@ -123359,7 +123356,7 @@
         "institutional": 9,
         "large_holder": 0,
         "margin_short_lending": 0,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -123370,7 +123367,7 @@
         "credit": false,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -123381,7 +123378,6 @@
         "MARKET_REGIME_BLOCK",
         "TREND_NOT_CONFIRMED",
         "CREDIT_EVIDENCE_INCOMPLETE",
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -123399,8 +123395,7 @@
       "historyCoverageTradingDays": 138,
       "researchEvidenceStatus": "PENDING",
       "researchEvidencePending": [
-        "credit",
-        "fundamental"
+        "credit"
       ]
     },
     {
@@ -147063,7 +147058,7 @@
       "close": 227,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 23.282,
+      "score": 33.282,
       "scores": {
         "trend": 14.4,
         "momentum": 0,
@@ -147072,7 +147067,7 @@
         "institutional": 4.5,
         "large_holder": 0,
         "margin_short_lending": 0,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -147083,7 +147078,7 @@
         "credit": false,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -147094,7 +147089,6 @@
         "MARKET_REGIME_BLOCK",
         "TREND_NOT_CONFIRMED",
         "CREDIT_EVIDENCE_INCOMPLETE",
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -147112,8 +147106,7 @@
       "historyCoverageTradingDays": 138,
       "researchEvidenceStatus": "PENDING",
       "researchEvidencePending": [
-        "credit",
-        "fundamental"
+        "credit"
       ]
     },
     {
