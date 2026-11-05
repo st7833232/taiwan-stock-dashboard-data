@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-05",
-  "revision": "2026-11-05-181513",
+  "revision": "2026-11-05-182040",
   "strategyVersion": "entry-dual-track-v2.6",
   "status": "SNAPSHOT_UPDATED_EVIDENCE_PENDING",
   "screeningComplete": true,
@@ -2670,8 +2670,8 @@
     {
       "gate": "tpex-individual-institutional",
       "status": "PASS",
-      "source": "tpex-3insti-daily-trading-www",
-      "officialDateEvidence": "20261105"
+      "source": "tpex-3insti-daily-trading",
+      "officialDateEvidence": "1151105"
     },
     {
       "gate": "tpex-institutional-summary",
@@ -2680,17 +2680,6 @@
       "officialDateEvidence": "1151105"
     }
   ],
-  "validation": {
-    "status": "PASS",
-    "validators": [
-      "validate-data",
-      "validate-dashboard-contract",
-      "validate-strategy-v2"
-    ],
-    "revision": "2026-11-05-181513",
-    "runId": "42006738038",
-    "runUrl": "https://github.com/st7833232/taiwan-stock-dashboard-data/actions/runs/42006738038",
-    "validatedCommit": "c53a5cdabc17c0910284dc0899ccef89a510dc33"
-  },
-  "inputFingerprint": "44ae4dd92a10bbd8f4265da343e16894f2128747ccb3372cbd3fb2e52645cf6f"
+  "validation": "AWAITING_CI",
+  "inputFingerprint": "7ce9fdee0a7e5d87c1d19658441bf52f8616edf5b2baaf14a22ae09f7e45e5f8"
 }
