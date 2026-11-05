@@ -6012,10 +6012,10 @@
       "filingFallback": null,
       "stage": "PDF_METRICS",
       "reason": "PDF_OCR_REVIEW_PENDING",
-      "attempts": 2,
+      "attempts": 3,
       "checkedDate": "2026-11-06",
-      "checkedAt": "2026-11-05T17:57:26.123Z",
-      "nextRetryAt": "2026-11-05T18:07:26.123Z"
+      "checkedAt": "2026-11-05T18:09:47.787Z",
+      "nextRetryAt": "2026-11-05T18:29:47.787Z"
     },
     "6112|2026-09-30": {
       "status": "VERIFIED",
@@ -6204,7 +6204,7 @@
   },
   "ocrProgress": {
     "parserVersion": 20,
-    "pages": 3967
+    "pages": 3988
   },
   "remaining": 16,
   "ready": 0,
