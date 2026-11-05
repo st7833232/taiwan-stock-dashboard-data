@@ -6062,17 +6062,23 @@
       "nextRetryAt": "2026-11-06T10:23:04.481Z"
     },
     "3354|2026-09-30": {
-      "status": "UNVERIFIED",
+      "status": "VERIFIED",
       "parserVersion": 2,
-      "filingParserVersion": 3,
-      "textParserVersion": 22,
-      "filingFallback": null,
-      "stage": "PDF_DOWNLOAD",
-      "reason": "fetch failed",
-      "attempts": 2,
       "checkedDate": "2026-11-05",
-      "checkedAt": "2026-11-05T10:23:39.329Z",
-      "nextRetryAt": "2026-11-05T10:33:39.329Z"
+      "checkedAt": "2026-11-05T10:39:13.961Z",
+      "lastUnverifiedAttempt": {
+        "status": "UNVERIFIED",
+        "parserVersion": 2,
+        "filingParserVersion": 3,
+        "textParserVersion": 22,
+        "filingFallback": null,
+        "stage": "PDF_DOWNLOAD",
+        "reason": "fetch failed",
+        "attempts": 2,
+        "checkedDate": "2026-11-05",
+        "checkedAt": "2026-11-05T10:23:39.329Z",
+        "nextRetryAt": "2026-11-05T10:33:39.329Z"
+      }
     },
     "3416|2026-09-30": {
       "status": "UNVERIFIED",
@@ -6082,10 +6088,10 @@
       "filingFallback": null,
       "stage": "FILING_INDEX",
       "reason": "fetch failed",
-      "attempts": 2,
+      "attempts": 3,
       "checkedDate": "2026-11-05",
-      "checkedAt": "2026-11-05T10:24:06.844Z",
-      "nextRetryAt": "2026-11-05T10:34:06.844Z"
+      "checkedAt": "2026-11-05T10:39:43.222Z",
+      "nextRetryAt": "2026-11-05T10:59:43.222Z"
     },
     "8114|2026-09-30": {
       "status": "VERIFIED",
@@ -6125,12 +6131,12 @@
       "filingParserVersion": 3,
       "textParserVersion": 22,
       "filingFallback": null,
-      "stage": "FILING_INDEX",
+      "stage": "PDF_LINK",
       "reason": "fetch failed",
-      "attempts": 2,
+      "attempts": 3,
       "checkedDate": "2026-11-05",
-      "checkedAt": "2026-11-05T10:24:43.577Z",
-      "nextRetryAt": "2026-11-05T10:34:43.577Z"
+      "checkedAt": "2026-11-05T10:40:11.247Z",
+      "nextRetryAt": "2026-11-05T11:00:11.247Z"
     },
     "7711|2026-09-30": {
       "status": "UNVERIFIED",
@@ -6188,7 +6194,7 @@
     "parserVersion": 20,
     "pages": 3912
   },
-  "remaining": 19,
+  "remaining": 18,
   "ready": 0,
   "continuationNeeded": false,
   "rateLimited": false,
