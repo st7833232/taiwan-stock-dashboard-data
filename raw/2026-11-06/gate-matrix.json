@@ -1,9 +1,9 @@
 {
   "targetDate": "2026-11-06",
   "timezone": "Asia/Taipei",
-  "generatedAt": "2026-11-06T12:09:34.516Z",
+  "generatedAt": "2026-11-06T17:03:10.091Z",
   "simulatedTodayDate": null,
-  "effectiveTodayDate": "2026-11-06",
+  "effectiveTodayDate": "2026-11-07",
   "overallStatus": "PASS",
   "requiredGates": [
     "twse-daily-close-quotes",
@@ -243,15 +243,15 @@
       "kind": "margin-short",
       "url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20261106&response=json&selectType=ALL",
       "targetDate": "2026-11-06",
-      "capturedAt": "2026-11-06T12:09:31.473Z",
-      "status": "VERIFY_FAILED",
+      "capturedAt": "2026-11-06T17:02:37.997Z",
+      "status": "CAPTURED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
       "contentType": "application/json;charset=UTF-8",
-      "bytes": 50,
-      "officialDateEvidence": null,
-      "rowCount": 0,
-      "note": "Auxiliary payload was readable but target-date evidence was not found; do not use it as point-in-time research evidence."
+      "bytes": 131039,
+      "officialDateEvidence": "20261106",
+      "rowCount": 1306,
+      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
     },
     {
       "source": "twse-margin-trading-legacy",
@@ -260,15 +260,15 @@
       "kind": "margin-short",
       "url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261106&response=json&selectType=ALL",
       "targetDate": "2026-11-06",
-      "capturedAt": "2026-11-06T12:09:31.551Z",
-      "status": "VERIFY_FAILED",
+      "capturedAt": "2026-11-06T17:02:38.038Z",
+      "status": "CAPTURED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
       "contentType": "application/json;charset=UTF-8",
-      "bytes": 50,
-      "officialDateEvidence": null,
-      "rowCount": 0,
-      "note": "Auxiliary payload was readable but target-date evidence was not found; do not use it as point-in-time research evidence."
+      "bytes": 131039,
+      "officialDateEvidence": "20261106",
+      "rowCount": 1306,
+      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
     },
     {
       "source": "tpex-margin-balance",
@@ -277,15 +277,10 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/www/zh-tw/margin/balance?date=2026/11/06&id=&response=json",
       "targetDate": "2026-11-06",
-      "capturedAt": "2026-11-06T12:09:33.348Z",
+      "capturedAt": "2026-11-06T17:02:39.878Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
-      "httpStatus": 200,
-      "contentType": "application/json;charset=UTF-8",
-      "bytes": 419,
-      "officialDateEvidence": "20261106",
-      "rowCount": 0,
-      "note": "Auxiliary payload carried the target date but no usable data rows; do not treat an empty payload as successful evidence."
+      "error": "The operation was aborted due to timeout"
     },
     {
       "source": "tpex-margin-balance-legacy",
@@ -294,7 +289,7 @@
       "kind": "margin-short",
       "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/11/06",
       "targetDate": "2026-11-06",
-      "capturedAt": "2026-11-06T12:09:33.349Z",
+      "capturedAt": "2026-11-06T17:02:39.879Z",
       "status": "VERIFY_FAILED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
@@ -311,15 +306,15 @@
       "kind": "securities-lending",
       "url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl?date=2026/11/06&id=&response=json",
       "targetDate": "2026-11-06",
-      "capturedAt": "2026-11-06T12:09:33.349Z",
-      "status": "VERIFY_FAILED",
+      "capturedAt": "2026-11-06T17:02:39.881Z",
+      "status": "CAPTURED",
       "simulatedTodayDate": null,
       "httpStatus": 200,
       "contentType": "application/json;charset=UTF-8",
-      "bytes": 379,
+      "bytes": 99536,
       "officialDateEvidence": "20261106",
-      "rowCount": 0,
-      "note": "Auxiliary payload carried the target date but no usable data rows; do not treat an empty payload as successful evidence."
+      "rowCount": 932,
+      "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
     },
     {
       "source": "twse-monthly-revenue",
