@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "targetDate": "2026-11-06",
-  "generatedAt": "2026-11-06T17:03:44.515Z",
+  "generatedAt": "2026-11-06T17:11:37.296Z",
   "strategyVersion": "entry-dual-track-v2.6",
   "simulation": {
     "simulatedTodayDate": null
@@ -9,7 +9,7 @@
   "gateMatrix": {
     "targetDate": "2026-11-06",
     "timezone": "Asia/Taipei",
-    "generatedAt": "2026-11-06T17:03:10.091Z",
+    "generatedAt": "2026-11-06T17:11:02.319Z",
     "simulatedTodayDate": null,
     "effectiveTodayDate": "2026-11-07",
     "overallStatus": "PASS",
@@ -259,7 +259,8 @@
         "bytes": 131039,
         "officialDateEvidence": "20261106",
         "rowCount": 1306,
-        "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+        "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+        "preservedCapture": true
       },
       {
         "source": "twse-margin-trading-legacy",
@@ -276,7 +277,8 @@
         "bytes": 131039,
         "officialDateEvidence": "20261106",
         "rowCount": 1306,
-        "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+        "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+        "preservedCapture": true
       },
       {
         "source": "tpex-margin-balance",
@@ -285,10 +287,15 @@
         "kind": "margin-short",
         "url": "https://www.tpex.org.tw/www/zh-tw/margin/balance?date=2026/11/06&id=&response=json",
         "targetDate": "2026-11-06",
-        "capturedAt": "2026-11-06T17:02:39.878Z",
-        "status": "VERIFY_FAILED",
+        "capturedAt": "2026-11-06T17:11:00.333Z",
+        "status": "CAPTURED",
         "simulatedTodayDate": null,
-        "error": "The operation was aborted due to timeout"
+        "httpStatus": 200,
+        "contentType": "application/json;charset=UTF-8",
+        "bytes": 108038,
+        "officialDateEvidence": "20261106",
+        "rowCount": 919,
+        "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
       },
       {
         "source": "tpex-margin-balance-legacy",
@@ -297,7 +304,7 @@
         "kind": "margin-short",
         "url": "https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh_tw&o=json&d=115/11/06",
         "targetDate": "2026-11-06",
-        "capturedAt": "2026-11-06T17:02:39.879Z",
+        "capturedAt": "2026-11-06T17:11:00.370Z",
         "status": "VERIFY_FAILED",
         "simulatedTodayDate": null,
         "httpStatus": 200,
@@ -322,7 +329,8 @@
         "bytes": 99536,
         "officialDateEvidence": "20261106",
         "rowCount": 932,
-        "note": "Point-in-time auxiliary source captured with affirmative target-date evidence."
+        "note": "Point-in-time auxiliary source captured with affirmative target-date evidence.",
+        "preservedCapture": true
       },
       {
         "source": "twse-monthly-revenue",
@@ -46774,9 +46782,9 @@
       "marginShortLending": {
         "code": "1815",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 54773,
+        "marginBalance": 56145,
+        "marginChange": 1372,
         "shortPrev": 4538000,
         "shortBalance": 510000,
         "shortChange": -4028000,
@@ -46801,7 +46809,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -66041,9 +66049,9 @@
       "marginShortLending": {
         "code": "6147",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 30002,
+        "marginBalance": 28494,
+        "marginChange": -1508,
         "shortPrev": 268000,
         "shortBalance": 95000,
         "shortChange": -173000,
@@ -66068,7 +66076,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -69973,9 +69981,9 @@
       "marginShortLending": {
         "code": "3264",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 13047,
+        "marginBalance": 12513,
+        "marginChange": -534,
         "shortPrev": 37000,
         "shortBalance": 37000,
         "shortChange": 0,
@@ -70000,7 +70008,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -81712,9 +81720,9 @@
       "marginShortLending": {
         "code": "6173",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 4690,
+        "marginBalance": 4499,
+        "marginChange": -191,
         "shortPrev": 1597000,
         "shortBalance": 1496000,
         "shortChange": -101000,
@@ -81780,7 +81788,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -88400,9 +88408,9 @@
       "marginShortLending": {
         "code": "6182",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 43644,
+        "marginBalance": 41242,
+        "marginChange": -2402,
         "shortPrev": 922000,
         "shortBalance": 1521000,
         "shortChange": 599000,
@@ -88427,7 +88435,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -90207,9 +90215,9 @@
       "marginShortLending": {
         "code": "8042",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 6001,
+        "marginBalance": 6070,
+        "marginChange": 69,
         "shortPrev": 487000,
         "shortBalance": 408000,
         "shortChange": -79000,
@@ -90234,7 +90242,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -92103,9 +92111,9 @@
       "marginShortLending": {
         "code": "5347",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 8998,
+        "marginBalance": 7952,
+        "marginChange": -1046,
         "shortPrev": 194000,
         "shortBalance": 145000,
         "shortChange": -49000,
@@ -92141,7 +92149,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -108096,9 +108104,9 @@
       "marginShortLending": {
         "code": "5483",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 14340,
+        "marginBalance": 13103,
+        "marginChange": -1237,
         "shortPrev": 274000,
         "shortBalance": 315000,
         "shortChange": 41000,
@@ -108123,7 +108131,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -121423,9 +121431,9 @@
       "marginShortLending": {
         "code": "3624",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 6286,
+        "marginBalance": 5724,
+        "marginChange": -562,
         "shortPrev": 95000,
         "shortBalance": 75000,
         "shortChange": -20000,
@@ -121450,7 +121458,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -138606,9 +138614,9 @@
       "marginShortLending": {
         "code": "6199",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3293,
+        "marginBalance": 3222,
+        "marginChange": -71,
         "shortPrev": 808000,
         "shortBalance": 832000,
         "shortChange": 24000,
@@ -138633,7 +138641,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -155995,9 +156003,9 @@
       "marginShortLending": {
         "code": "8069",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 11809,
+        "marginBalance": 11462,
+        "marginChange": -347,
         "shortPrev": 115000,
         "shortBalance": 70000,
         "shortChange": -45000,
@@ -156022,7 +156030,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -163405,9 +163413,9 @@
       "marginShortLending": {
         "code": "3498",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 6110,
+        "marginBalance": 5872,
+        "marginChange": -238,
         "shortPrev": 453000,
         "shortBalance": 420000,
         "shortChange": -33000,
@@ -163432,7 +163440,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -167084,9 +167092,9 @@
       "marginShortLending": {
         "code": "1569",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 13817,
+        "marginBalance": 13352,
+        "marginChange": -465,
         "shortPrev": 869000,
         "shortBalance": 789000,
         "shortChange": -80000,
@@ -167111,7 +167119,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -176511,9 +176519,9 @@
       "marginShortLending": {
         "code": "5351",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 12327,
+        "marginBalance": 11267,
+        "marginChange": -1060,
         "shortPrev": 223000,
         "shortBalance": 199000,
         "shortChange": -24000,
@@ -176538,7 +176546,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -187981,9 +187989,9 @@
       "marginShortLending": {
         "code": "5340",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 5932,
+        "marginBalance": 5912,
+        "marginChange": -20,
         "shortPrev": 275000,
         "shortBalance": 162000,
         "shortChange": -113000,
@@ -188008,7 +188016,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -193497,9 +193505,9 @@
       "marginShortLending": {
         "code": "6290",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 13461,
+        "marginBalance": 12878,
+        "marginChange": -583,
         "shortPrev": 22000,
         "shortBalance": 32000,
         "shortChange": 10000,
@@ -193524,7 +193532,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -200913,9 +200921,9 @@
       "marginShortLending": {
         "code": "5475",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 0,
+        "marginBalance": 0,
+        "marginChange": 0,
         "shortPrev": 0,
         "shortBalance": 0,
         "shortChange": 0,
@@ -200940,7 +200948,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -206593,9 +206601,9 @@
       "marginShortLending": {
         "code": "8086",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 13597,
+        "marginBalance": 12373,
+        "marginChange": -1224,
         "shortPrev": 43000,
         "shortBalance": 43000,
         "shortChange": 0,
@@ -206641,7 +206649,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -208434,9 +208442,9 @@
       "marginShortLending": {
         "code": "4903",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 4884,
+        "marginBalance": 4692,
+        "marginChange": -192,
         "shortPrev": 177000,
         "shortBalance": 30000,
         "shortChange": -147000,
@@ -208461,7 +208469,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -212100,9 +212108,9 @@
       "marginShortLending": {
         "code": "8227",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1970,
+        "marginBalance": 2243,
+        "marginChange": 273,
         "shortPrev": 18000,
         "shortBalance": 14000,
         "shortChange": -4000,
@@ -212127,7 +212135,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -217701,9 +217709,9 @@
       "marginShortLending": {
         "code": "1785",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 27541,
+        "marginBalance": 25771,
+        "marginChange": -1770,
         "shortPrev": 56000,
         "shortBalance": 47000,
         "shortChange": -9000,
@@ -217728,7 +217736,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -221374,9 +221382,9 @@
       "marginShortLending": {
         "code": "6217",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 10891,
+        "marginBalance": 10457,
+        "marginChange": -434,
         "shortPrev": 433000,
         "shortBalance": 174000,
         "shortChange": -259000,
@@ -221401,7 +221409,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -232768,9 +232776,9 @@
       "marginShortLending": {
         "code": "6207",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 5312,
+        "marginBalance": 4910,
+        "marginChange": -402,
         "shortPrev": 121000,
         "shortBalance": 54000,
         "shortChange": -67000,
@@ -232795,7 +232803,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -234663,9 +234671,9 @@
       "marginShortLending": {
         "code": "3265",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3449,
+        "marginBalance": 3179,
+        "marginChange": -270,
         "shortPrev": 95000,
         "shortBalance": 86000,
         "shortChange": -9000,
@@ -234690,7 +234698,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -241915,9 +241923,9 @@
       "marginShortLending": {
         "code": "5314",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 18271,
+        "marginBalance": 18127,
+        "marginChange": -144,
         "shortPrev": 2352000,
         "shortBalance": 1865000,
         "shortChange": -487000,
@@ -241942,7 +241950,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -247637,9 +247645,9 @@
       "marginShortLending": {
         "code": "3455",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 5109,
+        "marginBalance": 4629,
+        "marginChange": -480,
         "shortPrev": 36000,
         "shortBalance": 20000,
         "shortChange": -16000,
@@ -247664,7 +247672,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -254972,9 +254980,9 @@
       "marginShortLending": {
         "code": "4908",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3497,
+        "marginBalance": 3230,
+        "marginChange": -267,
         "shortPrev": 43000,
         "shortBalance": 30000,
         "shortChange": -13000,
@@ -254999,7 +255007,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -258628,9 +258636,9 @@
       "marginShortLending": {
         "code": "8111",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 11260,
+        "marginBalance": 10783,
+        "marginChange": -477,
         "shortPrev": 421000,
         "shortBalance": 216000,
         "shortChange": -205000,
@@ -258655,7 +258663,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -262274,9 +262282,9 @@
       "marginShortLending": {
         "code": "5309",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 16231,
+        "marginBalance": 15172,
+        "marginChange": -1059,
         "shortPrev": 418000,
         "shortBalance": 316000,
         "shortChange": -102000,
@@ -262301,7 +262309,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -273630,9 +273638,9 @@
       "marginShortLending": {
         "code": "4931",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 8064,
+        "marginBalance": 7452,
+        "marginChange": -612,
         "shortPrev": 84000,
         "shortBalance": 65000,
         "shortChange": -19000,
@@ -273657,7 +273665,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -275405,9 +275413,9 @@
       "marginShortLending": {
         "code": "3234",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 0,
+        "marginBalance": 0,
+        "marginChange": 0,
         "shortPrev": 0,
         "shortBalance": 0,
         "shortChange": 0,
@@ -275443,7 +275451,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -277239,9 +277247,9 @@
       "marginShortLending": {
         "code": "6148",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3267,
+        "marginBalance": 2776,
+        "marginChange": -491,
         "shortPrev": 221000,
         "shortBalance": 329000,
         "shortChange": 108000,
@@ -277266,7 +277274,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -280962,9 +280970,9 @@
       "marginShortLending": {
         "code": "5425",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 10282,
+        "marginBalance": 9662,
+        "marginChange": -620,
         "shortPrev": 39000,
         "shortBalance": 31000,
         "shortChange": -8000,
@@ -280989,7 +280997,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -290101,9 +290109,9 @@
       "marginShortLending": {
         "code": "3707",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 11550,
+        "marginBalance": 10647,
+        "marginChange": -903,
         "shortPrev": 95000,
         "shortBalance": 77000,
         "shortChange": -18000,
@@ -290128,7 +290136,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -291954,9 +291962,9 @@
       "marginShortLending": {
         "code": "3362",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3744,
+        "marginBalance": 3274,
+        "marginChange": -470,
         "shortPrev": 54000,
         "shortBalance": 54000,
         "shortChange": 0,
@@ -291981,7 +291989,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -293778,9 +293786,9 @@
       "marginShortLending": {
         "code": "6620",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 10276,
+        "marginBalance": 9639,
+        "marginChange": -637,
         "shortPrev": 24000,
         "shortBalance": 20000,
         "shortChange": -4000,
@@ -293856,7 +293864,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -299376,9 +299384,9 @@
       "marginShortLending": {
         "code": "8064",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 6627,
+        "marginBalance": 6027,
+        "marginChange": -600,
         "shortPrev": 126000,
         "shortBalance": 98000,
         "shortChange": -28000,
@@ -299403,7 +299411,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -323843,9 +323851,9 @@
       "marginShortLending": {
         "code": "6548",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 6698,
+        "marginBalance": 6209,
+        "marginChange": -489,
         "shortPrev": 9000,
         "shortBalance": 8000,
         "shortChange": -1000,
@@ -323870,7 +323878,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -336911,9 +336919,9 @@
       "marginShortLending": {
         "code": "4939",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 4657,
+        "marginBalance": 4345,
+        "marginChange": -312,
         "shortPrev": 157000,
         "shortBalance": 138000,
         "shortChange": -19000,
@@ -336938,7 +336946,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -348241,9 +348249,9 @@
       "marginShortLending": {
         "code": "6127",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 4662,
+        "marginBalance": 4470,
+        "marginChange": -192,
         "shortPrev": 157000,
         "shortBalance": 132000,
         "shortChange": -25000,
@@ -348268,7 +348276,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -350020,9 +350028,9 @@
       "marginShortLending": {
         "code": "6179",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 22311,
+        "marginBalance": 21763,
+        "marginChange": -548,
         "shortPrev": 96000,
         "shortBalance": 64000,
         "shortChange": -32000,
@@ -350047,7 +350055,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -353623,9 +353631,9 @@
       "marginShortLending": {
         "code": "8027",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 6800,
+        "marginBalance": 6049,
+        "marginChange": -751,
         "shortPrev": 80000,
         "shortBalance": 71000,
         "shortChange": -9000,
@@ -353650,7 +353658,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -370397,9 +370405,9 @@
       "marginShortLending": {
         "code": "5439",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 6642,
+        "marginBalance": 6376,
+        "marginChange": -266,
         "shortPrev": 43000,
         "shortBalance": 37000,
         "shortChange": -6000,
@@ -370424,7 +370432,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -374042,9 +374050,9 @@
       "marginShortLending": {
         "code": "3441",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3367,
+        "marginBalance": 3089,
+        "marginChange": -278,
         "shortPrev": 556000,
         "shortBalance": 477000,
         "shortChange": -79000,
@@ -374069,7 +374077,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -377918,9 +377926,9 @@
       "marginShortLending": {
         "code": "5904",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 4706,
+        "marginBalance": 4548,
+        "marginChange": -158,
         "shortPrev": 25000,
         "shortBalance": 29000,
         "shortChange": 4000,
@@ -377945,7 +377953,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -381541,9 +381549,9 @@
       "marginShortLending": {
         "code": "6234",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3598,
+        "marginBalance": 3319,
+        "marginChange": -279,
         "shortPrev": 96000,
         "shortBalance": 30000,
         "shortChange": -66000,
@@ -381568,7 +381576,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -388929,9 +388937,9 @@
       "marginShortLending": {
         "code": "8043",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 4522,
+        "marginBalance": 4203,
+        "marginChange": -319,
         "shortPrev": 105000,
         "shortBalance": 72000,
         "shortChange": -33000,
@@ -388956,7 +388964,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -418550,9 +418558,9 @@
       "marginShortLending": {
         "code": "3357",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3822,
+        "marginBalance": 3567,
+        "marginChange": -255,
         "shortPrev": 17000,
         "shortBalance": 19000,
         "shortChange": 2000,
@@ -418577,7 +418585,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -439206,9 +439214,9 @@
       "marginShortLending": {
         "code": "6221",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 7621,
+        "marginBalance": 7466,
+        "marginChange": -155,
         "shortPrev": 116000,
         "shortBalance": 81000,
         "shortChange": -35000,
@@ -439233,7 +439241,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -441042,9 +441050,9 @@
       "marginShortLending": {
         "code": "6532",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 4813,
+        "marginBalance": 4423,
+        "marginChange": -390,
         "shortPrev": 37000,
         "shortBalance": 37000,
         "shortChange": 0,
@@ -441080,7 +441088,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -444687,9 +444695,9 @@
       "marginShortLending": {
         "code": "5498",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 5459,
+        "marginBalance": 5122,
+        "marginChange": -337,
         "shortPrev": 67000,
         "shortBalance": 48000,
         "shortChange": -19000,
@@ -444714,7 +444722,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -455781,9 +455789,9 @@
       "marginShortLending": {
         "code": "4772",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3366,
+        "marginBalance": 3249,
+        "marginChange": -117,
         "shortPrev": 5000,
         "shortBalance": 7000,
         "shortChange": 2000,
@@ -455808,7 +455816,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -463164,9 +463172,9 @@
       "marginShortLending": {
         "code": "8096",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 14221,
+        "marginBalance": 12683,
+        "marginChange": -1538,
         "shortPrev": 128000,
         "shortBalance": 94000,
         "shortChange": -34000,
@@ -463191,7 +463199,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -479833,9 +479841,9 @@
       "marginShortLending": {
         "code": "6218",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2912,
+        "marginBalance": 2649,
+        "marginChange": -263,
         "shortPrev": 82000,
         "shortBalance": 67000,
         "shortChange": -15000,
@@ -479860,7 +479868,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -494602,9 +494610,9 @@
       "marginShortLending": {
         "code": "4577",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1982,
+        "marginBalance": 1893,
+        "marginChange": -89,
         "shortPrev": 76000,
         "shortBalance": 33000,
         "shortChange": -43000,
@@ -494640,7 +494648,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -500071,9 +500079,9 @@
       "marginShortLending": {
         "code": "3580",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3052,
+        "marginBalance": 2893,
+        "marginChange": -159,
         "shortPrev": 17000,
         "shortBalance": 3000,
         "shortChange": -14000,
@@ -500098,7 +500106,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -505509,9 +505517,9 @@
       "marginShortLending": {
         "code": "6925",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 672,
+        "marginBalance": 734,
+        "marginChange": 62,
         "shortPrev": 63000,
         "shortBalance": 72000,
         "shortChange": 9000,
@@ -505536,7 +505544,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -516493,9 +516501,9 @@
       "marginShortLending": {
         "code": "3227",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2686,
+        "marginBalance": 2387,
+        "marginChange": -299,
         "shortPrev": 4000,
         "shortBalance": 8000,
         "shortChange": 4000,
@@ -516531,7 +516539,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -518341,9 +518349,9 @@
       "marginShortLending": {
         "code": "5386",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1809,
+        "marginBalance": 1666,
+        "marginChange": -143,
         "shortPrev": 7000,
         "shortBalance": 15000,
         "shortChange": 8000,
@@ -518368,7 +518376,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -525790,9 +525798,9 @@
       "marginShortLending": {
         "code": "2221",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 893,
+        "marginBalance": 1085,
+        "marginChange": 192,
         "shortPrev": 908000,
         "shortBalance": 945000,
         "shortChange": 37000,
@@ -525817,7 +525825,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -527640,9 +527648,9 @@
       "marginShortLending": {
         "code": "3236",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3512,
+        "marginBalance": 3189,
+        "marginChange": -323,
         "shortPrev": 14000,
         "shortBalance": 11000,
         "shortChange": -3000,
@@ -527667,7 +527675,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -540800,9 +540808,9 @@
       "marginShortLending": {
         "code": "5443",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 4337,
+        "marginBalance": 4098,
+        "marginChange": -239,
         "shortPrev": 29000,
         "shortBalance": 39000,
         "shortChange": 10000,
@@ -540827,7 +540835,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -542620,9 +542628,9 @@
       "marginShortLending": {
         "code": "3287",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2382,
+        "marginBalance": 2535,
+        "marginChange": 153,
         "shortPrev": 103000,
         "shortBalance": 262000,
         "shortChange": 159000,
@@ -542647,7 +542655,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -548219,9 +548227,9 @@
       "marginShortLending": {
         "code": "5328",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 5947,
+        "marginBalance": 5479,
+        "marginChange": -468,
         "shortPrev": 119000,
         "shortBalance": 83000,
         "shortChange": -36000,
@@ -548246,7 +548254,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -552785,9 +552793,9 @@
       "marginShortLending": {
         "code": "6146",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1165,
+        "marginBalance": 1112,
+        "marginChange": -53,
         "shortPrev": 0,
         "shortBalance": 0,
         "shortChange": 0,
@@ -552812,7 +552820,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -558274,9 +558282,9 @@
       "marginShortLending": {
         "code": "3718",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 12531,
+        "marginBalance": 11104,
+        "marginChange": -1427,
         "shortPrev": 71000,
         "shortBalance": 70000,
         "shortChange": -1000,
@@ -558301,7 +558309,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -559416,9 +559424,9 @@
       "marginShortLending": {
         "code": "3219",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1680,
+        "marginBalance": 1679,
+        "marginChange": -1,
         "shortPrev": 1432000,
         "shortBalance": 1439000,
         "shortChange": 7000,
@@ -559443,7 +559451,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -563106,9 +563114,9 @@
       "marginShortLending": {
         "code": "8932",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 59352,
+        "marginBalance": 57966,
+        "marginChange": -1386,
         "shortPrev": 27000,
         "shortBalance": 28000,
         "shortChange": 1000,
@@ -563133,7 +563141,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -566710,9 +566718,9 @@
       "marginShortLending": {
         "code": "3689",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 4830,
+        "marginBalance": 4487,
+        "marginChange": -343,
         "shortPrev": 9000,
         "shortBalance": 10000,
         "shortChange": 1000,
@@ -566737,7 +566745,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -575973,9 +575981,9 @@
       "marginShortLending": {
         "code": "6693",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3454,
+        "marginBalance": 3125,
+        "marginChange": -329,
         "shortPrev": 34000,
         "shortBalance": 43000,
         "shortChange": 9000,
@@ -576000,7 +576008,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -585147,9 +585155,9 @@
       "marginShortLending": {
         "code": "3691",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 6579,
+        "marginBalance": 5401,
+        "marginChange": -1178,
         "shortPrev": 2263000,
         "shortBalance": 2408000,
         "shortChange": 145000,
@@ -585174,7 +585182,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -587014,9 +587022,9 @@
       "marginShortLending": {
         "code": "2061",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 5747,
+        "marginBalance": 5756,
+        "marginChange": 9,
         "shortPrev": 33000,
         "shortBalance": 36000,
         "shortChange": 3000,
@@ -587041,7 +587049,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -605724,9 +605732,9 @@
       "marginShortLending": {
         "code": "5013",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 983,
+        "marginBalance": 744,
+        "marginChange": -239,
         "shortPrev": 72000,
         "shortBalance": 40000,
         "shortChange": -32000,
@@ -605751,7 +605759,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -613056,9 +613064,9 @@
       "marginShortLending": {
         "code": "3354",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1559,
+        "marginBalance": 1359,
+        "marginChange": -200,
         "shortPrev": 117000,
         "shortBalance": 83000,
         "shortChange": -34000,
@@ -613083,7 +613091,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -616857,9 +616865,9 @@
       "marginShortLending": {
         "code": "6907",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1553,
+        "marginBalance": 1424,
+        "marginChange": -129,
         "shortPrev": 6000,
         "shortBalance": 5000,
         "shortChange": -1000,
@@ -616884,7 +616892,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -627389,9 +627397,9 @@
       "marginShortLending": {
         "code": "3564",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1146,
+        "marginBalance": 1021,
+        "marginChange": -125,
         "shortPrev": 0,
         "shortBalance": 0,
         "shortChange": 0,
@@ -627416,7 +627424,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -631114,9 +631122,9 @@
       "marginShortLending": {
         "code": "6547",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 12327,
+        "marginBalance": 12344,
+        "marginChange": 17,
         "shortPrev": 123000,
         "shortBalance": 120000,
         "shortChange": -3000,
@@ -631141,7 +631149,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -638330,9 +638338,9 @@
       "marginShortLending": {
         "code": "6245",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2406,
+        "marginBalance": 2320,
+        "marginChange": -86,
         "shortPrev": 9000,
         "shortBalance": 4000,
         "shortChange": -5000,
@@ -638357,7 +638365,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -647547,9 +647555,9 @@
       "marginShortLending": {
         "code": "8050",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3374,
+        "marginBalance": 3303,
+        "marginChange": -71,
         "shortPrev": 8000,
         "shortBalance": 12000,
         "shortChange": 4000,
@@ -647574,7 +647582,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -651117,9 +651125,9 @@
       "marginShortLending": {
         "code": "4973",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2687,
+        "marginBalance": 2461,
+        "marginChange": -226,
         "shortPrev": 36000,
         "shortBalance": 28000,
         "shortChange": -8000,
@@ -651144,7 +651152,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -658523,9 +658531,9 @@
       "marginShortLending": {
         "code": "6190",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 7586,
+        "marginBalance": 6894,
+        "marginChange": -692,
         "shortPrev": 41000,
         "shortBalance": 36000,
         "shortChange": -5000,
@@ -658550,7 +658558,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -665863,9 +665871,9 @@
       "marginShortLending": {
         "code": "6163",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 16602,
+        "marginBalance": 14805,
+        "marginChange": -1797,
         "shortPrev": 36000,
         "shortBalance": 22000,
         "shortChange": -14000,
@@ -665890,7 +665898,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -667671,9 +667679,9 @@
       "marginShortLending": {
         "code": "3483",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 5962,
+        "marginBalance": 5701,
+        "marginChange": -261,
         "shortPrev": 8000,
         "shortBalance": 8000,
         "shortChange": 0,
@@ -667698,7 +667706,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -669449,9 +669457,9 @@
       "marginShortLending": {
         "code": "3141",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 7252,
+        "marginBalance": 7128,
+        "marginChange": -124,
         "shortPrev": 128000,
         "shortBalance": 146000,
         "shortChange": 18000,
@@ -669476,7 +669484,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -673082,9 +673090,9 @@
       "marginShortLending": {
         "code": "8431",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 4129,
+        "marginBalance": 3965,
+        "marginChange": -164,
         "shortPrev": 57000,
         "shortBalance": 22000,
         "shortChange": -35000,
@@ -673109,7 +673117,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -684157,9 +684165,9 @@
       "marginShortLending": {
         "code": "8091",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2218,
+        "marginBalance": 1721,
+        "marginChange": -497,
         "shortPrev": 7000,
         "shortBalance": 7000,
         "shortChange": 0,
@@ -684184,7 +684192,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -685932,9 +685940,9 @@
       "marginShortLending": {
         "code": "5228",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 754,
+        "marginBalance": 685,
+        "marginChange": -69,
         "shortPrev": 3000,
         "shortBalance": 4000,
         "shortChange": 1000,
@@ -685959,7 +685967,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -689553,9 +689561,9 @@
       "marginShortLending": {
         "code": "5864",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 9266,
+        "marginBalance": 9179,
+        "marginChange": -87,
         "shortPrev": 251000,
         "shortBalance": 284000,
         "shortChange": 33000,
@@ -689580,7 +689588,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -698848,9 +698856,9 @@
       "marginShortLending": {
         "code": "3162",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 7353,
+        "marginBalance": 7296,
+        "marginChange": -57,
         "shortPrev": 3000,
         "shortBalance": 3000,
         "shortChange": 0,
@@ -698875,7 +698883,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -704511,9 +704519,9 @@
       "marginShortLending": {
         "code": "6016",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 6367,
+        "marginBalance": 6193,
+        "marginChange": -174,
         "shortPrev": 27000,
         "shortBalance": 198000,
         "shortChange": 171000,
@@ -704538,7 +704546,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -706414,9 +706422,9 @@
       "marginShortLending": {
         "code": "3587",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2684,
+        "marginBalance": 2405,
+        "marginChange": -279,
         "shortPrev": 13000,
         "shortBalance": 13000,
         "shortChange": 0,
@@ -706441,7 +706449,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -713630,9 +713638,9 @@
       "marginShortLending": {
         "code": "3289",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 6862,
+        "marginBalance": 6420,
+        "marginChange": -442,
         "shortPrev": 5000,
         "shortBalance": 14000,
         "shortChange": 9000,
@@ -713657,7 +713665,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -719182,9 +719190,9 @@
       "marginShortLending": {
         "code": "4556",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 810,
+        "marginBalance": 718,
+        "marginChange": -92,
         "shortPrev": 2000,
         "shortBalance": 0,
         "shortChange": -2000,
@@ -719209,7 +719217,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -721017,9 +721025,9 @@
       "marginShortLending": {
         "code": "1595",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3308,
+        "marginBalance": 3229,
+        "marginChange": -79,
         "shortPrev": 46000,
         "shortBalance": 17000,
         "shortChange": -29000,
@@ -721044,7 +721052,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -731898,9 +731906,9 @@
       "marginShortLending": {
         "code": "8936",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 7276,
+        "marginBalance": 6971,
+        "marginChange": -305,
         "shortPrev": 32000,
         "shortBalance": 34000,
         "shortChange": 2000,
@@ -731925,7 +731933,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -737487,9 +737495,9 @@
       "marginShortLending": {
         "code": "6231",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2440,
+        "marginBalance": 2287,
+        "marginChange": -153,
         "shortPrev": 1000,
         "shortBalance": 3000,
         "shortChange": 2000,
@@ -737514,7 +737522,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -739383,9 +739391,9 @@
       "marginShortLending": {
         "code": "5426",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3930,
+        "marginBalance": 3614,
+        "marginChange": -316,
         "shortPrev": 19000,
         "shortBalance": 15000,
         "shortChange": -4000,
@@ -739410,7 +739418,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -744966,9 +744974,9 @@
       "marginShortLending": {
         "code": "5230",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1561,
+        "marginBalance": 1408,
+        "marginChange": -153,
         "shortPrev": 13000,
         "shortBalance": 8000,
         "shortChange": -5000,
@@ -744993,7 +745001,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -748608,9 +748616,9 @@
       "marginShortLending": {
         "code": "6244",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 12743,
+        "marginBalance": 13664,
+        "marginChange": 921,
         "shortPrev": 78000,
         "shortBalance": 230000,
         "shortChange": 152000,
@@ -748646,7 +748654,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -750514,9 +750522,9 @@
       "marginShortLending": {
         "code": "6829",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1185,
+        "marginBalance": 1113,
+        "marginChange": -72,
         "shortPrev": 1000,
         "shortBalance": 0,
         "shortChange": -1000,
@@ -750541,7 +750549,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -754084,9 +754092,9 @@
       "marginShortLending": {
         "code": "6435",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 990,
+        "marginBalance": 839,
+        "marginChange": -151,
         "shortPrev": 6000,
         "shortBalance": 5000,
         "shortChange": -1000,
@@ -754111,7 +754119,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -755890,9 +755898,9 @@
       "marginShortLending": {
         "code": "4105",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 614,
+        "marginBalance": 625,
+        "marginChange": 11,
         "shortPrev": 0,
         "shortBalance": 0,
         "shortChange": 0,
@@ -755917,7 +755925,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -757710,9 +757718,9 @@
       "marginShortLending": {
         "code": "3685",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 5,
+        "marginBalance": 5,
+        "marginChange": 0,
         "shortPrev": 0,
         "shortBalance": 0,
         "shortChange": 0,
@@ -757737,7 +757745,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -759517,9 +759525,9 @@
       "marginShortLending": {
         "code": "5009",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 8107,
+        "marginBalance": 8014,
+        "marginChange": -93,
         "shortPrev": 4000,
         "shortBalance": 11000,
         "shortChange": 7000,
@@ -759544,7 +759552,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -772411,9 +772419,9 @@
       "marginShortLending": {
         "code": "3551",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1405,
+        "marginBalance": 1334,
+        "marginChange": -71,
         "shortPrev": 3000,
         "shortBalance": 1000,
         "shortChange": -2000,
@@ -772438,7 +772446,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -774186,9 +774194,9 @@
       "marginShortLending": {
         "code": "4953",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1867,
+        "marginBalance": 1816,
+        "marginChange": -51,
         "shortPrev": 15000,
         "shortBalance": 15000,
         "shortChange": 0,
@@ -774224,7 +774232,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -776003,9 +776011,9 @@
       "marginShortLending": {
         "code": "3088",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2276,
+        "marginBalance": 2138,
+        "marginChange": -138,
         "shortPrev": 13000,
         "shortBalance": 13000,
         "shortChange": 0,
@@ -776030,7 +776038,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -779781,9 +779789,9 @@
       "marginShortLending": {
         "code": "4743",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 13766,
+        "marginBalance": 13397,
+        "marginChange": -369,
         "shortPrev": 116000,
         "shortBalance": 56000,
         "shortChange": -60000,
@@ -779808,7 +779816,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -787141,9 +787149,9 @@
       "marginShortLending": {
         "code": "4707",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 13957,
+        "marginBalance": 13735,
+        "marginChange": -222,
         "shortPrev": 5000,
         "shortBalance": 11000,
         "shortChange": 6000,
@@ -787168,7 +787176,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -792600,9 +792608,9 @@
       "marginShortLending": {
         "code": "6284",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 4975,
+        "marginBalance": 4660,
+        "marginChange": -315,
         "shortPrev": 19000,
         "shortBalance": 19000,
         "shortChange": 0,
@@ -792627,7 +792635,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -794513,9 +794521,9 @@
       "marginShortLending": {
         "code": "8383",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1789,
+        "marginBalance": 1679,
+        "marginChange": -110,
         "shortPrev": 4000,
         "shortBalance": 4000,
         "shortChange": 0,
@@ -794540,7 +794548,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -798084,9 +798092,9 @@
       "marginShortLending": {
         "code": "6425",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2896,
+        "marginBalance": 2819,
+        "marginChange": -77,
         "shortPrev": 31000,
         "shortBalance": 6000,
         "shortChange": -25000,
@@ -798111,7 +798119,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -810908,9 +810916,9 @@
       "marginShortLending": {
         "code": "3221",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3063,
+        "marginBalance": 2578,
+        "marginChange": -485,
         "shortPrev": 27000,
         "shortBalance": 23000,
         "shortChange": -4000,
@@ -810935,7 +810943,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -812776,9 +812784,9 @@
       "marginShortLending": {
         "code": "6150",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2637,
+        "marginBalance": 2416,
+        "marginChange": -221,
         "shortPrev": 6000,
         "shortBalance": 10000,
         "shortChange": 4000,
@@ -812803,7 +812811,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -814552,9 +814560,9 @@
       "marginShortLending": {
         "code": "5432",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 941,
+        "marginBalance": 889,
+        "marginChange": -52,
         "shortPrev": 6000,
         "shortBalance": 13000,
         "shortChange": 7000,
@@ -814579,7 +814587,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -816374,9 +816382,9 @@
       "marginShortLending": {
         "code": "6261",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3452,
+        "marginBalance": 3212,
+        "marginChange": -240,
         "shortPrev": 2000,
         "shortBalance": 3000,
         "shortChange": 1000,
@@ -816401,7 +816409,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -834512,9 +834520,9 @@
       "marginShortLending": {
         "code": "6274",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 14608,
+        "marginBalance": 14259,
+        "marginChange": -349,
         "shortPrev": 76000,
         "shortBalance": 24000,
         "shortChange": -52000,
@@ -834539,7 +834547,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -849378,9 +849386,9 @@
       "marginShortLending": {
         "code": "3105",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 41481,
+        "marginBalance": 40771,
+        "marginChange": -710,
         "shortPrev": 586000,
         "shortBalance": 413000,
         "shortChange": -173000,
@@ -849405,7 +849413,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -853506,9 +853514,9 @@
       "marginShortLending": {
         "code": "6488",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 11413,
+        "marginBalance": 10285,
+        "marginChange": -1128,
         "shortPrev": 198000,
         "shortBalance": 317000,
         "shortChange": 119000,
@@ -853533,7 +853541,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -862963,9 +862971,9 @@
       "marginShortLending": {
         "code": "3081",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 5249,
+        "marginBalance": 4927,
+        "marginChange": -322,
         "shortPrev": 56000,
         "shortBalance": 44000,
         "shortChange": -12000,
@@ -862990,7 +862998,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -878160,9 +878168,9 @@
       "marginShortLending": {
         "code": "5274",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 185,
+        "marginBalance": 180,
+        "marginChange": -5,
         "shortPrev": 0,
         "shortBalance": 0,
         "shortChange": 0,
@@ -878198,7 +878206,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -883847,9 +883855,9 @@
       "marginShortLending": {
         "code": "8299",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 9511,
+        "marginBalance": 9173,
+        "marginChange": -338,
         "shortPrev": 10000,
         "shortBalance": 8000,
         "shortChange": -2000,
@@ -883874,7 +883882,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -887578,9 +887586,9 @@
       "marginShortLending": {
         "code": "8358",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 20212,
+        "marginBalance": 19560,
+        "marginChange": -652,
         "shortPrev": 1652000,
         "shortBalance": 1689000,
         "shortChange": 37000,
@@ -887605,7 +887613,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -891455,9 +891463,9 @@
       "marginShortLending": {
         "code": "3374",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 26964,
+        "marginBalance": 25826,
+        "marginChange": -1138,
         "shortPrev": 626000,
         "shortBalance": 345000,
         "shortChange": -281000,
@@ -891503,7 +891511,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -893311,9 +893319,9 @@
       "marginShortLending": {
         "code": "6223",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 953,
+        "marginBalance": 798,
+        "marginChange": -155,
         "shortPrev": 5000,
         "shortBalance": 3000,
         "shortChange": -2000,
@@ -893338,7 +893346,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -895162,9 +895170,9 @@
       "marginShortLending": {
         "code": "3324",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 4878,
+        "marginBalance": 4655,
+        "marginChange": -223,
         "shortPrev": 79000,
         "shortBalance": 33000,
         "shortChange": -46000,
@@ -895189,7 +895197,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -910159,9 +910167,9 @@
       "marginShortLending": {
         "code": "6187",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2265,
+        "marginBalance": 2144,
+        "marginChange": -121,
         "shortPrev": 108000,
         "shortBalance": 103000,
         "shortChange": -5000,
@@ -910186,7 +910194,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -919331,9 +919339,9 @@
       "marginShortLending": {
         "code": "4979",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 11029,
+        "marginBalance": 10328,
+        "marginChange": -701,
         "shortPrev": 236000,
         "shortBalance": 347000,
         "shortChange": 111000,
@@ -919369,7 +919377,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -925013,9 +925021,9 @@
       "marginShortLending": {
         "code": "3529",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1647,
+        "marginBalance": 1529,
+        "marginChange": -118,
         "shortPrev": 1000,
         "shortBalance": 2000,
         "shortChange": 1000,
@@ -925040,7 +925048,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -928808,9 +928816,9 @@
       "marginShortLending": {
         "code": "6510",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 898,
+        "marginBalance": 795,
+        "marginChange": -103,
         "shortPrev": 23000,
         "shortBalance": 17000,
         "shortChange": -6000,
@@ -928835,7 +928843,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -943890,9 +943898,9 @@
       "marginShortLending": {
         "code": "3260",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 18051,
+        "marginBalance": 16989,
+        "marginChange": -1062,
         "shortPrev": 233000,
         "shortBalance": 178000,
         "shortChange": -55000,
@@ -943917,7 +943925,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -945815,9 +945823,9 @@
       "marginShortLending": {
         "code": "3491",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2573,
+        "marginBalance": 2388,
+        "marginChange": -185,
         "shortPrev": 24000,
         "shortBalance": 9000,
         "shortChange": -15000,
@@ -945842,7 +945850,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -947610,9 +947618,9 @@
       "marginShortLending": {
         "code": "5289",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 4524,
+        "marginBalance": 4224,
+        "marginChange": -300,
         "shortPrev": 18000,
         "shortBalance": 20000,
         "shortChange": 2000,
@@ -947637,7 +947645,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -957660,9 +957668,9 @@
       "marginShortLending": {
         "code": "3363",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 6028,
+        "marginBalance": 5895,
+        "marginChange": -133,
         "shortPrev": 248000,
         "shortBalance": 212000,
         "shortChange": -36000,
@@ -957708,7 +957716,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -963477,9 +963485,9 @@
       "marginShortLending": {
         "code": "3693",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 4378,
+        "marginBalance": 4310,
+        "marginChange": -68,
         "shortPrev": 6000,
         "shortBalance": 1000,
         "shortChange": -5000,
@@ -963504,7 +963512,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -965315,9 +965323,9 @@
       "marginShortLending": {
         "code": "3293",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1692,
+        "marginBalance": 1598,
+        "marginChange": -94,
         "shortPrev": 17000,
         "shortBalance": 9000,
         "shortChange": -8000,
@@ -965342,7 +965350,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -967165,9 +967173,9 @@
       "marginShortLending": {
         "code": "4991",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 7422,
+        "marginBalance": 6811,
+        "marginChange": -611,
         "shortPrev": 179000,
         "shortBalance": 58000,
         "shortChange": -121000,
@@ -967192,7 +967200,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -971053,9 +971061,9 @@
       "marginShortLending": {
         "code": "3163",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 6394,
+        "marginBalance": 5893,
+        "marginChange": -501,
         "shortPrev": 74000,
         "shortBalance": 52000,
         "shortChange": -22000,
@@ -971111,7 +971119,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -976557,9 +976565,9 @@
       "marginShortLending": {
         "code": "3211",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 6106,
+        "marginBalance": 5665,
+        "marginChange": -441,
         "shortPrev": 355000,
         "shortBalance": 350000,
         "shortChange": -5000,
@@ -976584,7 +976592,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -985862,9 +985870,9 @@
       "marginShortLending": {
         "code": "5536",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1244,
+        "marginBalance": 1065,
+        "marginChange": -179,
         "shortPrev": 7000,
         "shortBalance": 5000,
         "shortChange": -2000,
@@ -985889,7 +985897,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -987698,9 +987706,9 @@
       "marginShortLending": {
         "code": "6538",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 7773,
+        "marginBalance": 8135,
+        "marginChange": 362,
         "shortPrev": 210000,
         "shortBalance": 401000,
         "shortChange": 191000,
@@ -987725,7 +987733,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -995080,9 +995088,9 @@
       "marginShortLending": {
         "code": "6683",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1911,
+        "marginBalance": 1725,
+        "marginChange": -186,
         "shortPrev": 4000,
         "shortBalance": 2000,
         "shortChange": -2000,
@@ -995107,7 +995115,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -998711,9 +998719,9 @@
       "marginShortLending": {
         "code": "3131",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 389,
+        "marginBalance": 344,
+        "marginChange": -45,
         "shortPrev": 13000,
         "shortBalance": 13000,
         "shortChange": 0,
@@ -998779,7 +998787,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1000752,9 +1000760,9 @@
       "marginShortLending": {
         "code": "6727",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3879,
+        "marginBalance": 3559,
+        "marginChange": -320,
         "shortPrev": 16000,
         "shortBalance": 9000,
         "shortChange": -7000,
@@ -1000779,7 +1000787,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1008081,9 +1008089,9 @@
       "marginShortLending": {
         "code": "3147",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2931,
+        "marginBalance": 2704,
+        "marginChange": -227,
         "shortPrev": 26000,
         "shortBalance": 20000,
         "shortChange": -6000,
@@ -1008108,7 +1008116,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1013789,9 +1013797,9 @@
       "marginShortLending": {
         "code": "4971",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3547,
+        "marginBalance": 3358,
+        "marginChange": -189,
         "shortPrev": 29000,
         "shortBalance": 10000,
         "shortChange": -19000,
@@ -1013816,7 +1013824,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1015596,9 +1015604,9 @@
       "marginShortLending": {
         "code": "4749",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3229,
+        "marginBalance": 3009,
+        "marginChange": -220,
         "shortPrev": 23000,
         "shortBalance": 23000,
         "shortChange": 0,
@@ -1015623,7 +1015631,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1017401,9 +1017409,9 @@
       "marginShortLending": {
         "code": "3680",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2098,
+        "marginBalance": 2017,
+        "marginChange": -81,
         "shortPrev": 16000,
         "shortBalance": 0,
         "shortChange": -16000,
@@ -1017428,7 +1017436,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1028526,9 +1028534,9 @@
       "marginShortLending": {
         "code": "7734",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 711,
+        "marginBalance": 601,
+        "marginChange": -110,
         "shortPrev": 4000,
         "shortBalance": 7000,
         "shortChange": 3000,
@@ -1028553,7 +1028561,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1049038,9 +1049046,9 @@
       "marginShortLending": {
         "code": "4760",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2207,
+        "marginBalance": 2035,
+        "marginChange": -172,
         "shortPrev": 5000,
         "shortBalance": 5000,
         "shortChange": 0,
@@ -1049065,7 +1049073,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1052728,9 +1052736,9 @@
       "marginShortLending": {
         "code": "4966",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3498,
+        "marginBalance": 3159,
+        "marginChange": -339,
         "shortPrev": 47000,
         "shortBalance": 88000,
         "shortChange": 41000,
@@ -1052755,7 +1052763,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1058380,9 +1058388,9 @@
       "marginShortLending": {
         "code": "4542",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 4594,
+        "marginBalance": 4621,
+        "marginChange": 27,
         "shortPrev": 55000,
         "shortBalance": 43000,
         "shortChange": -12000,
@@ -1058407,7 +1058415,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1065647,9 +1065655,9 @@
       "marginShortLending": {
         "code": "7751",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 701,
+        "marginBalance": 657,
+        "marginChange": -44,
         "shortPrev": 0,
         "shortBalance": 0,
         "shortChange": 0,
@@ -1065674,7 +1065682,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1071200,9 +1071208,9 @@
       "marginShortLending": {
         "code": "6640",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 511,
+        "marginBalance": 466,
+        "marginChange": -45,
         "shortPrev": 2000,
         "shortBalance": 2000,
         "shortChange": 0,
@@ -1071227,7 +1071235,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1078490,9 +1078498,9 @@
       "marginShortLending": {
         "code": "6121",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 396,
+        "marginBalance": 401,
+        "marginChange": 5,
         "shortPrev": 0,
         "shortBalance": 0,
         "shortChange": 0,
@@ -1078528,7 +1078536,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1080306,9 +1080314,9 @@
       "marginShortLending": {
         "code": "3675",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1684,
+        "marginBalance": 1601,
+        "marginChange": -83,
         "shortPrev": 12000,
         "shortBalance": 12000,
         "shortChange": 0,
@@ -1080344,7 +1080352,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1082137,9 +1082145,9 @@
       "marginShortLending": {
         "code": "6643",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2041,
+        "marginBalance": 1946,
+        "marginChange": -95,
         "shortPrev": 10000,
         "shortBalance": 7000,
         "shortChange": -3000,
@@ -1082175,7 +1082183,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1085844,9 +1085852,9 @@
       "marginShortLending": {
         "code": "8155",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3255,
+        "marginBalance": 2961,
+        "marginChange": -294,
         "shortPrev": 55000,
         "shortBalance": 42000,
         "shortChange": -13000,
@@ -1085882,7 +1085890,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1091494,9 +1091502,9 @@
       "marginShortLending": {
         "code": "6584",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1543,
+        "marginBalance": 1468,
+        "marginChange": -75,
         "shortPrev": 15000,
         "shortBalance": 13000,
         "shortChange": -2000,
@@ -1091521,7 +1091529,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1095169,9 +1095177,9 @@
       "marginShortLending": {
         "code": "6739",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 868,
+        "marginBalance": 780,
+        "marginChange": -88,
         "shortPrev": 0,
         "shortBalance": 0,
         "shortChange": 0,
@@ -1095196,7 +1095204,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1098870,9 +1098878,9 @@
       "marginShortLending": {
         "code": "4768",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2547,
+        "marginBalance": 2307,
+        "marginChange": -240,
         "shortPrev": 19000,
         "shortBalance": 15000,
         "shortChange": -4000,
@@ -1098897,7 +1098905,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1100693,9 +1100701,9 @@
       "marginShortLending": {
         "code": "7717",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 762,
+        "marginBalance": 693,
+        "marginChange": -69,
         "shortPrev": 2000,
         "shortBalance": 1000,
         "shortChange": -1000,
@@ -1100720,7 +1100728,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1104294,9 +1104302,9 @@
       "marginShortLending": {
         "code": "7792",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 918,
+        "marginBalance": 796,
+        "marginChange": -122,
         "shortPrev": 10000,
         "shortBalance": 9000,
         "shortChange": -1000,
@@ -1104321,7 +1104329,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1106144,9 +1106152,9 @@
       "marginShortLending": {
         "code": "6811",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 281,
+        "marginBalance": 281,
+        "marginChange": 0,
         "shortPrev": 1000,
         "shortBalance": 0,
         "shortChange": -1000,
@@ -1106171,7 +1106179,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1107964,9 +1107972,9 @@
       "marginShortLending": {
         "code": "6291",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1302,
+        "marginBalance": 1120,
+        "marginChange": -182,
         "shortPrev": 6000,
         "shortBalance": 7000,
         "shortChange": 1000,
@@ -1107991,7 +1107999,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1111655,9 +1111663,9 @@
       "marginShortLending": {
         "code": "6788",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2235,
+        "marginBalance": 2094,
+        "marginChange": -141,
         "shortPrev": 2000,
         "shortBalance": 2000,
         "shortChange": 0,
@@ -1111682,7 +1111690,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1115315,9 +1115323,9 @@
       "marginShortLending": {
         "code": "6138",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1499,
+        "marginBalance": 1386,
+        "marginChange": -113,
         "shortPrev": 8000,
         "shortBalance": 7000,
         "shortChange": -1000,
@@ -1115342,7 +1115350,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1118948,9 +1118956,9 @@
       "marginShortLending": {
         "code": "6903",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1293,
+        "marginBalance": 1209,
+        "marginChange": -84,
         "shortPrev": 3000,
         "shortBalance": 5000,
         "shortChange": 2000,
@@ -1118975,7 +1118983,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1122594,9 +1122602,9 @@
       "marginShortLending": {
         "code": "6664",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1160,
+        "marginBalance": 1095,
+        "marginChange": -65,
         "shortPrev": 5000,
         "shortBalance": 5000,
         "shortChange": 0,
@@ -1122621,7 +1122629,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1128037,9 +1128045,9 @@
       "marginShortLending": {
         "code": "6870",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1740,
+        "marginBalance": 1680,
+        "marginChange": -60,
         "shortPrev": 138000,
         "shortBalance": 133000,
         "shortChange": -5000,
@@ -1128064,7 +1128072,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1133637,9 +1133645,9 @@
       "marginShortLending": {
         "code": "3526",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1869,
+        "marginBalance": 1800,
+        "marginChange": -69,
         "shortPrev": 7000,
         "shortBalance": 7000,
         "shortChange": 0,
@@ -1133695,7 +1133703,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1135565,9 +1135573,9 @@
       "marginShortLending": {
         "code": "6667",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1776,
+        "marginBalance": 1714,
+        "marginChange": -62,
         "shortPrev": 9000,
         "shortBalance": 8000,
         "shortChange": -1000,
@@ -1135592,7 +1135600,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1137370,9 +1137378,9 @@
       "marginShortLending": {
         "code": "6894",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 879,
+        "marginBalance": 833,
+        "marginChange": -46,
         "shortPrev": 38000,
         "shortBalance": 38000,
         "shortChange": 0,
@@ -1137438,7 +1137446,7 @@
         }
       ],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": true,
         "sourceAEvent": true
@@ -1176272,9 +1176280,9 @@
       "marginShortLending": {
         "code": "00937B",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 22849,
+        "marginBalance": 22436,
+        "marginChange": -413,
         "shortPrev": 6000,
         "shortBalance": 4000,
         "shortChange": -2000,
@@ -1176287,7 +1176295,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": false,
         "sourceAEvent": true
@@ -1179644,9 +1179652,9 @@
       "marginShortLending": {
         "code": "00679B",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 4524,
+        "marginBalance": 5175,
+        "marginChange": 651,
         "shortPrev": 34000,
         "shortBalance": 37000,
         "shortChange": 3000,
@@ -1179659,7 +1179667,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": false,
         "sourceAEvent": true
@@ -1183750,9 +1183758,9 @@
       "marginShortLending": {
         "code": "00687B",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3043,
+        "marginBalance": 2489,
+        "marginChange": -554,
         "shortPrev": 6000,
         "shortBalance": 7000,
         "shortChange": 1000,
@@ -1183765,7 +1183773,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": false,
         "sourceAEvent": true
@@ -1202014,9 +1202022,9 @@
       "marginShortLending": {
         "code": "00888",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 3585,
+        "marginBalance": 3193,
+        "marginChange": -392,
         "shortPrev": 6000,
         "shortBalance": 6000,
         "shortChange": 0,
@@ -1202029,7 +1202037,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": false,
         "sourceAEvent": true
@@ -1203690,9 +1203698,9 @@
       "marginShortLending": {
         "code": "00725B",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1122,
+        "marginBalance": 1286,
+        "marginChange": 164,
         "shortPrev": 0,
         "shortBalance": 0,
         "shortChange": 0,
@@ -1203705,7 +1203713,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": false,
         "sourceAEvent": true
@@ -1217580,9 +1217588,9 @@
       "marginShortLending": {
         "code": "00751B",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2800,
+        "marginBalance": 3223,
+        "marginChange": 423,
         "shortPrev": 13000,
         "shortBalance": 13000,
         "shortChange": 0,
@@ -1217595,7 +1217603,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": false,
         "sourceAEvent": true
@@ -1224344,9 +1224352,9 @@
       "marginShortLending": {
         "code": "00720B",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 1531,
+        "marginBalance": 1547,
+        "marginChange": 16,
         "shortPrev": 0,
         "shortBalance": 0,
         "shortChange": 0,
@@ -1224359,7 +1224367,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": false,
         "sourceAEvent": true
@@ -1227716,9 +1227724,9 @@
       "marginShortLending": {
         "code": "00795B",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 547,
+        "marginBalance": 630,
+        "marginChange": 83,
         "shortPrev": 0,
         "shortBalance": 0,
         "shortChange": 0,
@@ -1227731,7 +1227739,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": false,
         "sourceAEvent": true
@@ -1234480,9 +1234488,9 @@
       "marginShortLending": {
         "code": "00933B",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 148,
+        "marginBalance": 108,
+        "marginChange": -40,
         "shortPrev": 0,
         "shortBalance": 0,
         "shortChange": 0,
@@ -1234495,7 +1234503,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": false,
         "sourceAEvent": true
@@ -1252154,9 +1252162,9 @@
       "marginShortLending": {
         "code": "00981B",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 11073,
+        "marginBalance": 9704,
+        "marginChange": -1369,
         "shortPrev": 1000,
         "shortBalance": 1000,
         "shortChange": 0,
@@ -1252169,7 +1252177,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": false,
         "sourceAEvent": true
@@ -1255526,9 +1255534,9 @@
       "marginShortLending": {
         "code": "00411A",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 17213,
+        "marginBalance": 18608,
+        "marginChange": 1395,
         "shortPrev": 103000,
         "shortBalance": 103000,
         "shortChange": 0,
@@ -1255541,7 +1255549,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": false,
         "sourceAEvent": true
@@ -1256290,9 +1256298,9 @@
       "marginShortLending": {
         "code": "00859B",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 98,
+        "marginBalance": 99,
+        "marginChange": 1,
         "shortPrev": 1000,
         "shortBalance": 0,
         "shortChange": -1000,
@@ -1256305,7 +1256313,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": false,
         "sourceAEvent": true
@@ -1257966,9 +1257974,9 @@
       "marginShortLending": {
         "code": "00724B",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 16,
+        "marginBalance": 17,
+        "marginChange": 1,
         "shortPrev": 0,
         "shortBalance": 0,
         "shortChange": 0,
@@ -1257981,7 +1257989,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": false,
         "sourceAEvent": true
@@ -1261338,9 +1261346,9 @@
       "marginShortLending": {
         "code": "00772B",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 517,
+        "marginBalance": 531,
+        "marginChange": 14,
         "shortPrev": 0,
         "shortBalance": 0,
         "shortChange": 0,
@@ -1261353,7 +1261361,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": false,
         "sourceAEvent": true
@@ -1263014,9 +1263022,9 @@
       "marginShortLending": {
         "code": "00722B",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 102,
+        "marginBalance": 72,
+        "marginChange": -30,
         "shortPrev": 0,
         "shortBalance": 0,
         "shortChange": 0,
@@ -1263029,7 +1263037,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": false,
         "sourceAEvent": true
@@ -1266386,9 +1266394,9 @@
       "marginShortLending": {
         "code": "00998A",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 2044,
+        "marginBalance": 1423,
+        "marginChange": -621,
         "shortPrev": 1000,
         "shortBalance": 0,
         "shortChange": -1000,
@@ -1266401,7 +1266409,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": false,
         "sourceAEvent": true
@@ -1273140,9 +1273148,9 @@
       "marginShortLending": {
         "code": "00877",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 7377,
+        "marginBalance": 7289,
+        "marginChange": -88,
         "shortPrev": 23000,
         "shortBalance": 22000,
         "shortChange": -1000,
@@ -1273155,7 +1273163,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": false,
         "sourceAEvent": true
@@ -1274816,9 +1274824,9 @@
       "marginShortLending": {
         "code": "00764B",
         "market": "TPEx",
-        "marginPrev": null,
-        "marginBalance": null,
-        "marginChange": null,
+        "marginPrev": 10,
+        "marginBalance": 10,
+        "marginChange": 0,
         "shortPrev": 0,
         "shortBalance": 0,
         "shortChange": 0,
@@ -1274831,7 +1274839,7 @@
       },
       "sourceAEvents": [],
       "evidenceReadiness": {
-        "marginShortLending": false,
+        "marginShortLending": true,
         "securitiesLending": true,
         "fundamental": false,
         "sourceAEvent": true
@@ -1376452,7 +1376460,7 @@
     "historicalCacheTradingDays": 130,
     "buyHistoryReadyCount": 664,
     "institutional20dReadyCount": 673,
-    "marginShortLendingReadyCount": 479,
+    "marginShortLendingReadyCount": 670,
     "securitiesLendingReadyCount": 193,
     "fundamentalReadyCount": 590,
     "sourceAEventCoverageCount": 673,
