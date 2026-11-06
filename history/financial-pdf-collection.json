@@ -6109,12 +6109,12 @@
     "filingParserVersion": 3,
     "textParserVersion": 22,
     "filingFallback": null,
-    "stage": "PDF_METRICS",
-    "reason": "PDF_OCR_REVIEW_PENDING",
-    "attempts": 3,
+    "stage": "PDF_DOWNLOAD",
+    "reason": "The operation was aborted due to timeout",
+    "attempts": 4,
     "checkedDate": "2026-11-06",
-    "checkedAt": "2026-11-06T11:16:36.773Z",
-    "nextRetryAt": "2026-11-06T11:36:36.773Z"
+    "checkedAt": "2026-11-06T11:46:39.229Z",
+    "nextRetryAt": "2026-11-06T12:26:39.230Z"
   },
   "3034|2026-09-30": {
     "status": "UNVERIFIED",
