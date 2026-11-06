@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "targetDate": "2026-11-06",
   "strategyVersion": "entry-dual-track-v2.6",
-  "inputFingerprint": "4e2cb783fca323736a2124b2b50630a19da7c49ee4217fa5a7489fe1e664e791",
+  "inputFingerprint": "6c94a9552f62163733b6f1072fd4ebb128a2205e5456897512a6aa9ef36962d5",
   "coverage": {
     "universe": 2323,
     "stocks": 1964,
@@ -87386,8 +87386,7 @@
       "historyCoverageTradingDays": 140,
       "researchEvidenceStatus": "PENDING",
       "researchEvidencePending": [
-        "credit",
-        "fundamental"
+        "credit"
       ]
     },
     {
@@ -114918,7 +114917,7 @@
       "close": 207,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 21.5192,
+      "score": 31.5192,
       "scores": {
         "trend": 7.2,
         "momentum": 0,
@@ -114927,7 +114926,7 @@
         "institutional": 9,
         "large_holder": 0,
         "margin_short_lending": 0,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -114938,7 +114937,7 @@
         "credit": false,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -114949,7 +114948,6 @@
         "MARKET_REGIME_BLOCK",
         "TREND_NOT_CONFIRMED",
         "CREDIT_EVIDENCE_INCOMPLETE",
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -114967,8 +114965,7 @@
       "historyCoverageTradingDays": 138,
       "researchEvidenceStatus": "PENDING",
       "researchEvidencePending": [
-        "credit",
-        "fundamental"
+        "credit"
       ]
     },
     {
@@ -115833,7 +115830,7 @@
       "close": 79.2,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 38.7333,
+      "score": 48.7333,
       "scores": {
         "trend": 14.4,
         "momentum": 0,
@@ -115842,7 +115839,7 @@
         "institutional": 9,
         "large_holder": 5.3333,
         "margin_short_lending": 0,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -115853,7 +115850,7 @@
         "credit": false,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -115864,7 +115861,6 @@
         "MARKET_REGIME_BLOCK",
         "TREND_NOT_CONFIRMED",
         "CREDIT_EVIDENCE_INCOMPLETE",
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -115882,8 +115878,7 @@
       "historyCoverageTradingDays": 138,
       "researchEvidenceStatus": "PENDING",
       "researchEvidencePending": [
-        "credit",
-        "fundamental"
+        "credit"
       ]
     },
     {
@@ -133835,7 +133830,7 @@
       "close": 172.5,
       "decision": "WATCH",
       "strategy": "NONE",
-      "score": 30.7794,
+      "score": 40.7794,
       "scores": {
         "trend": 7.2,
         "momentum": 0,
@@ -133844,7 +133839,7 @@
         "institutional": 7.5,
         "large_holder": 8,
         "margin_short_lending": 0,
-        "fundamental": 0,
+        "fundamental": 10,
         "risk_reward": 0
       },
       "gates": {
@@ -133855,7 +133850,7 @@
         "credit": false,
         "institutional": true,
         "tdcc": true,
-        "fundamental": false,
+        "fundamental": true,
         "event": true,
         "corporateAction": true,
         "strategy": false,
@@ -133866,7 +133861,6 @@
         "MARKET_REGIME_BLOCK",
         "TREND_NOT_CONFIRMED",
         "CREDIT_EVIDENCE_INCOMPLETE",
-        "FUNDAMENTAL_QUALITY_NOT_VERIFIED",
         "ENTRY_SETUP_NOT_CONFIRMED",
         "STRUCTURAL_RR_NOT_VERIFIED"
       ],
@@ -133884,8 +133878,7 @@
       "historyCoverageTradingDays": 138,
       "researchEvidenceStatus": "PENDING",
       "researchEvidencePending": [
-        "credit",
-        "fundamental"
+        "credit"
       ]
     },
     {
@@ -144638,8 +144631,7 @@
       "historyCoverageTradingDays": 138,
       "researchEvidenceStatus": "PENDING",
       "researchEvidencePending": [
-        "credit",
-        "fundamental"
+        "credit"
       ]
     },
     {
