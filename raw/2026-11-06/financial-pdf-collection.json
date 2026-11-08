@@ -6057,9 +6057,9 @@
       "stage": "PDF_METRICS",
       "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-11-06",
-      "checkedAt": "2026-11-06T10:38:21.522Z",
-      "nextRetryAt": "2026-11-07T10:38:21.522Z"
+      "checkedDate": "2026-11-08",
+      "checkedAt": "2026-11-08T10:02:36.198Z",
+      "nextRetryAt": "2026-11-09T10:02:36.198Z"
     },
     "3354|2026-09-30": {
       "status": "VERIFIED",
@@ -6112,11 +6112,11 @@
       "textParserVersion": 22,
       "filingFallback": null,
       "stage": "PDF_METRICS",
-      "reason": "PDF_OCR_REVIEW_PENDING",
-      "attempts": 4,
-      "checkedDate": "2026-11-07",
-      "checkedAt": "2026-11-07T10:11:34.353Z",
-      "nextRetryAt": "2026-11-07T10:51:34.353Z"
+      "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
+      "attempts": 1,
+      "checkedDate": "2026-11-08",
+      "checkedAt": "2026-11-08T10:02:56.936Z",
+      "nextRetryAt": "2026-11-09T10:02:56.936Z"
     },
     "3034|2026-09-30": {
       "status": "UNVERIFIED",
@@ -6197,9 +6197,9 @@
       "stage": "PDF_METRICS",
       "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
       "attempts": 1,
-      "checkedDate": "2026-11-06",
-      "checkedAt": "2026-11-06T10:38:04.041Z",
-      "nextRetryAt": "2026-11-07T10:38:04.041Z"
+      "checkedDate": "2026-11-08",
+      "checkedAt": "2026-11-08T10:02:34.494Z",
+      "nextRetryAt": "2026-11-09T10:02:34.494Z"
     },
     "6285|2026-09-30": {
       "status": "UNVERIFIED",
@@ -6377,15 +6377,15 @@
       "filingFallback": null,
       "stage": "PDF_METRICS",
       "reason": "PDF_PERIOD_METRICS_OR_PROFIT_BASIS_UNVERIFIED",
-      "attempts": 5,
-      "checkedDate": "2026-11-06",
-      "checkedAt": "2026-11-06T12:00:10.621Z",
-      "nextRetryAt": "2026-11-07T12:00:10.621Z"
+      "attempts": 1,
+      "checkedDate": "2026-11-08",
+      "checkedAt": "2026-11-08T10:02:37.788Z",
+      "nextRetryAt": "2026-11-09T10:02:37.788Z"
     }
   },
   "ocrProgress": {
     "parserVersion": 20,
-    "pages": 4222
+    "pages": 4230
   },
   "remaining": 20,
   "ready": 0,
