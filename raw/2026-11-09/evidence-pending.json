@@ -2,33 +2,27 @@
   "targetDate": "2026-11-09",
   "researchComplete": false,
   "counts": {
-    "fundamental": 197,
+    "fundamental": 190,
     "history": 1,
     "credit": 3
   },
   "pending": {
     "fundamental": [
       "1815",
-      "1802",
       "6770",
       "2313",
       "6147",
       "6505",
       "2337",
-      "6456",
       "6173",
       "8042",
-      "5347",
-      "1326",
       "6209",
       "6257",
-      "3605",
       "6285",
       "8150",
       "3624",
       "6199",
       "2481",
-      "1216",
       "2468",
       "3016",
       "4919",
@@ -156,7 +150,6 @@
       "3653",
       "8046",
       "6488",
-      "3081",
       "6669",
       "6213",
       "8299",
@@ -225,6 +218,12 @@
       ]
     },
     {
+      "code": "1802",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
+      ]
+    },
+    {
       "code": "2891",
       "failures": [
         "OFFICIAL_FORMAT_REQUIRED_METRICS_UNAVAILABLE"
@@ -234,6 +233,14 @@
       "code": "1301",
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "REVENUE_DETERIORATION"
+      ]
+    },
+    {
+      "code": "6456",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE",
+        "PROFIT_QUALITY_FAILED",
         "REVENUE_DETERIORATION"
       ]
     },
@@ -266,6 +273,12 @@
       "failures": [
         "COMPARATIVE_GROWTH_NOT_APPLICABLE",
         "PROFIT_QUALITY_FAILED"
+      ]
+    },
+    {
+      "code": "1326",
+      "failures": [
+        "COMPARATIVE_GROWTH_NOT_APPLICABLE"
       ]
     },
     {
